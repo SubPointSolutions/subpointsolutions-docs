@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SPMeta2.Definitions;
-using SPMeta2.Docs.ProvisionSamples.Samples;
 using SPMeta2.Enumerations;
 
 namespace SPMeta2.Docs.ProvisionSamples.Definitions

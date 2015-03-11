@@ -81,9 +81,12 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Base\ProvisionTestBase.cs" />
+    <Compile Include="Definitions\DocLists.cs" />
     <Compile Include="Definitions\DocWebs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Provision\Definitions\ListDefinitionTests.md" />
     <None Include="Provision\Definitions\WebDefinitionTests.md" />
+    <Compile Include="Provision\Definitions\ListDefinitionTests.cs" />
     <Compile Include="Provision\Definitions\WebDefinitionTests.cs" />
   </ItemGroup>
   <ItemGroup />
