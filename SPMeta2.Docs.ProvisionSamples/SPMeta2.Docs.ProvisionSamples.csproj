@@ -81,13 +81,35 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Base\ProvisionTestBase.cs" />
+    <Compile Include="Consts\DocConsts.cs" />
+    <Compile Include="Definitions\DocContentTypes.cs" />
+    <Compile Include="Definitions\DocWebFeatures.cs" />
+    <Compile Include="Definitions\DocSiteFeatures.cs" />
+    <Compile Include="Definitions\DocFields.cs" />
+    <Compile Include="Definitions\DocFolders.cs" />
     <Compile Include="Definitions\DocLists.cs" />
+    <Compile Include="Definitions\DocSecurityGroups.cs" />
     <Compile Include="Definitions\DocWebs.cs" />
+    <Compile Include="Definitions\DocWikiPages.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provision\Definitions\FeatureDefinitionTests.cs" />
+    <Compile Include="Provision\Definitions\SecurityGroupDefinitionTests.cs" />
+    <Compile Include="Provision\Definitions\FieldDefinitionTests.cs" />
+    <Compile Include="Provision\Definitions\FolderDefinitionTests.cs" />
+    <None Include="Provision\Definitions\FeatureDefinitionTests.md" />
+    <None Include="Provision\Definitions\SecurityGroupDefinitionTests.md" />
+    <None Include="Provision\Definitions\FieldDefinitionTests.md" />
+    <None Include="Provision\Definitions\FolderDefinitionTests.md" />
+    <Compile Include="Provision\Definitions\ContentTypeDefinitionTests.cs" />
+    <None Include="Provision\Definitions\ContentTypeDefinitionTests.md" />
+    <None Include="Provision\Definitions\WikiPageDefinitionTests.md" />
+    <None Include="Templates\XXXDefinitionTests.cs_" />
     <None Include="Provision\Definitions\ListDefinitionTests.md" />
     <None Include="Provision\Definitions\WebDefinitionTests.md" />
     <Compile Include="Provision\Definitions\ListDefinitionTests.cs" />
+    <Compile Include="Provision\Definitions\WikiPageDefinitionTests.cs" />
     <Compile Include="Provision\Definitions\WebDefinitionTests.cs" />
+    <None Include="Templates\XXXDefinitionTests.md_" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

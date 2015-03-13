@@ -1,0 +1,26 @@
+﻿<properties 
+	  pageTitle="[PAGE_TITLE]" 
+    pageName="[PAGE_NAME]"
+    parentPageId="3981"
+/>
+
+###Provision scenario
+SCENARIO
+
+###Scope
+SCOPE
+
+###Implementation
+IMPLEMENTATION
+
+
+###Samples
+A SAMPLE 1
+[TEST.CanDeploySimpleWebs]
+
+A SAMPLE 2
+[TEST.CanDeployHierarchicalWebs]
+
+###Links
+- [link 1](http://example.com)
+- [link 2](http://example.com)

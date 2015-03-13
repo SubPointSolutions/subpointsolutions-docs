@@ -12,6 +12,14 @@ namespace SPMeta2.Docs.ProvisionSamples.Definitions
     {
         #region properties
 
+        public static ListDefinition GeneralReports = new ListDefinition
+        {
+            Title = "General Reports",
+            Description = "General reports register.",
+            Url = "general-reports",
+            TemplateType = BuiltInListTemplateTypeId.DocumentLibrary
+        };
+
         public static class HRLists
         {
             public static ListDefinition Poicies = new ListDefinition

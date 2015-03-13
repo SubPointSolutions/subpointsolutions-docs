@@ -1,0 +1,38 @@
+﻿<properties 
+	  pageTitle="[PAGE_TITLE]" 
+    pageName="[PAGE_NAME]"
+    parentPageId="3981"
+/>
+
+###Provision scenario
+We should be able to enable/disable SharePoint features at farm, web app, site and web levels.
+
+###Scope
+Should be deployed under farm, web application, site or web level,
+
+###Implementation
+Feature activation/deactivation is enabled via FeatureDefinition object.
+
+Both CSOM/SSOM object models are supported, except webapp/farm features could be deployed only with SSOM object model.
+
+Provision looks up feature by ID and acts according feature definition properties Enable/ForceActivate.
+
+Enable suggest to enable feature if it was not activated, but skip if it is activates. ForceActivate flag allows to force activate feature despite of current state.  You can deploy either single feature or a set using AddWebFeature() extension method.
+###Samples
+A simple feature activation at site level
+[TEST.CanActivateOOTBSiteFeatures]
+
+A simple feature deactivation at web level
+[TEST.CanActivateOOTBWebFeatures]
+
+Feature deactivation
+[TEST.CanDeactivateOOTBWebFeatures]
+
+Custom web feature activation
+[TEST.CanActivateCustomWebFeature]
+
+Custom web feature deactivation
+[TEST.CanDeactivateCustomWebFeature]
+
+OOTB feature inheritance
+[TEST.OOTBFeatureInheritance]
