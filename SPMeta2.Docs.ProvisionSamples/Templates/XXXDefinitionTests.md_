@@ -1,7 +1,8 @@
-﻿<properties 
-	  pageTitle="[PAGE_TITLE]" 
+﻿<!-- M2-TODO -->
+<properties
+	  pageTitle="[PAGE_TITLE]"
     pageName="[PAGE_NAME]"
-    parentPageId="3981"
+    parentPageId="12771"
 />
 
 ###Provision scenario
@@ -13,13 +14,12 @@ SCOPE
 ###Implementation
 IMPLEMENTATION
 
-
 ###Samples
 A SAMPLE 1
-[TEST.CanDeploySimpleWebs]
+[TEST.TestFunctionName1]
 
 A SAMPLE 2
-[TEST.CanDeployHierarchicalWebs]
+[TEST.TestFunctionName2]
 
 ###Links
 - [link 1](http://example.com)

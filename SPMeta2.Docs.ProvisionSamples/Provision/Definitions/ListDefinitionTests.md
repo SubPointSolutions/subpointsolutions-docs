@@ -1,7 +1,7 @@
 ﻿<properties 
 	pageTitle="ListDefinition" 
     pageName="list-definition"
-    parentPageId="3981"
+    parentPageId="12771"
 />
 
 ###Provision scenario

@@ -1,7 +1,7 @@
 ﻿<properties 
-	  pageTitle="[PAGE_TITLE]" 
-    pageName="[PAGE_NAME]"
-    parentPageId="3981"
+	  pageTitle="SecurityGroupDefinition" 
+    pageName="SecurityGroupDefinition"
+    parentPageId="12771"
 />
 
 ###Provision scenario

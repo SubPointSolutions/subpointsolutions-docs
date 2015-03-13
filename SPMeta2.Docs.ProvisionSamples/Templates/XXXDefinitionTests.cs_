@@ -6,17 +6,17 @@ using SPMeta2.Syntax.Default;
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    public class XXXDefinitionTests : ProvisionTestBase
+    public class XXXTests : ProvisionTestBase
     {
         #region methods
 
         [TestMethod]
         [TestCategory("Docs.XXXDefinition")]
-        public void CanXXX()
+        public void CanDeploySimpleXXX()
         {
-            var model = SPMeta2Model.NewWebModel(web =>
+            var model = SPMeta2Model.NewSiteModel(site =>
             {
-                    
+         
             });
 
             DeployModel(model);

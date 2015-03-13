@@ -1,7 +1,7 @@
 ﻿<properties 
-	  pageTitle="[PAGE_TITLE]" 
-    pageName="[PAGE_NAME]"
-    parentPageId="3981"
+	  pageTitle="ContentTypeDefinition" 
+    pageName="ContentTypeDefinition"
+    parentPageId="12771"
 />
 
 ###Provision scenario

@@ -1,0 +1,22 @@
+﻿<properties 
+	pageTitle="PAGE_TITLE" 
+    pageName="PAGE_NAME"
+    parentPageId="3981"
+/>
+
+###Provision scenario
+SCENARIO
+
+###Scope 
+SCOPE
+
+###Implementation
+IMPLEMENTATION
+
+###Samples
+
+SAMPLE REF 1
+[TEST.TestName1]
+
+SAMPLE REF 2
+[TEST.TestName1]
