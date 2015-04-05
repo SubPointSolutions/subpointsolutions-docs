@@ -22,7 +22,6 @@ We tend to use scrum and weekly iterations, aligning our roadmap with the comnun
 * [SPMeta2 Yammer network](https://www.yammer.com/spmeta2feedback) 
 
 Once we deside on the features, we use [GITHUB issues](https://github.com/SubPointSolutions/spmeta2/issues) to plan and track iterations.
-
 ## Source code
 
 We use GITHUB to host the source code - both dev/master branches could be found here:

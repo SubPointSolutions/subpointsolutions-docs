@@ -50,7 +50,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.Utils")]
-        public void ContentEditorWebPartSetup(ContentEditorWebPartDefinition typedModel, string content, string contentLink)
+        public void ContentEditorWebPartSetup(ContentEditorWebPartDefinition typedModel,
+            string content, string contentLink)
         {
             var wpXml = WebpartXmlExtensions
                            .LoadWebpartXmlDocument(BuiltInWebPartTemplates.ContentEditorWebPart)
