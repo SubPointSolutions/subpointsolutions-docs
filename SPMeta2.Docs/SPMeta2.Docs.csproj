@@ -224,6 +224,7 @@
     <None Include="Web\Definitions\Standard\Taxonomy\TaxonomyTermStoreDefinitionTests.md" />
     <None Include="Web\Definitions\Standard\WebNavigationSettingsDefinitionTests.md" />
     <None Include="Web\Definitions\Standard\Webparts\SummaryLinkWebPartDefinitionTests.md" />
+    <None Include="Web\Extensibility\writing-custom-definition.md" />
     <None Include="Web\Models\WebModel.md" />
     <None Include="Web\Models\SiteModel.md" />
     <None Include="Web\Scenarios.md" />
