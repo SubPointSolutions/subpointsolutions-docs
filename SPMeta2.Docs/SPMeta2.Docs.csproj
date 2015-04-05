@@ -180,6 +180,16 @@
     <Compile Include="Web\Definitions\Standard\WebNavigationSettingsDefinitionTests.cs" />
     <Compile Include="Web\Definitions\Standard\Webparts\SummaryLinkWebPartDefinitionTests.cs" />
     <None Include="Web\Basics\License.md" />
+    <None Include="Web\Basics\Releases\spmeta2-v1.1.71.md" />
+    <None Include="Web\Basics\Releases\spmeta2-v1.1.70.md" />
+    <None Include="Web\Basics\Releases\spmeta2-v1.1.60.md" />
+    <None Include="Web\Basics\Releases\spmeta2-v1.1.50.md" />
+    <None Include="Web\Basics\Releases\spmeta2-v1.1.40.md" />
+    <None Include="Web\Basics\Releases\spmeta2-v1.1.30.md" />
+    <None Include="Web\Basics\Releases\spmeta2-v1.1.20.md" />
+    <None Include="Web\Basics\Releases\spmeta2-v1.1.10.md" />
+    <None Include="Web\Basics\Releases\spmeta2-v1.1.0.md" />
+    <None Include="Web\Basics\Releases\Archive.md" />
     <None Include="Web\Basics\Support.md" />
     <None Include="Web\Basics\Roadmap.md" />
     <None Include="Web\Basics\Releases.md" />

@@ -1,5 +1,5 @@
 ﻿<properties
-	pageTitle="Getting-started"
+	pageTitle="Getting started"
     pageName="getting-started"
     parentPageId="13071"
 />
@@ -75,7 +75,7 @@ There are a few outtanding things we need to complete - create definitions, setu
 
 Include the following code in your console application changing the 'siteUrl', run it and enjoy the outcome.
 
-[]
+[FULLMETHOD.SPMeta2.Samples.CSOMConsoleApp.Program.Main]
 
 ## Creating a simple SSOM application for SharePoint 2013
 Essentially, we would need to bootstrap the same console application (check previous CSOM application) and add [SPMeta2.SSOM.Foundation](https://www.nuget.org/packages/SPMeta2.SSOM.Foundation/) package or use the following command in the "Package Manager Console":
@@ -85,4 +85,6 @@ install-package SPMeta2.SSOM.Foundation
 ```
 
 The actual code will be the same, but to enable SSOM based provision we need to use 'CSOMProvisionService'. Include the following code in your console application changing the 'siteUrl', run it and enjoy the outcome.
+
+[FULLMETHOD.SPMeta2.Samples.SSOMConsoleApp.Program.Main]
 

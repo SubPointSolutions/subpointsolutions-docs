@@ -17,7 +17,7 @@ namespace SPMeta2.Samples.CSOMConsoleApp
         static void Main(string[] args)
         {
             var siteUrl = "http://tesla-dev:31415/";
-            var clientContext = new ClientContext(siteUrl);
+
 
             // define fields
             var clientDescriptionField = new FieldDefinition
@@ -61,6 +61,8 @@ namespace SPMeta2.Samples.CSOMConsoleApp
                             .AddContentTypeFieldLink(clientNumberField);
                     });
             });
+
+            var clientContext = new ClientContext(siteUrl);
 
             // deploy the model to the SharePoint site over CSOM
             var csomProvisionService = new CSOMProvisionService();
