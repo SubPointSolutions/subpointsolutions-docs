@@ -4,4 +4,4 @@
     parentPageId="18371"
 />
 
-site model
+site model, test

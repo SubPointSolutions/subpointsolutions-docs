@@ -35,20 +35,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.SharePoint.Client, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
     <Reference Include="SPMeta2">
-      <HintPath>..\packages\SPMeta2.Core.1.1.65-beta\lib\net45\SPMeta2.dll</HintPath>
+      <HintPath>..\packages\SPMeta2.Core.1.1.75-beta3\lib\net45\SPMeta2.dll</HintPath>
     </Reference>
     <Reference Include="SPMeta2.CSOM">
-      <HintPath>..\packages\SPMeta2.CSOM.Foundation.1.1.65-beta\lib\net45\SPMeta2.CSOM.dll</HintPath>
+      <HintPath>..\packages\SPMeta2.CSOM.Foundation.1.1.75-beta3\lib\net45\SPMeta2.CSOM.dll</HintPath>
     </Reference>
     <Reference Include="SPMeta2.CSOM.Behaviours">
-      <HintPath>..\packages\SPMeta2.CSOM.Foundation.1.1.65-beta\lib\net45\SPMeta2.CSOM.Behaviours.dll</HintPath>
+      <HintPath>..\packages\SPMeta2.CSOM.Foundation.1.1.75-beta3\lib\net45\SPMeta2.CSOM.Behaviours.dll</HintPath>
     </Reference>
     <Reference Include="SPMeta2.CSOM.Standard">
-      <HintPath>..\packages\SPMeta2.CSOM.Standard.1.1.65-beta\lib\net45\SPMeta2.CSOM.Standard.dll</HintPath>
+      <HintPath>..\packages\SPMeta2.CSOM.Standard.1.1.75-beta3\lib\net45\SPMeta2.CSOM.Standard.dll</HintPath>
     </Reference>
     <Reference Include="SPMeta2.CSOM.Standard.Behaviours">
-      <HintPath>..\packages\SPMeta2.CSOM.Standard.1.1.65-beta\lib\net45\SPMeta2.CSOM.Standard.Behaviours.dll</HintPath>
+      <HintPath>..\packages\SPMeta2.CSOM.Standard.1.1.75-beta3\lib\net45\SPMeta2.CSOM.Standard.Behaviours.dll</HintPath>
     </Reference>
     <Reference Include="SPMeta2.SSOM">
       <HintPath>..\packages\SPMeta2.SSOM.Foundation.1.1.65-beta\lib\net45\SPMeta2.SSOM.dll</HintPath>
@@ -60,10 +62,10 @@
       <HintPath>..\packages\SPMeta2.SSOM.Standard.1.1.65-beta\lib\net45\SPMeta2.SSOM.Standard.dll</HintPath>
     </Reference>
     <Reference Include="SPMeta2.Standard">
-      <HintPath>..\packages\SPMeta2.Core.Standard.1.1.65-beta\lib\net45\SPMeta2.Standard.dll</HintPath>
+      <HintPath>..\packages\SPMeta2.Core.Standard.1.1.75-beta3\lib\net45\SPMeta2.Standard.dll</HintPath>
     </Reference>
     <Reference Include="SPMeta2.Syntax.Default">
-      <HintPath>..\packages\SPMeta2.Core.1.1.65-beta\lib\net45\SPMeta2.Syntax.Default.dll</HintPath>
+      <HintPath>..\packages\SPMeta2.Core.1.1.75-beta3\lib\net45\SPMeta2.Syntax.Default.dll</HintPath>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
@@ -92,6 +94,7 @@
     <Compile Include="Definitions\DocWebs.cs" />
     <Compile Include="Definitions\DocWikiPages.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web\Basics.cs" />
     <Compile Include="Web\Definitions\Foundation\AlternateUrlDefinitionTests.cs" />
     <Compile Include="Web\Definitions\Foundation\AppDefinitionTests.cs" />
     <Compile Include="Web\Definitions\Foundation\AppPrincipalDefinitionTests.cs" />
@@ -326,7 +329,9 @@
     <None Include="Web\Extensibility.md" />
     <None Include="Web\LandingPage.md" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Web\Basics\img\getting-started\1-new-console-app.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

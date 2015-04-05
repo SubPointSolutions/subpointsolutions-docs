@@ -4,21 +4,41 @@
     parentPageId=""
 />
 
-SPMeta2 is a fluent API for code-based SharePoint artefact provisioning.
+SPMeta2 is a hassle-free fluent API for code-based SharePoint artefact provisioning.
+It offers a consistent provisioning API via SSOM/CSOM for SharePoin 2010, 2013 and O365.
 
-Struggling with SharePoint’s API inconsistency, bugs, “by-design” behaviour, unaffordable amount of time to write, support and upgrade WSP packages and XML, a team of passionate SharePoint professionals decided to come up with robust, testable and repeatable way to deploy such artefacts as fields, content types, custom actions, webs, libraries and lists, list view, wiki pages, web part pages, security group and roles, and many more – you name it!
+SPMeta2 is all you need to have a **testable**, **repeatable** and **upgradable** way to provision fields, content types, lists, list views, webs, 
+custom actions, security groups, permission levels, web parts, wiki pages, web part pages, publishing pages and so on - in fact, 
+**more than 100 (sic, more than a hundred) different artifacts** and **even more scenarios**.
 
-As an outcome, we created SPMeta2 – a .NET 4.5 library to provide fluent API for SharePoint artefact provision with SSOM/CSOM or JSOM for both on-premise SP2013 and O365 instances. Keen to see it in action? Have a look around and let us know what you think of it.
+Sounds exciting? Have a look around, let us know how it goes.
 
-###Get started
-* About
-* Features
-* Releases and roadmap
-* Artefact provision
-* License
-* Support
-* Feature request
+###Next steps
+* [Learn the basics](http://docs.subpointsolutions.com/spmeta2/basics)
+* [Get started from scratch](http://docs.subpointsolutions.com/spmeta2/basics/getting-started/)
 
-###New releases
-* 11
-* 22
+###Contributions
+Out team is keen to improve the SPMeta2 along with documentation. Here is how you can contribute and take this library to the next level:
+
+####Create a new suggestion at UserVoice
+
+[Open a new suggestion](https://subpointsolutions.uservoice.com) to introduce a new feature.
+
+While creaeting a new suggestion, please provide a resaonble amount of information so that our team would be able to develop, test and release the suggested feature.
+
+####Join Yammer community
+We like to have a great discussion with our client at our [Yammer network](https://www.yammer.com/spmeta2feedback).
+Join the community, see how it works for others.
+
+####Pull requests @ github
+SPMeta2 is an open source library licensed under [Microsoft Public License (Ms-PL) license](http://www.microsoft.com/en-us/openness/licenses.aspx). 
+
+All the source code is available at [github repository](https://github.com/subpointsolutions/spmeta2), so it makes it easier to collaborate on the code base, manag the roadmap and make a pull reqest once you have a valuable contribution to make.
+
+###Support
+SPMeta2 is an open source library, but understand that it is also a fundamental building block for production projects as well.
+The library comes with various support options and SLA to make sure you won't be left alone, you meet your deadline and have a positive experience.
+
+Our [Yammer network](https://www.yammer.com/spmeta2feedback) provides a basic support. Both support and dev teams are avialably on Yammer providing valuable suggestions, answering questions and solving issues.
+
+There are also premium support options with SLA for independed professionals or teams, and enterprise as well.

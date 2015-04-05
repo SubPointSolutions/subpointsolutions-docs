@@ -5,6 +5,12 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPMeta2.Docs", "SPMeta2.Docs\SPMeta2.Docs.csproj", "{187F45D4-6F11-4FA3-9D90-208AE35EF2A6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{882F80A1-54F8-43E5-8FBE-A7863F39FF3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPMeta2.Samples.CSOMConsoleApp", "Samples\SPMeta2.Samples.CSOMConsoleApp\SPMeta2.Samples.CSOMConsoleApp.csproj", "{26BAF9B0-AC30-4A19-8556-0D8551FBD67D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPMeta2.Samples.SSOMConsoleApp", "Samples\SPMeta2.Samples.SSOMConsoleApp\SPMeta2.Samples.SSOMConsoleApp.csproj", "{96640AC6-C416-472D-A050-EC2DF66A2D52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +21,20 @@ Global
 		{187F45D4-6F11-4FA3-9D90-208AE35EF2A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{187F45D4-6F11-4FA3-9D90-208AE35EF2A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{187F45D4-6F11-4FA3-9D90-208AE35EF2A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26BAF9B0-AC30-4A19-8556-0D8551FBD67D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26BAF9B0-AC30-4A19-8556-0D8551FBD67D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26BAF9B0-AC30-4A19-8556-0D8551FBD67D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26BAF9B0-AC30-4A19-8556-0D8551FBD67D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96640AC6-C416-472D-A050-EC2DF66A2D52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96640AC6-C416-472D-A050-EC2DF66A2D52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96640AC6-C416-472D-A050-EC2DF66A2D52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96640AC6-C416-472D-A050-EC2DF66A2D52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{26BAF9B0-AC30-4A19-8556-0D8551FBD67D} = {882F80A1-54F8-43E5-8FBE-A7863F39FF3D}
+		{96640AC6-C416-472D-A050-EC2DF66A2D52} = {882F80A1-54F8-43E5-8FBE-A7863F39FF3D}
 	EndGlobalSection
 EndGlobal
