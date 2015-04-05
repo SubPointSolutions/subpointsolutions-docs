@@ -96,6 +96,7 @@
     <Compile Include="Definitions\DocWebs.cs" />
     <Compile Include="Definitions\DocWikiPages.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web\Extensibility\writing-custom-definition.cs" />
     <Compile Include="Web\Utils.cs" />
     <Compile Include="Web\Models.cs" />
     <Compile Include="Web\Basics.cs" />
