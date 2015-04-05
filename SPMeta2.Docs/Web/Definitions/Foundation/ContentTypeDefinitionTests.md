@@ -5,10 +5,10 @@
 />
 
 ###Provision scenario
-We should be able to provision a single SharePoint content type.
+We should be able to provision a SharePoint content type.
 
 ###Scope
-Should be deployed under site.
+Should be deployed under site or web models.
 
 ###Implementation
 Content type provision is enabled via ContentTypeDefinition object.
@@ -19,10 +19,19 @@ GetContentTypeId() extension methods can be used to calculate a parent content t
 
 We suggest to use BuiltInContentTypeId to benefit OOTB SharePoint content type IDs.
 
-
 ###Samples
-Site content types deployment sample
+
+#### A simple list item content type
+[TEST.CanDeploySimpleListContentType]
+
+#### A simple document content type
+[TEST.CanDeploySimpleDocumentContentType]
+
+#### Site content types sample
 [TEST.CanDeploySimpleContentTypes]
 
-Site content type with fields deployment sample
+#### Site content type with fields
 [TEST.CanDeploySimpleContentTypesWithFields]
+
+#### Hierarhy of the content types
+[TEST.CanDeployHierarhicalContentTypes]

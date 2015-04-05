@@ -9,8 +9,8 @@ SPMeta2 introduces a domain model providing set of definitions for most of the S
 
 Before you begin, make sure you are familiar with the following concepts:
 
-* [SPMeta basics](http://docs.subpointsolutions.com/spmeta2/basics/)
-* [SPMeta definitions](http://docs.subpointsolutions.com/spmeta2/definitions/)
+* [SPMeta2  basics](http://docs.subpointsolutions.com/spmeta2/basics/)
+* [SPMeta2 definitions](http://docs.subpointsolutions.com/spmeta2/definitions/)
 
 ### SharePoint Standard definitions
 Here is a list of supported SharePoint Standard definitions by SPMeta2. 

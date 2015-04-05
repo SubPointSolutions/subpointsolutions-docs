@@ -1,26 +1,20 @@
-<!-- M2-TODO -->
 <properties
 	  pageTitle="TaxonomyTermSetDefinition"
     pageName="TaxonomyTermSetDefinition"
-    parentPageId="3981"
+    parentPageId="12821"
 />
 
 ###Provision scenario
-SCENARIO
+We should be able to deploy taxonomy term sets.
 
 ###Scope
-SCOPE
+Should be deployed under taxonomy term group.
 
 ###Implementation
-IMPLEMENTATION
+Both CSOM/SSOM object models are supported. 
+
+Provision checks if term set exists, and then creates a new one.
 
 ###Samples
-A SAMPLE 1
-[TEST.TestFunctionName1]
-
-A SAMPLE 2
-[TEST.TestFunctionName2]
-
-###Links
-- [link 1](http://example.com)
-- [link 2](http://example.com)
+#### Deploy a taxonomy term sets
+[TEST.CanDeploySimpleTaxonomyTermSets]

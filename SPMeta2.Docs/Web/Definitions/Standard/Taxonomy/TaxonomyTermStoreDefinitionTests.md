@@ -1,26 +1,25 @@
-<!-- M2-TODO -->
 <properties
 	  pageTitle="TaxonomyTermStoreDefinition"
     pageName="TaxonomyTermStoreDefinition"
-    parentPageId="3981"
+    parentPageId="12821"
 />
 
 ###Provision scenario
-SCENARIO
+We should be able to lookup an **existing taxonomy term store** to provision term groups, term sets and terms.
 
 ###Scope
-SCOPE
+Should be deployed under site.
 
 ###Implementation
-IMPLEMENTATION
+Term store lookup is enabled via TaxonomyTermStoreDefinition object.
+
+Both CSOM/SSOM object models are supported. 
+
+Provision used Name, Id or UseDefaultSiteCollectionTermStore properties to lookup **existing termstore**. 
 
 ###Samples
-A SAMPLE 1
-[TEST.TestFunctionName1]
+#### Lookup existing term store by Name
+[TEST.LookupTermStoreByName]
 
-A SAMPLE 2
-[TEST.TestFunctionName2]
-
-###Links
-- [link 1](http://example.com)
-- [link 2](http://example.com)
+#### Lookup default site term store
+[TEST.LookupDefaultSiteTermStore]

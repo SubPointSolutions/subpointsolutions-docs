@@ -1,6 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SPMeta2.Definitions;
 using SPMeta2.Docs.ProvisionSamples.Base;
 using SPMeta2.Docs.ProvisionSamples.Definitions;
+using SPMeta2.Enumerations;
 using SPMeta2.Syntax.Default;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
@@ -9,6 +11,35 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
     public class WebDefinitionTest : ProvisionTestBase
     {
         #region methods
+
+        [TestMethod]
+        [TestCategory("Docs.WebDefinition")]
+        public void CanDeploySimpleWeb()
+        {
+            var newCustomerWeb = new WebDefinition
+            {
+                Title = "New customer site",
+                Description = "A dedicated site for the customer support.",
+                Url = "new-customer-web",
+                WebTemplate = BuiltInWebTemplates.Collaboration.TeamSite
+            };
+            var newPublishingWeb = new WebDefinition
+            {
+                Title = "Temporary Publishing Web",
+                Description = "A temporary punlishing web.",
+                Url = "new-publishing-web",
+                WebTemplate = BuiltInWebTemplates.Publishing.PublishingPortal
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =>
+            {
+                web.AddWeb(newCustomerWeb);
+                web.AddWeb(newPublishingWeb);
+            });
+
+            DeployModel(model);
+        }
+
 
         [TestMethod]
         [TestCategory("Docs.WebDefinition")]

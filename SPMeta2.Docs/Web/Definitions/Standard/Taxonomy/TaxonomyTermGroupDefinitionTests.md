@@ -1,26 +1,23 @@
-<!-- M2-TODO -->
 <properties
 	  pageTitle="TaxonomyTermGroupDefinition"
     pageName="TaxonomyTermGroupDefinition"
-    parentPageId="3981"
+    parentPageId="12821"
 />
 
 ###Provision scenario
-SCENARIO
+We should be able to deploy taxonomy groups.
 
 ###Scope
-SCOPE
+Should be deployed under taxonomy term store.
 
 ###Implementation
-IMPLEMENTATION
+Both CSOM/SSOM object models are supported. 
+
+Provision checks if group exists, and then creates a new one.
 
 ###Samples
-A SAMPLE 1
-[TEST.TestFunctionName1]
+#### Deploy a taxonomy group
+[TEST.CanDeploySimpleTaxonomyGroup]
 
-A SAMPLE 2
-[TEST.TestFunctionName2]
-
-###Links
-- [link 1](http://example.com)
-- [link 2](http://example.com)
+#### Deploy taxonomy groups
+[TEST.CanDeploySimpleTaxonomyGroups]

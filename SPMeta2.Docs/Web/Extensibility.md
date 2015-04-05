@@ -10,8 +10,8 @@ We support provisioning of more than hundred artifacts, support SharePoint 2010,
 
 Before you begin, make sure you are familiar with the following concepts:
 
-* [SPMeta basics](http://docs.subpointsolutions.com/spmeta2/basics/)
-* [SPMeta definitions](http://docs.subpointsolutions.com/spmeta2/definitions/)
+* [SPMeta2 basics](http://docs.subpointsolutions.com/spmeta2/basics/)
+* [SPMeta2 definitions](http://docs.subpointsolutions.com/spmeta2/definitions/)
 
 SPMeta2 API can be extended to meet specific project needs in the following ways:
 

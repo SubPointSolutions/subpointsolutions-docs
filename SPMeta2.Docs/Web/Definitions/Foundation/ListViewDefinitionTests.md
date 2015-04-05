@@ -1,4 +1,3 @@
-<!-- M2-TODO -->
 <properties
 	  pageTitle="ListViewDefinition"
     pageName="ListViewDefinition"
@@ -6,21 +5,23 @@
 />
 
 ###Provision scenario
-SCENARIO
+We should be able to provision a SharePoint list view.
 
-###Scope
-SCOPE
+###Scope 
+Can be added under list.
 
 ###Implementation
-IMPLEMENTATION
+List view provision is enabled via ListViewDefinition object.
+
+Both CSOM/SSOM object models are supported. Provision checks if list view exists looking up it by Url property, then by Title, and the creates a new list definition. You can deploy either single list view or a set of the list views using AddListView() extension method as per following examples.
 
 ###Samples
-A SAMPLE 1
-[TEST.TestFunctionName1]
 
-A SAMPLE 2
-[TEST.TestFunctionName2]
+#### Simple list view
+[TEST.CanDeploySimpleListViews]
 
-###Links
-- [link 1](http://example.com)
-- [link 2](http://example.com)
+#### List view with custom URL
+[TEST.CanDeploySimpleListViewsWithCustomUrl]
+
+#### List view with CAML query
+[TEST.CanDeploySimpleListViewsWithCAMLQuery]

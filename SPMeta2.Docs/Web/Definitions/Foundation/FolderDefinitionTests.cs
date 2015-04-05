@@ -1,6 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SPMeta2.Definitions;
 using SPMeta2.Docs.ProvisionSamples.Base;
 using SPMeta2.Docs.ProvisionSamples.Definitions;
+using SPMeta2.Enumerations;
 using SPMeta2.Syntax.Default;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
@@ -9,6 +11,41 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
     public class FolderDefinitionTests : ProvisionTestBase
     {
         #region methods
+
+        [TestMethod]
+        [TestCategory("Docs.FolderDefinition")]
+        public void CanDeploySimpleFolders()
+        {
+            var activeDocsFolder = new FolderDefinition
+            {
+                Name = "Active documents"
+            };
+
+            var archiveFolder = new FolderDefinition
+            {
+                Name = "Archive"
+            };
+
+            var listWithFolders = new ListDefinition
+            {
+                Title = "List with folders",
+                Description = "Custom list with folders.",
+                TemplateType = BuiltInListTemplateTypeId.GenericList,
+                Url = "ListWithFolders"
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =>
+            {
+                web.AddList(listWithFolders, list =>
+                {
+                    list
+                        .AddFolder(activeDocsFolder)
+                        .AddFolder(archiveFolder);
+                });
+            });
+
+            DeployModel(model);
+        }
 
         [TestMethod]
         [TestCategory("Docs.FolderDefinition")]

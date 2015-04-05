@@ -1,7 +1,11 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SPMeta2.Definitions;
 using SPMeta2.Docs.ProvisionSamples.Base;
+using SPMeta2.Docs.ProvisionSamples.Consts;
 using SPMeta2.Docs.ProvisionSamples.Definitions;
+using SPMeta2.Enumerations;
 using SPMeta2.Syntax.Default;
+using System;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
@@ -9,6 +13,48 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
     public class ContentTypeDefinitionTests : ProvisionTestBase
     {
         #region methods
+
+        [TestMethod]
+        [TestCategory("Docs.ContentTypeDefinition")]
+        public void CanDeploySimpleListContentType()
+        {
+            var listContentType = new ContentTypeDefinition
+            {
+                Name = "Custom list item",
+                Id = new Guid("79658c1e-3096-4c44-bd55-4228d01a5b97"),
+                ParentContentTypeId = BuiltInContentTypeId.Item,
+                Group = "SPMeta2.Samples"
+            };
+
+            var model = SPMeta2Model.NewSiteModel(site =>
+            {
+                site
+                   .AddContentType(listContentType);
+            });
+
+            DeployModel(model);
+        }
+
+        [TestMethod]
+        [TestCategory("Docs.ContentTypeDefinition")]
+        public void CanDeploySimpleDocumentContentType()
+        {
+            var documentContentType = new ContentTypeDefinition
+            {
+                Name = "Custom document",
+                Id = new Guid("008e7c50-a271-4fcd-9f01-f18daad5bd7e"),
+                ParentContentTypeId = BuiltInContentTypeId.Document,
+                Group = "SPMeta2.Samples"
+            };
+
+            var model = SPMeta2Model.NewSiteModel(site =>
+            {
+                site
+                   .AddContentType(documentContentType);
+            });
+
+            DeployModel(model);
+        }
 
         [TestMethod]
         [TestCategory("Docs.ContentTypeDefinition")]
@@ -50,6 +96,37 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                           .AddContentTypeFieldLink(DocFields.Clients.ClientDescription)
                           .AddContentTypeFieldLink(DocFields.Clients.ClientNumber);
                    });
+            });
+
+            DeployModel(model);
+        }
+
+        [TestMethod]
+        [TestCategory("Docs.ContentTypeDefinition")]
+        public void CanDeployHierarhicalContentTypes()
+        {
+            var rootDocumentContentType = new ContentTypeDefinition
+            {
+                Name = "A root document",
+                Id = new Guid("b0ec3794-8bf3-49ed-b8d1-24a4df5ac75b"),
+                ParentContentTypeId = BuiltInContentTypeId.Document,
+                Group = "SPMeta2.Samples"
+            };
+
+            var childDocumentContentType = new ContentTypeDefinition
+            {
+                Name = "A child document",
+                Id = new Guid("84ab43ee-1f9d-4436-a9de-868bd7a36400"),
+                // use GetContentTypeId() to get the content type ID and refer as a parent ID
+                ParentContentTypeId = rootDocumentContentType.GetContentTypeId(),
+                Group = "SPMeta2.Samples"
+            };
+
+            var model = SPMeta2Model.NewSiteModel(site =>
+            {
+                site
+                   .AddContentType(rootDocumentContentType)
+                   .AddContentType(childDocumentContentType);
             });
 
             DeployModel(model);

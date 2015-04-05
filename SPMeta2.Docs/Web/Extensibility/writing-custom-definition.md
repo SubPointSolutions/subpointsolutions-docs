@@ -8,19 +8,19 @@ This article provides basics on creating a custom definion and model handler for
 
 Before you begin, make sure you are familiar with the following concepts:
 
-* [SPMeta basics](http://docs.subpointsolutions.com/spmeta2/basics/)
-* [SPMeta definitions](http://docs.subpointsolutions.com/spmeta2/definitions/)
+* [SPMeta2 basics](http://docs.subpointsolutions.com/spmeta2/basics/)
+* [SPMeta2 definitions](http://docs.subpointsolutions.com/spmeta2/definitions/)
 
-## Overview
-
-
-## Creating definition
+### Overview
 
 
-## Creating model handlers
+### Creating definition
 
 
-## Registering model handlers 
+### Creating model handlers
+
+
+### Registering model handlers 
 
 
 

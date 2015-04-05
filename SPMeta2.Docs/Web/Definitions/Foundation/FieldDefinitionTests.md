@@ -8,7 +8,7 @@
 We should be able to provision a single SharePoint site field as well as set of fields by given properties.
 
 ###Scope
-Should be deployed under site.
+Should be deployed under site or list.
 
 ###Implementation
 Site field provision is enabled via FieldDefinition object.
@@ -18,5 +18,12 @@ Both CSOM/SSOM object models are supported. Provision checks if field exists loo
 We suggest to use BuiltInFieldTypes to benefit OOTB SharePoint field types.
 
 ###Samples
-Site fields deployment sample
+
+#### Ssimple fields deployment
 [TEST.CanDeploySimpleFields]
+
+#### Site fields deployment
+[TEST.CanDeploySiteFields]
+
+#### List fields deployment
+[TEST.CanDeployListFields]

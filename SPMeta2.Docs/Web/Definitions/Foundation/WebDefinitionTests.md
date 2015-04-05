@@ -1,6 +1,6 @@
 ﻿<properties 
 	pageTitle="WebDefinition" 
-    pageName="web-definition"
+    pageName="webdefinition"
     parentPageId="12771"
 />
 
@@ -16,8 +16,12 @@ Web provision is enabled via WebDefinition object.
 Both CSOM/SSOM object models are supported. Provision checks if a web site exists, then creates a new web site using provided definition. You can deploy either single web site or a hierarchy of the web sites using AddWeb() extension method and nesting as per following examples.
 
 ###Samples
-Single web site provision
+
+#### Single web site provision
+[TEST.CanDeploySimpleWeb]
+
+#### Single web site provision
 [TEST.CanDeploySimpleWebs]
 
-Web hierarchy provision
+#### Web hierarchy provision
 [TEST.CanDeployHierarchicalWebs]
