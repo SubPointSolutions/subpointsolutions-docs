@@ -1,6 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SPMeta2.Definitions;
+using SPMeta2.Docs.ProvisionSamples.Attributes;
 using SPMeta2.Docs.ProvisionSamples.Base;
+using SPMeta2.Docs.ProvisionSamples.Consts;
 using SPMeta2.Docs.ProvisionSamples.Definitions;
 using SPMeta2.Enumerations;
 using SPMeta2.Syntax.Default;
@@ -11,6 +13,13 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
     public class FolderDefinitionTests : ProvisionTestBase
     {
         #region methods
+
+        [SampleMetadata(
+          Title = "Adding folders",
+          Description = "",
+          Order = 100,
+          CatagoryAlias = SampleCategory.SharePointFoundation,
+          GroupAlias = SampleGroups.List)]
 
         [TestMethod]
         [TestCategory("Docs.FolderDefinition")]
@@ -47,6 +56,13 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
             DeployModel(model);
         }
 
+        [SampleMetadata(
+          Title = "Adding folders to list",
+          Description = "",
+          Order = 100,
+          CatagoryAlias = SampleCategory.SharePointFoundation,
+          GroupAlias = SampleGroups.Folders)]
+
         [TestMethod]
         [TestCategory("Docs.FolderDefinition")]
         public void CanDeploySimpleFolderList()
@@ -64,6 +80,13 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
             DeployModel(model);
         }
+
+        [SampleMetadata(
+          Title = "Adding hierarchical folders",
+          Description = "",
+          Order = 100,
+          CatagoryAlias = SampleCategory.SharePointFoundation,
+          GroupAlias = SampleGroups.Folders)]
 
         [TestMethod]
         [TestCategory("Docs.FolderDefinition")]

@@ -5,6 +5,9 @@ using SPMeta2.Docs.ProvisionSamples.Definitions;
 using SPMeta2.Enumerations;
 using SPMeta2.Syntax.Default;
 using System;
+using System.ComponentModel;
+using SPMeta2.Docs.ProvisionSamples.Attributes;
+using SPMeta2.Docs.ProvisionSamples.Consts;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
@@ -15,6 +18,12 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.FieldDefinition")]
+        [SampleMetadata(
+            Title = "Adding site fields",
+            Description = "Demonstrates basic field provision.",
+            Order = 10,
+            CatagoryAlias = SampleCategory.SharePointFoundation,
+            GroupAlias = SampleGroups.SiteCollection)]
         public void CanDeploySimpleFields()
         {
             var textField = new FieldDefinition
@@ -47,6 +56,12 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.FieldDefinition")]
+        [SampleMetadata(
+            Title = "Site fields provision",
+            Description = "Demonstrates site field provision syntax.",
+            Order = 20,
+            CatagoryAlias = SampleCategory.SharePointFoundation,
+            GroupAlias = SampleGroups.SiteCollection)]
         public void CanDeploySiteFields()
         {
             var model = SPMeta2Model.NewSiteModel(site =>
@@ -62,8 +77,16 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
             DeployModel(model);
         }
 
+        
+
         [TestMethod]
         [TestCategory("Docs.FieldDefinition")]
+        [SampleMetadata(
+           Title = "Adding list fields",
+           Description = "Demonstrates list field provision.",
+           Order = 30,
+           CatagoryAlias = SampleCategory.SharePointFoundation,
+           GroupAlias = SampleGroups.List)]
         public void CanDeployListFields()
         {
             var textField = new FieldDefinition

@@ -14,8 +14,26 @@ custom actions, security groups, permission levels, web parts, wiki pages, web p
 Sounds exciting? Have a look around, let us know how it goes.
 
 ###Next steps
+
+####Learn basics
+
 * [Learn the basics](http://docs.subpointsolutions.com/spmeta2/basics)
 * [Get started from scratch](http://docs.subpointsolutions.com/spmeta2/basics/getting-started/)
+
+####Have a closer look
+* [Definitions concept](http://docs.subpointsolutions.com/spmeta2/definitions)
+* [Models concept](http://docs.subpointsolutions.com/spmeta2/models)
+* [SharePoint Foundation provision](http://docs.subpointsolutions.com/spmeta2/definitions/sharepoint-foundation/)
+* [SharePoint Standard provision](http://docs.subpointsolutions.com/spmeta2/definitions/sharepoint-standard/)
+* [Useful utils](http://docs.subpointsolutions.com/spmeta2/utils)
+
+####Get a cup of coffee and dive into extensibility
+* [Extensibility overview](http://docs.subpointsolutions.com/spmeta2/extensibility/)
+* [Custom syntax](http://docs.subpointsolutions.com/spmeta2/extensibility/writing-custom-syntax/)
+* [Custom definition and model handler](http://docs.subpointsolutions.com/spmeta2/extensibility/writing-custom-definition/)
+
+#### Forget everything and check useful scenarios
+* [Provision scenarios](http://docs.subpointsolutions.com/spmeta2/scenarios)
 
 ###Contributions
 Out team is keen to improve the SPMeta2 along with documentation. Here is how you can contribute and take this library to the next level:

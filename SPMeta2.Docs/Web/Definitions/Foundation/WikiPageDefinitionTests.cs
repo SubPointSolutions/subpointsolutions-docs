@@ -1,6 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SPMeta2.BuiltInDefinitions;
+using SPMeta2.Docs.ProvisionSamples.Attributes;
 using SPMeta2.Docs.ProvisionSamples.Base;
+using SPMeta2.Docs.ProvisionSamples.Consts;
 using SPMeta2.Docs.ProvisionSamples.Definitions;
 using SPMeta2.Syntax.Default;
 
@@ -10,6 +12,13 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
     public class WikiPageDefinitionTests : ProvisionTestBase
     {
         #region methods
+
+        [SampleMetadata(
+          Title = "Adding wiki pages to 'Site Pages' library",
+          Description = "",
+          Order = 100,
+          CatagoryAlias = SampleCategory.SharePointFoundation,
+          GroupAlias = SampleGroups.WikiPages)]
 
         [TestMethod]
         [TestCategory("Docs.WikiPageDefinition")]
@@ -27,6 +36,13 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
             DeployModel(model);
         }
+
+        [SampleMetadata(
+          Title = "Adding wiki pages to a folder",
+          Description = "",
+          Order = 100,
+          CatagoryAlias = SampleCategory.SharePointFoundation,
+          GroupAlias = SampleGroups.WikiPages)]
 
         [TestMethod]
         [TestCategory("Docs.WikiPageDefinition")]

@@ -6,6 +6,8 @@ using SPMeta2.Enumerations;
 using SPMeta2.Syntax.Default;
 using System.Collections.ObjectModel;
 using System.Text;
+using SPMeta2.Docs.ProvisionSamples.Attributes;
+using SPMeta2.Docs.ProvisionSamples.Consts;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
@@ -13,6 +15,13 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
     public class ListViewDefinitionTests : ProvisionTestBase
     {
         #region methods
+
+        [SampleMetadata(
+        Title = "Adding list views",
+        Description = "",
+        Order = 100,
+        CatagoryAlias = SampleCategory.SharePointFoundation,
+        GroupAlias = SampleGroups.List)]
 
         [TestMethod]
         [TestCategory("Docs.ListViewDefinition")]
@@ -59,6 +68,13 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
             DeployModel(model);
         }
 
+        [SampleMetadata(
+         Title = "Adding list view with custom URL",
+         Description = "",
+         Order = 100,
+         CatagoryAlias = SampleCategory.SharePointFoundation,
+         GroupAlias = SampleGroups.ListViews)]
+
         [TestMethod]
         [TestCategory("Docs.ListViewDefinition")]
         public void CanDeploySimpleListViewsWithCustomUrl()
@@ -92,6 +108,13 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
             DeployModel(model);
         }
+
+        [SampleMetadata(
+         Title = "Adding list view with custom CAML",
+         Description = "",
+         Order = 100,
+         CatagoryAlias = SampleCategory.SharePointFoundation,
+         GroupAlias = SampleGroups.ListViews)]
 
         [TestMethod]
         [TestCategory("Docs.ListViewDefinition")]

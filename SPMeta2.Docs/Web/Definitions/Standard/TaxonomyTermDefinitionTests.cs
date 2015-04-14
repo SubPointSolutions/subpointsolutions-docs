@@ -1,5 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SPMeta2.Docs.ProvisionSamples.Attributes;
 using SPMeta2.Docs.ProvisionSamples.Base;
+using SPMeta2.Docs.ProvisionSamples.Consts;
 using SPMeta2.Docs.ProvisionSamples.Definitions;
 using SPMeta2.Standard.Definitions.Taxonomy;
 using SPMeta2.Syntax.Default;
@@ -12,6 +14,12 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
     {
         #region methods
 
+        [SampleMetadata(
+         Title = "Adding terms",
+         Description = "",
+         Order = 200,
+         CatagoryAlias = SampleCategory.SharePointStandard,
+         GroupAlias = SampleGroups.TermStore)]
         [TestMethod]
         [TestCategory("Docs.TaxonomyTermDefinition")]
         public void CanDeploySimpleTaxonomyTerms()

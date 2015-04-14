@@ -1,7 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SPMeta2.BuiltInDefinitions;
 using SPMeta2.Definitions;
+using SPMeta2.Docs.ProvisionSamples.Attributes;
 using SPMeta2.Docs.ProvisionSamples.Base;
+using SPMeta2.Docs.ProvisionSamples.Consts;
 using SPMeta2.Docs.ProvisionSamples.Definitions;
 using SPMeta2.Enumerations;
 using SPMeta2.Syntax.Default;
@@ -12,6 +14,14 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
     public class ListDefinitionTests : ProvisionTestBase
     {
         #region methods
+
+
+        [SampleMetadata(
+            Title = "Adding list by template id",
+            Description = "",
+            Order = 100,
+            CatagoryAlias = SampleCategory.SharePointFoundation,
+            GroupAlias = SampleGroups.Web)]
 
         [TestMethod]
         [TestCategory("Docs.ListDefinition")]
@@ -42,6 +52,13 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
             DeployModel(model);
         }
 
+        [SampleMetadata(
+          Title = "Adding list by template name",
+          Description = "",
+          Order = 110,
+          CatagoryAlias = SampleCategory.SharePointFoundation,
+          GroupAlias = SampleGroups.Web)]
+
         [TestMethod]
         [TestCategory("Docs.ListDefinition")]
         public void CanDeployListByTemplateName()
@@ -63,6 +80,13 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         }
 
 
+        [SampleMetadata(
+          Title = "Provisioning 'Style Library'",
+          Description = "",
+          Order = 100,
+          CatagoryAlias = SampleCategory.SharePointFoundation,
+          GroupAlias = SampleGroups.Web)]
+
         [TestMethod]
         [TestCategory("Docs.ListDefinition")]
         public void CanDeployStyleLibrary()
@@ -78,6 +102,13 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
             DeployModel(model);
         }
 
+
+        [SampleMetadata(
+          Title = "Provisioning OOTB lists",
+          Description = "",
+          Order = 100,
+          CatagoryAlias = SampleCategory.SharePointFoundation,
+          GroupAlias = SampleGroups.Web)]
 
         [TestMethod]
         [TestCategory("Docs.ListDefinition")]
@@ -108,6 +139,13 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
             DeployModel(model);
         }
+
+        [SampleMetadata(
+         Title = "Adding multiple lists",
+         Description = "",
+         Order = 100,
+         CatagoryAlias = SampleCategory.SharePointFoundation,
+         GroupAlias = SampleGroups.Web)]
 
         [TestMethod]
         [TestCategory("Docs.ListDefinition")]

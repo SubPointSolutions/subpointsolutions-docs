@@ -1,5 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SPMeta2.Docs.ProvisionSamples.Attributes;
 using SPMeta2.Docs.ProvisionSamples.Base;
+using SPMeta2.Docs.ProvisionSamples.Consts;
 using SPMeta2.Docs.ProvisionSamples.Definitions;
 using SPMeta2.Standard.Definitions.Taxonomy;
 using SPMeta2.Syntax.Default;
@@ -12,6 +14,12 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
     {
         #region methods
 
+        [SampleMetadata(
+         Title = "Lookup term store by name",
+         Description = "",
+         Order = 10,
+         CatagoryAlias = SampleCategory.SharePointStandard,
+         GroupAlias = SampleGroups.SiteCollection)]
         [TestMethod]
         [TestCategory("Docs.TaxonomyTermStoreDefinition")]
         public void LookupTermStoreByName()
@@ -32,6 +40,12 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
             DeployModel(model);
         }
 
+        [SampleMetadata(
+         Title = "Lookup default site term store",
+         Description = "",
+         Order = 20,
+         CatagoryAlias = SampleCategory.SharePointStandard,
+         GroupAlias = SampleGroups.SiteCollection)]
         [TestMethod]
         [TestCategory("Docs.TaxonomyTermStoreDefinition")]
         public void LookupDefaultSiteTermStore()

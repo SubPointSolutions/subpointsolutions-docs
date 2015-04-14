@@ -6,7 +6,7 @@
 SPMeta2 is a hassle-free fluent API for code-based SharePoint artefact provisioning.
 It offers a consistent provisioning API via SSOM/CSOM for SharePoin 2010, 2013 and O365.
 
-The library provides an abstraction level over SharePoint API, so it is highly desired to understand a few concepts on which SPMeta2 library is built.
+The library provides an abstraction level over SharePoint API, so it is highly desired to understand a few concepts on which SPMeta2 library is built - definitions, models and provision services.
 
 ### A big picture
 Here is a big pucture on how SPMeta2 library works.
@@ -23,7 +23,7 @@ Don not focus on understanding every single bit of the code, it will be much cle
 
 [TEST.ABigPictureSample]
 
-### Zoom in, 1/3 scale
+### Zoom in, 1/3 scale - definitions
 
 Let's zoom in and have a closer look.
 SPMeta2 provides c# POCP objects, we call them **definitions** for every SharePoint artifact.
@@ -44,7 +44,7 @@ Don't focus on understanding every single bit of the code, it will be much clear
 
 [TEST.ABigPictureSample]
 
-### Zoom in, 2/3 scale
+### Zoom in, 2/3 scale - models
 
 All SharePoint artifacts have relationships between each other.
 For intance, here a few to mentions:
@@ -76,7 +76,7 @@ Don't focus on understanding every single bit of the code, it will be much clear
 
 [TEST.ABigPictureSample]
 
-### Zoom in, 3/3 scale
+### Zoom in, 3/3 scale - provision services
 
 We can have SharePoint 2010, SharePoint 2013 or SharePoint Online along with either SSOM or CSOM API.
 SPMeta2 supports both SSOM and CSOM API abstracting them via 'provisioning services' implementations.

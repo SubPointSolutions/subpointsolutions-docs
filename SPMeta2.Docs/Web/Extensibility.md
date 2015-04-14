@@ -20,5 +20,5 @@ SPMeta2 API can be extended to meet specific project needs in the following ways
 * Custom logging provider 
 
 ### Next steps
-* [Writing a custom definition for SPMeta2 library]()
-
+* [Writing a custom syntax extension](http://docs.subpointsolutions.com/spmeta2/extensibility/writing-custom-syntax/)
+* [Writing a custom definition](http://docs.subpointsolutions.com/spmeta2/extensibility/writing-custom-definition/)

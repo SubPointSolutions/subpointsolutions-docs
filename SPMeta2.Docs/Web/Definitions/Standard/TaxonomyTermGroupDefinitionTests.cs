@@ -1,5 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SPMeta2.Docs.ProvisionSamples.Attributes;
 using SPMeta2.Docs.ProvisionSamples.Base;
+using SPMeta2.Docs.ProvisionSamples.Consts;
 using SPMeta2.Docs.ProvisionSamples.Definitions;
 using SPMeta2.Standard.Definitions.Taxonomy;
 using SPMeta2.Syntax.Default;
@@ -11,6 +13,13 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
     public class TaxonomyTermGroupDefinitionTests : ProvisionTestBase
     {
         #region methods
+
+        [SampleMetadata(
+            Title = "Adding term group",
+            Description = "",
+            Order = 10,
+            CatagoryAlias = SampleCategory.SharePointStandard,
+            GroupAlias = SampleGroups.TermStore)]
 
         [TestMethod]
         [TestCategory("Docs.TaxonomyTermGroupDefinition")]
@@ -38,6 +47,12 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
             DeployModel(model);
         }
 
+        [SampleMetadata(
+            Title = "Adding multiple term group",
+            Description = "",
+            Order = 10,
+            CatagoryAlias = SampleCategory.SharePointStandard,
+            GroupAlias = SampleGroups.TermStore)]
         [TestMethod]
         [TestCategory("Docs.TaxonomyTermGroupDefinition")]
         public void CanDeploySimpleTaxonomyGroups()

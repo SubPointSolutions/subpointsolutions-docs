@@ -1,6 +1,6 @@
 ﻿<properties 
-	pageTitle="WebDefinition" 
-    pageName="web-definition"
+	pageTitle="WikiPageDefinition" 
+    pageName="WikiPageDefinition"
     parentPageId="12771"
 />
 
@@ -19,9 +19,4 @@ Content property gets copied to the wiki page via “SPBuiltInFieldId.WikiField�
 
 Nesting under folders is supported as well.
 
-###Samples
-Wiki pages provision under a giving list
-[TEST.CanDeploySimpleWikiPages]
-
-Wiki pages provision under giving folders
-[TEST.CanDeployWikiPagesUnderFolder]
+[LIST.SAMPLES]

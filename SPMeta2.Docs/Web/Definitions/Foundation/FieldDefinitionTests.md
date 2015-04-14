@@ -1,5 +1,5 @@
 ﻿<properties 
-	  pageTitle="FieldDefinition" 
+	pageTitle="FieldDefinition" 
     pageName="FieldDefinition"
     parentPageId="12771"
 />
@@ -17,13 +17,4 @@ Both CSOM/SSOM object models are supported. Provision checks if field exists loo
 
 We suggest to use BuiltInFieldTypes to benefit OOTB SharePoint field types.
 
-###Samples
-
-#### Ssimple fields deployment
-[TEST.CanDeploySimpleFields]
-
-#### Site fields deployment
-[TEST.CanDeploySiteFields]
-
-#### List fields deployment
-[TEST.CanDeployListFields]
+[LIST.SAMPLES]

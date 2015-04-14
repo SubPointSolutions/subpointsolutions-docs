@@ -17,9 +17,4 @@ Both CSOM/SSOM object models are supported.
 
 Provision used Name, Id or UseDefaultSiteCollectionTermStore properties to lookup **existing termstore**. 
 
-###Samples
-#### Lookup existing term store by Name
-[TEST.LookupTermStoreByName]
-
-#### Lookup default site term store
-[TEST.LookupDefaultSiteTermStore]
+[LIST.SAMPLES]

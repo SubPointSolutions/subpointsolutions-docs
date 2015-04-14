@@ -1,6 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SPMeta2.Definitions;
+using SPMeta2.Docs.ProvisionSamples.Attributes;
 using SPMeta2.Docs.ProvisionSamples.Base;
+using SPMeta2.Docs.ProvisionSamples.Consts;
 using SPMeta2.Docs.ProvisionSamples.Definitions;
 using SPMeta2.Enumerations;
 using SPMeta2.Syntax.Default;
@@ -14,6 +16,14 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.WebDefinition")]
+
+        [SampleMetadata(
+           Title = "Adding web",
+           Description = "",
+           Order = 30,
+           CatagoryAlias = SampleCategory.SharePointFoundation,
+           GroupAlias = SampleGroups.Web)]
+
         public void CanDeploySimpleWeb()
         {
             var newCustomerWeb = new WebDefinition
@@ -55,8 +65,16 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         }
 
 
+
         [TestMethod]
         [TestCategory("Docs.WebDefinition")]
+        [SampleMetadata(
+          Title = "Adding web hierarchy",
+          Description = "",
+          Order = 50,
+          CatagoryAlias = SampleCategory.SharePointFoundation,
+          GroupAlias = SampleGroups.Web)]
+
         public void CanDeployHierarchicalWebs()
         {
             var model = SPMeta2Model.NewWebModel(web =>

@@ -2,7 +2,7 @@
 <properties
 	  pageTitle="TaxonomyTermLabelDefinition"
     pageName="TaxonomyTermLabelDefinition"
-    parentPageId="3981"
+    parentPageId="12821"
 />
 
 ###Provision scenario

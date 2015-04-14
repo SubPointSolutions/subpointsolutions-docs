@@ -6,6 +6,7 @@ using SPMeta2.Docs.ProvisionSamples.Definitions;
 using SPMeta2.Enumerations;
 using SPMeta2.Syntax.Default;
 using System;
+using SPMeta2.Docs.ProvisionSamples.Attributes;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
@@ -14,6 +15,12 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
     {
         #region methods
 
+        [SampleMetadata(
+            Title = "Adding list item content type",
+            Description = "",
+            Order = 500,
+            CatagoryAlias = SampleCategory.SharePointFoundation,
+            GroupAlias = SampleGroups.SiteCollection)]
         [TestMethod]
         [TestCategory("Docs.ContentTypeDefinition")]
         public void CanDeploySimpleListContentType()
@@ -35,6 +42,12 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
             DeployModel(model);
         }
 
+        [SampleMetadata(
+            Title = "Adding document item content type",
+            Description = "",
+            Order = 510,
+            CatagoryAlias = SampleCategory.SharePointFoundation,
+            GroupAlias = SampleGroups.SiteCollection)]
         [TestMethod]
         [TestCategory("Docs.ContentTypeDefinition")]
         public void CanDeploySimpleDocumentContentType()
@@ -70,6 +83,12 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
             DeployModel(model);
         }
 
+        [SampleMetadata(
+            Title = "Adding site fields",
+            Description = "",
+            Order = 500,
+            CatagoryAlias = SampleCategory.SharePointFoundation,
+            GroupAlias = SampleGroups.ContentType)]
         [TestMethod]
         [TestCategory("Docs.ContentTypeDefinition")]
         public void CanDeploySimpleContentTypesWithFields()
@@ -101,6 +120,12 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
             DeployModel(model);
         }
 
+        [SampleMetadata(
+            Title = "Adding parent-child content types",
+            Description = "",
+            Order = 500,
+            CatagoryAlias = SampleCategory.SharePointFoundation,
+            GroupAlias = SampleGroups.SiteCollection)]
         [TestMethod]
         [TestCategory("Docs.ContentTypeDefinition")]
         public void CanDeployHierarhicalContentTypes()
