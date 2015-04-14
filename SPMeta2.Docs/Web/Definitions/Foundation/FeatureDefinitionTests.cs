@@ -1,7 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SPMeta2.Definitions;
+using SPMeta2.Docs.ProvisionSamples.Attributes;
 using SPMeta2.Docs.ProvisionSamples.Base;
+using SPMeta2.Docs.ProvisionSamples.Consts;
 using SPMeta2.Docs.ProvisionSamples.Definitions;
 using SPMeta2.Enumerations;
 using SPMeta2.Syntax.Default;
@@ -12,6 +14,14 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
     public class FeatureDefinitionTests : ProvisionTestBase
     {
         #region methods
+
+        [SampleMetadata(
+          Title = "Activating OOTB site features",
+          Description = "",
+          Order = 700,
+          CatagoryAlias = SampleCategory.SharePointFoundation,
+          GroupAlias = SampleGroups.SiteCollection)]
+
 
         [TestMethod]
         [TestCategory("Docs.FeatureDefinition")]
@@ -29,6 +39,13 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         }
 
 
+        [SampleMetadata(
+        Title = "Activating OOTB web features",
+        Description = "",
+        Order = 700,
+        CatagoryAlias = SampleCategory.SharePointFoundation,
+        GroupAlias = SampleGroups.Web)]
+
         [TestMethod]
         [TestCategory("Docs.FeatureDefinition")]
         public void CanActivateOOTBWebFeatures()
@@ -45,6 +62,15 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
             DeployModel(model);
         }
 
+
+        [SampleMetadata(
+        Title = "Deactivating OOTB web features",
+        Description = "",
+        Order = 710,
+        CatagoryAlias = SampleCategory.SharePointFoundation,
+        GroupAlias = SampleGroups.Web)]
+
+
         [TestMethod]
         [TestCategory("Docs.FeatureDefinition")]
         public void CanDeactivateOOTBWebFeatures()
@@ -57,6 +83,13 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
             DeployModel(model);
         }
+
+        [SampleMetadata(
+           Title = "Activating custom web feature",
+           Description = "",
+           Order = 720,
+           CatagoryAlias = SampleCategory.SharePointFoundation,
+           GroupAlias = SampleGroups.Web)]
 
         [TestMethod]
         [TestCategory("Docs.FeatureDefinition")]
@@ -77,6 +110,13 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
             DeployModel(model);
         }
 
+        [SampleMetadata(
+          Title = "Deactivating custom web feature",
+          Description = "",
+          Order = 725,
+          CatagoryAlias = SampleCategory.SharePointFoundation,
+          GroupAlias = SampleGroups.Web)]
+
         [TestMethod]
         [TestCategory("Docs.FeatureDefinition")]
         public void CanDeactivateCustomWebFeature()
@@ -95,6 +135,13 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
             DeployModel(model);
         }
+
+        [SampleMetadata(
+          Title = "OOTB feature inheritance",
+          Description = "",
+          Order = 740,
+          CatagoryAlias = SampleCategory.SharePointFoundation,
+          GroupAlias = SampleGroups.Web)]
 
         [TestMethod]
         [TestCategory("Docs.FeatureDefinition")]
