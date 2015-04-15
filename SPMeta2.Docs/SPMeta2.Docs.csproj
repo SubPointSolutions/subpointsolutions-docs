@@ -189,6 +189,7 @@
     <Compile Include="Web\Models\WebModel.cs" />
     <Compile Include="Web\Models\SiteModel.cs" />
     <None Include="Web\Basics\License.md" />
+    <None Include="Web\Basics\Releases\spmeta2-v1.1.80.md" />
     <None Include="Web\Basics\Releases\spmeta2-v1.1.71.md" />
     <None Include="Web\Basics\Releases\spmeta2-v1.1.70.md" />
     <None Include="Web\Basics\Releases\spmeta2-v1.1.60.md" />
