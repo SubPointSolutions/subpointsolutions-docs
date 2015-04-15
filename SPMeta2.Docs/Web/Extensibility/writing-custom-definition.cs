@@ -45,7 +45,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 });
             });
 
-            DeployModel(webModel);
+            using (var clientContext = new ClientContext(CSOMSiteUrl))
+                csomProvisionService.DeployWebModel(clientContext, webModel);
         }
 
         [TestMethod]
@@ -65,7 +66,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 });
             });
 
-            DeployModel(webModel);
+            using (var clientContext = new ClientContext(CSOMSiteUrl))
+                csomProvisionService.DeployWebModel(clientContext, webModel);
         }
 
         [TestMethod]
@@ -103,7 +105,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 });
             });
 
-            DeployModel(webModel);
+            using (var clientContext = new ClientContext(CSOMSiteUrl))
+                csomProvisionService.DeployWebModel(clientContext, webModel);
         }
 
         #endregion
@@ -126,9 +129,9 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         public override void DeployModel(object modelHost, DefinitionBase model)
         {
             var webModeHost = modelHost.WithAssertAndCast<WebModelHost>(
-                                        "model", 
+                                        "model",
                                         value => value.RequireNotNull());
-            
+
             var definition = model.WithAssertAndCast<ChangeWebTitleAndDescriptionDefinition>(
                                         "model",
                                         value => value.RequireNotNull());

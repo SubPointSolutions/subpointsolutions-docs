@@ -6,13 +6,17 @@
 />
 
 ###Provision scenario
-SCENARIO
+We should be able to provision a single web part page with OOTB or custon layout.
 
 ###Scope
-SCOPE
+Should be deployed under list.
 
 ###Implementation
-IMPLEMENTATION
+Site field provision is enabled via FieldDefinition object.
+
+Both CSOM/SSOM object models are supported. Provision checks if field exists looking up it by Id/Name property, then creates a new site field. You can deploy either single site field or a set of the field using AddField() extension method as per following examples.
+
+We suggest to use BuiltInFieldTypes to benefit OOTB SharePoint field types.
 
 ###Samples
 A SAMPLE 1

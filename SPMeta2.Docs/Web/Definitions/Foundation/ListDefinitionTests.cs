@@ -65,10 +65,10 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         {
             var contactsList = new ListDefinition
             {
-                Title = "Contacts",
-                Description = "Some contacts.",
-                TemplateName = BuiltInListTemplates.Contacts.InternalName,
-                Url = "SomeContacts"
+                Title = "Some Assert",
+                Description = "Some Assert.",
+                TemplateName = BuiltInListTemplates.AssetLibrary.InternalName,
+                Url = "SomeAssert"
             };
 
             var model = SPMeta2Model.NewWebModel(web =>

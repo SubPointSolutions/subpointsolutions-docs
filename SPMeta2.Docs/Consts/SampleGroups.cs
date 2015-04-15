@@ -25,9 +25,15 @@ namespace SPMeta2.Docs.ProvisionSamples.Consts
         public const string PublishingPages = "Publishing pages";
     }
 
+
     public static class SampleCategory
     {
         public const string SharePointFoundation = "SharePoint Foundation";
         public const string SharePointStandard = "SharePoint Standard";
+    }
+
+    public static class SampleOrder
+    {
+
     }
 }

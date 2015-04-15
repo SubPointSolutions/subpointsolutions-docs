@@ -23,7 +23,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Definitions
 
         public static ContentTypeDefinition CustomerDocument = new ContentTypeDefinition
         {
-            Name = "Customer Account",
+            Name = "Customer Document",
             Id = new Guid("6e03a8a6-b680-4f08-96a2-e901360575cb"),
             ParentContentTypeId = BuiltInContentTypeId.Document,
             Group = DocConsts.DefaultContentTypeGroup

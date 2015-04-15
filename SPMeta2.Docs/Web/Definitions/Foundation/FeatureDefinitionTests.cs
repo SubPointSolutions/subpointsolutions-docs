@@ -98,13 +98,14 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
             var myCustomerFeature = new FeatureDefinition
             {
                 Enable = true,
-                Id = new Guid("6b588ec5-3019-420a-bd40-c7aef5e4e4fc")
+                Id = new Guid("87294C72-F260-42f3-A41B-981A2FFCE37A"),
+                Scope = FeatureDefinitionScope.Web
             };
 
             var model = SPMeta2Model.NewWebModel(web =>
             {
                 web
-                    .AddSiteFeature(myCustomerFeature);
+                    .AddWebFeature(myCustomerFeature);
             });
 
             DeployModel(model);
@@ -124,13 +125,14 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
             var myCustomerFeature = new FeatureDefinition
             {
                 Enable = true,
-                Id = new Guid("6b588ec5-3019-420a-bd40-c7aef5e4e4fc")
+                Id = new Guid("87294C72-F260-42f3-A41B-981A2FFCE37A"),
+                Scope = FeatureDefinitionScope.Web
             };
 
             var model = SPMeta2Model.NewWebModel(web =>
             {
                 web
-                    .AddSiteFeature(myCustomerFeature);
+                    .AddWebFeature(myCustomerFeature);
             });
 
             DeployModel(model);

@@ -13,22 +13,26 @@ namespace SPMeta2.Docs.ProvisionSamples.Definitions
 
         public static SecurityGroupDefinition ClientManagers = new SecurityGroupDefinition
         {
-            Name = "Client Managers"
+            Name = "Client Managers",
+            Description = "Client managers groups."
         };
 
         public static SecurityGroupDefinition Interns = new SecurityGroupDefinition
         {
-            Name = "Interns"
+            Name = "Interns",
+            Description = "Interns group."
         };
 
         public static SecurityGroupDefinition ClientSupport = new SecurityGroupDefinition
         {
-            Name = "Client Support"
+            Name = "Client Support",
+            Description = "Customer support group."
         };
 
         public static SecurityGroupDefinition OrderApprovers = new SecurityGroupDefinition
         {
-            Name = "Order Approvers"
+            Name = "Order Approvers",
+            Description = "Order approvers groups."
         };
 
         #endregion

@@ -26,12 +26,14 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         {
             var auditors = new SecurityGroupDefinition
             {
-                Name = "External Auditors"
+                Name = "External Auditors",
+                Description = "External auditors group."
             };
 
             var reviewers = new SecurityGroupDefinition
             {
-                Name = "External Reviewers"
+                Name = "External Reviewers",
+                Description = "External reviewers group."
             };
 
             var model = SPMeta2Model.NewSiteModel(site =>

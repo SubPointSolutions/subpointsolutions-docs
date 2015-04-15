@@ -15,12 +15,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.WebPartDefinition")]
 
-        [SampleMetadata(
-         Title = "Adding web part page",
-         Description = "",
-         Order = 50,
-         CatagoryAlias = SampleCategory.SharePointFoundation,
-         GroupAlias = SampleGroups.WebPartPages)]
+       
 
         public void CanDeploySimpleWebPartDefinition()
         {
