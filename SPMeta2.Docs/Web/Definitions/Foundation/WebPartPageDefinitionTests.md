@@ -9,22 +9,14 @@
 We should be able to provision a single web part page with OOTB or custon layout.
 
 ###Scope
-Should be deployed under list.
+Should be deployed under list or folder.
 
 ###Implementation
-Site field provision is enabled via FieldDefinition object.
+Web part page provision via WebPartPageDefinition object.
 
-Both CSOM/SSOM object models are supported. Provision checks if field exists looking up it by Id/Name property, then creates a new site field. You can deploy either single site field or a set of the field using AddField() extension method as per following examples.
+Both CSOM/SSOM object models are supported. Provision checks if artifact exists looking up it by FileName property, then creates a new site field. 
+You can deploy either single page or a set of the pages using AddWebPartPage() extension method as per following examples.
 
-We suggest to use BuiltInFieldTypes to benefit OOTB SharePoint field types.
+We suggest to use BuiltInWebPartPageTemplates to address PageLayoutTemplate property. Use CustomPageLayout in case you need a custom web part page template.
 
-###Samples
-A SAMPLE 1
-[TEST.TestFunctionName1]
-
-A SAMPLE 2
-[TEST.TestFunctionName2]
-
-###Links
-- [link 1](http://example.com)
-- [link 2](http://example.com)
+[LIST.SAMPLES]
