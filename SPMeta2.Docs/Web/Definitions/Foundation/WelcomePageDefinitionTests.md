@@ -1,4 +1,3 @@
-<!-- M2-TODO -->
 <properties
 	  pageTitle="WelcomePageDefinition"
     pageName="WelcomePageDefinition"
@@ -6,21 +5,15 @@
 />
 
 ###Provision scenario
-SCENARIO
+We should be able to setup a welcome page for the target site, library or folder.
 
 ###Scope
-SCOPE
+Should be deployed under a web, a list or a folder.
 
 ###Implementation
-IMPLEMENTATION
+Welcome page provision is enabled via WelcomePageDefinition object.
 
-###Samples
-A SAMPLE 1
-[TEST.TestFunctionName1]
+Both CSOM/SSOM object models are supported. Using the only property Url, provision updates WelcomePage property for a target artifact - web, list or folder.
+Url should be object-related, a web related for the web, a list related and folder related for list and web accordingly.
 
-A SAMPLE 2
-[TEST.TestFunctionName2]
-
-###Links
-- [link 1](http://example.com)
-- [link 2](http://example.com)
+[LIST.SAMPLES]

@@ -24,7 +24,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.WebPartPageDefinition")]
-        public void CanDeploy_WebPartPages()
+        public void CanDeployWebPartPages()
         {
             var customersReportPage = new WebPartPageDefinition
             {
@@ -61,7 +61,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.WebPartPageDefinition")]
-        public void CanDeploy_WebPartPageWithCustomTemplate()
+        public void CanDeployWebPartPageWithCustomTemplate()
         {
             var customizedWebPartPage = new WebPartPageDefinition
             {
@@ -90,7 +90,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.WebPartPageDefinition")]
-        public void CanDeploy_WebPartPagesUnderFolders()
+        public void CanDeployWebPartPagesUnderFolders()
         {
             // clients folder and pages
             var clientsFolder = new FolderDefinition()
