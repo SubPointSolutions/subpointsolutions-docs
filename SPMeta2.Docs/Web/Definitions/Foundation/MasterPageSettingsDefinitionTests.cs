@@ -20,7 +20,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [SampleMetadata(
             Title = "Adding master page settings",
             Description = "",
-            Order = 200,
+            Order = 1000,
             CatagoryAlias = SampleCategory.SharePointFoundation,
             GroupAlias = SampleGroups.Web)]
 

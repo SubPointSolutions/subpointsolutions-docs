@@ -13,9 +13,9 @@ Should be deployed under web.
 ###Implementation
 Master page changes provision is enabled via MasterPageSettingsDefinition object.
 
-Both CSOM/SSOM object models are supported. Provision checks if object exists looking up it by XXXX property, then creates a new object. You can deploy either single object or a set of the objects using AddXXXXXX() extension method as per following examples.
+Both CSOM/SSOM object models are supported. Provision updates SiteMasterPageUrl/SystemMasterPageUrl  values of the a target web site. AddMasterPageSettings() extension method as per following examples.
 
-SiteMasterPageUrl and SystemMasterPageUrl are promted to the target web site. Both should be site relative URls, as follow:
+SiteMasterPageUrl and SystemMasterPageUrl are promted to the target web site. Both should be site relative URLs, as follow:
 
 * /_catalogs/masterpage/seattle.master
 * /_catalogs/masterpage/oslo.master
