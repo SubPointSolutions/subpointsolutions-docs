@@ -57,7 +57,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [SampleMetadata(
             Title = "Adding two level top navigation",
             Description = "",
-            Order = 10,
+            Order = 110,
             CatagoryAlias = SampleCategory.SharePointFoundation,
             GroupAlias = SampleGroups.Navigation)]
 

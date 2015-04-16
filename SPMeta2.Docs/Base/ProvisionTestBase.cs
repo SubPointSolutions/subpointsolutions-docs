@@ -47,38 +47,48 @@ namespace SPMeta2.Docs.ProvisionSamples.Base
         {
             if (EnableCSOM)
             {
-                // deploy with CSOM
-                var csomProvisionService = new StandardCSOMProvisionService();
-
-                using (var context = new ClientContext(CSOMSiteUrl))
-                {
-                    if (model.Value is SiteDefinition)
-                        csomProvisionService.DeploySiteModel(context, model);
-
-                    if (model.Value is WebDefinition)
-                        csomProvisionService.DeployWebModel(context, model);
-                }
+                DeployCSOMModel(model);
             }
 
             if (EnableSSOM)
             {
-                // deploy with SSOM
-                var ssomProvisionService = new StandardSSOMProvisionService();
+                DeploySSOMModel(model);
+            }
+        }
 
-                using (var spSite = new SPSite(SSOMSiteUrl))
-                {
-                    if (model.Value is FarmDefinition)
-                        ssomProvisionService.DeployModel(new FarmModelHost(SPFarm.Local), model);
+        protected void DeploySSOMModel(ModelNode model)
+        {
+            // deploy with SSOM
+            var ssomProvisionService = new StandardSSOMProvisionService();
 
-                    if (model.Value is WebApplicationDefinition)
-                        ssomProvisionService.DeployModel(new WebApplicationModelHost(spSite.WebApplication), model);
+            using (var spSite = new SPSite(SSOMSiteUrl))
+            {
+                if (model.Value is FarmDefinition)
+                    ssomProvisionService.DeployModel(new FarmModelHost(SPFarm.Local), model);
 
-                    if (model.Value is SiteDefinition)
-                        ssomProvisionService.DeploySiteModel(spSite, model);
+                if (model.Value is WebApplicationDefinition)
+                    ssomProvisionService.DeployModel(new WebApplicationModelHost(spSite.WebApplication), model);
 
-                    if (model.Value is WebDefinition)
-                        ssomProvisionService.DeployWebModel(spSite.RootWeb, model);
-                }
+                if (model.Value is SiteDefinition)
+                    ssomProvisionService.DeploySiteModel(spSite, model);
+
+                if (model.Value is WebDefinition)
+                    ssomProvisionService.DeployWebModel(spSite.RootWeb, model);
+            }
+        }
+
+        protected void DeployCSOMModel(ModelNode model)
+        {
+            // deploy with CSOM
+            var csomProvisionService = new StandardCSOMProvisionService();
+
+            using (var context = new ClientContext(CSOMSiteUrl))
+            {
+                if (model.Value is SiteDefinition)
+                    csomProvisionService.DeploySiteModel(context, model);
+
+                if (model.Value is WebDefinition)
+                    csomProvisionService.DeployWebModel(context, model);
             }
         }
 

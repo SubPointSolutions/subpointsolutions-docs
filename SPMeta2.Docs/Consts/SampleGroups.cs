@@ -15,11 +15,15 @@ namespace SPMeta2.Docs.ProvisionSamples.Consts
         public const string Web = "Web site";
         public const string WelcomePage = "Welcome page";
 
+        public const string Security = "Security";
+
         public const string Navigation = "Navigation";
 
         public const string List = "Lists and libraries";
         public const string ContentType = "Content types";
         public const string ListViews = "List views";
+
+        public const string WebParts = "Web parts";
 
         public const string WebPartPages = "Web part pages";
         public const string WikiPages = "Wiki pages";
@@ -28,7 +32,6 @@ namespace SPMeta2.Docs.ProvisionSamples.Consts
 
         public const string PublishingPages = "Publishing pages";
     }
-
 
     public static class SampleCategory
     {

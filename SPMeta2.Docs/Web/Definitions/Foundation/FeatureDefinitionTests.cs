@@ -124,7 +124,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         {
             var myCustomerFeature = new FeatureDefinition
             {
-                Enable = true,
+                Enable = false,
                 Id = new Guid("87294C72-F260-42f3-A41B-981A2FFCE37A"),
                 Scope = FeatureDefinitionScope.Web
             };

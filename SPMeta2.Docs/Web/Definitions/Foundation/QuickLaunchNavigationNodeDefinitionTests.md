@@ -1,4 +1,3 @@
-<!-- M2-TODO -->
 <properties
 	  pageTitle="QuickLaunchNavigationNodeDefinition"
     pageName="QuickLaunchNavigationNodeDefinition"
