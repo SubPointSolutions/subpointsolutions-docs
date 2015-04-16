@@ -17,7 +17,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Consts
 
         public const string Security = "Security";
 
-        public const string ModuleFiles = "ModuleFiles";
+        public const string ModuleFiles = "Module files";
 
         public const string Navigation = "Navigation";
 

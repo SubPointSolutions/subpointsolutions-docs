@@ -23,7 +23,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
            Description = "",
            Order = 10,
            CatagoryAlias = SampleCategory.SharePointFoundation,
-           GroupAlias = SampleGroups.SiteCollection)]
+           GroupAlias = SampleGroups.ModuleFiles)]
         public void CanDeployModuleFilesToStyleLibrary()
         {
             var cssFile = new ModuleFileDefinition
@@ -61,7 +61,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
            Description = "",
            Order = 20,
            CatagoryAlias = SampleCategory.SharePointFoundation,
-           GroupAlias = SampleGroups.SiteCollection)]
+           GroupAlias = SampleGroups.ModuleFiles)]
         public void CanDeployModuleFilesToFolders()
         {
             var cssFile = new ModuleFileDefinition
