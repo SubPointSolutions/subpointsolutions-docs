@@ -32,6 +32,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Consts
         public const string Folders = "Folders";
         public const string ListItems = "List Items";
 
+        public const string PropertyBags = "Property bags";
+
         public const string PublishingPages = "Publishing pages";
     }
 
