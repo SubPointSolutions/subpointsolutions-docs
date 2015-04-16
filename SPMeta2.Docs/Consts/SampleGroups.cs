@@ -15,6 +15,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Consts
         public const string Web = "Web site";
         public const string WelcomePage = "Welcome page";
 
+        public const string Navigation = "Navigation";
+
         public const string List = "Lists and libraries";
         public const string ContentType = "Content types";
         public const string ListViews = "List views";

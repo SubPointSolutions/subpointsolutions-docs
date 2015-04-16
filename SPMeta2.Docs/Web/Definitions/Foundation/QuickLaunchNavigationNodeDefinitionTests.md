@@ -6,21 +6,18 @@
 />
 
 ###Provision scenario
-SCENARIO
+We should be able to provision a quick launch navigation.
 
 ###Scope
-SCOPE
+Should be deployed under web.
 
 ###Implementation
-IMPLEMENTATION
+Quick launch navigation is enabled via QuickLaunchNavigation object.
 
-###Samples
-A SAMPLE 1
-[TEST.TestFunctionName1]
+Both CSOM/SSOM object models are supported. 
+Provision checks if object exists looking up it by Url/Name property, then creates a new one. 
+You can deploy either single site field or a set of the field using AddField() extension method as per following examples.
 
-A SAMPLE 2
-[TEST.TestFunctionName2]
+We suggest to use BuiltInFieldTypes to benefit OOTB SharePoint field types.
 
-###Links
-- [link 1](http://example.com)
-- [link 2](http://example.com)
+[LIST.SAMPLES]
