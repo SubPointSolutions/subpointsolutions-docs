@@ -6,21 +6,16 @@
 />
 
 ###Provision scenario
-SCENARIO
+We should be able to provision top navigation.
 
 ###Scope
-SCOPE
+Should be deployed under web.
 
 ###Implementation
-IMPLEMENTATION
+Top navigation is enabled via TopNavigationNodeDefinition object.
 
-###Samples
-A SAMPLE 1
-[TEST.TestFunctionName1]
+Both CSOM/SSOM object models are supported. 
+Provision checks if object exists looking up it by Url/Title property, then creates a new one. 
+You can deploy either single mode or a set of the nodes using AddTopNavigationNode() extension method as per following examples.
 
-A SAMPLE 2
-[TEST.TestFunctionName2]
-
-###Links
-- [link 1](http://example.com)
-- [link 2](http://example.com)
+[LIST.SAMPLES]

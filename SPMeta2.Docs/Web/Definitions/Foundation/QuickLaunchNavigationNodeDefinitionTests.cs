@@ -14,7 +14,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         #region methods
 
         [SampleMetadata(
-            Title = "Adding quick launch items",
+            Title = "Adding quick navigation",
             Description = "",
             Order = 10,
             CatagoryAlias = SampleCategory.SharePointFoundation,
@@ -57,7 +57,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         }
 
         [SampleMetadata(
-            Title = "Adding hierarchical quick launch items",
+            Title = "Adding two level quick navigation",
             Description = "",
             Order = 10,
             CatagoryAlias = SampleCategory.SharePointFoundation,
