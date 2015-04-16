@@ -1,4 +1,3 @@
-<!-- M2-TODO -->
 <properties
 	  pageTitle="PublishingPageDefinition"
     pageName="PublishingPageDefinition"
@@ -6,21 +5,15 @@
 />
 
 ###Provision scenario
-SCENARIO
+We should be able to provision a publishing page.
 
 ###Scope
-SCOPE
+Should be deployed under pages list.
 
 ###Implementation
-IMPLEMENTATION
+Publishing page provision is enabled via PublishingPageDefinition object.
 
-###Samples
-A SAMPLE 1
-[TEST.TestFunctionName1]
+Both CSOM/SSOM object models are supported. 
+Provision checks if object exists looking up it by Name property, then creates a new object. You can deploy either single object or a set of the objects using AddPublishingPage() extension method as per following examples.
 
-A SAMPLE 2
-[TEST.TestFunctionName2]
-
-###Links
-- [link 1](http://example.com)
-- [link 2](http://example.com)
+[LIST.SAMPLES]
