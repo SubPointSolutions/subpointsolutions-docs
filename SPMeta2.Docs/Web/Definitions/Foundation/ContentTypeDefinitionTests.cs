@@ -84,7 +84,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         }
 
         [SampleMetadata(
-            Title = "Adding site fields",
+            Title = "Adding site fields to content type",
             Description = "",
             Order = 500,
             CatagoryAlias = SampleCategory.SharePointFoundation,
