@@ -18,7 +18,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestCategory("Docs.PropertyDefinition")]
 
         [SampleMetadata(
-            Title = "Adding property bag to farm",
+            Title = "Adding to farm",
             Description = "",
             Order = 20,
             CatagoryAlias = SampleCategory.SharePointFoundation,
@@ -52,7 +52,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestCategory("Docs.PropertyDefinition")]
 
         [SampleMetadata(
-            Title = "Adding property bag to site",
+            Title = "Adding to site",
             Description = "",
             Order = 50,
             CatagoryAlias = SampleCategory.SharePointFoundation,
@@ -86,7 +86,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestCategory("Docs.PropertyDefinition")]
 
         [SampleMetadata(
-            Title = "Adding property bag to web",
+            Title = "Adding to web",
             Description = "",
             Order = 60,
             CatagoryAlias = SampleCategory.SharePointFoundation,
@@ -120,7 +120,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestCategory("Docs.PropertyDefinition")]
 
         [SampleMetadata(
-            Title = "Adding property bag to list",
+            Title = "Adding to list",
             Description = "",
             Order = 70,
             CatagoryAlias = SampleCategory.SharePointFoundation,
@@ -166,7 +166,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestCategory("Docs.PropertyDefinition")]
 
         [SampleMetadata(
-            Title = "Adding property bag to folder",
+            Title = "Adding to folder",
             Description = "",
             Order = 80,
             CatagoryAlias = SampleCategory.SharePointFoundation,

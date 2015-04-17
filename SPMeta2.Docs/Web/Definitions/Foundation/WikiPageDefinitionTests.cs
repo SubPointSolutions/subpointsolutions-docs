@@ -14,7 +14,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         #region methods
 
         [SampleMetadata(
-          Title = "Adding wiki pages to 'Site Pages' library",
+          Title = "Adding to 'Site Pages' library",
           Description = "",
           Order = 100,
           CatagoryAlias = SampleCategory.SharePointFoundation,
@@ -38,7 +38,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         }
 
         [SampleMetadata(
-          Title = "Adding wiki pages to a folder",
+          Title = "Adding to a folder",
           Description = "",
           Order = 100,
           CatagoryAlias = SampleCategory.SharePointFoundation,

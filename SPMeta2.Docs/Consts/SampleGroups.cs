@@ -35,6 +35,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Consts
         public const string PropertyBags = "Property bags";
 
         public const string PublishingPages = "Publishing pages";
+
+        public const string RootWeb = "Root web";
     }
 
     public static class SampleCategory

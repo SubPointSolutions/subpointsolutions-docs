@@ -18,7 +18,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         #region methods
 
         [SampleMetadata(
-           Title = "Adding publishing pages, OOTB layout",
+           Title = "Adding with OOTB layout",
            Description = "",
            Order = 10,
            CatagoryAlias = SampleCategory.SharePointStandard,
@@ -63,7 +63,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         }
 
         [SampleMetadata(
-           Title = "Adding publishing pages, custom layout",
+           Title = "Adding with custom layout",
            Description = "",
            Order = 20,
            CatagoryAlias = SampleCategory.SharePointStandard,
@@ -95,7 +95,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         }
 
         [SampleMetadata(
-          Title = "Adding publishing pages to folders",
+          Title = "Adding to folders",
           Description = "",
           Order = 20,
           CatagoryAlias = SampleCategory.SharePointStandard,

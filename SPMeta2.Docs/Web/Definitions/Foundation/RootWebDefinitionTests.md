@@ -1,4 +1,3 @@
-<!-- M2-TODO -->
 <properties
 	  pageTitle="RootWebDefinition"
     pageName="RootWebDefinition"
@@ -6,21 +5,21 @@
 />
 
 ###Provision scenario
-SCENARIO
+We should be able to start provision from the root web as well as update Title/Description properties.
 
 ###Scope
-SCOPE
+Should be deployed under site.
 
 ###Implementation
-IMPLEMENTATION
+Root web provision is enabled via RootWebDefinition object.
 
-###Samples
-A SAMPLE 1
-[TEST.TestFunctionName1]
+There are two cases for which RootWebDefinition could be of use:
 
-A SAMPLE 2
-[TEST.TestFunctionName2]
+* We need to rename Title/Description of the root web
+* We need to 'lookup' the root web to provision content on root web
 
-###Links
-- [link 1](http://example.com)
-- [link 2](http://example.com)
+If Title/Description are not provided, provision does not change anything.
+
+Both CSOM/SSOM object models are supported. 
+
+[LIST.SAMPLES]
