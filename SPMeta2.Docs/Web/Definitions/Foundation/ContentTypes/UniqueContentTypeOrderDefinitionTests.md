@@ -1,26 +1,20 @@
-<!-- M2-TODO -->
 <properties
 	  pageTitle="UniqueContentTypeOrderDefinition"
     pageName="UniqueContentTypeOrderDefinition"
-    parentPageId="12991"
+    parentPageId="47941"
 />
 
 ###Provision scenario
-SCENARIO
+We should be able to change the order of the content types in a target list.
 
 ###Scope
-SCOPE
+Should be deployed under the list.
 
 ###Implementation
-IMPLEMENTATION
+Fields re-ordering inside a content type is enabled via UniqueContentTypeOrderDefinition object.
 
-###Samples
-A SAMPLE 1
-[TEST.TestFunctionName1]
+Both CSOM/SSOM object models are supported. 
+Provision re-orders field links inside the content type according the ContentTypes property. 
+You can deploy either single object or a set of the objects using AddUniqueContentTypeOrder() extension method as per following examples.
 
-A SAMPLE 2
-[TEST.TestFunctionName2]
-
-###Links
-- [link 1](http://example.com)
-- [link 2](http://example.com)
+[LIST.SAMPLES]

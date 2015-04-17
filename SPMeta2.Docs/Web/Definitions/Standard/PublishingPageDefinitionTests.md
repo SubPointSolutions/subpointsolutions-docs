@@ -1,7 +1,7 @@
 <properties
 	  pageTitle="PublishingPageDefinition"
     pageName="PublishingPageDefinition"
-    parentPageId="3981"
+    parentPageId="12821"
 />
 
 ###Provision scenario
