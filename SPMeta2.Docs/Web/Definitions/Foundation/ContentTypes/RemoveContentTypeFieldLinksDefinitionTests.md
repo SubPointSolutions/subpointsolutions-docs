@@ -1,26 +1,20 @@
-<!-- M2-TODO -->
 <properties
-	  pageTitle="RemoveContentTypeFieldLinksDefinition"
+	pageTitle="RemoveContentTypeFieldLinksDefinition"
     pageName="RemoveContentTypeFieldLinksDefinition"
-    parentPageId="12991"
+    parentPageId="47941"
 />
 
 ###Provision scenario
-SCENARIO
+We should be able to remove field in the target content type.
 
 ###Scope
-SCOPE
+Should be deployed under the content type.
 
 ###Implementation
-IMPLEMENTATION
+Removing fields inside a content type is enabled via RemoveContentTypeFieldLinksDefinition object.
 
-###Samples
-A SAMPLE 1
-[TEST.TestFunctionName1]
+Both CSOM/SSOM object models are supported. 
+Provision removed field link inside the content type according the Fields property. 
+You can deploy either single object or a set of the objects using AddRemoveContentTypeFieldLinksDefinition() extension method as per following examples.
 
-A SAMPLE 2
-[TEST.TestFunctionName2]
-
-###Links
-- [link 1](http://example.com)
-- [link 2](http://example.com)
+[LIST.SAMPLES]
