@@ -1,4 +1,3 @@
-<!-- M2-TODO -->
 <properties
 	  pageTitle="ContentEditorWebPartDefinition"
     pageName="ContentEditorWebPartDefinition"
@@ -6,21 +5,25 @@
 />
 
 ###Provision scenario
-SCENARIO
+We should be able to provision a "Content Editor Web Part" in a nice, repeatable way.
 
 ###Scope
-SCOPE
+Should be deployed under wiki, web part or publishing page.
 
 ###Implementation
-IMPLEMENTATION
+Content Editor Web Part provision is enabled via ContentEditorWebPartDefinition object.
 
-###Samples
-A SAMPLE 1
-[TEST.TestFunctionName1]
+There are two properties which are exposed by ContentEditorWebPartDefinition:
 
-A SAMPLE 2
-[TEST.TestFunctionName2]
+* **ContentLink**, URL of a target content
+* **Content**, actual content
 
-###Links
-- [link 1](http://example.com)
-- [link 2](http://example.com)
+SPMeta2 adds the following tokens support for ContentLink property:
+
+* ~sitecollection, replaced by site.ServerRelativeUrl
+* ~site, replaced by web.ServerRelativeUrl
+
+Both CSOM/SSOM object models are supported. 
+You can deploy either single object or a set of the objects using AddContentEditorWebPart() extension method as per following examples.
+
+[LIST.SAMPLES]

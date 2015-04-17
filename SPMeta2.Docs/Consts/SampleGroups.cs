@@ -27,6 +27,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Consts
 
         public const string WebParts = "Web parts";
 
+        public const string ContentEditorWebpart = "Content editor web part";
+
         public const string WebPartPages = "Web part pages";
         public const string WikiPages = "Wiki pages";
         public const string Folders = "Folders";
