@@ -1,26 +1,20 @@
-<!-- M2-TODO -->
 <properties
-	  pageTitle="RemoveContentTypeLinksDefinition"
+    pageTitle="RemoveContentTypeLinksDefinition"
     pageName="RemoveContentTypeLinksDefinition"
-    parentPageId="12991"
+    parentPageId="47941"
 />
 
 ###Provision scenario
-SCENARIO
+We should be able to remove content type in the target list.
 
 ###Scope
-SCOPE
+Should be deployed under the list.
 
 ###Implementation
-IMPLEMENTATION
+Removing content types inside a list is enabled via RemoveContentTypeLinksDefinition object.
 
-###Samples
-A SAMPLE 1
-[TEST.TestFunctionName1]
+Both CSOM/SSOM object models are supported. 
+Provision removed content type links inside the list according the ContentTypes property. 
+You can deploy either single object or a set of the objects using AddRemoveContentTypeLinks() extension method as per following examples.
 
-A SAMPLE 2
-[TEST.TestFunctionName2]
-
-###Links
-- [link 1](http://example.com)
-- [link 2](http://example.com)
+[LIST.SAMPLES]
