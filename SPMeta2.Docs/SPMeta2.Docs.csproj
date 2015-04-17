@@ -221,6 +221,7 @@
     <None Include="Web\Basics\Roadmap.md" />
     <None Include="Web\Basics\Releases.md" />
     <None Include="Web\Basics\Getting-started.md" />
+    <None Include="Web\Definitions\Foundation\Webparts.md" />
     <None Include="Web\Definitions\Foundation\ContentTypes.md" />
     <None Include="Web\Definitions\Foundation\Fields\BooleanFieldDefinitionTests.md" />
     <None Include="Web\Definitions\Foundation\Fields\BusinessDataFieldDefinitionTests.md" />
