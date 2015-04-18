@@ -30,10 +30,10 @@ namespace SPMeta2.Docs.ProvisionSamples.Consts
         public const string WebParts = "Web parts";
 
         public const string ContentEditorWebpart = "Content editor web part";
-
         public const string XsltListViewWebPart = "Xslt list view web part";
         public const string ListViewWebPart = "List view web part";
         public const string ScriptEditorWebPart = "Script editor web part";
+        public const string SiteFeedWebPart = "Site feed web part";
 
         public const string WebPartPages = "Web part pages";
         public const string WikiPages = "Wiki pages";

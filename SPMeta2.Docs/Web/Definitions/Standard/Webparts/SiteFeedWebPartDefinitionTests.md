@@ -1,26 +1,20 @@
-<!-- M2-TODO -->
 <properties
-	  pageTitle="SiteFeedWebPartDefinition"
+	pageTitle="SiteFeedWebPartDefinition"
     pageName="SiteFeedWebPartDefinition"
-    parentPageId="3981"
+    parentPageId="48531"
 />
 
+
 ###Provision scenario
-SCENARIO
+We should be able to provision SiteFeedWebPart in a nice, repeatable way.
 
 ###Scope
-SCOPE
+Should be deployed under wiki, web part or publishing page.
 
 ###Implementation
-IMPLEMENTATION
+ScriptEditorWebPart provision is enabled via SiteFeedWebPartDefinition object.
 
-###Samples
-A SAMPLE 1
-[TEST.TestFunctionName1]
+Both CSOM/SSOM object models are supported. 
+You can deploy either single object or a set of the objects using AddSiteFeedWebPart() extension method as per following examples
 
-A SAMPLE 2
-[TEST.TestFunctionName2]
-
-###Links
-- [link 1](http://example.com)
-- [link 2](http://example.com)
+[LIST.SAMPLES]
