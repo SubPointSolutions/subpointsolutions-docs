@@ -374,6 +374,7 @@
     <None Include="Web\LandingPage.md" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Modules\jquery-1.11.2.min.js" />
     <Content Include="Web\Basics\img\getting-started\1-new-console-app.png" />
   </ItemGroup>
   <ItemGroup>
