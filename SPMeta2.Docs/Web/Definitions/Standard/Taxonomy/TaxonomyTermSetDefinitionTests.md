@@ -1,7 +1,7 @@
 <properties
 	  pageTitle="TaxonomyTermSetDefinition"
     pageName="TaxonomyTermSetDefinition"
-    parentPageId="12821"
+    parentPageId="48511"
 />
 
 ###Provision scenario

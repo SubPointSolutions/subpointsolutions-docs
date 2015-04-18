@@ -221,6 +221,8 @@
     <None Include="Web\Basics\Roadmap.md" />
     <None Include="Web\Basics\Releases.md" />
     <None Include="Web\Basics\Getting-started.md" />
+    <None Include="Web\Definitions\Foundation\SecurityGroupLinkDefinitionTests - Copy.md" />
+    <None Include="Web\Definitions\Foundation\Fields.md" />
     <None Include="Web\Definitions\Foundation\Webparts.md" />
     <None Include="Web\Definitions\Foundation\ContentTypes.md" />
     <None Include="Web\Definitions\Foundation\Fields\BooleanFieldDefinitionTests.md" />
@@ -249,11 +251,15 @@
     <None Include="Web\Definitions\Standard\DisplayTemplates\ControlDisplayTemplateDefinitionTests.md" />
     <None Include="Web\Definitions\Standard\DisplayTemplates\ItemDisplayTemplateDefinitionTests.md" />
     <None Include="Web\Definitions\Standard\DisplayTemplates\JavaScriptDisplayTemplateDefinitionTests.md" />
+    <None Include="Web\Definitions\Standard\Fields.md" />
     <None Include="Web\Definitions\Standard\Fields\HTMLFieldDefinitionTests.md" />
     <None Include="Web\Definitions\Standard\Fields\ImageFieldDefinitionTests.md" />
     <None Include="Web\Definitions\Standard\Fields\LinkFieldDefinitionTests.md" />
     <None Include="Web\Definitions\Standard\Fields\MediaFieldDefinitionTests.md" />
     <None Include="Web\Definitions\Standard\Fields\SummaryLinkFieldDefinitionTests.md" />
+    <None Include="Web\Definitions\Standard\DisplayTemplates.md" />
+    <None Include="Web\Definitions\Standard\Taxonomy.md" />
+    <None Include="Web\Definitions\Standard\WebParts.md" />
     <None Include="Web\Definitions\Standard\Webparts\ContactFieldControlDefinitionTests.md" />
     <None Include="Web\Definitions\Standard\Webparts\ContentByQueryWebPartDefinitionTests.md" />
     <None Include="Web\Definitions\Standard\CustomDocumentIdProviderDefinitionTests.md" />

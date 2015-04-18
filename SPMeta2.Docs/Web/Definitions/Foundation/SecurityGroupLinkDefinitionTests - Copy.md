@@ -1,8 +1,8 @@
 <!-- M2-TODO -->
 <properties
-	  pageTitle="TaxonomyTermLabelDefinition"
-    pageName="TaxonomyTermLabelDefinition"
-    parentPageId="48511"
+	  pageTitle="SecurityGroupLinkDefinition"
+    pageName="SecurityGroupLinkDefinition"
+    parentPageId="12771"
 />
 
 ###Provision scenario
