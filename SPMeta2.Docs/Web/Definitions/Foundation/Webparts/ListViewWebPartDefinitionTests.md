@@ -1,26 +1,19 @@
-<!-- M2-TODO -->
 <properties
-	  pageTitle="ListViewWebPartDefinition"
+	pageTitle="ListViewWebPartDefinition"
     pageName="ListViewWebPartDefinition"
     parentPageId="13051"
 />
 
 ###Provision scenario
-SCENARIO
+We should be able to provision ListViewWebPart in a nice, repeatable way.
 
 ###Scope
-SCOPE
+Should be deployed under wiki, web part or publishing page.
 
 ###Implementation
-IMPLEMENTATION
+ListViewWebPart provision is enabled via ListViewWebPartDefinition object.
 
-###Samples
-A SAMPLE 1
-[TEST.TestFunctionName1]
+Both CSOM/SSOM object models are supported. 
+You can deploy either single object or a set of the objects using AddListViewWebPart() extension method as per following examples
 
-A SAMPLE 2
-[TEST.TestFunctionName2]
-
-###Links
-- [link 1](http://example.com)
-- [link 2](http://example.com)
+[LIST.SAMPLES]
