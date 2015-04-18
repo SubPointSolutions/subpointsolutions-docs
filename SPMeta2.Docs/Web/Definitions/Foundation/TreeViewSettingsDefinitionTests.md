@@ -1,4 +1,3 @@
-<!-- M2-TODO -->
 <properties
 	  pageTitle="TreeViewSettingsDefinition"
     pageName="TreeViewSettingsDefinition"
@@ -6,21 +5,15 @@
 />
 
 ###Provision scenario
-SCENARIO
+We should be able to setup tree view and quick launch settings for a target web site.
 
 ###Scope
-SCOPE
+Should be deployed under web.
 
 ###Implementation
-IMPLEMENTATION
+Provision updates tree view and quick launch settings of the given web site.
 
-###Samples
-A SAMPLE 1
-[TEST.TestFunctionName1]
+Both CSOM/SSOM object models are supported. 
+You can deploy either single object or a set of the objects using AddTreeViewSettings() extension method as per following examples.
 
-A SAMPLE 2
-[TEST.TestFunctionName2]
-
-###Links
-- [link 1](http://example.com)
-- [link 2](http://example.com)
+[LIST.SAMPLES]
