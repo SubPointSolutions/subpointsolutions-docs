@@ -1,26 +1,20 @@
-<!-- M2-TODO -->
 <properties
-	  pageTitle="SP2013WorkflowDefinition"
+	pageTitle="SP2013WorkflowDefinition"
     pageName="SP2013WorkflowDefinition"
     parentPageId="12771"
 />
 
 ###Provision scenario
-SCENARIO
+We should be able to provision SharePoint 2013 workflow in a nice, repeatable way.
 
 ###Scope
-SCOPE
+Should be deployed under web.
 
 ###Implementation
-IMPLEMENTATION
+SharePoint 2013 workflow provision is enabled via SP2013WorkflowDefinition object.
 
-###Samples
-A SAMPLE 1
-[TEST.TestFunctionName1]
+Both CSOM/SSOM object models are supported. 
+Provision checks if object exists looking up it by DisplayName property, then creates a new object. 
+You can deploy either single object or a set of the objects using AddSP2013Workflow() extension method as per following examples
 
-A SAMPLE 2
-[TEST.TestFunctionName2]
-
-###Links
-- [link 1](http://example.com)
-- [link 2](http://example.com)
+[LIST.SAMPLES]
