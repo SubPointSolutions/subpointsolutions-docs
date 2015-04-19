@@ -24,6 +24,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Consts
         public const string Navigation = "Navigation";
 
         public const string List = "Lists and libraries";
+        public const string Fields = "Fields";
         public const string ContentType = "Content types";
         public const string ListViews = "List views";
 

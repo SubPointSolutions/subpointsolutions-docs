@@ -8,6 +8,7 @@ using System;
 using System.ComponentModel;
 using SPMeta2.Docs.ProvisionSamples.Attributes;
 using SPMeta2.Docs.ProvisionSamples.Consts;
+using SPMeta2.Standard.Definitions.Fields;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
@@ -54,30 +55,9 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
             DeployModel(model);
         }
 
-        [TestMethod]
-        [TestCategory("Docs.FieldDefinition")]
-        [SampleMetadata(
-            Title = "Site fields provision",
-            Description = "Demonstrates site field provision syntax.",
-            Order = 20,
-            CatagoryAlias = SampleCategory.SharePointFoundation,
-            GroupAlias = SampleGroups.SiteCollection)]
-        public void CanDeploySiteFields()
-        {
-            var model = SPMeta2Model.NewSiteModel(site =>
-            {
-                site
-                    .AddField(DocFields.Clients.ClientCredit)
-                    .AddField(DocFields.Clients.ClientDebit)
-                    .AddField(DocFields.Clients.ClientDescription)
-                    .AddField(DocFields.Clients.ClientNumber)
-                    .AddField(DocFields.Clients.ClientWebSite);
-            });
 
-            DeployModel(model);
-        }
 
-        
+
 
         [TestMethod]
         [TestCategory("Docs.FieldDefinition")]
@@ -126,6 +106,75 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
             DeployModel(model);
         }
+
+        #endregion
+
+        #region general fields
+
+        [TestMethod]
+        [TestCategory("Docs.FieldDefinition")]
+        [SampleMetadata(
+            Title = "Adding general fields",
+            Description = "",
+            Order = 100,
+            CatagoryAlias = SampleCategory.SharePointFoundation,
+            GroupAlias = SampleGroups.Fields)]
+        public void CanDeploySiteFields()
+        {
+            // use BuiltInFieldTypes class to refer to OOTB SharePoint fields
+
+            var customerRefererence = new FieldDefinition
+            {
+                Title = "Customer Reference",
+                InternalName = "dcs_CustomerReference",
+                Group = "SPMeta2.Samples",
+                Id = new Guid("D3B94B32-3F97-4B5B-99BE-95D17F83618B"),
+                FieldType = BuiltInFieldTypes.Text,
+            };
+
+            var isAciveClient = new FieldDefinition
+            {
+                Title = "Is Active Customer",
+                InternalName = "dcs_IsActiveCustomer",
+                Group = "SPMeta2.Samples",
+                Id = new Guid("C846CA90-5EE0-4FDF-882B-6FB17625C6F9"),
+                FieldType = BuiltInFieldTypes.Boolean,
+            };
+
+            var additionalInformation = new FieldDefinition
+            {
+                Title = "Customer Additional Information",
+                InternalName = "dcs_CustomerAdditionalInfo",
+                Group = "SPMeta2.Samples",
+                Id = new Guid("A5221F56-D4F4-4831-AF51-AA9776FA990D"),
+                FieldType = BuiltInFieldTypes.Note,
+            };
+
+            var customerBalance = new FieldDefinition
+            {
+                Title = "Customer Balance",
+                InternalName = "dcs_CustomerBalance",
+                Group = "SPMeta2.Samples",
+                Id = new Guid("3C0A0358-BF74-4F79-855B-F85F5BF24028"),
+                FieldType = BuiltInFieldTypes.Number,
+            };
+
+            var model = SPMeta2Model.NewSiteModel(site =>
+            {
+                site
+                    .AddField(customerRefererence)
+                    .AddField(isAciveClient)
+                    .AddField(additionalInformation)
+                    .AddField(customerBalance);
+            });
+
+            DeployModel(model);
+        }
+
+        #endregion
+
+        #region typed fields
+
 
         #endregion
     }
