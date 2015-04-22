@@ -1,26 +1,22 @@
-<!-- M2-TODO -->
 <properties
-	  pageTitle="MasterPageDefinition"
+	pageTitle="MasterPageDefinition"
     pageName="MasterPageDefinition"
     parentPageId="12771"
 />
 
 ###Provision scenario
-SCENARIO
+We should be able to provision a master page.
 
 ###Scope
-SCOPE
+Should be deployed under the master page gallery list.
 
 ###Implementation
-IMPLEMENTATION
+Master page provision is enabled via MasterPageDefinition object.
 
-###Samples
-A SAMPLE 1
-[TEST.TestFunctionName1]
+Both CSOM/SSOM object models are supported.
+Provision checks if a master page exists looking up it by FileName property, then creates a new one. 
+You can deploy either single object or a set of the object using AddMasterPage() extension method as per following examples.
 
-A SAMPLE 2
-[TEST.TestFunctionName2]
+We suggest to use BuiltInListDefinitions.Calalogs.MasterPage to resolve built-in master page gallery list.
 
-###Links
-- [link 1](http://example.com)
-- [link 2](http://example.com)
+[LIST.SAMPLES]

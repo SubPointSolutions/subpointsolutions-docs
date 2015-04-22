@@ -110,6 +110,16 @@
     <Compile Include="Definitions\DocWebs.cs" />
     <Compile Include="Definitions\DocWikiPages.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\DefaultMasterPageTemplates.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DefaultMasterPageTemplates.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\DefaultPublishingPageLayoutTemplates.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DefaultPublishingPageLayoutTemplates.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\WorkflowTemplates.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -381,6 +391,14 @@
   <ItemGroup>
     <EmbeddedResource Include="Modules\jquery-1.11.2.min.js" />
     <Content Include="Web\Basics\img\getting-started\1-new-console-app.png" />
+    <EmbeddedResource Include="Resources\DefaultMasterPageTemplates.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DefaultMasterPageTemplates.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\DefaultPublishingPageLayoutTemplates.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DefaultPublishingPageLayoutTemplates.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\WorkflowTemplates.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>WorkflowTemplates.Designer.cs</LastGenOutput>

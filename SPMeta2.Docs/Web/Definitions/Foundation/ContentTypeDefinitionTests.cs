@@ -42,6 +42,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
             DeployModel(model);
         }
 
+
         [SampleMetadata(
             Title = "Adding document item content type",
             Description = "",
@@ -57,6 +58,33 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 Name = "Custom document",
                 Id = new Guid("008e7c50-a271-4fcd-9f01-f18daad5bd7e"),
                 ParentContentTypeId = BuiltInContentTypeId.Document,
+                Group = "SPMeta2.Samples"
+            };
+
+            var model = SPMeta2Model.NewSiteModel(site =>
+            {
+                site
+                   .AddContentType(documentContentType);
+            });
+
+            DeployModel(model);
+        }
+
+        [SampleMetadata(
+           Title = "Adding document set content type",
+           Description = "",
+           Order = 515,
+           CatagoryAlias = SampleCategory.SharePointFoundation,
+           GroupAlias = SampleGroups.SiteCollection)]
+        [TestMethod]
+        [TestCategory("Docs.ContentTypeDefinition")]
+        public void CanDeploySimpleDocumentSetContentType()
+        {
+            var documentContentType = new ContentTypeDefinition
+            {
+                Name = "Custom document set",
+                Id = new Guid("AAC93B98-F776-4D5C-9E6E-66F2DC45A467"),
+                ParentContentTypeId = BuiltInContentTypeId.DocumentSet_Correct,
                 Group = "SPMeta2.Samples"
             };
 
@@ -123,7 +151,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [SampleMetadata(
             Title = "Adding parent-child content types",
             Description = "",
-            Order = 500,
+            Order = 515,
             CatagoryAlias = SampleCategory.SharePointFoundation,
             GroupAlias = SampleGroups.SiteCollection)]
         [TestMethod]

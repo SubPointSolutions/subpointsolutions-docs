@@ -12,6 +12,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Consts
 
         public const string TermStore = "Term store";
 
+        public const string MasterPageGallery = "Master page galery";
+
         public const string UserCustomActions = "User custom actions";
 
         public const string Web = "Web site";

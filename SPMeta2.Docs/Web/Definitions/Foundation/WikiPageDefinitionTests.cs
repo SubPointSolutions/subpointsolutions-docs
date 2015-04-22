@@ -1,9 +1,12 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SPMeta2.BuiltInDefinitions;
+using SPMeta2.Definitions;
+using SPMeta2.Definitions.Webparts;
 using SPMeta2.Docs.ProvisionSamples.Attributes;
 using SPMeta2.Docs.ProvisionSamples.Base;
 using SPMeta2.Docs.ProvisionSamples.Consts;
 using SPMeta2.Docs.ProvisionSamples.Definitions;
+using SPMeta2.Enumerations;
 using SPMeta2.Syntax.Default;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
