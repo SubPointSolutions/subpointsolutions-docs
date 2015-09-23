@@ -2,7 +2,7 @@
 <properties
 	pageTitle="Support"
     pageName="support"
-    parentPageId="13071"
+    parentPageId="spmeta2/basics"
 />
 
 <h3>TODO</h3>

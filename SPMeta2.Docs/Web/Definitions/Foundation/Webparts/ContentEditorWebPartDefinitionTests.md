@@ -1,7 +1,7 @@
 <properties
 	  pageTitle="ContentEditorWebPartDefinition"
     pageName="ContentEditorWebPartDefinition"
-    parentPageId="13051"
+    parentPageId="spmeta2/definitions/sharepoint-foundation/webparts"
 />
 
 ###Provision scenario

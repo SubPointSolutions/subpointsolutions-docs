@@ -2,7 +2,7 @@
 <properties
 	  pageTitle="AlternateUrlDefinition"
     pageName="AlternateUrlDefinition"
-    parentPageId="12771"
+        parentPageId="spmeta2/definitions/sharepoint-foundation"
 />
 
 ###Provision scenario

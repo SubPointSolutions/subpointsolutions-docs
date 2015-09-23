@@ -2,7 +2,7 @@
 <properties
 	  pageTitle="JavaScriptDisplayTemplateDefinition"
     pageName="JavaScriptDisplayTemplateDefinition"
-    parentPageId="3981"
+    parentPageId="spmeta2/definitions/sharepoint-standard/displaytemplates"
 />
 
 ###Provision scenario

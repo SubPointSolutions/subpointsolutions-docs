@@ -2,7 +2,7 @@
 <properties
 	  pageTitle="TaxonomyTermLabelDefinition"
     pageName="TaxonomyTermLabelDefinition"
-    parentPageId="48511"
+    parentPageId="spmeta2/definitions/sharepoint-standard/taxonomy"
 />
 
 ###Provision scenario

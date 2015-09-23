@@ -2,7 +2,7 @@
 <properties
 	  pageTitle="BooleanFieldDefinition"
     pageName="BooleanFieldDefinition"
-    parentPageId="13001"
+    parentPageId="spmeta2/definitions/sharepoint-foundation/fields"
 />
 
 ###Provision scenario

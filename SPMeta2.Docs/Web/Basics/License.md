@@ -1,7 +1,7 @@
 ﻿<properties
 	pageTitle="License"
     pageName="license"
-    parentPageId="13071"
+    parentPageId="spmeta2/basics"
 />
 SPMeta2 library is licensed under [Microsoft Public License (Ms-PL) license](http://www.microsoft.com/en-us/openness/licenses.aspx). 
 ###Microsoft Public License (Ms-PL)

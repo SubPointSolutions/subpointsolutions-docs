@@ -2,7 +2,7 @@
 <properties
 	  pageTitle="ContactFieldControlDefinition"
     pageName="ContactFieldControlDefinition"
-    parentPageId="3981"
+    parentPageId="spmeta2/definitions/sharepoint-standard"
 />
 
 ###Provision scenario

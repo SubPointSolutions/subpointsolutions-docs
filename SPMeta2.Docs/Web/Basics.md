@@ -1,7 +1,7 @@
 ﻿<properties
 	pageTitle="Basics"
     pageName="basics"
-    parentPageId="3701"
+    parentPageId="spmeta2"
 />
 SPMeta2 is a hassle-free fluent API for code-based SharePoint artefact provisioning.
 It offers a consistent provisioning API via SSOM/CSOM for SharePoin 2010, 2013 and O365.

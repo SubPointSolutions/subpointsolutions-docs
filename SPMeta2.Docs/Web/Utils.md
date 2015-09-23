@@ -1,7 +1,7 @@
 ﻿<properties
 	pageTitle="Utils"
     pageName="utils"
-    parentPageId="3701"
+    parentPageId="spmeta2"
 />
 
 SPMeta2 has some useful utility methods, classes and constants which can be reused in your projects. 

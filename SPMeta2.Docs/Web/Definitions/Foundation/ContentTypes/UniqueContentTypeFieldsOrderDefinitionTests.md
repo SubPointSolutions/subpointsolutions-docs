@@ -1,7 +1,7 @@
 <properties
 	  pageTitle="UniqueContentTypeFieldsOrderDefinition"
     pageName="UniqueContentTypeFieldsOrderDefinition"
-    parentPageId="47941"
+    parentPageId="spmeta2/definitions/sharepoint-foundation/contenttypes"
 />
 
 ###Provision scenario

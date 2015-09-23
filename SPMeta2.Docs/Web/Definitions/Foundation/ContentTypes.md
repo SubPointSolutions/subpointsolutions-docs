@@ -1,7 +1,7 @@
-﻿<properties
-	pageTitle="SharePoint Foundation"
-    pageName="sharepoint-foundation"
-    parentPageId="spmeta2/definitions"
+<properties
+	pageTitle="Content types definitions"
+    pageName="ContentTypes"
+        parentPageId="spmeta2/definitions/sharepoint-foundation"
 />
 
 Essentially, definitions are c# POCO objects provided by SPMeta2 library.
@@ -12,11 +12,11 @@ Before you begin, make sure you are familiar with the following concepts:
 * [SPMeta2 basics](http://docs.subpointsolutions.com/spmeta2/basics/)
 * [SPMeta2 definitions](http://docs.subpointsolutions.com/spmeta2/definitions/)
 
-### SharePoint Foundation definitions
-Here is a list of supported SharePoint Foundation definitions by SPMeta2. 
+### Content type definitions
+Here is a list of "typed" fields related definitions by SPMeta2. 
 Every single definition is mapped to SharePoint CSOM/SSOM object during the provision and avialable via OnProvisioning/OnProvisioned events.
 
-[LIST.SharePointFoundationDefinitionsMappings]
+[LIST.SharePointFoundationContentTypesDefinitionsMappings]
 
 ### Missed definition?
 

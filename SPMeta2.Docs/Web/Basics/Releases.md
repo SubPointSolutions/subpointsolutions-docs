@@ -1,7 +1,7 @@
 ﻿<properties
 	pageTitle="Releases"
     pageName="releases"
-    parentPageId="13071"
+    parentPageId="spmeta2/basics"
 />
 
 SPMeta2 is an open source project driven and cured by [SubPoint Solutions](http://subpointsolutions.com) team.

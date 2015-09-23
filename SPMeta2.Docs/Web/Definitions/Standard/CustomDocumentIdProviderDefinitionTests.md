@@ -2,7 +2,7 @@
 <properties
 	  pageTitle="CustomDocumentIdProviderDefinition"
     pageName="CustomDocumentIdProviderDefinition"
-    parentPageId="3981"
+    parentPageId="spmeta2/definitions/sharepoint-standard"
 />
 
 ###Provision scenario

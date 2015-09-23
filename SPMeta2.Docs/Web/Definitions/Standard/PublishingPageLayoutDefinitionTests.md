@@ -1,7 +1,7 @@
 <properties
 	pageTitle="PublishingPageLayoutDefinition"
     pageName="PublishingPageLayoutDefinition"
-    parentPageId="12821"
+    parentPageId="spmeta2/definitions/sharepoint-standard"
 />
 
 ###Provision scenario

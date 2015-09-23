@@ -1,7 +1,7 @@
 <properties
 	pageTitle="XsltListViewWebPartDefinition"
     pageName="XsltListViewWebPartDefinition"
-    parentPageId="13051"
+    parentPageId="spmeta2/definitions/sharepoint-foundation/webparts"
 />
 
 ###Provision scenario

@@ -1,7 +1,7 @@
 <properties
 	  pageTitle="HideContentTypeLinksDefinition"
     pageName="HideContentTypeLinksDefinition"
-    parentPageId="47941"
+    parentPageId="spmeta2/definitions/sharepoint-foundation/contenttypes"
 />
 
 ###Provision scenario

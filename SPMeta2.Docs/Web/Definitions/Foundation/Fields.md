@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Field definitions"
     pageName="Fields"
-    parentPageId="12771"
+        parentPageId="spmeta2/definitions/sharepoint-foundation"
 />
 
 Essentially, definitions are c# POCO objects provided by SPMeta2 library.

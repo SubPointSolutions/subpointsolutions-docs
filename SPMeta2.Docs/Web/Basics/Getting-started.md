@@ -1,7 +1,7 @@
 ﻿<properties
 	pageTitle="Getting started"
     pageName="getting-started"
-    parentPageId="13071"
+    parentPageId="spmeta2/basics"
 />
 
 SPMeta2 supports SharePoint 2010, SharePoint 2013 and SharePoint Online. 

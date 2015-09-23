@@ -1,7 +1,7 @@
 ﻿<properties
 	pageTitle="SharePoint Standard"
     pageName="sharepoint-standard"
-    parentPageId="12781"
+    parentPageId="spmeta2/definitions"
 />
 
 Essentially, definitions are c# POCO objects provided by SPMeta2 library.

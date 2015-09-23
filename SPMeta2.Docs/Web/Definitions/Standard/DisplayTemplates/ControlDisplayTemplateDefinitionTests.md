@@ -2,7 +2,7 @@
 <properties
 	  pageTitle="ControlDisplayTemplateDefinition"
     pageName="ControlDisplayTemplateDefinition"
-    parentPageId="3981"
+    parentPageId="spmeta2/definitions/sharepoint-standard/displaytemplates"
 />
 
 ###Provision scenario

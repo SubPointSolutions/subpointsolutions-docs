@@ -1,7 +1,7 @@
 <properties
 	pageTitle="MasterPageDefinition"
     pageName="MasterPageDefinition"
-    parentPageId="12771"
+        parentPageId="spmeta2/definitions/sharepoint-foundation"
 />
 
 ###Provision scenario

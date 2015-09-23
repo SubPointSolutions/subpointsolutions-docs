@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Taxonomy definitions"
     pageName="Taxonomy"
-    parentPageId="12821"
+    parentPageId="spmeta2/definitions/sharepoint-standard"
 />
 
 Essentially, definitions are c# POCO objects provided by SPMeta2 library.

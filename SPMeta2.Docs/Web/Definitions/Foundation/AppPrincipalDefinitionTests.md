@@ -2,7 +2,7 @@
 <properties
 	  pageTitle="AppPrincipalDefinition"
     pageName="AppPrincipalDefinition"
-    parentPageId="12771"
+        parentPageId="spmeta2/definitions/sharepoint-foundation"
 />
 
 ###Provision scenario

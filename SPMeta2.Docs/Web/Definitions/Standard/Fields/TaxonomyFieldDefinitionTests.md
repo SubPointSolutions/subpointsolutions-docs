@@ -1,7 +1,7 @@
 <properties
 	pageTitle="TaxonomyFieldDefinition"
     pageName="TaxonomyFieldDefinition"
-    parentPageId="48491"
+    parentPageId="spmeta2/definitions/sharepoint-standard/fields"
 />
 
 ###Provision scenario

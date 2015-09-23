@@ -1,7 +1,7 @@
 ﻿<properties
 	pageTitle="Extensibility"
     pageName="extensibility"
-    parentPageId="3701"
+    parentPageId="spmeta2"
 />
 
 SPMeta2 was designed as highly extensible library to a wide range of SharePoint artifacts, SharePoint editions, versinos and APIs. 

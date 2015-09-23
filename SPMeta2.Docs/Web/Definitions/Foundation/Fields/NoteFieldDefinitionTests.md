@@ -2,7 +2,7 @@
 <properties
 	  pageTitle="NoteFieldDefinition"
     pageName="NoteFieldDefinition"
-    parentPageId="13001"
+    parentPageId="spmeta2/definitions/sharepoint-foundation/fields"
 />
 
 ###Provision scenario

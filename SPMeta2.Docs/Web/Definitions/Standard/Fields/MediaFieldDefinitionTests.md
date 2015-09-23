@@ -2,7 +2,7 @@
 <properties
 	  pageTitle="MediaFieldDefinition"
     pageName="MediaFieldDefinition"
-    parentPageId="3981"
+    parentPageId="spmeta2/definitions/sharepoint-standard/fields"
 />
 
 ###Provision scenario

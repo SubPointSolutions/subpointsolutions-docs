@@ -2,7 +2,7 @@
 <properties
 	  pageTitle="CalculatedFieldDefinition"
     pageName="CalculatedFieldDefinition"
-    parentPageId="13001"
+    parentPageId="spmeta2/definitions/sharepoint-foundation/fields"
 />
 
 ###Provision scenario

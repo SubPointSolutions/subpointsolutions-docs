@@ -2,7 +2,7 @@
 <properties
 	  pageTitle="ImageRenditionDefinition"
     pageName="ImageRenditionDefinition"
-    parentPageId="3981"
+    parentPageId="spmeta2/definitions/sharepoint-standard"
 />
 
 ###Provision scenario

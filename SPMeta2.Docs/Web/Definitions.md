@@ -1,7 +1,7 @@
 ﻿<properties
 	pageTitle="Definitions"
     pageName="definitions"
-    parentPageId="3701"
+    parentPageId="spmeta2"
 />
 
 Essentially, definitions are c# POCO objects provided by SPMeta2 library. 
