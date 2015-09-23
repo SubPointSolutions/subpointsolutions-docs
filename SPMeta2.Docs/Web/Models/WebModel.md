@@ -1,7 +1,7 @@
 ﻿<properties
 	pageTitle="Web model"
     pageName="webmodel"
-    parentPageId="18371"
+    parentPageId="spmeta2/models"
 />
 
 SPMeta2 introduces a domain model providing set of definitions for most of the SharePoint artifacts.

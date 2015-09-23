@@ -16,7 +16,7 @@ Before you begin, make sure you are familiar with the following concepts:
 Here is a list of "typed" fields related definitions by SPMeta2. 
 Every single definition is mapped to SharePoint CSOM/SSOM object during the provision and avialable via OnProvisioning/OnProvisioned events.
 
-[LIST.SharePointFoundationContentTypesDefinitionsMappings]
+[LIST.SharePointFoundationContentTypeDefinitionsMappings]
 
 ### Missed definition?
 
