@@ -121,7 +121,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                     // do stuff
                 });
 
-                web.AddHostList(BuiltInListDefinitions.Calalogs.MasterPage, list =>
+                web.AddHostList(BuiltInListDefinitions.Catalogs.MasterPage, list =>
                 {
                     // do stuff
                 });

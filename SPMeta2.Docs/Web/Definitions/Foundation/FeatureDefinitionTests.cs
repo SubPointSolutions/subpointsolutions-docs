@@ -53,9 +53,9 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
             var model = SPMeta2Model.NewWebModel(web =>
             {
                 web
-                    .AddSiteFeature(DocWebFeatures.WebPublishingInfrastructure)
-                    .AddSiteFeature(DocWebFeatures.MetadataNavigationAndFiltering)
-                    .AddSiteFeature(DocWebFeatures.MDS);
+                    .AddWebFeature(DocWebFeatures.WebPublishingInfrastructure)
+                    .AddWebFeature(DocWebFeatures.MetadataNavigationAndFiltering)
+                    .AddWebFeature(DocWebFeatures.MDS);
 
             });
 
@@ -78,7 +78,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
             var model = SPMeta2Model.NewWebModel(web =>
             {
                 web
-                    .AddSiteFeature(DocWebFeatures.Disable.MDS);
+                    .AddWebFeature(DocWebFeatures.Disable.MDS);
             });
 
             DeployModel(model);
@@ -163,7 +163,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
             var enableMdsModel = SPMeta2Model.NewWebModel(web =>
             {
                 web
-                    .AddSiteFeature(enableMinimalDownloadStrategy);
+                    .AddWebFeature(enableMinimalDownloadStrategy);
             });
 
             DeployModel(enableMdsModel);
@@ -172,7 +172,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
             var model = SPMeta2Model.NewWebModel(web =>
             {
                 web
-                    .AddSiteFeature(disableMinimalDownloadStrategy);
+                    .AddWebFeature(disableMinimalDownloadStrategy);
             });
 
             DeployModel(model);

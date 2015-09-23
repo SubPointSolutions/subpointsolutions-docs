@@ -84,8 +84,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
     public static class HideContentTypeFieldsExtensions
     {
-        public static ModelNode HideContentTypeFieldsByIds(
-            this ModelNode modelNode,
+        public static ContentTypeModelNode HideContentTypeFieldsByIds(
+            this ContentTypeModelNode modelNode,
             IEnumerable<Guid> ids)
         {
             modelNode.AddHideContentTypeFieldLinks(new HideContentTypeFieldLinksDefinition

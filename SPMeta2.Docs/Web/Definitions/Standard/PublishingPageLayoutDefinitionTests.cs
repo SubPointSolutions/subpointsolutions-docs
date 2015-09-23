@@ -56,7 +56,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
             var rootWebModel = SPMeta2Model.NewWebModel(web =>
             {
-                web.AddHostList(BuiltInListDefinitions.Calalogs.MasterPage, list =>
+                web.AddHostList(BuiltInListDefinitions.Catalogs.MasterPage, list =>
                 {
                     list.AddPublishingPageLayout(publshingPageLayout);
                 });

@@ -205,9 +205,16 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 {
                     list.AddFolder(fodlerWithProperties, folder =>
                     {
+                        // Syntax miss - folder should support adding props #669 
+                        // https://github.com/SubPointSolutions/spmeta2/issues/669
+
+                        //folder
+                        //    .AddProperty(folderTag)
+                        //    .AddProperty(folderType);
+
                         folder
-                            .AddProperty(folderTag)
-                            .AddProperty(folderType);
+                            .AddDefinitionNode(folderTag)
+                            .AddDefinitionNode(folderType);
                     });
 
                 });

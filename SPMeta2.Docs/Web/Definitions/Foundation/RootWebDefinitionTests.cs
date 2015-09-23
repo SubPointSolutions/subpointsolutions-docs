@@ -64,7 +64,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                       {
                           // do stuff with 'Style Library'
                       })
-                      .AddHostList(BuiltInListDefinitions.Calalogs.MasterPage, list =>
+                      .AddHostList(BuiltInListDefinitions.Catalogs.MasterPage, list =>
                       {
                           // do stuff with 'Master Page Library'
                       });
