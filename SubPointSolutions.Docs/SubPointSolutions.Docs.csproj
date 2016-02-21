@@ -203,6 +203,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Views\1\index.md" />
+    <None Include="Views\2\index.md" />
     <None Include="Views\index.md" />
     <None Include="Wyam 0.11.1-beta\config.wyam" />
     <None Include="Wyam 0.11.1-beta\LICENSE" />
