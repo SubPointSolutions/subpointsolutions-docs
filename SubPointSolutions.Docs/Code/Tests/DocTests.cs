@@ -13,7 +13,7 @@ namespace SubPointSolutions.Docs.Code.Tests
         public DocTests()
         {
             WyamRelativeFolder = "Wyam 0.11.1-beta";
-            WorkingDirectory = Path.GetFullPath("../../");
+            WorkingDirectory = Path.GetFullPath("../../").TrimEnd('\\');
 
             WyamExeFullPath = Path.Combine(WorkingDirectory, WyamRelativeFolder + "/wyam.exe");
             WyamExeArgs = string.Format("--input \"{0}\\Views\" --output \"{0}\\Views-Output\" --config  \"{0}\\_site.wyam\" --verbose \"{0}\"", WorkingDirectory);
@@ -79,7 +79,5 @@ namespace SubPointSolutions.Docs.Code.Tests
         }
 
         #endregion
-
-        public string WyamFullPath { get; set; }
     }
 }
