@@ -17,6 +17,7 @@ public static class SConfig
 Pipelines.Add("site-md-content",
 
 	ReadFiles("*.md"),
+	Replace("[[ci-date]]", System.DateTime.Now.ToString()),
 	FrontMatter(Yaml()),
 	FileName("FileName").WithAllowedCharacters(new[] {".", "-"}),
 

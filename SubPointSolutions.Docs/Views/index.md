@@ -1,1 +1,4 @@
-﻿Index test
+﻿Index test 
+
+<hr/>
+Publishied: [[ci-date]]
