@@ -41,7 +41,7 @@ namespace SubPointSolutions.Docs.Code.Tests
         [TestCategory("dev")]
         public void Publish_Dev()
         {
-            //RunWyam();
+            RunWyam();
             RunS3("sps-docs-dev");
         }
 
