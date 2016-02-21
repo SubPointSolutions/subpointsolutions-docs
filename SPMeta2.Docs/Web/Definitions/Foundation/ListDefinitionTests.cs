@@ -15,7 +15,6 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
     {
         #region methods
 
-
         [SampleMetadata(
             Title = "Adding list by template id",
             Description = "",
@@ -32,7 +31,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 Title = "Generic list",
                 Description = "A generic list.",
                 TemplateType = BuiltInListTemplateTypeId.GenericList,
-                Url = "GenericList"
+                CustomUrl = "/Lists/GenericList"
             };
 
             var documentLibrary = new ListDefinition
