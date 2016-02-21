@@ -1,0 +1,26 @@
+﻿Assemblies
+    .LoadDirectory(@"bin\Debug");
+
+===
+
+public static class SConfig
+{
+    public static string Theme = "Bootstrap";
+
+	public static string GetThemedTemplate(string templateFileName) {
+		return string.Format("~/Shared/{0}/{1}", Theme, templateFileName);
+	}
+}
+
+---
+
+Pipelines.Add("site-md-content",
+
+	ReadFiles("*.md"),
+	FrontMatter(Yaml()),
+	FileName("FileName").WithAllowedCharacters(new[] {".", "-"}),
+
+	Markdown(),
+	Razor(),	
+	WriteFiles(".html")
+);
