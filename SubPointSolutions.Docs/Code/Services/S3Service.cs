@@ -17,8 +17,8 @@ namespace SubPointSolutions.Docs.Code.Services
 
         public S3Service()
         {
-            AccessKeyId = Environment.GetEnvironmentVariable("S3-AccessKeyId", EnvironmentVariableTarget.Machine);
-            SecretAccessKey = Environment.GetEnvironmentVariable("S3-SecretAccessKey", EnvironmentVariableTarget.Machine);
+            AccessKeyId = Environment.GetEnvironmentVariable("S3-AccessKeyId");
+            SecretAccessKey = Environment.GetEnvironmentVariable("S3-SecretAccessKey");
         }
 
         #endregion
