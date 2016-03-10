@@ -59,7 +59,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 Description = "A generic list.",
                 TemplateType = BuiltInListTemplateTypeId.GenericList,
                 ContentTypesEnabled = true,
-                Url = "M2AnnualRevenue"
+                CustomUrl = "M2AnnualRevenue"
             };
 
             var siteModel = SPMeta2Model.NewSiteModel(site =>

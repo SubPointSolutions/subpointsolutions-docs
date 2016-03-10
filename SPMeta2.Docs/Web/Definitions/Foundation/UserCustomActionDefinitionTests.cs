@@ -75,7 +75,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 ScriptSrc = UrlUtility.CombineUrl(new string[]
                 {
                     "~sitecollection",
-                    BuiltInListDefinitions.StyleLibrary.GetListUrl(),
+                    BuiltInListDefinitions.StyleLibrary.CustomUrl,
                     appScriptsFolder.Name,
                     jQueryFile.FileName
                 }),

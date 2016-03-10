@@ -16,7 +16,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Definitions
         {
             Title = "General Reports",
             Description = "General reports register.",
-            Url = "general-reports",
+            CustomUrl = "general-reports",
             TemplateType = BuiltInListTemplateTypeId.DocumentLibrary
         };
 
@@ -26,7 +26,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Definitions
             {
                 Title = "Policies",
                 Description = "Policies register.",
-                Url = "policies",
+                CustomUrl = "policies",
                 TemplateType = BuiltInListTemplateTypeId.DocumentLibrary
             };
 
@@ -34,7 +34,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Definitions
             {
                 Title = "Procedures",
                 Description = "Procedures register",
-                Url = "procedures",
+                CustomUrl = "procedures",
                 TemplateType = BuiltInListTemplateTypeId.DocumentLibrary
             };
 
@@ -42,7 +42,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Definitions
             {
                 Title = "Annual reviews",
                 Description = "Annual reviews.",
-                Url = "procedures",
+                CustomUrl = "procedures",
                 TemplateType = BuiltInListTemplateTypeId.DocumentLibrary
             };
         }
@@ -53,7 +53,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Definitions
             {
                 Title = "Team Tasks",
                 Description = "Shared tasks for an IT team.",
-                Url = "team-tasks",
+                CustomUrl = "team-tasks",
                 TemplateType = BuiltInListTemplateTypeId.Tasks
             };
 
@@ -61,7 +61,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Definitions
             {
                 Title = "Team Events",
                 Description = "Shared events for an IT team.",
-                Url = "team-events",
+                CustomUrl = "team-events",
                 TemplateType = BuiltInListTemplateTypeId.Events
             };
 
@@ -69,7 +69,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Definitions
             {
                 Title = "Issue Register",
                 Description = "Shared events for an IT team.",
-                Url = "shared-issues",
+                CustomUrl = "shared-issues",
                 TemplateType = BuiltInListTemplateTypeId.IssueTracking
             };
         }
@@ -80,14 +80,14 @@ namespace SPMeta2.Docs.ProvisionSamples.Definitions
             {
                 Title = "Our Clients",
                 Description = "Client list.",
-                Url = "our-clients",
+                CustomUrl = "our-clients",
                 TemplateType = BuiltInListTemplateTypeId.Contacts
             };
             public static ListDefinition ManagementTeam = new ListDefinition
             {
                 Title = "Management Team",
                 Description = "Management team contacts.",
-                Url = "management-team",
+                CustomUrl = "management-team",
                 TemplateType = BuiltInListTemplateTypeId.Contacts
             };
         }

@@ -33,7 +33,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 Title = "Travel Requests",
                 Description = "A document library.",
                 TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
-                Url = "m2TravelRequests"
+                CustomUrl = "m2TravelRequests"
             };
 
             var listView = new ListViewWebPartDefinition
@@ -83,7 +83,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 Title = "Annual Reviews",
                 Description = "A document library.",
                 TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
-                Url = "m2AnnualReviews"
+                CustomUrl = "m2AnnualReviews"
             };
 
             var listView = new ListViewWebPartDefinition
@@ -92,7 +92,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 Id = "m2AnnualReviewsView",
                 ZoneIndex = 10,
                 ZoneId = "Main",
-                ListUrl = annualReviewsLibrary.GetListUrl()
+                ListUrl = annualReviewsLibrary.CustomUrl
             };
 
             var webPartPage = new WebPartPageDefinition
@@ -133,7 +133,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 Title = "Incidents library",
                 Description = "A document library.",
                 TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
-                Url = "m2Incidents"
+                CustomUrl = "m2Incidents"
             };
 
             var incidentsView = new ListViewDefinition
@@ -154,7 +154,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 Id = "m2LastIncidentsView",
                 ZoneIndex = 10,
                 ZoneId = "Main",
-                ListUrl = incidentsLibrary.GetListUrl(),
+                ListUrl = incidentsLibrary.CustomUrl,
                 ViewName = incidentsView.Title
             };
 
@@ -199,7 +199,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 Title = "Company Events",
                 Description = "A document library.",
                 TemplateType = BuiltInListTemplateTypeId.Events,
-                Url = "m2CompanyEvents"
+                CustomUrl = "m2CompanyEvents"
             };
 
             var webPartPage = new WebPartPageDefinition
@@ -215,7 +215,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 Id = "m2CompanyEvents",
                 ZoneIndex = 10,
                 ZoneId = "Main",
-                ListUrl = companyEvents.GetListUrl(),
+                ListUrl = companyEvents.CustomUrl,
                 ViewName = "Calendar"
             };
 
