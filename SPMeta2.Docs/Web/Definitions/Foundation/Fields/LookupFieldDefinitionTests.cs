@@ -77,7 +77,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 Title = "Lead Records",
                 Description = "A generic list.",
                 TemplateType = BuiltInListTemplateTypeId.GenericList,
-                Url = "m2LeadRecordsList"
+                CustomUrl = "m2LeadRecordsList"
             };
 
             var leadRecordTypes = new ListDefinition
@@ -85,7 +85,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 Title = "Lead Record Types",
                 Description = "A generic list.",
                 TemplateType = BuiltInListTemplateTypeId.GenericList,
-                Url = "m2LeadRecordTypesList"
+                CustomUrl = "m2LeadRecordTypesList"
             };
 
             var webModel = SPMeta2Model.NewWebModel(web =>

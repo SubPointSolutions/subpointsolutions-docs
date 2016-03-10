@@ -37,14 +37,14 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
             {
                 Title = "Write To History List Tasks",
                 TemplateType = BuiltInListTemplateTypeId.Tasks,
-                Url = "m2WriteToHistoryListTasks"
+                CustomUrl = "m2WriteToHistoryListTasks"
             };
 
             var historyList = new ListDefinition
             {
                 Title = "Write To History List History",
                 TemplateType = BuiltInListTemplateTypeId.WorkflowHistory,
-                Url = "m2WriteToHistoryListHistory"
+                CustomUrl = "m2WriteToHistoryListHistory"
             };
 
             var model = SPMeta2Model.NewWebModel(web =>
@@ -57,8 +57,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                   {
                       Name = "Write To History Web Workflow",
                       WorkflowDisplayName = writeToHistoryListWorkflow.DisplayName,
-                      HistoryListUrl = historyList.GetListUrl(),
-                      TaskListUrl = taskList.GetListUrl()
+                      HistoryListUrl = historyList.CustomUrl,
+                      TaskListUrl = taskList.CustomUrl
                   });
             });
 
@@ -86,14 +86,14 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
             {
                 Title = "Workflow Enabled List Tasks",
                 TemplateType = BuiltInListTemplateTypeId.Tasks,
-                Url = "m2WorkflowEnabledListTasks"
+                CustomUrl = "m2WorkflowEnabledListTasks"
             };
 
             var historyList = new ListDefinition
             {
                 Title = "Workflow Enabled List History",
                 TemplateType = BuiltInListTemplateTypeId.WorkflowHistory,
-                Url = "m2WorkflowEnabledListHistory"
+                CustomUrl = "m2WorkflowEnabledListHistory"
             };
 
             var workflowEnabledList = new ListDefinition
@@ -101,7 +101,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 Title = "Workflow Enabled List",
                 Description = "Workflow enabled list.",
                 TemplateType = BuiltInListTemplateTypeId.GenericList,
-                Url = "WorkflowEnabledList"
+                CustomUrl = "WorkflowEnabledList"
             };
 
             var model = SPMeta2Model.NewWebModel(web =>
@@ -117,8 +117,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                             {
                                 Name = "Write To History List Workflow",
                                 WorkflowDisplayName = writeToHistoryListWorkflow.DisplayName,
-                                HistoryListUrl = historyList.GetListUrl(),
-                                TaskListUrl = taskList.GetListUrl()
+                                HistoryListUrl = historyList.CustomUrl,
+                                TaskListUrl = taskList.CustomUrl
                             });
                     });
             });

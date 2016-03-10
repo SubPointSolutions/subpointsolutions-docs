@@ -39,28 +39,28 @@
     <Reference Include="Microsoft.SharePoint.Client, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
     <Reference Include="SPMeta2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d71faae3bf28531a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\SPMeta2.Core.1.2.20\lib\net45\SPMeta2.dll</HintPath>
+      <HintPath>..\packages\SPMeta2.Core.1.2.60\lib\net45\SPMeta2.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="SPMeta2.CSOM, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d71faae3bf28531a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\SPMeta2.CSOM.Foundation.1.2.20\lib\net45\SPMeta2.CSOM.dll</HintPath>
+      <HintPath>..\packages\SPMeta2.CSOM.Foundation.1.2.60\lib\net45\SPMeta2.CSOM.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="SPMeta2.CSOM.Standard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d71faae3bf28531a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\SPMeta2.CSOM.Standard.1.2.20\lib\net45\SPMeta2.CSOM.Standard.dll</HintPath>
+      <HintPath>..\packages\SPMeta2.CSOM.Standard.1.2.60\lib\net45\SPMeta2.CSOM.Standard.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="SPMeta2.SSOM, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d71faae3bf28531a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\SPMeta2.SSOM.Foundation.1.2.20\lib\net45\SPMeta2.SSOM.dll</HintPath>
+      <HintPath>..\packages\SPMeta2.SSOM.Foundation.1.2.60\lib\net45\SPMeta2.SSOM.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="SPMeta2.SSOM.Standard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d71faae3bf28531a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\SPMeta2.SSOM.Standard.1.2.20\lib\net45\SPMeta2.SSOM.Standard.dll</HintPath>
+      <HintPath>..\packages\SPMeta2.SSOM.Standard.1.2.60\lib\net45\SPMeta2.SSOM.Standard.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="SPMeta2.Standard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d71faae3bf28531a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\SPMeta2.Core.Standard.1.2.20\lib\net45\SPMeta2.Standard.dll</HintPath>
+      <HintPath>..\packages\SPMeta2.Core.Standard.1.2.60\lib\net45\SPMeta2.Standard.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Web" />
@@ -204,6 +204,9 @@
     <Compile Include="Web\Definitions\Standard\Webparts\SummaryLinkWebPartDefinitionTests.cs" />
     <Compile Include="Web\Models\WebModel.cs" />
     <Compile Include="Web\Models\SiteModel.cs" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web\Basics\License.md" />
     <None Include="Web\Basics\Releases\spmeta2-v1.1.80.md" />
     <None Include="Web\Basics\Releases\spmeta2-v1.1.71.md" />
@@ -387,9 +390,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>WorkflowTemplates.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <Choose>

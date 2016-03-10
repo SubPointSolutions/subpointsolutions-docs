@@ -39,7 +39,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 Title = "Document library",
                 Description = "A document library.",
                 TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
-                Url = "DocumentLibrary"
+                CustomUrl = "DocumentLibrary"
             };
 
             var model = SPMeta2Model.NewWebModel(web =>
@@ -67,7 +67,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 Title = "Some Assert",
                 Description = "Some Assert.",
                 TemplateName = BuiltInListTemplates.AssetLibrary.InternalName,
-                Url = "SomeAssert"
+                CustomUrl = "SomeAssert"
             };
 
             var model = SPMeta2Model.NewWebModel(web =>

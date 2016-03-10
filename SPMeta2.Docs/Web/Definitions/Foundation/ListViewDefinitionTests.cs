@@ -52,7 +52,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 Title = "CustomerDocuments",
                 Description = "A customr document library.",
                 TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
-                Url = "CustomerDocuments"
+                CustomUrl = "CustomerDocuments"
             };
 
             var model = SPMeta2Model.NewWebModel(web =>
@@ -95,7 +95,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 Title = "CustomerDocuments",
                 Description = "A customr document library.",
                 TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
-                Url = "CustomerDocuments"
+                CustomUrl = "CustomerDocuments"
             };
 
             var model = SPMeta2Model.NewWebModel(web =>
@@ -165,7 +165,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 Title = "CustomerDocuments",
                 Description = "A customr document library.",
                 TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
-                Url = "CustomerDocuments"
+                CustomUrl = "CustomerDocuments"
             };
 
             var model = SPMeta2Model.NewWebModel(web =>

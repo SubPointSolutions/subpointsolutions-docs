@@ -86,7 +86,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 ZoneId = "Main",
                 ContentLink = UrlUtility.CombineUrl(new string[]{
                         "~sitecollection",
-                        BuiltInListDefinitions.StyleLibrary.GetListUrl(),
+                        BuiltInListDefinitions.StyleLibrary.CustomUrl,
                         htmlContent.FileName})
             };
 

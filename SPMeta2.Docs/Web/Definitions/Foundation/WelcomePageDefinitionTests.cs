@@ -35,7 +35,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
             var welcomePage = new WelcomePageDefinition
             {
                 // should be relating to the web!
-                Url = UrlUtility.CombineUrl(BuiltInListDefinitions.SitePages.GetListUrl(), newWebHomePage.FileName)
+                Url = UrlUtility.CombineUrl(BuiltInListDefinitions.SitePages.CustomUrl, newWebHomePage.FileName)
             };
 
             var model = SPMeta2Model.NewWebModel(web =>

@@ -145,7 +145,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 Title = "List with properties",
                 Description = "List with some properties.",
                 TemplateType = BuiltInListTemplateTypeId.GenericList,
-                Url = "ListWithProperties"
+                CustomUrl = "ListWithProperties"
             };
 
             var model = SPMeta2Model.NewWebModel(web =>
@@ -191,7 +191,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 Title = "List with properties",
                 Description = "List with some properties.",
                 TemplateType = BuiltInListTemplateTypeId.GenericList,
-                Url = "ListWithProperties"
+                CustomUrl = "ListWithProperties"
             };
 
             var fodlerWithProperties = new FolderDefinition

@@ -92,7 +92,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 Title = "List with fields",
                 Description = "Custom list with list-scoped fields.",
                 TemplateType = BuiltInListTemplateTypeId.GenericList,
-                Url = "ListWithFields"
+                CustomUrl = "ListWithFields"
             };
 
             var model = SPMeta2Model.NewWebModel(web =>

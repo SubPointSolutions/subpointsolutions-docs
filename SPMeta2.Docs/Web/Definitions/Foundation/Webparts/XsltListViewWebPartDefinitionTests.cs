@@ -33,7 +33,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 Title = "Inventory library",
                 Description = "A document library.",
                 TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
-                Url = "InventoryLibrary"
+                CustomUrl = "InventoryLibrary"
             };
 
             var xsltListView = new XsltListViewWebPartDefinition
@@ -83,7 +83,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 Title = "Books library",
                 Description = "A document library.",
                 TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
-                Url = "BooksLibrary"
+                CustomUrl = "BooksLibrary"
             };
 
             var xsltListView = new XsltListViewWebPartDefinition
@@ -92,7 +92,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 Id = "m2BooksView",
                 ZoneIndex = 10,
                 ZoneId = "Main",
-                ListUrl = booksLibrary.GetListUrl()
+                ListUrl = booksLibrary.CustomUrl
             };
 
             var webPartPage = new WebPartPageDefinition
@@ -133,7 +133,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 Title = "Books library",
                 Description = "A document library.",
                 TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
-                Url = "BooksLibrary"
+                CustomUrl = "BooksLibrary"
             };
 
             var booksView = new ListViewDefinition
@@ -154,7 +154,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 Id = "m2PopularBooksView",
                 ZoneIndex = 10,
                 ZoneId = "Main",
-                ListUrl = booksLibrary.GetListUrl(),
+                ListUrl = booksLibrary.CustomUrl,
                 ViewName = booksView.Title
             };
 

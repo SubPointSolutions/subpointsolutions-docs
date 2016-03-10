@@ -40,7 +40,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 Title = "List with folders",
                 Description = "Custom list with folders.",
                 TemplateType = BuiltInListTemplateTypeId.GenericList,
-                Url = "ListWithFolders"
+                CustomUrl = "ListWithFolders"
             };
 
             var model = SPMeta2Model.NewWebModel(web =>
