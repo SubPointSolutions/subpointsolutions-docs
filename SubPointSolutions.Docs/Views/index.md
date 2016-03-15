@@ -3,6 +3,7 @@
 * Manual publishing from github
 * [1 doc](/1)
 * [2 doc](/2)
+* A test community contribution 
 
 <hr/>
 Publishied: [[ci-date]]
