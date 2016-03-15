@@ -42,7 +42,7 @@ namespace SubPointSolutions.Docs.Code.Tests
         public void Publish_Dev()
         {
             RunWyam();
-            RunS3("sps-docs-dev");
+            RunS3("docs-dev.subpointsolutions.com");
         }
 
         private void RunS3(string bucketName)
