@@ -7,6 +7,6 @@ ContentTypeBinding definition has ListUrl attribute. It should contain relative 
 reSP allows you to select value from the drop-down list.
 Just use Ctrl+Space shortcut.
 <br/>
-<img src="http://docs.subpointsolutions.com/wp-content/uploads/2015/04/ContentTypeBindingListUrl.png">
+<img src="_img/ContentTypeBindingListUrl.png">
 
 

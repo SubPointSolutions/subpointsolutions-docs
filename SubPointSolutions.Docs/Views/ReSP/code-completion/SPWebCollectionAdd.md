@@ -8,7 +8,7 @@ FileName: SPWebCollectionAdd.html
 reSP allows you to change it from the drop-down list.
 Just create literal quotes and press Ctrl+Space shortcut.
 <br/>
-<img src="http://docs.subpointsolutions.com/wp-content/uploads/2015/06/SPWebCollectionAdd1.gif">
+<img src="_img/SPWebCollectionAdd1.gif">
 
 
 

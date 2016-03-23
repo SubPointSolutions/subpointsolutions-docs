@@ -11,7 +11,7 @@ File definition (in module) has FilePublishingAssociatedContentType attribute. I
 reSP allows you to select value from the drop-down list.
 Just use Ctrl+Space shortcut.
 <br/>
-<img src="http://docs.subpointsolutions.com/wp-content/uploads/2015/05/FilePublishingAssociatedContentType.gif">
+<img src="_img/FilePublishingAssociatedContentType.gif">
 
 
 

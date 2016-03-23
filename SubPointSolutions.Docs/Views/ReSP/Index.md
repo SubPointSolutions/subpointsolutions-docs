@@ -12,7 +12,7 @@ Using ReSharper you have an online static validation of code, markup, XML and Ja
 
 Code inspection is performed automatically in design time for all opened files. Also, it can be applied to a whole solution or project. 
 
-Depends on issue severity the problem text is highlighted in different ways and corresponded color marks are added to the marker bar. Mostly each of highlightings has a quick fix action (look like a bulb). And you can apply this fix on the [current file, current folder or project or whole solution.](http://docs.subpointsolutions.com/wp-content/uploads/2015/06/bulk.gif)
+Depends on issue severity the problem text is highlighted in different ways and corresponded color marks are added to the marker bar. Mostly each of highlightings has a quick fix action (look like a bulb). And you can apply this fix on the [current file, current folder or project or whole solution.](_img/bulk.gif)
 
 reSP plugin comes as a single bundle with two different editions:
 

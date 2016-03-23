@@ -14,7 +14,7 @@ The gotcha is in the use of the comma (,); either don’t use it and just specif
 reSP allows you to select page layout file name from the drop-down list and constructs right attribute value.
 Just use Ctrl+Space shortcut.
 <br/>
-<img src="http://docs.subpointsolutions.com/wp-content/uploads/2015/05/FilePublishingPageLayout.gif">
+<img src="_img/FilePublishingPageLayout.gif">
 
 
 

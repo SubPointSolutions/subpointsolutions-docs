@@ -8,7 +8,7 @@ Use solution defined fields in conjunction with predefined contants from SPBuilt
 reSP allows you to change it from the drop-down list.
 Just create literal quotes and press Ctrl+Space shortcut.
 <br/>
-<img src="http://docs.subpointsolutions.com/wp-content/uploads/2015/06/UseBuiltInFieldsInsteadOfStrings.gif">
+<img src="_img/UseBuiltInFieldsInsteadOfStrings.gif">
 
 
 

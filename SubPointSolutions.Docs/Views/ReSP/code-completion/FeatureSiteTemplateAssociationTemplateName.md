@@ -8,7 +8,7 @@ Feature stapling is an approach used to associate custom features with a site de
 reSP allows you to select from the drop-down list.
 Just use Ctrl+Space shortcut.
 <br/>
-<img src="http://docs.subpointsolutions.com/wp-content/uploads/2015/06/FeatureSiteTemplateAssociationTemplateName.gif">
+<img src="_img/FeatureSiteTemplateAssociationTemplateName.gif">
 ### Note
 Feature stapling concept itself is fairly easy to use, but an important aspect in feature stapling is [the order](http://blogs.msdn.com/b/mcsnoiwb/archive/2008/05/28/site-provisioning-order.aspx) in which a site is provisioned:
 

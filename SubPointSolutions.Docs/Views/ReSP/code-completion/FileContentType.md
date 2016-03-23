@@ -8,7 +8,7 @@ File definition (in module) has ContentType attribute. It should contain name of
 reSP allows you to select value from the drop-down list.
 Just use Ctrl+Space shortcut.
 <br/>
-<img src="http://docs.subpointsolutions.com/wp-content/uploads/2015/05/FileContentType.gif">
+<img src="_img/FileContentType.gif">
 
 
 
