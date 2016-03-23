@@ -1,0 +1,59 @@
+﻿<style>
+    .font-17 {
+        font-size: 17px;
+    }
+</style>
+
+@{
+    var navSplit = Model.String("RelativeFilePath", string.Empty).Split(new[] { '\\' });
+    var navFolder = navSplit[0];
+
+    var shouldRenderSunNav = !navFolder.Contains(".");
+
+    //if (navSplit.Count() > 1)
+    //{
+    //    navFolder = navSplit[0] + @"\" + navSplit[1];
+    //}
+}
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                Documentation
+                @if (shouldRenderSunNav)
+                {
+                    <span class="glyphicon glyphicon-chevron-right" />
+                }
+            </a>
+        </div>
+
+        @if (shouldRenderSunNav)
+        {
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle font-17"
+                       data-toggle="dropdown"
+                       role="button"
+                       aria-haspopup="true"
+                       aria-expanded="false">
+                        @navFolder<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/spmeta2-ex">SPMeta2 VS Extensions</a></li>
+                        <li><a href="/spmeta2-spec">SPMeta2 Spec</a></li>
+                        <li><a href="/spmeta2-nuget">SPMeta2 NuGet</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="/reSP">reSP</a></li>
+                    </ul>
+                </li>
+            </ul>
+        }
+
+    </div>
+</div>

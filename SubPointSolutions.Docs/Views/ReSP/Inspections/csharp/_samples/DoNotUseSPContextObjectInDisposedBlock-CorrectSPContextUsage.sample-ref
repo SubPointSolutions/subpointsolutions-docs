@@ -1,0 +1,3 @@
+var site = new SPSite(SPContext.Current.Site.ID))
+            {
+            }

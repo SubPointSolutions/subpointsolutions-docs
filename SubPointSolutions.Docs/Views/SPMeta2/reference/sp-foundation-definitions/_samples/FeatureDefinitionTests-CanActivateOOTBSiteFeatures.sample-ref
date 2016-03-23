@@ -1,0 +1,9 @@
+var model = SPMeta2Model.NewSiteModel(site =>
+{
+    site
+        .AddSiteFeature(DocSiteFeatures.SitePublisingInfrastructure)
+        .AddSiteFeature(DocSiteFeatures.DocumentSets);
+
+});
+
+DeployModel(model);

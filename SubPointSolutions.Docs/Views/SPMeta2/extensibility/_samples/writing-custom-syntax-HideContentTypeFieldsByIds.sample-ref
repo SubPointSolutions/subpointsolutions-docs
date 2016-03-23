@@ -1,0 +1,10 @@
+entTypeFieldLinks(new HideContentTypeFieldLinksDefinition
+            {
+<FieldLinkValue>(ids.Select(s =>
+Value
+                    {
+                        Id = s
+                    }))
+            });
+
+            return modelNode;

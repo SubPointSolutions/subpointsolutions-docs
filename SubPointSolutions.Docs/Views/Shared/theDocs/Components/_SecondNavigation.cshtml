@@ -1,0 +1,51 @@
+﻿@using System
+
+@{
+
+    var navSplit = Model.String("RelativeFilePath", string.Empty).Split(new[] { '\\' });
+
+    var navFolder = navSplit[0];
+    var navSubFolder = navSplit.Count() > 1 ? navSplit[1] : string.Empty;
+
+    var allSubnavDocuments = Documents
+        .Where(x => x.ContainsKey("RelativeFilePath")
+                    && x.String("RelativeFilePath").StartsWith(navFolder + @"\")
+                    && !x.String("SourceFileBase").StartsWith("_")
+                    && x.String("RelativeFilePath").StartsWith(navFolder)
+                    && x.String("RelativeFilePath").EndsWith("ndex.md")
+                    && x.String("RelativeFilePath", string.Empty)
+                                .Split(new[] { '\\' })
+                                .Count() == 3)
+         .OrderBy(x => x.String("Order", "0"))
+         .ToList();
+
+    var allSubgroups = allSubnavDocuments
+        .Select(x => new
+        {
+            Document = x,
+            SubgroupName = x.String("RelativeFileDir")
+                .Replace(navFolder, string.Empty)
+                .Split(new[] { '\\' }, StringSplitOptions.RemoveEmptyEntries)[0]
+        })
+        .ToList();
+
+    var selectedGroup = allSubgroups.FirstOrDefault(g => g.SubgroupName == navSubFolder);
+}
+
+<div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
+
+    <ul class="nav navbar-nav navbar-right">
+        @foreach (var g in allSubgroups)
+        {
+            var isActive = navSubFolder == g.SubgroupName;
+            var cssClass = isActive ? "active hero" : string.Empty;
+
+            <li class="@cssClass">
+                <a href="@(PathHelper.ToRootLink(PathHelper.RemoveExtension(g.Document.String("RelativeFilePath"))) + ".html")">
+                    @(g.Document.String("Title", g.Document.String("SourceFileBase")).Replace("Tests", String.Empty))
+                </a>
+            </li>
+        }
+
+    </ul>
+</div>

@@ -1,6 +1,6 @@
 ﻿cls
 
-$wyam = "Wyam 0.11.1-beta"
+$wyam = "Wyam"
 
 cd  $PSScriptRoot
 

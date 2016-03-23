@@ -1,0 +1,3 @@
+var site = SPContext.Current.Site)
+            {
+            }

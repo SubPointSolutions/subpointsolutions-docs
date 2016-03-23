@@ -38,7 +38,7 @@ namespace SubPointSolutions.Docs.Code.Tests
         #region tests
 
         [TestMethod]
-        [TestCategory("dev")]
+        [TestCategory("Dev")]
         public void Publish_Dev()
         {
             RunWyam();

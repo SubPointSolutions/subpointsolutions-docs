@@ -1,0 +1,2 @@
+var listUrl = "/lists/tasks";
+var taskList = web.GetList(SPUrlUtility.CombineUrl(web.Url, listUrl));

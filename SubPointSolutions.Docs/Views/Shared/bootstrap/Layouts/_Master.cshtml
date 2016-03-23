@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Model.String("Title")</title>
+
+    <link href="/content/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="/content/SyntaxHighlighter/shCore.css" rel="stylesheet" />
+    <link href="/content/SyntaxHighlighter/shCoreDefault.css" rel="stylesheet" />
+
+    <link href="/content/s.docs.default.css" rel="stylesheet" />
+</head>
+<body>
+    @{
+        Model.String("IsFirst", "true");
+    }
+
+    @RenderBody()
+
+    <script src="/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="/Scripts/bootstrap.js"></script>
+
+    <script src="/scripts/SyntaxHighlighter/shCore.js"></script>
+    <script src="/scripts/SyntaxHighlighter/shBrushCSharp.js"></script>
+    <script src="/scripts/SyntaxHighlighter/shBrushXml.js"></script>
+
+
+    @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/default.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/vs.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/languages/cs.min.js"></script>
+
+        <script>
+
+            jQuery(document).ready(function () {
+                jQuery('pre code.language-cs').each(function (i, block) {
+                    hljs.highlightBlock(block);
+                });
+            });
+
+        </script>*@
+
+    @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCoreEclipse.css">*@
+
+
+    <script>
+
+        jQuery(document).ready(function () {
+
+            jQuery('code.language-cs')
+                .addClass('brush: csharp;');
+
+            jQuery('code.language-xml')
+                .addClass('brush: xml;');
+
+            SyntaxHighlighter.defaults['quick-code'] = false;
+            SyntaxHighlighter.config.tagName = 'code';
+            SyntaxHighlighter.all();
+        });
+
+    </script>
+
+</body>
+</html>
