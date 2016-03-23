@@ -3,4 +3,4 @@ Title: New site
 FileName: nsite.html
 ---
 ### Description
-<img src="_img/nsite.gif">
+<img src="_img/nsite.gif"> 
