@@ -29,6 +29,11 @@ namespace SubPointSolutions.Docs.Services.Base
 
             foreach (var r in result)
             {
+                if (r.Language == "js")
+                {
+
+                }
+
                 r.MethodBody = NormilizeBody(r.MethodBody);
             }
 
@@ -63,47 +68,55 @@ namespace SubPointSolutions.Docs.Services.Base
             if (!string.IsNullOrEmpty(startString))
                 firstLine = lines.FirstOrDefault(l => l.Contains(startString));
 
-            // C#?
-            if (firstLine == null)
+
+            //var firstLineStarts = new List<string>();
+
+            //// C#?
+            //firstLineStarts.Add("public");
+            //firstLineStarts.Add("using");
+            //firstLineStarts.Add("var");
+            //firstLineStarts.Add(@"//");
+
+            //// XML?
+            //firstLineStarts.Add(@"<");
+
+            //// JS?
+            //firstLineStarts.Add(@"function");
+            //firstLineStarts.Add(@"SOD");
+            //firstLineStarts.Add(@"SP.");
+            //firstLineStarts.Add(@"window");
+
+            //foreach (var startLine in firstLineStarts)
+            //{
+            //    if (firstLine == null)
+            //    {
+            //        firstLine = lines.FirstOrDefault(l => l.Contains(startLine));
+
+            //        if (firstLine != null)
+            //        {
+            //            startString = startLine;
+            //            break;
+            //        }
+            //    }
+            //}
+
+
+            var startIndex = 0;
+
+            foreach (var line in lines)
             {
-                firstLine = lines.FirstOrDefault(l => l.Contains("public"));
+                foreach (var letter in line)
+                {
+                    if (char.IsLetterOrDigit(letter))
+                    {
+                        firstLine = line;
+                        break;
+                    }
 
-                if (firstLine != null)
-                    startString = "public";
-            }
+                    startIndex++;
+                }
 
-            if (firstLine == null)
-            {
-                firstLine = lines.FirstOrDefault(l => l.Contains("var"));
-
-                if (firstLine != null)
-                    startString = @"var";
-            }
-
-            if (firstLine == null)
-            {
-                firstLine = lines.FirstOrDefault(l => l.Contains(@"//"));
-
-                if (firstLine != null)
-                    startString = @"//";
-            }
-
-            // XML?
-            if (firstLine == null)
-            {
-                firstLine = lines.FirstOrDefault(l => l.Contains("<"));
-
-                if (firstLine != null)
-                    startString = "<";
-            }
-
-            // js?
-            if (firstLine == null)
-            {
-                firstLine = lines.FirstOrDefault(l => l.Contains("function"));
-
-                if (firstLine != null)
-                    startString = "function";
+                //startString = startLine;
             }
 
             if (firstLine != null)

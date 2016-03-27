@@ -1,5 +1,5 @@
 var wpXml = WebpartXmlExtensions
-               .LoadWebpartXmlDocument(BuiltInWebPartTemplates.ContentEditorWebPart)
-               .SetOrUpdateContentEditorWebPartProperty("Content", content, true)
-               .SetOrUpdateContentEditorWebPartProperty("ContentLink", contentLink)
-               .ToString();
+                           .LoadWebpartXmlDocument(BuiltInWebPartTemplates.ContentEditorWebPart)
+                           .SetOrUpdateContentEditorWebPartProperty("Content", content, true)
+                           .SetOrUpdateContentEditorWebPartProperty("ContentLink", contentLink)
+                           .ToString();

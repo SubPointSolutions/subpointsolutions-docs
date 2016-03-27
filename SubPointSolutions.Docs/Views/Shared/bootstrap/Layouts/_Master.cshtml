@@ -25,7 +25,7 @@
     <script src="/scripts/SyntaxHighlighter/shCore.js"></script>
     <script src="/scripts/SyntaxHighlighter/shBrushCSharp.js"></script>
     <script src="/scripts/SyntaxHighlighter/shBrushXml.js"></script>
-
+    <script src="/scripts/SyntaxHighlighter/shBrushJScript.js"></script>
 
     @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/default.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/vs.min.css">
@@ -54,6 +54,9 @@
 
             jQuery('code.language-xml')
                 .addClass('brush: xml;');
+
+            jQuery('code.language-js')
+                .addClass('brush: js;');
 
             SyntaxHighlighter.defaults['quick-code'] = false;
             SyntaxHighlighter.config.tagName = 'code';

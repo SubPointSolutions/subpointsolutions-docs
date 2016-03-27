@@ -1,13 +1,13 @@
 var writeToHistoryLstWorkflow = new SP2013WorkflowDefinition
-{
-    DisplayName = "M2 - Write to history list",
-    Override = true,
-    Xaml = WorkflowTemplates.WriteToHistoryListWorkflow
-};
+            {
+                DisplayName = "M2 - Write to history list",
+                Override = true,
+                Xaml = WorkflowTemplates.WriteToHistoryListWorkflow
+            };
 
-var model = SPMeta2Model.NewWebModel(web =>
-{
-    web.AddSP2013Workflow(writeToHistoryLstWorkflow);
-});
+            var model = SPMeta2Model.NewWebModel(web =>
+            {
+                web.AddSP2013Workflow(writeToHistoryLstWorkflow);
+            });
 
-DeployModel(model);
+            DeployModel(model);

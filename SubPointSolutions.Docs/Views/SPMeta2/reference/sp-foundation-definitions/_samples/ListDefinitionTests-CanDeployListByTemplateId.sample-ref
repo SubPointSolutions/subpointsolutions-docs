@@ -1,23 +1,23 @@
 var genericList = new ListDefinition
-{
-    Title = "Generic list",
-    Description = "A generic list.",
-    TemplateType = BuiltInListTemplateTypeId.GenericList,
-    Url = "GenericList"
-};
+            {
+                Title = "Generic list",
+                Description = "A generic list.",
+                TemplateType = BuiltInListTemplateTypeId.GenericList,
+                Url = "GenericList"
+            };
 
-var documentLibrary = new ListDefinition
-{
-    Title = "Document library",
-    Description = "A document library.",
-    TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
-    Url = "DocumentLibrary"
-};
+            var documentLibrary = new ListDefinition
+            {
+                Title = "Document library",
+                Description = "A document library.",
+                TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
+                Url = "DocumentLibrary"
+            };
 
-var model = SPMeta2Model.NewWebModel(web =>
-{
-    web.AddList(genericList);
-    web.AddList(documentLibrary);
-});
+            var model = SPMeta2Model.NewWebModel(web =>
+            {
+                web.AddList(genericList);
+                web.AddList(documentLibrary);
+            });
 
-DeployModel(model);
+            DeployModel(model);

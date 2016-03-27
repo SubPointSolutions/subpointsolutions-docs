@@ -1,2 +1,2 @@
 var ct = web.ContentTypes[contentTypeName];
-ct.Fields.Add("NewField", SPFieldType.Boolean, true);
+            ct.Fields.Add("NewField", SPFieldType.Boolean, true);

@@ -1,3 +1,3 @@
-var site = new SPSite(SPContext.Current.Site.ID))
+using (var site = new SPSite(SPContext.Current.Site.ID))
             {
             }

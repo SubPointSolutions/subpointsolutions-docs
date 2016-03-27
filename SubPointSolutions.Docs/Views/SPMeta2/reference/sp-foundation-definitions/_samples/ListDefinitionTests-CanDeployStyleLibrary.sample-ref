@@ -1,9 +1,9 @@
 var model = SPMeta2Model.NewWebModel(web =>
-{
-    web.AddHostList(BuiltInListDefinitions.StyleLibrary, list =>
-    {
-        // do stuff
-    });
-});
+            {
+                web.AddHostList(BuiltInListDefinitions.StyleLibrary, list =>
+                {
+                    // do stuff
+                });
+            });
 
-DeployModel(model);
+            DeployModel(model);

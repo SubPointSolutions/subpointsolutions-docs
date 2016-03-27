@@ -23,15 +23,13 @@ It is recommended to keep the following rules:
 - Use arrays _spBodyOnLoadFunctionNames (sp2010) or _spBodyOnLoadFunctions (sp2013) to solve simple tasks on the SharePoint pages like list forms, views or web part pages. Be aware that content is often added after the page is loaded, for example: Web Parts in MDS, option tags in lookup fields, cascading lookups. Be sure you work with ready-to-proceed elements.
 - In case of Minimal Download Strategy (MDS) use RegisterModuleInit function call to get your script loaded while asyc load occur
 
-[JS.Init]
+<a href="_samples/AvoidJQueryDocumentReadyInCode.Init-AvoidJQueryDocumentReadyInCode_Init.sample-ref"></a>
 
 - Consider mQuery:
-
-[JS.mQuery]
+<a href="_samples/AvoidJQueryDocumentReadyInCode.Init-AvoidJQueryDocumentReadyInCode_mQuery.sample-ref"></a>
 
 In general mQuery does not play significant role and can’t be consider as common solution. It uses onDemandload mode on many pages. That means it have to be used as 
-
-[JS.mQuerySODExecute]
+<a href="_samples/AvoidJQueryDocumentReadyInCode.Init-AvoidJQueryDocumentReadyInCode_mQuerySODExecute.sample-ref"></a>
 
 ### Links
 - [SharePoint 2010 and the Chrome JavaScript Bug](http://mosswell.blogspot.co.uk/2013/06/sharepoint-2010-and-chrome-javascript.html)

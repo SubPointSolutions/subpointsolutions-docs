@@ -80,7 +80,7 @@ Pipelines.Add("site-md-content",
 					x = doc.Clone(x.Content.Replace(codeRef.OuterHtml, Environment.NewLine + innerHtml));
 				}
 				else{
-					throw new System.Exception("cannot find sample");
+					throw new System.Exception(string.Format("cannot find sample with name:[{0}]", sampleMethodName));
 				}
 
 			} else {
@@ -317,7 +317,7 @@ Pipelines.Add("site-md-content",
 
 	
 	//FileName("FileName"),
-	WriteFiles(".html")
+	WriteFiles(".html").UseWriteMetadata(true)
 );
 
 Pipelines.Add("site-resources-css",

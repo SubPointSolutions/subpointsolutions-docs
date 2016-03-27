@@ -113,10 +113,10 @@ namespace SubPointSolutions.Docs.Code.Tests
         [TestCategory("Dev.Source")]
         public void Can_Create_JS_Samples()
         {
-            var docsPrj = @"..\..\Content";
+            var docsPrj = @"..\..\Views";
             var service = new HtmlSamplesService();
 
-            var samples = service.LoadSamples(docsPrj, false);
+            var samples = service.LoadSamples(docsPrj, true);
 
             foreach (var sample in samples)
             {
@@ -137,10 +137,10 @@ namespace SubPointSolutions.Docs.Code.Tests
         [TestCategory("Dev.Source")]
         public void Can_Create_XML_Samples()
         {
-            var docsPrj = @"..\..\Content";
+            var docsPrj = @"..\..\Views";
             var service = new XmlSamplesService();
 
-            var samples = service.LoadSamples(docsPrj, false);
+            var samples = service.LoadSamples(docsPrj, true);
 
             foreach (var sample in samples)
             {

@@ -1,7 +1,7 @@
-entTypeFieldLinks(new HideContentTypeFieldLinksDefinition
+modelNode.AddHideContentTypeFieldLinks(new HideContentTypeFieldLinksDefinition
             {
-<FieldLinkValue>(ids.Select(s =>
-Value
+                Fields = new List<FieldLinkValue>(ids.Select(s =>
+                    new FieldLinkValue
                     {
                         Id = s
                     }))

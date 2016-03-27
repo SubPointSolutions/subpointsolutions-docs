@@ -42,7 +42,7 @@ namespace SubPointSolutions.Docs.Code.Services
                     throw new ArgumentException("doc-method-name attr must be present");
 
                 if (sample.Name == "script")
-                    docSample.Language = "xml";
+                    docSample.Language = "js";
                 else
                     docSample.Language = "html";
 

@@ -1,14 +1,14 @@
 var mmsTermStore = new TaxonomyTermStoreDefinition
-{
-    Name = "Managed Metadata Service"
-};
+            {
+                Name = "Managed Metadata Service"
+            };
 
-var model = SPMeta2Model.NewSiteModel(site =>
-{
-    site.AddTaxonomyTermStore(mmsTermStore, termStore =>
-    {
-        // do stuff, add groups, term sets
-    });
-});
+            var model = SPMeta2Model.NewSiteModel(site =>
+            {
+                site.AddTaxonomyTermStore(mmsTermStore, termStore =>
+                {
+                    // do stuff, add groups, term sets
+                });
+            });
 
-DeployModel(model);
+            DeployModel(model);

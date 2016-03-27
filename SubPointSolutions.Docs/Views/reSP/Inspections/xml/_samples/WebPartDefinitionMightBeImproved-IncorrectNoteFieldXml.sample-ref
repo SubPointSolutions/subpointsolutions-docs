@@ -1,0 +1,5 @@
+<properties>
+      <property name="Title" type="string">VisualWebPart1</property>
+      <property name="TitleIconImageUrl" type="string">/_layouts/images/Adicodes/AdicodesIcon.png</property>
+      <property name="CatalogIconImageUrl" type="string">/_layouts/images/Adicodes/AdicodesIcon.png</property>
+    </properties>

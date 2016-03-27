@@ -1,7 +1,5 @@
 ﻿<Samples>
   <Sample MethodName="IncorrectContentTypeWithComments">
-
-    <!-- sample=IncorrectContentTypeWithComments -->
     <ContentType ID="0x010100..."
                    Name="MyContentType"
                    Group="Project 1"

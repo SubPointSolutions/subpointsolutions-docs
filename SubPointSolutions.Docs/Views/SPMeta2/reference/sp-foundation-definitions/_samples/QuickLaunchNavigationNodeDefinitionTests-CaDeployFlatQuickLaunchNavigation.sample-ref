@@ -1,30 +1,30 @@
 var aboutUs = new QuickLaunchNavigationNodeDefinition
-{
-    Title = "About us",
-    Url = "about-us.aspx",
-    IsExternal = true
-};
+            {
+                Title = "About us",
+                Url = "about-us.aspx",
+                IsExternal = true
+            };
 
-var services = new QuickLaunchNavigationNodeDefinition
-{
-    Title = "Services",
-    Url = "services.aspx",
-    IsExternal = true
-};
+            var services = new QuickLaunchNavigationNodeDefinition
+            {
+                Title = "Services",
+                Url = "services.aspx",
+                IsExternal = true
+            };
 
-var contacts = new QuickLaunchNavigationNodeDefinition
-{
-    Title = "Contacts",
-    Url = "contacts.aspx",
-    IsExternal = true
-};
+            var contacts = new QuickLaunchNavigationNodeDefinition
+            {
+                Title = "Contacts",
+                Url = "contacts.aspx",
+                IsExternal = true
+            };
 
-var model = SPMeta2Model.NewWebModel(web =>
-{
-    web
-        .AddQuickLaunchNavigationNode(aboutUs)
-        .AddQuickLaunchNavigationNode(services)
-        .AddQuickLaunchNavigationNode(contacts);
-});
+            var model = SPMeta2Model.NewWebModel(web =>
+            {
+                web
+                    .AddQuickLaunchNavigationNode(aboutUs)
+                    .AddQuickLaunchNavigationNode(services)
+                    .AddQuickLaunchNavigationNode(contacts);
+            });
 
-DeployModel(model);
+            DeployModel(model);

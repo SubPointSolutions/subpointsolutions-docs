@@ -1,7 +1,7 @@
 var ds = new SPDataSource();
 
-ds.List = list;
-ds.DataSourceMode = SPDataSourceMode.List;
-ds.IncludeHidden = false;
+            ds.List = list;
+            ds.DataSourceMode = SPDataSourceMode.List;
+            ds.IncludeHidden = false;
 
-ds.Scope = SPViewScope.Recursive; // <-  recommended
+            ds.Scope = SPViewScope.Recursive; // <-  recommended
