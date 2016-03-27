@@ -21,6 +21,12 @@
 
     var navFolder = navSplit[0];
     var navSubFolder = navSplit.Count() > 1 ? navSplit[1] : string.Empty;
+    
+    // root link, home
+    if (navSubFolder.EndsWith(".md"))
+    {
+        navSubFolder = string.Empty;
+    }
 
     var allSubnavDocuments = Documents
         .Where(x => x.ContainsKey("RelativeFilePath")
@@ -34,6 +40,20 @@
          .OrderBy(x => x.String("Order", "0"))
          .ToList();
 
+    // adding home link to the subgroups
+    var homeDocument = Documents
+        .Where(x => x.ContainsKey("RelativeFilePath")
+                    && x.String("RelativeFilePath").StartsWith(navFolder + @"\")
+                    && !x.String("SourceFileBase").StartsWith("_")
+                    && x.String("RelativeFilePath").StartsWith(navFolder)
+                    && x.String("RelativeFilePath").EndsWith("ndex.md")
+                    && x.String("RelativeFilePath", string.Empty)
+                                .Split(new[] { '\\' })
+                                .Count() == 2)
+         .FirstOrDefault();
+
+   
+         
     var allSubgroups = allSubnavDocuments
         .Select(x => new
         {
@@ -44,10 +64,19 @@
         })
         .ToList();
 
+    if (homeDocument != null)
+    {
+        allSubgroups.Insert(0,new
+        {
+            Document = homeDocument,
+            SubgroupName = string.Empty
+        });
+    }        
+        
     var selectedGroup = allSubgroups.FirstOrDefault(g => g.SubgroupName == navSubFolder);
 }
 
-<div class="sub-nav">
+<div class="sub-nav" m-current-subfolder="@navSubFolder">
 
 
 
@@ -74,7 +103,7 @@
             var cssClass = isActive ? "active" : string.Empty;
 
             <li >
-                <a class="@cssClass" href="@(PathHelper.ToRootLink(PathHelper.RemoveExtension(g.Document.String("RelativeFilePath"))) + ".html")">
+                <a m-subgroup="@g.SubgroupName" class="@cssClass" href="@(PathHelper.ToRootLink(PathHelper.RemoveExtension(g.Document.String("RelativeFilePath"))) + ".html")">
                     @(g.Document.String("Title", g.Document.String("SourceFileBase")).Replace("Tests", String.Empty))
                 </a>
             </li>

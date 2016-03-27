@@ -7,7 +7,7 @@ It is constantly improved by both support, dev team and community along with new
 
 In case you have unexpected issues please contact support on Yammer network or GitHub:
 
-* https://www.yammer.com/spmeta2feedback
-* https://github.com/SubPointSolutions/spmeta2
+* [https://www.yammer.com/spmeta2feedback](https://www.yammer.com/spmeta2feedback)
+* [https://github.com/SubPointSolutions/spmeta2](https://github.com/SubPointSolutions/spmeta2)
 
 Cheers, enjoy and share your thoughts at out [Yammer Network](https://www.yammer.com/spmeta2feedback)!

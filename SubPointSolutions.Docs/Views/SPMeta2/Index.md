@@ -1,4 +1,5 @@
 ﻿---
+Title: 'SPMeta2 Home'
 Tile: true
 TileTitle: 'SPMeta2'
 TileOrder: 10
