@@ -13,7 +13,7 @@ Here is a potentally confusing usage of upper-case and lower-case "ID" token:
 It could be confusing for other people while working with read-write operation on fields, content types and list items.
 Besides, it might lead to unplesant typo issues.
 
-[XML.MixedIDInFieldName]
+<a href="_samples/MixedIDInFieldName-IncorrectSample.sample-ref"></a>
 
 ### Resolution
 Tend to use either "ID" or "Id" token for all cases.

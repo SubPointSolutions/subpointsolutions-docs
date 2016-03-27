@@ -15,11 +15,7 @@ The standard list types are a useful starting point if it makes sense for your c
 ### Resolution
 Change list content type to ContentTypeRef
 
-<a class="code" href=" />
-sdfds
-</a>
-
-[XML.CorrectContentTypesInList]
+<a href="_samples/AvoidListContentTypes-CorrectContentTypesInList.sample-ref"></a>
 
 ### Links
 - [Site and List Content Types](https://msdn.microsoft.com/en-us/library/office/ms463016(v=office.14).aspx)

@@ -1,5 +1,5 @@
 ﻿<Samples>
-  <Sample MethodName="IncorrectNoteFieldXml">
+  <Sample MethodName="IncorrectSample">
     <Field
       ID="{FE2C05A9-1861-48C3-8DB4-3C08E9830E2C}"
       Type="Text"

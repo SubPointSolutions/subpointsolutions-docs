@@ -5,7 +5,7 @@ FileName: resp515502.html
 ### Description
 Declare empty Fields element when using only ContentTypeRefs. Fields automatically populated from content types.
 
-[XML.DeclareEmptyFields]
+<a href="_samples/DeclareEmptyFieldsElement-DeclareEmptyFields.sample-ref"></a>
 
 This works well. For most field types, that is. It does not work for Calculated Fields. More about <a title="this" href="http://www.hekstra.org/how-to-deploy-a-calculated-field/" target="_blank">this</a>.</pre>
 

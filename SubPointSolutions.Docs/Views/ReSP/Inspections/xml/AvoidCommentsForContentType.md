@@ -7,17 +7,13 @@ Xml comment in elements file can break your content type.
 The following content type is incorrect and all fields after the comment won't be created by SharePoint.
 
 
-<a href="avoi"
-[XML.IncorrectContentTypeWithComments]
+<a href="_samples/AvoidCommentsForContentType-IncorrectContentTypeWithComments.sample-ref"></a>
 
 ### Resolution
 Remove all comments from content type schema.
 The following content type is correct. Just remove comments from XML.
 
-[XML.CorrectContentTypeWithComments]
-
-<a href=""
-
+<a href="_samples/AvoidCommentsForContentType-CorrectContentTypeWithComments.sample-ref"></a>
 
 ### Links
 - [Content Type Element](http://msdn.microsoft.com/en-us/library/office/aa544268(v=office.14).aspx)

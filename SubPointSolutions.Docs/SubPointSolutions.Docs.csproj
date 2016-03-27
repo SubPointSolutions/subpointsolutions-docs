@@ -1316,9 +1316,10 @@
     <None Include="Views\reSP\Inspections\xml\_samples\DoNotIndexNoteField-CorrectNoteFieldXml.sample-ref" />
     <None Include="Views\reSP\Inspections\xml\_samples\DoNotIndexNoteField-IncorrectNoteFieldXml.sample-ref" />
     <None Include="Views\reSP\Inspections\xml\_samples\DoNotIndexNoteField-SysAll.sample-ref" />
-    <None Include="Views\reSP\Inspections\xml\_samples\MixedIDInFieldName-IncorrectNoteFieldXml.sample-ref" />
+    <None Include="Views\reSP\Inspections\xml\_samples\MixedIDInFieldName-IncorrectSample.sample-ref" />
     <None Include="Views\reSP\Inspections\xml\_samples\MixedIDInFieldName-SysAll.sample-ref" />
     <None Include="Views\reSP\Inspections\xml\_samples\WebPartDefinitionMightBeImproved-IncorrectNoteFieldXml.sample-ref" />
+    <None Include="Views\reSP\Inspections\xml\_samples\WebPartDefinitionMightBeImproved-IncorrectSample.sample-ref" />
     <None Include="Views\reSP\Inspections\xml\_samples\WebPartDefinitionMightBeImproved-SysAll.sample-ref" />
     <None Include="Views\reSP\kb\Index.md" />
     <None Include="Views\reSP\live-templates\Index.md" />

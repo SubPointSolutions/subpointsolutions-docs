@@ -8,10 +8,10 @@ If you specify (thanks copy & paste) Indexed attribute for note field the follow
 _Message: Microsoft.SharePoint.SPException: Cannot complete this action. Please try again.; System.Runtime.InteropServices.COMException: Cannot complete this action. Please try again.; StackTrace:    at Microsoft.SharePoint.Administration.SPElementDefinitionCollection.ProvisionListInstances(SPFeaturePropertyCollection props, SPSite site, SPWeb web, Boolean fForce)     at Microsoft.SharePoint.Administration.SPElementDefinitionCollection.ProvisionElements(SPFeaturePropertyCollection props, SPWebApplication webapp, SPSite site, SPWeb web, SPFeatureActivateFlags activateFlags, Boolean fForce)_
 
 Maliciously formed XML:
-[XML.IncorrectNoteFieldXml]
+<a href="_samples/WebPartDefinitionMightBeImproved-IncorrectNoteFieldXml.sample-ref"></a>
 
 Correctly forment XML, without Indexed attribute:
-[XML.CorrectNoteFieldXml]
+<a href="_samples/DoNotIndexNoteField-CorrectNoteFieldXml.sample-ref"></a>
 
 ### Resolution
 Remove "Indexed" attribute from Field tag.
