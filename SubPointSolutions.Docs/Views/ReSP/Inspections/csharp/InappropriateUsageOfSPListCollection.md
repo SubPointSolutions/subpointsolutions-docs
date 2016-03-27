@@ -16,12 +16,13 @@ Potential performance issues:
 - Avoid all list enumerations via linq OfType<T> expression.
 
 Inappropriate usage:
+
 <img title="code.png" src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=spcafcontrib&amp;DownloadId=831767" alt="code.png">
 
 ### Resolution
 Consider retrieving list by its URL with [SPWeb.GetList() method](http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.spweb.getlist.aspx)
 
-[TEST.CorrectListUsage]
+<a href="_samples/InappropriateUsageOfSPListCollection-CorrectListUsage.sample-ref"></a>
 
 ### Links
 - [SPWeb.GetList() method](http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.spweb.getlist.aspx)

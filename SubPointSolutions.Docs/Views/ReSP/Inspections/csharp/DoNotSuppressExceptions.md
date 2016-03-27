@@ -13,8 +13,8 @@ on the application top level to avoid user from stress from exception technical 
 to wrap original exception into custom exception type.
 -  **Application exceptions** like NullReferenceException, InvalidOperation etc. These are about logic problem in code. You can handle its with the same reasons as for system exceptions.
 
-<a href="_samples/DoNotSuppressExceptions-CallerMethod.sample-ref" >Caller</a>
-<a href="_samples/DoNotSuppressExceptions-CalledMethod.sample-ref" >CalledMethod</a>
+<a href="_samples/DoNotSuppressExceptions-CallerMethod.sample-ref">Caller</a>
+<a href="_samples/DoNotSuppressExceptions-CalledMethod.sample-ref">CalledMethod</a>
 
 In case of logging handle exception with re-throw. It will allow to take a decision on the upper level.
 

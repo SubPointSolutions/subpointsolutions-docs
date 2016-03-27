@@ -11,28 +11,48 @@
 
     var activeDocument = Documents.FirstOrDefault(d => d.String("RelativeFilePath") == Model.String("RelativeFilePath"));
 
-    var documents = Documents
-            .Where(x => x.ContainsKey("RelativeFilePath")
-                //&& !x.String("RelativeFilePath").EndsWith("index.md")
-                && !x.Get<bool>("Hidden", false)
-                && !x.String("RelativeFilePath").EndsWith("index.cshtml")
-                && x.String("RelativeFilePath").StartsWith(navFolder + @"\")
-                && !x.String("SourceFileBase").StartsWith("_")
-                && x.String("RelativeFilePath").StartsWith(navFolder))
+    var categoryGroups = Documents
+        .Where(x => x.ContainsKey("RelativeFilePath")
+            //&& !x.String("RelativeFilePath").EndsWith("index.md")
+                    && !x.Get<bool>("Hidden", false)
+                    && !x.String("RelativeFilePath").EndsWith("index.cshtml")
+                    && x.String("RelativeFilePath").StartsWith(navFolder + @"\")
+                    && !x.String("SourceFileBase").StartsWith("_")
+                    && x.String("RelativeFilePath").StartsWith(navFolder))
 
-            //.GroupBy(x => !string.IsNullOrEmpty(x.String("Category"))
-        //                 ? x.String("Category")
-        //                  : x.String("RelativeFileDir").Replace(navFolder, string.Empty))
-        //.OrderBy(x => x.Key)
-                                .OrderBy(x => x.Get<int>("Order", 1000))
-                                .ThenBy(x => x.String("Title"))
-                                .ThenBy(x => x.String("SourceFileBase"))
-            .ToList();
+        .GroupBy(x => !string.IsNullOrEmpty(x.String("Category"))
+            ? x.String("Category")
+            : x.String("RelativeFileDir").Replace(navFolder, string.Empty))
+        .OrderBy(x => x.Key)
+        .ToList();
 
 
+    var documents = new List<IDocument>();
+
+    foreach (IGrouping<string, IDocument> categoryGroup in categoryGroups)
+    {
+        foreach (IDocument childDoc in categoryGroup
+            .Where(x => !x.Get<bool>("Hidden", false))
+            .OrderBy(x => x.Get<int>("Order", 1000))
+            .ThenBy(x => x.String("Title"))
+            .ThenBy(x => x.String("SourceFileBase")))
+        {
+            documents.Add(childDoc);
+        }
+    }
+
+    //    .OrderBy(x => x.Get<int>("Order", 1000))
+                                //.ThenBy(x => x.String("Title"))
+    //.ThenBy(x => x.String("SourceFileBase"))        
+            //.ToList();
+
+    
     var prevDocument = documents.FirstOrDefault();
     var nextDocument = documents.FirstOrDefault();
 
+    var prevDocumentUrl = string.Empty;
+    var nextDocumentUrl = string.Empty;
+    
     prevDocument = null;
     nextDocument = null;
 
@@ -43,11 +63,27 @@
         if (activeDocumentIndex > 0)
         {
             prevDocument = documents[activeDocumentIndex-1];
+            prevDocumentUrl = PathHelper.ToRootLink(PathHelper.RemoveExtension(prevDocument.String("RelativeFilePath"))) + ".html";
+
+            var customFileName = prevDocument.String("FileName");
+            
+            if (!string.IsNullOrEmpty(customFileName))
+            {
+                prevDocumentUrl = prevDocumentUrl.Replace(System.IO.Path.GetFileName(prevDocumentUrl), customFileName);
+            }
         }
 
         if (activeDocumentIndex < documents.Count() - 1)
         {
             nextDocument = documents[activeDocumentIndex +1];
+            nextDocumentUrl = PathHelper.ToRootLink(PathHelper.RemoveExtension(nextDocument.String("RelativeFilePath"))) + ".html";
+
+            var customFileName = nextDocument.String("FileName");
+
+            if (!string.IsNullOrEmpty(customFileName))
+            {
+                nextDocumentUrl = nextDocumentUrl.Replace(System.IO.Path.GetFileName(nextDocumentUrl), customFileName);
+            }
         }
     }
 }
@@ -57,13 +93,13 @@
     <div class="m-prevNextNav-cnt">
         @if (prevDocument != null)
         {
-            <a class="btn-lg btn-default" href="@(PathHelper.ToRootLink(PathHelper.RemoveExtension(prevDocument.String("RelativeFilePath"))) + ".html")">
+            <a class="btn-lg btn-default" href="@prevDocumentUrl">
                 Previous
             </a>
         }
         @if (nextDocument != null)
         {
-            <a class="btn-lg btn-default pull-right" href="@(PathHelper.ToRootLink(PathHelper.RemoveExtension(nextDocument.String("RelativeFilePath"))) + ".html")">
+            <a class="btn-lg btn-default pull-right" href="@nextDocumentUrl">
                 Next
             </a>
         }
