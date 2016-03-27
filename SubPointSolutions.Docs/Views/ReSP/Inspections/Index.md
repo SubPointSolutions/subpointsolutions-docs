@@ -2,6 +2,8 @@
 Title: Inspections
 Order: 200
 ---
+### About ReSharper and reSP inspections
+
 This chapter contains set of pages related with reSP Live Templates productivity features.
 
 #### Links

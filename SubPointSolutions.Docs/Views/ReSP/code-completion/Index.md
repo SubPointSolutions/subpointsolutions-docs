@@ -2,6 +2,7 @@
 Title: Code Completion
 Order: 300
 ---
+### About ReSharper and reSP code completion
 This chapter contains set of pages related with reSP Code Completion productivity features.
 
 #### Links

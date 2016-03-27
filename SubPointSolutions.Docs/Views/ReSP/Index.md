@@ -6,7 +6,7 @@ TileOrder: 30
 TileDescription: 'ReSharper plugin that helps to write SharePoint related code faster and better.'
 ---
 
-### Description
+### Welcome to reSP
 reSP is a free plugin for [JetBrain ReSharper](https://www.jetbrains.com/resharper/) tool to assist SharePoint developer.
 
 Using ReSharper you have an online static validation of code, markup, XML and Javascript. Once installed the reSP plugin pay your attention to the problems in SharePoint API ([SSOM](/resp/inspections/csharp/), [JSOM](/resp/inspections/javascript/)) usage, potential performance issues, invalid [ASP](/resp/inspections/asp/) and [XML](/resp/inspections/xml/) and provide productivity tools like [IntelliSense](/resp/pro/code-completion/) and [live templates](/resp/pro/livetemplates/). 

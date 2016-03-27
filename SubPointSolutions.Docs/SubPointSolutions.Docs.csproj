@@ -463,25 +463,25 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Code\Modules\jquery-1.11.2.min.js" />
-    <Content Include="Content\bootstrap\bootstrap.min.css" />
-    <Content Include="Content\bootstrap\s.docs.default.css" />
-    <Content Include="Content\bootstrap\SyntaxHighlighter\shCore.css" />
-    <Content Include="Content\bootstrap\SyntaxHighlighter\shCoreDefault.css" />
-    <Content Include="Content\bootstrap\SyntaxHighlighter\shCoreDjango.css" />
-    <Content Include="Content\bootstrap\SyntaxHighlighter\shCoreEclipse.css" />
-    <Content Include="Content\bootstrap\SyntaxHighlighter\shCoreEmacs.css" />
-    <Content Include="Content\bootstrap\SyntaxHighlighter\shCoreFadeToGrey.css" />
-    <Content Include="Content\bootstrap\SyntaxHighlighter\shCoreMDUltra.css" />
-    <Content Include="Content\bootstrap\SyntaxHighlighter\shCoreMidnight.css" />
-    <Content Include="Content\bootstrap\SyntaxHighlighter\shCoreRDark.css" />
-    <Content Include="Content\bootstrap\SyntaxHighlighter\shThemeDefault.css" />
-    <Content Include="Content\bootstrap\SyntaxHighlighter\shThemeDjango.css" />
-    <Content Include="Content\bootstrap\SyntaxHighlighter\shThemeEclipse.css" />
-    <Content Include="Content\bootstrap\SyntaxHighlighter\shThemeEmacs.css" />
-    <Content Include="Content\bootstrap\SyntaxHighlighter\shThemeFadeToGrey.css" />
-    <Content Include="Content\bootstrap\SyntaxHighlighter\shThemeMDUltra.css" />
-    <Content Include="Content\bootstrap\SyntaxHighlighter\shThemeMidnight.css" />
-    <Content Include="Content\bootstrap\SyntaxHighlighter\shThemeRDark.css" />
+    <Content Include="content\bootstrap\bootstrap.min.css" />
+    <Content Include="content\bootstrap\s.docs.default.css" />
+    <Content Include="content\bootstrap\SyntaxHighlighter\shCore.css" />
+    <Content Include="content\bootstrap\SyntaxHighlighter\shCoreDefault.css" />
+    <Content Include="content\bootstrap\SyntaxHighlighter\shCoreDjango.css" />
+    <Content Include="content\bootstrap\SyntaxHighlighter\shCoreEclipse.css" />
+    <Content Include="content\bootstrap\SyntaxHighlighter\shCoreEmacs.css" />
+    <Content Include="content\bootstrap\SyntaxHighlighter\shCoreFadeToGrey.css" />
+    <Content Include="content\bootstrap\SyntaxHighlighter\shCoreMDUltra.css" />
+    <Content Include="content\bootstrap\SyntaxHighlighter\shCoreMidnight.css" />
+    <Content Include="content\bootstrap\SyntaxHighlighter\shCoreRDark.css" />
+    <Content Include="content\bootstrap\SyntaxHighlighter\shThemeDefault.css" />
+    <Content Include="content\bootstrap\SyntaxHighlighter\shThemeDjango.css" />
+    <Content Include="content\bootstrap\SyntaxHighlighter\shThemeEclipse.css" />
+    <Content Include="content\bootstrap\SyntaxHighlighter\shThemeEmacs.css" />
+    <Content Include="content\bootstrap\SyntaxHighlighter\shThemeFadeToGrey.css" />
+    <Content Include="content\bootstrap\SyntaxHighlighter\shThemeMDUltra.css" />
+    <Content Include="content\bootstrap\SyntaxHighlighter\shThemeMidnight.css" />
+    <Content Include="content\bootstrap\SyntaxHighlighter\shThemeRDark.css" />
     <Content Include="fonts\bootstrap\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\theDocs\fontawesome-webfont.svg" />
     <Content Include="fonts\theDocs\glyphicons-halflings-regular.svg" />
@@ -1117,7 +1117,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Content\bootstrap\bootstrap.min.css.map" />
+    <None Include="content\bootstrap\bootstrap.min.css.map" />
     <None Include="fonts\bootstrap\glyphicons-halflings-regular.eot" />
     <None Include="fonts\bootstrap\glyphicons-halflings-regular.ttf" />
     <None Include="fonts\bootstrap\glyphicons-halflings-regular.woff" />
@@ -1323,6 +1323,7 @@
     <None Include="Views\reSP\live-templates\nweb.md" />
     <None Include="Views\reSP\live-templates\rwep.md" />
     <None Include="Views\reSP\_ViewStart.cshtml" />
+    <None Include="Views\Shared\bootstrap\Components\_PrevNextNavigation.cshtml" />
     <None Include="Views\Shared\bootstrap\Components\_Footer.cshtml" />
     <None Include="Views\Shared\bootstrap\Components\_LandingProjectsList.cshtml" />
     <None Include="Views\Shared\bootstrap\Components\_SampleList.cshtml" />
@@ -1335,18 +1336,6 @@
     <None Include="Views\Shared\bootstrap\PageLayouts\_LandingPage.cshtml" />
     <None Include="Views\Shared\bootstrap\PageLayouts\_M2Definition.cshtml" />
     <None Include="Views\Shared\bootstrap\PageLayouts\_M2Samples.cshtml" />
-    <None Include="Views\Shared\theDocs\Components\_Footer.cshtml" />
-    <None Include="Views\Shared\theDocs\Components\_LandingProjectsList.cshtml" />
-    <None Include="Views\Shared\theDocs\Components\_SampleList.cshtml" />
-    <None Include="Views\Shared\theDocs\Components\_SecondNavigation.cshtml" />
-    <None Include="Views\Shared\theDocs\Components\_Sidebar.cshtml" />
-    <None Include="Views\Shared\theDocs\Components\_TopNavigation.cshtml" />
-    <None Include="Views\Shared\theDocs\Layouts\_Flued28.cshtml" />
-    <None Include="Views\Shared\theDocs\Layouts\_Flued37.cshtml" />
-    <None Include="Views\Shared\theDocs\Layouts\_Master.cshtml" />
-    <None Include="Views\Shared\theDocs\PageLayouts\_LandingPage.cshtml" />
-    <None Include="Views\Shared\theDocs\PageLayouts\_M2Definition.cshtml" />
-    <None Include="Views\Shared\theDocs\PageLayouts\_M2Samples.cshtml" />
     <None Include="Views\SPMeta2-Spec\Index.md" />
     <None Include="Views\SPMeta2-VSExtensions\Index.md" />
     <None Include="Views\SPMeta2\extensibility\Index.md" />
@@ -1523,7 +1512,7 @@
     <None Include="_start-site.ps1" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\Shared\" />
+    <Folder Include="content\Shared\" />
     <Folder Include="Views\SPMeta2\reference\Models\" />
     <Folder Include="Wyam 0.11.1-beta\Input\" />
     <Folder Include="Wyam 0.11.1-beta\Output\" />

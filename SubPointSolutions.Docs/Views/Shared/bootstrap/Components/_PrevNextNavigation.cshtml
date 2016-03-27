@@ -1,0 +1,67 @@
+﻿@{
+
+    var navSplit = Model.String("RelativeFilePath", string.Empty).Split(new[] { '\\' });
+
+    var navFolder = navSplit[0];
+
+    if (navSplit.Count() > 1)
+    {
+        navFolder = navSplit[0] + @"\" + navSplit[1];
+    }
+
+    var activeDocument = Documents.FirstOrDefault(d => d.String("RelativeFilePath") == Model.String("RelativeFilePath"));
+
+    var documents = Documents
+            .Where(x => x.ContainsKey("RelativeFilePath")
+                //&& !x.String("RelativeFilePath").EndsWith("index.md")
+                && !x.Get<bool>("Hidden", false)
+                && !x.String("RelativeFilePath").EndsWith("index.cshtml")
+                && x.String("RelativeFilePath").StartsWith(navFolder + @"\")
+                && !x.String("SourceFileBase").StartsWith("_")
+                && x.String("RelativeFilePath").StartsWith(navFolder))
+
+            //.GroupBy(x => !string.IsNullOrEmpty(x.String("Category"))
+        //                 ? x.String("Category")
+        //                  : x.String("RelativeFileDir").Replace(navFolder, string.Empty))
+        //.OrderBy(x => x.Key)
+                                .OrderBy(x => x.Get<int>("Order", 1000))
+                                .ThenBy(x => x.String("Title"))
+                                .ThenBy(x => x.String("SourceFileBase"))
+            .ToList();
+
+
+    var prevDocument = documents.FirstOrDefault();
+    var nextDocument = documents.FirstOrDefault();
+
+    prevDocument = null;
+    nextDocument = null;
+
+    if (activeDocument != null && documents.Contains(activeDocument))
+    {
+        var activeDocumentIndex = documents.IndexOf(activeDocument);
+
+        if (activeDocumentIndex > 0 && activeDocumentIndex < documents.Count() - 1)
+        {
+            var prevIndex = activeDocumentIndex - 1;
+            var nextIndex = activeDocumentIndex + 1;
+
+            prevDocument = documents[prevIndex];
+            nextDocument = documents[nextIndex];
+        }
+    }
+
+
+}
+
+@if (prevDocument != null && nextDocument != null)
+{
+    <div class="m-prevNextNav-cnt">
+        <a class="btn-lg btn-default" href="@(PathHelper.ToRootLink(PathHelper.RemoveExtension(prevDocument.String("RelativeFilePath"))) + ".html")">
+            Previous
+        </a>
+        <a class="btn-lg btn-default pull-right" href="@(PathHelper.ToRootLink(PathHelper.RemoveExtension(nextDocument.String("RelativeFilePath"))) + ".html")">
+            Next
+        </a>
+    </div>
+
+}

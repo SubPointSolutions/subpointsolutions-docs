@@ -5,7 +5,7 @@ TileLink: true
 TileLinkOrder: 10
 ----
 
-# Welcome to SPMeta2
+### Welcome to SPMeta2
 
 Thanks for dropping by choosing to learn more about SPMeta2, SPMeta2 Visual Studio extensions and reSP.
 
