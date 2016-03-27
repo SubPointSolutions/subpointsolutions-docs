@@ -18,7 +18,7 @@ public static class SConfig
 Pipelines.Add("site-md-content",
 
 	ReadFiles("*.md"),
-	Replace("[[ci-date]]", System.DateTime.Now.ToString()),
+	
 	//ReadFiles("*.md").FromTopDirectoryOnly(),
 
 	FrontMatter(Yaml()),
@@ -96,7 +96,7 @@ Pipelines.Add("site-md-content",
 
 	Markdown(),
 	Razor(),	
-
+	Replace("[[ci-date]]", System.String.Format("{0:r}", System.DateTime.Now)),
 	// process img tags 
 	Execute( (doc, context) => {
 	

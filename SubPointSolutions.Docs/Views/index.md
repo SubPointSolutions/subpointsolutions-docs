@@ -10,4 +10,4 @@ In case you have unexpected issues please contact support on Yammer network or G
 * [https://www.yammer.com/spmeta2feedback](https://www.yammer.com/spmeta2feedback)
 * [https://github.com/SubPointSolutions/spmeta2](https://github.com/SubPointSolutions/spmeta2)
 
-Cheers, enjoy and share your thoughts at out [Yammer Network](https://www.yammer.com/spmeta2feedback)!
+Cheers, enjoy and don't forget to share your thoughts at out [Yammer Network](https://www.yammer.com/spmeta2feedback).
