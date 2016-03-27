@@ -16,7 +16,7 @@ The following properties are checked:
 - [SPWeb.Name](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.spweb.name.aspx)
 - [SPPrincipal.Name](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.spprincipal.name.aspx)
 
-<a href="_samples/AvoidSPObjectNameStringComparison-InappropriateComparison.sample-ref" />
+<a href="_samples/AvoidSPObjectNameStringComparison-InappropriateComparison.sample-ref"></a>
 
 ### Resolution
 - Use Object.ID instead or other key property

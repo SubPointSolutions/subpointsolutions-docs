@@ -6,7 +6,7 @@ FileName: resp510259.html
 While using SPItemEventProperties the SPItemEventDataCollection.Item contains data for specified key. In case of key missing it returns null so null reference exceptions might be arised with ToString() call.
 
 The following code is unsafe:
-[TEST.UnsafeCastOnSPItemEventDataCollectionItem]
+<a href="_samples/UnsafeCastingInItemReceiver-UnsafeCastOnSPItemEventDataCollectionItem.sample-ref"></a>
 
 ### Resolution
 First check the result of SPItemEventDataCollection.Item access for null. Then cast it to required type.

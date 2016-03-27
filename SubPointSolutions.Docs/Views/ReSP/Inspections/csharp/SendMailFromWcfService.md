@@ -6,7 +6,8 @@ FileName: resp510252.html
 Sending an e-mail from a WCF service when SPContext is not available could fail. As a workaround, you have to prevent the mail function from reading the current context by using HttpContext.Current = null. If it can’t, it will retrieve the right context and it will then work.
 
 ### Resolution
-[TEST.CorrectSendMailFromWcfServiceUsage]
+<a href="_samples/SendMailFromWcfService-CorrectSendMailFromWcfServiceUsage.sample-ref"></a>
+
 The current context is set to null to force the context to be retrieved again. Saving the current context ensures that the service works properly after the method has been executed. 
 
 **Note**: ASMX Web Services require the same procedure.

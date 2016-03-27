@@ -29,12 +29,14 @@ You should avoid using SPSecurity.RunWithElevatedPrivileges for elevation of pri
 Examples of Trusted Connection (Windows Authentication):
 [TEST.TrustedConnectionSample]
 
-#FAQ
+### FAQ
 *When I can use SPSecurity.RunWithElevatedPrivileges?*
+
 If you want to make a network calls, accesses network or file resources under the application pool identity then SPSecurity.RunWithElevatedPrivileges is the only choice. Note: dispose of all objects in the
 delegate. Do not pass SharePoint objects out of the RunWithElevatedPrivileges method.
 
 *Can I use WIN 32 API in web part or other user control to impersonate?*
+
 No! SharePoint request must impersonate the calling user’s identity (<identity impersonate=”true” /> in web.config). SharePoint web applications are configured to impersonate the calling user automatically. If you try to suspend this impersonation by using WIN 32 API, your code may fail or behave abnormally.
 
 ### Links

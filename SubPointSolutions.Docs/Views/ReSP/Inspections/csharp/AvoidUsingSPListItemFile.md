@@ -8,8 +8,8 @@ For non document library it returns null.
 
 ### Resolution
 Check that you work with document library. Use SPWeb.GetFile(SPListItem.UniqueId) instead.
-[TEST.AppropriateSPListItemSPFileUsage]
 
+<a href="_samples/AvoidUsingSPListItemFile-AppropriateSPListItemSPFileUsage.sample-ref"></a>
 
 ### Links
 - [SPListItem.File property](https://msdn.microsoft.com/en-us/library/microsoft.sharepoint.splistitem.file.aspx)

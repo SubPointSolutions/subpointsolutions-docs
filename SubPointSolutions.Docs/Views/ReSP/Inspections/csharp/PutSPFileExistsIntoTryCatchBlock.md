@@ -8,7 +8,8 @@ Although it may seem intuitive that accessing the SPFile.Exists property would r
 
 ### Resolution
 Put SPFile.Exists into try-catch block.
-[TEST.CorrectSPFileExistsUsage]
+
+<a href="_samples/PutSPFileExistsIntoTryCatchBlock-CorrectSPFileExistsUsage.sample-ref"></a>
 
 ### Links
 - [SPFile.Exists Property](https://msdn.microsoft.com/en-us/library/microsoft.sharepoint.spfile.exists.aspx)

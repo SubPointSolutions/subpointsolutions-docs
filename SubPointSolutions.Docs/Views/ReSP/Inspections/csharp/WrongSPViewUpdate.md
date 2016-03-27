@@ -6,10 +6,10 @@ FileName: resp510247.html
 SPList.DefaultView and SPList.Views[] properties return a new SPView instance with every call. To handle a single instance you need to retrieve the SPView object and modify it directly.
 
 Incorrect usage:
-[TEST.IncorrectSPViewUpdate]
+<a href="_samples/WrongSPViewUpdate-IncorrectSPViewUpdate.sample-ref"></a>
 
 Correct usage:
-[TEST.CorrectSPViewUpdate]
+<a href="_samples/WrongSPViewUpdate-CorrectSPViewUpdate.sample-ref"></a>
 
 ### Links
 - [SPView.Update() method](http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.spview.update.aspx)

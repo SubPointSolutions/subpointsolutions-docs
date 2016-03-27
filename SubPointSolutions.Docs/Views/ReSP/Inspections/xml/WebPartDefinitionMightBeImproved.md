@@ -7,7 +7,7 @@ Adding icons enhance look and feel of the Web Parts with which Web Parts will be
 
 ### Resolution
 
-####Icons
+#### Icons
 
 The two default properties to specify icons for Web Part are:
 
