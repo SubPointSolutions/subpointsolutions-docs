@@ -105,9 +105,11 @@ namespace SubPointSolutions.Docs.Services.Base
 
             foreach (var line in lines)
             {
+
+                startIndex =0;
                 foreach (var letter in line)
                 {
-                    if (char.IsLetterOrDigit(letter))
+                    if (char.IsLetterOrDigit(letter) && !string.IsNullOrEmpty(letter + ""))
                     {
                         firstLine = line;
                         break;
@@ -121,7 +123,7 @@ namespace SubPointSolutions.Docs.Services.Base
 
             if (firstLine != null)
             {
-                var charsToRemove = firstLine.IndexOf(startString);
+                var charsToRemove = startIndex;
 
                 for (int i = 0; i < lines.Length; i++)
                 {
@@ -145,12 +147,12 @@ namespace SubPointSolutions.Docs.Services.Base
                     (string.IsNullOrEmpty(line) || string.IsNullOrEmpty(line.Replace(" ", string.Empty))))
                     continue;
 
-                result += line + Environment.NewLine;
+                result += line.TrimEnd() + Environment.NewLine;
             }
 
             //var result = string.Join(Environment.NewLine, lines);
 
-            result = result.Trim();
+            //result = result.Trim();
 
             return result;
         }
