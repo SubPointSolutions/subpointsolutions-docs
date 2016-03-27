@@ -130,6 +130,7 @@ Pipelines.Add("site-md-content",
 		foreach (var image in images) {
 
 			var attValue = image.GetAttribute("class");
+			var srcValue = image.GetAttribute("src");
 			
 			if(attValue == null)	
 				attValue = string.Empty;
@@ -144,6 +145,7 @@ Pipelines.Add("site-md-content",
 			}
 
 			image.SetAttribute("class", attValue);
+			image.SetAttribute("src", string.IsNullOrEmpty(srcValue) ? "" : srcValue.ToLower() );
 		}
 
 		// pre and code
