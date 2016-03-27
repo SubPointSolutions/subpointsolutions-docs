@@ -40,28 +40,32 @@
     {
         var activeDocumentIndex = documents.IndexOf(activeDocument);
 
-        if (activeDocumentIndex > 0 && activeDocumentIndex < documents.Count() - 1)
+        if (activeDocumentIndex > 0)
         {
-            var prevIndex = activeDocumentIndex - 1;
-            var nextIndex = activeDocumentIndex + 1;
+            prevDocument = documents[activeDocumentIndex-1];
+        }
 
-            prevDocument = documents[prevIndex];
-            nextDocument = documents[nextIndex];
+        if (activeDocumentIndex < documents.Count() - 1)
+        {
+            nextDocument = documents[activeDocumentIndex +1];
         }
     }
-
-
 }
 
-@if (prevDocument != null && nextDocument != null)
+@if (prevDocument != null || nextDocument != null)
 {
     <div class="m-prevNextNav-cnt">
-        <a class="btn-lg btn-default" href="@(PathHelper.ToRootLink(PathHelper.RemoveExtension(prevDocument.String("RelativeFilePath"))) + ".html")">
-            Previous
-        </a>
-        <a class="btn-lg btn-default pull-right" href="@(PathHelper.ToRootLink(PathHelper.RemoveExtension(nextDocument.String("RelativeFilePath"))) + ".html")">
-            Next
-        </a>
+        @if (prevDocument != null)
+        {
+            <a class="btn-lg btn-default" href="@(PathHelper.ToRootLink(PathHelper.RemoveExtension(prevDocument.String("RelativeFilePath"))) + ".html")">
+                Previous
+            </a>
+        }
+        @if (nextDocument != null)
+        {
+            <a class="btn-lg btn-default pull-right" href="@(PathHelper.ToRootLink(PathHelper.RemoveExtension(nextDocument.String("RelativeFilePath"))) + ".html")">
+                Next
+            </a>
+        }
     </div>
-
 }

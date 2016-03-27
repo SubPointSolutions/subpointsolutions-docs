@@ -156,7 +156,9 @@ pre {
 .m-prevNextNav-cnt {
     border-top: 1px solid #d8d8d8;
     padding-top: 15px;
+    padding-bottom: 15px;
 }
+
 
 .m-prevNextNav-cnt > a.btn-default {
    display: inline-block;
