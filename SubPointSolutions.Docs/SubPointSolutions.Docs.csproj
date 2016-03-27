@@ -1150,11 +1150,11 @@
     <None Include="Views\reSP\code-completion\WebPartZoneTitle.md" />
     <None Include="Views\reSP\getting-started\FAQ.md" />
     <None Include="Views\reSP\getting-started\Index.md" />
-    <None Include="Views\reSP\getting-started\Installing reSP.md" />
+    <None Include="Views\reSP\getting-started\_Installing reSP.md" />
     <None Include="Views\reSP\getting-started\License.md" />
     <None Include="Views\reSP\getting-started\Releases.md" />
-    <None Include="Views\reSP\getting-started\Support.md" />
-    <None Include="Views\reSP\getting-started\Updating reSP.md" />
+    <None Include="Views\reSP\getting-started\_Support.md" />
+    <None Include="Views\reSP\getting-started\_Updating reSP.md" />
     <None Include="Views\reSP\getting-started\_Basics.md" />
     <None Include="Views\reSP\getting-started\_Inspections.md" />
     <None Include="Views\reSP\getting-started\_Known issues.md" />
@@ -1321,7 +1321,7 @@
     <None Include="Views\reSP\Inspections\xml\_samples\WebPartDefinitionMightBeImproved-IncorrectNoteFieldXml.sample-ref" />
     <None Include="Views\reSP\Inspections\xml\_samples\WebPartDefinitionMightBeImproved-IncorrectSample.sample-ref" />
     <None Include="Views\reSP\Inspections\xml\_samples\WebPartDefinitionMightBeImproved-SysAll.sample-ref" />
-    <None Include="Views\reSP\kb\Index.md" />
+    <None Include="Views\reSP\kb\_Index.md" />
     <None Include="Views\reSP\live-templates\Index.md" />
     <None Include="Views\reSP\live-templates\nsite.md" />
     <None Include="Views\reSP\live-templates\nsw.md" />
@@ -1341,8 +1341,8 @@
     <None Include="Views\Shared\bootstrap\PageLayouts\_LandingPage.cshtml" />
     <None Include="Views\Shared\bootstrap\PageLayouts\_M2Definition.cshtml" />
     <None Include="Views\Shared\bootstrap\PageLayouts\_M2Samples.cshtml" />
-    <None Include="Views\SPMeta2-Spec\Index.md" />
-    <None Include="Views\SPMeta2-VSExtensions\Index.md" />
+    <None Include="Views\SPMeta2-Spec\_Index.md" />
+    <None Include="Views\SPMeta2-VSExtensions\_Index.md" />
     <None Include="Views\SPMeta2\extensibility\Index.md" />
     <None Include="Views\SPMeta2\extensibility\writing-custom-definition.md" />
     <None Include="Views\SPMeta2\extensibility\writing-custom-logging.md" />

@@ -3,7 +3,7 @@ Title: Getting Started
 Order: 100
 ---
 
-### Prerequisites:
+### Prerequisites
 1. Visual Studio 2010+
 2. ReSharper 9.0 or high is required.
 
