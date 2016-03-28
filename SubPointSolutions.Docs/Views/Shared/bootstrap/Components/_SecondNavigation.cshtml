@@ -85,11 +85,11 @@
             
             <a href="@(PathHelper.ToRootLink(PathHelper.RemoveExtension(g.Document.String("RelativeFilePath"))) + ".html")">
                 @(g.Document.String("Title", g.Document.String("SourceFileBase")).Replace("Tests", String.Empty))
-            </a>
+            </a> <span>-</span> <span style="font-size: 18px;">@( string.IsNullOrEmpty(Model.String("Title")) ? PathHelper.RemoveExtension(Model.String("SourceFileBase")) : Model.String("Title"))</span>
         }
         else
         {
-            <a href="#">&nbsp;</a>
+            <a href="#">@( string.IsNullOrEmpty(Model.String("Title")) ? PathHelper.RemoveExtension(Model.String("SourceFileBase")) : Model.String("Title"))</a>
         }
         
     </h2>

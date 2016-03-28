@@ -1,4 +1,6 @@
-
+----
+Hidden: true
+----
 ### Provision scenario
 SCENARIO
 

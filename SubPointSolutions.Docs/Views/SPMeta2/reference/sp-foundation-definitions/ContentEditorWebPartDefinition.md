@@ -19,5 +19,3 @@ SPMeta2 adds the following tokens support for ContentLink property:
 
 Both CSOM/SSOM object models are supported. 
 You can deploy either single object or a set of the objects using AddContentEditorWebPart() extension method as per following examples.
-
-[LIST.SAMPLES]
