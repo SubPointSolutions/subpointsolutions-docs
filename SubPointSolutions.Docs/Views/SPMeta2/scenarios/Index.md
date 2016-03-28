@@ -1,7 +1,9 @@
 ﻿----
-Title: Samples
+Title: Scenarios
 Order: 400
 ----
+
+### Scenarios
 
 SPMeta2 is all you need to have a **testable**, **repeatable** and **upgradable** way to provision fields, content types, lists, list views, webs, 
 custom actions, security groups, permission levels, web parts, wiki pages, web part pages, publishing pages and so on - in fact, 

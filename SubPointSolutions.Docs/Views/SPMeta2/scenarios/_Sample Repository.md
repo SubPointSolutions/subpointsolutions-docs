@@ -1,6 +1,7 @@
 ﻿---
 Title: Sample Repository
 FileName: samples.html
+Hidden: true
 ---
 
 SPMeta2 is all you need to have a **testable**, **repeatable** and **upgradable** way to provision fields, content types, lists, list views, webs, 
