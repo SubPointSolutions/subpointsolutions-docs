@@ -190,7 +190,7 @@ namespace SubPointSolutions.Docs.Code.Services
                             CannedACL = S3CannedACL.PublicRead
                         };
 
-                        request.Metadata.Add("x-amz-website-redirect-location", redirectFileName);
+                        request.WebsiteRedirectLocation = redirectFileName;
                         request.Metadata.Add("x-amz-meta-ci-md5", hash);
 
                         client.PutObject(request);
@@ -222,7 +222,7 @@ namespace SubPointSolutions.Docs.Code.Services
                         CannedACL = S3CannedACL.PublicRead
                     };
 
-                    request.Metadata.Add("x-amz-website-redirect-location", redirectFileName);
+                    request.WebsiteRedirectLocation = redirectFileName;
                     request.Metadata.Add("x-amz-meta-ci-md5", hash);
 
                     client.PutObject(request);
