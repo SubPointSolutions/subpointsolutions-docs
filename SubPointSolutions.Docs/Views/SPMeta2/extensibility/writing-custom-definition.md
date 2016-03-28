@@ -1,5 +1,5 @@
 ﻿---
-Title: Custom Definitions
+Title: Custom definition
 FileName: custom-definition.html
 ---
 
@@ -15,28 +15,25 @@ SPMeta2 can be extended with custom definition and model handler, so that you ca
 
 Here is a big puctire on how SPMeta2 provision walks through the web model with lists and list views.
 
-<img src='http://g.gravizo.com/g?
+<img src="http://g.gravizo.com/g?@startuml;
 
-@startuml;
+'web definition' -> 'web definition': lookup handler;
+'web definition' -> 'web definition': DeployModel();
+'web definition' -> 'web definition': lookup children models;
+'web definition' -> 'list definition': WithResolvingModelHost(), get web instance;
 
-"web definition" -> "web definition": lookup handler;
-"web definition" -> "web definition": DeployModel();
-"web definition" -> "web definition": lookup children models;
-"web definition" -> "list definition": WithResolvingModelHost(), get web instance;
+'list definition' -> 'list definition': lookup handler;
+'list definition' -> 'list definition': DeployModel();
+'list definition' -> 'list definition': lookup children models;
+'list definition' -> 'list view definition': WithResolvingModelHost(), get list instance;
 
-"list definition" -> "list definition": lookup handler;
-"list definition" -> "list definition": DeployModel();
-"list definition" -> "list definition": lookup children models;
-"list definition" -> "list view definition": WithResolvingModelHost(), get list instance;
+'list view definition' -> 'list view definition': lookup handler;
+'list view definition' -> 'list view definition': DeployModel();
+'list view definition' -> 'list definition': back;
 
-"list view definition" -> "list view definition": lookup handler;
-"list view definition" -> "list view definition": DeployModel();
-"list view definition" -> "list definition": back;
-
-"list definition" -> "web definition": back;
+'list definition' -> 'web definition': back;
      
-@enduml
-'>
+@enduml" />
 
 At the end, SPMeta2 provision service walks through the model tree resolving correct model handler and calling a pair of DeployModel() and WithResolvingModelHost() methods.
 
