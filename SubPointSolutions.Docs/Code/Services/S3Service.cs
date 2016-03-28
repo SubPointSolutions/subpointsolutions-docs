@@ -46,7 +46,7 @@ namespace SubPointSolutions.Docs.Code.Services
             if (!Directory.Exists(folderPath))
                 return;
 
-            WithS3Client(client =>
+            WithS3Client(s3Client =>
             {
                 var op = SearchOption.AllDirectories;
 
@@ -58,88 +58,186 @@ namespace SubPointSolutions.Docs.Code.Services
 
                 Parallel.ForEach(files, filePath =>
                 {
-                    GetObjectResponse existing = null;
+                    Trace.WriteLine(string.Format("Uploading file: [{0}/{1}] - {2}", files.IndexOf(filePath) + 1, files.Count, filePath));
 
-                    var hash = CalculateMD5Hash(File.ReadAllBytes(filePath));
-                    using (var inoutStream = File.Open(filePath, FileMode.Open))
-                    {
-                        var fileName = filePath.Replace(folderPath, string.Empty);
-
-                        fileName = fileName.Substring(1, fileName.Length - 1);
-
-                        fileName = fileName.Replace(@"\", @"/");
-                        fileName = fileName.ToLower();
-
-                        // ensure folder
-                        EnsureFolder(client, bucketName, fileName.ToLower());
-
-                        var index = files.IndexOf(filePath) + 1;
-
-                        Trace.WriteLine(string.Format("adding [{0}/{1}] - {2}", index, files.Count, fileName));
-
-                        try
-                        {
-                            existing = client.GetObject(bucketName, fileName);
-
-                            var shouldUpdate = existing.Metadata["x-amz-meta-ci-md5"] != hash;
-
-                            if (shouldUpdate)
-                            {
-                                var request = new PutObjectRequest
-                                {
-
-                                    Key = fileName,
-                                    BucketName = bucketName,
-                                    InputStream = inoutStream,
-                                    CannedACL = S3CannedACL.PublicRead
-                                };
-
-
-                                request.Metadata.Add("x-amz-meta-ci-md5", hash);
-
-                                client.PutObject(request);
-                            }
-
-                        }
-                        catch (Exception eee)
-                        {
-                            Trace.WriteLine(eee.ToString());
-
-                            if (eee is AmazonS3Exception)
-                            {
-                                existing = null;
-                            }
-                            else
-                            {
-                                throw;
-                            }
-                        }
-
-                        if (existing == null)
-                        {
-
-                            var request = new PutObjectRequest
-                            {
-                                Key = fileName,
-                                BucketName = bucketName,
-                                InputStream = inoutStream,
-                                CannedACL = S3CannedACL.PublicRead
-                            };
-
-                            request.Metadata.Add("x-amz-meta-ci-md5", hash);
-
-                            client.PutObject(request);
-                        }
-                        else
-                        {
-                            existing.Dispose();
-                            existing = null;
-                        }
-
-                    }
+                    EnsureS3File(s3Client, bucketName, folderPath, filePath);
+                    EnsureS3CleanUrlRedirectFile(s3Client, bucketName, folderPath, filePath);
                 });
             });
         }
+
+        private void EnsureS3File(AmazonS3Client client, string bucketName, string folderPath, string filePath)
+        {
+            GetObjectResponse existing = null;
+
+            var hash = CalculateMD5Hash(File.ReadAllBytes(filePath));
+
+            using (var inputStream = File.Open(filePath, FileMode.Open))
+            {
+                var fileName = filePath.Replace(folderPath, string.Empty);
+
+                fileName = fileName.Substring(1, fileName.Length - 1);
+
+                fileName = fileName.Replace(@"\", @"/");
+                fileName = fileName.ToLower();
+
+                // ensure folder
+                EnsureFolder(client, bucketName, fileName.ToLower());
+
+                try
+                {
+                    existing = client.GetObject(bucketName, fileName);
+
+                    var shouldUpdate = existing.Metadata["x-amz-meta-ci-md5"] != hash;
+
+                    if (shouldUpdate)
+                    {
+                        var request = new PutObjectRequest
+                        {
+
+                            Key = fileName,
+                            BucketName = bucketName,
+                            InputStream = inputStream,
+                            CannedACL = S3CannedACL.PublicRead
+                        };
+
+
+                        request.Metadata.Add("x-amz-meta-ci-md5", hash);
+
+                        client.PutObject(request);
+                    }
+
+                }
+                catch (Exception eee)
+                {
+                    Trace.WriteLine(eee.ToString());
+
+                    if (eee is AmazonS3Exception)
+                    {
+                        existing = null;
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+
+                if (existing == null)
+                {
+
+                    var request = new PutObjectRequest
+                    {
+                        Key = fileName,
+                        BucketName = bucketName,
+                        InputStream = inputStream,
+                        CannedACL = S3CannedACL.PublicRead
+                    };
+
+                    request.Metadata.Add("x-amz-meta-ci-md5", hash);
+
+                    client.PutObject(request);
+
+                    // 
+                }
+                else
+                {
+                    existing.Dispose();
+                    existing = null;
+                }
+
+            }
+        }
+
+        private void EnsureS3CleanUrlRedirectFile(AmazonS3Client client, string bucketName, string folderPath, string filePath)
+        {
+            GetObjectResponse existing = null;
+
+            var hash = CalculateMD5Hash(File.ReadAllBytes(filePath));
+
+            using (var inputStream = File.Open(filePath, FileMode.Open))
+            {
+                var fileName = filePath.Replace(folderPath, string.Empty);
+                var redirectFileName = filePath.Replace(folderPath, string.Empty);
+
+                fileName = fileName.Substring(1, fileName.Length - 1);
+
+                fileName = fileName.Replace(@"\", @"/");
+                fileName = fileName.ToLower();
+
+                fileName = fileName.Substring(0, fileName.Length - System.IO.Path.GetExtension(fileName).Length);
+
+                redirectFileName = redirectFileName.Replace(@"\", @"/");
+                redirectFileName = redirectFileName.ToLower();
+
+                // ensure folder
+                //EnsureFolder(client, bucketName, fileName.ToLower());
+
+                try
+                {
+                    existing = client.GetObject(bucketName, fileName);
+
+                    var shouldUpdate = existing.Metadata["x-amz-meta-ci-md5"] != hash;
+
+                    if (shouldUpdate)
+                    {
+                        var request = new PutObjectRequest
+                        {
+
+                            Key = fileName,
+                            BucketName = bucketName,
+                            //InputStream = inputStream,
+                            ContentBody = string.Empty,
+                            CannedACL = S3CannedACL.PublicRead
+                        };
+
+                        request.Metadata.Add("x-amz-website-redirect-location", redirectFileName);
+                        request.Metadata.Add("x-amz-meta-ci-md5", hash);
+
+                        client.PutObject(request);
+                    }
+
+                }
+                catch (Exception eee)
+                {
+                    Trace.WriteLine(eee.ToString());
+
+                    if (eee is AmazonS3Exception)
+                    {
+                        existing = null;
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+
+                if (existing == null)
+                {
+
+                    var request = new PutObjectRequest
+                    {
+                        Key = fileName,
+                        BucketName = bucketName,
+                        ContentBody = string.Empty,
+                        CannedACL = S3CannedACL.PublicRead
+                    };
+
+                    request.Metadata.Add("x-amz-website-redirect-location", redirectFileName);
+                    request.Metadata.Add("x-amz-meta-ci-md5", hash);
+
+                    client.PutObject(request);
+
+                    // 
+                }
+                else
+                {
+                    existing.Dispose();
+                    existing = null;
+                }
+
+            }
+        }
+
 
         private void EnsureFolder(AmazonS3Client client, string bucketName, string fileName)
         {
