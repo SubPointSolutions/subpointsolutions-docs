@@ -1342,8 +1342,10 @@
     <None Include="Views\Shared\bootstrap\PageLayouts\_LandingPage.cshtml" />
     <None Include="Views\Shared\bootstrap\PageLayouts\_M2Definition.cshtml" />
     <None Include="Views\Shared\bootstrap\PageLayouts\_M2Samples.cshtml" />
-    <None Include="Views\SPMeta2-Spec\_Index.md" />
-    <None Include="Views\SPMeta2-VSExtensions\_Index.md" />
+    <None Include="Views\SPMeta2-NuGet\Index.md" />
+    <None Include="Views\SPMeta2-Reverse\Index.md" />
+    <None Include="Views\SPMeta2-Spec\Index.md" />
+    <None Include="Views\SPMeta2-VS\Index.md" />
     <None Include="Views\SPMeta2\extensibility\Index.md" />
     <None Include="Views\SPMeta2\extensibility\writing-custom-definition.md" />
     <None Include="Views\SPMeta2\extensibility\_writing-custom-logging.md" />
