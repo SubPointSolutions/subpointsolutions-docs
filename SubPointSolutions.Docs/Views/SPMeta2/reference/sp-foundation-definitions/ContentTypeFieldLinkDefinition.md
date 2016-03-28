@@ -11,7 +11,7 @@ SCOPE
 ### Implementation
 IMPLEMENTATION
 
-###Samples
+### Samples
 A SAMPLE 1
 [TEST.TestFunctionName1]
 

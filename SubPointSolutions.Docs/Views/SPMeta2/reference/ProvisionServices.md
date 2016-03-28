@@ -1,6 +1,8 @@
 ﻿----
 Title: Provision services
 ----
+### SPMeta2 Provision Services
+
 SPMeta2 introduces a domain model providing set of definitions for most of the SharePoint artifacts.
 
 Before you begin, make sure you are familiar with the following concepts:
@@ -55,7 +57,3 @@ Here are a few patterns on how to setup initial provision flow:
 
 #### Setting up a web model
 [TEST.SettingUpWebModels]
-
-### Next steps
-* [Site model](http://docs.subpointsolutions.com/spmeta2/models/sitemodel/)
-* [Web model](http://docs.subpointsolutions.com/spmeta2/models/webmodel/)

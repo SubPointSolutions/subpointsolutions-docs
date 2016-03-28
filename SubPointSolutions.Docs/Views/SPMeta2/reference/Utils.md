@@ -2,6 +2,7 @@
 Title: Utils
 FileName: utils.html
 ---
+### SPMeta2 Utils
 
 SPMeta2 has some useful utility methods, classes and constants which can be reused in your projects. 
 This article provides an overview on hidden SPMeta2 gems.

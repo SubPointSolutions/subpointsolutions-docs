@@ -17,7 +17,7 @@
 @using SPMeta2.Attributes.Identity;
 @using SPMeta2.Attributes.Regression;
 @{
-    Layout = SConfig.GetThemedTemplate("Layouts/_Master.cshtml");  
+    Layout = SConfig.GetThemedTemplate("Layouts/_Master.cshtml");
 }
 
 @Html.Partial(SConfig.GetThemedTemplate("Components/_TopNavigation.cshtml"))
@@ -35,7 +35,7 @@
             @{
                 var definitionName = Model.String("SourceFileBase").Replace("Tests", string.Empty);
                 var samples = m2Samples.SysAllSamples.Where(s => s.ClassName.StartsWith(definitionName));
-                
+
                 var allHandlers = new List<Type>();
 
                 // built in
@@ -45,8 +45,8 @@
                 // csom
                 allHandlers.AddRange(ReflectionUtils.GetTypesFromAssembly<ModelHandlerBase>(typeof(CSOMProvisionService).Assembly));
                 allHandlers.AddRange(ReflectionUtils.GetTypesFromAssembly<ModelHandlerBase>(typeof(StandardCSOMProvisionService).Assembly));
-                       
-                // ssom         
+
+                // ssom
                 allHandlers.AddRange(ReflectionUtils.GetTypesFromAssembly<ModelHandlerBase>(typeof(SSOMProvisionService).Assembly));
                 allHandlers.AddRange(ReflectionUtils.GetTypesFromAssembly<ModelHandlerBase>(typeof(StandardSSOMProvisionService).Assembly));
 
@@ -57,7 +57,7 @@
                                                          && h.FullName.ToLower().Contains("csom"));
                 var supportsSSOM = allHandlers.Any(h => h.Name.ToLower().StartsWith(modelHandlerName)
                                                          && h.FullName.ToLower().Contains("ssom"));
-                                                         
+
                 var csomLabel = supportsCSOM ? "label-success" : "label-default";
                 var ssomLabel = supportsSSOM ? "label-success" : "label-default";
 
@@ -67,7 +67,7 @@
                 allDefinitions.AddRange(ReflectionUtils.GetTypesFromAssembly<DefinitionBase>(typeof(FieldDefinition).Assembly));
                 allDefinitions.AddRange(ReflectionUtils.GetTypesFromAssembly<DefinitionBase>(typeof(AudienceDefinition).Assembly));
 
-                
+
                 var scopes = new List<string>();
 
                 var definitionClassType = allDefinitions.FirstOrDefault(c => c.Name.ToLower().StartsWith(definitionName.ToLower()));
@@ -78,8 +78,9 @@
                                               .GetCustomAttributes(true)
                                               .OfType<ParentHostCapabilityAttribute>()
                                               .ToList();
-                    
-                    foreach(var parent in parentHosts) {
+
+                    foreach (var parent in parentHosts)
+                    {
                         var scopeName = parent.HostType.Name.Replace("Definition", String.Empty);
                         scopes.Add(scopeName);
                     }
@@ -98,15 +99,26 @@
 
             <h3>Notes @*- <span><a href='#' target="_blank">edit</a></span>*@</h3>
 
-            <div class="well well-lg">
-                <h2>Ouch...</h2>
-                <p>Seems there are't much notes yet.</p>
-                <p>
-                    Drop us a line at <a href='#'>Yammer</a> or put a few words together at <span><a href='#' target="_blank">github</a></span>.
-                    We'll help you out.
-                </p>
-            </div>
-            @RenderBody()
+            @{
+                var body = RenderBody();
+            }
+
+            @if (body != null)
+            {
+                this.WriteTo(Output, body);
+            }
+            else
+            {
+                // TODO
+                <div class="well well-lg">
+                    <h2>Ouch...</h2>
+                    <p>Seems there are't much notes yet.</p>
+                    <p>
+                        Drop us a line at <a href='#'>Yammer</a> or put a few words together at <span><a href='#' target="_blank">github</a></span>.
+                        We'll help you out.
+                    </p>
+                </div>
+            }
 
             <h3>Examples</h3>
 
