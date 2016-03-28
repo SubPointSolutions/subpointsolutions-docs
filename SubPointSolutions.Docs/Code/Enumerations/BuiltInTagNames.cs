@@ -11,6 +11,7 @@ namespace SubPointSolutions.Docs.Code.Enumerations
         public const string SPRuntime = "SharePoint Runtime";
 
         public const string SampleCategory = "Sample Category";
+        public const string SampleCategoryOrder = "Sample Category Order";
         public const string SampleHidden = "Sample Hidden Flag";
     }
 }

@@ -11,6 +11,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
     [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
 
     [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.WebApplication)]
+    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategoryOrder, Value = "200")]
 
     [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
     public class AlternateUrlDefinitionTests : ProvisionTestBase

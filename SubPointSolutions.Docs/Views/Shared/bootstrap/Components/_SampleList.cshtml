@@ -1,23 +1,45 @@
 ﻿@{
+    
     var categoryTagName = SubPointSolutions.Docs.Code.Enumerations.BuiltInTagNames.SampleCategory;
+    var categoryOrderTagName = SubPointSolutions.Docs.Code.Enumerations.BuiltInTagNames.SampleCategoryOrder;
 
     var spRuntimeTagName = SubPointSolutions.Docs.Code.Enumerations.BuiltInTagNames.SPRuntime;
 
     var spStandardRuntimeValue = SubPointSolutions.Docs.Code.Enumerations.BuiltInSPRuntimeTagValues.Standard;
     var spEnterpriseRuntimeValue = SubPointSolutions.Docs.Code.Enumerations.BuiltInSPRuntimeTagValues.Enterprise;
-
-
-    var samplesWithCategories = SubPointSolutions.Docs.Code.Samples.m2Samples.SysAllSamples
-                                                  .Where(s =>
-                                                         s.Tags.Any(t => t.Name == categoryTagName
-                                                                         && t.Values.Any()))
-                                                   .ToList();
+    
+    var allSamples = SubPointSolutions.Docs.Code.Samples.m2Samples.SysAllSamples;
+    
+    var allCategories = allSamples.SelectMany(s => s.Tags.Where(t => t.Name == categoryTagName
+                                                                 && t.Values.Any()));
+                                                                 
+    
+    var samplesWithCategories = allSamples.Where(s =>
+                                                 s.Tags.Any(t => t.Name == categoryTagName
+                                                                 && t.Values.Any()))
+                                                 .ToList();
 
 
     var sampleCategories = samplesWithCategories
                              .SelectMany(s => s.Tags.First(t => t.Name == categoryTagName).Values.Distinct())
                              .Distinct()
+                             // initial sorting by name
                              .OrderBy(m => m)
+                             // sorting by any category attr
+                             .OrderBy(m => allSamples.FirstOrDefault( 
+                                                                // has both category and order
+                                                                s => s.Tags.Any(t => t.Name == categoryOrderTagName && t.Values.Any())
+                                                                     && s.Tags.Any(t => t.Name == categoryTagName && t.Values.Contains(m))
+                                                                    ) != null ?
+                                                               // get the category order     
+                                            int.Parse( allSamples.FirstOrDefault( 
+                                                                s => s.Tags.Any(t => t.Name == categoryOrderTagName && t.Values.Any())
+                                                                     && s.Tags.Any(t => t.Name == categoryTagName && t.Values.Contains(m))
+                                                                    ).Tags.First(t => t.Name == categoryOrderTagName).Values.First())
+                                                                    : int.MaxValue)
+                                                               
+                                                               
+                             //.OrderBy(m => allCategories.Any(c => c.Name == m) ? )
                              .ToList();
 
     var categoryHeight = 80;
