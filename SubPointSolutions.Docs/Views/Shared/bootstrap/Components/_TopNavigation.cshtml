@@ -35,6 +35,20 @@
 
         @if (shouldRenderSunNav)
         {
+            var allTopnavDocuments = Documents
+                .Where(x => x.ContainsKey("RelativeFilePath")
+                            //&& x.String("RelativeFilePath").StartsWith(navFolder + @"\")
+                            && !x.String("SourceFileBase").StartsWith("_")
+                            && !x.Get<bool>("Hidden", false)
+                            //&& x.String("RelativeFilePath").StartsWith(navFolder)
+                            && x.String("RelativeFilePath").EndsWith("ndex.md")
+                            && x.String("RelativeFilePath", string.Empty)
+                                        .Split(new[] { '\\' })
+                                        .Count() == 2)
+                 .OrderBy(x => x.String("Order", "0"))
+                 .OrderBy(x => x.String("TileOrder", "0"))
+                 .ToList();
+            
             <ul class="nav navbar-nav">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle font-17"
@@ -45,11 +59,22 @@
                         @navFolder<span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="/spmeta2-ex">SPMeta2 VS Extensions</a></li>
-                        <li><a href="/spmeta2-spec">SPMeta2 Spec</a></li>
-                        <li><a href="/spmeta2-nuget">SPMeta2 NuGet</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="/reSP">reSP</a></li>
+
+                        @foreach (var topNavDocument in allTopnavDocuments)
+                        {
+                            <li>
+                                <a href="@(PathHelper.ToRootLink(PathHelper.RemoveExtension(topNavDocument.String("RelativeFilePath"))) + ".html")">
+                                    @(topNavDocument.String("Title", topNavDocument.String("SourceFileBase")).Replace(" Home", String.Empty))
+                                </a>
+                            </li>
+                        }
+
+                        <!---
+        <li><a href="/spmeta2-spec">SPMeta2 Spec</a></li>
+        <li><a href="/spmeta2-nuget">SPMeta2 NuGet</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="/reSP">reSP</a></li>
+            -->
                     </ul>
                 </li>
             </ul>
