@@ -311,6 +311,9 @@
     <Compile Include="Code\Definitions\DocWebFeatures.cs" />
     <Compile Include="Code\Definitions\DocWebs.cs" />
     <Compile Include="Code\Definitions\DocWikiPages.cs" />
+    <Compile Include="Code\Enumerations\BuiltInSampleCategoryTagValues.cs" />
+    <Compile Include="Code\Enumerations\BuiltInSPRuntimeTagValues.cs" />
+    <Compile Include="Code\Enumerations\BuiltInTagNames.cs" />
     <Compile Include="Code\Metadata\SampleMetadataAttribute.cs" />
     <Compile Include="Code\Metadata\SampleScopeAttribute.cs" />
     <Compile Include="Code\Resources\DefaultMasterPageTemplates.Designer.cs" />

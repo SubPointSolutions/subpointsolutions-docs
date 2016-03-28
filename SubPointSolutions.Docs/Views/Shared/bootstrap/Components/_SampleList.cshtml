@@ -1,53 +1,115 @@
 ﻿@{
-    var taggedSamples = SubPointSolutions.Docs.Code.Samples.m2Samples.SysAllSamples
+    var categoryTagName = SubPointSolutions.Docs.Code.Enumerations.BuiltInTagNames.SampleCategory;
+
+    var spRuntimeTagName = SubPointSolutions.Docs.Code.Enumerations.BuiltInTagNames.SPRuntime;
+
+    var spStandardRuntimeValue = SubPointSolutions.Docs.Code.Enumerations.BuiltInSPRuntimeTagValues.Standard;
+    var spEnterpriseRuntimeValue = SubPointSolutions.Docs.Code.Enumerations.BuiltInSPRuntimeTagValues.Enterprise;
+
+
+    var samplesWithCategories = SubPointSolutions.Docs.Code.Samples.m2Samples.SysAllSamples
                                                   .Where(s =>
-                                                      s.Tags.Any(t => t.Name == "SampleDefinitionGroup" && t.Values.Any()))
+                                                         s.Tags.Any(t => t.Name == categoryTagName
+                                                                         && t.Values.Any()))
                                                    .ToList();
 
-    
-   // only defs
-    taggedSamples = taggedSamples.Where(s => s.ClassName.Contains("DefinitionTest"))
-                                 .ToList();
-    
-    var samples = taggedSamples
-                     //.GroupBy(s => s.Tags.First(t => t.Name == "SampleDefinitionGroup").Values.First())
-                     .GroupBy(s => s.Tags.First(t => t.Name == "SampleDefinitionGroup").Values.First())
-                     .ToList();
 
+    var sampleCategories = samplesWithCategories
+                             .SelectMany(s => s.Tags.First(t => t.Name == categoryTagName).Values.Distinct())
+                             .Distinct()
+                             .OrderBy(m => m)
+                             .ToList();
+
+    var categoryHeight = 80;
+    var categoryItemHeight = 18;
+
+    var categoryRowsCount = 3;
+    
+    var totalCategoriesHeight = sampleCategories.Count() * categoryHeight;
+    var totalLinksHeight = 0;
+
+    foreach (var sampleGroupName in sampleCategories)
+    {
+        var samples = samplesWithCategories.Where(s => s.Tags.First(t => t.Name == categoryTagName).Values.Contains(sampleGroupName));
+
+        totalLinksHeight += samples.Count() * categoryItemHeight;
+    }
+
+    var totalHeight = totalCategoriesHeight + totalLinksHeight;
+    var rowHeight = totalHeight / categoryRowsCount;
+
+    var currentRowHeight = 0;
 }
 
 <style>
-    .panel-body ul {
-        padding-left:15px;
-    }
 
 </style>
 
-@foreach (var sampleGroup in samples)
-{
-    var groupName = sampleGroup.Key.Replace("Definition", String.Empty) + "s";
-    
-    <div class="col-sm-4 col-md-4">
+<div class="m-sample-list-cnt">
+
+    @Html.Raw("<div class='col-sm-4 col-md-4'>")
+
+    @foreach (var sampleGroupName in sampleCategories)
+    {
+        currentRowHeight += categoryHeight;
+
+        if (currentRowHeight > rowHeight)
+        {
+            currentRowHeight = 0;
+
+            @Html.Raw("</div>")
+            @Html.Raw("<div class='col-sm-4 col-md-4'>")
+        }
+
+        var samples = samplesWithCategories.Where(s => s.Tags.First(t => t.Name == categoryTagName).Values.Contains(sampleGroupName));
+
+        if (!samples.Any())
+        {
+            continue;
+        }
+
         <div class="panel panel-default ">
             <div class="panel-heading">
-               @groupName
-            </div> <div class="panel-body">
-          
-                @if (sampleGroup.Any())
-                {
-                    <ul>
-                        @foreach (var sample in sampleGroup)
-                        {
-                            <li>
-                                <a href="#">
-                                    @(sample.Title)
-                                </a>
-                            </li>
-                        }
-                    </ul>
-                }
+                @sampleGroupName
+            </div>
+            <div class="panel-body">
 
+                <ul>
+                    @foreach (var sample in samples)
+                    {
+                        currentRowHeight += categoryItemHeight;
+
+                        var definitionClassName = sample.ClassName
+                                                        .Replace("Tests", string.Empty)
+                                                        .Replace("Test", string.Empty);
+
+                        var isStandardSample = sample.Tags.Any(t => t.Name == spRuntimeTagName && t.Values.Contains(spStandardRuntimeValue));
+                        var isEntepriseSample = sample.Tags.Any(t => t.Name == spRuntimeTagName && t.Values.Contains(spEnterpriseRuntimeValue));
+
+                        var definitionUrl = "/spmeta2/reference/sp-foundation-definitions/{0}";
+
+                        if (isStandardSample)
+                        {
+                            definitionUrl = "/spmeta2/reference/sp-stanrard-definitions/{0}";
+                        }
+
+                        if (isEntepriseSample)
+                        {
+                            definitionUrl = "/spmeta2/reference/sp-enterprise-definitions/{0}";
+                        }
+
+                        var definitionPageUrl = string.Format(definitionUrl, definitionClassName).ToLower();
+
+                        <li>
+                            <a href="@definitionPageUrl">
+                                @(sample.Title)
+                            </a>
+                        </li>
+                    }
+                </ul>
             </div>
         </div>
-    </div>
-}
+    }
+
+    @Html.Raw("</div>")
+</div>

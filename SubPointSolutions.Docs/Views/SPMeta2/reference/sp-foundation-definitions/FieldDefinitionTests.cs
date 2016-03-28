@@ -7,11 +7,15 @@ using SPMeta2.Docs.ProvisionSamples.Base;
 using SPMeta2.Enumerations;
 using SPMeta2.Syntax.Default;
 using SubPointSolutions.Docs.Code.Metadata;
+using SubPointSolutions.Docs.Code.Enumerations;
 
 namespace SubPointSolutions.Docs.Content.SPMeta2.SharePoint_Foundation_Definitions
 {
     [TestClass]
-    [SampleParentDefinitionTagAttribute(DefinitionType = typeof(FieldDefinition))]
+
+    [SampleMetadataTagAttribute(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
+    [SampleMetadataTagAttribute(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Fields)]
+
     public class FieldDefinitionTests : ProvisionTestBase
     {
         #region by scope

@@ -27,6 +27,9 @@
     <script src="/scripts/SyntaxHighlighter/shBrushXml.js"></script>
     <script src="/scripts/SyntaxHighlighter/shBrushJScript.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
+
+
     @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/default.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/vs.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js"></script>
@@ -47,21 +50,25 @@
 
     <script>
 
-        jQuery(document).ready(function () {
+        (function ($) {
 
-            jQuery('code.language-cs')
-                .addClass('brush: csharp;');
+            $(document).ready(function () {
 
-            jQuery('code.language-xml')
-                .addClass('brush: xml;');
+                $('code.language-cs')
+                    .addClass('brush: csharp;');
 
-            jQuery('code.language-js')
-                .addClass('brush: js;');
+                $('code.language-xml')
+                    .addClass('brush: xml;');
 
-            SyntaxHighlighter.defaults['quick-code'] = false;
-            SyntaxHighlighter.config.tagName = 'code';
-            SyntaxHighlighter.all();
-        });
+                $('code.language-js')
+                    .addClass('brush: js;');
+
+                SyntaxHighlighter.defaults['quick-code'] = false;
+                SyntaxHighlighter.config.tagName = 'code';
+                SyntaxHighlighter.all();
+            });
+
+        }(jQuery));
 
     </script>
 

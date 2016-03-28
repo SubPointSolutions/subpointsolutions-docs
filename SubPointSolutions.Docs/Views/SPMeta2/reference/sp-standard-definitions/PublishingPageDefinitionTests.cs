@@ -8,10 +8,18 @@ using SPMeta2.Standard.Definitions;
 using SPMeta2.Standard.Enumerations;
 using SPMeta2.Standard.Syntax;
 using SPMeta2.Syntax.Default;
+using SubPointSolutions.Docs.Code.Enumerations;
+using SubPointSolutions.Docs.Code.Metadata;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
+
+    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Standard)]
+
+    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.PublishingPages)]
+
+    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
     public class PublishingPageDefinitionTests : ProvisionTestBase
     {
         #region methods

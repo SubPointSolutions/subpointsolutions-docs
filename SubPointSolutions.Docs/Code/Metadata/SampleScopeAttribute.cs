@@ -7,9 +7,16 @@ using System.Threading.Tasks;
 
 namespace SubPointSolutions.Docs.Code.Metadata
 {
+   
+
+   
+
+   
+
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class, AllowMultiple = true)]
-    public class SampleParentDefinitionTagAttribute : Attribute
+    public class SampleMetadataTagAttribute : Attribute
     {
-        public Type DefinitionType { get; set; }
+        public string Name { get; set; }
+        public string Value { get; set; }
     }
 }

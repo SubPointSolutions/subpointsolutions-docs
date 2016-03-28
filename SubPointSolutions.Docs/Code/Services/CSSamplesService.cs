@@ -145,42 +145,26 @@ namespace SubPointSolutions.Docs.Code.Services
 
                         // tags
 
-                        // tags
-                        var methodParentDefinition = method.GetCustomAttributes(typeof(SampleParentDefinitionTagAttribute), false)
-                                               .FirstOrDefault() as SampleParentDefinitionTagAttribute;
 
-                        // fallback on the class level
-                        if (methodParentDefinition == null)
+                        var sampleTags = (method.GetCustomAttributes(typeof(SampleMetadataTagAttribute), false)
+                                               as SampleMetadataTagAttribute[]).ToList();
+
+
+                        // addint top-class tags
+                        sampleTags.AddRange(instanceType.GetCustomAttributes(typeof(SampleMetadataTagAttribute), false)
+                                               as SampleMetadataTagAttribute[]);
+
+
+                        foreach (var tagNames in sampleTags.GroupBy(tag => tag.Name))
                         {
+                            var newTag = new DocSampleTag
+                            {
+                                Name = tagNames.Key,
+                                Values = tagNames.Select(t => t.Value).ToList()
+                            };
 
-                            methodParentDefinition = instanceType.GetCustomAttributes(typeof(SampleParentDefinitionTagAttribute), false)
-                                               .FirstOrDefault() as SampleParentDefinitionTagAttribute;
-
+                            sample.Tags.Add(newTag);
                         }
-
-                        var tagName = "SampleDefinitionGroup";
-                        var tagValue = string.Empty;
-
-                        if (methodParentDefinition != null)
-                        {
-                            tagValue = methodParentDefinition.DefinitionType.Name;
-                        }
-                        else
-                        {
-                            // fallback on the class name level
-                            tagValue = instanceType.Name
-                                                   .Replace("Tests", string.Empty);
-
-                        }
-
-                        var newTag = new DocSampleTag
-                        {
-                            Name = tagName
-                        };
-
-                        newTag.Values.Add(tagValue);
-
-                        sample.Tags.Add(newTag);
                     }
 
                     result.Add(sample);

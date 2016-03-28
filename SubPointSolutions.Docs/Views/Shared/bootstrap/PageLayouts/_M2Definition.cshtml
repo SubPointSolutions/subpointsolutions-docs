@@ -87,17 +87,17 @@
                 }
             }
 
-            <h3>API support</h3>
+            <h4>API support</h4>
             <span class="label @csomLabel">CSOM</span>
             <span class="label @ssomLabel">SSOM</span>
 
-            <h3>Can be deployed under</h3>
+            <h4>Can be deployed under</h4>
             @foreach (var scope in scopes)
             {
                 <span class="label label-success">@scope</span>
             }
 
-            <h3>Notes @*- <span><a href='#' target="_blank">edit</a></span>*@</h3>
+            <h4>Notes @*- <span><a href='#' target="_blank">edit</a></span>*@</h4>
 
             @{
                 var body = RenderBody();
@@ -120,7 +120,7 @@
                 </div>
             }
 
-            <h3>Examples</h3>
+            <h4>Examples</h4>
 
             @if (samples.Any())
             {
@@ -164,9 +164,5 @@
         </div>
     </div>
 </div>
-
-
-
-
 
 @Html.Partial(SConfig.GetThemedTemplate("Components/_Footer.cshtml"))

@@ -10,10 +10,17 @@ using SPMeta2.Utils;
 using SPMeta2.BuiltInDefinitions;
 using SPMeta2.CSOM.DefaultSyntax;
 using SPMeta2.Enumerations;
+using SubPointSolutions.Docs.Code.Enumerations;
+using SubPointSolutions.Docs.Code.Metadata;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
+    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
+
+    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.UserCustomAction)]
+
+    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
     public class UserCustomActionDefinitionTests : ProvisionTestBase
     {
         #region methods
