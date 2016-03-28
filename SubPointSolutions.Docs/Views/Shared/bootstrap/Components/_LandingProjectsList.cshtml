@@ -36,24 +36,25 @@
                 <a href="@(PathHelper.ToRootLink(PathHelper.RemoveExtension(tile.String("RelativeFilePath"))))">
                     @(tile.String("TileTitle"))
                 </a>
-            </div> <div class="panel-body">
-                @tile.String("TileDescription")
+            </div> <div class="panel-body m-landing-project-links-cnt">
+    @tile.String("TileDescription")
 
-                @if (tileLinks.Any())
-                {
-                    <ul>
-                        @foreach (var tileLink in tileLinks)
-                        {
-                            <li>
-                                <a href="@(PathHelper.ToRootLink(PathHelper.RemoveExtension(tileLink.String("RelativeFilePath"))))">
-                                    @(tileLink.String("Title"))
-                                </a>
-                            </li>
-                        }
-                    </ul>
-                }
+    @if (tileLinks.Any())
+    {
+        <ul>
+            @foreach (var tileLink in tileLinks)
+            {
+                <li>
+                    <a href="@(PathHelper.ToRootLink(PathHelper.RemoveExtension(tileLink.String("RelativeFilePath"))))">
+                        @(tileLink.String("Title"))
+                    </a>
+                </li>
+            }
+        </ul>
+    }
 
-            </div>
+</div>
+
         </div>
     </div>
 }

@@ -1,9 +1,11 @@
 ﻿---
 Title: 'SPMeta2 Home'
 Tile: true
-TileTitle: 'M2'
+TileTitle: 'M2 (SPMeta2)'
 TileOrder: 10
 Hidden : false
+TileLink: true
+TileLinkOrder: 05
 TileDescription: 'Hassle-free SharePoint artifact provisioning framework for SP2010, SP2013 and O365.'
 ---
 ## Welcome to M2 (also known as SPMeta2) 

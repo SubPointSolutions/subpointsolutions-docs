@@ -1,6 +1,8 @@
 ﻿---
 Title: Code Completion
 Order: 300
+TileLink: true
+TileLinkOrder: 30
 ---
 ### About ReSharper and reSP code completion
 This chapter contains set of pages related with reSP Code Completion productivity features.

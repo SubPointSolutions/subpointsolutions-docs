@@ -1,6 +1,8 @@
 ﻿---
 Title: Getting Started
 Order: 100
+TileLink: true
+TileLinkOrder: 10
 ---
 
 ### Prerequisites

@@ -1,6 +1,8 @@
 ﻿---
 Title: Inspections
 Order: 200
+TileLink: true
+TileLinkOrder: 20
 ---
 ### About ReSharper and reSP inspections
 
