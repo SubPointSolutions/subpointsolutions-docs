@@ -1,5 +1,5 @@
 ﻿---
-Title: Getting Started
+Title: Getting started
 Order: 100
 TileLink: true
 TileLinkOrder: 10
