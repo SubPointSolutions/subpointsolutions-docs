@@ -19,50 +19,55 @@ more than 100 (sic, more than a hundred) different artifacts and even more scena
 
 Sounds exciting? Have a look around, let us know how it goes.
 
-### Next steps
+### Get started!
 
 #### Learn basics
-* Learn the basics
-* Get started from scratch
+* [Get started with SPMeta2](/spmeta2/getting-started)
+* [Write a simple console provision appplication](/spmeta2/getting-started/writing-console-app)
 
 #### Have a closer look
-* Definitions concept
-* Models concept
-* ShrePoint Foundation provision
-* SharePoint Standard provision
-* Useful utils
+* [Technical reference](/spmeta2/reference)
+* [Definitions concept](/spmeta2/reference/definitions)
+* [Models concept](/spmeta2/reference/models)
+* [Provisioning services](/spmeta2/reference/provisionservices)
+* [Useful utilities](/spmeta2/reference/utils/)
 
 #### Get a cup of coffee and dive into extensibility
-* Extensibility overview
-* Custom syntax
-* Custom definition and model handler
+* [Extensibility overview](/spmeta2/extensibility)
+* [Writing new syntax etension](/spmeta2/extensibility/custom-syntax)
+* [Writing new definition](/spmeta2/extensibility/custom-definition)
 
 #### Get a cup of coffee and dive into extensibility
-* Provision scenarios
+* [Provision scenarios](/spmeta2/scenarios)
 
-#### Contributions
+### Contributions
 Out team is keen to improve the SPMeta2 along with documentation. Here is how you can contribute and take this library to the next level:
 
-* Create a new suggestion at UserVoice
-* Open a new suggestion to introduce a new feature.
+* Create a new suggestion at [UserVoice](https://subpointsolutions.uservoice.com)
+* Create a new ticket at [GitHub Repo](https://github.com/SubPointSolutions/spmeta2)
+* Follow and share our tweets [SPMeta2 Twitter](https://twitter.com/spmeta2) with hashtag #SPMeta2
 
 While creaeting a new suggestion, please provide a resaonble amount of information so that our team would be able to develop, test and release the suggested feature.
 
 #### Join Yammer community
 
-We like to have a great discussion with our client at our Yammer network.
+We like to have a great discussion with our client at our [Yammer network](https://yammer.com/spmeta2feedback).
 Join the community, see how it works for others.
+
+* [https://yammer.com/spmeta2feedback](https://yammer.com/spmeta2feedback)
 
 #### Pull requests @ github
 
 SPMeta2 is an open source library licensed under Microsoft Public License (Ms-PL) license.
 
-All the source code is available at github repository, so it makes it easier to collaborate on the code base, manag the roadmap and make a pull reqest once you have a valuable contribution to make.
+All the source code is available at (GitHub Repository](https://github.com/SubPointSolutions/spmeta2], so it makes it easier to collaborate on the code base, manag the roadmap and make a pull reqest once you have a valuable contribution to make.
 
-#### Support
+* [GitHub Repo](https://github.com/SubPointSolutions/spmeta2)
+
+### Support
 SPMeta2 is an open source library, but understand that it is also a fundamental building block for production projects as well.
 The library comes with various support options and SLA to make sure you won’t be left alone, you meet your deadline and have a positive experience.
 
-Our Yammer network provides a basic support. Both support and dev teams are avialably on Yammer providing valuable suggestions, answering questions and solving issues.
+Our [Yammer network](https://yammer.com/spmeta2feedback) provides a basic support. Both support and dev teams are avialably on Yammer providing valuable suggestions, answering questions and solving issues.
 
 There are also premium support options with SLA for independed professionals or teams, and enterprise as well.
