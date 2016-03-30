@@ -24,7 +24,7 @@ SPMeta2 introduces a domain of c# POCO objects, then it maps every single POCO o
 Have a look on the same idea expressed in a c# code. 
 Don not focus on understanding every single bit of the code, it will be much clear to you as we refine ideas later in the article.
 
-[TEST.ABigPictureSample]
+<a href="_samples/Basics-ABigPictureSample.sample-ref"></a>
 
 ### Zoom in, 1/3 scale - definitions
 
@@ -45,7 +45,7 @@ So you describe what you want to provision in definitions, and then SPMeta2 take
 And the same idea in the code. Now field definition and content type definition make sense, don't they?
 Don't focus on understanding every single bit of the code, it will be much clear to you as we refine ideas later in the article.
 
-[TEST.ABigPictureSample]
+<a href="_samples/Basics-ABigPictureSample.sample-ref"></a>
 
 ### Zoom in, 2/3 scale - models
 
@@ -77,7 +77,7 @@ Here is a refined view on how SPMeta2 works for site and web level provision:
 And the same idea in the code. NewSiteModel(), AddField() and AddContentType() help to build a relationships between artifacts
 Don't focus on understanding every single bit of the code, it will be much clear to you as we refine ideas later in the article.
 
-[TEST.ABigPictureSample]
+<a href="_samples/Basics-ABigPictureSample.sample-ref"></a>
 
 ### Zoom in, 3/3 scale - provision services
 
@@ -105,4 +105,4 @@ Here is an idea for SSOM or CSOM based provision:
 
 Finally, the code should be absolutely clear to you. We create definitions, we build a logical model and then we use a provision service to push the model to the SharePoint site. Easy enough?
 
-[TEST.ABigPictureSample]
+<a href="_samples/Basics-ABigPictureSample.sample-ref"></a>

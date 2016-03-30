@@ -1,27 +1,28 @@
-var enableMinimalDownloadStrategy = BuiltInWebFeatures.MinimalDownloadStrategy.Inherit(def =>
-            {
-                def.Enable = true;
-            });
+    var enableMinimalDownloadStrategy = BuiltInWebFeatures.MinimalDownloadStrategy.Inherit(def =>
+    {
+        def.Enable = true;
+    });
 
-            var disableMinimalDownloadStrategy = BuiltInWebFeatures.MinimalDownloadStrategy.Inherit(def =>
-            {
-                def.Enable = false;
-            });
+    var disableMinimalDownloadStrategy = BuiltInWebFeatures.MinimalDownloadStrategy.Inherit(def =>
+    {
+        def.Enable = false;
+    });
 
-            // enable MDS
-            var enableMdsModel = SPMeta2Model.NewWebModel(web =>
-            {
-                web
-                    .AddWebFeature(enableMinimalDownloadStrategy);
-            });
+    // enable MDS
+    var enableMdsModel = SPMeta2Model.NewWebModel(web =>
+    {
+        web
+            .AddWebFeature(enableMinimalDownloadStrategy);
+    });
 
-            DeployModel(enableMdsModel);
+    DeployModel(enableMdsModel);
 
-            // disable MDS
-            var model = SPMeta2Model.NewWebModel(web =>
-            {
-                web
-                    .AddWebFeature(disableMinimalDownloadStrategy);
-            });
+    // disable MDS
+    var model = SPMeta2Model.NewWebModel(web =>
+    {
+        web
+            .AddWebFeature(disableMinimalDownloadStrategy);
+    });
 
-            DeployModel(model);
+    DeployModel(model);
+

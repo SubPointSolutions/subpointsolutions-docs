@@ -1,10 +1,11 @@
-modelNode.AddHideContentTypeFieldLinks(new HideContentTypeFieldLinksDefinition
+    modelNode.AddHideContentTypeFieldLinks(new HideContentTypeFieldLinksDefinition
+    {
+        Fields = new List<FieldLinkValue>(ids.Select(s =>
+            new FieldLinkValue
             {
-                Fields = new List<FieldLinkValue>(ids.Select(s =>
-                    new FieldLinkValue
-                    {
-                        Id = s
-                    }))
-            });
+                Id = s
+            }))
+    });
 
-            return modelNode;
+    return modelNode;
+

@@ -1,5 +1,6 @@
-// do stuff
+    // do stuff
 
 
-            // !!! always retun the same model which was passed as 'this' object !!!
-            return modelNode;
+    // !!! always retun the same model which was passed as 'this' object !!!
+    return modelNode;
+

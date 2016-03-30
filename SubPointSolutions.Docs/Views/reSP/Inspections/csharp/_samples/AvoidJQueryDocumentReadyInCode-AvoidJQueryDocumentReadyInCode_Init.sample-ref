@@ -1,4 +1,4 @@
-window.myappName$ = window.myappName$ || jQuery.noConflict(true);
+    window.myappName$ = window.myappName$ || jQuery.noConflict(true);
 
     (function($) {
         if (!_spBodyOnLoadCalled) {
@@ -14,3 +14,4 @@ window.myappName$ = window.myappName$ || jQuery.noConflict(true);
         RegisterModuleInit(_spPageContextInfo.webServerRelativeUrl + '/appname/script.js', pageLoad);
 
     })(window.myappName$);
+
