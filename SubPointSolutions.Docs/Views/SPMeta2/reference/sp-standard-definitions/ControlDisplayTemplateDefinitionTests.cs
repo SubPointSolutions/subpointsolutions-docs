@@ -11,7 +11,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
     [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Standard)]
 
     [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.DisplayTemplates)]
-
+    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
     [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
     public class ControlDisplayTemplateDefinitionTests : ProvisionTestBase
     {

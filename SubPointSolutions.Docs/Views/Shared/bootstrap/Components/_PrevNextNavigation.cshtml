@@ -94,14 +94,14 @@
         @if (prevDocument != null)
         {
             <a class="btn-lg btn-default" href="@prevDocumentUrl">
-                Previous
+                <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Previous 
             </a>
         }
         @if (nextDocument != null)
         {
             <a class="btn-lg btn-default pull-right" href="@nextDocumentUrl">
-                Next
-            </a>
+                Next <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+            </a> 
         }
     </div>
 }
