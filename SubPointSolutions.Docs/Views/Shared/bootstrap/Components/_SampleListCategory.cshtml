@@ -20,7 +20,7 @@
     var categoryHeight = 80;
     var categoryItemHeight = 18;
 
-    var categoryRowsCount = 3;
+    var categoryRowsCount = 4;
 
     var totalCategoriesHeight = sampleCategories.Count() * categoryHeight;
     var totalLinksHeight = 0;
@@ -38,13 +38,13 @@
     var currentRowHeight = 0;
 }
 
-<h3 style="border-bottom: 1px solid #eee;">@ViewBag.SamplesModel.CategoryName</h3>
+<h3>@ViewBag.SamplesModel.CategoryName</h3>
 
 
 
 <div class="panel-body">
 
-    @Html.Raw("<div class='col-sm-4 col-md-4'>")
+    @Html.Raw("<div class='col-sm-3 col-md-3'>")
 
     @foreach (var sampleGroupName in sampleCategories)
         {
@@ -55,7 +55,7 @@
                 currentRowHeight = 0;
 
         @Html.Raw("</div>")
-        @Html.Raw("<div class='col-sm-4 col-md-4'>")
+        @Html.Raw("<div class='col-sm-3 col-md-3'>")
             }
 
             var samples = samplesWithCategories.Where(s => s.Tags.First(t => t.Name == categoryTagName).Values.Contains(sampleGroupName));

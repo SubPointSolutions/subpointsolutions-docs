@@ -81,21 +81,33 @@ namespace SubPointSolutions.Docs.Code.API
             return defaultValues;
         }
 
+        public static List<string> GetSampleTagValues(IEnumerable<DocSample> samples, string tagName)
+        {
+            var result = new List<string>();
+
+            foreach (var sample in samples)
+            {
+                result.AddRange(GetSampleTagValues(sample, tagName, new List<string>()));
+            }
+
+            return result.Distinct().ToList();
+        }
+
         public static List<string> GetSampleCategories(IEnumerable<DocSample> samples)
         {
-           var categoryTagName = BuiltInTagNames.SampleCategory;
+            var categoryTagName = BuiltInTagNames.SampleCategory;
 
-           var samplesWithCategories = samples.Where(s =>
-                                                 s.Tags.Any(t => t.Name == categoryTagName  && t.Values.Any()))
-                                                 .ToList();
+            var samplesWithCategories = samples.Where(s =>
+                                                  s.Tags.Any(t => t.Name == categoryTagName && t.Values.Any()))
+                                                  .ToList();
 
 
-           var sampleCategories = samplesWithCategories
-                            .SelectMany(s => s.Tags.First(t => t.Name == categoryTagName).Values.Distinct())
-                            .Distinct()
-                            .ToList();
+            var sampleCategories = samplesWithCategories
+                             .SelectMany(s => s.Tags.First(t => t.Name == categoryTagName).Values.Distinct())
+                             .Distinct()
+                             .ToList();
 
-           return sampleCategories;
+            return sampleCategories;
         }
 
         #endregion

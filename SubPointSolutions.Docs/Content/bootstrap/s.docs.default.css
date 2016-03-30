@@ -173,7 +173,7 @@ pre {
         margin-top: 15px;
     }
 
-    /*
+/*
 .m-sample-list-cnt .panel-body ul {
     padding-left: 15px;
 }
@@ -183,3 +183,55 @@ pre {
     margin-left:20px;
 }
         */
+
+
+
+.m-landing-project-cnt .panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+}
+
+.m-landing-project-cnt .panel {
+    border: none;
+}
+
+.m-landing-project-cnt .panel-body {
+    padding: 15px;
+    background-color: #fcfcfc;
+}
+
+/* */
+
+.m-sample-list-cnt h3 {
+    padding-bottom: 9px;
+    border-bottom: 1px solid #eee;
+}
+
+.m-sample-list-cnt .panel-body {
+    padding: 15px;
+    padding-left: 4px;
+}
+
+.m-sample-list-cnt ul {
+    padding-left: 20px;
+}
+
+
+.m-sample-list-cnt .panel-default {
+    border-color: none;
+    border: none;
+    -webkit-box-shadow: 0;
+    box-shadow: 0;
+}
+
+    .m-sample-list-cnt .panel-default > .panel-heading {
+        color: #333;
+        background-color: transparent;
+        border-color: transparent;
+        border: none;
+        text-transform: uppercase;
+        border-bottom: 1px solid #e7e7e7;
+        padding-left: 3px;
+    }

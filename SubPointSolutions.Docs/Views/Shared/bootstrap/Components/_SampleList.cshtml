@@ -4,7 +4,7 @@
 
 @{
 
-    var categoryTagName = SubPointSolutions.Docs.Code.Enumerations.BuiltInTagNames.SampleCategory;
+    var categoryTagName = BuiltInTagNames.SampleCategory;
     var categoryOrderTagName = SubPointSolutions.Docs.Code.Enumerations.BuiltInTagNames.SampleCategoryOrder;
 
     var spRuntimeTagName = SubPointSolutions.Docs.Code.Enumerations.BuiltInTagNames.SPRuntime;
@@ -14,7 +14,8 @@
 
     var allSamples = SubPointSolutions.Docs.Code.Samples.m2Samples.SysAllSamples;
 
-    var allCategories = SamplesAPI.GetSampleCategories(allSamples);
+    //var allCategories = SamplesAPI.GetSampleTagValues(allSamples, BuiltInTagNames.SampleModelCategory);
+    var allCategories = SamplesAPI.GetSampleTagValues(allSamples, categoryTagName);
     var samplesWithCategories = SamplesAPI.GetSamplesWithCategories(allSamples);
 
 
@@ -65,7 +66,7 @@
         {
             dynamic categoryModel = new System.Dynamic.ExpandoObject();
 
-            categoryModel.Samples = SamplesAPI.GetSamplesWithTag( allSamples, BuiltInTagNames.SampleCategory, sampleGroupName); 
+            categoryModel.Samples = SamplesAPI.GetSamplesWithTag(allSamples, categoryTagName, sampleGroupName); 
             categoryModel.CategoryName = sampleGroupName;
 
             ViewBag.SamplesModel = categoryModel;
