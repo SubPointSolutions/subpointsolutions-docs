@@ -10,7 +10,7 @@ We use NuGet to deliver all the packages, handle versioning, updates and patches
 
 This article introduces a NuGet packages description, consuming NuGet packages in your applications and usage of github repository if you like to built SPMeta2 library from scratch.
 
-#### NuGet
+### Referencing SPMeta2 from NuGet
 
 The easiest way to start with SPMeta library is to use NuGet packages. We support a range of SharePoint versions - 2010, 2013 and Online as well as CSOM/SSOM, so we have a bunch of the NuGet packages out there.
 
@@ -67,24 +67,20 @@ Start your Visual Studio and bootstrap a simple console application:
 #### Step 2, use NuGet to get [SPMeta2.CSOM.Foundation](https://www.nuget.org/packages/SPMeta2.CSOM.Foundation/) package.
 Simple use NuGet package manager to find and install [SPMeta2.CSOM.Foundation](https://www.nuget.org/packages/SPMeta2.CSOM.Foundation/) package or use the following command in the "Package Manager Console":
 
-[code language="powershell"]
-install-package SPMeta2.CSOM.Foundation
-[/code]
+* install-package SPMeta2.CSOM.Foundation
 
 #### Step 3, setup your definitions, model and provision service
 There are a few outtanding things we need to complete - create definitions, setup relationships between them and, finally, push the model to the SharePoint site.
 
 Include the following code in your console application changing the 'siteUrl', run it and enjoy the outcome.
 
-[FULLMETHOD.SPMeta2.Samples.CSOMConsoleApp.Program.Main]
+<a href="_samples/ConsoleAppSamples-CSOMConsoleAppSample.sample-ref"></a>
 
 ### Creating a simple SSOM application for SharePoint 2013
 Essentially, we would need to bootstrap the same console application (check previous CSOM application) and add [SPMeta2.SSOM.Foundation](https://www.nuget.org/packages/SPMeta2.SSOM.Foundation/) package or use the following command in the "Package Manager Console":
 
-[code language="powershell"]
-install-package SPMeta2.SSOM.Foundation 
-[/code]
+* install-package SPMeta2.SSOM.Foundation 
 
 The actual code will be the same, but to enable SSOM based provision we need to use 'CSOMProvisionService'. Include the following code in your console application changing the 'siteUrl', run it and enjoy the outcome.
 
-[FULLMETHOD.SPMeta2.Samples.SSOMConsoleApp.Program.Main]
+<a href="_samples/ConsoleAppSamples-SSOMConsoleAppSample.sample-ref"></a>

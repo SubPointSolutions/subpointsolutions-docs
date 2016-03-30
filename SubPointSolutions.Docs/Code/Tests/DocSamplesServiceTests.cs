@@ -64,6 +64,8 @@ namespace SubPointSolutions.Docs.Code.Tests
         [TestCategory("Dev.Source")]
         public void Generate_Sample_Ref_Files()
         {
+            Can_Create_CS_Samples();
+
             var docsPrj = @"..\..\Views";
             var allSamples = GetAllSamples(docsPrj, true);
 

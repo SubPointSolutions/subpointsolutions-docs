@@ -353,6 +353,7 @@
     <Compile Include="Views\reSP\Inspections\csharp\WrongSPViewUpdate.cs" />
     <Compile Include="Views\SPMeta2\extensibility\writing-custom-definition.cs" />
     <Compile Include="Views\SPMeta2\extensibility\writing-custom-syntax.cs" />
+    <Compile Include="Views\SPMeta2\getting-started\ConsoleAppSamples.cs" />
     <Compile Include="Views\SPMeta2\getting-started\Basics.cs" />
     <Compile Include="Views\SPMeta2\reference\Models.cs" />
     <Compile Include="Views\SPMeta2\reference\SiteModel.cs" />
@@ -1379,6 +1380,9 @@
     <None Include="Views\SPMeta2\getting-started\Releases.md" />
     <None Include="Views\SPMeta2\getting-started\_samples\Basics-ABigPictureSample.sample-ref" />
     <None Include="Views\SPMeta2\getting-started\_samples\Basics-SysAll.sample-ref" />
+    <None Include="Views\SPMeta2\getting-started\_samples\ConsoleAppSamples-CSOMConsoleAppSample.sample-ref" />
+    <None Include="Views\SPMeta2\getting-started\_samples\ConsoleAppSamples-SSOMConsoleAppSample.sample-ref" />
+    <None Include="Views\SPMeta2\getting-started\_samples\ConsoleAppSamples-SysAll.sample-ref" />
     <None Include="Views\SPMeta2\getting-started\_ssom-provision.md" />
     <None Include="Views\SPMeta2\getting-started\_Support.md" />
     <None Include="Views\SPMeta2\getting-started\writing-console-app.md" />
