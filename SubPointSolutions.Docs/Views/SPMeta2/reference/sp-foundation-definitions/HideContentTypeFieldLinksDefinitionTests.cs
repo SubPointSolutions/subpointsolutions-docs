@@ -19,6 +19,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
     [SampleMetadataTagAttribute(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.ContentTypes)]
 
+    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
+
     //[SampleMetadataTagAttribute(Name = BuiltInTagNames.SampleHidden)]
     public class HideContentTypeFieldLinksDefinitionTests : ProvisionTestBase
     {

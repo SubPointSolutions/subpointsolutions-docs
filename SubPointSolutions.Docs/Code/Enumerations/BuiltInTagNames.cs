@@ -15,5 +15,7 @@ namespace SubPointSolutions.Docs.Code.Enumerations
         public const string SampleHidden = "Sample Hidden Flag";
 
         public const string SampleModelCategory = "Sample Model Category";
+
+        public const string SampleM2Model = "Sample M2 Model";
     }
 }

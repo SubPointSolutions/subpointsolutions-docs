@@ -14,6 +14,9 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
     [SampleMetadataTag(Name = BuiltInTagNames.SampleCategoryOrder, Value = "200")]
 
     [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+
+    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebApplicationModel)]
+
     public class AlternateUrlDefinitionTests : ProvisionTestBase
     {
         #region methods

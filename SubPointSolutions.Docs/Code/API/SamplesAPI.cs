@@ -17,6 +17,11 @@ namespace SubPointSolutions.Docs.Code.API
 
         #region methods
 
+        public static List<DocSample> GetSamplesWithTag(IEnumerable<DocSample> samples, string tagName)
+        {
+            return GetSamplesWithTag(samples, tagName, null);
+        }
+
         public static List<DocSample> GetSamplesWithTag(IEnumerable<DocSample> samples, string tagName, string tagValue)
         {
             var categoryTagName = tagName;

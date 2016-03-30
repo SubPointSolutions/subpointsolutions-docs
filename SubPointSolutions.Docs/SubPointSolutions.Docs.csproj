@@ -313,6 +313,7 @@
     <Compile Include="Code\Definitions\DocWebs.cs" />
     <Compile Include="Code\Definitions\DocWikiPages.cs" />
     <Compile Include="Code\Enumerations\BuiltInSampleCategoryTagValues.cs" />
+    <Compile Include="Code\Enumerations\BuiltInM2ModelTagValues.cs" />
     <Compile Include="Code\Enumerations\BuiltInSPRuntimeTagValues.cs" />
     <Compile Include="Code\Enumerations\BuiltInTagNames.cs" />
     <Compile Include="Code\Metadata\SampleMetadataAttribute.cs" />

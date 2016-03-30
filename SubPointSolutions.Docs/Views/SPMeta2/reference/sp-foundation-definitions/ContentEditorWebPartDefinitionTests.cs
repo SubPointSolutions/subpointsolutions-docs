@@ -20,6 +20,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
     [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.WebParts)]
 
+    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
+
     //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
     public class ContentEditorWebPartDefinitionTests : ProvisionTestBase
     {

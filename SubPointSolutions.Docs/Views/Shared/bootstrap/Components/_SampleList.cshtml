@@ -4,7 +4,9 @@
 
 @{
 
-    var categoryTagName = BuiltInTagNames.SampleCategory;
+    //var categoryTagName = BuiltInTagNames.SampleCategory;
+    var categoryTagName = BuiltInTagNames.SampleM2Model;
+    
     var categoryOrderTagName = SubPointSolutions.Docs.Code.Enumerations.BuiltInTagNames.SampleCategoryOrder;
 
     var spRuntimeTagName = SubPointSolutions.Docs.Code.Enumerations.BuiltInTagNames.SPRuntime;
@@ -12,11 +14,12 @@
     var spStandardRuntimeValue = SubPointSolutions.Docs.Code.Enumerations.BuiltInSPRuntimeTagValues.Standard;
     var spEnterpriseRuntimeValue = SubPointSolutions.Docs.Code.Enumerations.BuiltInSPRuntimeTagValues.Enterprise;
 
+    
     var allSamples = SubPointSolutions.Docs.Code.Samples.m2Samples.SysAllSamples;
 
     //var allCategories = SamplesAPI.GetSampleTagValues(allSamples, BuiltInTagNames.SampleModelCategory);
     var allCategories = SamplesAPI.GetSampleTagValues(allSamples, categoryTagName);
-    var samplesWithCategories = SamplesAPI.GetSamplesWithCategories(allSamples);
+    var samplesWithCategories = SamplesAPI.GetSamplesWithTag(allSamples, categoryTagName);
 
 
     var sampleCategories = allCategories

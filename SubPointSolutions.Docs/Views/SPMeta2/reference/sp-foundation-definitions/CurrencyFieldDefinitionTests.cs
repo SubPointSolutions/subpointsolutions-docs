@@ -10,7 +10,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
     [TestClass]
     [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.ContentTypes)]
+    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Fields)]
+    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.SiteModel)]
 
     [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
     public class CurrencyFieldDefinitionTests : ProvisionTestBase

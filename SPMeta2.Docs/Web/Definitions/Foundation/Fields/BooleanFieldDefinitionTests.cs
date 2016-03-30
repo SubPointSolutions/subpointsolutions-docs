@@ -5,7 +5,9 @@ using SPMeta2.Syntax.Default;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
-    [TestClass]
+    [TestClass
+
+
     public class BooleanFieldDefinitionTests : ProvisionTestBase
     {
         #region methods
