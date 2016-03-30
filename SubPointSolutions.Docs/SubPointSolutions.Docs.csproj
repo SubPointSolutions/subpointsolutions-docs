@@ -298,6 +298,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Code\API\SamplesAPI.cs" />
     <Compile Include="Code\Base\ProvisionTestBase.cs" />
     <Compile Include="Code\Consts\DocConsts.cs" />
     <Compile Include="Code\Consts\SampleGroups.cs" />
@@ -1335,6 +1336,7 @@
     <None Include="Views\Shared\bootstrap\Components\_PrevNextNavigation.cshtml" />
     <None Include="Views\Shared\bootstrap\Components\_Footer.cshtml" />
     <None Include="Views\Shared\bootstrap\Components\_LandingProjectsList.cshtml" />
+    <None Include="Views\Shared\bootstrap\Components\_SampleListCategory.cshtml" />
     <None Include="Views\Shared\bootstrap\Components\_SampleList.cshtml" />
     <None Include="Views\Shared\bootstrap\Components\_SecondNavigation.cshtml" />
     <None Include="Views\Shared\bootstrap\Components\_Sidebar.cshtml" />

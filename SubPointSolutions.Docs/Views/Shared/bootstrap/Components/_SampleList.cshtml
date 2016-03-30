@@ -1,5 +1,9 @@
-﻿@{
-    
+﻿@using SubPointSolutions.Docs.Code.API
+@using SubPointSolutions.Docs.Code.Samples
+@using SubPointSolutions.Docs.Code.Enumerations
+
+@{
+
     var categoryTagName = SubPointSolutions.Docs.Code.Enumerations.BuiltInTagNames.SampleCategory;
     var categoryOrderTagName = SubPointSolutions.Docs.Code.Enumerations.BuiltInTagNames.SampleCategoryOrder;
 
@@ -7,38 +11,29 @@
 
     var spStandardRuntimeValue = SubPointSolutions.Docs.Code.Enumerations.BuiltInSPRuntimeTagValues.Standard;
     var spEnterpriseRuntimeValue = SubPointSolutions.Docs.Code.Enumerations.BuiltInSPRuntimeTagValues.Enterprise;
-    
+
     var allSamples = SubPointSolutions.Docs.Code.Samples.m2Samples.SysAllSamples;
-    
-    var allCategories = allSamples.SelectMany(s => s.Tags.Where(t => t.Name == categoryTagName
-                                                                 && t.Values.Any()));
-                                                                 
-    
-    var samplesWithCategories = allSamples.Where(s =>
-                                                 s.Tags.Any(t => t.Name == categoryTagName
-                                                                 && t.Values.Any()))
-                                                 .ToList();
+
+    var allCategories = SamplesAPI.GetSampleCategories(allSamples);
+    var samplesWithCategories = SamplesAPI.GetSamplesWithCategories(allSamples);
 
 
-    var sampleCategories = samplesWithCategories
-                             .SelectMany(s => s.Tags.First(t => t.Name == categoryTagName).Values.Distinct())
-                             .Distinct()
-                             // initial sorting by name
+    var sampleCategories = allCategories
+        // initial sorting by name
                              .OrderBy(m => m)
-                             // sorting by any category attr
-                             .OrderBy(m => allSamples.FirstOrDefault( 
-                                                                // has both category and order
-                                                                s => s.Tags.Any(t => t.Name == categoryOrderTagName && t.Values.Any())
-                                                                     && s.Tags.Any(t => t.Name == categoryTagName && t.Values.Contains(m))
-                                                                    ) != null ?
-                                                               // get the category order     
-                                            int.Parse( allSamples.FirstOrDefault( 
-                                                                s => s.Tags.Any(t => t.Name == categoryOrderTagName && t.Values.Any())
-                                                                     && s.Tags.Any(t => t.Name == categoryTagName && t.Values.Contains(m))
-                                                                    ).Tags.First(t => t.Name == categoryOrderTagName).Values.First())
-                                                                    : int.MaxValue)
-                                                               
-                                                               
+        // sorting by any category attr
+        //.OrderBy(m => allSamples.FirstOrDefault(
+        //    // has both category and order
+        //                                   s => samplesAPI.HasTag(s, categoryOrderTagName)
+        //                                        && samplesAPI.HasTagValue(s, categoryTagName, m)
+        //                                       ) != null ?
+        //    // get the category order
+        //               int.Parse(samplesAPI.GetSampleTagValue( allSamples.FirstOrDefault(
+        //                                   s => samplesAPI.HasTag(s, categoryOrderTagName)
+        //                                        &&  samplesAPI.HasTagValue(s, categoryTagName, m)
+        //                                       ), categoryOrderTagName, int.MaxValue.ToString()))
+        //                                           : int.MaxValue)
+
                              //.OrderBy(m => allCategories.Any(c => c.Name == m) ? )
                              .ToList();
 
@@ -46,7 +41,7 @@
     var categoryItemHeight = 18;
 
     var categoryRowsCount = 3;
-    
+
     var totalCategoriesHeight = sampleCategories.Count() * categoryHeight;
     var totalLinksHeight = 0;
 
@@ -63,75 +58,20 @@
     var currentRowHeight = 0;
 }
 
-<style>
-
-</style>
-
 <div class="m-sample-list-cnt">
+    @{
 
-    @Html.Raw("<div class='col-sm-4 col-md-4'>")
-
-    @foreach (var sampleGroupName in sampleCategories)
-    {
-        currentRowHeight += categoryHeight;
-
-        if (currentRowHeight > rowHeight)
+        foreach (var sampleGroupName in sampleCategories)
         {
-            currentRowHeight = 0;
+            dynamic categoryModel = new System.Dynamic.ExpandoObject();
 
-            @Html.Raw("</div>")
-            @Html.Raw("<div class='col-sm-4 col-md-4'>")
+            categoryModel.Samples = SamplesAPI.GetSamplesWithTag( allSamples, BuiltInTagNames.SampleCategory, sampleGroupName); 
+            categoryModel.CategoryName = sampleGroupName;
+
+            ViewBag.SamplesModel = categoryModel;
+
+            @Html.Partial(SConfig.GetThemedTemplate("Components/_SampleListCategory.cshtml"));
         }
-
-        var samples = samplesWithCategories.Where(s => s.Tags.First(t => t.Name == categoryTagName).Values.Contains(sampleGroupName));
-
-        if (!samples.Any())
-        {
-            continue;
-        }
-
-        <div class="panel panel-default ">
-            <div class="panel-heading">
-                @sampleGroupName
-            </div>
-            <div class="panel-body">
-
-                <ul>
-                    @foreach (var sample in samples)
-                    {
-                        currentRowHeight += categoryItemHeight;
-
-                        var definitionClassName = sample.ClassName
-                                                        .Replace("Tests", string.Empty)
-                                                        .Replace("Test", string.Empty);
-
-                        var isStandardSample = sample.Tags.Any(t => t.Name == spRuntimeTagName && t.Values.Contains(spStandardRuntimeValue));
-                        var isEntepriseSample = sample.Tags.Any(t => t.Name == spRuntimeTagName && t.Values.Contains(spEnterpriseRuntimeValue));
-
-                        var definitionUrl = "/spmeta2/reference/sp-foundation-definitions/{0}";
-
-                        if (isStandardSample)
-                        {
-                            definitionUrl = "/spmeta2/reference/sp-stanrard-definitions/{0}";
-                        }
-
-                        if (isEntepriseSample)
-                        {
-                            definitionUrl = "/spmeta2/reference/sp-enterprise-definitions/{0}";
-                        }
-
-                        var definitionPageUrl = string.Format(definitionUrl, definitionClassName).ToLower();
-
-                        <li>
-                            <a href="@definitionPageUrl">
-                                @(sample.Title)
-                            </a>
-                        </li>
-                    }
-                </ul>
-            </div>
-        </div>
     }
 
-    @Html.Raw("</div>")
 </div>
