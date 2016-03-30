@@ -31,6 +31,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.ContentEditorWebPartDefinition")]
+
+        [SampleMetadata(Title = "Add CEWP",
+                        Description = ""
+                        )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploEmptyContentEditorWebpart()
         {
             var cewp = new ContentEditorWebPartDefinition
@@ -66,6 +71,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.ContentEditorWebPartDefinition")]
+
+        [SampleMetadata(Title = "Add CEWP with link",
+                        Description = ""
+                        )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploContentEditorWebpartWithUrlLink()
         {
             var htmlContent = new ModuleFileDefinition
@@ -116,6 +126,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.ContentEditorWebPartDefinition")]
+
+        [SampleMetadata(Title = "Add CEWP with content",
+                        Description = ""
+                        )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeployContentEditorWebpartWithContent()
         {
             var cewp = new ContentEditorWebPartDefinition

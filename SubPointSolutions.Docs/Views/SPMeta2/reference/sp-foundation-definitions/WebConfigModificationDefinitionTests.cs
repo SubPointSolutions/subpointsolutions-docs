@@ -19,6 +19,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.WebConfigModificationDefinition")]
+
+        [SampleMetadata(Title = "Add web.config modification",
+                    Description = ""
+                    )]
+        [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleWebConfigModificationDefinition()
         {
             var model = SPMeta2Model.NewSiteModel(site =>

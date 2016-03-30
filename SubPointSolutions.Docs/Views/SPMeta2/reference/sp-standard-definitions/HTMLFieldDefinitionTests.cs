@@ -13,13 +13,18 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
     [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Fields)]
     [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.SiteModel)]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
     public class HTMLFieldDefinitionTests : ProvisionTestBase
     {
         #region methods
 
         [TestMethod]
         [TestCategory("Docs.HTMLFieldDefinition")]
+
+        [SampleMetadata(Title = "Add HTML field",
+                        Description = ""
+                        )]
+        [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleHTMLFieldDefinition()
         {
             var model = SPMeta2Model.NewSiteModel(site =>

@@ -20,6 +20,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.ContentTypeLinkDefinition")]
+
+        [SampleMetadata(Title = "Add content type to lists",
+                        Description = ""
+                        )]
+        [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleContentTypeLinkDefinition()
         {
             var model = SPMeta2Model.NewSiteModel(site =>

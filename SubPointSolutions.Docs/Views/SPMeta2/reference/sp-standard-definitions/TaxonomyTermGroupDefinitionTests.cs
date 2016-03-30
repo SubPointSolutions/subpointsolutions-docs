@@ -24,6 +24,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.TaxonomyTermGroupDefinition")]
+
+        [SampleMetadata(Title = "Add taxonomy term group",
+            Description = ""
+            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleTaxonomyGroup()
         {
             var defaultSiteTermStore = new TaxonomyTermStoreDefinition
@@ -51,6 +56,10 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
       
         [TestMethod]
         [TestCategory("Docs.TaxonomyTermGroupDefinition")]
+        [SampleMetadata(Title = "Add taxonomy term groups",
+            Description = ""
+            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleTaxonomyGroups()
         {
             var defaultSiteTermStore = new TaxonomyTermStoreDefinition

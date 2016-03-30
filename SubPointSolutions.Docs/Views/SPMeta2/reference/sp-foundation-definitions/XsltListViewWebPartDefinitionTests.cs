@@ -27,6 +27,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
       
         [TestMethod]
         [TestCategory("Docs.XsltListViewWebPartDefinition")]
+
+        [SampleMetadata(Title = "Add XLVWP binded to list by Title",
+            Description = ""
+            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanBindXsltListViewWebPartByListTitle()
         {
             var inventoryLibrary = new ListDefinition
@@ -72,6 +77,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
        
         [TestMethod]
         [TestCategory("Docs.XsltListViewWebPartDefinition")]
+
+        [SampleMetadata(Title = "Add XLVWP binded to list by URL",
+            Description = ""
+            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanBindXsltListViewWebPartByListUrl()
         {
             var booksLibrary = new ListDefinition
@@ -117,6 +127,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         
         [TestMethod]
         [TestCategory("Docs.XsltListViewWebPartDefinition")]
+
+        [SampleMetadata(Title = "Add XLVWP binded to list view by Title",
+            Description = ""
+            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanBindXsltListViewWebPartByListViewTitle()
         {
             var booksLibrary = new ListDefinition

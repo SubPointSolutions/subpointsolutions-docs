@@ -26,6 +26,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.SandboxSolutionDefinition")]
+
+        [SampleMetadata(Title = "Add sandbox solution",
+                            Description = ""
+                            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleSandboxSolutionDefinition()
         {
             // FileName could be different to the original solution name

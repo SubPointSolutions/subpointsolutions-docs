@@ -19,6 +19,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
     {
         [TestMethod]
         [TestCategory("Docs.TopNavigationNodeDefinition")]
+
+        [SampleMetadata(Title = "Add top nav items",
+                    Description = ""
+                    )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CaDeployFlatTopNavigation()
         {
             var ourCompany = new TopNavigationNodeDefinition
@@ -56,6 +61,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.TopNavigationNodeDefinition")]
+
+        [SampleMetadata(Title = "Add hierarchical top nav items",
+                    Description = ""
+                    )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CaDeployHierarchicalTopNavigation()
         {
             // top level departments node

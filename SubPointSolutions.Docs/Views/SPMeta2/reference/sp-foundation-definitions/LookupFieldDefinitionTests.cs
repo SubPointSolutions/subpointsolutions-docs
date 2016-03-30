@@ -26,6 +26,11 @@ namespace SubPointSolutions.Docs.Views.Views.SPMeta2.reference
 
         [TestMethod]
         [TestCategory("Docs.LookupFieldDefinition")]
+
+        [SampleMetadata(Title = "Add lookup field",
+                        Description = ""
+                        )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeployEmptyLookupField()
         {
             var emptyLookupField = new LookupFieldDefinition
@@ -50,6 +55,11 @@ namespace SubPointSolutions.Docs.Views.Views.SPMeta2.reference
 
         [TestMethod]
         [TestCategory("Docs.LookupFieldDefinition")]
+
+        [SampleMetadata(Title = "Add lookup field binded to list",
+                        Description = ""
+                        )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeployLookupFieldBindedToList()
         {
             var leadTypeLookup = new LookupFieldDefinition

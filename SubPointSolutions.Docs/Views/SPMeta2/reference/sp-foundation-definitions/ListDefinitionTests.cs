@@ -18,7 +18,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
     [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.ListsAndLibraries)]
     [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
 
-    [SampleMetadataTagAttribute(Name = BuiltInTagNames.SampleHidden)]
+    //[SampleMetadataTagAttribute(Name = BuiltInTagNames.SampleHidden)]
     public class ListDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -28,6 +28,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.ListDefinition")]
+
+        [SampleMetadata(Title = "Add list by template type",
+                        Description = ""
+                        )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeployListByTemplateId()
         {
             var genericList = new ListDefinition
@@ -58,6 +63,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.ListDefinition")]
+
+        [SampleMetadata(Title = "Add list by template name",
+                        Description = ""
+                        )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeployListByTemplateName()
         {
             var contactsList = new ListDefinition
@@ -80,6 +90,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.ListDefinition")]
+
+        [SampleMetadata(Title = "Add host Style Library",
+                        Description = ""
+                        )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeployStyleLibrary()
         {
             var model = SPMeta2Model.NewWebModel(web =>
@@ -96,6 +111,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.ListDefinition")]
+
+        [SampleMetadata(Title = "Add host OOTB lists",
+                        Description = ""
+                        )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeployOOTBListsLibrary()
         {
             var model = SPMeta2Model.NewWebModel(web =>
@@ -127,6 +147,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
        
         [TestMethod]
         [TestCategory("Docs.ListDefinition")]
+
+        [SampleMetadata(Title = "Add multiple lists",
+                        Description = ""
+                        )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleLists()
         {
             var model = SPMeta2Model.NewWebModel(web =>

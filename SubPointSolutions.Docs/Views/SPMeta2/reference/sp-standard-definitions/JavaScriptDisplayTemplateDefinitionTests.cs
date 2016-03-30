@@ -13,13 +13,18 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
     [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.DisplayTemplates)]
     [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
     public class JavaScriptDisplayTemplateDefinitionTests : ProvisionTestBase
     {
         #region methods
 
         [TestMethod]
         [TestCategory("Docs.JavaScriptDisplayTemplateDefinition")]
+
+        [SampleMetadata(Title = "Add JavaScript display template",
+            Description = ""
+            )]
+        [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleJavaScriptDisplayTemplateDefinition()
         {
             var model = SPMeta2Model.NewSiteModel(site =>

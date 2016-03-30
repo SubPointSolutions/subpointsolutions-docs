@@ -28,6 +28,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.UniqueContentTypeOrderDefinition")]
+
+        [SampleMetadata(Title = "Reorder content types",
+                    Description = ""
+                    )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanReorderContentTypesInList()
         {
             var creditContentType = new ContentTypeDefinition

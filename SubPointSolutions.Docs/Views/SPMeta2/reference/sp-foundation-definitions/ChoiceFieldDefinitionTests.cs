@@ -14,13 +14,18 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
     [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Fields)]
     [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.SiteModel)]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
     public class ChoiceFieldDefinitionTests : ProvisionTestBase
     {
         #region methods
 
         [TestMethod]
         [TestCategory("Docs.ChoiceFieldDefinition")]
+
+        [SampleMetadata(Title = "Add choice field",
+                        Description = ""
+                        )]
+        [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleChoiceFieldDefinition()
         {
             var model = SPMeta2Model.NewSiteModel(site =>

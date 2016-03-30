@@ -13,13 +13,18 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
     [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Farm)]
     [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.FarmModel)]
 
-    [SampleMetadataTagAttribute(Name = BuiltInTagNames.SampleHidden)]
+    //[SampleMetadataTagAttribute(Name = BuiltInTagNames.SampleHidden)]
     public class JobDefinitionTests : ProvisionTestBase
     {
         #region methods
 
         [TestMethod]
         [TestCategory("Docs.JobDefinition")]
+
+        [SampleMetadata(Title = "Add timer job",
+                        Description = ""
+                        )]
+        [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleJobDefinition()
         {
             var model = SPMeta2Model.NewSiteModel(site =>

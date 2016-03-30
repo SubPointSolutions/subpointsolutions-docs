@@ -27,6 +27,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.ScriptEditorWebPartDefinition")]
+
+        [SampleMetadata(Title = "Add Script Editor web part",
+                            Description = ""
+                            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleScriptEditorWebPartDefinition()
         {
             var scriptEditor = new ScriptEditorWebPartDefinition
@@ -63,6 +68,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.ScriptEditorWebPartDefinition")]
+
+        [SampleMetadata(Title = "Add Script Editor web part with content",
+                            Description = ""
+                            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeployScriptEditorWebPartwithContent()
         {
             var scriptEditor = new ScriptEditorWebPartDefinition

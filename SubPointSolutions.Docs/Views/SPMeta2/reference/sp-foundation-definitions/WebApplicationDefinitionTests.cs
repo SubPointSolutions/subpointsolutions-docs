@@ -12,13 +12,18 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
     [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Farm)]
     [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.FarmModel)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
     public class WebApplicationDefinitionTests : ProvisionTestBase
     {
         #region methods
 
         [TestMethod]
         [TestCategory("Docs.WebApplicationDefinition")]
+
+        [SampleMetadata(Title = "Add web application",
+                    Description = ""
+                    )]
+        [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleWebApplicationDefinition()
         {
             var model = SPMeta2Model.NewSiteModel(site =>

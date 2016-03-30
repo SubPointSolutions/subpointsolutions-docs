@@ -25,6 +25,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.SecurityRoleDefinition")]
 
+        [SampleMetadata(Title = "Add security role",
+                            Description = ""
+                            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+
         public void CanDeploySimpleSecurityRoleDefinition()
         {
             var customerEditors = new SecurityRoleDefinition

@@ -13,13 +13,18 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
     [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.SiteCollection)]
     [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.SiteModel)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
     public class ImageRenditionDefinitionTests : ProvisionTestBase
     {
         #region methods
 
         [TestMethod]
         [TestCategory("Docs.ImageRenditionDefinition")]
+
+        [SampleMetadata(Title = "Add image rendition",
+            Description = ""
+            )]
+        [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleImageRenditionDefinition()
         {
             var model = SPMeta2Model.NewSiteModel(site =>

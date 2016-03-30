@@ -25,7 +25,10 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.ModuleFileDefinition")]
 
-    
+        [SampleMetadata(Title = "Add module file to Style Library",
+                            Description = ""
+                            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeployModuleFilesToStyleLibrary()
         {
             var cssFile = new ModuleFileDefinition
@@ -57,6 +60,10 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.ModuleFileDefinition")]
+        [SampleMetadata(Title = "Add module file to folder",
+                            Description = ""
+                            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
 
         public void CanDeployModuleFilesToFolders()
         {

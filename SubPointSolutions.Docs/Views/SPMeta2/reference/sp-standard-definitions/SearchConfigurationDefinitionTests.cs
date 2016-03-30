@@ -13,13 +13,18 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
     [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.SiteCollection)]
     [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.SiteModel)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
     public class SearchConfigurationDefinitionTests : ProvisionTestBase
     {
         #region methods
 
         [TestMethod]
         [TestCategory("Docs.SearchConfigurationDefinition")]
+
+        [SampleMetadata(Title = "Add search configuration",
+            Description = ""
+            )]
+        [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleSearchConfigurationDefinition()
         {
             var model = SPMeta2Model.NewSiteModel(site =>

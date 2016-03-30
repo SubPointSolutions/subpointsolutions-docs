@@ -22,6 +22,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.TreeViewSettingsDefinition")]
+
+        [SampleMetadata(Title = "Add tree view settings to web",
+                    Description = ""
+                    )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleTreeViewSettingsDefinition()
         {
             var treeViewSettings = new TreeViewSettingsDefinition

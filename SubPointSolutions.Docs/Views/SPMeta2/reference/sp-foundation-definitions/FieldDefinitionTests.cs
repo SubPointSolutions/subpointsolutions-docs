@@ -14,7 +14,7 @@ namespace SubPointSolutions.Docs.Content.SPMeta2.SharePoint_Foundation_Definitio
     [TestClass]
 
     [SampleMetadataTagAttribute(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
-    
+
     [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Fields)]
     [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.SiteModel)]
 
@@ -25,7 +25,7 @@ namespace SubPointSolutions.Docs.Content.SPMeta2.SharePoint_Foundation_Definitio
         [TestMethod]
         [TestCategory("Docs.FieldDefinition")]
 
-        [SampleMetadata(Title = "Adding fields to site",
+        [SampleMetadata(Title = "Add field to site",
                         Description = ""
                         )]
         public void CanDeploySiteFields()
@@ -83,7 +83,51 @@ namespace SubPointSolutions.Docs.Content.SPMeta2.SharePoint_Foundation_Definitio
         [TestMethod]
         [TestCategory("Docs.FieldDefinition")]
 
-        [SampleMetadata(Title = "Adding fields to list",
+        [SampleMetadata(Title = "Add field to web",
+                        Description = ""
+                        )]
+
+        public void CanDeployWebFields()
+        {
+            var textField = new FieldDefinition
+            {
+                Title = "Simple text field",
+                InternalName = "dcs_SimpleTextField",
+                Group = "SPMeta2.Samples",
+                Id = new Guid("c3afc5ee-c416-4a05-91b3-116de4a205de"),
+                FieldType = BuiltInFieldTypes.Text,
+            };
+
+            var booleanField = new FieldDefinition
+            {
+                Title = "Simple boolean field",
+                InternalName = "dcs_SimpleBooleanField",
+                Group = "SPMeta2.Samples",
+                Id = new Guid("1f0a5ba9-7b00-433d-8d93-dcfb4f87bfca"),
+                FieldType = BuiltInFieldTypes.Boolean,
+            };
+
+            var listWithFields = new ListDefinition
+            {
+                Title = "List with fields",
+                Description = "Custom list with list-scoped fields.",
+                TemplateType = BuiltInListTemplateTypeId.GenericList,
+                Url = "ListWithFields"
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =>
+            {
+                web.AddField(textField);
+                web.AddField(booleanField);
+            });
+
+            DeployModel(model);
+        }
+
+        [TestMethod]
+        [TestCategory("Docs.FieldDefinition")]
+
+        [SampleMetadata(Title = "Add field to list",
                         Description = ""
                         )]
 

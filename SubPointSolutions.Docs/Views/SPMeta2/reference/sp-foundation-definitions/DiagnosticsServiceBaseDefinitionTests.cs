@@ -14,13 +14,18 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
     [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.FarmModel)]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
     public class DiagnosticsServiceBaseDefinitionTests : ProvisionTestBase
     {
         #region methods
 
         [TestMethod]
         [TestCategory("Docs.DiagnosticsServiceBaseDefinition")]
+
+        [SampleMetadata(Title = "Add diagnostic service",
+                        Description = ""
+                        )]
+        [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleDiagnosticsServiceBaseDefinition()
         {
             var model = SPMeta2Model.NewSiteModel(site =>

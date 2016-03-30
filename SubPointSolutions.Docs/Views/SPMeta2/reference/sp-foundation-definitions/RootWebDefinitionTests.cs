@@ -23,6 +23,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.RootWebDefinition")]
+
+        [SampleMetadata(Title = "Update root web Title/Description",
+                            Description = ""
+                            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanUpdateRootWebProperties()
         {
             var rootWeb = new RootWebDefinition
@@ -43,6 +48,10 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.RootWebDefinition")]
+        [SampleMetadata(Title = "Add lists to root web",
+                            Description = ""
+                            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanProvisionRootWebLists()
         {
             var rootWeb = new RootWebDefinition

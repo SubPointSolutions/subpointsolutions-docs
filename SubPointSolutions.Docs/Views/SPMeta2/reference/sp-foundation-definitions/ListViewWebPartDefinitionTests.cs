@@ -29,6 +29,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
        
         [TestMethod]
         [TestCategory("Docs.ListViewWebPartDefinition")]
+
+        [SampleMetadata(Title = "Add LVWP binded to list by Title",
+                Description = ""
+                )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanBindListViewWebPartByListTitle()
         {
             var travelRequests = new ListDefinition
@@ -74,6 +79,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
        
         [TestMethod]
         [TestCategory("Docs.ListViewWebPartDefinition")]
+
+        [SampleMetadata(Title = "Add LVWP binded to list by URL",
+                Description = ""
+                )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanBindListViewWebPartByListUrl()
         {
             var annualReviewsLibrary = new ListDefinition
@@ -119,6 +129,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
      
         [TestMethod]
         [TestCategory("Docs.ListViewWebPartDefinition")]
+
+        [SampleMetadata(Title = "Add LVWP binded to list view by Title",
+                Description = ""
+                )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanBindListViewWebPartByListViewTitle()
         {
             var incidentsLibrary = new ListDefinition
@@ -180,6 +195,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
        
         [TestMethod]
         [TestCategory("Docs.ListViewWebPartDefinition")]
+
+        [SampleMetadata(Title = "Add LVWP binded to calendar view",
+                Description = ""
+                )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanBindListViewWebPartToCalendarView()
         {
             var companyEvents = new ListDefinition

@@ -27,6 +27,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.WikiPageDefinition")]
+
+        [SampleMetadata(Title = "Add wiki pages",
+            Description = ""
+            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleWikiPages()
         {
             var model = SPMeta2Model.NewWebModel(web =>
@@ -46,6 +51,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.WikiPageDefinition")]
+
+        [SampleMetadata(Title = "Add wiki pages to folders",
+            Description = ""
+            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeployWikiPagesUnderFolder()
         {
             var model = SPMeta2Model.NewWebModel(web =>

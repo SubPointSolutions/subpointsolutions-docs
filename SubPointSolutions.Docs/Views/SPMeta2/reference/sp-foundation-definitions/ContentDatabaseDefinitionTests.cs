@@ -16,13 +16,18 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
     [SampleMetadataTag(Name = BuiltInTagNames.SampleCategoryOrder, Value = "100")]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
     public class ContentDatabaseDefinitionTests : ProvisionTestBase
     {
         #region methods
 
         [TestMethod]
         [TestCategory("Docs.ContentDatabaseDefinition")]
+
+        [SampleMetadata(Title = "Add content database",
+                        Description = ""
+                        )]
+        [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleContentDatabaseDefinition()
         {
             var model = SPMeta2Model.NewSiteModel(site =>

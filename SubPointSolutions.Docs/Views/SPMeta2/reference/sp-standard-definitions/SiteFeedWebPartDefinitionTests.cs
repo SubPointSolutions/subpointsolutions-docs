@@ -28,6 +28,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.SiteFeedWebPartDefinition")]
+
+        [SampleMetadata(Title = "Add Site Feed web part",
+            Description = ""
+            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleSiteFeedWebPartDefinition()
         {
             var siteFeed = new SiteFeedWebPartDefinition

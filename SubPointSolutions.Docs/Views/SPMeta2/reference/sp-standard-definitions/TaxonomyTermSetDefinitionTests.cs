@@ -23,6 +23,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
        
         [TestMethod]
         [TestCategory("Docs.TaxonomyTermSetDefinition")]
+
+        [SampleMetadata(Title = "Add taxonomy termsets",
+            Description = ""
+            )]
+        [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleTaxonomyTermSets()
         {
             var defaultSiteTermStore = new TaxonomyTermStoreDefinition

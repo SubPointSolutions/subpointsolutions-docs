@@ -20,7 +20,10 @@ namespace SubPointSolutions.Docs.Views.Views.SPMeta2.reference
     {
         #region methods
 
-       
+       [SampleMetadata(Title = "Add SP2013 workflow to web",
+                    Description = ""
+                    )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleSP2013WorkflowSubscriptionToWeb()
         {
             var writeToHistoryListWorkflow = new SP2013WorkflowDefinition
@@ -64,6 +67,11 @@ namespace SubPointSolutions.Docs.Views.Views.SPMeta2.reference
 
         [TestMethod]
         [TestCategory("Docs.SP2013WorkflowSubscriptionDefinition")]
+
+        [SampleMetadata(Title = "Add SP2013 workflow to list",
+                    Description = ""
+                    )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleSP2013WorkflowSubscriptionToList()
         {
             var writeToHistoryListWorkflow = new SP2013WorkflowDefinition

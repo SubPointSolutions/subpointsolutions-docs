@@ -30,6 +30,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
       
         [TestMethod]
         [TestCategory("Docs.UserCustomActionDefinition")]
+
+        [SampleMetadata(Title = "Add custom action to site",
+                    Description = ""
+                    )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeployUserCustomActionUnderSite()
         {
             var siteLogger = new UserCustomActionDefinition
@@ -51,6 +56,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.UserCustomActionDefinition")]
+
+        [SampleMetadata(Title = "Add custom action with jQuery",
+                    Description = ""
+                    )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeployUserCustomActionWithJquery()
         {
             var jQueryFile = new ModuleFileDefinition
@@ -113,6 +123,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
      
         [TestMethod]
         [TestCategory("Docs.UserCustomActionDefinition")]
+
+        [SampleMetadata(Title = "Add custom action to web",
+                    Description = ""
+                    )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeployUserCustomActionOnWeb()
         {
             var webLogger = new UserCustomActionDefinition
@@ -136,6 +151,20 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
                 {
                     subWeb.AddUserCustomAction(webLogger);
                 });
+            });
+
+            DeployModel(model);
+        }
+
+        [SampleMetadata(Title = "Add custom action to list",
+                    Description = ""
+                    )]
+        [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        public void CanDeployUserCustomActionOnList()
+        {
+            var model = SPMeta2Model.NewWebModel(web =>
+            {
+                // TODO
             });
 
             DeployModel(model);

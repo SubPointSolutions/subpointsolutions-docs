@@ -14,7 +14,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
     [SampleMetadataTagAttribute(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.SiteCollection)] [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.SiteModel)]
     [SampleMetadataTagAttribute(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.WebSite)]
 
-    [SampleMetadataTagAttribute(Name = BuiltInTagNames.SampleHidden)]
+    //[SampleMetadataTagAttribute(Name = BuiltInTagNames.SampleHidden)]
 
     [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.SiteModel)]
 
@@ -24,6 +24,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.AppDefinition")]
+
+        [SampleMetadata(Title = "Add app",
+                        Description = ""
+                        )]
+        [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleAppDefinition()
         {
             var model = SPMeta2Model.NewSiteModel(site =>

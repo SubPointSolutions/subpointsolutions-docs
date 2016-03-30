@@ -25,6 +25,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.ListViewDefinition")]
+
+        [SampleMetadata(Title = "Add list view",
+                Description = ""
+                )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleListViews()
         {
             var approvedDocuments = new ListViewDefinition
@@ -71,6 +76,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.ListViewDefinition")]
+
+        [SampleMetadata(Title = "Add list view with URL",
+                Description = ""
+                )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleListViewsWithCustomUrl()
         {
             var returnedDocuments = new ListViewDefinition
@@ -107,6 +117,10 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.ListViewDefinition")]
+        [SampleMetadata(Title = "Add list view with CAML",
+                Description = ""
+                )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleListViewsWithCAMLQuery()
         {
             var createdQuery = new StringBuilder();

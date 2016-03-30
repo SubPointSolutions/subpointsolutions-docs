@@ -26,6 +26,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         
         [TestMethod]
         [TestCategory("Docs.SP2013WorkflowDefinition")]
+
+        [SampleMetadata(Title = "Add SP2013 workflow",
+                    Description = ""
+                    )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleSP2013WorkflowDefinition()
         {
             var writeToHistoryLstWorkflow = new SP2013WorkflowDefinition

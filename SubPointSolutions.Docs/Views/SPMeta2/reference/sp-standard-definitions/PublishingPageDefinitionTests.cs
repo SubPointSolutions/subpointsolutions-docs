@@ -27,6 +27,10 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
        
         [TestMethod]
         [TestCategory("Docs.PublishingPageDefinition")]
+        [SampleMetadata(Title = "Add publishing pages",
+            Description = ""
+            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeployPublishingPage()
         {
             var aboutPublishing = new PublishingPageDefinition
@@ -67,6 +71,10 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
        
         [TestMethod]
         [TestCategory("Docs.PublishingPageDefinition")]
+        [SampleMetadata(Title = "Add publishing pages with custom layout",
+            Description = ""
+            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeployPublishingPageWithCustomeLayout()
         {
             // PageLayoutFileName allows you to setup your own publishing page layout file name
@@ -94,6 +102,10 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
      
         [TestMethod]
         [TestCategory("Docs.PublishingPageDefinition")]
+        [SampleMetadata(Title = "Add publishing pages to folders",
+            Description = ""
+            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeployPublishingPageToFolders()
         {
             var archive = new FolderDefinition()

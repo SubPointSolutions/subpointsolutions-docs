@@ -29,6 +29,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.RemoveContentTypeLinksDefinition")]
+
+        [SampleMetadata(Title = "Remove content types from lists",
+                            Description = ""
+                            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanRemoveContentTypeFromList()
         {
             var defaultReport = new ContentTypeDefinition

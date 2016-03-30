@@ -12,13 +12,18 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
     [SampleMetadataTagAttribute(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.ListsAndLibraries)]
     [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
-    [SampleMetadataTagAttribute(Name = BuiltInTagNames.SampleHidden)]
+    //[SampleMetadataTagAttribute(Name = BuiltInTagNames.SampleHidden)]
     public class InformationRightsManagementSettingsDefinitionTests : ProvisionTestBase
     {
         #region methods
 
         [TestMethod]
         [TestCategory("Docs.InformationRightsManagementSettingsDefinition")]
+
+        [SampleMetadata(Title = "Add IRM settings",
+                        Description = ""
+                        )]
+        [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleInformationRightsManagementSettingsDefinition()
         {
             var model = SPMeta2Model.NewSiteModel(site =>

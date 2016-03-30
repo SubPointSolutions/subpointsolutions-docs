@@ -29,7 +29,10 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.PropertyDefinition")]
 
-
+        [SampleMetadata(Title = "Add property to farm",
+                            Description = ""
+                            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeployPropertyBagUnderFarm()
         {
             var farmTag = new PropertyDefinition
@@ -57,8 +60,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.PropertyDefinition")]
 
-      
 
+        [SampleMetadata(Title = "Add property to site",
+                            Description = ""
+                            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeployPropertyBagUnderSite()
         {
             var siteTag = new PropertyDefinition
@@ -86,8 +92,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.PropertyDefinition")]
 
-      
 
+        [SampleMetadata(Title = "Add property to web",
+                            Description = ""
+                            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeployPropertyBagUnderWeb()
         {
             var webTag = new PropertyDefinition
@@ -115,8 +124,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.PropertyDefinition")]
 
-     
 
+        [SampleMetadata(Title = "Add property to list",
+                            Description = ""
+                            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeployPropertyBagUnderList()
         {
             var listTag = new PropertyDefinition
@@ -156,7 +168,10 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.PropertyDefinition")]
 
-    
+        [SampleMetadata(Title = "Add property to folder",
+                                Description = ""
+                                )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeployPropertyBagUnderFolder()
         {
             var folderTag = new PropertyDefinition

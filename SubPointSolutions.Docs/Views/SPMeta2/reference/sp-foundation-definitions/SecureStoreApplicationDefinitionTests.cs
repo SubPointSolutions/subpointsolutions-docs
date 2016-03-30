@@ -14,7 +14,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
     [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Farm)]
     [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.FarmModel)]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
 
     public class SecureStoreApplicationDefinitionTests : ProvisionTestBase
     {
@@ -22,6 +22,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.SecureStoreApplicationDefinition")]
+
+        [SampleMetadata(Title = "Add secure store application",
+                            Description = ""
+                            )]
+        [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleSecureStoreApplicationDefinition()
         {
             var model = SPMeta2Model.NewSiteModel(site =>

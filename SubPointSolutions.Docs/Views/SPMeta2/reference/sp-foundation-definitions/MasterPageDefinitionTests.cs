@@ -27,6 +27,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.MasterPageDefinition")]
+
+        [SampleMetadata(Title = "Add master page",
+                Description = ""
+                )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleMasterPageDefinition()
         {
             var masterPage = new MasterPageDefinition

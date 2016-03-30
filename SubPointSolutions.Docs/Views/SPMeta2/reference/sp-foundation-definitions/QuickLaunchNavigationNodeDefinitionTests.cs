@@ -26,6 +26,12 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.QuickLaunchNavigationNodeDefinition")]
+
+        [SampleMetadata(Title = "Add quick nav items",
+                            Description = ""
+                            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+
         public void CaDeployFlatQuickLaunchNavigation()
         {
             var aboutUs = new QuickLaunchNavigationNodeDefinition
@@ -64,6 +70,10 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.QuickLaunchNavigationNodeDefinition")]
+        [SampleMetadata(Title = "Add hierarchical quick nav items",
+                            Description = ""
+                            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CaDeployHierarchicalQuickLaunchNavigation()
         {
             // top level departments node

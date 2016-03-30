@@ -13,7 +13,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
     [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Security)]
     [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.SiteModel)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
 
     public class SecurityGroupLinkDefinitionTests : ProvisionTestBase
     {
@@ -21,11 +21,30 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.SecurityGroupLinkDefinition")]
-        public void CanDeploySimpleSecurityGroupLinkDefinition()
+
+        [SampleMetadata(Title = "Add security group to web",
+                            Description = ""
+                            )]
+        [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        public void CanDeploySimpleSecurityGroupLinkDefinitionToWeb()
         {
             var model = SPMeta2Model.NewSiteModel(site =>
             {
          
+            });
+
+            DeployModel(model);
+        }
+
+        [SampleMetadata(Title = "Add security group to list",
+                            Description = ""
+                            )]
+        [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        public void CanDeploySimpleSecurityGroupLinkDefinitionToList()
+        {
+            var model = SPMeta2Model.NewSiteModel(site =>
+            {
+
             });
 
             DeployModel(model);

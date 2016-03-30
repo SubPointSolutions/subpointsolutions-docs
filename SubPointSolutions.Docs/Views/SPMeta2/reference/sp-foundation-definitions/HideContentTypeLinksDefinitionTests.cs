@@ -28,6 +28,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.HideContentTypeLinksDefinition")]
+
+        [SampleMetadata(Title = "Hide content types",
+                        Description = ""
+                        )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanHideContentTypesInList()
         {
             var newAnnualReportContentType = new ContentTypeDefinition

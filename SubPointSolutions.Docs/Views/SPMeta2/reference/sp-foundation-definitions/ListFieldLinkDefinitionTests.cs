@@ -20,6 +20,10 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.ListFieldLinkDefinition")]
+        [SampleMetadata(Title = "Add field links to list",
+                        Description = ""
+                        )]
+        [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleListFieldLinkDefinition()
         {
             var model = SPMeta2Model.NewSiteModel(site =>

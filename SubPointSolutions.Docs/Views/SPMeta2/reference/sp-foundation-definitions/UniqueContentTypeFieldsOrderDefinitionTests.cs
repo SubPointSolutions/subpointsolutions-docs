@@ -27,6 +27,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.UniqueContentTypeFieldsOrderDefinition")]
+
+        [SampleMetadata(Title = "Reorder content type fields",
+                    Description = ""
+                    )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanReorderContentTypeFields()
         {
             var debitField = new NumberFieldDefinition

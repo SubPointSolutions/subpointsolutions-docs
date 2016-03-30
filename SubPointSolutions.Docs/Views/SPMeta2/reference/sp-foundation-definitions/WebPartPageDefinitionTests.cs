@@ -21,8 +21,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
     {
         #region methods
 
-       
 
+        [SampleMetadata(Title = "Add web part page",
+                    Description = ""
+                    )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         [TestMethod]
         [TestCategory("Docs.WebPartPageDefinition")]
         public void CanDeployWebPartPages()
@@ -55,6 +58,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.WebPartPageDefinition")]
+
+        [SampleMetadata(Title = "Add custom web part page",
+                    Description = ""
+                    )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeployWebPartPageWithCustomTemplate()
         {
             var customizedWebPartPage = new WebPartPageDefinition
@@ -79,6 +87,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.WebPartPageDefinition")]
+
+        [SampleMetadata(Title = "Add web part page to folder",
+            Description = ""
+            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeployWebPartPagesUnderFolders()
         {
             // clients folder and pages

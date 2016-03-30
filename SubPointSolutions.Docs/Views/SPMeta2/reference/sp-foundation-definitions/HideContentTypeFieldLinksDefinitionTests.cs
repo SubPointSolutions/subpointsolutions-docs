@@ -29,7 +29,12 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.HideContentTypeFieldLinksDefinition")]
-        public void CanReorderContentTypeFields()
+
+        [SampleMetadata(Title = "Reorder content type fields",
+                        Description = ""
+                        )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        public void CanHideContentTypeFields()
         {
             var hiddenNotesField = new NoteFieldDefinition
             {

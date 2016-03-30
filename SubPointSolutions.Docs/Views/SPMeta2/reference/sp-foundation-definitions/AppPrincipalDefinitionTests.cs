@@ -14,13 +14,19 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
     [SampleMetadataTagAttribute(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.WebSite)]
     [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
 
-    [SampleMetadataTagAttribute(Name = BuiltInTagNames.SampleHidden)]
+    //[SampleMetadataTagAttribute(Name = BuiltInTagNames.SampleHidden)]
     public class AppPrincipalDefinitionTests : ProvisionTestBase
     {
         #region methods
 
         [TestMethod]
         [TestCategory("Docs.AppPrincipalDefinition")]
+
+        [SampleMetadata(Title = "Add app principal",
+                        Description = ""
+                        )]
+        [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+
         public void CanDeploySimpleAppPrincipalDefinition()
         {
             var model = SPMeta2Model.NewSiteModel(site =>

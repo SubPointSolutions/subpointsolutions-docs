@@ -12,13 +12,20 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
     [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Security)]
     [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.SiteModel)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
     public class SecurityRoleLinkDefinitionTests : ProvisionTestBase
     {
         #region methods
 
         [TestMethod]
         [TestCategory("Docs.SecurityRoleLinkDefinition")]
+
+        [SampleMetadata(Title = "Add security role link",
+                    Description = ""
+                    )]
+        [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+
+
         public void CanDeploySimpleSecurityRoleLinkDefinition()
         {
             var model = SPMeta2Model.NewSiteModel(site =>

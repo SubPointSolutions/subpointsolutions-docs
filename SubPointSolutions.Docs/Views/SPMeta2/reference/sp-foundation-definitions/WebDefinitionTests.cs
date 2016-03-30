@@ -24,8 +24,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.WebDefinition")]
 
-      
 
+        [SampleMetadata(Title = "Add web",
+                    Description = ""
+                    )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleWeb()
         {
             var newCustomerWeb = new WebDefinition
@@ -55,6 +58,10 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.WebDefinition")]
+        [SampleMetadata(Title = "Add multiple webs",
+                    Description = ""
+                    )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleWebs()
         {
             var model = SPMeta2Model.NewWebModel(web =>
@@ -70,7 +77,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.WebDefinition")]
-      
+
+        [SampleMetadata(Title = "Add hierarchical webs",
+                    Description = ""
+                    )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
 
         public void CanDeployHierarchicalWebs()
         {

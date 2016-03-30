@@ -26,6 +26,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.FolderDefinition")]
+
+        [SampleMetadata(Title = "Add folders",
+                        Description = ""
+                        )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleFolders()
         {
             var activeDocsFolder = new FolderDefinition
@@ -63,6 +68,10 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.FolderDefinition")]
+        [SampleMetadata(Title = "Add folders to list",
+                        Description = ""
+                        )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleFolderList()
         {
             var model = SPMeta2Model.NewWebModel(web =>
@@ -83,6 +92,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.FolderDefinition")]
+
+        [SampleMetadata(Title = "Add folder hierarchy to list",
+                        Description = ""
+                        )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeployHierarchicalFolderList()
         {
             var model = SPMeta2Model.NewWebModel(web =>

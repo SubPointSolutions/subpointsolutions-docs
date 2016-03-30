@@ -25,6 +25,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
       
         [TestMethod]
         [TestCategory("Docs.WelcomePageDefinition")]
+
+        [SampleMetadata(Title = "Add web welcome page",
+            Description = ""
+            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeployWelcomePageToWeb()
         {
             var newWebHomePage = new WikiPageDefinition
@@ -55,6 +60,10 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
      
         [TestMethod]
         [TestCategory("Docs.WelcomePageDefinition")]
+        [SampleMetadata(Title = "Add list welcome page",
+            Description = ""
+            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeployWelcomePageToList()
         {
             var newListHomePage = new WikiPageDefinition
@@ -86,6 +95,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
        
         [TestMethod]
         [TestCategory("Docs.WelcomePageDefinition")]
+
+        [SampleMetadata(Title = "Add folder welcome page",
+            Description = ""
+            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeployWelcomePageToFolder()
         {
             var newFolderHomePage = new WikiPageDefinition

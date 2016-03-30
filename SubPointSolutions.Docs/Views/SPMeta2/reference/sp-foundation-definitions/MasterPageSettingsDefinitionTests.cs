@@ -24,7 +24,10 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.MasterPageSettingsDefinition")]
 
-
+        [SampleMetadata(Title = "Add master page setting",
+                        Description = ""
+                        )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeployWebmasterPageSettings()
         {
             // BuiltInMasterPageDefinitions class could be used to refer OOTB master pages

@@ -14,13 +14,20 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
     [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
     public class ResetRoleInheritanceDefinitionTests : ProvisionTestBase
     {
         #region methods
 
         [TestMethod]
         [TestCategory("Docs.ResetRoleInheritanceDefinition")]
+
+
+        [SampleMetadata(Title = "Reset role inheritance",
+                            Description = ""
+                            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+
         public void CanDeploySimpleResetRoleInheritanceDefinition()
         {
             var model = SPMeta2Model.NewSiteModel(site =>

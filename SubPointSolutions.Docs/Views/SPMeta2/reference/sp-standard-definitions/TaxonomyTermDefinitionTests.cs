@@ -22,6 +22,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.TaxonomyTermDefinition")]
+
+        [SampleMetadata(Title = "Add taxonomy terms",
+            Description = ""
+            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimpleTaxonomyTerms()
         {
             // define term store

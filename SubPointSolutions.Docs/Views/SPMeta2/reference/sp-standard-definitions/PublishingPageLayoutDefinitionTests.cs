@@ -31,6 +31,10 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.MasterPageDefinition")]
+        [SampleMetadata(Title = "Add publishing page layout",
+            Description = ""
+            )]
+        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
         public void CanDeploySimplePublishingPageLayoutDefinition()
         {
             var publishingPageContentType = new ContentTypeDefinition
