@@ -18,13 +18,22 @@
     var allSamples = SubPointSolutions.Docs.Code.Samples.m2Samples.SysAllSamples;
 
     //var allCategories = SamplesAPI.GetSampleTagValues(allSamples, BuiltInTagNames.SampleModelCategory);
-    var allCategories = SamplesAPI.GetSampleTagValues(allSamples, categoryTagName);
+    
+    // TMP FIX
+    //var allCategories = SamplesAPI.GetSampleTagValues(allSamples, categoryTagName);
+    var allCategories = new List<string>();
+
+    allCategories.Add("Farm Model");
+    allCategories.Add("Web Application Model");
+    allCategories.Add("Site Collection Model");
+    allCategories.Add("Web Model");
+    
     var samplesWithCategories = SamplesAPI.GetSamplesWithTag(allSamples, categoryTagName);
 
 
     var sampleCategories = allCategories
         // initial sorting by name
-                             .OrderBy(m => m)
+                             //.OrderBy(m => m)
         // sorting by any category attr
         //.OrderBy(m => allSamples.FirstOrDefault(
         //    // has both category and order

@@ -8,6 +8,8 @@ namespace SubPointSolutions.Docs.Code.Enumerations
 {
     public static class BuiltInSampleCategoryTagValues
     {
+        public const string EventReceivers = "Event Receivers";
+
         public const string Farm = "Farm";
         public const string WebApplication = "Web application";
 
@@ -46,12 +48,12 @@ namespace SubPointSolutions.Docs.Code.Enumerations
 
         public const string WebParts = "Web parts";
 
-        public const string ContentEditorWebPart = "Content Editor Web part";
-        public const string XsltListViewWebPart = "Xslt List View Web part";
-        public const string ListViewWebPart = "List View Web part";
-        public const string ScriptEditorViewWebPart = "Script Editor Web part";
+        //public const string ContentEditorWebPart = "Content Editor Web part";
+        //public const string XsltListViewWebPart = "Xslt List View Web part";
+        //public const string ListViewWebPart = "List View Web part";
+        //public const string ScriptEditorViewWebPart = "Script Editor Web part";
 
-        public const string SiteFeedWebPart = "Site Feed Web part";
-        public const string ClientWebPart = "Client Web part";        
+        //public const string SiteFeedWebPart = "Site Feed Web part";
+        //public const string ClientWebPart = "Client Web part";        
     }
 }

@@ -17,7 +17,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
     [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Standard)]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.SiteFeedWebPart)]
+    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.WebParts)]
 
     //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
     public class SiteFeedWebPartDefinitionTests : ProvisionTestBase

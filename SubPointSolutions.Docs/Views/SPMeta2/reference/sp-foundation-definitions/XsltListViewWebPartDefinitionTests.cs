@@ -17,8 +17,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
     [TestClass]
     [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.XsltListViewWebPart)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.FarmModel)]
+    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.WebParts)]
+    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
     //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
     public class XsltListViewWebPartDefinitionTests : ProvisionTestBase
     {
