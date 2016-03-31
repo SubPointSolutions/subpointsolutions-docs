@@ -1,0 +1,24 @@
+SampleMetadataTagAttribute(Name = BuiltInTagNames.SampleHidden)]
+lic class JobDefinitionTests : ProvisionTestBase
+    {
+ #region methods
+
+ [TestMethod]
+ [TestCategory("Docs.JobDefinition")]
+
+ [SampleMetadata(Title = "Add timer job",
+                 Description = ""
+                 )]
+ [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+ public void CanDeploySimpleJobDefinition()
+ {
+     var model = SPMeta2Model.NewSiteModel(site =>
+     {
+
+     });
+
+     DeployModel(model);
+ }
+
+ #endregion
+    }

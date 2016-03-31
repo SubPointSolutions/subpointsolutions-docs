@@ -1,0 +1,24 @@
+SampleMetadataTagAttribute(Name = BuiltInTagNames.SampleHidden)]
+lic class InformationRightsManagementSettingsDefinitionTests : ProvisionTestBase
+    {
+ #region methods
+
+ [TestMethod]
+ [TestCategory("Docs.InformationRightsManagementSettingsDefinition")]
+
+ [SampleMetadata(Title = "Add IRM settings",
+                 Description = ""
+                 )]
+ [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+ public void CanDeploySimpleInformationRightsManagementSettingsDefinition()
+ {
+     var model = SPMeta2Model.NewSiteModel(site =>
+     {
+
+     });
+
+     DeployModel(model);
+ }
+
+ #endregion
+    }

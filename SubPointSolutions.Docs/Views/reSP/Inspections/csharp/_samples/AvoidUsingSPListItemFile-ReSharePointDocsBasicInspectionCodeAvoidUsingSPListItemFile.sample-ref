@@ -1,0 +1,8 @@
+public class AvoidUsingSPListItemFile
+{
+    [TestMethod]
+    public void AppropriateSPListItemSPFileUsage(SPListItem item)
+    {
+        var file = item.Web.GetFile(item.UniqueId);
+    }
+}

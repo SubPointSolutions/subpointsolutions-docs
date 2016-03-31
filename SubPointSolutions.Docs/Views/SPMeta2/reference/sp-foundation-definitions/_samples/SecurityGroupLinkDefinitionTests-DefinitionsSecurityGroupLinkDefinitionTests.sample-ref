@@ -1,0 +1,39 @@
+SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+
+lic class SecurityGroupLinkDefinitionTests : ProvisionTestBase
+    {
+ #region methods
+
+ [TestMethod]
+ [TestCategory("Docs.SecurityGroupLinkDefinition")]
+
+ [SampleMetadata(Title = "Add security group to web",
+                     Description = ""
+                     )]
+ [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+ public void CanDeploySimpleSecurityGroupLinkDefinitionToWeb()
+ {
+     var model = SPMeta2Model.NewSiteModel(site =>
+     {
+
+     });
+
+     DeployModel(model);
+ }
+
+ [SampleMetadata(Title = "Add security group to list",
+                     Description = ""
+                     )]
+ [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+ public void CanDeploySimpleSecurityGroupLinkDefinitionToList()
+ {
+     var model = SPMeta2Model.NewSiteModel(site =>
+     {
+
+     });
+
+     DeployModel(model);
+ }
+
+ #endregion
+    }

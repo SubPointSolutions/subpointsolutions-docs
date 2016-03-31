@@ -1,0 +1,7 @@
+public class ArgumentNotSpecifiedException : Exception
+{
+    public ArgumentNotSpecifiedException(string message)
+    {
+
+    }
+}

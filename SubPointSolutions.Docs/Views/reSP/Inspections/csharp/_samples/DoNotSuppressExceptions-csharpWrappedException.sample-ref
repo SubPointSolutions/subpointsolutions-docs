@@ -1,0 +1,7 @@
+public class WrappedException : Exception
+{
+    public WrappedException(string message, Exception e)
+    {
+
+    }
+}

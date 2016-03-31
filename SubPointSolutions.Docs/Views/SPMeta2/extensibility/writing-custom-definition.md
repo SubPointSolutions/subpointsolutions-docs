@@ -55,14 +55,12 @@ All definition should meet the following criterias:
 
 Here is how a custom ChangeWebTitleAndDescriptionDefinition might look like:
 
-TODO https://github.com/SubPointSolutions/spmeta2-docs/issues/89
-[CLASS.ChangeWebTitleAndDescriptionDefinition]
+<a href="_samples/writing-custom-definition-ChangeWebTitleAndDescriptionDefinitionClass.sample-ref"></a>
 
 #### Creating model handlers
 The next step would be creating a custom model handler:
 
-TODO https://github.com/SubPointSolutions/spmeta2-docs/issues/89
-[CLASS.ChangeWebTitleAndDescriptionModelHandler]
+<a href="_samples/writing-custom-definition-ChangeWebTitleAndDescriptionModelHandlerClass.sample-ref"></a>
 
 #### Registering model handler
 One you created a custom model handler, we need to let SPMeta2 know about it.
@@ -79,11 +77,10 @@ Let's use the first one and register our handler:
 #### Custom syntax
 There is a separate article on how to create a [custom syntax extensions](http://docs.subpointsolutions.com/spmeta2/extensibility/writing-custom-syntax/), so let's just improve our provision and add custom syntax for ChangeWebTitleAndDescriptionDefinition:
 
-[CLASS.ChangeWebTitleAndDescriptionDefinitionSyntax]
+<a href="_samples/writing-custom-definition-ChangeWebTitleAndDescriptionDefinitionSyntaxClass.sample-ref"></a>
 
 Now we can re-write provision with a better syntax:
 <a href="_samples/writing-custom-definition-RegisterCustomModelHandlerWithSyntax.sample-ref"></a>
-
 
 #### Handling events
 We expect that our model handler would raise OnProvisioning / OnProvisioned while pushing definition to SharePoint. Let's attache to these events and see how it goes.

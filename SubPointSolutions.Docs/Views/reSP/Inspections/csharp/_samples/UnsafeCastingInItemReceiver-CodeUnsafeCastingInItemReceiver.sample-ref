@@ -1,0 +1,9 @@
+public class UnsafeCastingInItemReceiver
+{
+    [TestMethod]
+    public void UnsafeCastOnSPItemEventDataCollectionItem(SPItemEventProperties properties)
+    {
+        properties.AfterProperties["Contracts"].ToString();
+        properties.BeforeProperties["Contracts"].ToString();
+    }
+}

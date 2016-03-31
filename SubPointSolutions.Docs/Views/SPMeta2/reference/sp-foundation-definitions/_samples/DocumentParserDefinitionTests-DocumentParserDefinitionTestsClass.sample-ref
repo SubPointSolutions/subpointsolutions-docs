@@ -1,0 +1,24 @@
+SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+lic class DocumentParserDefinitionTests : ProvisionTestBase
+    {
+ #region methods
+
+ [TestMethod]
+ [TestCategory("Docs.DocumentParserDefinition")]
+
+ [SampleMetadata(Title = "Add document parser",
+                 Description = ""
+                 )]
+ [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+ public void CanDeploySimpleDocumentParserDefinition()
+ {
+     var model = SPMeta2Model.NewSiteModel(site =>
+     {
+
+     });
+
+     DeployModel(model);
+ }
+
+ #endregion
+    }

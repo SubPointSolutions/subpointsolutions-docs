@@ -1,0 +1,24 @@
+SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+lic class SiteDefinitionTests : ProvisionTestBase
+    {
+ #region methods
+
+ [TestMethod]
+ [TestCategory("Docs.SiteDefinition")]
+
+ [SampleMetadata(Title = "Add site",
+             Description = ""
+             )]
+ [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+ public void CanDeploySimpleSiteDefinition()
+ {
+     var model = SPMeta2Model.NewSiteModel(site =>
+     {
+
+     });
+
+     DeployModel(model);
+ }
+
+ #endregion
+    }

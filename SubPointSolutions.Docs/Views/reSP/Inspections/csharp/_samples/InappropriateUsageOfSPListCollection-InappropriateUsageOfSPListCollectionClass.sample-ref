@@ -1,0 +1,9 @@
+public class InappropriateUsageOfSPListCollection
+{
+    [TestMethod]
+    public void CorrectListUsage(SPWeb web)
+    {
+        var listUrl = "/lists/tasks";
+        var taskList = web.GetList(SPUrlUtility.CombineUrl(web.Url, listUrl));
+    }
+}
