@@ -87,7 +87,7 @@
 
                         if (isStandardSample)
                         {
-                            definitionUrl = "/spmeta2/reference/sp-stanrard-definitions/{0}";
+                            definitionUrl = "/spmeta2/reference/sp-standard-definitions/{0}";
                         }
 
                         if (isEntepriseSample)
@@ -104,7 +104,7 @@
                             }
                             else
                             {
-                                <a href="@definitionPageUrl">
+                                <a href="@(definitionPageUrl + "?#" + SamplesAPI.GetSafeAnchor(sample.Title))">
                                     @(sample.Title)
                                 </a>
                             }

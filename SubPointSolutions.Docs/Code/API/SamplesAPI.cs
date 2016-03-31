@@ -17,6 +17,12 @@ namespace SubPointSolutions.Docs.Code.API
 
         #region methods
 
+        public static string GetSafeAnchor(string value)
+        {
+            return value.ToLower()
+                        .Replace(" ", "-");
+        }
+
         public static List<DocSample> GetSamplesWithTag(IEnumerable<DocSample> samples, string tagName)
         {
             return GetSamplesWithTag(samples, tagName, null);

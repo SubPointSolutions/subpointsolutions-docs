@@ -2,7 +2,6 @@
 @using System.Linq
 @using System.Collections;
 @using System.Collections.Generic;
-@using SubPointSolutions.Docs.Code.Samples
 @using SPMeta2;
 @using SPMeta2.Utils;
 @using SPMeta2.Definitions;
@@ -16,13 +15,32 @@
 @using SPMeta2.Attributes.Capabilities;
 @using SPMeta2.Attributes.Identity;
 @using SPMeta2.Attributes.Regression;
+@using SubPointSolutions.Docs.Code.API
+@using SubPointSolutions.Docs.Code.Data
+@using SubPointSolutions.Docs.Code.Samples
+@using SubPointSolutions.Docs.Code.Enumerations
+
 @{
     Layout = SConfig.GetThemedTemplate("Layouts/_Master.cshtml");
 }
 
 @Html.Partial(SConfig.GetThemedTemplate("Components/_TopNavigation.cshtml"))
 
+<style>
+    
 
+    section {
+        padding-top: 60px;
+        margin-top: -60px;
+    }
+
+    @@media only screen and (max-width : 768px) {
+      section {
+        padding-top: 120px;
+        margin-top: -120px;
+    }
+    }
+</style>
 
 <div class="container body-content sd-body-content sd-definition-content">
     <div class="row">
@@ -127,13 +145,16 @@
                 <ul>
                     @foreach (var sample in samples)
                     {
-                        <li><a href="#">@sample.Title</a></li>
+                        <li><a href="@("#" + SamplesAPI.GetSafeAnchor(sample.Title))">@sample.Title</a></li>
                     }
                 </ul>
 
                 foreach (var sample in samples)
                 {
+                    <section name="@(SamplesAPI.GetSafeAnchor(sample.Title))" id="@(SamplesAPI.GetSafeAnchor(sample.Title))"></section>
+
                     <div class="panel panel-default">
+
                         <div class="panel-heading">
                             @sample.Title
                         </div>
@@ -144,6 +165,7 @@
                             </code></pre>
                         </div>
                     </div>
+
                 }
             }
             else
