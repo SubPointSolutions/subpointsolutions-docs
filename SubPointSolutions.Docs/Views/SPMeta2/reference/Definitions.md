@@ -7,6 +7,10 @@ FileName: definitions.html
 Essentially, definitions are c# POCO objects provided by SPMeta2 library. 
 SPMeta2 introduces a domain model providing set of definitions for most of the SharePoint artifacts.
 
+Before you begin, make sure you are familiar with the following concepts:
+
+* [Get started with SPMeta2](/spmeta2/getting-started)
+
 ### Domain model
 
 SPMeta2 introduces a domain of c# POCO objects, then it maps every single POCO object on SharePoint artifacts.

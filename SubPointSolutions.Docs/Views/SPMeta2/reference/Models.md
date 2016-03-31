@@ -8,8 +8,8 @@ SPMeta2 introduces a domain model providing set of definitions for most of the S
 
 Before you begin, make sure you are familiar with the following concepts:
 
-* [SPMeta2  basics](http://docs.subpointsolutions.com/spmeta2/basics/)
-* [SPMeta2 definitions](http://docs.subpointsolutions.com/spmeta2/definitions/)
+* [Get started with SPMeta2](/spmeta2/getting-started)
+* [Definitions concept](/spmeta2/reference/definitions)
 
 ### Domain model
 
@@ -54,7 +54,8 @@ Most of the time you would be using either NewSiteModel() or NewWebModel() metho
 Here are a few patterns on how to setup initial provision flow:
 
 #### Setting up a site model
-[TEST.SettingUpSiteModels]
+
+<a href="_samples/Models-SettingUpSiteModels.sample-ref"></a>
 
 #### Setting up a web model
-[TEST.SettingUpWebModels]
+<a href="_samples/Models-SettingUpWebModels.sample-ref"></a>
