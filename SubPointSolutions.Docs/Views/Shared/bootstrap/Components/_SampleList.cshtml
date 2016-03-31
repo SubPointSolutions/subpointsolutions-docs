@@ -6,7 +6,7 @@
 
     //var categoryTagName = BuiltInTagNames.SampleCategory;
     var categoryTagName = BuiltInTagNames.SampleM2Model;
-    
+
     var categoryOrderTagName = SubPointSolutions.Docs.Code.Enumerations.BuiltInTagNames.SampleCategoryOrder;
 
     var spRuntimeTagName = SubPointSolutions.Docs.Code.Enumerations.BuiltInTagNames.SPRuntime;
@@ -14,11 +14,11 @@
     var spStandardRuntimeValue = SubPointSolutions.Docs.Code.Enumerations.BuiltInSPRuntimeTagValues.Standard;
     var spEnterpriseRuntimeValue = SubPointSolutions.Docs.Code.Enumerations.BuiltInSPRuntimeTagValues.Enterprise;
 
-    
-    var allSamples = SubPointSolutions.Docs.Code.Samples.m2Samples.SysAllSamples;
+
+    var allSamples = SubPointSolutions.Docs.Code.Samples.m2Samples.SysAllSamples.Where(s => s.IsMethod).ToList();
 
     //var allCategories = SamplesAPI.GetSampleTagValues(allSamples, BuiltInTagNames.SampleModelCategory);
-    
+
     // TMP FIX
     //var allCategories = SamplesAPI.GetSampleTagValues(allSamples, categoryTagName);
     var allCategories = new List<string>();
@@ -27,13 +27,13 @@
     allCategories.Add("Web Application Model");
     allCategories.Add("Site Collection Model");
     allCategories.Add("Web Model");
-    
+
     var samplesWithCategories = SamplesAPI.GetSamplesWithTag(allSamples, categoryTagName);
 
 
     var sampleCategories = allCategories
         // initial sorting by name
-                             //.OrderBy(m => m)
+        //.OrderBy(m => m)
         // sorting by any category attr
         //.OrderBy(m => allSamples.FirstOrDefault(
         //    // has both category and order
@@ -78,7 +78,7 @@
         {
             dynamic categoryModel = new System.Dynamic.ExpandoObject();
 
-            categoryModel.Samples = SamplesAPI.GetSamplesWithTag(allSamples, categoryTagName, sampleGroupName); 
+            categoryModel.Samples = SamplesAPI.GetSamplesWithTag(allSamples, categoryTagName, sampleGroupName);
             categoryModel.CategoryName = sampleGroupName;
 
             ViewBag.SamplesModel = categoryModel;

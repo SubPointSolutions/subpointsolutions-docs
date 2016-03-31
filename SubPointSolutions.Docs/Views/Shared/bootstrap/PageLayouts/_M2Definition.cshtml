@@ -34,7 +34,7 @@
 
             @{
                 var definitionName = Model.String("SourceFileBase").Replace("Tests", string.Empty);
-                var samples = m2Samples.SysAllSamples.Where(s => s.ClassName.StartsWith(definitionName));
+                var samples = m2Samples.SysAllSamples.Where(s => s.IsMethod).ToList().Where(s => s.ClassName.StartsWith(definitionName));
 
                 var allHandlers = new List<Type>();
 

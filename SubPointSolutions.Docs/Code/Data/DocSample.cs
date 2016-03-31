@@ -19,9 +19,15 @@ namespace SubPointSolutions.Docs.Code.Data
         public DocSample()
         {
             Tags = new List<DocSampleTag>();
+            
+            IsMethod = true;
+            IsClass = false;
         }
 
         #region properties
+
+        public bool IsMethod { get; set; }
+        public bool IsClass { get; set; }
 
         public List<DocSampleTag> Tags { get; set; }
 

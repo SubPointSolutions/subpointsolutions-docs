@@ -59,6 +59,9 @@ namespace SubPointSolutions.Docs.Code.Services
 
                 var sample = new DocSample();
 
+                sample.IsClass = true;
+                sample.IsMethod = false;
+
                 // namespace
                 sample.Namespace = namespaceName;
                 sample.Language = "cs";
