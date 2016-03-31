@@ -1,24 +1,24 @@
-SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
-lic class UserFieldDefinitionTests : ProvisionTestBase
+//[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+public class UserFieldDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+    [TestMethod]
+    [TestCategory("Docs.UserFieldDefinition")]
+
+    [SampleMetadata(Title = "Add user field",
+                    Description = ""
+                    )]
+    [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    public void CanDeploySimpleUserFieldDefinition()
     {
- #region methods
+        var model = SPMeta2Model.NewSiteModel(site =>
+        {
 
- [TestMethod]
- [TestCategory("Docs.UserFieldDefinition")]
+        });
 
- [SampleMetadata(Title = "Add user field",
-                 Description = ""
-                 )]
- [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
- public void CanDeploySimpleUserFieldDefinition()
- {
-     var model = SPMeta2Model.NewSiteModel(site =>
-     {
-
-     });
-
-     DeployModel(model);
- }
-
- #endregion
+        DeployModel(model);
     }
+
+    #endregion
+}

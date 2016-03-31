@@ -74,14 +74,21 @@ namespace SubPointSolutions.Docs.Services.Base
             {
 
                 startIndex = 0;
+
+                var currentIndex = 0;
+
                 foreach (var letter in line)
                 {
-                    if (char.IsLetterOrDigit(letter) && !string.IsNullOrEmpty(letter + ""))
+                    if ( (char.IsLetterOrDigit(letter) || 
+                            (letter == '/' && currentIndex != line.Count() - 1 && line[currentIndex + 1] == '/'))
+                        && !string.IsNullOrEmpty(letter + ""))
                     {
                         firstLine = line;
                         break;
                     }
 
+
+                    currentIndex++;
                     startIndex++;
                 }
 

@@ -1,48 +1,48 @@
-SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
-lic class SecurityRoleDefinitionTests : ProvisionTestBase
+//[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+public class SecurityRoleDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+    [TestMethod]
+    [TestCategory("Docs.SecurityRoleDefinition")]
+
+    [SampleMetadata(Title = "Add security role",
+                        Description = ""
+                        )]
+    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+
+    public void CanDeploySimpleSecurityRoleDefinition()
     {
- #region methods
+        var customerEditors = new SecurityRoleDefinition
+        {
+            Name = "Customer editors",
+            BasePermissions = new Collection<string>
+            {
+                BuiltInBasePermissions.EditListItems,
+                BuiltInBasePermissions.UseClientIntegration
+            }
+        };
 
- [TestMethod]
- [TestCategory("Docs.SecurityRoleDefinition")]
+        var customerApprovers = new SecurityRoleDefinition
+        {
+            Name = "Customer approvers",
+            BasePermissions = new Collection<string>
+            {
+                BuiltInBasePermissions.EditListItems,
+                BuiltInBasePermissions.DeleteListItems,
+                BuiltInBasePermissions.UseClientIntegration
+            }
+        };
 
- [SampleMetadata(Title = "Add security role",
-                     Description = ""
-                     )]
- //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        var model = SPMeta2Model.NewSiteModel(site =>
+        {
+            site
+                .AddSecurityRole(customerEditors)
+                .AddSecurityRole(customerApprovers);
+        });
 
- public void CanDeploySimpleSecurityRoleDefinition()
- {
-     var customerEditors = new SecurityRoleDefinition
-     {
-         Name = "Customer editors",
-         BasePermissions = new Collection<string>
-         {
-             BuiltInBasePermissions.EditListItems,
-             BuiltInBasePermissions.UseClientIntegration
-         }
-     };
-
-     var customerApprovers = new SecurityRoleDefinition
-     {
-         Name = "Customer approvers",
-         BasePermissions = new Collection<string>
-         {
-             BuiltInBasePermissions.EditListItems,
-             BuiltInBasePermissions.DeleteListItems,
-             BuiltInBasePermissions.UseClientIntegration
-         }
-     };
-
-     var model = SPMeta2Model.NewSiteModel(site =>
-     {
-         site
-             .AddSecurityRole(customerEditors)
-             .AddSecurityRole(customerApprovers);
-     });
-
-     DeployModel(model);
- }
-
- #endregion
+        DeployModel(model);
     }
+
+    #endregion
+}

@@ -1,59 +1,59 @@
-define a taxonomy
-term store -> group -> term set -> terms
- taxDefaultTermStore = new TaxonomyTermStoreDefinition
-            {
- UseDefaultSiteCollectionTermStore = true
-            };
+// define a taxonomy
+// term store -> group -> term set -> terms
+var taxDefaultTermStore = new TaxonomyTermStoreDefinition
+{
+    UseDefaultSiteCollectionTermStore = true
+};
 
- taxTermGroup = new TaxonomyTermGroupDefinition
-            {
- Name = "M2 Taxonomy"
-            };
+var taxTermGroup = new TaxonomyTermGroupDefinition
+{
+    Name = "M2 Taxonomy"
+};
 
- taxTermSet = new TaxonomyTermSetDefinition
-            {
- Name = "Locations"
-            };
+var taxTermSet = new TaxonomyTermSetDefinition
+{
+    Name = "Locations"
+};
 
- taxTermLondon = new TaxonomyTermDefinition
-            {
- Name = "London"
-            };
+var taxTermLondon = new TaxonomyTermDefinition
+{
+    Name = "London"
+};
 
- taxTermSydney = new TaxonomyTermDefinition
-            {
- Name = "Sydney"
-            };
+var taxTermSydney = new TaxonomyTermDefinition
+{
+    Name = "Sydney"
+};
 
-define the field
- location = new TaxonomyFieldDefinition
-            {
- Title = "Location",
- InternalName = "dcs_LocationTax",
- Group = "SPMeta2.Samples",
- Id = new Guid("FE709AC2-E3A1-4A25-8F71-3480667CD98F"),
- IsMulti = false,
- UseDefaultSiteCollectionTermStore = true,
- TermSetName = taxTermSet.Name
-            };
+// define the field
+var location = new TaxonomyFieldDefinition
+{
+    Title = "Location",
+    InternalName = "dcs_LocationTax",
+    Group = "SPMeta2.Samples",
+    Id = new Guid("FE709AC2-E3A1-4A25-8F71-3480667CD98F"),
+    IsMulti = false,
+    UseDefaultSiteCollectionTermStore = true,
+    TermSetName = taxTermSet.Name
+};
 
- model = SPMeta2Model.NewSiteModel(site =>
+var model = SPMeta2Model.NewSiteModel(site =>
+{
+    site
+        .AddHostTaxonomyTermStore(taxDefaultTermStore, store =>
+        {
+            store.AddTaxonomyTermGroup(taxTermGroup, group =>
             {
- site
-     .AddHostTaxonomyTermStore(taxDefaultTermStore, store =>
-     {
-         store.AddTaxonomyTermGroup(taxTermGroup, group =>
-         {
-             group.AddTaxonomyTermSet(taxTermSet, termSet =>
-             {
-                 termSet
-                     .AddTaxonomyTerm(taxTermLondon)
-                     .AddTaxonomyTerm(taxTermSydney);
-             });
-         });
-     })
-     .AddTaxonomyField(location);
+                group.AddTaxonomyTermSet(taxTermSet, termSet =>
+                {
+                    termSet
+                        .AddTaxonomyTerm(taxTermLondon)
+                        .AddTaxonomyTerm(taxTermSydney);
+                });
             });
+        })
+        .AddTaxonomyField(location);
+});
 
-loyModel(model);
+DeployModel(model);
 

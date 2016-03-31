@@ -1,8 +1,8 @@
-save SPView instance into a local varible, always!
- view = list.Views["TestView1"];
+// save SPView instance into a local varible, always!
+var view = list.Views["TestView1"];
 
-w.DefaultView = true;
-w.Paged = true;
+view.DefaultView = true;
+view.Paged = true;
 
-w.Update();
+view.Update();
 

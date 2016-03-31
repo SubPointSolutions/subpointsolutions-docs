@@ -1,24 +1,24 @@
-SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
-lic class NoteFieldDefinitionTests : ProvisionTestBase
+//[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+public class NoteFieldDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+    [TestMethod]
+    [TestCategory("Docs.NoteFieldDefinition")]
+
+    [SampleMetadata(Title = "Add note field",
+                    Description = ""
+                    )]
+    [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    public void CanDeploySimpleNoteFieldDefinition()
     {
- #region methods
+        var model = SPMeta2Model.NewSiteModel(site =>
+        {
 
- [TestMethod]
- [TestCategory("Docs.NoteFieldDefinition")]
+        });
 
- [SampleMetadata(Title = "Add note field",
-                 Description = ""
-                 )]
- [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
- public void CanDeploySimpleNoteFieldDefinition()
- {
-     var model = SPMeta2Model.NewSiteModel(site =>
-     {
-
-     });
-
-     DeployModel(model);
- }
-
- #endregion
+        DeployModel(model);
     }
+
+    #endregion
+}

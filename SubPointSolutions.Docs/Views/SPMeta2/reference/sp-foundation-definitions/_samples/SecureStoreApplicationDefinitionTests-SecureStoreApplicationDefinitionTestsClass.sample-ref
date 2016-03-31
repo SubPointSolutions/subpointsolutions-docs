@@ -1,25 +1,25 @@
-SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+//[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
 
-lic class SecureStoreApplicationDefinitionTests : ProvisionTestBase
+public class SecureStoreApplicationDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+    [TestMethod]
+    [TestCategory("Docs.SecureStoreApplicationDefinition")]
+
+    [SampleMetadata(Title = "Add secure store application",
+                        Description = ""
+                        )]
+    [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    public void CanDeploySimpleSecureStoreApplicationDefinition()
     {
- #region methods
+        var model = SPMeta2Model.NewSiteModel(site =>
+        {
 
- [TestMethod]
- [TestCategory("Docs.SecureStoreApplicationDefinition")]
+        });
 
- [SampleMetadata(Title = "Add secure store application",
-                     Description = ""
-                     )]
- [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
- public void CanDeploySimpleSecureStoreApplicationDefinition()
- {
-     var model = SPMeta2Model.NewSiteModel(site =>
-     {
-
-     });
-
-     DeployModel(model);
- }
-
- #endregion
+        DeployModel(model);
     }
+
+    #endregion
+}

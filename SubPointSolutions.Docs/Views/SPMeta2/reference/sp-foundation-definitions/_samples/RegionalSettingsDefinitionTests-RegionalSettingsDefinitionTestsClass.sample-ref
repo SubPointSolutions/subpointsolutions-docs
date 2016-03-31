@@ -1,24 +1,24 @@
-SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
-lic class RegionalSettingsDefinitionTests : ProvisionTestBase
+//[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+public class RegionalSettingsDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+    [TestMethod]
+    [TestCategory("Docs.RegionalSettingsDefinition")]
+
+    [SampleMetadata(Title = "Add regional settings",
+                        Description = ""
+                        )]
+    [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    public void CanDeploySimpleRegionalSettingsDefinition()
     {
- #region methods
+        var model = SPMeta2Model.NewSiteModel(site =>
+        {
 
- [TestMethod]
- [TestCategory("Docs.RegionalSettingsDefinition")]
+        });
 
- [SampleMetadata(Title = "Add regional settings",
-                     Description = ""
-                     )]
- [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
- public void CanDeploySimpleRegionalSettingsDefinition()
- {
-     var model = SPMeta2Model.NewSiteModel(site =>
-     {
-
-     });
-
-     DeployModel(model);
- }
-
- #endregion
+        DeployModel(model);
     }
+
+    #endregion
+}

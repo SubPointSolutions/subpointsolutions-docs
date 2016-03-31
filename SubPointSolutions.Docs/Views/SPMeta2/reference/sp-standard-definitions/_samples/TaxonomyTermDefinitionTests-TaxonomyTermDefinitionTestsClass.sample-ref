@@ -1,92 +1,92 @@
-SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
-lic class TaxonomyTermDefinitionTests : ProvisionTestBase
+//[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+public class TaxonomyTermDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+    [TestMethod]
+    [TestCategory("Docs.TaxonomyTermDefinition")]
+
+    [SampleMetadata(Title = "Add taxonomy terms",
+        Description = ""
+        )]
+    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    public void CanDeploySimpleTaxonomyTerms()
     {
- #region methods
+        // define term store
+        var defaultSiteTermStore = new TaxonomyTermStoreDefinition
+        {
+            UseDefaultSiteCollectionTermStore = true
+        };
 
- [TestMethod]
- [TestCategory("Docs.TaxonomyTermDefinition")]
+        // define group
+        var clientsGroup = new TaxonomyTermGroupDefinition
+        {
+            Name = "Clients"
+        };
 
- [SampleMetadata(Title = "Add taxonomy terms",
-     Description = ""
-     )]
- //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
- public void CanDeploySimpleTaxonomyTerms()
- {
-     // define term store
-     var defaultSiteTermStore = new TaxonomyTermStoreDefinition
-     {
-         UseDefaultSiteCollectionTermStore = true
-     };
+        // define term sets
+        var smallBusiness = new TaxonomyTermSetDefinition
+        {
+            Name = "Small Business"
+        };
 
-     // define group
-     var clientsGroup = new TaxonomyTermGroupDefinition
-     {
-         Name = "Clients"
-     };
+        var mediumBusiness = new TaxonomyTermSetDefinition
+        {
+            Name = "Medium Business"
+        };
 
-     // define term sets
-     var smallBusiness = new TaxonomyTermSetDefinition
-     {
-         Name = "Small Business"
-     };
+        var enterpriseBusiness = new TaxonomyTermSetDefinition
+        {
+            Name = "Enterprise Business"
+        };
 
-     var mediumBusiness = new TaxonomyTermSetDefinition
-     {
-         Name = "Medium Business"
-     };
+        // define terms
+        var microsoft = new TaxonomyTermDefinition
+        {
+            Name = "Microsoft"
+        };
 
-     var enterpriseBusiness = new TaxonomyTermSetDefinition
-     {
-         Name = "Enterprise Business"
-     };
+        var apple = new TaxonomyTermDefinition
+        {
+            Name = "Apple"
+        };
 
-     // define terms
-     var microsoft = new TaxonomyTermDefinition
-     {
-         Name = "Microsoft"
-     };
+        var oracle = new TaxonomyTermDefinition
+        {
+            Name = "Oracle"
+        };
 
-     var apple = new TaxonomyTermDefinition
-     {
-         Name = "Apple"
-     };
+        var subPointSolutions = new TaxonomyTermDefinition
+        {
+            Name = "SubPoint Solutions"
+        };
 
-     var oracle = new TaxonomyTermDefinition
-     {
-         Name = "Oracle"
-     };
+        // setup the model
+        var model = SPMeta2Model.NewSiteModel(site =>
+        {
+            site.AddTaxonomyTermStore(defaultSiteTermStore, termStore =>
+            {
+                termStore.AddTaxonomyTermGroup(clientsGroup, group =>
+                {
+                    group
+                        .AddTaxonomyTermSet(smallBusiness, termSet =>
+                        {
+                            termSet.AddTaxonomyTerm(subPointSolutions);
+                        })
+                        .AddTaxonomyTermSet(mediumBusiness)
+                        .AddTaxonomyTermSet(enterpriseBusiness, termSet =>
+                        {
+                            termSet
+                                .AddTaxonomyTerm(microsoft)
+                                .AddTaxonomyTerm(apple)
+                                .AddTaxonomyTerm(oracle);
+                        });
+                });
+            });
+        });
 
-     var subPointSolutions = new TaxonomyTermDefinition
-     {
-         Name = "SubPoint Solutions"
-     };
-
-     // setup the model
-     var model = SPMeta2Model.NewSiteModel(site =>
-     {
-         site.AddTaxonomyTermStore(defaultSiteTermStore, termStore =>
-         {
-             termStore.AddTaxonomyTermGroup(clientsGroup, group =>
-             {
-                 group
-                     .AddTaxonomyTermSet(smallBusiness, termSet =>
-                     {
-                         termSet.AddTaxonomyTerm(subPointSolutions);
-                     })
-                     .AddTaxonomyTermSet(mediumBusiness)
-                     .AddTaxonomyTermSet(enterpriseBusiness, termSet =>
-                     {
-                         termSet
-                             .AddTaxonomyTerm(microsoft)
-                             .AddTaxonomyTerm(apple)
-                             .AddTaxonomyTerm(oracle);
-                     });
-             });
-         });
-     });
-
-     DeployModel(model);
- }
-
- #endregion
+        DeployModel(model);
     }
+
+    #endregion
+}

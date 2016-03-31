@@ -1,24 +1,24 @@
-SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
-lic class MultiChoiceFieldDefinitionTests : ProvisionTestBase
+//[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+public class MultiChoiceFieldDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+    [TestMethod]
+    [TestCategory("Docs.MultiChoiceFieldDefinition")]
+
+    [SampleMetadata(Title = "Add multichoice field",
+                    Description = ""
+                    )]
+    [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    public void CanDeploySimpleMultiChoiceFieldDefinition()
     {
- #region methods
+        var model = SPMeta2Model.NewSiteModel(site =>
+        {
 
- [TestMethod]
- [TestCategory("Docs.MultiChoiceFieldDefinition")]
+        });
 
- [SampleMetadata(Title = "Add multichoice field",
-                 Description = ""
-                 )]
- [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
- public void CanDeploySimpleMultiChoiceFieldDefinition()
- {
-     var model = SPMeta2Model.NewSiteModel(site =>
-     {
-
-     });
-
-     DeployModel(model);
- }
-
- #endregion
+        DeployModel(model);
     }
+
+    #endregion
+}
