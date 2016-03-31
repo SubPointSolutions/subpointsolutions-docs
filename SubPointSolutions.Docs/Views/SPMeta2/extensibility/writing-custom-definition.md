@@ -1,17 +1,20 @@
-﻿---
+﻿--
 Title: Custom definition
 FileName: custom-definition.html
+Order: 500
 ---
+### Writing custom definition
 
+SPMeta2 can be extended with custom definition and model handler, so that you can plug in your own provision logic.
 This article provides basics on creating a custom definion and model handler for SPMeta2 library.
 
 Before you begin, make sure you are familiar with the following concepts:
 
-* [SPMeta2 basics](http://docs.subpointsolutions.com/spmeta2/basics/)
-* [SPMeta2 definitions](http://docs.subpointsolutions.com/spmeta2/definitions/)
+* [Get started with SPMeta2](/spmeta2/getting-started)
+* [Definitions concept](/spmeta2/reference/definitions)
+* [Models concept](/spmeta2/reference/models)
+* [Provisioning services concept](/spmeta2/reference/provisionservices)
 
-### Overview
-SPMeta2 can be extended with custom definition and model handler, so that you can plug in your own provision logic.
 
 Here is a big puctire on how SPMeta2 provision walks through the web model with lists and list views.
 
@@ -58,11 +61,13 @@ All definition should meet the following criterias:
 
 Here is how a custom ChangeWebTitleAndDescriptionDefinition might look like:
 
+TODO https://github.com/SubPointSolutions/spmeta2-docs/issues/89
 [CLASS.ChangeWebTitleAndDescriptionDefinition]
 
 #### Creating model handlers
 The next step would be creating a custom model handler:
 
+TODO https://github.com/SubPointSolutions/spmeta2-docs/issues/89
 [CLASS.ChangeWebTitleAndDescriptionModelHandler]
 
 #### Registering model handler
@@ -75,7 +80,7 @@ Provision service have the following methods to address this:
 
 Let's use the first one and register our handler:
 
-[TEST.RegisterCustomModelHandler]
+<a href="_samples/writing-custom-definition-RegisterCustomModelHandler.sample-ref"></a>
 
 #### Custom syntax
 There is a separate article on how to create a [custom syntax extensions](http://docs.subpointsolutions.com/spmeta2/extensibility/writing-custom-syntax/), so let's just improve our provision and add custom syntax for ChangeWebTitleAndDescriptionDefinition:
@@ -83,10 +88,9 @@ There is a separate article on how to create a [custom syntax extensions](http:/
 [CLASS.ChangeWebTitleAndDescriptionDefinitionSyntax]
 
 Now we can re-write provision with a better syntax:
+<a href="_samples/writing-custom-definition-RegisterCustomModelHandlerWithSyntax.sample-ref"></a>
 
-[TEST.RegisterCustomModelHandlerWithSyntax]
 
 #### Handling events
 We expect that our model handler would raise OnProvisioning / OnProvisioned while pushing definition to SharePoint. Let's attache to these events and see how it goes.
-
-[TEST.RegisterCustomModelHandlerWithEvents]
+<a href="_samples/writing-custom-definition-RegisterCustomModelHandlerWithEvents.sample-ref"></a>

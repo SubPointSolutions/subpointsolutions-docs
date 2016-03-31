@@ -55,7 +55,7 @@ Pipelines.Add("site-md-content",
 
 			if(!string.IsNullOrEmpty(refFileName)) {
 				
-				var sampleMethodName = refFileName.Split('-')[1];
+				var sampleMethodName = refFileName.Split('-').Last();
 				//codeRef.SetAttribute("sample-method", sampleMethodName);
 
 				// searching for the sample
