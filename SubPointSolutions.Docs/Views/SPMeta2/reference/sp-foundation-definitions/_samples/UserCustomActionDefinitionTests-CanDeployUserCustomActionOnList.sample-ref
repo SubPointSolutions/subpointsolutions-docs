@@ -1,7 +1,7 @@
-    var model = SPMeta2Model.NewWebModel(web =>
-    {
-        // TODO
-    });
+var model = SPMeta2Model.NewWebModel(web =>
+{
+    // TODO
+});
 
-    DeployModel(model);
+DeployModel(model);
 

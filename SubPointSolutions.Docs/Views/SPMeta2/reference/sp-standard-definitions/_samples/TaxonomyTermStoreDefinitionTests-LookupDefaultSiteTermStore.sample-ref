@@ -1,15 +1,15 @@
-    var defaultSiteTermStore = new TaxonomyTermStoreDefinition
-    {
-        UseDefaultSiteCollectionTermStore = true
-    };
+var defaultSiteTermStore = new TaxonomyTermStoreDefinition
+{
+    UseDefaultSiteCollectionTermStore = true
+};
 
-    var model = SPMeta2Model.NewSiteModel(site =>
+var model = SPMeta2Model.NewSiteModel(site =>
+{
+    site.AddTaxonomyTermStore(defaultSiteTermStore, termStore =>
     {
-        site.AddTaxonomyTermStore(defaultSiteTermStore, termStore =>
-        {
-            // do stuff, add groups, term sets
-        });
+        // do stuff, add groups, term sets
     });
+});
 
-    DeployModel(model);
+DeployModel(model);
 

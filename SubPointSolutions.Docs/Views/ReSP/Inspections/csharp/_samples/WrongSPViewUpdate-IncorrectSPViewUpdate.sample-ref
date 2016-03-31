@@ -1,10 +1,10 @@
-    // won't save view (!!!)
-    list.Views["TestView1"].DefaultView = true;
-    list.Views["TestView1"].Update();
+won't save view (!!!)
+t.Views["TestView1"].DefaultView = true;
+t.Views["TestView1"].Update();
 
-    // saves the "NewField2" only (!!!)
-    list.DefaultView.ViewFields.Add("NewField1");
-    list.DefaultView.ViewFields.Add("NewField2");
-    list.DefaultView.Update();
+saves the "NewField2" only (!!!)
+t.DefaultView.ViewFields.Add("NewField1");
+t.DefaultView.ViewFields.Add("NewField2");
+t.DefaultView.Update();
 
 

@@ -1,3 +1,7 @@
+public static ContentTypeModelNode HideContentTypeFieldsByIds(
+    this ContentTypeModelNode modelNode,
+    IEnumerable<Guid> ids)
+{
     modelNode.AddHideContentTypeFieldLinks(new HideContentTypeFieldLinksDefinition
     {
         Fields = new List<FieldLinkValue>(ids.Select(s =>
@@ -8,4 +12,4 @@
     });
 
     return modelNode;
-
+}

@@ -1,4 +1,4 @@
-    m$.ready(function () {
-        // DO STUFF
-    });
+m$.ready(function () {
+    // DO STUFF
+});
 

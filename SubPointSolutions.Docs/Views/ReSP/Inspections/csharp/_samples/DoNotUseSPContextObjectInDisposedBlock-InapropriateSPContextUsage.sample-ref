@@ -1,4 +1,4 @@
-    using (var site = SPContext.Current.Site)
-    {
-    }
+using (var site = SPContext.Current.Site)
+{
+}
 

@@ -68,45 +68,12 @@ namespace SubPointSolutions.Docs.Services.Base
             if (!string.IsNullOrEmpty(startString))
                 firstLine = lines.FirstOrDefault(l => l.Contains(startString));
 
-
-            //var firstLineStarts = new List<string>();
-
-            //// C#?
-            //firstLineStarts.Add("public");
-            //firstLineStarts.Add("using");
-            //firstLineStarts.Add("var");
-            //firstLineStarts.Add(@"//");
-
-            //// XML?
-            //firstLineStarts.Add(@"<");
-
-            //// JS?
-            //firstLineStarts.Add(@"function");
-            //firstLineStarts.Add(@"SOD");
-            //firstLineStarts.Add(@"SP.");
-            //firstLineStarts.Add(@"window");
-
-            //foreach (var startLine in firstLineStarts)
-            //{
-            //    if (firstLine == null)
-            //    {
-            //        firstLine = lines.FirstOrDefault(l => l.Contains(startLine));
-
-            //        if (firstLine != null)
-            //        {
-            //            startString = startLine;
-            //            break;
-            //        }
-            //    }
-            //}
-
-
             var startIndex = 0;
 
             foreach (var line in lines)
             {
 
-                startIndex =0;
+                startIndex = 0;
                 foreach (var letter in line)
                 {
                     if (char.IsLetterOrDigit(letter) && !string.IsNullOrEmpty(letter + ""))
@@ -118,6 +85,9 @@ namespace SubPointSolutions.Docs.Services.Base
                     startIndex++;
                 }
 
+
+                if (firstLine != null)
+                    break;
                 //startString = startLine;
             }
 

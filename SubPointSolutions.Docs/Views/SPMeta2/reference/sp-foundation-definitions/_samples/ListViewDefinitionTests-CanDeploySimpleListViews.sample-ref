@@ -1,40 +1,40 @@
-    var approvedDocuments = new ListViewDefinition
+var approvedDocuments = new ListViewDefinition
+{
+    Title = "Approved Documents",
+    Fields = new Collection<string>
     {
-        Title = "Approved Documents",
-        Fields = new Collection<string>
-        {
-            BuiltInInternalFieldNames.ID,
-            BuiltInInternalFieldNames.FileLeafRef
-        }
-    };
+        BuiltInInternalFieldNames.ID,
+        BuiltInInternalFieldNames.FileLeafRef
+    }
+};
 
-    var inProgressDocuments = new ListViewDefinition
+var inProgressDocuments = new ListViewDefinition
+{
+    Title = "In Progress Documents",
+    Fields = new Collection<string>
     {
-        Title = "In Progress Documents",
-        Fields = new Collection<string>
-        {
-            BuiltInInternalFieldNames.ID,
-            BuiltInInternalFieldNames.FileLeafRef
-        }
-    };
+        BuiltInInternalFieldNames.ID,
+        BuiltInInternalFieldNames.FileLeafRef
+    }
+};
 
-    var documentLibrary = new ListDefinition
+var documentLibrary = new ListDefinition
+{
+    Title = "CustomerDocuments",
+    Description = "A customr document library.",
+    TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
+    Url = "CustomerDocuments"
+};
+
+var model = SPMeta2Model.NewWebModel(web =>
+{
+    web.AddList(documentLibrary, list =>
     {
-        Title = "CustomerDocuments",
-        Description = "A customr document library.",
-        TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
-        Url = "CustomerDocuments"
-    };
+        list.AddListView(approvedDocuments);
+        list.AddListView(inProgressDocuments);
 
-    var model = SPMeta2Model.NewWebModel(web =>
-    {
-        web.AddList(documentLibrary, list =>
-        {
-            list.AddListView(approvedDocuments);
-            list.AddListView(inProgressDocuments);
-
-        });
     });
+});
 
-    DeployModel(model);
+DeployModel(model);
 

@@ -1,23 +1,23 @@
-    var rootWeb = new RootWebDefinition
-    {
+var rootWeb = new RootWebDefinition
+{
 
-    };
+};
 
-    var model = SPMeta2Model.NewSiteModel(site =>
+var model = SPMeta2Model.NewSiteModel(site =>
+{
+    site.AddRootWeb(rootWeb, web =>
     {
-        site.AddRootWeb(rootWeb, web =>
-        {
-            web
-              .AddHostList(BuiltInListDefinitions.StyleLibrary, list =>
-              {
-                  // do stuff with 'Style Library'
-              })
-              .AddHostList(BuiltInListDefinitions.Catalogs.MasterPage, list =>
-              {
-                  // do stuff with 'Master Page Library'
-              });
-        });
+        web
+          .AddHostList(BuiltInListDefinitions.StyleLibrary, list =>
+          {
+              // do stuff with 'Style Library'
+          })
+          .AddHostList(BuiltInListDefinitions.Catalogs.MasterPage, list =>
+          {
+              // do stuff with 'Master Page Library'
+          });
     });
+});
 
-    DeployModel(model);
+DeployModel(model);
 

@@ -1,30 +1,30 @@
-    // tend to separate models into small logical pieces
-    // later you would deploy either all of them or only required bits
+tend to separate models into small logical pieces
+later you would deploy either all of them or only required bits
 
-    var featuresModel = SPMeta2Model.NewWebModel(web =>
-    {
-        // setup features
-    });
+ featuresModel = SPMeta2Model.NewWebModel(web =>
+            {
+ // setup features
+            });
 
-    var listsModel = SPMeta2Model.NewWebModel(web =>
-    {
-        // setup lists and list views
-    });
+ listsModel = SPMeta2Model.NewWebModel(web =>
+            {
+ // setup lists and list views
+            });
 
-    var pagesModel = SPMeta2Model.NewWebModel(web =>
-    {
-        // setup pages
-    });
+ pagesModel = SPMeta2Model.NewWebModel(web =>
+            {
+ // setup pages
+            });
 
-    var webPartsModel = SPMeta2Model.NewWebModel(web =>
-    {
-        // setup web parts
-    });
+ webPartsModel = SPMeta2Model.NewWebModel(web =>
+            {
+ // setup web parts
+            });
 
-    var navigationModel = SPMeta2Model.NewWebModel(web =>
-    {
-        // setup navigation
-    });
+ navigationModel = SPMeta2Model.NewWebModel(web =>
+            {
+ // setup navigation
+            });
 
-    // deploy needed models - all of them or only required bits
+deploy needed models - all of them or only required bits
 

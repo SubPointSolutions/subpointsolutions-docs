@@ -1,13 +1,13 @@
-    var model = SPMeta2Model.NewWebModel(web =>
+var model = SPMeta2Model.NewWebModel(web =>
+{
+    web.AddList(DocLists.GeneralReports, list =>
     {
-        web.AddList(DocLists.GeneralReports, list =>
-        {
-            list
-                .AddFolder(DocFolders.Years.Year2013)
-                .AddFolder(DocFolders.Years.Year2014)
-                .AddFolder(DocFolders.Years.Year2015);
-        });
+        list
+            .AddFolder(DocFolders.Years.Year2013)
+            .AddFolder(DocFolders.Years.Year2014)
+            .AddFolder(DocFolders.Years.Year2015);
     });
+});
 
-    DeployModel(model);
+DeployModel(model);
 

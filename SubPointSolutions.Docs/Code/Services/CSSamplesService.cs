@@ -8,6 +8,8 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using SubPointSolutions.Docs.Code.Data;
 using SubPointSolutions.Docs.Services.Base;
 using SubPointSolutions.Docs.Code.Metadata;
+using SubPointSolutions.Docs.Code.API;
+using SubPointSolutions.Docs.Code.Enumerations;
 
 namespace SubPointSolutions.Docs.Code.Services
 {
@@ -113,6 +115,9 @@ namespace SubPointSolutions.Docs.Code.Services
                                                 .TrimStart('{')
                                                 .TrimEnd('}');
 
+
+
+
                     sample.SourceFileName = Path.GetFileName(filePath);
                     sample.SourceFileNameWithoutExtension = Path.GetFileNameWithoutExtension(filePath);
 
@@ -166,6 +171,13 @@ namespace SubPointSolutions.Docs.Code.Services
                             sample.Tags.Add(newTag);
                         }
                     }
+
+                    // use full body?
+                    if (SamplesAPI.HasTag(sample, BuiltInTagNames.UseFullMethodBody))
+                    {
+                        sample.MethodBody = sample.MethodBodyWithFunction;
+                    }
+
 
                     result.Add(sample);
                 }

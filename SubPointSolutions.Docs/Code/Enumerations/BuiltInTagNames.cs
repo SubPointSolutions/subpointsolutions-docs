@@ -17,5 +17,7 @@ namespace SubPointSolutions.Docs.Code.Enumerations
         public const string SampleModelCategory = "Sample Model Category";
 
         public const string SampleM2Model = "Sample M2 Model";
+
+        public const string UseFullMethodBody = "_Use Full Method Body";
     }
 }
