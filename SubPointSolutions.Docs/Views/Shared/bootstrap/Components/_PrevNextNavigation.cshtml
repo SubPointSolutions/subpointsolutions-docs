@@ -93,15 +93,15 @@
     <div class="m-prevNextNav-cnt">
         @if (prevDocument != null)
         {
-            <a class="btn-lg btn-default" href="@prevDocumentUrl">
-                <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Previous 
+            <a class="btn-lg btn-default m-btn-prev" href="@prevDocumentUrl">
+                <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Previous
             </a>
         }
         @if (nextDocument != null)
         {
-            <a class="btn-lg btn-default pull-right" href="@nextDocumentUrl">
+            <a class="btn-lg btn-default pull-right m-btn-next" href="@nextDocumentUrl">
                 Next <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-            </a> 
+            </a>
         }
     </div>
 }

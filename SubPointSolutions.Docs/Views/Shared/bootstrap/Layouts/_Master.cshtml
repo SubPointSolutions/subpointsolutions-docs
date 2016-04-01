@@ -68,6 +68,30 @@
                 SyntaxHighlighter.all();
             });
 
+            $(document).ready(function () {
+                $("body").bind("keydown", function (event) {
+
+                    console.log(event);
+
+                    if (event.ctrlKey && event.keyCode == 37) {
+
+                        if ($('a.m-btn-prev').size() > 0) {
+                            var href = $('a.m-btn-prev').attr('href');
+
+                            window.location.href = href;
+                        }
+                    }
+                    
+                    if (event.ctrlKey && event.keyCode == 39) {
+                        if ($('a.m-btn-next').size() > 0) {
+                            var href = $('a.m-btn-next').attr('href');
+
+                            window.location.href = href;
+                        }
+                    }
+                });
+            });
+
         }(jQuery));
 
     </script>
