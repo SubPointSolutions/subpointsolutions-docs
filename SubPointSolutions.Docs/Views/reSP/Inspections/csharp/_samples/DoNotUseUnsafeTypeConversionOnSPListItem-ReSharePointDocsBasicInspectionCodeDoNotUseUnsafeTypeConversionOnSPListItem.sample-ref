@@ -1,0 +1,17 @@
+public class DoNotUseUnsafeTypeConversionOnSPListItem
+{
+    [TestMethod]
+    public void IncorrectSPListItemCast(SPListItem item)
+    {
+        string date1 = item["Date"].ToString();
+        DateTime date2 = (DateTime)item["Date"];
+        int x = ((SPFieldUserValue)item["User"]).LookupId;
+    }
+
+    [TestMethod]
+    public void CorrectSPListItemCast(SPListItem item)
+    {
+        DateTime date1 = Convert.ToDateTime(item["Date"]);
+        DateTime? date2 = item["Date"] as DateTime?;
+    }
+}

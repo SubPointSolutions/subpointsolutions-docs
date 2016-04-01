@@ -1,0 +1,11 @@
+//Check if the Field reference does not exists already
+if (!contentType.Fields.ContainsField(field.Title))
+{
+    contentType.FieldLinks.Add(new SPFieldLink(field));
+    contentType.Update();
+}
+else
+{
+    //Do Nothing
+}
+

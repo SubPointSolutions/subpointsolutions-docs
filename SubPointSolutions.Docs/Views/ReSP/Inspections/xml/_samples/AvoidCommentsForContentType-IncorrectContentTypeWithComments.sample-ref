@@ -1,0 +1,14 @@
+contenttype id="0x010100..." name="MyContentType" group="Project 1" description="Groovy" inherits="TRUE" version="0">
+ <fieldrefs>
+   <fieldref id="{99F38C7E-0493-4beb-B1AE-2E2396B78BA2}" name="NiceNewField"></fieldref>
+   <!-- Needed to make the XXZ Widget work and this comment will break the content type! -->
+   <fieldref id="{F55C4D88-1F2E-4ad9-AAA8-819AF4EE7EE8}" name="PublishingPageContent"></fieldref>
+   <fieldref id="{D6E31868-E402-4c28-BCDD-F8C517A7897B}" name="CommentingEnabled"></fieldref>
+   <fieldref id="{1B14D023-939E-497e-9621-21CA3FDE7DDD}" name="RatingEnabled"></fieldref>
+   <fieldref id="{EBDF37A6-5DA2-48a2-9493-FCFEDD40598E}" name="TaggingEnabled"></fieldref>
+   <fieldref id="{D33453AC-5B1B-4A04-9673-CFBA8368195D}" name="Keywords"></fieldref>
+   <fieldref id="{A45C395D-BBBF-47D8-9A46-3A3E070EB535}" name="KeywordsTaxHTField0" hidden="TRUE"></fieldref>
+ </fieldrefs>
+/contenttype>
+
+

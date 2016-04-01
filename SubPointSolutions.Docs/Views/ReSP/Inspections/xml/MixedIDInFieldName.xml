@@ -1,0 +1,27 @@
+﻿<Samples>
+  <Sample MethodName="IncorrectSample">
+    <Field
+      ID="{FE2C05A9-1861-48C3-8DB4-3C08E9830E2C}"
+      Type="Text"
+      Name="customerID"
+      StaticName="customerID"
+      Overwrite="TRUE" >
+    </Field>
+
+    <Field
+     ID="{FE2C05A9-1861-48C3-8DB4-3C08E9830E2C}"
+     Type="Text"
+     Name="clientId"
+     StaticName="clientId"
+     Overwrite="TRUE" >
+    </Field>
+
+    <Field
+     ID="{FE2C05A9-1861-48C3-8DB4-3C08E9830E2C}"
+     Type="Text"
+     Name="documentID"
+     StaticName="documentID"
+     Overwrite="TRUE" >
+    </Field>
+  </Sample>
+</Samples>

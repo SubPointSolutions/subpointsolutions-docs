@@ -1,0 +1,9 @@
+// save current context
+HttpContext curCtx = HttpContext.Current;
+HttpContext.Current = null; // <-- recommended approach for wcf services
+
+bool success = SPUtility.SendEmail(web, true, true, to, subject, body);
+
+// restore the context
+HttpContext.Current = curCtx;
+

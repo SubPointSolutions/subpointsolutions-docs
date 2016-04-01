@@ -1,0 +1,23 @@
+public class WebConfigModificationDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+    [TestMethod]
+    [TestCategory("Docs.WebConfigModificationDefinition")]
+
+    [SampleMetadata(Title = "Add web.config modification",
+                Description = ""
+                )]
+
+    public void CanDeploySimpleWebConfigModificationDefinition()
+    {
+        var model = SPMeta2Model.NewSiteModel(site =>
+        {
+
+        });
+
+        DeployModel(model);
+    }
+
+    #endregion
+}

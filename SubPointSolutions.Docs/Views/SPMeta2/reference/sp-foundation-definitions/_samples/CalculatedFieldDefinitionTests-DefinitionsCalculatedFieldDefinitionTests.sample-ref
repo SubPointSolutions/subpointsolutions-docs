@@ -1,0 +1,24 @@
+SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+lic class CalculatedFieldDefinitionTests : ProvisionTestBase
+    {
+ #region methods
+
+ [TestMethod]
+ [TestCategory("Docs.CalculatedFieldDefinition")]
+
+ [SampleMetadata(Title = "Add calculated field",
+                 Description = ""
+                 )]
+ [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+ public void CanDeploySimpleCalculatedFieldDefinition()
+ {
+     var model = SPMeta2Model.NewSiteModel(site =>
+     {
+
+     });
+
+     DeployModel(model);
+ }
+
+ #endregion
+    }

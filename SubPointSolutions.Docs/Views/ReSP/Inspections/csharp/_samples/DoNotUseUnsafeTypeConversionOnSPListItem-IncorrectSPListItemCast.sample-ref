@@ -1,0 +1,4 @@
+string date1 = item["Date"].ToString();
+DateTime date2 = (DateTime)item["Date"];
+int x = ((SPFieldUserValue)item["User"]).LookupId;
+

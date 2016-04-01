@@ -1,0 +1,24 @@
+var customersReportPage = new WebPartPageDefinition
+{
+    FileName = "Customers-report.aspx",
+    PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+};
+
+var parthesReportPage = new WebPartPageDefinition
+{
+    FileName = "Parthers-report.aspx",
+    PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd2
+};
+
+var model = SPMeta2Model.NewWebModel(web =>
+{
+    web.AddHostList(BuiltInListDefinitions.SitePages, list =>
+    {
+        list
+            .AddWebPartPage(customersReportPage)
+            .AddWebPartPage(parthesReportPage);
+    });
+});
+
+DeployModel(model);
+

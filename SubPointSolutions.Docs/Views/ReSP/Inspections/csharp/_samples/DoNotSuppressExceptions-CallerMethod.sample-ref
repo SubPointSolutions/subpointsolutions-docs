@@ -1,0 +1,19 @@
+try
+{
+    CalledMethod("Test");
+}
+// DO NOT CATCH USAGE EXCEPTION
+catch (ArgumentNotSpecifiedException ex)
+{
+    // special handling for ArgumentNotSpecifiedException
+}
+catch (Exception ex)
+{
+    // log it
+    throw new WrappedException("Method XXX call  error occurred", ex); // wrapped & chained exceptions.
+}
+finally
+{
+    // normal clean goes here (like closing open files).
+}
+

@@ -1,0 +1,25 @@
+//[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+
+public class SecureStoreApplicationDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+    [TestMethod]
+    [TestCategory("Docs.SecureStoreApplicationDefinition")]
+
+    [SampleMetadata(Title = "Add secure store application",
+                        Description = ""
+                        )]
+    [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    public void CanDeploySimpleSecureStoreApplicationDefinition()
+    {
+        var model = SPMeta2Model.NewSiteModel(site =>
+        {
+
+        });
+
+        DeployModel(model);
+    }
+
+    #endregion
+}

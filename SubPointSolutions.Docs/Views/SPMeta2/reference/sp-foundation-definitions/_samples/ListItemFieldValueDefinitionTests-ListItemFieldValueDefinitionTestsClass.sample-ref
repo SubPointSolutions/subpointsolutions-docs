@@ -1,0 +1,24 @@
+//[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+public class ListItemFieldValueDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+    [TestMethod]
+    [TestCategory("Docs.ListItemFieldValueDefinition")]
+
+    [SampleMetadata(Title = "Add list item field value",
+                    Description = ""
+                    )]
+    [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    public void CanDeploySimpleListItemFieldValueDefinition()
+    {
+        var model = SPMeta2Model.NewSiteModel(site =>
+        {
+
+        });
+
+        DeployModel(model);
+    }
+
+    #endregion
+}

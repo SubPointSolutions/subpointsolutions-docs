@@ -1,0 +1,29 @@
+﻿<Samples>
+  <Sample MethodName="IncorrectNoteFieldXml">
+    <Field Group="My group"
+      ID="{FE2C05A9-1861-48C3-8DB4-3C08E9830E2C}"
+      Type="Note"
+      DisplayName="Content"
+      Description="Brief description."
+      Required="TRUE"
+      Indexed="TRUE"
+      NumLines="6"
+      Name="Name1"
+      StaticName="Name1"
+      Overwrite="TRUE" >
+    </Field>
+  </Sample>
+  <Sample MethodName="CorrectNoteFieldXml">
+    <Field Group="My group"
+       ID="{FE2C05A9-1861-48C3-8DB4-3C08E9830E2C}"
+       Type="Note"
+       DisplayName="Content"
+       Description="Brief description."
+       Required="TRUE"
+       NumLines="6"
+       Name="Name1"
+       StaticName="Name1"
+       Overwrite="TRUE" >
+    </Field>
+  </Sample>
+</Samples>

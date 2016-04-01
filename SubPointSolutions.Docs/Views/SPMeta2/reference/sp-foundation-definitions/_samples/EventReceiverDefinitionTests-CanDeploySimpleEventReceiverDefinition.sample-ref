@@ -1,0 +1,6 @@
+var model = SPMeta2Model.NewSiteModel(site =>
+            {
+         
+            });
+
+            DeployModel(model);

@@ -17,8 +17,8 @@ Sounds exciting? Have a look around, let us know how it goes.
 
 ####Learn basics
 
-* [Learn the basics](http://docs.subpointsolutions.com/spmeta2/basics)
-* [Get started from scratch](http://docs.subpointsolutions.com/spmeta2/basics/getting-started/)
+* [Get started with SPMeta2](/spmeta2/getting-started)
+* [Write a simple console provision appplication](spmeta2/getting-started/writing-console-app)
 
 ####Have a closer look
 * [Definitions concept](http://docs.subpointsolutions.com/spmeta2/definitions)
