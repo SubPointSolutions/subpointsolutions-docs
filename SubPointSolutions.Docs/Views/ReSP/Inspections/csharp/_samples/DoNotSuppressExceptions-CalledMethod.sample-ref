@@ -1,0 +1,20 @@
+// Validate parameter and throw "usage exception"
+if (String.IsNullOrEmpty(p1))
+    throw new ArgumentNotSpecifiedException("Parameter p1 must be specified");
+
+// Here we save data to the storage and the "system exception" could be raised
+try
+{
+    DAL.Save(p1);
+}
+catch (SqlException e)
+{
+    if (e.ErrorCode != NO_ROW_ERROR)
+    {
+        // filter out NoDataFound.
+        // do special cleanup, like maybe closing the "dirty" database connection.
+        // throw e; <- DO NOT DO IT. This destroys the strack trace information!
+        throw; // this preserves the stack trace
+    }
+}
+

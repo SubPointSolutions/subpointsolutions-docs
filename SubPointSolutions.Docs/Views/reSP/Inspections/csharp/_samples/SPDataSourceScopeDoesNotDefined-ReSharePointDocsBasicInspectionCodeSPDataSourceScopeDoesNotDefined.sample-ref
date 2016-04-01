@@ -1,0 +1,14 @@
+public class SPDataSourceScopeDoesNotDefined
+{
+    [TestMethod]
+    public void SPDataSourceScopeUsageSamples(SPList list)
+    {
+        var ds = new SPDataSource();
+
+        ds.List = list;
+        ds.DataSourceMode = SPDataSourceMode.List;
+        ds.IncludeHidden = false;
+
+        ds.Scope = SPViewScope.Recursive; // <-  recommended
+    }
+}

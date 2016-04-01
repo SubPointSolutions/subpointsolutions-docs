@@ -1,0 +1,16 @@
+sharepoint:spdatasource runat="server" id="dsPeople" datasourcemode="ListItem" useinternalname="true">
+ <selectparameters>
+   <asp:parameter name="WebUrl" defaultvalue="/configuration/"></asp:parameter>
+   <asp:parameter name="ListID" defaultvalue="34F91B0C-FCF2-455A-ABBA-67724FB4024A"></asp:parameter>
+   <asp:parameter name="ListItemID" defaultvalue="1"></asp:parameter>
+ </selectparameters>
+/sharepoint:spdatasource>
+
+asp:gridview id="grdPeople" runat="server" datasourceid="dsPeople" autogeneratecolumns="False">
+ <columns>
+   <asp:boundfield datafield="FullName" headertext="Blogger name"></asp:boundfield>
+   <asp:boundfield datafield="WorkCity" headertext="City"></asp:boundfield>
+   <asp:boundfield datafield="Blog_x0020_URL" headertext="Blog URL"></asp:boundfield>
+ </columns>
+/asp:gridview>
+

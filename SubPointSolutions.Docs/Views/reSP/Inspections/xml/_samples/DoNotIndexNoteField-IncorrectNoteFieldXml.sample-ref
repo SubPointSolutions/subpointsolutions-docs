@@ -1,0 +1,3 @@
+field group="My group" id="{FE2C05A9-1861-48C3-8DB4-3C08E9830E2C}" type="Note" displayname="Content" description="Brief description." required="TRUE" indexed="TRUE" numlines="6" name="Name1" staticname="Name1" overwrite="TRUE">
+/field>
+

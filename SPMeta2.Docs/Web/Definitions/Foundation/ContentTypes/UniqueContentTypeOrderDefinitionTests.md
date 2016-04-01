@@ -1,0 +1,20 @@
+<properties
+	  pageTitle="UniqueContentTypeOrderDefinition"
+    pageName="UniqueContentTypeOrderDefinition"
+    parentPageId="spmeta2/definitions/sharepoint-foundation/contenttypes"
+/>
+
+###Provision scenario
+We should be able to change the order of the content types in a target list.
+
+###Scope
+Should be deployed under the list.
+
+###Implementation
+Fields re-ordering inside a content type is enabled via UniqueContentTypeOrderDefinition object.
+
+Both CSOM/SSOM object models are supported. 
+Provision re-orders field links inside the content type according the ContentTypes property. 
+You can deploy either single object or a set of the objects using AddUniqueContentTypeOrder() extension method as per following examples.
+
+[LIST.SAMPLES]

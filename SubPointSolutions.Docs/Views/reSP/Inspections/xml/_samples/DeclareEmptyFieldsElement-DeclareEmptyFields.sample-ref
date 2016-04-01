@@ -1,0 +1,15 @@
+list xmlns:ows="Microsoft SharePoint" title="List title" other="" attributes="">
+ <metadata>
+   <contenttypes>
+     <contenttyperef id="0x0100EDFEDEA571A241FD80430F4D48A91346"></contenttyperef>
+     <contenttyperef id="0x0120"></contenttyperef>
+   </contenttypes>
+   <fields>
+   </fields>
+   <views>
+   </views>
+   <forms>
+   </forms>
+ </metadata>
+/list>
+

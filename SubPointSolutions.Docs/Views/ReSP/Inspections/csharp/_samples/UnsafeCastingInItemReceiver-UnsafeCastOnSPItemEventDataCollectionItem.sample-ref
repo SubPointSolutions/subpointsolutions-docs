@@ -1,0 +1,3 @@
+properties.AfterProperties["Contracts"].ToString();
+properties.BeforeProperties["Contracts"].ToString();
+

@@ -1,0 +1,24 @@
+//[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+public class DiagnosticsServiceBaseDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+    [TestMethod]
+    [TestCategory("Docs.DiagnosticsServiceBaseDefinition")]
+
+    [SampleMetadata(Title = "Add diagnostic service",
+                    Description = ""
+                    )]
+    [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    public void CanDeploySimpleDiagnosticsServiceBaseDefinition()
+    {
+        var model = SPMeta2Model.NewSiteModel(site =>
+        {
+
+        });
+
+        DeployModel(model);
+    }
+
+    #endregion
+}

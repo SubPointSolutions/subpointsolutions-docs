@@ -1,0 +1,23 @@
+public class ContentTypeLinkDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+    [TestMethod]
+    [TestCategory("Docs.ContentTypeLinkDefinition")]
+
+    [SampleMetadata(Title = "Add content type to lists",
+                    Description = ""
+                    )]
+
+    public void CanDeploySimpleContentTypeLinkDefinition()
+    {
+        var model = SPMeta2Model.NewSiteModel(site =>
+        {
+
+        });
+
+        DeployModel(model);
+    }
+
+    #endregion
+}

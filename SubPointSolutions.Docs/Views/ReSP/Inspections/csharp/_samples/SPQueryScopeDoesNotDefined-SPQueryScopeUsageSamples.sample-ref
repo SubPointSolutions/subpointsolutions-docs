@@ -1,0 +1,15 @@
+Console.WriteLine("All Items Count: " + list.ItemCount);
+
+var firstQuery = new SPQuery();
+var firstResult = list.GetItems(firstQuery);
+
+Console.WriteLine("First Query: " + firstResult.Count);
+
+var secondQuery = new SPQuery
+{
+    ViewAttributes = "Scope=\"RecursiveAll\""
+};
+var secondResult = list.GetItems(secondQuery);
+
+Console.WriteLine("Second Query: " + secondResult.Count);
+

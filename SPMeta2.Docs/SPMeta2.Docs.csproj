@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{187F45D4-6F11-4FA3-9D90-208AE35EF2A6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SPMeta2.Docs</RootNamespace>
+    <AssemblyName>SPMeta2.Docs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SharePoint.Client, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="SPMeta2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d71faae3bf28531a, processorArchitecture=MSIL">
+      <HintPath>..\packages\SPMeta2.Core.1.2.60\lib\net45\SPMeta2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SPMeta2.CSOM, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d71faae3bf28531a, processorArchitecture=MSIL">
+      <HintPath>..\packages\SPMeta2.CSOM.Foundation.1.2.60\lib\net45\SPMeta2.CSOM.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SPMeta2.CSOM.Standard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d71faae3bf28531a, processorArchitecture=MSIL">
+      <HintPath>..\packages\SPMeta2.CSOM.Standard.1.2.60\lib\net45\SPMeta2.CSOM.Standard.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SPMeta2.SSOM, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d71faae3bf28531a, processorArchitecture=MSIL">
+      <HintPath>..\packages\SPMeta2.SSOM.Foundation.1.2.60\lib\net45\SPMeta2.SSOM.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SPMeta2.SSOM.Standard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d71faae3bf28531a, processorArchitecture=MSIL">
+      <HintPath>..\packages\SPMeta2.SSOM.Standard.1.2.60\lib\net45\SPMeta2.SSOM.Standard.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SPMeta2.Standard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d71faae3bf28531a, processorArchitecture=MSIL">
+      <HintPath>..\packages\SPMeta2.Core.Standard.1.2.60\lib\net45\SPMeta2.Standard.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="Attributes\SampleMetadataAttribute.cs" />
+    <Compile Include="Base\ProvisionTestBase.cs" />
+    <Compile Include="Consts\DocConsts.cs" />
+    <Compile Include="Consts\SampleGroups.cs" />
+    <Compile Include="Definitions\DocContentTypes.cs" />
+    <Compile Include="Definitions\DocWebFeatures.cs" />
+    <Compile Include="Definitions\DocSiteFeatures.cs" />
+    <Compile Include="Definitions\DocFields.cs" />
+    <Compile Include="Definitions\DocFolders.cs" />
+    <Compile Include="Definitions\DocLists.cs" />
+    <Compile Include="Definitions\DocSecurityGroups.cs" />
+    <Compile Include="Definitions\DocWebs.cs" />
+    <Compile Include="Definitions\DocWikiPages.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\DefaultMasterPageTemplates.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DefaultMasterPageTemplates.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\DefaultPublishingPageLayoutTemplates.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DefaultPublishingPageLayoutTemplates.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\WorkflowTemplates.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkflowTemplates.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Definitions\Foundation\Fields\BooleanFieldDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\Fields\BusinessDataFieldDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\Fields\CalculatedFieldDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\Fields\ChoiceFieldDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\Fields\ComputedFieldDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\Fields\CurrencyFieldDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\Fields\DateTimeFieldDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\Fields\GuidFieldDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\Fields\LookupFieldDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\Fields\MultiChoiceFieldDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\Fields\NoteFieldDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\Fields\NumberFieldDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\Fields\TextFieldDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\Fields\URLFieldDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\Fields\UserFieldDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\Webparts\ClientWebPartDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\Webparts\ContentEditorWebPartDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\Webparts\ListViewWebPartDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\Webparts\ScriptEditorWebPartDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\Webparts\XsltListViewWebPartDefinitionTests.cs" />
+    <Compile Include="Web\Extensibility\writing-custom-definition.cs" />
+    <Compile Include="Web\Utils.cs" />
+    <Compile Include="Web\Models.cs" />
+    <Compile Include="Web\Basics.cs" />
+    <Compile Include="Web\Definitions\Foundation\AlternateUrlDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\AppDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\AppPrincipalDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\AuditSettingsDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\BreakRoleInheritanceDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\ContentDatabaseDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\ContentTypeFieldLinkDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\ContentTypeLinkDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\ContentTypes\HideContentTypeFieldLinksDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\ContentTypes\HideContentTypeLinksDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\ContentTypes\RemoveContentTypeFieldLinksDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\ContentTypes\RemoveContentTypeLinksDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\ContentTypes\UniqueContentTypeFieldsOrderDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\ContentTypes\UniqueContentTypeOrderDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\DiagnosticsServiceBaseDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\DocumentParserDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\EventReceiverDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\FarmDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\FarmSolutionDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\FeatureDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\InformationRightsManagementSettingsDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\JobDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\ListFieldLinkDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\ListItemDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\ListItemFieldValueDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\ListViewDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\ManagedAccountDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\MasterPageDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\MasterPageSettingsDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\ModuleFileDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\PrefixDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\PropertyDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\QuickLaunchNavigationNodeDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\RegionalSettingsDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\ResetRoleInheritanceDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\RootWebDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\SandboxSolutionDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\SecureStoreApplicationDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\SecurityGroupDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\FieldDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\FolderDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Standard\AudienceDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Standard\DisplayTemplates\ControlDisplayTemplateDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Standard\DisplayTemplates\ItemDisplayTemplateDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Standard\DisplayTemplates\JavaScriptDisplayTemplateDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Standard\Fields\HTMLFieldDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Standard\Fields\ImageFieldDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Standard\Fields\LinkFieldDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Standard\Fields\MediaFieldDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Standard\Fields\SummaryLinkFieldDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Standard\Webparts\ContactFieldControlDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Standard\Webparts\ContentByQueryWebPartDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Standard\CustomDocumentIdProviderDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Standard\ImageRenditionDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Standard\PageLayoutAndSiteTemplateSettingsDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Standard\PublishingPageDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Standard\PublishingPageLayoutDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Standard\SearchConfigurationDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Standard\SearchResultDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Standard\SearchSettingsDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Standard\Webparts\SiteFeedWebPartDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Standard\Fields\TaxonomyFieldDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Standard\Taxonomy\TaxonomyTermDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Standard\Taxonomy\TaxonomyTermGroupDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Standard\Taxonomy\TaxonomyTermLabelDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Standard\Taxonomy\TaxonomyTermSetDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Standard\Taxonomy\TaxonomyTermStoreDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Standard\WebNavigationSettingsDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Standard\Webparts\SummaryLinkWebPartDefinitionTests.cs" />
+    <Compile Include="Web\Models\WebModel.cs" />
+    <Compile Include="Web\Models\SiteModel.cs" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web\Basics\License.md" />
+    <None Include="Web\Basics\Releases\spmeta2-v1.1.80.md" />
+    <None Include="Web\Basics\Releases\spmeta2-v1.1.71.md" />
+    <None Include="Web\Basics\Releases\spmeta2-v1.1.70.md" />
+    <None Include="Web\Basics\Releases\spmeta2-v1.1.60.md" />
+    <None Include="Web\Basics\Releases\spmeta2-v1.1.50.md" />
+    <None Include="Web\Basics\Releases\spmeta2-v1.1.40.md" />
+    <None Include="Web\Basics\Releases\spmeta2-v1.1.30.md" />
+    <None Include="Web\Basics\Releases\spmeta2-v1.1.20.md" />
+    <None Include="Web\Basics\Releases\spmeta2-v1.1.10.md" />
+    <None Include="Web\Basics\Releases\spmeta2-v1.1.0.md" />
+    <None Include="Web\Basics\Releases\Archive.md" />
+    <None Include="Web\Basics\Support.md" />
+    <None Include="Web\Basics\Roadmap.md" />
+    <None Include="Web\Basics\Releases.md" />
+    <None Include="Web\Basics\Getting-started.md" />
+    <None Include="Web\Definitions\Foundation\ContentTypes.md" />
+    <None Include="Web\Definitions\Foundation\SecurityGroupLinkDefinitionTests - Copy.md" />
+    <None Include="Web\Definitions\Foundation\Fields.md" />
+    <None Include="Web\Definitions\Foundation\Webparts.md" />
+    <None Include="Web\Definitions\Foundation\Fields\BooleanFieldDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\Fields\BusinessDataFieldDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\Fields\CalculatedFieldDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\Fields\ChoiceFieldDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\Fields\ComputedFieldDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\Fields\CurrencyFieldDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\Fields\DateTimeFieldDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\Fields\GuidFieldDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\Fields\LookupFieldDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\Fields\MultiChoiceFieldDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\Fields\NoteFieldDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\Fields\NumberFieldDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\Fields\TextFieldDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\Fields\URLFieldDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\Fields\UserFieldDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\Webparts\ClientWebPartDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\Webparts\ContentEditorWebPartDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\Webparts\ListViewWebPartDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\Webparts\ScriptEditorWebPartDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\Webparts\XsltListViewWebPartDefinitionTests.md" />
+    <None Include="Web\Definitions\SharePoint Standard.md" />
+    <None Include="Web\Definitions\SharePoint Foundation.md" />
+    <None Include="Web\Definitions\Standard\AudienceDefinitionTests.md" />
+    <None Include="Web\Definitions\Standard\DisplayTemplates\ControlDisplayTemplateDefinitionTests.md" />
+    <None Include="Web\Definitions\Standard\DisplayTemplates\ItemDisplayTemplateDefinitionTests.md" />
+    <None Include="Web\Definitions\Standard\DisplayTemplates\JavaScriptDisplayTemplateDefinitionTests.md" />
+    <None Include="Web\Definitions\Standard\Fields.md" />
+    <None Include="Web\Definitions\Standard\Fields\HTMLFieldDefinitionTests.md" />
+    <None Include="Web\Definitions\Standard\Fields\ImageFieldDefinitionTests.md" />
+    <None Include="Web\Definitions\Standard\Fields\LinkFieldDefinitionTests.md" />
+    <None Include="Web\Definitions\Standard\Fields\MediaFieldDefinitionTests.md" />
+    <None Include="Web\Definitions\Standard\Fields\SummaryLinkFieldDefinitionTests.md" />
+    <None Include="Web\Definitions\Standard\DisplayTemplates.md" />
+    <None Include="Web\Definitions\Standard\Taxonomy.md" />
+    <None Include="Web\Definitions\Standard\WebParts.md" />
+    <None Include="Web\Definitions\Standard\Webparts\ContactFieldControlDefinitionTests.md" />
+    <None Include="Web\Definitions\Standard\Webparts\ContentByQueryWebPartDefinitionTests.md" />
+    <None Include="Web\Definitions\Standard\CustomDocumentIdProviderDefinitionTests.md" />
+    <None Include="Web\Definitions\Standard\ImageRenditionDefinitionTests.md" />
+    <None Include="Web\Definitions\Standard\PageLayoutAndSiteTemplateSettingsDefinitionTests.md" />
+    <None Include="Web\Definitions\Standard\PublishingPageDefinitionTests.md" />
+    <None Include="Web\Definitions\Standard\PublishingPageLayoutDefinitionTests.md" />
+    <None Include="Web\Definitions\Standard\SearchConfigurationDefinitionTests.md" />
+    <None Include="Web\Definitions\Standard\SearchResultDefinitionTests.md" />
+    <None Include="Web\Definitions\Standard\SearchSettingsDefinitionTests.md" />
+    <None Include="Web\Definitions\Standard\Webparts\SiteFeedWebPartDefinitionTests.md" />
+    <None Include="Web\Definitions\Standard\Fields\TaxonomyFieldDefinitionTests.md" />
+    <None Include="Web\Definitions\Standard\Taxonomy\TaxonomyTermDefinitionTests.md" />
+    <None Include="Web\Definitions\Standard\Taxonomy\TaxonomyTermGroupDefinitionTests.md" />
+    <None Include="Web\Definitions\Standard\Taxonomy\TaxonomyTermLabelDefinitionTests.md" />
+    <None Include="Web\Definitions\Standard\Taxonomy\TaxonomyTermSetDefinitionTests.md" />
+    <None Include="Web\Definitions\Standard\Taxonomy\TaxonomyTermStoreDefinitionTests.md" />
+    <None Include="Web\Definitions\Standard\WebNavigationSettingsDefinitionTests.md" />
+    <None Include="Web\Definitions\Standard\Webparts\SummaryLinkWebPartDefinitionTests.md" />
+    <Compile Include="Web\Extensibility\writing-custom-syntax.cs" />
+    <None Include="Web\Extensibility\writing-custom-syntax.md" />
+    <None Include="Web\Extensibility\writing-custom-definition.md" />
+    <None Include="Web\Models\WebModel.md" />
+    <None Include="Web\Models\SiteModel.md" />
+    <None Include="Web\Utils.md" />
+    <None Include="Web\Scenarios.md" />
+    <None Include="Web\Models.md" />
+    <None Include="Web\Basics.md" />
+    <None Include="Web\Definitions.md" />
+    <None Include="Web\Definitions\Foundation\AlternateUrlDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\AppDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\AppPrincipalDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\AuditSettingsDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\BreakRoleInheritanceDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\ContentDatabaseDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\ContentTypeFieldLinkDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\ContentTypeLinkDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\ContentTypes\HideContentTypeFieldLinksDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\ContentTypes\HideContentTypeLinksDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\ContentTypes\RemoveContentTypeFieldLinksDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\ContentTypes\RemoveContentTypeLinksDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\ContentTypes\UniqueContentTypeFieldsOrderDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\ContentTypes\UniqueContentTypeOrderDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\DiagnosticsServiceBaseDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\DocumentParserDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\EventReceiverDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\FarmDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\FarmSolutionDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\FeatureDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\InformationRightsManagementSettingsDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\JobDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\ListFieldLinkDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\ListItemDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\ListItemFieldValueDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\ListViewDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\ManagedAccountDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\MasterPageDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\MasterPageSettingsDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\ModuleFileDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\PrefixDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\PropertyDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\QuickLaunchNavigationNodeDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\RegionalSettingsDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\ResetRoleInheritanceDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\RootWebDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\SandboxSolutionDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\SecureStoreApplicationDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\SecurityGroupDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\FieldDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\FolderDefinitionTests.md" />
+    <Compile Include="Web\Definitions\Foundation\ContentTypeDefinitionTests.cs" />
+    <None Include="Web\Definitions\Foundation\ContentTypeDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\SecurityGroupLinkDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\SecurityRoleDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\SecurityRoleLinkDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\SiteDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\SP2013WorkflowDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\SP2013WorkflowSubscriptionDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\TargetApplicationDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\TopNavigationNodeDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\TreeViewSettingsDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\UserCustomActionDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\WebApplicationDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\WebConfigModificationDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\WebPartDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\WebPartPageDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\WelcomePageDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\WikiPageDefinitionTests.md" />
+    <None Include="Templates\XXXDefinitionTests.cs_" />
+    <None Include="Web\Definitions\Foundation\ListDefinitionTests.md" />
+    <None Include="Web\Definitions\Foundation\WebDefinitionTests.md" />
+    <Compile Include="Web\Definitions\Foundation\ListDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\SecurityGroupLinkDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\SecurityRoleDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\SecurityRoleLinkDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\SiteDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\SP2013WorkflowDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\SP2013WorkflowSubscriptionDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\TargetApplicationDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\TopNavigationNodeDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\TreeViewSettingsDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\UserCustomActionDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\WebApplicationDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\WebConfigModificationDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\WebPartDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\WebPartPageDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\WelcomePageDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\WikiPageDefinitionTests.cs" />
+    <Compile Include="Web\Definitions\Foundation\WebDefinitionTests.cs" />
+    <None Include="Templates\XXXDefinitionTests.md_" />
+    <None Include="Web\Extensibility.md" />
+    <None Include="Web\LandingPage.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Modules\jquery-1.11.2.min.js" />
+    <Content Include="Web\Basics\img\getting-started\1-new-console-app.png" />
+    <EmbeddedResource Include="Resources\DefaultMasterPageTemplates.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DefaultMasterPageTemplates.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\DefaultPublishingPageLayoutTemplates.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DefaultPublishingPageLayoutTemplates.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\WorkflowTemplates.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>WorkflowTemplates.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

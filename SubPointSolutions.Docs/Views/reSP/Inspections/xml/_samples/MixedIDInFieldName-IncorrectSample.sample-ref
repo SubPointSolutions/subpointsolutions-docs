@@ -1,0 +1,9 @@
+field id="{FE2C05A9-1861-48C3-8DB4-3C08E9830E2C}" type="Text" name="customerID" staticname="customerID" overwrite="TRUE">
+/field>
+
+field id="{FE2C05A9-1861-48C3-8DB4-3C08E9830E2C}" type="Text" name="clientId" staticname="clientId" overwrite="TRUE">
+/field>
+
+field id="{FE2C05A9-1861-48C3-8DB4-3C08E9830E2C}" type="Text" name="documentID" staticname="documentID" overwrite="TRUE">
+/field>
+

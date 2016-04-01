@@ -1,0 +1,19 @@
+﻿<Samples>
+  <Sample MethodName="CorrectSPDataSourceScope">
+    <SharePoint:SPDataSource runat="server" ID="dsPeople" DataSourceMode="ListItem" UseInternalName="true">
+      <SelectParameters>
+        <asp:Parameter Name="WebUrl" DefaultValue="/configuration/" />
+        <asp:Parameter Name="ListID" DefaultValue="34F91B0C-FCF2-455A-ABBA-67724FB4024A" />
+        <asp:Parameter Name="ListItemID" DefaultValue="1" />
+      </SelectParameters>
+    </SharePoint:SPDataSource>
+
+    <asp:GridView ID="grdPeople" runat="server" DataSourceID="dsPeople"  AutoGenerateColumns="False">
+      <Columns>
+        <asp:BoundField DataField="FullName" HeaderText="Blogger name" />
+        <asp:BoundField DataField="WorkCity" HeaderText="City" />
+        <asp:BoundField DataField="Blog_x0020_URL" HeaderText="Blog URL" />
+      </Columns>
+    </asp:GridView>
+  </Sample>
+</Samples>

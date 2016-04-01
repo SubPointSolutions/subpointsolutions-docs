@@ -1,0 +1,24 @@
+SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+lic class ChoiceFieldDefinitionTests : ProvisionTestBase
+    {
+ #region methods
+
+ [TestMethod]
+ [TestCategory("Docs.ChoiceFieldDefinition")]
+
+ [SampleMetadata(Title = "Add choice field",
+                 Description = ""
+                 )]
+ [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+ public void CanDeploySimpleChoiceFieldDefinition()
+ {
+     var model = SPMeta2Model.NewSiteModel(site =>
+     {
+
+     });
+
+     DeployModel(model);
+ }
+
+ #endregion
+    }

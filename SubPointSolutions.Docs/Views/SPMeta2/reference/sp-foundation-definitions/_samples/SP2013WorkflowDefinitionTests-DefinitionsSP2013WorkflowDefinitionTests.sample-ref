@@ -1,0 +1,32 @@
+SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+lic class SP2013WorkflowDefinitionTests : ProvisionTestBase
+    {
+ #region methods
+
+
+ [TestMethod]
+ [TestCategory("Docs.SP2013WorkflowDefinition")]
+
+ [SampleMetadata(Title = "Add SP2013 workflow",
+             Description = ""
+             )]
+ //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+ public void CanDeploySimpleSP2013WorkflowDefinition()
+ {
+     var writeToHistoryLstWorkflow = new SP2013WorkflowDefinition
+     {
+         DisplayName = "M2 - Write to history list",
+         Override = true,
+         Xaml = WorkflowTemplates.WriteToHistoryListWorkflow
+     };
+
+     var model = SPMeta2Model.NewWebModel(web =>
+     {
+         web.AddSP2013Workflow(writeToHistoryLstWorkflow);
+     });
+
+     DeployModel(model);
+ }
+
+ #endregion
+    }

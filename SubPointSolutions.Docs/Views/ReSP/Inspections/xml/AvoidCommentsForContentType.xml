@@ -1,0 +1,41 @@
+﻿<Samples>
+  <Sample MethodName="IncorrectContentTypeWithComments">
+    <ContentType ID="0x010100..."
+                   Name="MyContentType"
+                   Group="Project 1"
+                   Description="Groovy"
+                   Inherits="TRUE"
+                   Version="0">
+      <FieldRefs>
+        <FieldRef ID="{99F38C7E-0493-4beb-B1AE-2E2396B78BA2}" Name="NiceNewField"/>
+        <!-- Needed to make the XXZ Widget work and this comment will break the content type! -->
+        <FieldRef ID="{F55C4D88-1F2E-4ad9-AAA8-819AF4EE7EE8}" Name="PublishingPageContent" />
+        <FieldRef ID="{D6E31868-E402-4c28-BCDD-F8C517A7897B}" Name="CommentingEnabled" />
+        <FieldRef ID="{1B14D023-939E-497e-9621-21CA3FDE7DDD}" Name="RatingEnabled" />
+        <FieldRef ID="{EBDF37A6-5DA2-48a2-9493-FCFEDD40598E}" Name="TaggingEnabled" />
+        <FieldRef ID="{D33453AC-5B1B-4A04-9673-CFBA8368195D}" Name="Keywords"/>
+        <FieldRef ID="{A45C395D-BBBF-47D8-9A46-3A3E070EB535}" Name="KeywordsTaxHTField0" Hidden="TRUE"/>
+      </FieldRefs>
+    </ContentType>
+
+  </Sample>
+
+  <Sample MethodName="CorrectContentTypeWithComments">
+    <ContentType ID="0x010100..."
+                   Name="MyContentType"
+                   Group="Project 1"
+                   Description="Groovy"
+                   Inherits="TRUE"
+                   Version="0">
+      <FieldRefs>
+        <FieldRef ID="{99F38C7E-0493-4beb-B1AE-2E2396B78BA2}" Name="NiceNewField"/>
+        <FieldRef ID="{F55C4D88-1F2E-4ad9-AAA8-819AF4EE7EE8}" Name="PublishingPageContent" />
+        <FieldRef ID="{D6E31868-E402-4c28-BCDD-F8C517A7897B}" Name="CommentingEnabled" />
+        <FieldRef ID="{1B14D023-939E-497e-9621-21CA3FDE7DDD}" Name="RatingEnabled" />
+        <FieldRef ID="{EBDF37A6-5DA2-48a2-9493-FCFEDD40598E}" Name="TaggingEnabled" />
+        <FieldRef ID="{D33453AC-5B1B-4A04-9673-CFBA8368195D}" Name="Keywords"/>
+        <FieldRef ID="{A45C395D-BBBF-47D8-9A46-3A3E070EB535}" Name="KeywordsTaxHTField0" Hidden="TRUE"/>
+      </FieldRefs>
+    </ContentType>
+  </Sample>
+</Samples>

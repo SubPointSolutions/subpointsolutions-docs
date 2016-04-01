@@ -1,0 +1,24 @@
+//[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+public class FarmDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+    [TestMethod]
+    [TestCategory("Docs.FarmDefinition")]
+
+    [SampleMetadata(Title = "Add farm",
+                    Description = ""
+                    )]
+    [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    public void CanDeploySimpleFarmDefinition()
+    {
+        var model = SPMeta2Model.NewSiteModel(site =>
+        {
+
+        });
+
+        DeployModel(model);
+    }
+
+    #endregion
+}

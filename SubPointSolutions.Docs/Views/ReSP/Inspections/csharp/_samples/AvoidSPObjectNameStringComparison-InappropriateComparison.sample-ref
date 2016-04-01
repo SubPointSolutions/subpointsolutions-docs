@@ -1,0 +1,17 @@
+var session = new TaxonomySession(site);
+var termStore = session.TermStores["Company"];
+
+var group = termStore.Groups["HR"];
+var termSet = group.TermSets["Review"];
+var term = termSet.Terms["Year 2012"];
+
+// wrong
+if (group.Name != "HR")
+{
+    // wrong
+    if (term.Name != "Review")
+    {
+        // Do stuff
+    }
+}
+

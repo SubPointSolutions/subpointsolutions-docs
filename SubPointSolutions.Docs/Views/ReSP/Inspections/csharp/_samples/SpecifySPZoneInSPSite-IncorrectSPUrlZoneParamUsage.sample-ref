@@ -1,0 +1,7 @@
+using (SPSite site = new SPSite(SPContext.Current.Site.ID))
+{
+    SPUrlZone zone = site.Zone;
+    //Logic that depends on Zone
+    //Oops! Zone is always 'Default'
+}
+

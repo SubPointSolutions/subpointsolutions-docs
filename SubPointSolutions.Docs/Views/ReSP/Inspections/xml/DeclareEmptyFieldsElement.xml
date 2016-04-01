@@ -1,0 +1,18 @@
+﻿<Samples>
+  <Sample MethodName="DeclareEmptyFields">
+    <List xmlns:ows="Microsoft SharePoint" Title="List title" other="" attributes="">
+      <MetaData>
+        <ContentTypes>
+          <ContentTypeRef ID="0x0100EDFEDEA571A241FD80430F4D48A91346"/>
+          <ContentTypeRef ID="0x0120" />
+        </ContentTypes>
+        <Fields>
+        </Fields>
+        <Views>
+        </Views>
+        <Forms>
+        </Forms>
+      </MetaData>
+    </List>
+  </Sample>
+</Samples>

@@ -1,0 +1,11 @@
+//Check if the Field reference exists
+if (contentType.Fields.ContainsField(field.Title))
+{
+    contentType.FieldLinks.Delete(field.Title);
+    contentType.Update();
+}
+else
+{
+    //Do Nothing
+}
+

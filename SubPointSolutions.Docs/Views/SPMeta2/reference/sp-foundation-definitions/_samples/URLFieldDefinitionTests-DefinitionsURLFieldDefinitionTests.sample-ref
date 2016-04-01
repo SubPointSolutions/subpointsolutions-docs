@@ -1,0 +1,24 @@
+SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+lic class URLFieldDefinitionTests : ProvisionTestBase
+    {
+ #region methods
+
+ [TestMethod]
+ [TestCategory("Docs.URLFieldDefinition")]
+
+ [SampleMetadata(Title = "Add URL field",
+                 Description = ""
+                 )]
+ [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+ public void CanDeploySimpleURLFieldDefinition()
+ {
+     var model = SPMeta2Model.NewSiteModel(site =>
+     {
+
+     });
+
+     DeployModel(model);
+ }
+
+ #endregion
+    }
