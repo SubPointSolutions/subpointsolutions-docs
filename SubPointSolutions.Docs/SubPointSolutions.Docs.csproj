@@ -1419,6 +1419,7 @@
     <None Include="Views\SPMeta2\getting-started\_Support.md" />
     <None Include="Views\SPMeta2\getting-started\writing-console-app.md" />
     <None Include="Views\SPMeta2\Index.md" />
+    <None Include="Views\SPMeta2\kb\kb-m2-000006.md" />
     <None Include="Views\SPMeta2\kb\kb-m2-000005.md" />
     <None Include="Views\SPMeta2\kb\kb-m2-000004.md" />
     <None Include="Views\SPMeta2\kb\kb-m2-000003.md" />
