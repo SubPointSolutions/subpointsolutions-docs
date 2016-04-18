@@ -4,7 +4,7 @@ Order: 300
 TileLink: true
 TileLinkOrder: 30
 ---
-
+## Getting started with M2 VS Intranet Model project
 The current document describes general concepts, guidelines and recommendation on building SharePoint solutions with the SPMeta2 library. It is crafted based on both SPMeta Dev team experience on building M2 library, supporting companies all over the world and client's feedback as such. Hence, it should be considered not only as a jump start guide but also as a production ready approach on building M2 solutions.
 
 The target audience is .NET developers, team leads and software architects who are familiar with POCOs, fluent API, DSL, CI/ALM and seeking guides on he following areas:
@@ -23,7 +23,7 @@ Visual Studio project templates provide a consistent and reusable way to bootstr
 
 [SPMeta2 Extensions for Visual Studio]("https://github.com/SubPointSolutions/spmeta2-vsixextensions") contains a few pre-defined project templates for 'Intranet Model' and 'Console Provision' project creation. That simplifies initial project setup, creates recommended folder structure, initial files and classes as per the suggestions in the [General concepts](https://github.com/SubPointSolutions/spmeta2-vsixextensions/wiki/General-concepts) document.
 
-![](https://raw.githubusercontent.com/SubPointSolutions/spmeta2-vsixextensions/dev/SPMeta2.VsixExtensions.Docs/Resources/M2-project-templates/M2NewProjectWizard.png)
+<img src="_img/M2NewProjectWizard.png" >
 
 In nutshell, here is a general idea of the project separation and responsibilities:
 * 'Intranet Model' - contains 'WHAT TO PROVISION STUFF' - SharePoint artifacts' 
@@ -34,13 +34,13 @@ This template bootstraps a new .NET library with predefined folder structure, fi
 * Definitions  - simple saying, SharePoint artifact such as fields, content types, etc...
 * Models - same artifact that are grouped together into local pieces, models
 
-![](https://raw.githubusercontent.com/SubPointSolutions/spmeta2-vsixextensions/dev/SPMeta2.VsixExtensions.Docs/Resources/M2-project-templates/M2ModelProjectExpanded.png)
+<img src="_img/M2ModelProjectExpanded.png" >
 
 Depending on the case, you might keep that project a pure .NET library with SPMeta2 POCO classes only, so that you can reuse it later within CSOM or SSOM based provision, or you might include a provision logic (ProvisionService) inside that project, so that you will have a dependency on a specific SharePoint runtime.
 
 Once creating a project based on this template, you will be required to provide a project name and location, and then you will be asked to provide project specific settings as per the following screen:
 
-![](https://raw.githubusercontent.com/SubPointSolutions/spmeta2-vsixextensions/dev/SPMeta2.VsixExtensions.Docs/Resources/M2-project-templates/M2NewProjectWizard.Runtime.png)
+<img src="_img/M2NewProjectWizard.Runtime.png" >
 
 Here are mode details on the settings:
 
@@ -137,6 +137,4 @@ Use the following services as per correct SharePoint edition:
 
 Once all setup, here is a your first, fantastic, ready-to-use SharePoint Intranet build on top of SPMeta2. Enjoy!
 
-![](https://raw.githubusercontent.com/SubPointSolutions/spmeta2-vsixextensions/dev/SPMeta2.VsixExtensions.Docs/Resources/M2-project-templates/M2.MyIntranet.Full.png)
-
-* [Full size image link](https://raw.githubusercontent.com/SubPointSolutions/spmeta2-vsixextensions/dev/SPMeta2.VsixExtensions.Docs/Resources/M2-project-templates/M2.MyIntranet.Full.png)
+<img src="_img/M2.MyIntranet.Full.png" >

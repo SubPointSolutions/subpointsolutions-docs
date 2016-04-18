@@ -4,8 +4,9 @@ Order: 400
 TileLink: true
 TileLinkOrder: 40
 ---
+## Getting started with M2 VS Console provision project
 
-TheThe current document describes general concepts, guidelines and recommendation on building SharePoint solutions with the SPMeta2 library. It is crafted based on both SPMeta Dev team experience on building M2 library, supporting companies all over the world and client's feedback as such. Hence, it should be considered not only as a jump start guide but also as a production ready approach on building M2 solutions.
+The current document describes general concepts, guidelines and recommendation on building SharePoint solutions with the SPMeta2 library. It is crafted based on both SPMeta Dev team experience on building M2 library, supporting companies all over the world and client's feedback as such. Hence, it should be considered not only as a jump start guide but also as a production ready approach on building M2 solutions.
 
 The target audience is .NET developers, team leads and software architects who are familiar with POCOs, fluent API, DSL, CI/ALM and seeking guides on he following areas:
 
@@ -23,7 +24,7 @@ Visual Studio project templates provide a consistent and reusable way to bootstr
 
 [SPMeta2 Extensions for Visual Studio]("https://github.com/SubPointSolutions/spmeta2-vsixextensions") contains a few pre-defined project templates for 'Intranet Model' and 'Console Provision' project creation. That simplifies initial project setup, creates recommended folder structure, initial files and classes as per the suggestions in the [General concepts](https://github.com/SubPointSolutions/spmeta2-vsixextensions/wiki/General-concepts) document.
 
-![](https://raw.githubusercontent.com/SubPointSolutions/spmeta2-vsixextensions/dev/SPMeta2.VsixExtensions.Docs/Resources/M2-project-templates/M2NewProjectWizard.png)
+<img src="_img/M2NewProjectWizard.png" >
 
 In nutshell, here is a general idea of the project separation and responsibilities:
 * 'Intranet Model' - contains 'WHAT TO PROVISION STUFF' - SharePoint artifacts' 
@@ -32,11 +33,10 @@ In nutshell, here is a general idea of the project separation and responsibiliti
 ### SPMeta2 Console Provision project template
 This template bootstraps a new .NET console application with a few predefined classed and code snippets. The project is aimed to provide a jump start for a simple console provision of the SPMeta2 based models. Refer to [General concepts](https://github.com/SubPointSolutions/spmeta2-vsixextensions/wiki/General-concepts) document for the more context and information about definitions, models and provision services.
 
-![](https://raw.githubusercontent.com/SubPointSolutions/spmeta2-vsixextensions/dev/SPMeta2.VsixExtensions.Docs/Resources/M2-project-templates/M2Console.NewProject.png)
+<img src="_img/M2Console.NewProject.png" >
 
 Once creating a project based on this template, you will be required to provide a project name and location and then, similarly to 'SPMeta2 Intranet Model' template, a target SharePoint runtime as per the following screen:
-
-![](https://raw.githubusercontent.com/SubPointSolutions/spmeta2-vsixextensions/dev/SPMeta2.VsixExtensions.Docs/Resources/M2-project-templates/M2Console.Wizard.png)
+<img src="_img/M2Console.Wizard.png" >
 
 Here are mode details on the settings:
 
@@ -46,7 +46,7 @@ Here are mode details on the settings:
 |Target provision runtime | as per choices  |  use 'POCOs only' options if you want to eliminate SharePoint runtime dependency, overwise pick the right one for you|
 Once set up, the project will have the following folder structure and a pre-generated classes:
 
-![](https://raw.githubusercontent.com/SubPointSolutions/spmeta2-vsixextensions/dev/SPMeta2.VsixExtensions.Docs/Resources/M2-project-templates/M2Console.ProjectStructure.png)
+<img src="_img/M2Console.ProjectStructure.png" >
 
 The pre-generated project has the following folders, files and classed predefined:
 
@@ -163,11 +163,11 @@ The app settings are updated with the following values, we aim to use these valu
 
 App configuration can be auto-generated with the T4 template. Just use "Add new item -> SPMeta2 -> AppSettings", name it as 'AppSetting' and click 'Ok':
 
-![](https://raw.githubusercontent.com/SubPointSolutions/spmeta2-vsixextensions/dev/SPMeta2.VsixExtensions.Docs/Resources/M2-project-templates/M2Console.AppSettingsItem.png)
+<img src="_img/M2Console.AppSettingsItem.png" >
 
 A new file 'AppSetting.tt' will be added to your solution:
 
-![](https://raw.githubusercontent.com/SubPointSolutions/spmeta2-vsixextensions/dev/SPMeta2.VsixExtensions.Docs/Resources/M2-project-templates/M2Console.AppSettingsItemT4.png)
+<img src="_img/M2Console.AppSettingsItemT4.png" >
 
 Once file is opened and saved, a corresponding *.cs file with the class names 'AppSetting' is generated. All properties are driven by the app.config with the following naming convention:
 
@@ -175,6 +175,6 @@ Once file is opened and saved, a corresponding *.cs file with the class names 'A
 * XXXCount -> converted to integer
 * the rest -> converted to strings
 
-![](https://raw.githubusercontent.com/SubPointSolutions/spmeta2-vsixextensions/dev/SPMeta2.VsixExtensions.Docs/Resources/M2-project-templates/M2Console.AppSettingsItemT4Generation.png)
+<img src="_img/M2Console.AppSettingsItemT4Generation.png" >
 
 Altogether, the console project template, pre-generated utils, app.config and T4 config item template help to bootstrap the basic provision console application in a few clicks.

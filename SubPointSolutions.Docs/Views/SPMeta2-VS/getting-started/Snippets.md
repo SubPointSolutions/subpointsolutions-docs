@@ -4,6 +4,7 @@ Order: 600
 TileLink: true
 TileLinkOrder: 50
 ---
+## Getting started with M2 VS Snippets
 
 That's the last missing bit of the documentation for the templates, can live with that for a while. 
 
