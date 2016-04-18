@@ -7,7 +7,7 @@
                     && x.ContainsKey("TileDescription")
                     && x.ContainsKey("TileOrder")
                     )
-         .OrderBy(x => x.String("TileOrder", "0"))
+         .OrderBy(x => x.Get<int>("TileOrder", 0))
          .ToList();
 
 }
@@ -25,11 +25,11 @@
                       && x.ContainsKey("RelativeFilePath")
                       && !x.Get<bool>("Hidden", false)
                       && x.String("RelativeFilePath").StartsWith(tilePath + @"\"))
-                .OrderBy(x => x.String("TileLinkOrder", "0"))
+                .OrderBy(x => x.Get<int>("TileLinkOrder", 0))
                 .ToList();
 
 
-    <div class="col-sm-4 col-md-4 m-landing-project-cnt">
+    <div class="col-sm-4 col-md-4 m-landing-project-cnt" m2-order='@(tile.Get<int>("TileLinkOrder", 0))'>
         <div class="panel panel-default ">
             <div class="panel-heading">
                 <a href="@(PathHelper.ToRootLink(PathHelper.RemoveExtension(tile.String("RelativeFilePath"))))">

@@ -4,7 +4,7 @@ Tile: true
 TileTitle: 'M2 VS Extensions'
 TileOrder: 20
 TileLink: true
-TileLinkOrder: 07
+TileLinkOrder: 7
 TileDescription: 'Useful Visual Studio snippets, project and item templates to bootstrap SPMeta2 based projects.'
 ---
 ## SPMeta2 Extensions for Visual Studio

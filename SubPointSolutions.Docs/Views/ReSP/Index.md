@@ -2,9 +2,9 @@
 Title: 'reSP Home'
 Tile: true
 TileTitle: 'reSP'
-TileOrder: 60
+TileOrder: 100
 TileLink: true
-TileLinkOrder: 09
+TileLinkOrder: 10
 TileDescription: 'ReSharper plugin that helps to write SharePoint related code faster and better.'
 ---
 
