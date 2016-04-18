@@ -1,9 +1,11 @@
 ﻿---
+TileTitle: 'M2 Reverse'
 Tile: true
 TileTitle: 'M2 Reverse'
 TileOrder: 40
-Hidden : true
-TileDescription: 'Technical documentation made easy - build beautiful one-page specifications for SPMeta2 models.'
+Hidden : false
+TileLinkOrder: 06
+TileDescription: 'A library to provide reverse engineering of the existing SharePoint sites into SPMeta2 models.'
 ---
 
 
