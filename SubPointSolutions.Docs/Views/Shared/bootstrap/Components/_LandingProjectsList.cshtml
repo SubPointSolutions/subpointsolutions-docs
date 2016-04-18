@@ -10,8 +10,6 @@
          .OrderBy(x => x.Get<int>("TileOrder", 0))
          .ToList();
 
-
-    
 }
 
 @if (tiles.Any())
@@ -31,13 +29,14 @@
                 .ToList();
 
 
-    <div class="col-sm-4 col-md-4 m-landing-project-cnt" m2-order='@(tile.Get<int>("TileLinkOrder", 0))'>
+    <div class="col-md-4 m-landing-project-cnt" m2-order='@(tile.Get<int>("TileLinkOrder", 0))'>
         <div class="panel panel-default ">
             <div class="panel-heading">
                 <a href="@(PathHelper.ToRootLink(PathHelper.RemoveExtension(tile.String("RelativeFilePath"))))">
                     @(tile.String("TileTitle"))
                 </a>
-            </div> <div class="panel-body m-landing-project-links-cnt" tile-path="@tilePath">
+            </div>
+            <div class="panel-body m-landing-project-links-cnt" tile-path="@tilePath">
                 @tile.String("TileDescription")
 
                 @if (tileLinks.Any())
@@ -57,8 +56,5 @@
             </div>
 
         </div>
-
-
-
     </div>
 }

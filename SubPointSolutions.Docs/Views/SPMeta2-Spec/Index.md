@@ -1,5 +1,5 @@
 ﻿---
-Title: 'M2 Spec'
+Title: 'M2 Spec Home'
 Tile: true
 TileTitle: 'M2 Spec'
 TileOrder: 60
