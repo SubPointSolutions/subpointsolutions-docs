@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Diagnostics;
 using SubPointSolutions.Docs.Code.Services;
+using System;
 
 namespace SubPointSolutions.Docs.Code.Tests
 {
@@ -41,8 +42,15 @@ namespace SubPointSolutions.Docs.Code.Tests
         [TestCategory("Dev")]
         public void Publish_Dev()
         {
+            var netlifyContentFolder = ContentDirectory;
+
+            var netlifySiteId = Environment.GetEnvironmentVariable("Netlify-SiteId");
+            var netlifyApiKey = Environment.GetEnvironmentVariable("Netlify-ApiKey");
+
             RunWyam();
-            RunS3("docs-dev.subpointsolutions.com");
+
+            RunCmd("npm", "install netlify-cli -g");
+            RunCmd("netlify", string.Format("deploy -s {0} -t {1} -p {2}", netlifySiteId, netlifyApiKey, netlifyContentFolder));
         }
 
         private void RunS3(string bucketName)
@@ -54,6 +62,23 @@ namespace SubPointSolutions.Docs.Code.Tests
         #endregion
 
         #region utils
+
+        private void RunCmd(string fileName, string arguments)
+        {
+            var process = new Process
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = fileName,
+                    Arguments = arguments
+                }
+            };
+
+            process.Start();
+            process.WaitForExit(5 * 60 * 1000);
+
+            Assert.IsTrue(process.ExitCode == 0);
+        }
 
         private void RunWyam()
         {

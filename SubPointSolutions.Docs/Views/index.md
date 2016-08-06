@@ -9,4 +9,7 @@ We offer a powerful set of APIs and products to build apps on top of SharePoint 
 In case you have unexpected issues please contact support on Yammer network or GitHub:
 
 * [https://www.yammer.com/spmeta2feedback](https://www.yammer.com/spmeta2feedback)
-* [https://github.com/SubPointSolutions/spmeta2](https://github.com/SubPointSolutions/spmeta2)
+* [htps://github.com/SubPointSolutions/spmeta2](https://github.com/SubPointSolutions/spmeta2)
+
+netlify 1
+netlify github / CI test
