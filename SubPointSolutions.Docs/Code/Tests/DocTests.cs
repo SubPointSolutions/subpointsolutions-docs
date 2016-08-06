@@ -49,6 +49,7 @@ namespace SubPointSolutions.Docs.Code.Tests
 
             RunWyam();
 
+
             RunCmd("npm", "install netlify-cli -g");
             RunCmd("netlify", string.Format("deploy -s {0} -t {1} -p {2}", netlifySiteId, netlifyApiKey, netlifyContentFolder));
         }
