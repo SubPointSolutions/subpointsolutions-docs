@@ -39,16 +39,28 @@ namespace SubPointSolutions.Docs.Code.Tests
         #region tests
 
         [TestMethod]
-        [TestCategory("Dev")]
-        public void Publish_Dev()
+        [TestCategory("CI")]
+        public void Publish_Docs()
         {
             var netlifyContentFolder = ContentDirectory;
+            var branch = Environment.GetEnvironmentVariable("APPVEYOR_REPO_BRANCH");
 
-            var netlifySiteId = Environment.GetEnvironmentVariable("Netlify-SiteId");
+            var netlifyDevSiteId = Environment.GetEnvironmentVariable("Netlify-SiteId-SPSDocs-Dev");
+            var netlifyProdSiteId = Environment.GetEnvironmentVariable("Netlify-SiteId-SPSDocs-Prod");
+
             var netlifyApiKey = Environment.GetEnvironmentVariable("Netlify-ApiKey");
+            var netlifySiteId = netlifyDevSiteId;
+
+            if (string.IsNullOrEmpty(branch) &&
+                string.Compare("master", branch, StringComparison.OrdinalIgnoreCase) == 1)
+            {
+                netlifySiteId = netlifyProdSiteId;
+            }
+
+            Console.WriteLine("Building from branch:" + branch);
+            Trace.WriteLine("Building from branch:" + branch);
 
             RunWyam();
-
 
             RunCmd("npm", "install netlify-cli -g");
             RunCmd("netlify", string.Format("deploy -s {0} -t {1} -p {2}", netlifySiteId, netlifyApiKey, netlifyContentFolder));
