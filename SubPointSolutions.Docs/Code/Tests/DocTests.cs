@@ -51,14 +51,13 @@ namespace SubPointSolutions.Docs.Code.Tests
             var netlifyApiKey = Environment.GetEnvironmentVariable("Netlify-ApiKey");
             var netlifySiteId = netlifyDevSiteId;
 
-            if (string.IsNullOrEmpty(branch) &&
-                string.Compare("master", branch, StringComparison.OrdinalIgnoreCase) == 1)
+            if (string.IsNullOrEmpty(branch) && "master".Equals(branch, StringComparison.OrdinalIgnoreCase))
             {
                 netlifySiteId = netlifyProdSiteId;
             }
 
             Console.WriteLine("Building from branch:" + branch);
-            Trace.WriteLine("Building from branch:" + branch); 
+            Trace.WriteLine("Building from branch:" + branch);
 
             RunWyam();
 
