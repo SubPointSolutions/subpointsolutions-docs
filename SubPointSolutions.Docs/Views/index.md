@@ -10,6 +10,3 @@ In case you have unexpected issues please contact support on Yammer network or G
 
 * [https://www.yammer.com/spmeta2feedback](https://www.yammer.com/spmeta2feedback)
 * [htps://github.com/SubPointSolutions/spmeta2](https://github.com/SubPointSolutions/spmeta2)
-
-netlify 1
-netlify github / CI test
