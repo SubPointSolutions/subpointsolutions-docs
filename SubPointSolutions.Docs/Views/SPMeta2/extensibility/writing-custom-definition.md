@@ -75,7 +75,7 @@ Let's use the first one and register our handler:
 <a href="_samples/writing-custom-definition-RegisterCustomModelHandler.sample-ref"></a>
 
 #### Custom syntax
-There is a separate article on how to create a [custom syntax extensions](http://docs.subpointsolutions.com/spmeta2/extensibility/writing-custom-syntax/), so let's just improve our provision and add custom syntax for ChangeWebTitleAndDescriptionDefinition:
+There is a separate article on how to create a [custom syntax extensions](/spmeta2/extensibility/writing-custom-syntax/), so let's just improve our provision and add custom syntax for ChangeWebTitleAndDescriptionDefinition:
 
 <a href="_samples/writing-custom-definition-ChangeWebTitleAndDescriptionDefinitionSyntaxClass.sample-ref"></a>
 

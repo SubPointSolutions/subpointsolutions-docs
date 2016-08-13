@@ -195,11 +195,13 @@ pre {
 
 .m-landing-project-cnt .panel {
     border: none;
+    min-height: 240px;
 }
 
 .m-landing-project-cnt .panel-body {
     padding: 15px;
     background-color: #fcfcfc;
+    min-height: 200px;
 }
 
 /* */

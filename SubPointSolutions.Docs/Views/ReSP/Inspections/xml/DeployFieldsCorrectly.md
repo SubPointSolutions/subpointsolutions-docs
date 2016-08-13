@@ -14,7 +14,7 @@ The following checks should be met:
 
 ### Notes
 - Rule does not check fields in the List Schema
-- reSP validates #6 as [separate rule](http://docs.subpointsolutions.com/resp/inspections/resp515114)
+- reSP validates #6 as [separate rule](/resp/inspections/resp515114)
 
 ### Resolution
 Fix validation required conditions.

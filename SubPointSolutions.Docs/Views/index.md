@@ -1,13 +1,15 @@
-### SubPoint Solutions Technical Documentation
+### Build better SharePoint apps faster with M2 ecosystem, tools and products
 
-Thanks for dropping by choosing to learn more about SPMeta2, SPMeta2 Visual Studio extensions, reSP and other libraries and product made by SubPoint Solutions team.
+We offer a powerful set of APIs and products to build apps on top of SharePoint platform. Here is a quick guide on how to get started:
 
-The following documentation provides API reference, some guides and articles along with the code samples.
-It is constantly improved by both support, dev team and community along with new features, feedback and suggestions, so don't hesitate to put a few words together on what might be improved.
+* Read our docs - they are organized by the library or product
+* Create new app - guides and articles have samples
+* Share your ideas and suggestions at [Yammer Network](https://www.yammer.com/spmeta2feedback) or Twitter [@SubPointSocial](https://twitter.com/subpointsocial), [@SPMeta2](https://twitter.com/spmeta2)
 
 In case you have unexpected issues please contact support on Yammer network or GitHub:
 
 * [https://www.yammer.com/spmeta2feedback](https://www.yammer.com/spmeta2feedback)
-* [https://github.com/SubPointSolutions/spmeta2](https://github.com/SubPointSolutions/spmeta2)
+* [htps://github.com/SubPointSolutions/spmeta2](https://github.com/SubPointSolutions/spmeta2)
 
-Cheers, enjoy and don't forget to share your thoughts at out [Yammer Network](https://www.yammer.com/spmeta2feedback).
+netlify 1
+netlify github / CI test

@@ -5,8 +5,8 @@ SPMeta2 introduces a domain model providing set of definitions for most of the S
 
 Before you begin, make sure you are familiar with the following concepts:
 
-* [SPMeta2 basics](http://docs.subpointsolutions.com/spmeta2/basics/)
-* [SPMeta2 definitions](http://docs.subpointsolutions.com/spmeta2/definitions/)
+* [SPMeta2 basics](/spmeta2/basics/)
+* [SPMeta2 definitions](/spmeta2/definitions/)
 
 ### Content type definitions
 Here is a list of "typed" web part related definition by SPMeta2. 

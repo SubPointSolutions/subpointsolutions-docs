@@ -14,6 +14,29 @@
     //{
     //    navFolder = navSplit[0] + @"\" + navSplit[1];
     //}
+
+    var allTopnavDocuments = Documents
+                .Where(x => x.ContainsKey("RelativeFilePath")
+                            //&& x.String("RelativeFilePath").StartsWith(navFolder + @"\")
+                            && !x.String("SourceFileBase").StartsWith("_")
+                            && !x.Get<bool>("Hidden", false)
+                            //&& x.String("RelativeFilePath").StartsWith(navFolder)
+                            && x.String("RelativeFilePath").EndsWith("ndex.md")
+                            && x.String("RelativeFilePath", string.Empty)
+                                        .Split(new[] { '\\' })
+                                        .Count() == 2)
+                 .OrderBy(x => x.String("Order", "0"))
+                 .OrderBy(x => x.String("TileOrder", "0"))
+                 .ToList();
+
+    var currentNavDocument = allTopnavDocuments.FirstOrDefault(x => x.String("RelativeFilePath").StartsWith(navFolder + @"\"));
+    var currentNavDocumentName = navFolder;
+
+    if (currentNavDocument != null)
+    {
+        currentNavDocumentName = currentNavDocument.String("Title", currentNavDocument.String("SourceFileBase"))
+            .Replace(" Home", String.Empty);
+    }
 }
 
 <div class="navbar navbar-inverse navbar-fixed-top">
@@ -35,19 +58,6 @@
 
         @if (shouldRenderSunNav)
         {
-            var allTopnavDocuments = Documents
-                .Where(x => x.ContainsKey("RelativeFilePath")
-                            //&& x.String("RelativeFilePath").StartsWith(navFolder + @"\")
-                            && !x.String("SourceFileBase").StartsWith("_")
-                            && !x.Get<bool>("Hidden", false)
-                            //&& x.String("RelativeFilePath").StartsWith(navFolder)
-                            && x.String("RelativeFilePath").EndsWith("ndex.md")
-                            && x.String("RelativeFilePath", string.Empty)
-                                        .Split(new[] { '\\' })
-                                        .Count() == 2)
-                 .OrderBy(x => x.String("Order", "0"))
-                 .OrderBy(x => x.String("TileOrder", "0"))
-                 .ToList();
             
             <ul class="nav navbar-nav">
                 <li class="dropdown">
@@ -56,7 +66,7 @@
                        role="button"
                        aria-haspopup="true"
                        aria-expanded="false">
-                        @navFolder<span class="caret"></span>
+                        @currentNavDocumentName<span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
 
