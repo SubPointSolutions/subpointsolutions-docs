@@ -58,7 +58,7 @@ namespace SubPointSolutions.Docs.Code.Tests
             }
 
             Console.WriteLine("Building from branch:" + branch);
-            Trace.WriteLine("Building from branch:" + branch);
+            Trace.WriteLine("Building from branch:" + branch); 
 
             RunWyam();
 
