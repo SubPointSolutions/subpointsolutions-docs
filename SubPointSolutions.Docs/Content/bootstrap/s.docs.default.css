@@ -237,3 +237,12 @@ pre {
         border-bottom: 1px solid #e7e7e7;
         padding-left: 3px;
     }
+
+
+.navbar-inverse {
+    background-color: rgba(50,58,69,0.95);
+}
+
+.navbar-inverse .navbar-brand {
+    color: #ffffff;
+}
