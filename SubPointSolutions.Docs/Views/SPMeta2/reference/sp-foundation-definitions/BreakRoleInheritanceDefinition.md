@@ -1,13 +1,23 @@
-Break role inheritance operations over securable SharePoint objects are implemented with BreakRoleInheritanceDefinition. 
+----
+Hidden: true
+----
 
-BreakRoleInheritanceDefinition maps out SPSecurableObject.BreakRoleInheritance() method call. 
-Properties CopyRoleAssignments and ClearSubscopes get passed to CSOM/SSOM .BreakRoleInheritance() method.
+### Provision scenario
+SCENARIO
 
-Additional property ForceClearSubscopes is introduced by SPMeta2. The property forces SPMeta2 to clear .RoleAssignments collection every provision.
+### Scope
+SCOPE
 
-Note that .AddBreakRoleInheritance() syntax passes the object on which the method was called.
-For instance, for list, you would get the list wihtin AddBreakRoleInheritance() as following:
-list.AddBreakRoleInheritance(list => {} )
+### Implementation
+IMPLEMENTATION
 
-For web, you would get the web wihtin AddResetRoleInheritance() as following:
-web.AddBreakRoleInheritance(web => {} )
+###Samples
+A SAMPLE 1
+[TEST.TestFunctionName1]
+
+A SAMPLE 2
+[TEST.TestFunctionName2]
+
+### Links
+- [link 1](http://example.com)
+- [link 2](http://example.com)
