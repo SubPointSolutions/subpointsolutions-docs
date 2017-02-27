@@ -1,0 +1,89 @@
+﻿@using SubPointSolutions.Docs.Code.API
+@using SubPointSolutions.Docs.Code.Samples
+@using SubPointSolutions.Docs.Code.Enumerations
+
+@{
+
+    var navFolder = "posts";
+
+    var activeDocument = Documents.FirstOrDefault(d => d.String("RelativeFilePath") == Model.String("RelativeFilePath"));
+
+    var documents = Documents
+            .Where(x => x.ContainsKey("RelativeFilePath")
+                //&& !x.String("RelativeFilePath").EndsWith("index.md")
+                && !x.String("RelativeFilePath").EndsWith("index.cshtml")
+                && x.String("RelativeFilePath").StartsWith(navFolder + @"\")
+                && !x.String("SourceFileBase").StartsWith("_")
+                && x.String("RelativeFilePath").StartsWith(navFolder))
+
+            .GroupBy(x => !string.IsNullOrEmpty(x.String("Category"))
+                              ? x.String("Category")
+                              : x.String("RelativeFileDir").Replace(navFolder, string.Empty))
+            .OrderBy(x => x.Key)
+            // for blog categories
+            .OrderByDescending(y => DateTime.Parse(y.Key))
+            .ToList();
+}
+
+<style>
+    .blog-header{
+            border-bottom: 1px solid #d8d8d8;
+                margin: 15px 0 15px;
+    }
+    
+
+</style>
+
+<div class="m-blog-list-cnt">
+    @{
+
+        IList<IGrouping<string, IDocument>> categoryGroups = string.IsNullOrWhiteSpace(navFolder)
+               ? new List<IGrouping<string, IDocument>>() : documents;
+
+        foreach (IGrouping<string, IDocument> categoryGroup in categoryGroups)
+        {
+            foreach (IDocument childDoc in categoryGroup
+                                .OrderBy(x => x.Get<int>("Order", 1000))
+                                .ThenBy(x => x.String("Title"))
+                                .ThenBy(x => x.String("SourceFileBase")))
+            {
+                //string subActive = Model.String("RelativeFilePath") == childDoc.String("RelativeFilePath") ? "active" : null;
+
+
+                string subActive = String.Empty;
+
+                var fileName = childDoc.String("RelativeFilePath");
+
+                if (!string.IsNullOrEmpty(childDoc.String("WritePath")))
+                {
+                    fileName = childDoc.String("WritePath");
+                }
+
+                <div class="blog-header">
+                    <h2>
+                        <a href="@(PathHelper.ToRootLink(PathHelper.RemoveExtension(fileName)) + ".html")">
+                            @(childDoc.String("Title", childDoc.String("SourceFileBase")).Replace("Tests", String.Empty))
+                        </a>
+
+                    </h2>
+                </div>
+                <div class="blog-meta">
+
+                    <span class="">
+                        <span class="published" title="2015-11-17T20:38:01+0000">November 17, 2015</span>
+                    </span>
+                </div>
+                <div class="blog-content">
+
+                    @Html.Raw(childDoc.Content)
+                </div>
+
+                <div class="entry-utility">
+
+
+                </div>
+            }
+        }
+    }
+
+</div>

@@ -1,7 +1,11 @@
 ﻿@using System
 
 
+
 <div class="sd-sidebar panel panel-default hidden-print hidden-xs hidden-sm affix1">
+
+    
+
     <ul class="nav ">
         @{
             var navSplit = Model.String("RelativeFilePath", string.Empty).Split(new[] { '\\' });
@@ -11,6 +15,10 @@
             if (navSplit.Count() > 1)
             {
                 navFolder = navSplit[0] + @"\" + navSplit[1];
+            }
+            else
+            {
+                navFolder = "posts";
             }
 
             var activeDocument = Documents.FirstOrDefault(d => d.String("RelativeFilePath") == Model.String("RelativeFilePath"));
@@ -27,8 +35,10 @@
                                       ? x.String("Category")
                                       : x.String("RelativeFileDir").Replace(navFolder, string.Empty))
                     .OrderBy(x => x.Key)
+                    // for blog categories
+                    .OrderByDescending(y => DateTime.Parse(y.Key))
                     .ToList();
-
+                    
             if (!documents.Any())
             {
                 <style>
@@ -54,11 +64,12 @@
 
                         @{
                     var categoryItemsCount = categoryGroup.Count();
-                    var isCollapsed = categoryItemsCount > 100;
+                            // never sollapse
+                    var isCollapsed = categoryItemsCount > 1000;
 
                     var hasSelectedDoc = categoryGroup.Any(d => d == activeDocument);
 
-                    if (hasSelectedDoc && categoryItemsCount > 100)
+                    if (hasSelectedDoc && categoryItemsCount > 8)
                     {
                         isCollapsed = false;
                     }

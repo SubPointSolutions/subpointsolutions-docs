@@ -54,11 +54,11 @@
 
                         @{
                     var categoryItemsCount = categoryGroup.Count();
-                    var isCollapsed = categoryItemsCount > 100;
+                    var isCollapsed = categoryItemsCount > 8;
 
                     var hasSelectedDoc = categoryGroup.Any(d => d == activeDocument);
 
-                    if (hasSelectedDoc && categoryItemsCount > 100)
+                    if (hasSelectedDoc && categoryItemsCount > 8)
                     {
                         isCollapsed = false;
                     }
