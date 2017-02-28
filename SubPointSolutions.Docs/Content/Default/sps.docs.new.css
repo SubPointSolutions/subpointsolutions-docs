@@ -14,7 +14,7 @@
     padding-top: 10px;
 }
 
-.sps-document h1 {
+    .sps-document h1 {
         text-align: left;
         font-size: 36px;
         font-weight: 600;
@@ -26,21 +26,21 @@
         padding-bottom: 3px;
         border-bottom: 1px solid #e0e0e0;
         font-weight: 600;
-        padding-top:10px;
+        padding-top: 10px;
     }
 
     .sps-document h3 {
         text-align: left;
         font-size: 24px;
         font-weight: 600;
-        margin-top:20px !important;
+        margin-top: 20px !important;
     }
 
     .sps-document h4 {
         text-align: left;
         font-size: 22px;
         font-weight: 600;
-        margin-top:10px !important;
+        margin-top: 10px !important;
     }
 
     .sps-document ul {
@@ -48,3 +48,8 @@
         list-style: circle;
     }
 
+.m-landing-project-cnt .panel-body {
+    padding: 15px;
+    background-color: #fcfcfc;
+    min-height: 280px;
+}

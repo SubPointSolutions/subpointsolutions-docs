@@ -562,7 +562,9 @@
     <Content Include="content\Default\img\products\resp\resp.xml-api.png" />
     <Content Include="content\Default\img\subpoint-logo-25.png" />
     <Content Include="content\Default\responsive.css" />
-    <Content Include="content\Default\s.docs.default.css" />
+    <Content Include="content\Default\sps.blog.css" />
+    <Content Include="content\Default\sps.docs.css" />
+    <Content Include="content\Default\sps.docs.new.css" />
     <Content Include="content\Default\sps.web.css" />
     <Content Include="content\Default\style.css" />
     <Content Include="content\Default\SyntaxHighlighter\shCore.css" />
@@ -582,6 +584,8 @@
     <Content Include="content\Default\SyntaxHighlighter\shThemeMDUltra.css" />
     <Content Include="content\Default\SyntaxHighlighter\shThemeMidnight.css" />
     <Content Include="content\Default\SyntaxHighlighter\shThemeRDark.css" />
+    <Content Include="fonts\Default\fontawesome-webfont.svg" />
+    <Content Include="fonts\Default\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\bootstrap\fontawesome-webfont.svg" />
     <Content Include="fonts\bootstrap\glyphicons-halflings-regular.svg" />
     <Content Include="Scripts\Default\bootstrap.js" />
@@ -1261,6 +1265,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="fonts\Default\fontawesome-webfont.eot" />
+    <None Include="fonts\Default\fontawesome-webfont.ttf" />
+    <None Include="fonts\Default\fontawesome-webfont.woff" />
+    <None Include="fonts\Default\fontawesome-webfont.woff2" />
+    <None Include="fonts\Default\FontAwesome.otf" />
+    <None Include="fonts\Default\glyphicons-halflings-regular.eot" />
+    <None Include="fonts\Default\glyphicons-halflings-regular.ttf" />
+    <None Include="fonts\Default\glyphicons-halflings-regular.woff" />
+    <None Include="fonts\Default\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\Default\jquery-1.9.1.min.map" />
     <None Include="Views\metapack\Index.md" />
     <None Include="Views\metapack\_ViewStart.cshtml" />
