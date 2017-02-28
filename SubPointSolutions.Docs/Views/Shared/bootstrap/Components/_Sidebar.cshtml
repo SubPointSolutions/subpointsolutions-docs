@@ -33,7 +33,7 @@
             {
                 <style>
                     .sd-sidebar {
-                        display: none;
+                        display: none !important;
                     }
                 </style>
             }
@@ -54,14 +54,16 @@
 
                         @{
                     var categoryItemsCount = categoryGroup.Count();
-                    var isCollapsed = categoryItemsCount > 8;
+                    var isCollapsed = categoryItemsCount > 100;
 
                     var hasSelectedDoc = categoryGroup.Any(d => d == activeDocument);
 
-                    if (hasSelectedDoc && categoryItemsCount > 8)
+                    if (hasSelectedDoc && categoryItemsCount > 100)
                     {
                         isCollapsed = false;
                     }
+
+                    isCollapsed = false;
 
                     var collapsedClass = isCollapsed ? "collapse" : "collapse in";
                     var linkGroupClass = categoryItemsCount > 0 ? "group-link" : String.Empty;
