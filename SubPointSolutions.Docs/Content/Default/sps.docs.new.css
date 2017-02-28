@@ -1,0 +1,43 @@
+﻿/* correct logo */
+.navbar-header img, .footer img {
+    background: none !important;
+    background-color: none !important;
+    border: none !important;
+}
+
+/* content area fixes 
+- headers
+- lists
+*/
+
+.sps-document {
+    padding-top: 10px;
+}
+
+.sps-document h1 {
+        text-align: left;
+        font-size: 36px;
+        font-weight: 600;
+    }
+
+    .sps-document h2 {
+        text-align: left;
+        font-size: 30px;
+        padding-bottom: 3px;
+        border-bottom: 1px solid #e0e0e0;
+        font-weight: 600;
+        padding-top:10px;
+    }
+
+    .sps-document h3 {
+        text-align: left;
+        font-size: 24px;
+        font-weight: 600;
+        margin-top:20px;
+    }
+
+    .sps-document ul {
+        padding-left: 30px;
+        list-style: circle;
+    }
+

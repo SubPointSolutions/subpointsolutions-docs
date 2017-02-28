@@ -5,8 +5,8 @@
 
 public static class SConfig
 {
-    public static string Theme = "Bootstrap";
-	//public static string Theme = "Default";
+    //public static string Theme = "Bootstrap";
+	public static string Theme = "Default";
 
 	public static string GetThemedTemplate(string templateFileName) {
 		return string.Format("~/Shared/{0}/{1}", Theme, templateFileName);

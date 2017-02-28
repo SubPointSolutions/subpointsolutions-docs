@@ -4,7 +4,7 @@ Order: 100
 TileLink: true
 TileLinkOrder: 10
 ----
-### SPMeta2 essentials
+# Getting started
 
 SPMeta2 is a hassle-free fluent API for code-based SharePoint artefact provisioning.
 It offers a consistent provisioning API via SSOM/CSOM for SharePoin 2010, 2013 and O365.
