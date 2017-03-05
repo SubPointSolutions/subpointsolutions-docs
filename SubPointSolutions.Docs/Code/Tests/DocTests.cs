@@ -39,7 +39,7 @@ namespace SubPointSolutions.Docs.Code.Tests
         #region tests
 
         [TestMethod]
-        [TestCategory("CI")]
+        [TestCategory("CI.Core")]
         public void Publish_Docs()
         {
             var netlifyContentFolder = ContentDirectory;
