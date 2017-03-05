@@ -1,4 +1,9 @@
-﻿/* correct logo */
+﻿
+body {
+    color: #333;
+}
+
+/* correct logo */
 .navbar-header img, .footer img {
     background: none !important;
     background-color: none !important;
