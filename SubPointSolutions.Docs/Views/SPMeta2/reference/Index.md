@@ -4,7 +4,7 @@ Order: 200
 TileLink: true
 TileLinkOrder: 20
 ----
-# SPMeta2 API reference
+### SPMeta2 API reference
 
 SPMeta2 introduces a domain of c# POCO objects, then it maps every single POCO object on SharePoint artifacts. 
 There are a few important concepts in SPMeta2:
