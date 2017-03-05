@@ -4,7 +4,7 @@ Order: 300
 TileLink: true
 TileLinkOrder: 30
 ----
-### Overview
+# Extensibility
 
 SPMeta2 was designed as highly extensible library to a wide range of SharePoint artifacts, SharePoint editions, versinos and APIs. 
 We support provisioning of more than hundred artifacts, support SharePoint 2010, 2013 and SharePoint Online along with CSOM/SSOM object models.

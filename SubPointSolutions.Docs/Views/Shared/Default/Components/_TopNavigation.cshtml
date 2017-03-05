@@ -1,0 +1,59 @@
+﻿@{
+    var isLandingPage = Model.String("RelativeFilePath").ToLower() == "index.cshtml";
+}
+
+<nav class="navbar navbar-fixed-top is-scrolling" role="navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="navbar-header">
+                    <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                        <i class="icon icon_menu"></i>
+                    </button>
+
+                    @{
+                        if (isLandingPage)
+                        {
+                            <a href="/#top" class="navbar-brand scrollto" title="SmartMvp">
+                                <img src="/Content/img/subpoint-logo-25.png" alt="Logo">
+                                <span class="text-logo">SubPoint Solutions - Docs</span>
+                            </a>
+                        }
+                        else
+                        {
+                            <a href="/" class="navbar-brand " title="SmartMvp">
+                                <img src="/Content/img/subpoint-logo-25.png" alt="Logo">
+                                <span class="text-logo">SubPoint Solutions - Docs</span>
+                            </a>
+                        }
+                    }
+                </div>
+
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        @{
+                            if (isLandingPage)
+                            {
+                                @*<li><a href="/#apis" title="" class="scrollto">APIs</a></li>
+                                <li><a href="/#products" title="" class="scrollto">Products</a></li>*@
+                            }
+                            else
+                            {
+                                @*<li><a href="/" title="" class="">APIs</a></li>
+                                <li><a href="/" title="" class="">Products</a></li>*@
+                            }
+                        }
+                        <li><a href="http://subpointsolutions.com" title="">Home</a></li>
+
+                        @*<li><a href="/services" title="">Services</a></li>*@
+                        <li><a href="http://docs.subpointsolutions.com" title="">Docs</a></li>
+                        @*<li><a href="http://blog.subpointsolutions.com" title="" >Blog</a></li>*@
+                        @*<li><a href="/partners" title="">Partners</a></li>*@
+                        <li><a href="https://www.yammer.com/spmeta2feedback/" title="">Community</a></li>
+                        <li><a href="http://subpointsolutions.com/company" title="">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
