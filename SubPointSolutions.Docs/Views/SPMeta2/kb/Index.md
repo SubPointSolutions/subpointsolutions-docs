@@ -6,7 +6,7 @@ TileLink: false
 TileLinkOrder: 50
 ----
 
-# Knowledge Base
+### SPMeta2 Knowledge Base
 
 Current list of articles hold the common knowledge, typical questions and frequently used provision scenarious which were raised on multiple occasions by the community and customers at the [M2 Yammer Network](https://www.yammer.com/spmeta2feedback) and support channels.
 
