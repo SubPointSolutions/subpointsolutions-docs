@@ -3,6 +3,10 @@ body {
     color: #333;
 }
 
+b, strong {
+    font-weight: bold;
+}
+
 /* correct logo */
 .navbar-header img, .footer img {
     background: none !important;
