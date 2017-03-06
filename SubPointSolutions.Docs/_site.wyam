@@ -23,13 +23,17 @@ allSamples.AddRange(SubPointSolutions.Docs.Code.Samples.reSPSamples.SysAllSample
 
 // also load up serialized things from \SampleFiles folder
 var samplesFolder = "SampleFiles";
-var allSampleFilePaths = System.IO.Directory.GetFiles(samplesFolder, "*.xml", System.IO.SearchOption.AllDirectories);
 
-foreach(var allSampleFilePath in allSampleFilePaths) {
-	var sampleXmlContent = System.IO.File.ReadAllText(allSampleFilePath);
-	var sampleInstance = SubPointSolutions.Docs.Code.Data.DocSample.FromXml(sampleXmlContent);
+if(System.IO.Directory.Exists(samplesFolder)) {
 
-	allSamples.Add(sampleInstance);
+	var allSampleFilePaths = System.IO.Directory.GetFiles(samplesFolder, "*.xml", System.IO.SearchOption.AllDirectories);
+
+	foreach(var allSampleFilePath in allSampleFilePaths) {
+		var sampleXmlContent = System.IO.File.ReadAllText(allSampleFilePath);
+		var sampleInstance = SubPointSolutions.Docs.Code.Data.DocSample.FromXml(sampleXmlContent);
+
+		allSamples.Add(sampleInstance);
+	}
 }
 
 Pipelines.Add("site-md-content",
