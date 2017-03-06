@@ -53,6 +53,10 @@ body {
         list-style: circle;
     }
 
+.m-landing-project-cnt .panel {
+    
+}
+
 .m-landing-project-cnt .panel-body {
     padding: 15px;
     background-color: #fcfcfc;
