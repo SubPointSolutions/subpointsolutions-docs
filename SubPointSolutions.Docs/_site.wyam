@@ -16,6 +16,22 @@ public static class SConfig
 ---
 
 
+var allSamples = new List<SubPointSolutions.Docs.Code.Data.DocSample>();
+
+allSamples.AddRange(SubPointSolutions.Docs.Code.Samples.m2Samples.SysAllSamples);
+allSamples.AddRange(SubPointSolutions.Docs.Code.Samples.reSPSamples.SysAllSamples);
+
+// also load up serialized things from \SampleFiles folder
+var samplesFolder = "SampleFiles";
+var allSampleFilePaths = System.IO.Directory.GetFiles(samplesFolder, "*.xml", System.IO.SearchOption.AllDirectories);
+
+foreach(var allSampleFilePath in allSampleFilePaths) {
+	var sampleXmlContent = System.IO.File.ReadAllText(allSampleFilePath);
+	var sampleInstance = SubPointSolutions.Docs.Code.Data.DocSample.FromXml(sampleXmlContent);
+
+	allSamples.Add(sampleInstance);
+}
+
 Pipelines.Add("site-md-content",
 
 	ReadFiles("*.md"),
@@ -58,12 +74,6 @@ Pipelines.Add("site-md-content",
 				
 				var sampleMethodName = refFileName.Split('-').Last();
 				//codeRef.SetAttribute("sample-method", sampleMethodName);
-
-				// searching for the sample
-				var allSamples = new List<SubPointSolutions.Docs.Code.Data.DocSample>();
-
-				allSamples.AddRange(SubPointSolutions.Docs.Code.Samples.m2Samples.SysAllSamples);
-				allSamples.AddRange(SubPointSolutions.Docs.Code.Samples.reSPSamples.SysAllSamples);
 
 				var sample = allSamples.FirstOrDefault(s => s.MethodName == sampleMethodName);
 
