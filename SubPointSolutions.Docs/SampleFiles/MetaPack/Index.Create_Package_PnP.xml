@@ -9,9 +9,9 @@
         
         public void Create_Package_PnP()
         {
-            Console.WriteLine("PnP");
+            Console.WriteLine("PnP 2");
         }</MethodBodyWithFunction>
-  <MethodBody>Console.WriteLine("PnP");
+  <MethodBody>Console.WriteLine("PnP 2");
 
 </MethodBody>
   <Language>cs</Language>
@@ -22,8 +22,8 @@
   <MethodFullName>SubPointSolutions.Docs.Views.MetaPack.getting_started.Index.Create_Package_PnP</MethodFullName>
   <ClassFullName>SubPointSolutions.Docs.Views.MetaPack.getting_started.Index</ClassFullName>
   <MethodParametersCount>0</MethodParametersCount>
-  <SourceFileName>index.cs</SourceFileName>
-  <SourceFileNameWithoutExtension>index</SourceFileNameWithoutExtension>
-  <SourceFileFolder>..\..\Views\MetaPack\getting-started</SourceFileFolder>
-  <SourceFilePath>..\..\Views\MetaPack\getting-started\index.cs</SourceFilePath>
+  <SourceFileName>Index.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>Index</SourceFileNameWithoutExtension>
+  <SourceFileFolder>C:\prj\SubPointSolutions.Docs\bin\Debug\..\..\Views\MetaPack\getting-started</SourceFileFolder>
+  <SourceFilePath>C:\prj\SubPointSolutions.Docs\bin\Debug\..\..\Views\MetaPack\getting-started\Index.cs</SourceFilePath>
 </DocSample>

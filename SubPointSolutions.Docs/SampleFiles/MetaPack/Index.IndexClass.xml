@@ -12,14 +12,14 @@
         [TestCategory("Docs.Basics")]
         public void Create_Package_SPMeta2()
         {
-            Console.WriteLine("SPMeta2");
+            Console.WriteLine("SPMeta2 1");
         }
 
         [TestMethod]
         [TestCategory("Docs.Basics")]
         public void Create_Package_PnP()
         {
-            Console.WriteLine("PnP");
+            Console.WriteLine("PnP 2");
         }
     }</MethodBodyWithFunction>
   <MethodBody>public class Index
@@ -28,14 +28,14 @@
     [TestCategory("Docs.Basics")]
     public void Create_Package_SPMeta2()
     {
-        Console.WriteLine("SPMeta2");
+        Console.WriteLine("SPMeta2 1");
     }
 
     [TestMethod]
     [TestCategory("Docs.Basics")]
     public void Create_Package_PnP()
     {
-        Console.WriteLine("PnP");
+        Console.WriteLine("PnP 2");
     }
 }
 </MethodBody>
@@ -47,8 +47,8 @@
   <MethodFullName>ClassIndexClass</MethodFullName>
   <ClassFullName>SubPointSolutions.Docs.Views.MetaPack.getting_started.Index</ClassFullName>
   <MethodParametersCount>0</MethodParametersCount>
-  <SourceFileName>index.cs</SourceFileName>
-  <SourceFileNameWithoutExtension>index</SourceFileNameWithoutExtension>
-  <SourceFileFolder>..\..\Views\MetaPack\getting-started</SourceFileFolder>
-  <SourceFilePath>..\..\Views\MetaPack\getting-started\index.cs</SourceFilePath>
+  <SourceFileName>Index.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>Index</SourceFileNameWithoutExtension>
+  <SourceFileFolder>C:\prj\SubPointSolutions.Docs\bin\Debug\..\..\Views\MetaPack\getting-started</SourceFileFolder>
+  <SourceFilePath>C:\prj\SubPointSolutions.Docs\bin\Debug\..\..\Views\MetaPack\getting-started\Index.cs</SourceFilePath>
 </DocSample>

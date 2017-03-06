@@ -10,14 +10,14 @@ namespace SubPointSolutions.Docs.Views.MetaPack.getting_started
         [TestCategory("Docs.Basics")]
         public void Create_Package_SPMeta2()
         {
-            Console.WriteLine("SPMeta2");
+            Console.WriteLine("SPMeta2 1");
         }
 
         [TestMethod]
         [TestCategory("Docs.Basics")]
         public void Create_Package_PnP()
         {
-            Console.WriteLine("PnP");
+            Console.WriteLine("PnP 2");
         }
     }
 }
