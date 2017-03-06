@@ -16,6 +16,7 @@ namespace SubPointSolutions.Docs.Code.Tests
             WyamRelativeFolder = "Wyam 0.11.1-beta";
             WorkingDirectory = Path.GetFullPath("../../").TrimEnd('\\');
 
+            WyamFolderFullPath = Path.Combine(WorkingDirectory, WyamRelativeFolder);
             WyamExeFullPath = Path.Combine(WorkingDirectory, WyamRelativeFolder + "/wyam.exe");
             WyamExeArgs = string.Format("--input \"{0}\\Views\" --output \"{0}\\Views-Output\" --config  \"{0}\\_site.wyam\" --verbose \"{0}\"", WorkingDirectory);
 
@@ -61,8 +62,8 @@ namespace SubPointSolutions.Docs.Code.Tests
 
             RunWyam();
 
-            RunCmd("npm", "install netlify-cli -g");
-            RunCmd("netlify", string.Format("deploy -s {0} -t {1} -p {2}", netlifySiteId, netlifyApiKey, netlifyContentFolder));
+            //RunCmd("npm", "install netlify-cli -g");
+            //RunCmd("netlify", string.Format("deploy -s {0} -t {1} -p {2}", netlifySiteId, netlifyApiKey, netlifyContentFolder));
         }
 
         private void RunS3(string bucketName)
@@ -96,6 +97,7 @@ namespace SubPointSolutions.Docs.Code.Tests
         {
             var process = new Process();
 
+            process.StartInfo.WorkingDirectory = WyamFolderFullPath;
             process.StartInfo.FileName = WyamExeFullPath;
             process.StartInfo.Arguments = WyamExeArgs;
 
@@ -116,5 +118,7 @@ namespace SubPointSolutions.Docs.Code.Tests
         }
 
         #endregion
+
+        public string WyamFolderFullPath { get; set; }
     }
 }

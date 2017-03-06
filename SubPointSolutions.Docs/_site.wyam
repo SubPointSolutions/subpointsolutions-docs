@@ -15,14 +15,13 @@ public static class SConfig
 
 ---
 
-
 var allSamples = new List<SubPointSolutions.Docs.Code.Data.DocSample>();
 
 allSamples.AddRange(SubPointSolutions.Docs.Code.Samples.m2Samples.SysAllSamples);
 allSamples.AddRange(SubPointSolutions.Docs.Code.Samples.reSPSamples.SysAllSamples);
 
 // also load up serialized things from \SampleFiles folder
-var samplesFolder = "SampleFiles";
+var samplesFolder = @"..\SampleFiles";
 
 if(System.IO.Directory.Exists(samplesFolder)) {
 
@@ -95,7 +94,9 @@ Pipelines.Add("site-md-content",
 					x = doc.Clone(x.Content.Replace(codeRef.OuterHtml, Environment.NewLine + innerHtml));
 				}
 				else{
-					throw new System.Exception(string.Format("cannot find sample with name:[{0}]", sampleMethodName));
+					var errorMessage = string.Format("cannot find sample with name:[{0}]", sampleMethodName);
+					System.Environment.Exit(-42);
+					throw new System.Exception(errorMessage);
 				}
 
 			} else {
