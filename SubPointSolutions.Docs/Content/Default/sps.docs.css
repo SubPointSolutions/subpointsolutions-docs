@@ -288,7 +288,7 @@ pre {
 }
 
 .m-landing-project-cnt .panel {
-    border: none;
+    /*border: none;*/
     min-height: 240px;
 }
 

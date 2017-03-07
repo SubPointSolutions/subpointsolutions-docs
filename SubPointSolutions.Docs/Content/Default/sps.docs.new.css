@@ -1,4 +1,13 @@
-﻿/* correct logo */
+﻿
+body {
+    color: #333;
+}
+
+b, strong {
+    font-weight: bold;
+}
+
+/* correct logo */
 .navbar-header img, .footer img {
     background: none !important;
     background-color: none !important;
@@ -47,6 +56,10 @@
         padding-left: 30px;
         list-style: circle;
     }
+
+.m-landing-project-cnt .panel {
+    
+}
 
 .m-landing-project-cnt .panel-body {
     padding: 15px;
