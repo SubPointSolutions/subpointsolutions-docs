@@ -2,7 +2,14 @@
 <DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <IsMethod>true</IsMethod>
   <IsClass>false</IsClass>
-  <Tags />
+  <Tags>
+    <DocSampleTag>
+      <Name>UseFullMethodBody</Name>
+      <Values>
+        <string>true</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
   <MethodBodyWithFunction>
         public static ModelNode SyntaxExtensionPrototype(this ModelNode modelNode)
         {
@@ -12,12 +19,14 @@
             // !!! always retun the same model which was passed as 'this' object !!!
             return modelNode;
         }</MethodBodyWithFunction>
-  <MethodBody>// do stuff
+  <MethodBody>public static ModelNode SyntaxExtensionPrototype(this ModelNode modelNode)
+{
+    // do stuff
 
 
-// !!! always retun the same model which was passed as 'this' object !!!
-return modelNode;
-
+    // !!! always retun the same model which was passed as 'this' object !!!
+    return modelNode;
+}
 </MethodBody>
   <Language>cs</Language>
   <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>

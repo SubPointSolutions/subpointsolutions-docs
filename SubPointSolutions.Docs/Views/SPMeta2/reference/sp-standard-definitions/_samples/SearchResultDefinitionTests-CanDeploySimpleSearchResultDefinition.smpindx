@@ -6,11 +6,16 @@
     <DocSampleTag>
       <Name>Category</Name>
       <Values>
-        <string>Site Collection Model/Site collection</string>
+        <string>Site Collection Model</string>
+        <string>Site collection</string>
       </Values>
     </DocSampleTag>
+    <DocSampleTag>
+      <Name>Hidden</Name>
+      <Values />
+    </DocSampleTag>
   </Tags>
-  <Title>"Add search result"</Title>
+  <Title>Add search result</Title>
   <MethodBodyWithFunction>
         
 

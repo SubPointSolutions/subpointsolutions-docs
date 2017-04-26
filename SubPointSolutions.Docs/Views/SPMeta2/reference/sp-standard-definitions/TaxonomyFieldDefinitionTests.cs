@@ -8,8 +8,8 @@ using SPMeta2.Standard.Definitions.Fields;
 using SPMeta2.Standard.Definitions.Taxonomy;
 using SPMeta2.Standard.Syntax;
 using SPMeta2.Syntax.Default;
-using SubPointSolutions.Docs.Code.Enumerations;
-using SubPointSolutions.Docs.Code.Metadata;
+
+
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {

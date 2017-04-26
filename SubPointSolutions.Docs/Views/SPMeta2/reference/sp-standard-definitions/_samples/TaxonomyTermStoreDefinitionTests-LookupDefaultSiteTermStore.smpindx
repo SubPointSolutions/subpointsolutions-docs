@@ -6,11 +6,12 @@
     <DocSampleTag>
       <Name>Category</Name>
       <Values>
-        <string>Site Collection Model/Taxonomy</string>
+        <string>Site Collection Model</string>
+        <string>Taxonomy</string>
       </Values>
     </DocSampleTag>
   </Tags>
-  <Title>"Add default taxonomy term store"</Title>
+  <Title>Add default taxonomy term store</Title>
   <MethodBodyWithFunction>
         
         

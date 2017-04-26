@@ -6,11 +6,12 @@
     <DocSampleTag>
       <Name>Category</Name>
       <Values>
-        <string>Site Collection Model/Fields</string>
+        <string>Site Collection Model</string>
+        <string>Fields</string>
       </Values>
     </DocSampleTag>
   </Tags>
-  <Title>"Add choice field"</Title>
+  <Title>Add choice field</Title>
   <MethodBodyWithFunction>
         
 

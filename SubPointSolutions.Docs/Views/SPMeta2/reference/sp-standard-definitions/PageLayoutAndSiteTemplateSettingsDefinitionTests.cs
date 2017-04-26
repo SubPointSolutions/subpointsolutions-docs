@@ -6,8 +6,8 @@ using SPMeta2.Standard.Definitions;
 using SPMeta2.Standard.Enumerations;
 using SPMeta2.Syntax.Default;
 using SPMeta2.Standard.Syntax;
-using SubPointSolutions.Docs.Code.Enumerations;
-using SubPointSolutions.Docs.Code.Metadata;
+
+
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 

@@ -2,8 +2,20 @@
 <DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <IsMethod>true</IsMethod>
   <IsClass>false</IsClass>
-  <Tags />
-  <Title>"Add event receiver to site"</Title>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Site Collection Model</string>
+        <string>Event Receivers</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>Hidden</Name>
+      <Values />
+    </DocSampleTag>
+  </Tags>
+  <Title>Add event receiver to site</Title>
   <MethodBodyWithFunction>
         
 

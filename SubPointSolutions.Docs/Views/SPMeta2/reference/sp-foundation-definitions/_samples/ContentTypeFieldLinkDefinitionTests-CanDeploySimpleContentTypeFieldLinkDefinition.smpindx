@@ -6,11 +6,16 @@
     <DocSampleTag>
       <Name>Category</Name>
       <Values>
-        <string>Web Model/Content types</string>
+        <string>Web Model</string>
+        <string>Content types</string>
       </Values>
     </DocSampleTag>
+    <DocSampleTag>
+      <Name>Hidden</Name>
+      <Values />
+    </DocSampleTag>
   </Tags>
-  <Title>"Add field to content types"</Title>
+  <Title>Add field to content types</Title>
   <MethodBodyWithFunction>
         
 

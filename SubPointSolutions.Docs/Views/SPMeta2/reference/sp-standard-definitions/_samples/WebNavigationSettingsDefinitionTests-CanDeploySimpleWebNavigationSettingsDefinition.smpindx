@@ -6,11 +6,16 @@
     <DocSampleTag>
       <Name>Category</Name>
       <Values>
-        <string>Web Model/Web site</string>
+        <string>Web Model</string>
+        <string>Web site</string>
       </Values>
     </DocSampleTag>
+    <DocSampleTag>
+      <Name>Hidden</Name>
+      <Values />
+    </DocSampleTag>
   </Tags>
-  <Title>"Add web navigation settings"</Title>
+  <Title>Add web navigation settings</Title>
   <MethodBodyWithFunction>
         
 

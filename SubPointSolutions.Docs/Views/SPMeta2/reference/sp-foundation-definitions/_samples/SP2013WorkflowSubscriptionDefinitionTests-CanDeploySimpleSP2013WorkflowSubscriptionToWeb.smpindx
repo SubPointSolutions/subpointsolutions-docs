@@ -6,11 +6,12 @@
     <DocSampleTag>
       <Name>Category</Name>
       <Values>
-        <string>Web Model/SharePoint 2013 workflow</string>
+        <string>Web Model</string>
+        <string>SharePoint 2013 workflow</string>
       </Values>
     </DocSampleTag>
   </Tags>
-  <Title>"Add SP2013 workflow to web"</Title>
+  <Title>Add SP2013 workflow to web</Title>
   <MethodBodyWithFunction>
         //[Browsable(false)]
         public void CanDeploySimpleSP2013WorkflowSubscriptionToWeb()

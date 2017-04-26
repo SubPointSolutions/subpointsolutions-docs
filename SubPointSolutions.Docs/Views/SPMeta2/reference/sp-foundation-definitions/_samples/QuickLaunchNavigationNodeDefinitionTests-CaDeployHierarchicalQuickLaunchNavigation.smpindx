@@ -6,11 +6,12 @@
     <DocSampleTag>
       <Name>Category</Name>
       <Values>
-        <string>Web Model/Navigation</string>
+        <string>Web Model</string>
+        <string>Navigation</string>
       </Values>
     </DocSampleTag>
   </Tags>
-  <Title>"Add hierarchical quick nav items"</Title>
+  <Title>Add hierarchical quick nav items</Title>
   <MethodBodyWithFunction>
         
         

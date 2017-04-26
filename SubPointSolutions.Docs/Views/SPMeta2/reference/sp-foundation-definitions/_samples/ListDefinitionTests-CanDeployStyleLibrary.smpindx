@@ -6,11 +6,12 @@
     <DocSampleTag>
       <Name>Category</Name>
       <Values>
-        <string>Web Model/Lists and libraries</string>
+        <string>Web Model</string>
+        <string>Lists and libraries</string>
       </Values>
     </DocSampleTag>
   </Tags>
-  <Title>"Add host Style Library"</Title>
+  <Title>Add host Style Library</Title>
   <MethodBodyWithFunction>
         
 

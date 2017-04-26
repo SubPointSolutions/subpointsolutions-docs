@@ -6,11 +6,12 @@
     <DocSampleTag>
       <Name>Category</Name>
       <Values>
-        <string>Web Model/Publishing pages</string>
+        <string>Web Model</string>
+        <string>Publishing pages</string>
       </Values>
     </DocSampleTag>
   </Tags>
-  <Title>"Add publishing pages with custom layout"</Title>
+  <Title>Add publishing pages with custom layout</Title>
   <MethodBodyWithFunction>
         
         

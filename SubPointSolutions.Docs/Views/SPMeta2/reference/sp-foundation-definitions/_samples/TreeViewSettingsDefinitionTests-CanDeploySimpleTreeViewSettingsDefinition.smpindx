@@ -6,11 +6,12 @@
     <DocSampleTag>
       <Name>Category</Name>
       <Values>
-        <string>Web Model/Web site</string>
+        <string>Web Model</string>
+        <string>Web site</string>
       </Values>
     </DocSampleTag>
   </Tags>
-  <Title>"Add tree view settings to web"</Title>
+  <Title>Add tree view settings to web</Title>
   <MethodBodyWithFunction>
         
 

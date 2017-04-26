@@ -6,11 +6,12 @@
     <DocSampleTag>
       <Name>Category</Name>
       <Values>
-        <string>Web Model/Web site</string>
+        <string>Web Model</string>
+        <string>Web site</string>
       </Values>
     </DocSampleTag>
   </Tags>
-  <Title>"Add master page setting"</Title>
+  <Title>Add master page setting</Title>
   <MethodBodyWithFunction>
         
 

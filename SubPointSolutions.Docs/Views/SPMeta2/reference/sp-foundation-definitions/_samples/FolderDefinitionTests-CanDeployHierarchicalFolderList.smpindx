@@ -6,11 +6,12 @@
     <DocSampleTag>
       <Name>Category</Name>
       <Values>
-        <string>Web Model/Folders</string>
+        <string>Web Model</string>
+        <string>Folders</string>
       </Values>
     </DocSampleTag>
   </Tags>
-  <Title>"Add folder hierarchy to list"</Title>
+  <Title>Add folder hierarchy to list</Title>
   <MethodBodyWithFunction>
         
 

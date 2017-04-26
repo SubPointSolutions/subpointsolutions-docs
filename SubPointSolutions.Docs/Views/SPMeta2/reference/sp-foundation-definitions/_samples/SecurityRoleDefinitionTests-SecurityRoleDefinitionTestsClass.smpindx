@@ -6,7 +6,8 @@
     <DocSampleTag>
       <Name>Category</Name>
       <Values>
-        <string>Site Collection Model/Security</string>
+        <string>Site Collection Model</string>
+        <string>Security</string>
       </Values>
     </DocSampleTag>
   </Tags>

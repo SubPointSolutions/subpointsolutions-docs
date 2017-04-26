@@ -6,7 +6,8 @@
     <DocSampleTag>
       <Name>Category</Name>
       <Values>
-        <string>Web Model/SharePoint 2013 workflow</string>
+        <string>Web Model</string>
+        <string>SharePoint 2013 workflow</string>
       </Values>
     </DocSampleTag>
   </Tags>

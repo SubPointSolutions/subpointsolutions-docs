@@ -6,11 +6,16 @@
     <DocSampleTag>
       <Name>Category</Name>
       <Values>
-        <string>Web Application Model/Web application</string>
+        <string>Web Application Model</string>
+        <string>Web application</string>
       </Values>
     </DocSampleTag>
+    <DocSampleTag>
+      <Name>Hidden</Name>
+      <Values />
+    </DocSampleTag>
   </Tags>
-  <Title>"Add web.config modification"</Title>
+  <Title>Add web.config modification</Title>
   <MethodBodyWithFunction>
         
 

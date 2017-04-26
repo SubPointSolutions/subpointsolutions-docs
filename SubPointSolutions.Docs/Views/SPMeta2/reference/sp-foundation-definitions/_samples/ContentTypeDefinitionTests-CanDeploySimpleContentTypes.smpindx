@@ -6,11 +6,12 @@
     <DocSampleTag>
       <Name>Category</Name>
       <Values>
-        <string>Site Collection Model/Site collection</string>
+        <string>Site Collection Model</string>
+        <string>Site collection</string>
       </Values>
     </DocSampleTag>
   </Tags>
-  <Title>"Add several content types"</Title>
+  <Title>Add several content types</Title>
   <MethodBodyWithFunction>
         
 

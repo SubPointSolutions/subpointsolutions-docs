@@ -6,8 +6,8 @@ using SPMeta2.Definitions.Fields;
 using SPMeta2.Docs.ProvisionSamples.Base;
 using SPMeta2.Enumerations;
 using SPMeta2.Syntax.Default;
-using SubPointSolutions.Docs.Code.Enumerations;
-using SubPointSolutions.Docs.Code.Metadata;
+
+
 
 namespace SubPointSolutions.Docs.Views.Views.SPMeta2.reference
 {

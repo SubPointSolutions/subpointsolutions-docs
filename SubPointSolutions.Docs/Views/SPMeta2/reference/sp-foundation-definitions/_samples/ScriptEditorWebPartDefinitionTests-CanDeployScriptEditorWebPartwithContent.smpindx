@@ -6,11 +6,12 @@
     <DocSampleTag>
       <Name>Category</Name>
       <Values>
-        <string>Web Model/eb parts</string>
+        <string>Web Model</string>
+        <string>eb parts</string>
       </Values>
     </DocSampleTag>
   </Tags>
-  <Title>"Add Script Editor web part with content"</Title>
+  <Title>Add Script Editor web part with content</Title>
   <MethodBodyWithFunction>
         
 

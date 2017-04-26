@@ -6,11 +6,12 @@
     <DocSampleTag>
       <Name>Category</Name>
       <Values>
-        <string>Web Model/Security</string>
+        <string>Web Model</string>
+        <string>Security</string>
       </Values>
     </DocSampleTag>
   </Tags>
-  <Title>"Reset role inheritance on web"</Title>
+  <Title>Reset role inheritance on web</Title>
   <MethodBodyWithFunction>
         
 

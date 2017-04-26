@@ -2,8 +2,16 @@
 <DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <IsMethod>true</IsMethod>
   <IsClass>false</IsClass>
-  <Tags />
-  <Title>"Activate custom web features"</Title>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model</string>
+        <string> Features</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>Activate custom web features</Title>
   <MethodBodyWithFunction>
         
 

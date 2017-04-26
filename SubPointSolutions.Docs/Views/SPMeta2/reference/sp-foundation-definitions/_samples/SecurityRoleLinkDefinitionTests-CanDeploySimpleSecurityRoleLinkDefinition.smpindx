@@ -6,11 +6,16 @@
     <DocSampleTag>
       <Name>Category</Name>
       <Values>
-        <string>Site Collection Model/Security</string>
+        <string>Site Collection Model</string>
+        <string>Security</string>
       </Values>
     </DocSampleTag>
+    <DocSampleTag>
+      <Name>Hidden</Name>
+      <Values />
+    </DocSampleTag>
   </Tags>
-  <Title>"Add security role link"</Title>
+  <Title>Add security role link</Title>
   <MethodBodyWithFunction>
         
 

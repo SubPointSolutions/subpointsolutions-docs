@@ -6,11 +6,12 @@
     <DocSampleTag>
       <Name>Category</Name>
       <Values>
-        <string>Site Collection Model/Content types</string>
+        <string>Site Collection Model</string>
+        <string>Content types</string>
       </Values>
     </DocSampleTag>
   </Tags>
-  <Title>"Remove fields from content type"</Title>
+  <Title>Remove fields from content type</Title>
   <MethodBodyWithFunction>
         
 

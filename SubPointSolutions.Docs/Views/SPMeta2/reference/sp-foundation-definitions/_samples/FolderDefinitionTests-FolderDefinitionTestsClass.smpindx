@@ -6,7 +6,8 @@
     <DocSampleTag>
       <Name>Category</Name>
       <Values>
-        <string>Web Model/Folders</string>
+        <string>Web Model</string>
+        <string>Folders</string>
       </Values>
     </DocSampleTag>
   </Tags>

@@ -2,7 +2,14 @@
 <DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <IsMethod>true</IsMethod>
   <IsClass>false</IsClass>
-  <Tags />
+  <Tags>
+    <DocSampleTag>
+      <Name>UseFullMethodBody</Name>
+      <Values>
+        <string>true</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
   <MethodBodyWithFunction>
 
         public static ContentTypeModelNode HideContentTypeFieldsByIds(
@@ -20,17 +27,21 @@
 
             return modelNode;
         }</MethodBodyWithFunction>
-  <MethodBody>modelNode.AddHideContentTypeFieldLinks(new HideContentTypeFieldLinksDefinition
+  <MethodBody>public static ContentTypeModelNode HideContentTypeFieldsByIds(
+    this ContentTypeModelNode modelNode,
+    IEnumerable&lt;Guid&gt; ids)
 {
-    Fields = new List&lt;FieldLinkValue&gt;(ids.Select(s =&gt;
-        new FieldLinkValue
-        {
-            Id = s
-        }))
-});
+    modelNode.AddHideContentTypeFieldLinks(new HideContentTypeFieldLinksDefinition
+    {
+        Fields = new List&lt;FieldLinkValue&gt;(ids.Select(s =&gt;
+            new FieldLinkValue
+            {
+                Id = s
+            }))
+    });
 
-return modelNode;
-
+    return modelNode;
+}
 </MethodBody>
   <Language>cs</Language>
   <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>

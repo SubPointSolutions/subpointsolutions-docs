@@ -6,11 +6,12 @@
     <DocSampleTag>
       <Name>Category</Name>
       <Values>
-        <string>Web Model/Root web</string>
+        <string>Web Model</string>
+        <string>Root web</string>
       </Values>
     </DocSampleTag>
   </Tags>
-  <Title>"Add lists to root web"</Title>
+  <Title>Add lists to root web</Title>
   <MethodBodyWithFunction>
         
         

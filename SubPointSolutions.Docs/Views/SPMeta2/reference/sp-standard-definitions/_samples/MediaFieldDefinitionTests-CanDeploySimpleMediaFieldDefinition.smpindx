@@ -6,11 +6,16 @@
     <DocSampleTag>
       <Name>Category</Name>
       <Values>
-        <string>Site Collection Model/Fields</string>
+        <string>Site Collection Model</string>
+        <string>Fields</string>
       </Values>
     </DocSampleTag>
+    <DocSampleTag>
+      <Name>Hidden</Name>
+      <Values />
+    </DocSampleTag>
   </Tags>
-  <Title>"Add media field"</Title>
+  <Title>Add media field</Title>
   <MethodBodyWithFunction>
         
 

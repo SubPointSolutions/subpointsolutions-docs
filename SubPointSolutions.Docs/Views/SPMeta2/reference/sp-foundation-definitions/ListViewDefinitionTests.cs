@@ -7,8 +7,8 @@ using SPMeta2.Syntax.Default;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
-using SubPointSolutions.Docs.Code.Enumerations;
-using SubPointSolutions.Docs.Code.Metadata;
+
+
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {

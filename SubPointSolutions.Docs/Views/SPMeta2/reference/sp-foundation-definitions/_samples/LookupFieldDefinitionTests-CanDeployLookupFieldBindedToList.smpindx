@@ -6,11 +6,12 @@
     <DocSampleTag>
       <Name>Category</Name>
       <Values>
-        <string>Site Collection Model/Fields</string>
+        <string>Site Collection Model</string>
+        <string>Fields</string>
       </Values>
     </DocSampleTag>
   </Tags>
-  <Title>"Add lookup field binded to list"</Title>
+  <Title>Add lookup field binded to list</Title>
   <MethodBodyWithFunction>
        
 

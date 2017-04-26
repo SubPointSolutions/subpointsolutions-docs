@@ -8,8 +8,8 @@ using SPMeta2.Docs.ProvisionSamples.Definitions;
 using SPMeta2.Syntax.Default;
 using System.IO;
 using SPMeta2.Syntax.Default.Utils;
-using SubPointSolutions.Docs.Code.Enumerations;
-using SubPointSolutions.Docs.Code.Metadata;
+
+
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {

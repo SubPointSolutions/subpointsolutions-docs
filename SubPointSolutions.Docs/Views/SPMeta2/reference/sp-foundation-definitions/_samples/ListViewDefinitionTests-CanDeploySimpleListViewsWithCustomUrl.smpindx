@@ -6,11 +6,12 @@
     <DocSampleTag>
       <Name>Category</Name>
       <Values>
-        <string>Web Model/Lists views</string>
+        <string>Web Model</string>
+        <string>Lists views</string>
       </Values>
     </DocSampleTag>
   </Tags>
-  <Title>"Add list view with URL"</Title>
+  <Title>Add list view with URL</Title>
   <MethodBodyWithFunction>
         
 

@@ -6,11 +6,12 @@
     <DocSampleTag>
       <Name>Category</Name>
       <Values>
-        <string>Web Model/Content types</string>
+        <string>Web Model</string>
+        <string>Content types</string>
       </Values>
     </DocSampleTag>
   </Tags>
-  <Title>"Reorder content type fields"</Title>
+  <Title>Reorder content type fields</Title>
   <MethodBodyWithFunction>
         
 

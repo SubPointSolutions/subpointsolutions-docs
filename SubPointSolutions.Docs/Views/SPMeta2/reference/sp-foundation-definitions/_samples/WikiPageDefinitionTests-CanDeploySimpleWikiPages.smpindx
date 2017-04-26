@@ -6,11 +6,12 @@
     <DocSampleTag>
       <Name>Category</Name>
       <Values>
-        <string>Web Model/Wiki pages</string>
+        <string>Web Model</string>
+        <string>Wiki pages</string>
       </Values>
     </DocSampleTag>
   </Tags>
-  <Title>"Add wiki pages"</Title>
+  <Title>Add wiki pages</Title>
   <MethodBodyWithFunction>
         
 

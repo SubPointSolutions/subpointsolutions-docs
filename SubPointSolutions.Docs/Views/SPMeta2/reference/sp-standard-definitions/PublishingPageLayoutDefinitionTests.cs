@@ -10,8 +10,8 @@ using SPMeta2.Standard.Definitions;
 using SPMeta2.Standard.Enumerations;
 using SPMeta2.Standard.Syntax;
 using SPMeta2.Syntax.Default;
-using SubPointSolutions.Docs.Code.Enumerations;
-using SubPointSolutions.Docs.Code.Metadata;
+
+
 using SubPointSolutions.Docs.Code.Resources;
 using System.ComponentModel;
 

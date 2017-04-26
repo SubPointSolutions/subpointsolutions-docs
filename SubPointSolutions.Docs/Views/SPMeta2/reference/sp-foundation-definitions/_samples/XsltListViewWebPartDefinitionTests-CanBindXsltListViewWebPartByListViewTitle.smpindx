@@ -6,11 +6,12 @@
     <DocSampleTag>
       <Name>Category</Name>
       <Values>
-        <string>Web Model/Web parts</string>
+        <string>Web Model</string>
+        <string>Web parts</string>
       </Values>
     </DocSampleTag>
   </Tags>
-  <Title>"Add XLVWP binded to list view by Title"</Title>
+  <Title>Add XLVWP binded to list view by Title</Title>
   <MethodBodyWithFunction>
         
 

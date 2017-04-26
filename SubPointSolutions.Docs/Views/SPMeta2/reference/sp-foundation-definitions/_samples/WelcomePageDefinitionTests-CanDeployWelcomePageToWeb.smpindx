@@ -6,11 +6,12 @@
     <DocSampleTag>
       <Name>Category</Name>
       <Values>
-        <string>Web Model/Welcome page</string>
+        <string>Web Model</string>
+        <string>Welcome page</string>
       </Values>
     </DocSampleTag>
   </Tags>
-  <Title>"Add web welcome page"</Title>
+  <Title>Add web welcome page</Title>
   <MethodBodyWithFunction>
         
 

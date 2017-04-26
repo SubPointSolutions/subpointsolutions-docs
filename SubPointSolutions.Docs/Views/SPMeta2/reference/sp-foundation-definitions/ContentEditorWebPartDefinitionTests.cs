@@ -11,8 +11,8 @@ using SPMeta2.Syntax.Default;
 using SPMeta2.Utils;
 using SPMeta2.BuiltInDefinitions;
 using SPMeta2.CSOM.DefaultSyntax;
-using SubPointSolutions.Docs.Code.Enumerations;
-using SubPointSolutions.Docs.Code.Metadata;
+
+
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {

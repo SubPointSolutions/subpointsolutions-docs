@@ -6,11 +6,12 @@
     <DocSampleTag>
       <Name>Category</Name>
       <Values>
-        <string>Web Model/Web part pages</string>
+        <string>Web Model</string>
+        <string>Web part pages</string>
       </Values>
     </DocSampleTag>
   </Tags>
-  <Title>"Add web part page"</Title>
+  <Title>Add web part page</Title>
   <MethodBodyWithFunction>
         //[Browsable(false)]
         

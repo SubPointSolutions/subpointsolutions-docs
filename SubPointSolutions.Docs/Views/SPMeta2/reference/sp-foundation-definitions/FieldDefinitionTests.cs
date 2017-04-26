@@ -6,8 +6,8 @@ using SPMeta2.Definitions;
 using SPMeta2.Docs.ProvisionSamples.Base;
 using SPMeta2.Enumerations;
 using SPMeta2.Syntax.Default;
-using SubPointSolutions.Docs.Code.Metadata;
-using SubPointSolutions.Docs.Code.Enumerations;
+
+
 
 namespace SubPointSolutions.Docs.Content.SPMeta2.SharePoint_Foundation_Definitions
 {
