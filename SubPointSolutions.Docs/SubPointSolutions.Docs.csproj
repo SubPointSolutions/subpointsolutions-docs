@@ -1263,6 +1263,9 @@
     <None Include="fonts\Default\glyphicons-halflings-regular.woff" />
     <None Include="fonts\Default\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\Default\jquery-1.9.1.min.map" />
+    <None Include="Views\metapack\cli\index.md" />
+    <None Include="Views\metapack\extensibility\index.md" />
+    <None Include="Views\metapack\extensibility\_index.md" />
     <None Include="Views\metapack\Index.md" />
     <None Include="Views\metapack\_ViewStart.cshtml" />
     <None Include="Views\Shared\Default\Components\_Footer.cshtml" />

@@ -1,21 +1,19 @@
-﻿@using SubPointSolutions.Docs.Code.API
-@using SubPointSolutions.Docs.Code.Data
-@using SubPointSolutions.Docs.Code.Samples
-@using SubPointSolutions.Docs.Code.Enumerations
-
+﻿
 @{
-    var categoryTagName = SubPointSolutions.Docs.Code.Enumerations.BuiltInTagNames.SampleCategory;
-    var categoryOrderTagName = SubPointSolutions.Docs.Code.Enumerations.BuiltInTagNames.SampleCategoryOrder;
+    var categoryTagName = "Category";
+    var categoryOrderTagName = "CategoryOrder";
 
-    var spRuntimeTagName = SubPointSolutions.Docs.Code.Enumerations.BuiltInTagNames.SPRuntime;
+    var hiddenTagName = "Hidden";
 
-    var spStandardRuntimeValue = SubPointSolutions.Docs.Code.Enumerations.BuiltInSPRuntimeTagValues.Standard;
-    var spEnterpriseRuntimeValue = SubPointSolutions.Docs.Code.Enumerations.BuiltInSPRuntimeTagValues.Enterprise;
+    var spRuntimeTagName = "SPRuntime";
 
-    var allSamples = ViewBag.SamplesModel.Samples as List<DocSample>;
+    var spStandardRuntimeValue = "Standard";
+    var spEnterpriseRuntimeValue = "Enterprise";
+
+    var allSamples = ViewBag.SamplesModel.Samples as List<SubPointSolutions.DocsBuildTools.Data.DocSample>;
     var samplesWithCategories = allSamples;
 
-    var sampleCategories = SamplesAPI.GetSampleCategories(allSamples);
+    var sampleCategories = SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.GetSampleCategories(allSamples);
 
     var categoryHeight = 80;
     var categoryItemHeight = 18;
@@ -27,7 +25,7 @@
 
     foreach (var sampleGroupName in sampleCategories)
     {
-        var samples = allSamples.Where(s => s.Tags.First(t => t.Name == BuiltInTagNames.SampleCategory).Values.Contains(sampleGroupName));
+        var samples = allSamples.Where(s => s.Tags.First(t => t.Name == categoryTagName).Values.Contains(sampleGroupName));
 
         totalLinksHeight += samples.Count() * categoryItemHeight;
     }
@@ -96,7 +94,7 @@
                         }
 
                         var definitionPageUrl = string.Format(definitionUrl, definitionClassName).ToLower();
-                        var isHidden = SamplesAPI.HasTag(sample, BuiltInTagNames.SampleHidden);
+                        var isHidden = SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.HasTag(sample, hiddenTagName);
                         <li>
                             @if (isHidden)
                             {
@@ -104,7 +102,7 @@
                             }
                             else
                             {
-                                <a href="@(definitionPageUrl + "?#" + SamplesAPI.GetSafeAnchor(sample.Title))">
+                                <a href="@(definitionPageUrl + "?#" + SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.GetSafeAnchor(sample.Title ?? ""))">
                                     @(sample.Title)
                                 </a>
                             }
