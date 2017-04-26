@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Site Collection Model/Taxonomy</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+    
+    //[Browsable(false)]
+    public class TaxonomyTermSetDefinitionTests : ProvisionTestBase
+    {
+        #region methods
+       
+        [TestMethod]
+        [TestCategory("Docs.TaxonomyTermSetDefinition")]
+
+        [DisplayName("Add taxonomy termsets")]
+        //[Browsable(false)]
+        public void CanDeploySimpleTaxonomyTermSets()
+        {
+            var defaultSiteTermStore = new TaxonomyTermStoreDefinition
+            {
+                UseDefaultSiteCollectionTermStore = true
+            };
+
+            var clientsGroup = new TaxonomyTermGroupDefinition
+            {
+                Name = "Clients"
+            };
+
+            var smallBusiness = new TaxonomyTermSetDefinition
+            {
+                Name = "Small Business"
+            };
+
+            var mediumBusiness = new TaxonomyTermSetDefinition
+            {
+                Name = "Medium Business"
+            };
+
+            var enterpriseBusiness = new TaxonomyTermSetDefinition
+            {
+                Name = "Enterprise Business"
+            };
+
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                site.AddTaxonomyTermStore(defaultSiteTermStore, termStore =&gt;
+                {
+                    termStore.AddTaxonomyTermGroup(clientsGroup, group =&gt;
+                    {
+                        group
+                            .AddTaxonomyTermSet(smallBusiness)
+                            .AddTaxonomyTermSet(mediumBusiness)
+                            .AddTaxonomyTermSet(enterpriseBusiness);
+                    });
+                });
+            });
+
+            DeployModel(model);
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>//[Browsable(false)]
+public class TaxonomyTermSetDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+    [TestMethod]
+    [TestCategory("Docs.TaxonomyTermSetDefinition")]
+
+    [DisplayName("Add taxonomy termsets")]
+    //[Browsable(false)]
+    public void CanDeploySimpleTaxonomyTermSets()
+    {
+        var defaultSiteTermStore = new TaxonomyTermStoreDefinition
+        {
+            UseDefaultSiteCollectionTermStore = true
+        };
+
+        var clientsGroup = new TaxonomyTermGroupDefinition
+        {
+            Name = "Clients"
+        };
+
+        var smallBusiness = new TaxonomyTermSetDefinition
+        {
+            Name = "Small Business"
+        };
+
+        var mediumBusiness = new TaxonomyTermSetDefinition
+        {
+            Name = "Medium Business"
+        };
+
+        var enterpriseBusiness = new TaxonomyTermSetDefinition
+        {
+            Name = "Enterprise Business"
+        };
+
+        var model = SPMeta2Model.NewSiteModel(site =&gt;
+        {
+            site.AddTaxonomyTermStore(defaultSiteTermStore, termStore =&gt;
+            {
+                termStore.AddTaxonomyTermGroup(clientsGroup, group =&gt;
+                {
+                    group
+                        .AddTaxonomyTermSet(smallBusiness)
+                        .AddTaxonomyTermSet(mediumBusiness)
+                        .AddTaxonomyTermSet(enterpriseBusiness);
+                });
+            });
+        });
+
+        DeployModel(model);
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>TaxonomyTermSetDefinitionTests</ClassName>
+  <MethodName>TaxonomyTermSetDefinitionTestsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassTaxonomyTermSetDefinitionTestsClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.TaxonomyTermSetDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>TaxonomyTermSetDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>TaxonomyTermSetDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

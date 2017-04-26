@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SPMeta2.Docs.ProvisionSamples.Base;
 using SPMeta2.Docs.ProvisionSamples.Definitions;
@@ -8,11 +9,10 @@ using SubPointSolutions.Docs.Code.Metadata;
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
+    
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Farm)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.FarmModel)]
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+   [Category("Category=Farm Model/Farm")]
+    //[Browsable(false)]
     public class TargetApplicationDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -20,10 +20,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.TargetApplicationDefinition")]
 
-        [SampleMetadata(Title = "Add Target Application",
-                    Description = ""
-                    )]
-        [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add Target Application")]
+        [Browsable(false)]
         public void CanDeploySimpleTargetApplicationDefinition()
         {
             var model = SPMeta2Model.NewSiteModel(site =>

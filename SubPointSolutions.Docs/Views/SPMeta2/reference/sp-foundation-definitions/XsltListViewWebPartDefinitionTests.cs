@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SPMeta2.BuiltInDefinitions;
 using SPMeta2.CSOM.DefaultSyntax;
@@ -15,11 +16,10 @@ using SubPointSolutions.Docs.Code.Metadata;
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
+    
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.WebParts)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    [Category("Category=Web Model/Web parts")]
+    //[Browsable(false)]
     public class XsltListViewWebPartDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -28,10 +28,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.XsltListViewWebPartDefinition")]
 
-        [SampleMetadata(Title = "Add XLVWP binded to list by Title",
-            Description = ""
-            )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add XLVWP binded to list by Title")]
+        //[Browsable(false)]
         public void CanBindXsltListViewWebPartByListTitle()
         {
             var inventoryLibrary = new ListDefinition
@@ -78,10 +76,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.XsltListViewWebPartDefinition")]
 
-        [SampleMetadata(Title = "Add XLVWP binded to list by URL",
-            Description = ""
-            )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add XLVWP binded to list by URL")]
+        //[Browsable(false)]
         public void CanBindXsltListViewWebPartByListUrl()
         {
             var booksLibrary = new ListDefinition
@@ -128,10 +124,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.XsltListViewWebPartDefinition")]
 
-        [SampleMetadata(Title = "Add XLVWP binded to list view by Title",
-            Description = ""
-            )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add XLVWP binded to list view by Title")]
+        //[Browsable(false)]
         public void CanBindXsltListViewWebPartByListViewTitle()
         {
             var booksLibrary = new ListDefinition

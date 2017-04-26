@@ -4,16 +4,16 @@ using SPMeta2.Docs.ProvisionSamples.Definitions;
 using SPMeta2.Syntax.Default;
 using SubPointSolutions.Docs.Code.Enumerations;
 using SubPointSolutions.Docs.Code.Metadata;
+using System.ComponentModel;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
+    
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.ContentTypes)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
+    [Category("Category=Web Model/Content types")]
 
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    //[Browsable(false)]
     public class ContentTypeFieldLinkDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -21,10 +21,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.ContentTypeFieldLinkDefinition")]
 
-        [SampleMetadata(Title = "Add field to content types",
-                        Description = ""
-                        )]
-        [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add field to content types")]
+        [Browsable(false)]
         public void CanDeploySimpleContentTypeFieldLinkDefinition()
         {
             var model = SPMeta2Model.NewSiteModel(site =>

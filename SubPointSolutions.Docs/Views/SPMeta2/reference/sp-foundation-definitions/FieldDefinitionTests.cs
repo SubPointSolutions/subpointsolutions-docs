@@ -13,10 +13,7 @@ namespace SubPointSolutions.Docs.Content.SPMeta2.SharePoint_Foundation_Definitio
 {
     [TestClass]
 
-    [SampleMetadataTagAttribute(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
-
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Fields)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.SiteModel)]
+    [Category("Category=Site Collection Model/Fields")]
 
     public class FieldDefinitionTests : ProvisionTestBase
     {
@@ -25,9 +22,7 @@ namespace SubPointSolutions.Docs.Content.SPMeta2.SharePoint_Foundation_Definitio
         [TestMethod]
         [TestCategory("Docs.FieldDefinition")]
 
-        [SampleMetadata(Title = "Add field to site",
-                        Description = ""
-                        )]
+        [DisplayName("Add field to site")]
         public void CanDeploySiteFields()
         {
             // use BuiltInFieldTypes class to refer to OOTB SharePoint fields
@@ -83,9 +78,7 @@ namespace SubPointSolutions.Docs.Content.SPMeta2.SharePoint_Foundation_Definitio
         [TestMethod]
         [TestCategory("Docs.FieldDefinition")]
 
-        [SampleMetadata(Title = "Add field to web",
-                        Description = ""
-                        )]
+        [DisplayName("Add field to web")]
 
         public void CanDeployWebFields()
         {
@@ -127,9 +120,7 @@ namespace SubPointSolutions.Docs.Content.SPMeta2.SharePoint_Foundation_Definitio
         [TestMethod]
         [TestCategory("Docs.FieldDefinition")]
 
-        [SampleMetadata(Title = "Add field to list",
-                        Description = ""
-                        )]
+        [DisplayName("Add field to list")]
 
         public void CanDeployListFields()
         {
@@ -170,12 +161,6 @@ namespace SubPointSolutions.Docs.Content.SPMeta2.SharePoint_Foundation_Definitio
 
             DeployModel(model);
         }
-
-        #endregion
-
-
-        #region typed fields
-
 
         #endregion
     }

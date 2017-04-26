@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBodyWithFunction>
+        public void CallerMethod(ControlCollection controlCollection)
+        {
+            try
+            {
+                CalledMethod("Test");
+            }
+            // DO NOT CATCH USAGE EXCEPTION
+            catch (ArgumentNotSpecifiedException ex)
+            {
+                // special handling for ArgumentNotSpecifiedException
+            }
+            catch (Exception ex)
+            {
+                // log it
+                throw new WrappedException("Method XXX call  error occurred", ex); // wrapped &amp; chained exceptions.
+            }
+            finally
+            {
+                // normal clean goes here (like closing open files).
+            }
+        }</MethodBodyWithFunction>
+  <MethodBody>try
+{
+    CalledMethod("Test");
+}
+// DO NOT CATCH USAGE EXCEPTION
+catch (ArgumentNotSpecifiedException ex)
+{
+    // special handling for ArgumentNotSpecifiedException
+}
+catch (Exception ex)
+{
+    // log it
+    throw new WrappedException("Method XXX call  error occurred", ex); // wrapped &amp; chained exceptions.
+}
+finally
+{
+    // normal clean goes here (like closing open files).
+}
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SubPointSolutions.Docs.Views.Views.ReSP.Inspections.csharp</Namespace>
+  <ClassName>DoNotSuppressExceptions</ClassName>
+  <MethodName>CallerMethod</MethodName>
+  <ClassComment />
+  <MethodFullName>SubPointSolutions.Docs.Views.Views.ReSP.Inspections.csharp.DoNotSuppressExceptions.CallerMethod</MethodFullName>
+  <ClassFullName>SubPointSolutions.Docs.Views.Views.ReSP.Inspections.csharp.DoNotSuppressExceptions</ClassFullName>
+  <MethodParametersCount>1</MethodParametersCount>
+  <SourceFileName>DoNotSuppressExceptions.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>DoNotSuppressExceptions</SourceFileNameWithoutExtension>
+</DocSample>

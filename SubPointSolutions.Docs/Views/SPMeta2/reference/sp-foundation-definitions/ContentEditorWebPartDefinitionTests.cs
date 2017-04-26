@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SPMeta2.Definitions;
@@ -16,26 +17,19 @@ using SubPointSolutions.Docs.Code.Metadata;
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.WebParts)]
+    [Category("Category=Web Model/Web parts")]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
-
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    //[Browsable(false)]
     public class ContentEditorWebPartDefinitionTests : ProvisionTestBase
     {
         #region methods
 
-       
-
         [TestMethod]
         [TestCategory("Docs.ContentEditorWebPartDefinition")]
 
-        [SampleMetadata(Title = "Add CEWP",
-                        Description = ""
-                        )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add CEWP")]
+        //[Browsable(false)]
         public void CanDeploEmptyContentEditorWebpart()
         {
             var cewp = new ContentEditorWebPartDefinition
@@ -67,15 +61,13 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
             DeployModel(model);
         }
 
-        
+
 
         [TestMethod]
         [TestCategory("Docs.ContentEditorWebPartDefinition")]
 
-        [SampleMetadata(Title = "Add CEWP with link",
-                        Description = ""
-                        )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add CEWP with link")]
+        //[Browsable(false)]
         public void CanDeploContentEditorWebpartWithUrlLink()
         {
             var htmlContent = new ModuleFileDefinition
@@ -127,10 +119,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.ContentEditorWebPartDefinition")]
 
-        [SampleMetadata(Title = "Add CEWP with content",
-                        Description = ""
-                        )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add CEWP with content")]
+        //[Browsable(false)]
         public void CanDeployContentEditorWebpartWithContent()
         {
             var cewp = new ContentEditorWebPartDefinition

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model/Publishing pages</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>"Add publishing pages with custom layout"</Title>
+  <MethodBodyWithFunction>
+        
+        
+        //[Browsable(false)]
+        public void CanDeployPublishingPageWithCustomeLayout()
+        {
+            // PageLayoutFileName allows you to setup your own publishing page layout file name
+            // it should be a file name of the file inside 'master page' gallery
+
+            var customPublishing = new PublishingPageDefinition
+            {
+                Title = "Custom publishing",
+                FileName = "Custom-publishing.aspx",
+                PageLayoutFileName = "__ specify a publishing page layout file name here ___"
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddHostList(BuiltInListDefinitions.Pages, list =&gt;
+                {
+                    list
+                        .AddPublishingPage(customPublishing);
+                });
+            });
+
+            DeployModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>// PageLayoutFileName allows you to setup your own publishing page layout file name
+// it should be a file name of the file inside 'master page' gallery
+
+var customPublishing = new PublishingPageDefinition
+{
+    Title = "Custom publishing",
+    FileName = "Custom-publishing.aspx",
+    PageLayoutFileName = "__ specify a publishing page layout file name here ___"
+};
+
+var model = SPMeta2Model.NewWebModel(web =&gt;
+{
+    web.AddHostList(BuiltInListDefinitions.Pages, list =&gt;
+    {
+        list
+            .AddPublishingPage(customPublishing);
+    });
+});
+
+DeployModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>PublishingPageDefinitionTests</ClassName>
+  <MethodName>CanDeployPublishingPageWithCustomeLayout</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.PublishingPageDefinitionTests.CanDeployPublishingPageWithCustomeLayout</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.PublishingPageDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>PublishingPageDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>PublishingPageDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

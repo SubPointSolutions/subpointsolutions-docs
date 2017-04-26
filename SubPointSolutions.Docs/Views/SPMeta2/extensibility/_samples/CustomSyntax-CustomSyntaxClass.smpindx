@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags />
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+    public class CustomSyntax : ProvisionTestBase
+    {
+        #region methods
+
+        [TestMethod]
+        [TestCategory("Docs.Models")]
+        public void HideContentTypeFieldsAsOOTB()
+        {
+            var listContentType = new ContentTypeDefinition
+            {
+                Name = "Content Type With Hidden Fields",
+                Id = new Guid("e71cdcc9-5765-47ea-8879-b9456d57dfa6"),
+                ParentContentTypeId = BuiltInContentTypeId.Item,
+                Group = "SPMeta2.Samples"
+            };
+
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                site
+                   .AddContentType(listContentType, contentType =&gt;
+                   {
+                       contentType
+                           .AddHideContentTypeFieldLinks(new HideContentTypeFieldLinksDefinition
+                           {
+                               Fields = new System.Collections.Generic.List&lt;FieldLinkValue&gt;
+                               {
+                                   new FieldLinkValue { Id = BuiltInFieldId.Title  },
+                                   new FieldLinkValue { Id = BuiltInFieldId.Comment  },
+                               }
+                           });
+                   });
+            });
+
+            DeployModel(model);
+        }
+
+        public void HideContentTypeFieldsAsExtension()
+        {
+            var listContentType = new ContentTypeDefinition
+            {
+                Name = "Content Type With Hidden Fields",
+                Id = new Guid("e71cdcc9-5765-47ea-8879-b9456d57dfa6"),
+                ParentContentTypeId = BuiltInContentTypeId.Item,
+                Group = "SPMeta2.Samples"
+            };
+
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                site
+                   .AddContentType(listContentType, contentType =&gt;
+                   {
+                       contentType
+                           .HideContentTypeFieldsByIds(new Guid[] { 
+                               BuiltInFieldId.Title,
+                               BuiltInFieldId.Comment
+                            });
+
+                   });
+            });
+
+            DeployModel(model);
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>public class CustomSyntax : ProvisionTestBase
+{
+    #region methods
+
+    [TestMethod]
+    [TestCategory("Docs.Models")]
+    public void HideContentTypeFieldsAsOOTB()
+    {
+        var listContentType = new ContentTypeDefinition
+        {
+            Name = "Content Type With Hidden Fields",
+            Id = new Guid("e71cdcc9-5765-47ea-8879-b9456d57dfa6"),
+            ParentContentTypeId = BuiltInContentTypeId.Item,
+            Group = "SPMeta2.Samples"
+        };
+
+        var model = SPMeta2Model.NewSiteModel(site =&gt;
+        {
+            site
+               .AddContentType(listContentType, contentType =&gt;
+               {
+                   contentType
+                       .AddHideContentTypeFieldLinks(new HideContentTypeFieldLinksDefinition
+                       {
+                           Fields = new System.Collections.Generic.List&lt;FieldLinkValue&gt;
+                           {
+                               new FieldLinkValue { Id = BuiltInFieldId.Title  },
+                               new FieldLinkValue { Id = BuiltInFieldId.Comment  },
+                           }
+                       });
+               });
+        });
+
+        DeployModel(model);
+    }
+
+    public void HideContentTypeFieldsAsExtension()
+    {
+        var listContentType = new ContentTypeDefinition
+        {
+            Name = "Content Type With Hidden Fields",
+            Id = new Guid("e71cdcc9-5765-47ea-8879-b9456d57dfa6"),
+            ParentContentTypeId = BuiltInContentTypeId.Item,
+            Group = "SPMeta2.Samples"
+        };
+
+        var model = SPMeta2Model.NewSiteModel(site =&gt;
+        {
+            site
+               .AddContentType(listContentType, contentType =&gt;
+               {
+                   contentType
+                       .HideContentTypeFieldsByIds(new Guid[] {
+                           BuiltInFieldId.Title,
+                           BuiltInFieldId.Comment
+                        });
+
+               });
+        });
+
+        DeployModel(model);
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>CustomSyntax</ClassName>
+  <MethodName>CustomSyntaxClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassCustomSyntaxClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.CustomSyntax</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>writing-custom-syntax.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>writing-custom-syntax</SourceFileNameWithoutExtension>
+</DocSample>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBodyWithFunction>
+        
+        public void RegisterCustomModelHandlerWithSyntax()
+        {
+            var csomProvisionService = new CSOMProvisionService();
+
+            csomProvisionService.RegisterModelHandler(new ChangeWebTitleAndDescriptionModelHandler());
+
+            var webModel = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddChangeWebTitleAndDescription(new ChangeWebTitleAndDescriptionDefinition
+                {
+                    Title = "A new name for the web",
+                    Description = "Some changes done by ChangeWebTitleAndDescriptionDefinition"
+                });
+            });
+
+            using (var clientContext = new ClientContext(CSOMSiteUrl))
+                csomProvisionService.DeployWebModel(clientContext, webModel);
+        }</MethodBodyWithFunction>
+  <MethodBody>var csomProvisionService = new CSOMProvisionService();
+
+csomProvisionService.RegisterModelHandler(new ChangeWebTitleAndDescriptionModelHandler());
+
+var webModel = SPMeta2Model.NewWebModel(web =&gt;
+{
+    web.AddChangeWebTitleAndDescription(new ChangeWebTitleAndDescriptionDefinition
+    {
+        Title = "A new name for the web",
+        Description = "Some changes done by ChangeWebTitleAndDescriptionDefinition"
+    });
+});
+
+using (var clientContext = new ClientContext(CSOMSiteUrl))
+    csomProvisionService.DeployWebModel(clientContext, webModel);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>CustomDefinitions</ClassName>
+  <MethodName>RegisterCustomModelHandlerWithSyntax</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.CustomDefinitions.RegisterCustomModelHandlerWithSyntax</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.CustomDefinitions</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>writing-custom-definition.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>writing-custom-definition</SourceFileNameWithoutExtension>
+</DocSample>

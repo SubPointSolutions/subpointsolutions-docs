@@ -4,15 +4,14 @@ using SPMeta2.Docs.ProvisionSamples.Definitions;
 using SPMeta2.Syntax.Default;
 using SubPointSolutions.Docs.Code.Enumerations;
 using SubPointSolutions.Docs.Code.Metadata;
+using System.ComponentModel;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
+    
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.WebApplication)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebApplicationModel)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    [Category("Category=Web Application Model/Web application")]
     public class WebConfigModificationDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -20,10 +19,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.WebConfigModificationDefinition")]
 
-        [SampleMetadata(Title = "Add web.config modification",
-                    Description = ""
-                    )]
-        [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add web.config modification")]
+        [Browsable(false)]
         public void CanDeploySimpleWebConfigModificationDefinition()
         {
             var model = SPMeta2Model.NewSiteModel(site =>

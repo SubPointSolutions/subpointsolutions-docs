@@ -1,4 +1,5 @@
 ﻿Assemblies
+	.LoadFile(@"bin\Debug\SubPointSolutions.DocsBuildTools.Data.dll")
     .LoadDirectory(@"bin\Debug");
 
 ===
@@ -11,42 +12,35 @@ public static class SConfig
 	public static string GetThemedTemplate(string templateFileName) {
 		return string.Format("~/Shared/{0}/{1}", Theme, templateFileName);
 	}
-}
 
----
+	private static List<SubPointSolutions.DocsBuildTools.Data.DocSample> _allSamples;
 
-var allSamples = new List<SubPointSolutions.Docs.Code.Data.DocSample>();
-
-allSamples.AddRange(SubPointSolutions.Docs.Code.Samples.m2Samples.SysAllSamples);
-allSamples.AddRange(SubPointSolutions.Docs.Code.Samples.reSPSamples.SysAllSamples);
-
-// also load up serialized things from \SampleFiles folder
-var samplesFolder = @"..\SampleFiles";
-
-if(System.IO.Directory.Exists(samplesFolder)) {
-
-	var allSampleFilePaths = System.IO.Directory.GetFiles(samplesFolder, "*.xml", System.IO.SearchOption.AllDirectories);
-
-	foreach(var allSampleFilePath in allSampleFilePaths) {
-		var sampleXmlContent = System.IO.File.ReadAllText(allSampleFilePath);
-		var sampleInstance = SubPointSolutions.Docs.Code.Data.DocSample.FromXml(sampleXmlContent);
-
-		allSamples.Add(sampleInstance);
-	}
-}
-
-Pipelines.Add("site-md-content",
-
-	ReadFiles("*.md"),
+	public static List<SubPointSolutions.DocsBuildTools.Data.DocSample> AllSamples {
 	
-	//ReadFiles("*.md").FromTopDirectoryOnly(),
+		get {
+			
+			if(_allSamples == null) {
+			
+				var samplesFolder = @"Views";
+				var allSamples = SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.LoadSamples(samplesFolder);
 
-	FrontMatter(Yaml()),
-	FileName("FileName").WithAllowedCharacters(new[] {".", "-"}),
+				_allSamples = allSamples.ToList();
+			}
 
-	// process source code refs
-	Execute( (doc, context) => {
-		
+			return _allSamples;
+		}
+	}
+
+	
+}
+
+public static class ContentHelper {
+
+	public static IDocument[] ProcessHtmlContent(IDocument doc, 
+				Wyam.Common.Pipelines.IExecutionContext context,
+				IEnumerable<SubPointSolutions.DocsBuildTools.Data.DocSample> allSamples) {
+
+	
 		var result = new List<IDocument>();
 		var x = doc;
 
@@ -66,76 +60,32 @@ Pipelines.Add("site-md-content",
 			return new [] { x };
         }
 
-		var refs = htmlDocument.QuerySelectorAll("a[href^='_samples']").ToArray();
+		ProcessHtmlImages(htmlDocument, allSamples);
+		ProcessHtmlPreAndCode(htmlDocument, allSamples);
+		ProcessHtmlBlockquotes(htmlDocument, allSamples);
+		ProcessHtmlLinks(htmlDocument, allSamples);
 
-		foreach (var codeRef in refs) {
+		var newDoc = context.GetDocument(doc, htmlDocument.DocumentElement.OuterHtml);
+		result.Add(newDoc);
 
-			// <a href="_samples/SPDataSourceScopeDoesNotDefinedInPage-CorrectSPDataSourceScope.sample-ref">Correct sample</a>
-			var refFileName = System.IO.Path.GetFileNameWithoutExtension(codeRef.GetAttribute("href"));
+		return result.ToArray();
+	}
 
-			if(!string.IsNullOrEmpty(refFileName)) {
-				
-				var sampleMethodName = refFileName.Split('-').Last();
-				//codeRef.SetAttribute("sample-method", sampleMethodName);
+	public static void ProcessHtmlPreAndCode(AngleSharp.Dom.Html.IHtmlDocument htmlDocument,
+				IEnumerable<SubPointSolutions.DocsBuildTools.Data.DocSample> allSamples) {
 
-				var sample = allSamples.FirstOrDefault(s => s.MethodName == sampleMethodName);
+		var codElements = htmlDocument.QuerySelectorAll("code1").ToArray();
 
-				if(sample != null) {
+		foreach (var codeElement in codElements) {
+			var classValue = codeElement.GetAttribute("class");
 
-					var innerHtml = Environment.NewLine + @"```" + sample.Language + Environment.NewLine;
-					innerHtml += Environment.NewLine + sample.MethodBody + Environment.NewLine;
-					innerHtml += @"```" + Environment.NewLine;
-										
-					var parent = codeRef.ParentElement ?? htmlDocument.DocumentElement;
-
-					var sampleContent = codeRef.OuterHtml;
-
-					//x = context.GetDocument(doc, x.Content.Replace(codeRef.OuterHtml, Environment.NewLine + innerHtml));
-					x = doc.Clone(x.Content.Replace(codeRef.OuterHtml, Environment.NewLine + innerHtml));
-				}
-				else{
-					var errorMessage = string.Format("cannot find sample with name:[{0}]", sampleMethodName);
-					System.Environment.Exit(-42);
-					throw new System.Exception(errorMessage);
-				}
-
-			} else {
-				throw new System.Exception("missed file ref");
-				codeRef.SetAttribute("sample-method", "MISSED - " + refFileName);
-			}			
+			codeElement.ParentElement.SetAttribute("class", classValue + " line-numbers");
 		}
+	}
 
-		result.Add(x);
+	public static void ProcessHtmlImages(AngleSharp.Dom.Html.IHtmlDocument htmlDocument,
+				IEnumerable<SubPointSolutions.DocsBuildTools.Data.DocSample> allSamples) {
 
-		return result;
-	}),
-
-	Markdown(),
-	Razor(),	
-	Replace("[[ci-date]]", System.String.Format("{0:r}", System.DateTime.Now)),
-	// process img tags 
-	Execute( (doc, context) => {
-	
-		var result = new List<IDocument>();
-		var x = doc;
-		
-		AngleSharp.Parser.Html.HtmlParser parser = new AngleSharp.Parser.Html.HtmlParser();
-		AngleSharp.Dom.Html.IHtmlDocument htmlDocument;
-               
-		try
-        {
-			using (Stream stream = x.GetStream())
-            {
-				htmlDocument = parser.Parse(stream);
-            }
-        }
-        catch (Exception ex)
-        {
-			//context.Trace.Warning("Exception while parsing HTML for {0}: {1}", x.Source, ex.Message);
-			return new [] { x };
-        }
-
-		// images
 		var images = htmlDocument.QuerySelectorAll("img").ToArray();
 
 		var targetAttValues = new string[] {
@@ -163,102 +113,12 @@ Pipelines.Add("site-md-content",
 			image.SetAttribute("class", attValue);
 			image.SetAttribute("src", string.IsNullOrEmpty(srcValue) ? "" : srcValue.ToLower() );
 		}
+	}
 
-		// pre and code
-		var codElements = htmlDocument.QuerySelectorAll("code1").ToArray();
+	public static void ProcessHtmlLinks(AngleSharp.Dom.Html.IHtmlDocument htmlDocument,
+				IEnumerable<SubPointSolutions.DocsBuildTools.Data.DocSample> allSamples) {
 
-		foreach (var codeElement in codElements) {
-			var classValue = codeElement.GetAttribute("class");
-
-			codeElement.ParentElement.SetAttribute("class", classValue + " line-numbers");
-		}
-		
-		//var newDoc = context.GetDocument(x, htmlDocument.DocumentElement.OuterHtml);
-	    
-		var newDoc = x.Clone(htmlDocument.DocumentElement.OuterHtml);
-		result.Add(newDoc);
-
-		return result;
-	}),
-
-	// process markdown blockquotes to nice looking callouts
-	Execute( (doc, context) => {
-	
-		var result = new List<IDocument>();
-		var x = doc;
-		
-		AngleSharp.Parser.Html.HtmlParser parser = new AngleSharp.Parser.Html.HtmlParser();
-		AngleSharp.Dom.Html.IHtmlDocument htmlDocument;
-               
-		try
-        {
-			using (Stream stream = x.GetStream())
-            {
-				htmlDocument = parser.Parse(stream);
-            }
-        }
-        catch (Exception ex)
-        {
-			//context.Trace.Warning("Exception while parsing HTML for {0}: {1}", x.Source, ex.Message);
-			return new [] { x };
-        }
-
-		var elements = htmlDocument.QuerySelectorAll("blockquote")
-                                   .ToArray();
-
-            foreach (var element in elements)
-            {
-                var content = element.InnerHtml;
-
-                if (content == null)
-                    content = string.Empty;
-                else
-                    content = content.Trim();
-
-                var contentHasParagraph = content.StartsWith("<p>");
-
-                var callout = htmlDocument.CreateElement("div");
-
-                callout.SetAttribute("class", "s-docs-callout s-docs-callout-info");
-                callout.InnerHtml = contentHasParagraph
-										? content
-										: string.Format("<p>{0}</p>", content);
-
-                element.Replace(callout);
-            }
-
-		//var newDoc = context.GetDocument(x, htmlDocument.DocumentElement.OuterHtml);
-	    
-		var newDoc = x.Clone(htmlDocument.DocumentElement.OuterHtml);
-		result.Add(newDoc);
-
-		return result;
-	}),
-
-	// all internal links to lower
-	// external links - in a new window
-	Execute( (doc, context) => {
-	
-		var result = new List<IDocument>();
-		var x = doc;
-		
-		AngleSharp.Parser.Html.HtmlParser parser = new AngleSharp.Parser.Html.HtmlParser();
-		AngleSharp.Dom.Html.IHtmlDocument htmlDocument;
-               
-		try
-        {
-			using (Stream stream = x.GetStream())
-            {
-				htmlDocument = parser.Parse(stream);
-            }
-        }
-        catch (Exception ex)
-        {
-			//context.Trace.Warning("Exception while parsing HTML for {0}: {1}", x.Source, ex.Message);
-			return new [] { x };
-        }
-
-		var elements = htmlDocument.QuerySelectorAll("a")
+			var elements = htmlDocument.QuerySelectorAll("a")
                                    .ToList();
 
 		elements.AddRange(htmlDocument.QuerySelectorAll("link").ToList());
@@ -295,7 +155,6 @@ Pipelines.Add("site-md-content",
             }
 
 			// scipts
-
 			var scripts = htmlDocument.QuerySelectorAll("script")
                                    .ToList();
 
@@ -320,21 +179,135 @@ Pipelines.Add("site-md-content",
 					element.SetAttribute("src", href.ToLower());
 				}
             }
+	}
 
-		//var newDoc = context.GetDocument(x, htmlDocument.DocumentElement.OuterHtml);
-	    
-		var newDoc = x.Clone(htmlDocument.DocumentElement.OuterHtml);
-		result.Add(newDoc);
+	public static void ProcessHtmlBlockquotes(AngleSharp.Dom.Html.IHtmlDocument htmlDocument,
+				IEnumerable<SubPointSolutions.DocsBuildTools.Data.DocSample> allSamples) {
 
-		return result;
+
+			var elements = htmlDocument.QuerySelectorAll("blockquote")
+                                   .ToArray();
+
+            foreach (var element in elements)
+            {
+                var content = element.InnerHtml;
+
+                if (content == null)
+                    content = string.Empty;
+                else
+                    content = content.Trim();
+
+                var contentHasParagraph = content.StartsWith("<p>");
+
+                var callout = htmlDocument.CreateElement("div");
+
+                callout.SetAttribute("class", "s-docs-callout s-docs-callout-info");
+                callout.InnerHtml = contentHasParagraph
+										? content
+										: string.Format("<p>{0}</p>", content);
+
+                element.Replace(callout);
+            }
+	}
+
+	public static IDocument[] ProcessCodeSamples(IDocument doc, 
+				Wyam.Common.Pipelines.IExecutionContext context,
+				IEnumerable<SubPointSolutions.DocsBuildTools.Data.DocSample> allSamples) {
+		
+		var result = new List<IDocument>();
+		var x = doc;
+
+		AngleSharp.Parser.Html.HtmlParser parser = new AngleSharp.Parser.Html.HtmlParser();
+		AngleSharp.Dom.Html.IHtmlDocument htmlDocument;
+               
+		try
+        {
+			using (Stream stream = x.GetStream())
+            {
+				htmlDocument = parser.Parse(stream);
+            }
+        }
+        catch (Exception ex)
+        {
+			// context.Trace.Warning("Exception while parsing HTML for {0}: {1}", x.Source, ex.Message);
+			return new [] { x };
+        }
+
+		var refs = htmlDocument.QuerySelectorAll("a[href^='_samples']").ToArray();
+
+		foreach (var codeRef in refs) {
+
+			// <a href="_samples/SPDataSourceScopeDoesNotDefinedInPage-CorrectSPDataSourceScope.smpindx">Correct sample</a>
+			var refFileName = System.IO.Path.GetFileNameWithoutExtension(codeRef.GetAttribute("href"));
+
+			if(!string.IsNullOrEmpty(refFileName)) {
+				
+				var sampleMethodName = refFileName.Split('-').Last();
+				//codeRef.SetAttribute("sample-method", sampleMethodName);
+
+				var sample = allSamples.FirstOrDefault(s => s.MethodName == sampleMethodName);
+
+				if(sample != null) {
+
+					var innerHtml = Environment.NewLine + @"```" + sample.Language + Environment.NewLine;
+					innerHtml += Environment.NewLine + sample.MethodBody + Environment.NewLine;
+					innerHtml += @"```" + Environment.NewLine;
+										
+					var parent = codeRef.ParentElement ?? htmlDocument.DocumentElement;
+
+					var sampleContent = codeRef.OuterHtml;
+
+					x = context.GetDocument(doc, x.Content.Replace(codeRef.OuterHtml, Environment.NewLine + innerHtml));
+					//x = doc.Clone(x.Content.Replace(codeRef.OuterHtml, Environment.NewLine + innerHtml));
+				}
+				else{
+					var errorMessage = string.Format("cannot find sample with name:[{0}]", sampleMethodName);
+					throw new System.Exception(errorMessage);
+					System.Environment.Exit(-42);
+				}
+
+			} else {
+				//System.Environment.Exit(-42);
+				throw new System.Exception("missed file ref");
+				codeRef.SetAttribute("sample-method", "MISSED - " + refFileName);
+			}			
+		}
+
+		result.Add(x);
+
+		return result.ToArray();
+	}
+}
+
+---
+
+var samplesFolder = @"Views";
+var allSamples = SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.LoadSamples(samplesFolder);
+
+Pipelines.Add("site-md-content",
+
+	ReadFiles("*.md").FromAllDirectories(),
+	
+	//ReadFiles("*.md").FromTopDirectoryOnly(),
+
+	FrontMatter(Yaml()),
+	FileName("FileName").WithAllowedCharacters(new[] {".", "-"}),
+
+	// process source code refs
+	Execute( (doc, context) => {
+		return ContentHelper.ProcessCodeSamples(doc, context, allSamples);
 	}),
 
-	//HtmlQuery("img")
-	//	.SetAttribute("class", "img-responsive")
-	//	.SetAttribute("class", "img-thumbnail"),
-
+	Markdown(),
+	Razor(),	
+	Replace("[[ci-date]]", System.String.Format("{0:r}", System.DateTime.Now)),
 	
-	//FileName("FileName"),
+
+	// process img tags 
+	Execute( (doc, context) => {
+		return ContentHelper.ProcessHtmlContent(doc, context, allSamples);
+	}),
+
 	WriteFiles(".html").UseWriteMetadata(true)
 );
 
@@ -365,12 +338,3 @@ Pipelines.Add("site-resources-images-jpg",
 Pipelines.Add("site-resources-images-jpeg",
 	CopyFiles(@"*.jpeg")
 );
-
- // Pipelines.Add("site-resources-images-thumbs",
- //      ReadFiles("*").Where(x => x.Contains("img") && new[] { ".jpg", ".jpeg", ".gif", ".png"}.Contains(Path.GetExtension(x))),
-// 	  Image()
-// 		.SetJpegQuality(100).Resize(400,209).SetSuffix("-thumb")
-//         .And
-// 	    .SetJpegQuality(70).Resize(400*2, 209*2).SetSuffix("-medium"),
- //      WriteFiles("*")
-  //   );

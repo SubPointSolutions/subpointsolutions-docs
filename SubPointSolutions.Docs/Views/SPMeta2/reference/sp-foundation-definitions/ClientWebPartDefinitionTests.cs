@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SPMeta2.Docs.ProvisionSamples.Base;
 using SPMeta2.Docs.ProvisionSamples.Definitions;
@@ -9,13 +10,9 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Standard)]
+    [Category("Category=Web Model/Web parts")]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.WebParts)]
-
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
-
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    //[Browsable(false)]
     public class ClientWebPartDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -23,10 +20,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.ClientWebPartDefinition")]
 
-        [SampleMetadata(Title = "Add client web part",
-                        Description = ""
-                        )]
-        [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add client web part")]
+        [Browsable(false)]
         public void CanDeploySimpleClientWebPartDefinition()
         {
             var model = SPMeta2Model.NewSiteModel(site =>

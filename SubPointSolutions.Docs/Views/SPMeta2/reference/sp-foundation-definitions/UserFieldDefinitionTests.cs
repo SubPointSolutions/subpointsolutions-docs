@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SPMeta2.Docs.ProvisionSamples.Base;
 using SPMeta2.Docs.ProvisionSamples.Definitions;
@@ -8,12 +9,11 @@ using SubPointSolutions.Docs.Code.Metadata;
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
+    
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Fields)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.SiteModel)]
+    [Category("Category=Site Collection Model/Fields")]
 
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    //[Browsable(false)]
     public class UserFieldDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -21,10 +21,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.UserFieldDefinition")]
 
-        [SampleMetadata(Title = "Add user field",
-                        Description = ""
-                        )]
-        [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add user field")]
+        [Browsable(false)]
         public void CanDeploySimpleUserFieldDefinition()
         {
             var model = SPMeta2Model.NewSiteModel(site =>

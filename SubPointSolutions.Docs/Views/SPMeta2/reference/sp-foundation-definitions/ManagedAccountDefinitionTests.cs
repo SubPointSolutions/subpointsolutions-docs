@@ -4,17 +4,15 @@ using SPMeta2.Docs.ProvisionSamples.Definitions;
 using SPMeta2.Syntax.Default;
 using SubPointSolutions.Docs.Code.Enumerations;
 using SubPointSolutions.Docs.Code.Metadata;
+using System.ComponentModel;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
+    [Category("Category=Farm Model/Farm")]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Farm)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.FarmModel)]
-
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    //[Browsable(false)]
     public class ManagedAccountDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -22,10 +20,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.ManagedAccountDefinition")]
 
-        [SampleMetadata(Title = "Add managed account",
-                Description = ""
-                )]
-        [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add managed account")]
+        [Browsable(false)]
         public void CanDeploySimpleManagedAccountDefinition()
         {
             var model = SPMeta2Model.NewSiteModel(site =>

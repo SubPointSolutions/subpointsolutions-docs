@@ -6,16 +6,14 @@ using SPMeta2.Enumerations;
 using SPMeta2.Syntax.Default;
 using SubPointSolutions.Docs.Code.Enumerations;
 using SubPointSolutions.Docs.Code.Metadata;
+using System.ComponentModel;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
-
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Security)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.SiteModel)]
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    [Category("Category=Site Collection Model/Security")]
+    //[Browsable(false)]
 
     public class SecurityGroupLinkDefinitionTests : ProvisionTestBase
     {
@@ -24,10 +22,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.SecurityGroupLinkDefinition")]
 
-        [SampleMetadata(Title = "Assign security group to web",
-                            Description = ""
-                            )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Assign security group to web")]
+        //[Browsable(false)]
         public void CanDeploySimpleSecurityGroupLinkDefinitionToWeb()
         {
             var auditors = new SecurityGroupDefinition
@@ -53,10 +49,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
             DeployModel(webModel);
         }
 
-        [SampleMetadata(Title = "Assign security group to list",
-                            Description = ""
-                            )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Assign security group to list")]
+        //[Browsable(false)]
         public void CanDeploySimpleSecurityGroupLinkDefinitionToList()
         {
             var auditors = new SecurityGroupDefinition

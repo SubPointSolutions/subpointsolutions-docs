@@ -4,17 +4,15 @@ using SPMeta2.Docs.ProvisionSamples.Definitions;
 using SPMeta2.Syntax.Default;
 using SubPointSolutions.Docs.Code.Enumerations;
 using SubPointSolutions.Docs.Code.Metadata;
+using System.ComponentModel;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
+    [Category("Category=Farm Model/Farm")]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Farm)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.FarmModel)]
-
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    //[Browsable(false)]
 
     public class SecureStoreApplicationDefinitionTests : ProvisionTestBase
     {
@@ -23,10 +21,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.SecureStoreApplicationDefinition")]
 
-        [SampleMetadata(Title = "Add secure store application",
-                            Description = ""
-                            )]
-        [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add secure store application")]
+        [Browsable(false)]
         public void CanDeploySimpleSecureStoreApplicationDefinition()
         {
             var model = SPMeta2Model.NewSiteModel(site =>

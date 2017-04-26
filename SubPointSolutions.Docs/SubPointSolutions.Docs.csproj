@@ -301,7 +301,6 @@
     <Compile Include="Code\API\SamplesAPI.cs" />
     <Compile Include="Code\Base\ProvisionTestBase.cs" />
     <Compile Include="Code\Consts\DocConsts.cs" />
-    <Compile Include="Code\Consts\SampleGroups.cs" />
     <Compile Include="Code\Data\DocSample.cs" />
     <Compile Include="Code\Definitions\DocContentTypes.cs" />
     <Compile Include="Code\Definitions\DocFields.cs" />
@@ -321,17 +320,6 @@
     <Compile Include="Code\Resources\DefaultMasterPageTemplates.Designer.cs" />
     <Compile Include="Code\Resources\DefaultPublishingPageLayoutTemplates.Designer.cs" />
     <Compile Include="Code\Resources\WorkflowTemplates.Designer.cs" />
-    <Compile Include="Code\Samples\m2ExtSamples.cs" />
-    <Compile Include="Code\Samples\m2Samples.cs" />
-    <Compile Include="Code\Samples\m2SpecSamples.cs" />
-    <Compile Include="Code\Samples\reSPSamples.cs" />
-    <Compile Include="Code\Services\Base\SamplesServiceBase.cs" />
-    <Compile Include="Code\Services\CSSamplesService.cs" />
-    <Compile Include="Code\Services\HtmlSamplesService.cs" />
-    <Compile Include="Code\Services\S3Service.cs" />
-    <Compile Include="Code\Services\XmlSamplesService.cs" />
-    <Compile Include="Code\Tests\DocSamplesServiceTests.cs" />
-    <Compile Include="Code\Tests\DocTests.cs" />
     <Compile Include="Code\Utils\StringUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\reSP\Inspections\csharp\AvoidSPObjectNameStringComparison.cs" />
@@ -2025,7 +2013,11 @@
     <None Include="_start-site.ps1" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Code\Samples\" />
+    <Folder Include="Code\Services\Base\" />
+    <Folder Include="Code\Tests\" />
     <Folder Include="content\Shared\" />
+    <Folder Include="Views\metapack\getting-started\" />
     <Folder Include="Views\SPMeta2-Reverse\getting-started\" />
     <Folder Include="Views\SPMeta2-Spec\getting-started\" />
     <Folder Include="Views\SPMeta2\reference\Models\" />

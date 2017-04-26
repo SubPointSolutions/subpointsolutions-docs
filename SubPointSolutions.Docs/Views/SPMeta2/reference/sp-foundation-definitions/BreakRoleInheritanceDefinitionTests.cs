@@ -6,18 +6,14 @@ using SPMeta2.Enumerations;
 using SPMeta2.Syntax.Default;
 using SubPointSolutions.Docs.Code.Enumerations;
 using SubPointSolutions.Docs.Code.Metadata;
+using System.ComponentModel;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
-
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Security)]
-
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
-
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    
+    [Category("Category=Web Model/Security")]
 
     public class BreakRoleInheritanceDefinitionTests : ProvisionTestBase
     {
@@ -26,9 +22,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.BreakRoleInheritanceDefinition")]
 
-        [SampleMetadata(Title = "Break role inheritance on web",
-                        Description = ""
-                        )]
+        [DisplayName("Break role inheritance on web")]
         public void CanDeploySimpleBreakRoleInheritance_OnWeb()
         {
             var privateProjectWebDef = new WebDefinition
@@ -102,9 +96,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.BreakRoleInheritanceDefinition")]
 
-        [SampleMetadata(Title = "Break role inheritance on list",
-                        Description = ""
-                        )]
+        [DisplayName("Break role inheritance on list")]
         public void CanDeploySimpleBreakRoleInheritance_OnList()
         {
             var privateListDef = new ListDefinition

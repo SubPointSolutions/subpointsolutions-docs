@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.ComponentModel;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SPMeta2.Definitions;
 
 using SPMeta2.Docs.ProvisionSamples.Base;
@@ -12,11 +13,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
-
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Security)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.SiteModel)]
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    [Category("Category=Site Collection Model/Security")]
+    //[Browsable(false)]
     public class SecurityGroupDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -25,10 +23,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.SecurityGroupDefinition")]
 
-        [SampleMetadata(Title = "Add security group",
-                            Description = ""
-                            )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add security group")]
+        //[Browsable(false)]
         public void CanDeploySimpleSecurityGroup()
         {
             var auditors = new SecurityGroupDefinition
@@ -57,10 +53,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.SecurityGroupDefinition")]
-        [SampleMetadata(Title = "Add multiple security groups",
-                            Description = ""
-                            )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add multiple security groups")]
+        //[Browsable(false)]
         public void CanDeploySimpleSecurityGroups()
         {
             var model = SPMeta2Model.NewSiteModel(site =>

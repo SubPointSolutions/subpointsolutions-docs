@@ -15,10 +15,6 @@
 @using SPMeta2.Attributes.Capabilities;
 @using SPMeta2.Attributes.Identity;
 @using SPMeta2.Attributes.Regression;
-@using SubPointSolutions.Docs.Code.API
-@using SubPointSolutions.Docs.Code.Data
-@using SubPointSolutions.Docs.Code.Samples
-@using SubPointSolutions.Docs.Code.Enumerations
 
 @{
     Layout = SConfig.GetThemedTemplate("Layouts/_Master.cshtml");
@@ -56,8 +52,11 @@
         <div class="col-lg-9 col-md-9 col-sm-9 sps-document">
 
             @{
+                var m2Samples = SConfig.AllSamples;
+
                 var definitionName = Model.String("SourceFileBase").Replace("Tests", string.Empty);
-                var samples = m2Samples.SysAllSamples.Where(s => s.IsMethod).ToList().Where(s => s.ClassName.StartsWith(definitionName));
+                //var samples = m2Samples.SysAllSamples.Where(s => s.IsMethod).ToList().Where(s => s.ClassName.StartsWith(definitionName));
+                var samples = m2Samples.Where(s => s.IsMethod).ToList().Where(s => s.ClassName.ToLower().StartsWith(definitionName.ToLower()));
 
                 var allHandlers = new List<Type>();
 
@@ -150,13 +149,13 @@
                 <ul>
                     @foreach (var sample in samples)
                     {
-                        <li><a href="@("#" + SamplesAPI.GetSafeAnchor(sample.Title))">@sample.Title</a></li>
+                        <li><a href="@("#" + SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.GetSafeAnchor(sample.Title ?? ""))">@sample.Title</a></li>
                     }
                 </ul>
 
                 foreach (var sample in samples)
                 {
-                    <section name="@(SamplesAPI.GetSafeAnchor(sample.Title))" id="@(SamplesAPI.GetSafeAnchor(sample.Title))"></section>
+                    <section name="@(SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.GetSafeAnchor(sample.Title ?? ""))" id="@(SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.GetSafeAnchor(sample.Title ?? ""))"></section>
 
                     <div class="panel panel-default">
 

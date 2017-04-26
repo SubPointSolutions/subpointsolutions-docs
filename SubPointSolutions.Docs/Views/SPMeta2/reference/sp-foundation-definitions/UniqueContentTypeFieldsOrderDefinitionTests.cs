@@ -11,15 +11,15 @@ using SPMeta2.Enumerations;
 using SPMeta2.Syntax.Default;
 using SubPointSolutions.Docs.Code.Enumerations;
 using SubPointSolutions.Docs.Code.Metadata;
+using System.ComponentModel;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
+    
+    [Category("Category=Site Collection Model/Content types")]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.ContentTypes)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.SiteModel)]
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    //[Browsable(false)]
     public class UniqueContentTypeFieldsOrderDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -28,10 +28,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.UniqueContentTypeFieldsOrderDefinition")]
 
-        [SampleMetadata(Title = "Reorder content type fields",
-                    Description = ""
-                    )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Reorder content type fields")]
+        //[Browsable(false)]
         public void CanReorderContentTypeFields()
         {
             var debitField = new NumberFieldDefinition

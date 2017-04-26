@@ -10,27 +10,23 @@ using SPMeta2.Standard.Syntax;
 using SPMeta2.Syntax.Default;
 using SubPointSolutions.Docs.Code.Enumerations;
 using SubPointSolutions.Docs.Code.Metadata;
+using System.ComponentModel;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Standard)]
-
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.PublishingPages)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    [Category("Category=Web Model/Publishing pages")]
+    //[Browsable(false)]
     public class PublishingPageDefinitionTests : ProvisionTestBase
     {
         #region methods
 
-       
+
         [TestMethod]
         [TestCategory("Docs.PublishingPageDefinition")]
-        [SampleMetadata(Title = "Add publishing pages",
-            Description = ""
-            )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add publishing pages")]
+        //[Browsable(false)]
         public void CanDeployPublishingPage()
         {
             var aboutPublishing = new PublishingPageDefinition
@@ -68,13 +64,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
             DeployModel(model);
         }
 
-       
+
         [TestMethod]
         [TestCategory("Docs.PublishingPageDefinition")]
-        [SampleMetadata(Title = "Add publishing pages with custom layout",
-            Description = ""
-            )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add publishing pages with custom layout")]
+        //[Browsable(false)]
         public void CanDeployPublishingPageWithCustomeLayout()
         {
             // PageLayoutFileName allows you to setup your own publishing page layout file name
@@ -99,13 +93,11 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
             DeployModel(model);
         }
 
-     
+
         [TestMethod]
         [TestCategory("Docs.PublishingPageDefinition")]
-        [SampleMetadata(Title = "Add publishing pages to folders",
-            Description = ""
-            )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add publishing pages to folders")]
+        //[Browsable(false)]
         public void CanDeployPublishingPageToFolders()
         {
             var archive = new FolderDefinition()

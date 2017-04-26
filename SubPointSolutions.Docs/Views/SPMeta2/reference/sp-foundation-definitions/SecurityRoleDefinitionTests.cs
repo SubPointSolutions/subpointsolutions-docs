@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SPMeta2.Definitions;
 
@@ -13,11 +14,10 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
+    
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Security)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.SiteModel)]
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+   [Category("Category=Site Collection Model/Security")]
+    //[Browsable(false)]
     public class SecurityRoleDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -25,10 +25,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.SecurityRoleDefinition")]
 
-        [SampleMetadata(Title = "Add security role",
-                            Description = ""
-                            )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add security role")]
+        //[Browsable(false)]
 
         public void CanDeploySimpleSecurityRoleDefinition()
         {

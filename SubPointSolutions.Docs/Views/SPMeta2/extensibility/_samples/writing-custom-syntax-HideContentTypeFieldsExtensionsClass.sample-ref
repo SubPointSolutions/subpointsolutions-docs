@@ -1,6 +1,6 @@
 public static class HideContentTypeFieldsExtensions
 {
-    [SampleMetadataTagAttribute(Name = BuiltInTagNames.UseFullMethodBody)]
+    [Category("UseFullMethodBody=true")]
     public static ContentTypeModelNode HideContentTypeFieldsByIds(
         this ContentTypeModelNode modelNode,
         IEnumerable<Guid> ids)
@@ -17,7 +17,7 @@ public static class HideContentTypeFieldsExtensions
         return modelNode;
     }
 
-    [SampleMetadataTagAttribute(Name = BuiltInTagNames.UseFullMethodBody)]
+    [Category("UseFullMethodBody=true")]
     public static ModelNode SyntaxExtensionPrototype(this ModelNode modelNode)
     {
         // do stuff

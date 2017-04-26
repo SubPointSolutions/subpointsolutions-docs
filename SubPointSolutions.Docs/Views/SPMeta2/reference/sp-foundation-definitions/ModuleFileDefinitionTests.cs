@@ -8,16 +8,14 @@ using SPMeta2.Docs.ProvisionSamples.Definitions;
 using SPMeta2.Syntax.Default;
 using SubPointSolutions.Docs.Code.Enumerations;
 using SubPointSolutions.Docs.Code.Metadata;
+using System.ComponentModel;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
-
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.ModuleFiles)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    
+    [Category("Category=Web Model/Module files")]
+    //[Browsable(false)]
     public class ModuleFileDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -25,10 +23,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.ModuleFileDefinition")]
 
-        [SampleMetadata(Title = "Add module file to Style Library",
-                            Description = ""
-                            )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add module file to Style Library")]
+        //[Browsable(false)]
         public void CanDeployModuleFilesToStyleLibrary()
         {
             var cssFile = new ModuleFileDefinition
@@ -60,10 +56,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.ModuleFileDefinition")]
-        [SampleMetadata(Title = "Add module file to folder",
-                            Description = ""
-                            )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add module file to folder")]
+        //[Browsable(false)]
 
         public void CanDeployModuleFilesToFolders()
         {

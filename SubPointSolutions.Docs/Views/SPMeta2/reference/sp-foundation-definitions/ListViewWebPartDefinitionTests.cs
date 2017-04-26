@@ -11,17 +11,15 @@ using SPMeta2.Enumerations;
 using SPMeta2.Syntax.Default;
 using SubPointSolutions.Docs.Code.Enumerations;
 using SubPointSolutions.Docs.Code.Metadata;
+using System.ComponentModel;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
+    [Category("Category=Web Model/Web parts")]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.WebParts)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
-
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    //[Browsable(false)]
     public class ListViewWebPartDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -30,10 +28,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.ListViewWebPartDefinition")]
 
-        [SampleMetadata(Title = "Add LVWP binded to list by Title",
-                Description = ""
-                )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add LVWP binded to list by Title")]
+        //[Browsable(false)]
         public void CanBindListViewWebPartByListTitle()
         {
             var travelRequests = new ListDefinition
@@ -80,10 +76,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.ListViewWebPartDefinition")]
 
-        [SampleMetadata(Title = "Add LVWP binded to list by URL",
-                Description = ""
-                )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add LVWP binded to list by URL")]
+        //[Browsable(false)]
         public void CanBindListViewWebPartByListUrl()
         {
             var annualReviewsLibrary = new ListDefinition
@@ -130,10 +124,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.ListViewWebPartDefinition")]
 
-        [SampleMetadata(Title = "Add LVWP binded to list view by Title",
-                Description = ""
-                )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add LVWP binded to list view by Title")]
+        //[Browsable(false)]
         public void CanBindListViewWebPartByListViewTitle()
         {
             var incidentsLibrary = new ListDefinition
@@ -196,10 +188,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.ListViewWebPartDefinition")]
 
-        [SampleMetadata(Title = "Add LVWP binded to calendar view",
-                Description = ""
-                )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add LVWP binded to calendar view")]
+        //[Browsable(false)]
         public void CanBindListViewWebPartToCalendarView()
         {
             var companyEvents = new ListDefinition

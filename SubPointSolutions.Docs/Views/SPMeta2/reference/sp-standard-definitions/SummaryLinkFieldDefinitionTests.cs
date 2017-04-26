@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SPMeta2.Docs.ProvisionSamples.Base;
 using SPMeta2.Docs.ProvisionSamples.Definitions;
@@ -8,12 +9,9 @@ using SubPointSolutions.Docs.Code.Metadata;
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Standard)]
+    [Category("Category=Site Collection Model/Fields")]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Fields)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.SiteModel)]
-
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    //[Browsable(false)]
     public class SummaryLinkFieldDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -21,10 +19,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.SummaryLinkFieldDefinition")]
 
-        [SampleMetadata(Title = "Add summary link field",
-                        Description = ""
-                        )]
-        [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add summary link field")]
+        [Browsable(false)]
         public void CanDeploySimpleSummaryLinkFieldDefinition()
         {
             var model = SPMeta2Model.NewSiteModel(site =>

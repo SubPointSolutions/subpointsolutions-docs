@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags />
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    public class Regressiontesting : RegressionTestingBase
+    {
+        #region methods
+
+        [TestMethod]
+        [TestCategory("Regression.Rnd.Web")]
+        public void CanDeployRandom_WebDefinition()
+        {
+            TestRandomDefinition&lt;WebDefinition&gt;();
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>public class Regressiontesting : RegressionTestingBase
+{
+    #region methods
+
+    [TestMethod]
+    [TestCategory("Regression.Rnd.Web")]
+    public void CanDeployRandom_WebDefinition()
+    {
+        TestRandomDefinition&lt;WebDefinition&gt;();
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SubPointSolutions.Docs.Views.SPMeta2.extensibility</Namespace>
+  <ClassName>Regressiontesting</ClassName>
+  <MethodName>RegressiontestingClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassRegressiontestingClass</MethodFullName>
+  <ClassFullName>SubPointSolutions.Docs.Views.SPMeta2.extensibility.Regressiontesting</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>regression-testing.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>regression-testing</SourceFileNameWithoutExtension>
+</DocSample>

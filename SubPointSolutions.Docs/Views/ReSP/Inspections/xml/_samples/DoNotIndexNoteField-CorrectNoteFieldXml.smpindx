@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBody>&lt;field group="My group" id="{FE2C05A9-1861-48C3-8DB4-3C08E9830E2C}" type="Note" displayname="Content" description="Brief description." required="TRUE" numlines="6" name="Name1" staticname="Name1" overwrite="TRUE"&gt;
+&lt;/field&gt;
+
+</MethodBody>
+  <Language>xml</Language>
+  <ClassName>DoNotIndexNoteField</ClassName>
+  <MethodName>CorrectNoteFieldXml</MethodName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>DoNotIndexNoteField.xml</SourceFileName>
+  <SourceFileNameWithoutExtension>DoNotIndexNoteField</SourceFileNameWithoutExtension>
+</DocSample>

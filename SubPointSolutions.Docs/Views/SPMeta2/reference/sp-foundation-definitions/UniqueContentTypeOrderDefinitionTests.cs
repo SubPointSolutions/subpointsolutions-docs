@@ -11,15 +11,14 @@ using SPMeta2.Enumerations;
 using SPMeta2.Syntax.Default;
 using SubPointSolutions.Docs.Code.Enumerations;
 using SubPointSolutions.Docs.Code.Metadata;
+using System.ComponentModel;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
-
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.ListsAndLibraries)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    
+    [Category("Category=Web Model/Lists and libraries")]
+    //[Browsable(false)]
     public class UniqueContentTypeOrderDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -29,10 +28,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.UniqueContentTypeOrderDefinition")]
 
-        [SampleMetadata(Title = "Reorder content types",
-                    Description = ""
-                    )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Reorder content types")]
+        //[Browsable(false)]
         public void CanReorderContentTypesInList()
         {
             var creditContentType = new ContentTypeDefinition

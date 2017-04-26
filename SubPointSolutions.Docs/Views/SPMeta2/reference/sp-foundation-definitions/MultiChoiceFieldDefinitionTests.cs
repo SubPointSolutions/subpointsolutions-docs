@@ -7,16 +7,16 @@ using SubPointSolutions.Docs.Code.Enumerations;
 using SubPointSolutions.Docs.Code.Metadata;
 using System;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
+    
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Fields)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.SiteModel)]
+    [Category("Category=Site Collection Model/Fields")]
 
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    //[Browsable(false)]
     public class MultiChoiceFieldDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -24,10 +24,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.MultiChoiceFieldDefinition")]
 
-        [SampleMetadata(Title = "Add multichoice field",
-                        Description = ""
-                        )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add multichoice field")]
+        //[Browsable(false)]
         public void CanDeploySimpleMultiChoiceFieldDefinition()
         {
             var fieldDef = new MultiChoiceFieldDefinition

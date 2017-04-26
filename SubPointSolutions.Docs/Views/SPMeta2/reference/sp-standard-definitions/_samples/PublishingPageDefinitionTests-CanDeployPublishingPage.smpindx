@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model/Publishing pages</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>"Add publishing pages"</Title>
+  <MethodBodyWithFunction>
+        
+        
+        //[Browsable(false)]
+        public void CanDeployPublishingPage()
+        {
+            var aboutPublishing = new PublishingPageDefinition
+            {
+                Title = "About publishing",
+                FileName = "About-publishing.aspx",
+                PageLayoutFileName = BuiltInPublishingPageLayoutNames.ArticleLeft
+            };
+
+            var howToPublising = new PublishingPageDefinition
+            {
+                Title = "How to publish",
+                FileName = "How-to-publish.aspx",
+                PageLayoutFileName = BuiltInPublishingPageLayoutNames.ArticleRight
+            };
+
+            var publishingLinks = new PublishingPageDefinition
+            {
+                Title = "Publishing links",
+                FileName = "Publishing-links.aspx",
+                PageLayoutFileName = BuiltInPublishingPageLayoutNames.ArticleLinks
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddHostList(BuiltInListDefinitions.Pages, list =&gt;
+                {
+                    list
+                        .AddPublishingPage(aboutPublishing)
+                        .AddPublishingPage(howToPublising)
+                        .AddPublishingPage(publishingLinks);
+                });
+            });
+
+            DeployModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>var aboutPublishing = new PublishingPageDefinition
+{
+    Title = "About publishing",
+    FileName = "About-publishing.aspx",
+    PageLayoutFileName = BuiltInPublishingPageLayoutNames.ArticleLeft
+};
+
+var howToPublising = new PublishingPageDefinition
+{
+    Title = "How to publish",
+    FileName = "How-to-publish.aspx",
+    PageLayoutFileName = BuiltInPublishingPageLayoutNames.ArticleRight
+};
+
+var publishingLinks = new PublishingPageDefinition
+{
+    Title = "Publishing links",
+    FileName = "Publishing-links.aspx",
+    PageLayoutFileName = BuiltInPublishingPageLayoutNames.ArticleLinks
+};
+
+var model = SPMeta2Model.NewWebModel(web =&gt;
+{
+    web.AddHostList(BuiltInListDefinitions.Pages, list =&gt;
+    {
+        list
+            .AddPublishingPage(aboutPublishing)
+            .AddPublishingPage(howToPublising)
+            .AddPublishingPage(publishingLinks);
+    });
+});
+
+DeployModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>PublishingPageDefinitionTests</ClassName>
+  <MethodName>CanDeployPublishingPage</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.PublishingPageDefinitionTests.CanDeployPublishingPage</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.PublishingPageDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>PublishingPageDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>PublishingPageDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

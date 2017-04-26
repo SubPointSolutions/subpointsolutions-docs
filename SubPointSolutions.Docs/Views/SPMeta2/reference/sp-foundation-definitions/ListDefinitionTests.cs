@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.ComponentModel;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SPMeta2.BuiltInDefinitions;
 using SPMeta2.Definitions;
 
@@ -13,12 +14,10 @@ using SubPointSolutions.Docs.Code.Metadata;
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
+    
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.ListsAndLibraries)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
-
-    //[SampleMetadataTagAttribute(Name = BuiltInTagNames.SampleHidden)]
+     [Category("Category=Web Model/Lists and libraries")]
+    
     public class ListDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -29,10 +28,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.ListDefinition")]
 
-        [SampleMetadata(Title = "Add list by template type",
-                        Description = ""
-                        )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add list by template type")]
+        //[Browsable(false)]
         public void CanDeployListByTemplateId()
         {
             var genericList = new ListDefinition
@@ -64,10 +61,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.ListDefinition")]
 
-        [SampleMetadata(Title = "Add list by template name",
-                        Description = ""
-                        )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add list by template name")]
+        //[Browsable(false)]
         public void CanDeployListByTemplateName()
         {
             var contactsList = new ListDefinition
@@ -91,10 +86,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.ListDefinition")]
 
-        [SampleMetadata(Title = "Add host Style Library",
-                        Description = ""
-                        )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add host Style Library")]
+        //[Browsable(false)]
         public void CanDeployStyleLibrary()
         {
             var model = SPMeta2Model.NewWebModel(web =>
@@ -112,10 +105,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.ListDefinition")]
 
-        [SampleMetadata(Title = "Add host OOTB lists",
-                        Description = ""
-                        )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add host OOTB lists")]
+        //[Browsable(false)]
         public void CanDeployOOTBListsLibrary()
         {
             var model = SPMeta2Model.NewWebModel(web =>
@@ -148,10 +139,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.ListDefinition")]
 
-        [SampleMetadata(Title = "Add multiple lists",
-                        Description = ""
-                        )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add multiple lists")]
+        //[Browsable(false)]
         public void CanDeploySimpleLists()
         {
             var model = SPMeta2Model.NewWebModel(web =>
@@ -185,10 +174,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.ListDefinition")]
 
-        [SampleMetadata(Title = "Add promoted links list",
-                        Description = ""
-                        )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add promoted links list")]
+        //[Browsable(false)]
         public void CanDeployPromotedLinksList()
         {
             var listDef = new ListDefinition

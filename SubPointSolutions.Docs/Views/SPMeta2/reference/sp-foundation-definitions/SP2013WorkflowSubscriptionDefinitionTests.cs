@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SPMeta2.CSOM.DefaultSyntax;
 using SPMeta2.Definitions;
@@ -11,19 +12,16 @@ using SubPointSolutions.Docs.Code.Resources;
 namespace SubPointSolutions.Docs.Views.Views.SPMeta2.reference
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
+    
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.SharePoint2013Workflow)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    [Category("Category=Web Model/SharePoint 2013 workflow")]
+    //[Browsable(false)]
     public class SP2013WorkflowSubscriptionDefinitionTests : ProvisionTestBase
     {
         #region methods
 
-       [SampleMetadata(Title = "Add SP2013 workflow to web",
-                    Description = ""
-                    )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+       [DisplayName("Add SP2013 workflow to web")]
+        //[Browsable(false)]
         public void CanDeploySimpleSP2013WorkflowSubscriptionToWeb()
         {
             var writeToHistoryListWorkflow = new SP2013WorkflowDefinition
@@ -68,10 +66,8 @@ namespace SubPointSolutions.Docs.Views.Views.SPMeta2.reference
         [TestMethod]
         [TestCategory("Docs.SP2013WorkflowSubscriptionDefinition")]
 
-        [SampleMetadata(Title = "Add SP2013 workflow to list",
-                    Description = ""
-                    )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add SP2013 workflow to list")]
+        //[Browsable(false)]
         public void CanDeploySimpleSP2013WorkflowSubscriptionToList()
         {
             var writeToHistoryListWorkflow = new SP2013WorkflowDefinition

@@ -11,6 +11,7 @@ using SPMeta2.Syntax.Default;
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using System.ComponentModel;
 using SubPointSolutions.Docs.Code.Metadata;
 using SubPointSolutions.Docs.Code.Enumerations;
 
@@ -85,7 +86,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
     public static class HideContentTypeFieldsExtensions
     {
-        [SampleMetadataTagAttribute(Name = BuiltInTagNames.UseFullMethodBody)]
+        [Category("UseFullMethodBody=true")]
+
         public static ContentTypeModelNode HideContentTypeFieldsByIds(
             this ContentTypeModelNode modelNode,
             IEnumerable<Guid> ids)
@@ -102,7 +104,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
             return modelNode;
         }
 
-        [SampleMetadataTagAttribute(Name = BuiltInTagNames.UseFullMethodBody)]
+        [Category("UseFullMethodBody=true")]
         public static ModelNode SyntaxExtensionPrototype(this ModelNode modelNode)
         {
             // do stuff

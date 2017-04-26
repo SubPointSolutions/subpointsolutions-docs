@@ -6,18 +6,15 @@ using SPMeta2.Docs.ProvisionSamples.Definitions;
 using SPMeta2.Syntax.Default;
 using SubPointSolutions.Docs.Code.Enumerations;
 using SubPointSolutions.Docs.Code.Metadata;
+using System.ComponentModel;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
+    [Category("Category=Web Model/Navigation")]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Navigation)]
-
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
-
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    //[Browsable(false)]
     public class QuickLaunchNavigationNodeDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -27,10 +24,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.QuickLaunchNavigationNodeDefinition")]
 
-        [SampleMetadata(Title = "Add quick nav items",
-                            Description = ""
-                            )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add quick nav items")]
+        //[Browsable(false)]
 
         public void CaDeployFlatQuickLaunchNavigation()
         {
@@ -70,10 +65,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.QuickLaunchNavigationNodeDefinition")]
-        [SampleMetadata(Title = "Add hierarchical quick nav items",
-                            Description = ""
-                            )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add hierarchical quick nav items")]
+        //[Browsable(false)]
         public void CaDeployHierarchicalQuickLaunchNavigation()
         {
             // top level departments node

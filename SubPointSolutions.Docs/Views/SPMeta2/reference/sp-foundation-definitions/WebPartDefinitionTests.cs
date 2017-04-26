@@ -10,15 +10,15 @@ using SPMeta2.Syntax.Default;
 using SPMeta2.Utils;
 using SubPointSolutions.Docs.Code.Enumerations;
 using SubPointSolutions.Docs.Code.Metadata;
+using System.ComponentModel;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
+    
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.WebParts)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    [Category("Category=Web Model/Web parts")]
+    //[Browsable(false)]
     public class WebPartDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -26,10 +26,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.WebPartDefinition")]
 
-        [SampleMetadata(Title = "Add web part by type",
-                    Description = ""
-                    )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add web part by type")]
+        //[Browsable(false)]
 
         public void CanDeployWebpartByWebpartType()
         {
@@ -72,10 +70,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestCategory("Docs.WebPartDefinition")]
 
 
-        [SampleMetadata(Title = "Add web part by XML",
-                    Description = ""
-                    )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add web part by XML")]
+        //[Browsable(false)]
         public void CanDeployWebpartByXML()
         {
             // this whould deploy the web part using WebpartXmlTemplate prop
@@ -119,10 +115,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.WebPartDefinition")]
 
-        [SampleMetadata(Title = "Add web part from Gallery File",
-                    Description = ""
-                    )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add web part from Gallery File")]
+        //[Browsable(false)]
         public void CanDeployWebpartByWebpartGalleryFileName()
         {
             // this would deploy the web part using WebpartFileName
@@ -163,10 +157,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.WebPartDefinition")]
 
-        [SampleMetadata(Title = "Add web part with pre-configured XML",
-                    Description = ""
-                    )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add web part with pre-configured XML")]
+        //[Browsable(false)]
 
         public void CanDeployWebpartWithPreprocessedXML()
         {

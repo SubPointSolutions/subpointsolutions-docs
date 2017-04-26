@@ -6,24 +6,22 @@ using SPMeta2.Docs.ProvisionSamples.Definitions;
 using SPMeta2.Syntax.Default;
 using SubPointSolutions.Docs.Code.Enumerations;
 using SubPointSolutions.Docs.Code.Metadata;
+using System.ComponentModel;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
+    
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Navigation)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    [Category("Category=Web Model/Navigation")]
+    //[Browsable(false)]
     public class TopNavigationNodeDefinitionTests : ProvisionTestBase
     {
         [TestMethod]
         [TestCategory("Docs.TopNavigationNodeDefinition")]
 
-        [SampleMetadata(Title = "Add top nav items",
-                    Description = ""
-                    )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add top nav items")]
+        //[Browsable(false)]
         public void CaDeployFlatTopNavigation()
         {
             var ourCompany = new TopNavigationNodeDefinition
@@ -62,10 +60,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.TopNavigationNodeDefinition")]
 
-        [SampleMetadata(Title = "Add hierarchical top nav items",
-                    Description = ""
-                    )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add hierarchical top nav items")]
+        //[Browsable(false)]
         public void CaDeployHierarchicalTopNavigation()
         {
             // top level departments node

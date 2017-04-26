@@ -1,11 +1,13 @@
+using System.ComponentModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SPMeta2.Docs.ProvisionSamples.Base;
 using SPMeta2.Docs.ProvisionSamples.Definitions;
-using SPMeta2.Syntax.Default;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
-    [TestClass
+    [TestClass]
+    [Category(BuiltInM2ModelTagValues.SiteModel + "; " +
+              BuiltInSubcategoryTagValues.Fields)]
 
 
     public class BooleanFieldDefinitionTests : ProvisionTestBase

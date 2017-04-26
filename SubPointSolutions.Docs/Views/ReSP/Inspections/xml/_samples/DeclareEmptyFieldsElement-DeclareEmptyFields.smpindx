@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBody>&lt;list xmlns:ows="Microsoft SharePoint" title="List title" other="" attributes=""&gt;
+  &lt;metadata&gt;
+    &lt;contenttypes&gt;
+      &lt;contenttyperef id="0x0100EDFEDEA571A241FD80430F4D48A91346"&gt;&lt;/contenttyperef&gt;
+      &lt;contenttyperef id="0x0120"&gt;&lt;/contenttyperef&gt;
+    &lt;/contenttypes&gt;
+    &lt;fields&gt;
+    &lt;/fields&gt;
+    &lt;views&gt;
+    &lt;/views&gt;
+    &lt;forms&gt;
+    &lt;/forms&gt;
+  &lt;/metadata&gt;
+&lt;/list&gt;
+
+</MethodBody>
+  <Language>xml</Language>
+  <ClassName>DeclareEmptyFieldsElement</ClassName>
+  <MethodName>DeclareEmptyFields</MethodName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>DeclareEmptyFieldsElement.xml</SourceFileName>
+  <SourceFileNameWithoutExtension>DeclareEmptyFieldsElement</SourceFileNameWithoutExtension>
+</DocSample>

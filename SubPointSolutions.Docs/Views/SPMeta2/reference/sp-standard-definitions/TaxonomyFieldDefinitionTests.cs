@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using SPMeta2.Docs.ProvisionSamples.Base;
@@ -13,12 +14,9 @@ using SubPointSolutions.Docs.Code.Metadata;
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Standard)]
+    [Category("Category=Site Collection Model/Fields")]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Fields)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.SiteModel)]
-
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    //[Browsable(false)]
     public class TaxonomyFieldDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -26,10 +24,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.FieldDefinition")]
 
-        [SampleMetadata(Title = "Add taxonomy field",
-                        Description = ""
-                        )]
-        [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add taxonomy field")]
+        [Browsable(false)]
        
         public void CanDeployTaxonomyField()
         {

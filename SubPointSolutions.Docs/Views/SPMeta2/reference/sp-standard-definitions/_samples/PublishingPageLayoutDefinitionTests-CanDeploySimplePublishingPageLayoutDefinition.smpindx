@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model/Master page gallery</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>"Add publishing page layout"</Title>
+  <MethodBodyWithFunction>
+        
+        
+        //[Browsable(false)]
+        public void CanDeploySimplePublishingPageLayoutDefinition()
+        {
+            var publishingPageContentType = new ContentTypeDefinition
+            {
+                Name = "M2 Article",
+                Id = new Guid("664CFB31-AFF3-433E-9F3F-D8812199B0BC"),
+                Group = "SPMeta2.Samples",
+                ParentContentTypeId = BuiltInPublishingContentTypeId.ArticlePage
+            };
+
+            var publshingPageLayout = new PublishingPageLayoutDefinition
+            {
+                Title = "M2 Article Left Layout",
+                FileName = "m2-article-left.aspx",
+                // replace with your publishing page layout content
+                Content = DefaultPublishingPageLayoutTemplates.ArticleLeft,
+                AssociatedContentTypeId = publishingPageContentType.GetContentTypeId(),
+                NeedOverride = true
+            };
+
+            var siteModel = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                site.AddContentType(publishingPageContentType);
+            });
+
+            var rootWebModel = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddHostList(BuiltInListDefinitions.Catalogs.MasterPage, list =&gt;
+                {
+                    list.AddPublishingPageLayout(publshingPageLayout);
+                });
+            });
+
+            DeployModel(siteModel);
+            DeployModel(rootWebModel);
+        }</MethodBodyWithFunction>
+  <MethodBody>var publishingPageContentType = new ContentTypeDefinition
+{
+    Name = "M2 Article",
+    Id = new Guid("664CFB31-AFF3-433E-9F3F-D8812199B0BC"),
+    Group = "SPMeta2.Samples",
+    ParentContentTypeId = BuiltInPublishingContentTypeId.ArticlePage
+};
+
+var publshingPageLayout = new PublishingPageLayoutDefinition
+{
+    Title = "M2 Article Left Layout",
+    FileName = "m2-article-left.aspx",
+    // replace with your publishing page layout content
+    Content = DefaultPublishingPageLayoutTemplates.ArticleLeft,
+    AssociatedContentTypeId = publishingPageContentType.GetContentTypeId(),
+    NeedOverride = true
+};
+
+var siteModel = SPMeta2Model.NewSiteModel(site =&gt;
+{
+    site.AddContentType(publishingPageContentType);
+});
+
+var rootWebModel = SPMeta2Model.NewWebModel(web =&gt;
+{
+    web.AddHostList(BuiltInListDefinitions.Catalogs.MasterPage, list =&gt;
+    {
+        list.AddPublishingPageLayout(publshingPageLayout);
+    });
+});
+
+DeployModel(siteModel);
+DeployModel(rootWebModel);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>PublishingPageLayoutDefinitionTests</ClassName>
+  <MethodName>CanDeploySimplePublishingPageLayoutDefinition</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.PublishingPageLayoutDefinitionTests.CanDeploySimplePublishingPageLayoutDefinition</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.PublishingPageLayoutDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>PublishingPageLayoutDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>PublishingPageLayoutDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

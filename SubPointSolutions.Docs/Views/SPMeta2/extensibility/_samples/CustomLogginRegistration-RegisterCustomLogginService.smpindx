@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBodyWithFunction>
+        
+        public void RegisterCustomLogginService()
+        {
+            // get an instance of ServiceContainer
+            // override .Services collection with the right mapping 
+            // typeof(TraceServiceBase) -&gt; your instance of TraceServiceBase class
+
+            var serviceInstancies = ServiceContainer.Instance.Services[typeof(TraceServiceBase)];
+
+            serviceInstancies.Clear();
+            serviceInstancies.Add(new CustomLoggingService());
+
+            // provision models as usual
+            // from now on, all logging calls will go to CustomLoggingService instance
+        }</MethodBodyWithFunction>
+  <MethodBody>// get an instance of ServiceContainer
+// override .Services collection with the right mapping
+// typeof(TraceServiceBase) -&gt; your instance of TraceServiceBase class
+
+var serviceInstancies = ServiceContainer.Instance.Services[typeof(TraceServiceBase)];
+
+serviceInstancies.Clear();
+serviceInstancies.Add(new CustomLoggingService());
+
+// provision models as usual
+// from now on, all logging calls will go to CustomLoggingService instance
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>CustomLogginRegistration</ClassName>
+  <MethodName>RegisterCustomLogginService</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.CustomLogginRegistration.RegisterCustomLogginService</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.CustomLogginRegistration</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>writing-custom-logging.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>writing-custom-logging</SourceFileNameWithoutExtension>
+</DocSample>

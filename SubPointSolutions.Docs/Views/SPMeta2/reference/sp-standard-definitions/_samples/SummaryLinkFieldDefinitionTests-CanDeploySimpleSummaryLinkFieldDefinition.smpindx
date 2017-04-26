@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Site Collection Model/Fields</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>"Add summary link field"</Title>
+  <MethodBodyWithFunction>
+        
+
+        
+        
+        public void CanDeploySimpleSummaryLinkFieldDefinition()
+        {
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+         
+            });
+
+            DeployModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>var model = SPMeta2Model.NewSiteModel(site =&gt;
+{
+
+});
+
+DeployModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>SummaryLinkFieldDefinitionTests</ClassName>
+  <MethodName>CanDeploySimpleSummaryLinkFieldDefinition</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.SummaryLinkFieldDefinitionTests.CanDeploySimpleSummaryLinkFieldDefinition</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.SummaryLinkFieldDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>SummaryLinkFieldDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>SummaryLinkFieldDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

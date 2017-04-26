@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model/Display Templates</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>"Add JavaScript display template"</Title>
+  <MethodBodyWithFunction>
+        
+
+        
+        
+        public void CanDeploySimpleJavaScriptDisplayTemplateDefinition()
+        {
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+         
+            });
+
+            DeployModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>var model = SPMeta2Model.NewSiteModel(site =&gt;
+{
+
+});
+
+DeployModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>JavaScriptDisplayTemplateDefinitionTests</ClassName>
+  <MethodName>CanDeploySimpleJavaScriptDisplayTemplateDefinition</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.JavaScriptDisplayTemplateDefinitionTests.CanDeploySimpleJavaScriptDisplayTemplateDefinition</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.JavaScriptDisplayTemplateDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>JavaScriptDisplayTemplateDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>JavaScriptDisplayTemplateDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

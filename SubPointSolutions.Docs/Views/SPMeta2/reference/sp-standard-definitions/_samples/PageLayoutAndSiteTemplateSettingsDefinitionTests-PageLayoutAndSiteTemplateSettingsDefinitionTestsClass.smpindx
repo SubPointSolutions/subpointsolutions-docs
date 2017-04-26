@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model/Web site</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+
+    
+    //[Browsable(false)]
+    public class PageLayoutAndSiteTemplateSettingsDefinitionTests : ProvisionTestBase
+    {
+        #region methods
+
+        [TestMethod]
+        [TestCategory("Docs.PageLayoutAndSiteTemplateSettingsDefinition")]
+
+        [DisplayName("Setup default web templates")]
+        //[Browsable(false)]
+        public void CanDeploySimplePageLayoutAndSiteTemplateSettingsDefinition()
+        {
+            var sitePublishingInfrastructureFeature = BuiltInSiteFeatures.SharePointServerPublishingInfrastructure.Inherit(def =&gt;
+            {
+                def.Enable();
+            });
+
+            var webPublishingInfrastructureFeature = BuiltInWebFeatures.SharePointServerPublishing.Inherit(def =&gt;
+            {
+                def.Enable();
+            });
+
+            var settings = new PageLayoutAndSiteTemplateSettingsDefinition
+            {
+                // setup web templates
+                UseDefinedWebTemplates = true,
+                DefinedWebTemplates = new Collection&lt;string&gt;
+                {
+                    BuiltInWebTemplates.Collaboration.BlankSite,
+                    BuiltInWebTemplates.Collaboration.Blog,
+                    BuiltInWebTemplates.Collaboration.TeamSite
+                },
+
+                // setup page layouts
+                UseDefinedPageLayouts = true,
+                DefinedPageLayouts = new Collection&lt;string&gt;
+                {
+                    BuiltInPublishingPageLayoutNames.ArticleLeft,
+                    BuiltInPublishingPageLayoutNames.ArticleRight,
+                    BuiltInPublishingPageLayoutNames.ArticleLinks
+                },
+
+                // setup default page layout
+                UseDefinedDefaultPageLayout = true,
+                DefinedDefaultPageLayout = BuiltInPublishingPageLayoutNames.ArticleRight,
+            };
+
+            // create site model to enable publishing infrastructure
+            // then deploy web model with page layout settings
+
+            var siteModel = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                site.AddSiteFeature(sitePublishingInfrastructureFeature);
+            });
+
+            var webModel = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddWebFeature(webPublishingInfrastructureFeature);
+                web.AddPageLayoutAndSiteTemplateSettings(settings);
+            });
+
+            DeployModel(siteModel);
+            DeployModel(webModel);
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>//[Browsable(false)]
+public class PageLayoutAndSiteTemplateSettingsDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+    [TestMethod]
+    [TestCategory("Docs.PageLayoutAndSiteTemplateSettingsDefinition")]
+
+    [DisplayName("Setup default web templates")]
+    //[Browsable(false)]
+    public void CanDeploySimplePageLayoutAndSiteTemplateSettingsDefinition()
+    {
+        var sitePublishingInfrastructureFeature = BuiltInSiteFeatures.SharePointServerPublishingInfrastructure.Inherit(def =&gt;
+        {
+            def.Enable();
+        });
+
+        var webPublishingInfrastructureFeature = BuiltInWebFeatures.SharePointServerPublishing.Inherit(def =&gt;
+        {
+            def.Enable();
+        });
+
+        var settings = new PageLayoutAndSiteTemplateSettingsDefinition
+        {
+            // setup web templates
+            UseDefinedWebTemplates = true,
+            DefinedWebTemplates = new Collection&lt;string&gt;
+            {
+                BuiltInWebTemplates.Collaboration.BlankSite,
+                BuiltInWebTemplates.Collaboration.Blog,
+                BuiltInWebTemplates.Collaboration.TeamSite
+            },
+
+            // setup page layouts
+            UseDefinedPageLayouts = true,
+            DefinedPageLayouts = new Collection&lt;string&gt;
+            {
+                BuiltInPublishingPageLayoutNames.ArticleLeft,
+                BuiltInPublishingPageLayoutNames.ArticleRight,
+                BuiltInPublishingPageLayoutNames.ArticleLinks
+            },
+
+            // setup default page layout
+            UseDefinedDefaultPageLayout = true,
+            DefinedDefaultPageLayout = BuiltInPublishingPageLayoutNames.ArticleRight,
+        };
+
+        // create site model to enable publishing infrastructure
+        // then deploy web model with page layout settings
+
+        var siteModel = SPMeta2Model.NewSiteModel(site =&gt;
+        {
+            site.AddSiteFeature(sitePublishingInfrastructureFeature);
+        });
+
+        var webModel = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web.AddWebFeature(webPublishingInfrastructureFeature);
+            web.AddPageLayoutAndSiteTemplateSettings(settings);
+        });
+
+        DeployModel(siteModel);
+        DeployModel(webModel);
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>PageLayoutAndSiteTemplateSettingsDefinitionTests</ClassName>
+  <MethodName>PageLayoutAndSiteTemplateSettingsDefinitionTestsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassPageLayoutAndSiteTemplateSettingsDefinitionTestsClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.PageLayoutAndSiteTemplateSettingsDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>PageLayoutAndSiteTemplateSettingsDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>PageLayoutAndSiteTemplateSettingsDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

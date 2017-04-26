@@ -8,9 +8,9 @@ namespace SubPointSolutions.Docs.Code.Enumerations
 {
     public static class BuiltInM2ModelTagValues
     {
-        public const string FarmModel = "Farm Model";
-        public const string WebApplicationModel = "Web Application Model";
-        public const string SiteModel = "Site Collection Model";
-        public const string WebModel = "Web Model";
+        //public const string FarmModel = "Category=Farm Model";
+        //public const string WebApplicationModel = "Category=Web Application Model";
+        //public const string SiteModel = "Category=Site Collection Model";
+        //public const string WebModel = "Category=Web Model";
     }
 }

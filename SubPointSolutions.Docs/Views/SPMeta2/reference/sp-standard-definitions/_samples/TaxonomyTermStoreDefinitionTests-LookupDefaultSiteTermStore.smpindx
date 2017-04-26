@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Site Collection Model/Taxonomy</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>"Add default taxonomy term store"</Title>
+  <MethodBodyWithFunction>
+        
+        
+        //[Browsable(false)]
+        public void LookupDefaultSiteTermStore()
+        {
+            var defaultSiteTermStore = new TaxonomyTermStoreDefinition
+            {
+                UseDefaultSiteCollectionTermStore = true
+            };
+
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                site.AddTaxonomyTermStore(defaultSiteTermStore, termStore =&gt;
+                {
+                    // do stuff, add groups, term sets
+                });
+            });
+
+            DeployModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>var defaultSiteTermStore = new TaxonomyTermStoreDefinition
+{
+    UseDefaultSiteCollectionTermStore = true
+};
+
+var model = SPMeta2Model.NewSiteModel(site =&gt;
+{
+    site.AddTaxonomyTermStore(defaultSiteTermStore, termStore =&gt;
+    {
+        // do stuff, add groups, term sets
+    });
+});
+
+DeployModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>TaxonomyTermStoreDefinitionTests</ClassName>
+  <MethodName>LookupDefaultSiteTermStore</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.TaxonomyTermStoreDefinitionTests.LookupDefaultSiteTermStore</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.TaxonomyTermStoreDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>TaxonomyTermStoreDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>TaxonomyTermStoreDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

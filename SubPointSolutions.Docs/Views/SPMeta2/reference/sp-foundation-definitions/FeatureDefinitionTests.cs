@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SPMeta2.Definitions;
 
@@ -13,17 +14,7 @@ using SubPointSolutions.Docs.Code.Metadata;
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
-
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Features)]
-
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.FarmModel)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebApplicationModel)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.SiteModel)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
-
-
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    //[Browsable(false)]
     public class FeatureDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -34,10 +25,10 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.FeatureDefinition")]
 
-        [SampleMetadata(Title = "Activate OOTB site features",
-                        Description = ""
-                        )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [Category("Category=Site Collection Model/Features")]
+
+        [DisplayName("Activate OOTB site features")]
+        //[Browsable(false)]
 
         public void CanActivateOOTBSiteFeatures()
         {
@@ -57,10 +48,10 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.FeatureDefinition")]
 
-        [SampleMetadata(Title = "Activate OOTB web features",
-                        Description = ""
-                        )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [Category("Category=Web Model/Features")]
+
+        [DisplayName("Activate OOTB web features")]
+        //[Browsable(false)]
         public void CanActivateOOTBWebFeatures()
         {
             var model = SPMeta2Model.NewWebModel(web =>
@@ -81,10 +72,10 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.FeatureDefinition")]
-        [SampleMetadata(Title = "Disable OOTB web features",
-                        Description = ""
-                        )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+
+        [Category("Category=Web Model/Features")]
+        [DisplayName("Disable OOTB web features")]
+        //[Browsable(false)]
         public void CanDeactivateOOTBWebFeatures()
         {
             var model = SPMeta2Model.NewWebModel(web =>
@@ -99,10 +90,10 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.FeatureDefinition")]
-        [SampleMetadata(Title = "Activate custom web features",
-                        Description = ""
-                        )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+
+        [Category("Category=Web Model/ Features")]
+        [DisplayName("Activate custom web features")]
+        //[Browsable(false)]
         public void CanActivateCustomWebFeature()
         {
             var myCustomerFeature = new FeatureDefinition
@@ -125,10 +116,9 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.FeatureDefinition")]
 
-        [SampleMetadata(Title = "Disable custom web features",
-                        Description = ""
-                        )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [Category("Category=Web Model/Features")]
+        [DisplayName("Disable custom web features")]
+        //[Browsable(false)]
         public void CanDeactivateCustomWebFeature()
         {
             var myCustomerFeature = new FeatureDefinition
@@ -151,10 +141,9 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.FeatureDefinition")]
 
-        [SampleMetadata(Title = "Inherit OOTB features",
-                        Description = ""
-                        )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [Category("Category=Web Model/Features")]
+        [DisplayName("Inherit OOTB features")]
+        //[Browsable(false)]
         public void OOTBFeatureInheritance()
         {
             var enableMinimalDownloadStrategy = BuiltInWebFeatures.MinimalDownloadStrategy.Inherit(def =>

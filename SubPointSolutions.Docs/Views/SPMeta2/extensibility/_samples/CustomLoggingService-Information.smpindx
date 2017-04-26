@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBodyWithFunction>public override void Information(int id, object message, Exception exception)
+        {
+            // handle info the way you like
+        }</MethodBodyWithFunction>
+  <MethodBody>// handle info the way you like
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>CustomLoggingService</ClassName>
+  <MethodName>Information</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.CustomLoggingService.Information</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.CustomLoggingService</ClassFullName>
+  <MethodParametersCount>3</MethodParametersCount>
+  <SourceFileName>writing-custom-logging.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>writing-custom-logging</SourceFileNameWithoutExtension>
+</DocSample>

@@ -5,6 +5,7 @@ using SPMeta2.Docs.ProvisionSamples.Definitions;
 using SPMeta2.Enumerations;
 using SPMeta2.Syntax.Default;
 using System;
+using System.ComponentModel;
 using SubPointSolutions.Docs.Code.Definitions;
 using SubPointSolutions.Docs.Code.Enumerations;
 using SubPointSolutions.Docs.Code.Metadata;
@@ -13,14 +14,11 @@ using SubPointSolutions.Docs.Code.Metadata;
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
+    
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.ContentTypes)]
+    [Category("Category=Site Collection Model/Site collection")]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.SiteModel)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
-
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    //[Browsable(false)]
     public class ContentTypeDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -29,10 +27,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.ContentTypeDefinition")]
 
-        [SampleMetadata(Title = "Add item content type",
-                        Description = ""
-                        )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add item content type")]
+        //[Browsable(false)]
         public void CanDeploySimpleListContentType()
         {
             var listContentType = new ContentTypeDefinition
@@ -56,10 +52,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.ContentTypeDefinition")]
 
-        [SampleMetadata(Title = "Add document content type",
-                        Description = ""
-                        )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add document content type")]
+        //[Browsable(false)]
         public void CanDeploySimpleDocumentContentType()
         {
             var documentContentType = new ContentTypeDefinition
@@ -82,10 +76,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.ContentTypeDefinition")]
 
-        [SampleMetadata(Title = "Add document set content type",
-                        Description = ""
-                        )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add document set content type")]
+        //[Browsable(false)]
         public void CanDeploySimpleDocumentSetContentType()
         {
             var documentContentType = new ContentTypeDefinition
@@ -108,10 +100,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.ContentTypeDefinition")]
 
-        [SampleMetadata(Title = "Add several content types",
-                        Description = ""
-                        )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add several content types")]
+        //[Browsable(false)]
         public void CanDeploySimpleContentTypes()
         {
             var model = SPMeta2Model.NewSiteModel(site =>
@@ -128,10 +118,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.ContentTypeDefinition")]
 
-        [SampleMetadata(Title = "Add content type with fields",
-                        Description = ""
-                        )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add content type with fields")]
+        //[Browsable(false)]
         public void CanDeploySimpleContentTypesWithFields()
         {
             var model = SPMeta2Model.NewSiteModel(site =>
@@ -164,10 +152,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.ContentTypeDefinition")]
 
-        [SampleMetadata(Title = "Add parent-child content types",
-                        Description = ""
-                        )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add parent-child content types")]
+        //[Browsable(false)]
         public void CanDeployHierarhicalContentTypes()
         {
             var rootDocumentContentType = new ContentTypeDefinition

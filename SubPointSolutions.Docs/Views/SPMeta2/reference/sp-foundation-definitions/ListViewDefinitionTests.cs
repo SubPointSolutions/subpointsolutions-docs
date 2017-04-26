@@ -5,6 +5,7 @@ using SPMeta2.Docs.ProvisionSamples.Definitions;
 using SPMeta2.Enumerations;
 using SPMeta2.Syntax.Default;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Text;
 using SubPointSolutions.Docs.Code.Enumerations;
 using SubPointSolutions.Docs.Code.Metadata;
@@ -13,12 +14,9 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
+    [Category("Category=Web Model/Lists views")]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.ListViews)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
-
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    //[Browsable(false)]
     public class ListViewDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -26,10 +24,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.ListViewDefinition")]
 
-        [SampleMetadata(Title = "Add list view",
-                Description = ""
-                )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add list view")]
+        //[Browsable(false)]
         public void CanDeploySimpleListViews()
         {
             var approvedDocuments = new ListViewDefinition
@@ -77,10 +73,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.ListViewDefinition")]
 
-        [SampleMetadata(Title = "Add list view with URL",
-                Description = ""
-                )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add list view with URL")]
+        //[Browsable(false)]
         public void CanDeploySimpleListViewsWithCustomUrl()
         {
             var returnedDocuments = new ListViewDefinition
@@ -117,10 +111,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.ListViewDefinition")]
-        [SampleMetadata(Title = "Add list view with CAML",
-                Description = ""
-                )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add list view with CAML")]
+        //[Browsable(false)]
         public void CanDeploySimpleListViewsWithCAMLQuery()
         {
             var createdQuery = new StringBuilder();

@@ -8,26 +8,24 @@ using SPMeta2.Syntax.Default;
 using SubPointSolutions.Docs.Code.Enumerations;
 using SubPointSolutions.Docs.Code.Metadata;
 using System;
+using System.ComponentModel;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
+    
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.ListsAndLibraries)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
+     [Category("Category=Web Model/Lists and libraries")]
 
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    //[Browsable(false)]
     public class ListFieldLinkDefinitionTests : ProvisionTestBase
     {
         #region methods
 
         [TestMethod]
         [TestCategory("Docs.ListFieldLinkDefinition")]
-        [SampleMetadata(Title = "Add field links to list",
-                        Description = ""
-                        )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add field links to list")]
+        //[Browsable(false)]
         public void CanDeploySimpleListFieldLinkDefinition()
         {
             var fieldDef = new TextFieldDefinition

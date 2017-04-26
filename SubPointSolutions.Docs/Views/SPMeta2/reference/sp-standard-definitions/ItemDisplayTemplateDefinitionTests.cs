@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SPMeta2.Docs.ProvisionSamples.Base;
 using SPMeta2.Docs.ProvisionSamples.Definitions;
@@ -9,11 +10,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Standard)]
-
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.DisplayTemplates)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    [Category("Category=Web Model/Display Templates")]
+    //[Browsable(false)]
     public class ItemDisplayTemplateDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -21,10 +19,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.ItemDisplayTemplateDefinition")]
 
-        [SampleMetadata(Title = "Add item display template",
-            Description = ""
-            )]
-        [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add item display template")]
+        [Browsable(false)]
         public void CanDeploySimpleItemDisplayTemplateDefinition()
         {
             var model = SPMeta2Model.NewSiteModel(site =>

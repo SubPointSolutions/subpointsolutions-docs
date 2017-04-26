@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags />
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+    public class WrongSPViewUpdate
+    {
+        [TestMethod]
+        public void IncorrectSPViewUpdate(SPList list)
+        {
+            // won't save view (!!!)
+            list.Views["TestView1"].DefaultView = true;
+            list.Views["TestView1"].Update();
+
+            // saves the "NewField2" only (!!!)
+            list.DefaultView.ViewFields.Add("NewField1");
+            list.DefaultView.ViewFields.Add("NewField2");
+            list.DefaultView.Update();
+
+        }
+
+        [TestMethod]
+        public void CorrectSPViewUpdate(SPList list)
+        {
+            // save SPView instance into a local varible, always!
+            var view = list.Views["TestView1"];
+
+            view.DefaultView = true;
+            view.Paged = true;
+
+            view.Update();
+        }
+    }</MethodBodyWithFunction>
+  <MethodBody>public class WrongSPViewUpdate
+{
+    [TestMethod]
+    public void IncorrectSPViewUpdate(SPList list)
+    {
+        // won't save view (!!!)
+        list.Views["TestView1"].DefaultView = true;
+        list.Views["TestView1"].Update();
+
+        // saves the "NewField2" only (!!!)
+        list.DefaultView.ViewFields.Add("NewField1");
+        list.DefaultView.ViewFields.Add("NewField2");
+        list.DefaultView.Update();
+
+    }
+
+    [TestMethod]
+    public void CorrectSPViewUpdate(SPList list)
+    {
+        // save SPView instance into a local varible, always!
+        var view = list.Views["TestView1"];
+
+        view.DefaultView = true;
+        view.Paged = true;
+
+        view.Update();
+    }
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>ReSharePoint.Docs.Basic.Inspection.Code</Namespace>
+  <ClassName>WrongSPViewUpdate</ClassName>
+  <MethodName>WrongSPViewUpdateClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassWrongSPViewUpdateClass</MethodFullName>
+  <ClassFullName>ReSharePoint.Docs.Basic.Inspection.Code.WrongSPViewUpdate</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>WrongSPViewUpdate.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>WrongSPViewUpdate</SourceFileNameWithoutExtension>
+</DocSample>

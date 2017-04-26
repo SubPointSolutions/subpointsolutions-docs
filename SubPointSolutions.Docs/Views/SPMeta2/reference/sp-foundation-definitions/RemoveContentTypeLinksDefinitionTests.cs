@@ -11,17 +11,18 @@ using SPMeta2.SSOM.DefaultSyntax;
 using SPMeta2.Syntax.Default;
 using SubPointSolutions.Docs.Code.Enumerations;
 using SubPointSolutions.Docs.Code.Metadata;
+using System.ComponentModel;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
+    
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.ListsAndLibraries)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
+    [Category("Category=Web Model/Lists and libraries")]
 
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+
+    //[Browsable(false)]
     public class RemoveContentTypeLinksDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -30,10 +31,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.RemoveContentTypeLinksDefinition")]
 
-        [SampleMetadata(Title = "Remove content types from lists",
-                            Description = ""
-                            )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Remove content types from lists")]
+        //[Browsable(false)]
         public void CanRemoveContentTypeFromList()
         {
             var defaultReport = new ContentTypeDefinition

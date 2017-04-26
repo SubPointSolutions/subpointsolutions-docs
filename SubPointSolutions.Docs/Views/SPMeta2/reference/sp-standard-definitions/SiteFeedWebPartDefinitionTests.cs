@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SPMeta2.BuiltInDefinitions;
 using SPMeta2.Definitions;
@@ -15,24 +16,17 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Standard)]
-
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.WebParts)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+   [Category("Category=Web Model/Web parts")]
+    //[Browsable(false)]
     public class SiteFeedWebPartDefinitionTests : ProvisionTestBase
     {
         #region methods
-
-
-
+        
         [TestMethod]
         [TestCategory("Docs.SiteFeedWebPartDefinition")]
 
-        [SampleMetadata(Title = "Add Site Feed web part",
-            Description = ""
-            )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add Site Feed web part")]
+        //[Browsable(false)]
         public void CanDeploySimpleSiteFeedWebPartDefinition()
         {
             var siteFeed = new SiteFeedWebPartDefinition

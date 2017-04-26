@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBodyWithFunction>
+        
+        public void RegisterCustomModelHandlerWithEvents()
+        {
+            var csomProvisionService = new CSOMProvisionService();
+
+            csomProvisionService.RegisterModelHandler(new ChangeWebTitleAndDescriptionModelHandler());
+
+            var webModel = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddChangeWebTitleAndDescription(new ChangeWebTitleAndDescriptionDefinition
+                {
+                    Title = "A new name for the web",
+                    Description = "Some changes done by ChangeWebTitleAndDescriptionDefinition"
+                },
+                changeWebAndTitle =&gt;
+                {
+                    changeWebAndTitle.OnProvisioning&lt;Web, ChangeWebTitleAndDescriptionDefinition&gt;(cntx =&gt;
+                    {
+                        var cntxWeb = cntx.Object;
+                        var cntxDef = cntx.ObjectDefinition;
+
+                        // do stuff
+                    });
+
+                    changeWebAndTitle.OnProvisioned&lt;Web, ChangeWebTitleAndDescriptionDefinition&gt;(cntx =&gt;
+                    {
+                        var cntxWeb = cntx.Object;
+                        var cntxDef = cntx.ObjectDefinition;
+
+                        // do stuff
+                    });
+                });
+            });
+
+            using (var clientContext = new ClientContext(CSOMSiteUrl))
+                csomProvisionService.DeployWebModel(clientContext, webModel);
+        }</MethodBodyWithFunction>
+  <MethodBody>var csomProvisionService = new CSOMProvisionService();
+
+csomProvisionService.RegisterModelHandler(new ChangeWebTitleAndDescriptionModelHandler());
+
+var webModel = SPMeta2Model.NewWebModel(web =&gt;
+{
+    web.AddChangeWebTitleAndDescription(new ChangeWebTitleAndDescriptionDefinition
+    {
+        Title = "A new name for the web",
+        Description = "Some changes done by ChangeWebTitleAndDescriptionDefinition"
+    },
+    changeWebAndTitle =&gt;
+    {
+        changeWebAndTitle.OnProvisioning&lt;Web, ChangeWebTitleAndDescriptionDefinition&gt;(cntx =&gt;
+        {
+            var cntxWeb = cntx.Object;
+            var cntxDef = cntx.ObjectDefinition;
+
+            // do stuff
+        });
+
+        changeWebAndTitle.OnProvisioned&lt;Web, ChangeWebTitleAndDescriptionDefinition&gt;(cntx =&gt;
+        {
+            var cntxWeb = cntx.Object;
+            var cntxDef = cntx.ObjectDefinition;
+
+            // do stuff
+        });
+    });
+});
+
+using (var clientContext = new ClientContext(CSOMSiteUrl))
+    csomProvisionService.DeployWebModel(clientContext, webModel);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>CustomDefinitions</ClassName>
+  <MethodName>RegisterCustomModelHandlerWithEvents</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.CustomDefinitions.RegisterCustomModelHandlerWithEvents</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.CustomDefinitions</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>writing-custom-definition.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>writing-custom-definition</SourceFileNameWithoutExtension>
+</DocSample>

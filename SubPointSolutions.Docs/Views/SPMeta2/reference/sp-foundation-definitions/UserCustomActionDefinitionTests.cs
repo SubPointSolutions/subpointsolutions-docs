@@ -12,17 +12,15 @@ using SPMeta2.CSOM.DefaultSyntax;
 using SPMeta2.Enumerations;
 using SubPointSolutions.Docs.Code.Enumerations;
 using SubPointSolutions.Docs.Code.Metadata;
+using System.ComponentModel;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.UserCustomAction)]
+    [Category("Category=Site Collection Model/User custom action")]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.SiteModel)]
-
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    //[Browsable(false)]
     public class UserCustomActionDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -31,10 +29,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.UserCustomActionDefinition")]
 
-        [SampleMetadata(Title = "Add custom action to site",
-                    Description = ""
-                    )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add custom action to site")]
+        //[Browsable(false)]
         public void CanDeployUserCustomActionUnderSite()
         {
             var siteLogger = new UserCustomActionDefinition
@@ -57,10 +53,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.UserCustomActionDefinition")]
 
-        [SampleMetadata(Title = "Add custom action with jQuery",
-                    Description = ""
-                    )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add custom action with jQuery")]
+        //[Browsable(false)]
         public void CanDeployUserCustomActionWithJquery()
         {
             var jQueryFile = new ModuleFileDefinition
@@ -124,10 +118,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.UserCustomActionDefinition")]
 
-        [SampleMetadata(Title = "Add custom action to web",
-                    Description = ""
-                    )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add custom action to web")]
+        //[Browsable(false)]
         public void CanDeployUserCustomActionOnWeb()
         {
             var webLogger = new UserCustomActionDefinition
@@ -156,10 +148,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
             DeployModel(model);
         }
 
-        [SampleMetadata(Title = "Add custom action to list",
-                    Description = ""
-                    )]
-        [SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add custom action to list")]
+        [Browsable(false)]
         public void CanDeployUserCustomActionOnList()
         {
             var model = SPMeta2Model.NewWebModel(web =>

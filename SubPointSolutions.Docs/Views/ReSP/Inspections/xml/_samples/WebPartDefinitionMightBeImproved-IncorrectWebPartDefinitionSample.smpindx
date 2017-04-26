@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBody>&lt;properties&gt;
+  &lt;property name="Title" type="string"&gt;VisualWebPart1&lt;/property&gt;
+  &lt;property name="TitleIconImageUrl" type="string"&gt;/_layouts/myWp/myWp.png&lt;/property&gt;
+  &lt;property name="CatalogIconImageUrl" type="string"&gt;/_layouts/myWp/myWp.png&lt;/property&gt;
+&lt;/properties&gt;
+
+</MethodBody>
+  <Language>xml</Language>
+  <ClassName>WebPartDefinitionMightBeImproved</ClassName>
+  <MethodName>IncorrectWebPartDefinitionSample</MethodName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>WebPartDefinitionMightBeImproved.xml</SourceFileName>
+  <SourceFileNameWithoutExtension>WebPartDefinitionMightBeImproved</SourceFileNameWithoutExtension>
+</DocSample>

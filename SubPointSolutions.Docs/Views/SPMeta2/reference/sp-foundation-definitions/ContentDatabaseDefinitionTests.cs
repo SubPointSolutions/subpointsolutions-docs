@@ -5,19 +5,14 @@ using SPMeta2.Docs.ProvisionSamples.Definitions;
 using SPMeta2.Syntax.Default;
 using SubPointSolutions.Docs.Code.Enumerations;
 using SubPointSolutions.Docs.Code.Metadata;
+using System.ComponentModel;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.WebApplication)]
-
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebApplicationModel)]
-
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategoryOrder, Value = "100")]
-
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    [Category("Category=Web Application Model/Web application;CategoryOrder=100")]
+    //[Browsable(false)]
     public class ContentDatabaseDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -25,10 +20,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.ContentDatabaseDefinition")]
 
-        [SampleMetadata(Title = "Add content database",
-                        Description = ""
-                        )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add content database")]
+        //[Browsable(false)]
         public void CanDeploySimpleContentDatabaseDefinition()
         {
             var contentDb1 = new ContentDatabaseDefinition

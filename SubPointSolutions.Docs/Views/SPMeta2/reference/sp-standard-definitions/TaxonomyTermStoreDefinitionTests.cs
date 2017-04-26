@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using SPMeta2.Docs.ProvisionSamples.Base;
@@ -11,11 +12,8 @@ using SubPointSolutions.Docs.Code.Metadata;
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Standard)]
-
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Taxonomy)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.SiteModel)]
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    [Category("Category=Site Collection Model/Taxonomy")]
+    //[Browsable(false)]
     public class TaxonomyTermStoreDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -23,10 +21,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
       
         [TestMethod]
         [TestCategory("Docs.TaxonomyTermStoreDefinition")]
-        [SampleMetadata(Title = "Add taxonomy term store by Name",
-            Description = ""
-            )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add taxonomy term store by Name")]
+        //[Browsable(false)]
         public void LookupTermStoreByName()
         {
             var mmsTermStore = new TaxonomyTermStoreDefinition
@@ -47,10 +43,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.TaxonomyTermStoreDefinition")]
-        [SampleMetadata(Title = "Add default taxonomy term store",
-            Description = ""
-            )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add default taxonomy term store")]
+        //[Browsable(false)]
         public void LookupDefaultSiteTermStore()
         {
             var defaultSiteTermStore = new TaxonomyTermStoreDefinition

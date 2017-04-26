@@ -6,17 +6,18 @@ using SPMeta2.Syntax.Default;
 using SubPointSolutions.Docs.Code.Enumerations;
 using SubPointSolutions.Docs.Code.Metadata;
 using System;
+using System.ComponentModel;
 using System.IO;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
+    
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Farm)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.FarmModel)]
+   [Category("Category=Farm Model/Farm")]
 
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+
+    //[Browsable(false)]
     public class FarmSolutionDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -24,10 +25,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.FarmSolutionDefinition")]
 
-        [SampleMetadata(Title = "Add farm solution",
-                        Description = ""
-                        )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add farm solution")]
+        //[Browsable(false)]
         public void CanDeploySimpleFarmSolutionDefinition()
         {
             var solutionDef = new FarmSolutionDefinition

@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using SPMeta2.Docs.ProvisionSamples.Base;
@@ -11,23 +12,17 @@ using SubPointSolutions.Docs.Code.Metadata;
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Standard)]
-
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Taxonomy)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.SiteModel)]
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    [Category("Category=Site Collection Model/Taxonomy")]
+    //[Browsable(false)]
     public class TaxonomyTermSetDefinitionTests : ProvisionTestBase
     {
         #region methods
-
        
         [TestMethod]
         [TestCategory("Docs.TaxonomyTermSetDefinition")]
 
-        [SampleMetadata(Title = "Add taxonomy termsets",
-            Description = ""
-            )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add taxonomy termsets")]
+        //[Browsable(false)]
         public void CanDeploySimpleTaxonomyTermSets()
         {
             var defaultSiteTermStore = new TaxonomyTermStoreDefinition

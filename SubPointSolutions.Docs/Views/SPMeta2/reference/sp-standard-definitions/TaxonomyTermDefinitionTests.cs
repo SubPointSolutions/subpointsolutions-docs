@@ -7,15 +7,13 @@ using SPMeta2.Syntax.Default;
 using SPMeta2.Standard.Syntax;
 using SubPointSolutions.Docs.Code.Enumerations;
 using SubPointSolutions.Docs.Code.Metadata;
+using System.ComponentModel;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Standard)]
-
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Taxonomy)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.SiteModel)]
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    [Category("Category=Site Collection Model/Taxonomy")]
+    //[Browsable(false)]
     public class TaxonomyTermDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -23,10 +21,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.TaxonomyTermDefinition")]
 
-        [SampleMetadata(Title = "Add taxonomy terms",
-            Description = ""
-            )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add taxonomy terms")]
+        //[Browsable(false)]
         public void CanDeploySimpleTaxonomyTerms()
         {
             // define term store

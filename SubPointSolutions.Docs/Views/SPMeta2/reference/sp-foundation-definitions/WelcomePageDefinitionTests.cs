@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SPMeta2.BuiltInDefinitions;
 using SPMeta2.CSOM.DefaultSyntax;
@@ -13,11 +14,10 @@ using SubPointSolutions.Docs.Code.Metadata;
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
+    
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.WelcomePage)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    [Category("Category=Web Model/Welcome page")]
+    //[Browsable(false)]
     public class WelcomePageDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -26,10 +26,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.WelcomePageDefinition")]
 
-        [SampleMetadata(Title = "Add web welcome page",
-            Description = ""
-            )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add web welcome page")]
+        //[Browsable(false)]
         public void CanDeployWelcomePageToWeb()
         {
             var newWebHomePage = new WikiPageDefinition
@@ -60,10 +58,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
      
         [TestMethod]
         [TestCategory("Docs.WelcomePageDefinition")]
-        [SampleMetadata(Title = "Add list welcome page",
-            Description = ""
-            )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add list welcome page")]
+        //[Browsable(false)]
         public void CanDeployWelcomePageToList()
         {
             var newListHomePage = new WikiPageDefinition
@@ -96,10 +92,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.WelcomePageDefinition")]
 
-        [SampleMetadata(Title = "Add folder welcome page",
-            Description = ""
-            )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add folder welcome page")]
+        //[Browsable(false)]
         public void CanDeployWelcomePageToFolder()
         {
             var newFolderHomePage = new WikiPageDefinition

@@ -8,16 +8,17 @@ using SPMeta2.Syntax.Default;
 using SubPointSolutions.Docs.Code.Definitions;
 using SubPointSolutions.Docs.Code.Enumerations;
 using SubPointSolutions.Docs.Code.Metadata;
+using System.ComponentModel;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
+    
 
-    [SampleMetadataTagAttribute(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Folders)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
+    
+    [Category("Category=Web Model/Folders")]
 
-    //[SampleMetadataTagAttribute(Name = BuiltInTagNames.SampleHidden)]
+    
     public class FolderDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -27,10 +28,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.FolderDefinition")]
 
-        [SampleMetadata(Title = "Add folders",
-                        Description = ""
-                        )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add folders")]
+        //[Browsable(false)]
         public void CanDeploySimpleFolders()
         {
             var activeDocsFolder = new FolderDefinition
@@ -68,10 +67,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.FolderDefinition")]
-        [SampleMetadata(Title = "Add folders to list",
-                        Description = ""
-                        )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add folders to list")]
+        //[Browsable(false)]
         public void CanDeploySimpleFolderList()
         {
             var model = SPMeta2Model.NewWebModel(web =>
@@ -93,10 +90,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.FolderDefinition")]
 
-        [SampleMetadata(Title = "Add folder hierarchy to list",
-                        Description = ""
-                        )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add folder hierarchy to list")]
+        //[Browsable(false)]
         public void CanDeployHierarchicalFolderList()
         {
             var model = SPMeta2Model.NewWebModel(web =>

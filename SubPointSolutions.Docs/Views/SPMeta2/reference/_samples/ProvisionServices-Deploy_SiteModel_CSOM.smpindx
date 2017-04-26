@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBodyWithFunction>
+        
+        public void Deploy_SiteModel_CSOM()
+        {
+            // setup url
+            var siteUrl = "";
+
+            // create you model
+            var siteModel = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+
+            });
+
+            // setup client context
+            using (var clientContext = new ClientContext(siteUrl))
+            {
+                // deploy site model with SharePoint Foundation CSOM API
+                var foundationProvisionService = new CSOMProvisionService();
+                foundationProvisionService.DeploySiteModel(clientContext, siteModel);
+
+                // deploy site model with SharePoint Standard CSOM API
+                var standardProvisionService = new StandardCSOMProvisionService();
+                standardProvisionService.DeploySiteModel(clientContext, siteModel);
+            }
+        }</MethodBodyWithFunction>
+  <MethodBody>// setup url
+var siteUrl = "";
+
+// create you model
+var siteModel = SPMeta2Model.NewSiteModel(site =&gt;
+{
+
+});
+
+// setup client context
+using (var clientContext = new ClientContext(siteUrl))
+{
+    // deploy site model with SharePoint Foundation CSOM API
+    var foundationProvisionService = new CSOMProvisionService();
+    foundationProvisionService.DeploySiteModel(clientContext, siteModel);
+
+    // deploy site model with SharePoint Standard CSOM API
+    var standardProvisionService = new StandardCSOMProvisionService();
+    standardProvisionService.DeploySiteModel(clientContext, siteModel);
+}
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SubPointSolutions.Docs.Views.Views.SPMeta2.reference</Namespace>
+  <ClassName>ProvisionServices</ClassName>
+  <MethodName>Deploy_SiteModel_CSOM</MethodName>
+  <ClassComment />
+  <MethodFullName>SubPointSolutions.Docs.Views.Views.SPMeta2.reference.ProvisionServices.Deploy_SiteModel_CSOM</MethodFullName>
+  <ClassFullName>SubPointSolutions.Docs.Views.Views.SPMeta2.reference.ProvisionServices</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>ProvisionServices.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>ProvisionServices</SourceFileNameWithoutExtension>
+</DocSample>

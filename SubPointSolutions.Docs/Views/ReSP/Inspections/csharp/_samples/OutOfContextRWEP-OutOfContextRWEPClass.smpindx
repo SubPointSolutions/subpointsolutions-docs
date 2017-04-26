@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags />
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+    public class OutOfContextRWEP
+    {
+        [TestMethod]
+        public void TrustedConnectionSample(SPWeb web)
+        {
+            // Windows credentials of the current user are used to authenticate against SQL Server and any &lt;user id=&gt; setting will be ignored 
+            var sqlConnection = new SqlConnection("Data Source=SQLDevelopment; Initial Catalog=SQL2008; Integrated Security=SSPI;");
+            var sqlCommand = new SqlCommand("SELECT * FROM [dbo].[Emplpoyees]", sqlConnection);
+
+            var sqlConnection2 = new SqlConnection("Server=SQLDevelopment; Database=SQL2008; Trusted_Connection=True");
+            var sqlCommand2 = new SqlCommand("SELECT * FROM [dbo].[Students]", sqlConnection2);
+        }
+    }</MethodBodyWithFunction>
+  <MethodBody>public class OutOfContextRWEP
+{
+    [TestMethod]
+    public void TrustedConnectionSample(SPWeb web)
+    {
+        // Windows credentials of the current user are used to authenticate against SQL Server and any &lt;user id=&gt; setting will be ignored
+        var sqlConnection = new SqlConnection("Data Source=SQLDevelopment; Initial Catalog=SQL2008; Integrated Security=SSPI;");
+        var sqlCommand = new SqlCommand("SELECT * FROM [dbo].[Emplpoyees]", sqlConnection);
+
+        var sqlConnection2 = new SqlConnection("Server=SQLDevelopment; Database=SQL2008; Trusted_Connection=True");
+        var sqlCommand2 = new SqlCommand("SELECT * FROM [dbo].[Students]", sqlConnection2);
+    }
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>ReSharePoint.Docs.Basic.Inspection.Code</Namespace>
+  <ClassName>OutOfContextRWEP</ClassName>
+  <MethodName>OutOfContextRWEPClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassOutOfContextRWEPClass</MethodFullName>
+  <ClassFullName>ReSharePoint.Docs.Basic.Inspection.Code.OutOfContextRWEP</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>OutOfContextRWEP.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>OutOfContextRWEP</SourceFileNameWithoutExtension>
+</DocSample>

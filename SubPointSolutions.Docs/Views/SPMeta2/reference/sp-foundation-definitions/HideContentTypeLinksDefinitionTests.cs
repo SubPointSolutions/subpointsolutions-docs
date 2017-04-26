@@ -11,16 +11,16 @@ using SPMeta2.Standard.Enumerations;
 using SPMeta2.Syntax.Default;
 using SubPointSolutions.Docs.Code.Enumerations;
 using SubPointSolutions.Docs.Code.Metadata;
+using System.ComponentModel;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
+    
 
-    [SampleMetadataTagAttribute(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.ListsAndLibraries)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
+    [Category("Category=Web Model/Lists and libraries")]
 
-    //[SampleMetadataTagAttribute(Name = BuiltInTagNames.SampleHidden)]
+    
     public class HideContentTypeLinksDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -29,10 +29,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.HideContentTypeLinksDefinition")]
 
-        [SampleMetadata(Title = "Hide content types",
-                        Description = ""
-                        )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Hide content types")]
+        //[Browsable(false)]
         public void CanHideContentTypesInList()
         {
             var newAnnualReportContentType = new ContentTypeDefinition

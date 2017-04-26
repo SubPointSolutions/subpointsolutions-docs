@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBodyWithFunction>public void HideContentTypeFieldsAsExtension()
+        {
+            var listContentType = new ContentTypeDefinition
+            {
+                Name = "Content Type With Hidden Fields",
+                Id = new Guid("e71cdcc9-5765-47ea-8879-b9456d57dfa6"),
+                ParentContentTypeId = BuiltInContentTypeId.Item,
+                Group = "SPMeta2.Samples"
+            };
+
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                site
+                   .AddContentType(listContentType, contentType =&gt;
+                   {
+                       contentType
+                           .HideContentTypeFieldsByIds(new Guid[] { 
+                               BuiltInFieldId.Title,
+                               BuiltInFieldId.Comment
+                            });
+
+                   });
+            });
+
+            DeployModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>var listContentType = new ContentTypeDefinition
+{
+    Name = "Content Type With Hidden Fields",
+    Id = new Guid("e71cdcc9-5765-47ea-8879-b9456d57dfa6"),
+    ParentContentTypeId = BuiltInContentTypeId.Item,
+    Group = "SPMeta2.Samples"
+};
+
+var model = SPMeta2Model.NewSiteModel(site =&gt;
+{
+    site
+       .AddContentType(listContentType, contentType =&gt;
+       {
+           contentType
+               .HideContentTypeFieldsByIds(new Guid[] {
+                   BuiltInFieldId.Title,
+                   BuiltInFieldId.Comment
+                });
+
+       });
+});
+
+DeployModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>CustomSyntax</ClassName>
+  <MethodName>HideContentTypeFieldsAsExtension</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.CustomSyntax.HideContentTypeFieldsAsExtension</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.CustomSyntax</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>writing-custom-syntax.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>writing-custom-syntax</SourceFileNameWithoutExtension>
+</DocSample>

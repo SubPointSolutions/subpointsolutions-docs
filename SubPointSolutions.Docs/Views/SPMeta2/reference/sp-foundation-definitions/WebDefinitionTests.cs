@@ -8,15 +8,15 @@ using SPMeta2.Syntax.Default;
 using SubPointSolutions.Docs.Code.Definitions;
 using SubPointSolutions.Docs.Code.Enumerations;
 using SubPointSolutions.Docs.Code.Metadata;
+using System.ComponentModel;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
+    
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.SiteCollection)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.SiteModel)]
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    [Category("Category=Site Collection Model/Site collection")]
+    //[Browsable(false)]
     public class WebDefinitionTest : ProvisionTestBase
     {
         #region methods
@@ -25,10 +25,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestCategory("Docs.WebDefinition")]
 
 
-        [SampleMetadata(Title = "Add web",
-                    Description = ""
-                    )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add web")]
+        //[Browsable(false)]
         public void CanDeploySimpleWeb()
         {
             var newCustomerWeb = new WebDefinition
@@ -58,10 +56,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 
         [TestMethod]
         [TestCategory("Docs.WebDefinition")]
-        [SampleMetadata(Title = "Add multiple webs",
-                    Description = ""
-                    )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add multiple webs")]
+        //[Browsable(false)]
         public void CanDeploySimpleWebs()
         {
             var model = SPMeta2Model.NewWebModel(web =>
@@ -78,10 +74,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.WebDefinition")]
 
-        [SampleMetadata(Title = "Add hierarchical webs",
-                    Description = ""
-                    )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add hierarchical webs")]
+        //[Browsable(false)]
 
         public void CanDeployHierarchicalWebs()
         {

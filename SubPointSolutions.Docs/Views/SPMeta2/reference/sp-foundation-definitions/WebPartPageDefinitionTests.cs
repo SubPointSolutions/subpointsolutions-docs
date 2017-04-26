@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SPMeta2.BuiltInDefinitions;
 using SPMeta2.Definitions;
@@ -12,20 +13,17 @@ using SubPointSolutions.Docs.Code.Metadata;
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
+    
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.WebPartPages)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    [Category("Category=Web Model/Web part pages")]
+    //[Browsable(false)]
     public class WebPartPageDefinitionTests : ProvisionTestBase
     {
         #region methods
 
 
-        [SampleMetadata(Title = "Add web part page",
-                    Description = ""
-                    )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add web part page")]
+        //[Browsable(false)]
         [TestMethod]
         [TestCategory("Docs.WebPartPageDefinition")]
         public void CanDeployWebPartPages()
@@ -61,10 +59,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.WebPartPageDefinition")]
 
-        [SampleMetadata(Title = "Add custom web part page",
-                    Description = ""
-                    )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add custom web part page")]
+        //[Browsable(false)]
         public void CanDeployWebPartPageWithCustomTemplate()
         {
             var customizedWebPartPage = new WebPartPageDefinition
@@ -91,10 +87,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.WebPartPageDefinition")]
 
-        [SampleMetadata(Title = "Add web part page to folder",
-            Description = ""
-            )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add web part page to folder")]
+        //[Browsable(false)]
         public void CanDeployWebPartPagesUnderFolders()
         {
             // clients folder and pages

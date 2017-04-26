@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBodyWithFunction>
+        
+        public void SettingUpWebModels()
+        {
+            // step 1, setup your definition
+
+            // step 2, setup your site models
+            var featuresModel = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                // setup features
+            });
+
+            var listsModel = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                // setup fields and content types
+            });
+
+            var navigationModel = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                // setup web navigation
+            });
+
+            // step 3, deploy web models
+        }</MethodBodyWithFunction>
+  <MethodBody>// step 1, setup your definition
+
+// step 2, setup your site models
+var featuresModel = SPMeta2Model.NewWebModel(web =&gt;
+{
+    // setup features
+});
+
+var listsModel = SPMeta2Model.NewWebModel(web =&gt;
+{
+    // setup fields and content types
+});
+
+var navigationModel = SPMeta2Model.NewWebModel(web =&gt;
+{
+    // setup web navigation
+});
+
+// step 3, deploy web models
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>Models</ClassName>
+  <MethodName>SettingUpWebModels</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.Models.SettingUpWebModels</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.Models</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>Models.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>Models</SourceFileNameWithoutExtension>
+</DocSample>

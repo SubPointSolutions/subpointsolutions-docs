@@ -5,17 +5,17 @@ using SPMeta2.Syntax.Default;
 using SPMeta2.Enumerations;
 using SubPointSolutions.Docs.Code.Enumerations;
 using SubPointSolutions.Docs.Code.Metadata;
+using System.ComponentModel;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Farm)]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.FarmModel)]
+    [Category("Category=Farm Model/Farm")]
 
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+
+    //[Browsable(false)]
     public class FarmDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -23,10 +23,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.FarmDefinition")]
 
-        [SampleMetadata(Title = "Add farm feature",
-                        Description = ""
-                        )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add farm feature")]
+        //[Browsable(false)]
         public void CanDeploySimpleFarmDefinition()
         {
             var farmFeature = BuiltInFarmFeatures.SiteMailboxes.Inherit(f =>

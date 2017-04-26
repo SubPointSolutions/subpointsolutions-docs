@@ -6,17 +6,17 @@ using SPMeta2.Enumerations;
 using SPMeta2.Syntax.Default;
 using SubPointSolutions.Docs.Code.Enumerations;
 using SubPointSolutions.Docs.Code.Metadata;
+using System.ComponentModel;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
+    
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Security)]
+    [Category("Category=Web Model/Security")]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
 
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    //[Browsable(false)]
     public class ResetRoleInheritanceDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -25,9 +25,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestCategory("Docs.ResetRoleInheritanceDefinition")]
 
 
-        [SampleMetadata(Title = "Reset role inheritance on list",
-                            Description = ""
-                            )]
+        [DisplayName("Reset role inheritance on list")]
         public void CanDeployResetRoleInheritanceDefinition_OnList()
         {
             var listDef = new ListDefinition
@@ -58,9 +56,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestCategory("Docs.ResetRoleInheritanceDefinition")]
 
 
-        [SampleMetadata(Title = "Reset role inheritance on web",
-                            Description = ""
-                            )]
+        [DisplayName("Reset role inheritance on web")]
         public void CanDeployResetRoleInheritanceDefinition_OnWeb()
         {
             var publicProjectWebDef = new WebDefinition

@@ -9,16 +9,15 @@ using SPMeta2.Syntax.Default;
 using SubPointSolutions.Docs.Code.Enumerations;
 using SubPointSolutions.Docs.Code.Metadata;
 using SubPointSolutions.Docs.Code.Resources;
+using System.ComponentModel;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
+    
+    [Category("Category=Web Model/Master page gallery")]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.MasterPageGallery)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
-
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    //[Browsable(false)]
 
     public class MasterPageDefinitionTests : ProvisionTestBase
     {
@@ -28,10 +27,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.MasterPageDefinition")]
 
-        [SampleMetadata(Title = "Add master page",
-                Description = ""
-                )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add master page")]
+        //[Browsable(false)]
         public void CanDeploySimpleMasterPageDefinition()
         {
             var masterPage = new MasterPageDefinition

@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SPMeta2.Definitions;
 using SPMeta2.Definitions.Fields;
@@ -11,12 +12,11 @@ using SubPointSolutions.Docs.Code.Metadata;
 namespace SubPointSolutions.Docs.Views.Views.SPMeta2.reference
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
+    
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Fields)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.SiteModel)]
+    [Category("Category=Site Collection Model/Fields")]
 
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    //[Browsable(false)]
     public class LookupFieldDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -27,10 +27,8 @@ namespace SubPointSolutions.Docs.Views.Views.SPMeta2.reference
         [TestMethod]
         [TestCategory("Docs.LookupFieldDefinition")]
 
-        [SampleMetadata(Title = "Add lookup field",
-                        Description = ""
-                        )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add lookup field")]
+        //[Browsable(false)]
         public void CanDeployEmptyLookupField()
         {
             var emptyLookupField = new LookupFieldDefinition
@@ -56,10 +54,8 @@ namespace SubPointSolutions.Docs.Views.Views.SPMeta2.reference
         [TestMethod]
         [TestCategory("Docs.LookupFieldDefinition")]
 
-        [SampleMetadata(Title = "Add lookup field binded to list",
-                        Description = ""
-                        )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add lookup field binded to list")]
+        //[Browsable(false)]
         public void CanDeployLookupFieldBindedToList()
         {
             var leadTypeLookup = new LookupFieldDefinition

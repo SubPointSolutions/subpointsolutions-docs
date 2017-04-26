@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Farm Model/Farm</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>"Add audience"</Title>
+  <MethodBodyWithFunction>
+        
+
+        
+        
+        public void CanDeploySimpleAudienceDefinition()
+        {
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+
+            });
+
+            DeployModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>var model = SPMeta2Model.NewSiteModel(site =&gt;
+{
+
+});
+
+DeployModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>AudienceDefinitionTests</ClassName>
+  <MethodName>CanDeploySimpleAudienceDefinition</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.AudienceDefinitionTests.CanDeploySimpleAudienceDefinition</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.AudienceDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>AudienceDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>AudienceDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

@@ -13,28 +13,25 @@ using SPMeta2.Syntax.Default;
 using SubPointSolutions.Docs.Code.Enumerations;
 using SubPointSolutions.Docs.Code.Metadata;
 using SubPointSolutions.Docs.Code.Resources;
+using System.ComponentModel;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Standard)]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.MasterPageGallery)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    [Category("Category=Web Model/Master page gallery")]
+    //[Browsable(false)]
     public class PublishingPageLayoutDefinitionTests : ProvisionTestBase
     {
         #region methods
 
-       
+
 
         [TestMethod]
         [TestCategory("Docs.MasterPageDefinition")]
-        [SampleMetadata(Title = "Add publishing page layout",
-            Description = ""
-            )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add publishing page layout")]
+        //[Browsable(false)]
         public void CanDeploySimplePublishingPageLayoutDefinition()
         {
             var publishingPageContentType = new ContentTypeDefinition

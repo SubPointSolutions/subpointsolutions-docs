@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags />
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+    public class SPQueryScopeDoesNotDefined
+    {
+        [TestMethod]
+        public void SPQueryScopeUsageSamples(SPList list)
+        {
+            Console.WriteLine("All Items Count: " + list.ItemCount);
+
+            var firstQuery = new SPQuery();
+            var firstResult = list.GetItems(firstQuery);
+
+            Console.WriteLine("First Query: " + firstResult.Count);
+
+            var secondQuery = new SPQuery
+            {
+                ViewAttributes = "Scope=\"RecursiveAll\""
+            };
+            var secondResult = list.GetItems(secondQuery);
+
+            Console.WriteLine("Second Query: " + secondResult.Count);
+        }
+    }</MethodBodyWithFunction>
+  <MethodBody>public class SPQueryScopeDoesNotDefined
+{
+    [TestMethod]
+    public void SPQueryScopeUsageSamples(SPList list)
+    {
+        Console.WriteLine("All Items Count: " + list.ItemCount);
+
+        var firstQuery = new SPQuery();
+        var firstResult = list.GetItems(firstQuery);
+
+        Console.WriteLine("First Query: " + firstResult.Count);
+
+        var secondQuery = new SPQuery
+        {
+            ViewAttributes = "Scope=\"RecursiveAll\""
+        };
+        var secondResult = list.GetItems(secondQuery);
+
+        Console.WriteLine("Second Query: " + secondResult.Count);
+    }
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>ReSharePoint.Docs.Basic.Inspection.Code</Namespace>
+  <ClassName>SPQueryScopeDoesNotDefined</ClassName>
+  <MethodName>SPQueryScopeDoesNotDefinedClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassSPQueryScopeDoesNotDefinedClass</MethodFullName>
+  <ClassFullName>ReSharePoint.Docs.Basic.Inspection.Code.SPQueryScopeDoesNotDefined</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>SPQueryScopeDoesNotDefined.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>SPQueryScopeDoesNotDefined</SourceFileNameWithoutExtension>
+</DocSample>

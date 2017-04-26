@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBodyWithFunction>public static ModelNode AddChangeWebTitleAndDescription(this ModelNode model,
+            ChangeWebTitleAndDescriptionDefinition definition)
+        {
+            return AddChangeWebTitleAndDescription(model, definition, null);
+        }</MethodBodyWithFunction>
+  <MethodBody>return AddChangeWebTitleAndDescription(model, definition, null);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>ChangeWebTitleAndDescriptionDefinitionSyntax</ClassName>
+  <MethodName>AddChangeWebTitleAndDescription_2_Params</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.ChangeWebTitleAndDescriptionDefinitionSyntax.AddChangeWebTitleAndDescription</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.ChangeWebTitleAndDescriptionDefinitionSyntax</ClassFullName>
+  <MethodParametersCount>2</MethodParametersCount>
+  <SourceFileName>writing-custom-definition.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>writing-custom-definition</SourceFileNameWithoutExtension>
+</DocSample>

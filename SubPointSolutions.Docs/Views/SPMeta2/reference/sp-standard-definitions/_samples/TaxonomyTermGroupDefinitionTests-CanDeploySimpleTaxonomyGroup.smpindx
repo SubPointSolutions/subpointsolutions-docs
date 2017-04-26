@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Site Collection Model/ Taxonomy</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>"Add taxonomy term group"</Title>
+  <MethodBodyWithFunction>
+        
+
+        
+        //[Browsable(false)]
+        public void CanDeploySimpleTaxonomyGroup()
+        {
+            var defaultSiteTermStore = new TaxonomyTermStoreDefinition
+            {
+                UseDefaultSiteCollectionTermStore = true
+            };
+
+            var clientsGroup = new TaxonomyTermGroupDefinition
+            {
+                Name = "Clients"
+            };
+
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                site.AddTaxonomyTermStore(defaultSiteTermStore, termStore =&gt;
+                {
+                    termStore
+                        .AddTaxonomyTermGroup(clientsGroup);
+                });
+            });
+
+            DeployModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>var defaultSiteTermStore = new TaxonomyTermStoreDefinition
+{
+    UseDefaultSiteCollectionTermStore = true
+};
+
+var clientsGroup = new TaxonomyTermGroupDefinition
+{
+    Name = "Clients"
+};
+
+var model = SPMeta2Model.NewSiteModel(site =&gt;
+{
+    site.AddTaxonomyTermStore(defaultSiteTermStore, termStore =&gt;
+    {
+        termStore
+            .AddTaxonomyTermGroup(clientsGroup);
+    });
+});
+
+DeployModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>TaxonomyTermGroupDefinitionTests</ClassName>
+  <MethodName>CanDeploySimpleTaxonomyGroup</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.TaxonomyTermGroupDefinitionTests.CanDeploySimpleTaxonomyGroup</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.TaxonomyTermGroupDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>TaxonomyTermGroupDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>TaxonomyTermGroupDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

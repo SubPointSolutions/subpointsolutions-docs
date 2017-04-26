@@ -7,10 +7,10 @@ using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SPMeta2.Utils;
 using SubPointSolutions.Docs.Code.Data;
-using SubPointSolutions.Docs.Code.Services;
+
 using SubPointSolutions.Docs.Code.Utils;
-using SubPointSolutions.Docs.Services;
-using SubPointSolutions.Docs.Services.Base;
+
+
 
 namespace SubPointSolutions.Docs.Code.Tests
 {

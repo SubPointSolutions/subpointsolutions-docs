@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Site Collection Model/Fields</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>"Add taxonomy field"</Title>
+  <MethodBodyWithFunction>
+        
+
+        
+        
+       
+        public void CanDeployTaxonomyField()
+        {
+            // define a taxonomy
+            // term store -&gt; group -&gt; term set -&gt; terms
+            var taxDefaultTermStore = new TaxonomyTermStoreDefinition
+            {
+                UseDefaultSiteCollectionTermStore = true
+            };
+
+            var taxTermGroup = new TaxonomyTermGroupDefinition
+            {
+                Name = "M2 Taxonomy"
+            };
+
+            var taxTermSet = new TaxonomyTermSetDefinition
+            {
+                Name = "Locations"
+            };
+
+            var taxTermLondon = new TaxonomyTermDefinition
+            {
+                Name = "London"
+            };
+
+            var taxTermSydney = new TaxonomyTermDefinition
+            {
+                Name = "Sydney"
+            };
+
+            // define the field
+            var location = new TaxonomyFieldDefinition
+            {
+                Title = "Location",
+                InternalName = "dcs_LocationTax",
+                Group = "SPMeta2.Samples",
+                Id = new Guid("FE709AC2-E3A1-4A25-8F71-3480667CD98F"),
+                IsMulti = false,
+                UseDefaultSiteCollectionTermStore = true,
+                TermSetName = taxTermSet.Name
+            };
+
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                site
+                    .AddHostTaxonomyTermStore(taxDefaultTermStore, store =&gt;
+                    {
+                        store.AddTaxonomyTermGroup(taxTermGroup, group =&gt;
+                        {
+                            group.AddTaxonomyTermSet(taxTermSet, termSet =&gt;
+                            {
+                                termSet
+                                    .AddTaxonomyTerm(taxTermLondon)
+                                    .AddTaxonomyTerm(taxTermSydney);
+                            });
+                        });
+                    })
+                    .AddTaxonomyField(location);
+            });
+
+            DeployModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>// define a taxonomy
+// term store -&gt; group -&gt; term set -&gt; terms
+var taxDefaultTermStore = new TaxonomyTermStoreDefinition
+{
+    UseDefaultSiteCollectionTermStore = true
+};
+
+var taxTermGroup = new TaxonomyTermGroupDefinition
+{
+    Name = "M2 Taxonomy"
+};
+
+var taxTermSet = new TaxonomyTermSetDefinition
+{
+    Name = "Locations"
+};
+
+var taxTermLondon = new TaxonomyTermDefinition
+{
+    Name = "London"
+};
+
+var taxTermSydney = new TaxonomyTermDefinition
+{
+    Name = "Sydney"
+};
+
+// define the field
+var location = new TaxonomyFieldDefinition
+{
+    Title = "Location",
+    InternalName = "dcs_LocationTax",
+    Group = "SPMeta2.Samples",
+    Id = new Guid("FE709AC2-E3A1-4A25-8F71-3480667CD98F"),
+    IsMulti = false,
+    UseDefaultSiteCollectionTermStore = true,
+    TermSetName = taxTermSet.Name
+};
+
+var model = SPMeta2Model.NewSiteModel(site =&gt;
+{
+    site
+        .AddHostTaxonomyTermStore(taxDefaultTermStore, store =&gt;
+        {
+            store.AddTaxonomyTermGroup(taxTermGroup, group =&gt;
+            {
+                group.AddTaxonomyTermSet(taxTermSet, termSet =&gt;
+                {
+                    termSet
+                        .AddTaxonomyTerm(taxTermLondon)
+                        .AddTaxonomyTerm(taxTermSydney);
+                });
+            });
+        })
+        .AddTaxonomyField(location);
+});
+
+DeployModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>TaxonomyFieldDefinitionTests</ClassName>
+  <MethodName>CanDeployTaxonomyField</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.TaxonomyFieldDefinitionTests.CanDeployTaxonomyField</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.TaxonomyFieldDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>TaxonomyFieldDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>TaxonomyFieldDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

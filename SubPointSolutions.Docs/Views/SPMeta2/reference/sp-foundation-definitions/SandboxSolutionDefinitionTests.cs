@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SPMeta2.Definitions;
 
@@ -13,11 +14,10 @@ using SubPointSolutions.Docs.Code.Metadata;
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
+    
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.SiteCollection)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.SiteModel)]
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+   [Category("Category=Site Collection Model/Site collection")]
+    //[Browsable(false)]
     public class SandboxSolutionDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -27,10 +27,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.SandboxSolutionDefinition")]
 
-        [SampleMetadata(Title = "Add sandbox solution",
-                            Description = ""
-                            )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add sandbox solution")]
+        //[Browsable(false)]
         public void CanDeploySimpleSandboxSolutionDefinition()
         {
             // FileName could be different to the original solution name

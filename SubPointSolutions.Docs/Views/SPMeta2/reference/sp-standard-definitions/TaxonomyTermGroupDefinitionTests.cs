@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using SPMeta2.Docs.ProvisionSamples.Base;
@@ -11,11 +12,8 @@ using SubPointSolutions.Docs.Code.Metadata;
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Standard)]
-
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.Taxonomy)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.SiteModel)]
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    [Category("Category=Site Collection Model/ Taxonomy")]
+    //[Browsable(false)]
     public class TaxonomyTermGroupDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -25,10 +23,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.TaxonomyTermGroupDefinition")]
 
-        [SampleMetadata(Title = "Add taxonomy term group",
-            Description = ""
-            )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add taxonomy term group")]
+        //[Browsable(false)]
         public void CanDeploySimpleTaxonomyGroup()
         {
             var defaultSiteTermStore = new TaxonomyTermStoreDefinition
@@ -56,10 +52,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
       
         [TestMethod]
         [TestCategory("Docs.TaxonomyTermGroupDefinition")]
-        [SampleMetadata(Title = "Add taxonomy term groups",
-            Description = ""
-            )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add taxonomy term groups")]
+        //[Browsable(false)]
         public void CanDeploySimpleTaxonomyGroups()
         {
             var defaultSiteTermStore = new TaxonomyTermStoreDefinition

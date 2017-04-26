@@ -9,16 +9,14 @@ using SPMeta2.Enumerations;
 using SPMeta2.Syntax.Default;
 using SubPointSolutions.Docs.Code.Enumerations;
 using SubPointSolutions.Docs.Code.Metadata;
+using System.ComponentModel;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
 
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
-
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.WebParts)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
-    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    [Category("Category=Web Model/eb parts")]
+    //[Browsable(false)]
     public class ScriptEditorWebPartDefinitionTests : ProvisionTestBase
     {
         #region methods
@@ -28,10 +26,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.ScriptEditorWebPartDefinition")]
 
-        [SampleMetadata(Title = "Add Script Editor web part",
-                            Description = ""
-                            )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add Script Editor web part")]
+        //[Browsable(false)]
         public void CanDeploySimpleScriptEditorWebPartDefinition()
         {
             var scriptEditor = new ScriptEditorWebPartDefinition
@@ -69,10 +65,8 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.ScriptEditorWebPartDefinition")]
 
-        [SampleMetadata(Title = "Add Script Editor web part with content",
-                            Description = ""
-                            )]
-        //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+        [DisplayName("Add Script Editor web part with content")]
+        //[Browsable(false)]
         public void CanDeployScriptEditorWebPartwithContent()
         {
             var scriptEditor = new ScriptEditorWebPartDefinition

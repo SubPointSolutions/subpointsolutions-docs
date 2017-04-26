@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBodyWithFunction>
+        public void SPDataSourceScopeUsageSamples(SPList list)
+        {
+            var ds = new SPDataSource();
+
+            ds.List = list;
+            ds.DataSourceMode = SPDataSourceMode.List;
+            ds.IncludeHidden = false;
+
+            ds.Scope = SPViewScope.Recursive; // &lt;-  recommended
+        }</MethodBodyWithFunction>
+  <MethodBody>var ds = new SPDataSource();
+
+ds.List = list;
+ds.DataSourceMode = SPDataSourceMode.List;
+ds.IncludeHidden = false;
+
+ds.Scope = SPViewScope.Recursive; // &lt;-  recommended
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>ReSharePoint.Docs.Basic.Inspection.Code</Namespace>
+  <ClassName>SPDataSourceScopeDoesNotDefined</ClassName>
+  <MethodName>SPDataSourceScopeUsageSamples</MethodName>
+  <ClassComment />
+  <MethodFullName>ReSharePoint.Docs.Basic.Inspection.Code.SPDataSourceScopeDoesNotDefined.SPDataSourceScopeUsageSamples</MethodFullName>
+  <ClassFullName>ReSharePoint.Docs.Basic.Inspection.Code.SPDataSourceScopeDoesNotDefined</ClassFullName>
+  <MethodParametersCount>1</MethodParametersCount>
+  <SourceFileName>SPDataSourceScopeDoesNotDefined.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>SPDataSourceScopeDoesNotDefined</SourceFileNameWithoutExtension>
+</DocSample>

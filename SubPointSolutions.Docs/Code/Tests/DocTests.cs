@@ -2,7 +2,7 @@
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Diagnostics;
-using SubPointSolutions.Docs.Code.Services;
+
 using System;
 
 namespace SubPointSolutions.Docs.Code.Tests
