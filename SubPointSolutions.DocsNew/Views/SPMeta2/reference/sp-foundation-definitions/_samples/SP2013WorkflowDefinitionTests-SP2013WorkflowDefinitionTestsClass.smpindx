@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model</string>
+        <string>SharePoint 2013 workflow</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+
+    
+
+    //[Browsable(false)]
+    public class SP2013WorkflowDefinitionTests : ProvisionTestBase
+    {
+        #region methods
+
+        
+        [TestMethod]
+        [TestCategory("Docs.SP2013WorkflowDefinition")]
+
+        [DisplayName("Add SP2013 workflow")]
+        //[Browsable(false)]
+        public void CanDeploySimpleSP2013WorkflowDefinition()
+        {
+            var writeToHistoryLstWorkflow = new SP2013WorkflowDefinition
+            {
+                DisplayName = "M2 - Write to history list",
+                Override = true,
+                Xaml = WorkflowTemplates.WriteToHistoryListWorkflow
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddSP2013Workflow(writeToHistoryLstWorkflow);
+            });
+
+            DeployModel(model);
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>//[Browsable(false)]
+public class SP2013WorkflowDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+
+    [TestMethod]
+    [TestCategory("Docs.SP2013WorkflowDefinition")]
+
+    [DisplayName("Add SP2013 workflow")]
+    //[Browsable(false)]
+    public void CanDeploySimpleSP2013WorkflowDefinition()
+    {
+        var writeToHistoryLstWorkflow = new SP2013WorkflowDefinition
+        {
+            DisplayName = "M2 - Write to history list",
+            Override = true,
+            Xaml = WorkflowTemplates.WriteToHistoryListWorkflow
+        };
+
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web.AddSP2013Workflow(writeToHistoryLstWorkflow);
+        });
+
+        DeployModel(model);
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>SP2013WorkflowDefinitionTests</ClassName>
+  <MethodName>SP2013WorkflowDefinitionTestsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassSP2013WorkflowDefinitionTestsClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.SP2013WorkflowDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>SP2013WorkflowDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>SP2013WorkflowDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Farm Model</string>
+        <string>Farm</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+    
+
+   
+
+
+    //[Browsable(false)]
+    public class FarmSolutionDefinitionTests : ProvisionTestBase
+    {
+        #region methods
+
+        [TestMethod]
+        [TestCategory("Docs.FarmSolutionDefinition")]
+
+        [DisplayName("Add farm solution")]
+        //[Browsable(false)]
+        public void CanDeploySimpleFarmSolutionDefinition()
+        {
+            var solutionDef = new FarmSolutionDefinition
+            {
+                FileName = "your-solution-file.wsp",
+                SolutionId = new Guid("your-solution-id"),
+                Content = File.ReadAllBytes("path-to-your-solution-or-byte-array")
+            };
+
+            var model = SPMeta2Model.NewFarmModel(farm =&gt;
+            {
+                farm.AddFarmSolution(solutionDef);
+            });
+
+            DeployModel(model);
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>//[Browsable(false)]
+public class FarmSolutionDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+    [TestMethod]
+    [TestCategory("Docs.FarmSolutionDefinition")]
+
+    [DisplayName("Add farm solution")]
+    //[Browsable(false)]
+    public void CanDeploySimpleFarmSolutionDefinition()
+    {
+        var solutionDef = new FarmSolutionDefinition
+        {
+            FileName = "your-solution-file.wsp",
+            SolutionId = new Guid("your-solution-id"),
+            Content = File.ReadAllBytes("path-to-your-solution-or-byte-array")
+        };
+
+        var model = SPMeta2Model.NewFarmModel(farm =&gt;
+        {
+            farm.AddFarmSolution(solutionDef);
+        });
+
+        DeployModel(model);
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>FarmSolutionDefinitionTests</ClassName>
+  <MethodName>FarmSolutionDefinitionTestsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassFarmSolutionDefinitionTestsClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.FarmSolutionDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>FarmSolutionDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>FarmSolutionDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

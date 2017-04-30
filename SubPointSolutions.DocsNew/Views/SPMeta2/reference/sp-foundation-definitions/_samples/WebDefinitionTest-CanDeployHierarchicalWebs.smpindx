@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Site Collection Model</string>
+        <string>Site collection</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>Add hierarchical webs</Title>
+  <MethodBodyWithFunction>
+        
+
+        
+        //[Browsable(false)]
+
+        public void CanDeployHierarchicalWebs()
+        {
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web
+                    .AddWeb(DocWebs.News)
+                    .AddWeb(DocWebs.Departments, departmentWeb =&gt;
+                    {
+                        departmentWeb
+                            .AddWeb(DocWebs.DepartmentWebs.HR)
+                            .AddWeb(DocWebs.DepartmentWebs.ITHelpDesk, itWeb =&gt;
+                            {
+                                itWeb
+                                    .AddWeb(DocWebs.DepartmentWebs.ITHelpDeskWebs.Apple)
+                                    .AddWeb(DocWebs.DepartmentWebs.ITHelpDeskWebs.Cisco)
+                                    .AddWeb(DocWebs.DepartmentWebs.ITHelpDeskWebs.Microsoft);
+                            })
+                            .AddWeb(DocWebs.DepartmentWebs.Sales);
+                    })
+                    .AddWeb(DocWebs.AboutOurCompany);
+            });
+
+            DeployModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>var model = SPMeta2Model.NewWebModel(web =&gt;
+{
+    web
+        .AddWeb(DocWebs.News)
+        .AddWeb(DocWebs.Departments, departmentWeb =&gt;
+        {
+            departmentWeb
+                .AddWeb(DocWebs.DepartmentWebs.HR)
+                .AddWeb(DocWebs.DepartmentWebs.ITHelpDesk, itWeb =&gt;
+                {
+                    itWeb
+                        .AddWeb(DocWebs.DepartmentWebs.ITHelpDeskWebs.Apple)
+                        .AddWeb(DocWebs.DepartmentWebs.ITHelpDeskWebs.Cisco)
+                        .AddWeb(DocWebs.DepartmentWebs.ITHelpDeskWebs.Microsoft);
+                })
+                .AddWeb(DocWebs.DepartmentWebs.Sales);
+        })
+        .AddWeb(DocWebs.AboutOurCompany);
+});
+
+DeployModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>WebDefinitionTest</ClassName>
+  <MethodName>CanDeployHierarchicalWebs</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.WebDefinitionTest.CanDeployHierarchicalWebs</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.WebDefinitionTest</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>WebDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>WebDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

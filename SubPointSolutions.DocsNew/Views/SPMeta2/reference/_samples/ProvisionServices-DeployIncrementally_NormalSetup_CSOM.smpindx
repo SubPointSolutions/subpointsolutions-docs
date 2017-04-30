@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBodyWithFunction>
+        
+        public void DeployIncrementally_NormalSetup_CSOM()
+        {
+            // setup web
+            var siteUrl = "";
+
+            // create you models
+            var siteModel = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+
+            });
+
+            var webModel = SPMeta2Model.NewWebModel(web =&gt;
+            {
+
+            });
+
+            // setup client context
+            using (var clientContext = new ClientContext(siteUrl))
+            {
+                var provisionService = new StandardCSOMProvisionService();
+
+                // setup incremental provision settings
+                var incrementalProvisionConfig = new IncrementalProvisionConfig();
+
+                // 1 - store model hash in SharePoint 
+                incrementalProvisionConfig.AutoDetectSharePointPersistenceStorage = true;
+
+                // 2 - set incremental provisio model for the provision service
+                provisionService.SetIncrementalProvisionMode(incrementalProvisionConfig);
+
+                // set model id for incremental provision
+                siteModel.SetIncrementalProvisionModelId(incrementalModelId);
+                webModel.SetIncrementalProvisionModelId(incrementalModelId);
+
+
+                // deploy incrementally
+                provisionService.DeploySiteModel(clientContext, siteModel);
+                provisionService.DeployWebModel(clientContext, webModel);
+
+                // revert back to normal provision mode
+                provisionService.SetDefaultProvisionMode();
+            }
+        }</MethodBodyWithFunction>
+  <MethodBody>// setup web
+var siteUrl = "";
+
+// create you models
+var siteModel = SPMeta2Model.NewSiteModel(site =&gt;
+{
+
+});
+
+var webModel = SPMeta2Model.NewWebModel(web =&gt;
+{
+
+});
+
+// setup client context
+using (var clientContext = new ClientContext(siteUrl))
+{
+    var provisionService = new StandardCSOMProvisionService();
+
+    // setup incremental provision settings
+    var incrementalProvisionConfig = new IncrementalProvisionConfig();
+
+    // 1 - store model hash in SharePoint
+    incrementalProvisionConfig.AutoDetectSharePointPersistenceStorage = true;
+
+    // 2 - set incremental provisio model for the provision service
+    provisionService.SetIncrementalProvisionMode(incrementalProvisionConfig);
+
+    // set model id for incremental provision
+    siteModel.SetIncrementalProvisionModelId(incrementalModelId);
+    webModel.SetIncrementalProvisionModelId(incrementalModelId);
+
+
+    // deploy incrementally
+    provisionService.DeploySiteModel(clientContext, siteModel);
+    provisionService.DeployWebModel(clientContext, webModel);
+
+    // revert back to normal provision mode
+    provisionService.SetDefaultProvisionMode();
+}
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SubPointSolutions.Docs.Views.Views.SPMeta2.reference</Namespace>
+  <ClassName>ProvisionServices</ClassName>
+  <MethodName>DeployIncrementally_NormalSetup_CSOM</MethodName>
+  <ClassComment />
+  <MethodFullName>SubPointSolutions.Docs.Views.Views.SPMeta2.reference.ProvisionServices.DeployIncrementally_NormalSetup_CSOM</MethodFullName>
+  <ClassFullName>SubPointSolutions.Docs.Views.Views.SPMeta2.reference.ProvisionServices</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>ProvisionServices.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>ProvisionServices</SourceFileNameWithoutExtension>
+</DocSample>

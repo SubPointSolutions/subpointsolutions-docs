@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Farm Model</string>
+        <string>Farm</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>Add farm solution</Title>
+  <MethodBodyWithFunction>
+        
+
+        
+        //[Browsable(false)]
+        public void CanDeploySimpleFarmSolutionDefinition()
+        {
+            var solutionDef = new FarmSolutionDefinition
+            {
+                FileName = "your-solution-file.wsp",
+                SolutionId = new Guid("your-solution-id"),
+                Content = File.ReadAllBytes("path-to-your-solution-or-byte-array")
+            };
+
+            var model = SPMeta2Model.NewFarmModel(farm =&gt;
+            {
+                farm.AddFarmSolution(solutionDef);
+            });
+
+            DeployModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>var solutionDef = new FarmSolutionDefinition
+{
+    FileName = "your-solution-file.wsp",
+    SolutionId = new Guid("your-solution-id"),
+    Content = File.ReadAllBytes("path-to-your-solution-or-byte-array")
+};
+
+var model = SPMeta2Model.NewFarmModel(farm =&gt;
+{
+    farm.AddFarmSolution(solutionDef);
+});
+
+DeployModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>FarmSolutionDefinitionTests</ClassName>
+  <MethodName>CanDeploySimpleFarmSolutionDefinition</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.FarmSolutionDefinitionTests.CanDeploySimpleFarmSolutionDefinition</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.FarmSolutionDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>FarmSolutionDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>FarmSolutionDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

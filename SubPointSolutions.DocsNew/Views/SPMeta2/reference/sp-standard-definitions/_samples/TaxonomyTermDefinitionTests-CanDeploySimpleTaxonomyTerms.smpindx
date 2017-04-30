@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Site Collection Model</string>
+        <string>Taxonomy</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>Add taxonomy terms</Title>
+  <MethodBodyWithFunction>
+        
+
+        
+        //[Browsable(false)]
+        public void CanDeploySimpleTaxonomyTerms()
+        {
+            // define term store
+            var defaultSiteTermStore = new TaxonomyTermStoreDefinition
+            {
+                UseDefaultSiteCollectionTermStore = true
+            };
+
+            // define group
+            var clientsGroup = new TaxonomyTermGroupDefinition
+            {
+                Name = "Clients"
+            };
+
+            // define term sets
+            var smallBusiness = new TaxonomyTermSetDefinition
+            {
+                Name = "Small Business"
+            };
+
+            var mediumBusiness = new TaxonomyTermSetDefinition
+            {
+                Name = "Medium Business"
+            };
+
+            var enterpriseBusiness = new TaxonomyTermSetDefinition
+            {
+                Name = "Enterprise Business"
+            };
+
+            // define terms
+            var microsoft = new TaxonomyTermDefinition
+            {
+                Name = "Microsoft"
+            };
+
+            var apple = new TaxonomyTermDefinition
+            {
+                Name = "Apple"
+            };
+
+            var oracle = new TaxonomyTermDefinition
+            {
+                Name = "Oracle"
+            };
+
+            var subPointSolutions = new TaxonomyTermDefinition
+            {
+                Name = "SubPoint Solutions"
+            };
+
+            // setup the model 
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                site.AddTaxonomyTermStore(defaultSiteTermStore, termStore =&gt;
+                {
+                    termStore.AddTaxonomyTermGroup(clientsGroup, group =&gt;
+                    {
+                        group
+                            .AddTaxonomyTermSet(smallBusiness, termSet =&gt;
+                            {
+                                termSet.AddTaxonomyTerm(subPointSolutions);
+                            })
+                            .AddTaxonomyTermSet(mediumBusiness)
+                            .AddTaxonomyTermSet(enterpriseBusiness, termSet =&gt;
+                            {
+                                termSet
+                                    .AddTaxonomyTerm(microsoft)
+                                    .AddTaxonomyTerm(apple)
+                                    .AddTaxonomyTerm(oracle);
+                            });
+                    });
+                });
+            });
+
+            DeployModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>// define term store
+var defaultSiteTermStore = new TaxonomyTermStoreDefinition
+{
+    UseDefaultSiteCollectionTermStore = true
+};
+
+// define group
+var clientsGroup = new TaxonomyTermGroupDefinition
+{
+    Name = "Clients"
+};
+
+// define term sets
+var smallBusiness = new TaxonomyTermSetDefinition
+{
+    Name = "Small Business"
+};
+
+var mediumBusiness = new TaxonomyTermSetDefinition
+{
+    Name = "Medium Business"
+};
+
+var enterpriseBusiness = new TaxonomyTermSetDefinition
+{
+    Name = "Enterprise Business"
+};
+
+// define terms
+var microsoft = new TaxonomyTermDefinition
+{
+    Name = "Microsoft"
+};
+
+var apple = new TaxonomyTermDefinition
+{
+    Name = "Apple"
+};
+
+var oracle = new TaxonomyTermDefinition
+{
+    Name = "Oracle"
+};
+
+var subPointSolutions = new TaxonomyTermDefinition
+{
+    Name = "SubPoint Solutions"
+};
+
+// setup the model
+var model = SPMeta2Model.NewSiteModel(site =&gt;
+{
+    site.AddTaxonomyTermStore(defaultSiteTermStore, termStore =&gt;
+    {
+        termStore.AddTaxonomyTermGroup(clientsGroup, group =&gt;
+        {
+            group
+                .AddTaxonomyTermSet(smallBusiness, termSet =&gt;
+                {
+                    termSet.AddTaxonomyTerm(subPointSolutions);
+                })
+                .AddTaxonomyTermSet(mediumBusiness)
+                .AddTaxonomyTermSet(enterpriseBusiness, termSet =&gt;
+                {
+                    termSet
+                        .AddTaxonomyTerm(microsoft)
+                        .AddTaxonomyTerm(apple)
+                        .AddTaxonomyTerm(oracle);
+                });
+        });
+    });
+});
+
+DeployModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>TaxonomyTermDefinitionTests</ClassName>
+  <MethodName>CanDeploySimpleTaxonomyTerms</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.TaxonomyTermDefinitionTests.CanDeploySimpleTaxonomyTerms</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.TaxonomyTermDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>TaxonomyTermDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>TaxonomyTermDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

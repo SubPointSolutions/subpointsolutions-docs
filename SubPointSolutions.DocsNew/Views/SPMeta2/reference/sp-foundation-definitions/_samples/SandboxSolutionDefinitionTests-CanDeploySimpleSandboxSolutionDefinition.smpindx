@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Site Collection Model</string>
+        <string>Site collection</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>Add sandbox solution</Title>
+  <MethodBodyWithFunction>
+        
+
+        
+        //[Browsable(false)]
+        public void CanDeploySimpleSandboxSolutionDefinition()
+        {
+            // FileName could be different to the original solution name
+            // FileName must not have "." to avoid fails (DesignPackage API limitations)
+            
+            // Content is a byte array, so get ot from whatever source you want
+            
+            // SolutionId is used to lookup existing sandbox package
+            // get SolutionId from the VS project or XML inside WSP package
+            
+            // Activate must be always true for CSOM (DesignPackage API limitations)
+
+            var myBranding = new SandboxSolutionDefinition
+            {
+                FileName = "MyBranding.wsp",
+                Content = File.ReadAllBytes("MySandboxBranding.wsp"),
+                SolutionId = new Guid("0CDCC076-A472-4DD9-9A1F-0E1E761ED61D"),
+                Activate = true,
+            };
+
+            var myTasks = new SandboxSolutionDefinition
+            {
+                FileName = "MyTasks.wsp",
+                Content = ModuleFileUtils.FromResource(GetType().Assembly, "MyIntranet.Resources.MyTasks.wsp"),
+                SolutionId = new Guid("3D279748-92FC-49F9-A6C5-A10FBCD2DB24"),
+                Activate = true,
+            };
+
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                site
+                  .AddSandboxSolution(myBranding)
+                  .AddSandboxSolution(myTasks);
+            });
+
+            DeployModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>// FileName could be different to the original solution name
+// FileName must not have "." to avoid fails (DesignPackage API limitations)
+
+// Content is a byte array, so get ot from whatever source you want
+
+// SolutionId is used to lookup existing sandbox package
+// get SolutionId from the VS project or XML inside WSP package
+
+// Activate must be always true for CSOM (DesignPackage API limitations)
+
+var myBranding = new SandboxSolutionDefinition
+{
+    FileName = "MyBranding.wsp",
+    Content = File.ReadAllBytes("MySandboxBranding.wsp"),
+    SolutionId = new Guid("0CDCC076-A472-4DD9-9A1F-0E1E761ED61D"),
+    Activate = true,
+};
+
+var myTasks = new SandboxSolutionDefinition
+{
+    FileName = "MyTasks.wsp",
+    Content = ModuleFileUtils.FromResource(GetType().Assembly, "MyIntranet.Resources.MyTasks.wsp"),
+    SolutionId = new Guid("3D279748-92FC-49F9-A6C5-A10FBCD2DB24"),
+    Activate = true,
+};
+
+var model = SPMeta2Model.NewSiteModel(site =&gt;
+{
+    site
+      .AddSandboxSolution(myBranding)
+      .AddSandboxSolution(myTasks);
+});
+
+DeployModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>SandboxSolutionDefinitionTests</ClassName>
+  <MethodName>CanDeploySimpleSandboxSolutionDefinition</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.SandboxSolutionDefinitionTests.CanDeploySimpleSandboxSolutionDefinition</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.SandboxSolutionDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>SandboxSolutionDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>SandboxSolutionDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

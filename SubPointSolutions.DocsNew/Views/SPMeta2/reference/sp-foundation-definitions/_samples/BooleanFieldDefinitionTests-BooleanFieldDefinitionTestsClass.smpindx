@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Site Collection Model</string>
+        <string>Fields</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+
+
+    
+
+    public class BooleanFieldDefinitionTests : ProvisionTestBase
+    {
+        #region methods
+
+        [TestMethod]
+        [TestCategory("Docs.BooleanFieldDefinition")]
+
+        [DisplayName("Add boolean field")]
+        [Browsable(false)]
+        public void CanDeploySimpleBooleanFieldDefinition()
+        {
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+
+            });
+
+            DeployModel(model);
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>public class BooleanFieldDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+    [TestMethod]
+    [TestCategory("Docs.BooleanFieldDefinition")]
+
+    [DisplayName("Add boolean field")]
+    [Browsable(false)]
+    public void CanDeploySimpleBooleanFieldDefinition()
+    {
+        var model = SPMeta2Model.NewSiteModel(site =&gt;
+        {
+
+        });
+
+        DeployModel(model);
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>BooleanFieldDefinitionTests</ClassName>
+  <MethodName>BooleanFieldDefinitionTestsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassBooleanFieldDefinitionTestsClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.BooleanFieldDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>BooleanFieldDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>BooleanFieldDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBodyWithFunction>public override void TraceActivityStop(int id, object message)
+        {
+            // no implementation is required
+        }</MethodBodyWithFunction>
+  <MethodBody>// no implementation is required
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>CustomLoggingService</ClassName>
+  <MethodName>TraceActivityStop</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.CustomLoggingService.TraceActivityStop</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.CustomLoggingService</ClassFullName>
+  <MethodParametersCount>2</MethodParametersCount>
+  <SourceFileName>writing-custom-logging.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>writing-custom-logging</SourceFileNameWithoutExtension>
+</DocSample>

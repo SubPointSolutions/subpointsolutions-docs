@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags />
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+    public class ChangeWebTitleAndDescriptionDefinition : DefinitionBase
+    {
+        public string Title { get; set; }
+        public string Description { get; set; }
+    }</MethodBodyWithFunction>
+  <MethodBody>public class ChangeWebTitleAndDescriptionDefinition : DefinitionBase
+{
+    public string Title { get; set; }
+    public string Description { get; set; }
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>ChangeWebTitleAndDescriptionDefinition</ClassName>
+  <MethodName>ChangeWebTitleAndDescriptionDefinitionClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassChangeWebTitleAndDescriptionDefinitionClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.ChangeWebTitleAndDescriptionDefinition</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>writing-custom-definition.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>writing-custom-definition</SourceFileNameWithoutExtension>
+</DocSample>

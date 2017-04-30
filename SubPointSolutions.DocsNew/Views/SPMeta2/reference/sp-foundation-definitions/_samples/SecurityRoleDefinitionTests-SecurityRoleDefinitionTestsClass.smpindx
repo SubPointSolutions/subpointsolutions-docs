@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Site Collection Model</string>
+        <string>Security</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+
+    
+
+   
+    //[Browsable(false)]
+    public class SecurityRoleDefinitionTests : ProvisionTestBase
+    {
+        #region methods
+
+        [TestMethod]
+        [TestCategory("Docs.SecurityRoleDefinition")]
+
+        [DisplayName("Add security role")]
+        //[Browsable(false)]
+
+        public void CanDeploySimpleSecurityRoleDefinition()
+        {
+            var customerEditors = new SecurityRoleDefinition
+            {
+                Name = "Customer editors",
+                BasePermissions = new Collection&lt;string&gt;
+                {
+                    BuiltInBasePermissions.EditListItems,
+                    BuiltInBasePermissions.UseClientIntegration
+                }
+            };
+
+            var customerApprovers = new SecurityRoleDefinition
+            {
+                Name = "Customer approvers",
+                BasePermissions = new Collection&lt;string&gt;
+                {
+                    BuiltInBasePermissions.EditListItems,
+                    BuiltInBasePermissions.DeleteListItems,
+                    BuiltInBasePermissions.UseClientIntegration
+                }
+            };
+
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                site
+                    .AddSecurityRole(customerEditors)
+                    .AddSecurityRole(customerApprovers);
+            });
+
+            DeployModel(model);
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>//[Browsable(false)]
+public class SecurityRoleDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+    [TestMethod]
+    [TestCategory("Docs.SecurityRoleDefinition")]
+
+    [DisplayName("Add security role")]
+    //[Browsable(false)]
+
+    public void CanDeploySimpleSecurityRoleDefinition()
+    {
+        var customerEditors = new SecurityRoleDefinition
+        {
+            Name = "Customer editors",
+            BasePermissions = new Collection&lt;string&gt;
+            {
+                BuiltInBasePermissions.EditListItems,
+                BuiltInBasePermissions.UseClientIntegration
+            }
+        };
+
+        var customerApprovers = new SecurityRoleDefinition
+        {
+            Name = "Customer approvers",
+            BasePermissions = new Collection&lt;string&gt;
+            {
+                BuiltInBasePermissions.EditListItems,
+                BuiltInBasePermissions.DeleteListItems,
+                BuiltInBasePermissions.UseClientIntegration
+            }
+        };
+
+        var model = SPMeta2Model.NewSiteModel(site =&gt;
+        {
+            site
+                .AddSecurityRole(customerEditors)
+                .AddSecurityRole(customerApprovers);
+        });
+
+        DeployModel(model);
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>SecurityRoleDefinitionTests</ClassName>
+  <MethodName>SecurityRoleDefinitionTestsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassSecurityRoleDefinitionTestsClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.SecurityRoleDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>SecurityRoleDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>SecurityRoleDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

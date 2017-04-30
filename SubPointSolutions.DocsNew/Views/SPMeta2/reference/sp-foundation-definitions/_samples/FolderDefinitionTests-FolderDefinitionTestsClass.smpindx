@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model</string>
+        <string>Folders</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+    
+
+    
+    
+
+    
+    public class FolderDefinitionTests : ProvisionTestBase
+    {
+        #region methods
+
+      
+
+        [TestMethod]
+        [TestCategory("Docs.FolderDefinition")]
+
+        [DisplayName("Add folders")]
+        //[Browsable(false)]
+        public void CanDeploySimpleFolders()
+        {
+            var activeDocsFolder = new FolderDefinition
+            {
+                Name = "Active documents"
+            };
+
+            var archiveFolder = new FolderDefinition
+            {
+                Name = "Archive"
+            };
+
+            var listWithFolders = new ListDefinition
+            {
+                Title = "List with folders",
+                Description = "Custom list with folders.",
+                TemplateType = BuiltInListTemplateTypeId.GenericList,
+                Url = "ListWithFolders"
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddList(listWithFolders, list =&gt;
+                {
+                    list
+                        .AddFolder(activeDocsFolder)
+                        .AddFolder(archiveFolder);
+                });
+            });
+
+            DeployModel(model);
+        }
+
+      
+
+        [TestMethod]
+        [TestCategory("Docs.FolderDefinition")]
+        [DisplayName("Add folders to list")]
+        //[Browsable(false)]
+        public void CanDeploySimpleFolderList()
+        {
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddList(DocLists.GeneralReports, list =&gt;
+                {
+                    list
+                        .AddFolder(DocFolders.Years.Year2013)
+                        .AddFolder(DocFolders.Years.Year2014)
+                        .AddFolder(DocFolders.Years.Year2015);
+                });
+            });
+
+            DeployModel(model);
+        }
+
+      
+
+        [TestMethod]
+        [TestCategory("Docs.FolderDefinition")]
+
+        [DisplayName("Add folder hierarchy to list")]
+        //[Browsable(false)]
+        public void CanDeployHierarchicalFolderList()
+        {
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddList(DocLists.GeneralReports, list =&gt;
+                {
+                    list
+                        .AddFolder(DocFolders.Years.Year2013, year2013 =&gt;
+                        {
+                            year2013
+                                .AddFolder(DocFolders.Quarters.Q1)
+                                .AddFolder(DocFolders.Quarters.Q2)
+                                .AddFolder(DocFolders.Quarters.Q3)
+                                .AddFolder(DocFolders.Quarters.Q4);
+                        })
+                        .AddFolder(DocFolders.Years.Year2014, year2014 =&gt;
+                        {
+                            year2014
+                                .AddFolder(DocFolders.Quarters.Q1)
+                                .AddFolder(DocFolders.Quarters.Q2)
+                                .AddFolder(DocFolders.Quarters.Q3)
+                                .AddFolder(DocFolders.Quarters.Q4);
+                        })
+                        .AddFolder(DocFolders.Years.Year2015, year2015 =&gt;
+                        {
+                            year2015
+                                .AddFolder(DocFolders.Quarters.Q1)
+                                .AddFolder(DocFolders.Quarters.Q2)
+                                .AddFolder(DocFolders.Quarters.Q3)
+                                .AddFolder(DocFolders.Quarters.Q4);
+                        });
+                });
+            });
+
+            DeployModel(model);
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>public class FolderDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+
+
+    [TestMethod]
+    [TestCategory("Docs.FolderDefinition")]
+
+    [DisplayName("Add folders")]
+    //[Browsable(false)]
+    public void CanDeploySimpleFolders()
+    {
+        var activeDocsFolder = new FolderDefinition
+        {
+            Name = "Active documents"
+        };
+
+        var archiveFolder = new FolderDefinition
+        {
+            Name = "Archive"
+        };
+
+        var listWithFolders = new ListDefinition
+        {
+            Title = "List with folders",
+            Description = "Custom list with folders.",
+            TemplateType = BuiltInListTemplateTypeId.GenericList,
+            Url = "ListWithFolders"
+        };
+
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web.AddList(listWithFolders, list =&gt;
+            {
+                list
+                    .AddFolder(activeDocsFolder)
+                    .AddFolder(archiveFolder);
+            });
+        });
+
+        DeployModel(model);
+    }
+
+
+
+    [TestMethod]
+    [TestCategory("Docs.FolderDefinition")]
+    [DisplayName("Add folders to list")]
+    //[Browsable(false)]
+    public void CanDeploySimpleFolderList()
+    {
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web.AddList(DocLists.GeneralReports, list =&gt;
+            {
+                list
+                    .AddFolder(DocFolders.Years.Year2013)
+                    .AddFolder(DocFolders.Years.Year2014)
+                    .AddFolder(DocFolders.Years.Year2015);
+            });
+        });
+
+        DeployModel(model);
+    }
+
+
+
+    [TestMethod]
+    [TestCategory("Docs.FolderDefinition")]
+
+    [DisplayName("Add folder hierarchy to list")]
+    //[Browsable(false)]
+    public void CanDeployHierarchicalFolderList()
+    {
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web.AddList(DocLists.GeneralReports, list =&gt;
+            {
+                list
+                    .AddFolder(DocFolders.Years.Year2013, year2013 =&gt;
+                    {
+                        year2013
+                            .AddFolder(DocFolders.Quarters.Q1)
+                            .AddFolder(DocFolders.Quarters.Q2)
+                            .AddFolder(DocFolders.Quarters.Q3)
+                            .AddFolder(DocFolders.Quarters.Q4);
+                    })
+                    .AddFolder(DocFolders.Years.Year2014, year2014 =&gt;
+                    {
+                        year2014
+                            .AddFolder(DocFolders.Quarters.Q1)
+                            .AddFolder(DocFolders.Quarters.Q2)
+                            .AddFolder(DocFolders.Quarters.Q3)
+                            .AddFolder(DocFolders.Quarters.Q4);
+                    })
+                    .AddFolder(DocFolders.Years.Year2015, year2015 =&gt;
+                    {
+                        year2015
+                            .AddFolder(DocFolders.Quarters.Q1)
+                            .AddFolder(DocFolders.Quarters.Q2)
+                            .AddFolder(DocFolders.Quarters.Q3)
+                            .AddFolder(DocFolders.Quarters.Q4);
+                    });
+            });
+        });
+
+        DeployModel(model);
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>FolderDefinitionTests</ClassName>
+  <MethodName>FolderDefinitionTestsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassFolderDefinitionTestsClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.FolderDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>FolderDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>FolderDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

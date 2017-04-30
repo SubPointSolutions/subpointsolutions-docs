@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBodyWithFunction>
+        public void IncorrectSPListItemCast(SPListItem item)
+        {
+            string date1 = item["Date"].ToString();
+            DateTime date2 = (DateTime)item["Date"];
+            int x = ((SPFieldUserValue)item["User"]).LookupId;
+        }</MethodBodyWithFunction>
+  <MethodBody>string date1 = item["Date"].ToString();
+DateTime date2 = (DateTime)item["Date"];
+int x = ((SPFieldUserValue)item["User"]).LookupId;
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>ReSharePoint.Docs.Basic.Inspection.Code</Namespace>
+  <ClassName>DoNotUseUnsafeTypeConversionOnSPListItem</ClassName>
+  <MethodName>IncorrectSPListItemCast</MethodName>
+  <ClassComment />
+  <MethodFullName>ReSharePoint.Docs.Basic.Inspection.Code.DoNotUseUnsafeTypeConversionOnSPListItem.IncorrectSPListItemCast</MethodFullName>
+  <ClassFullName>ReSharePoint.Docs.Basic.Inspection.Code.DoNotUseUnsafeTypeConversionOnSPListItem</ClassFullName>
+  <MethodParametersCount>1</MethodParametersCount>
+  <SourceFileName>DoNotUseUnsafeTypeConversionOnSPListItem.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>DoNotUseUnsafeTypeConversionOnSPListItem</SourceFileNameWithoutExtension>
+</DocSample>

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Application Model</string>
+        <string>Web application</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>Add prefix</Title>
+  <MethodBodyWithFunction>
+        
+
+        
+        //[Browsable(false)]
+        public void CanDeploySimplePrefixDefinition()
+        {
+            var prefixDef = new PrefixDefinition
+            {
+                Path = "projects",
+                PrefixType = BuiltInPrefixTypes.WildcardInclusion
+            };
+
+            var model = SPMeta2Model.NewWebApplicationModel(webApp =&gt;
+            {
+                webApp.AddPrefix(prefixDef);
+            });
+
+            DeployModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>var prefixDef = new PrefixDefinition
+{
+    Path = "projects",
+    PrefixType = BuiltInPrefixTypes.WildcardInclusion
+};
+
+var model = SPMeta2Model.NewWebApplicationModel(webApp =&gt;
+{
+    webApp.AddPrefix(prefixDef);
+});
+
+DeployModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>PrefixDefinitionTests</ClassName>
+  <MethodName>CanDeploySimplePrefixDefinition</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.PrefixDefinitionTests.CanDeploySimplePrefixDefinition</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.PrefixDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>PrefixDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>PrefixDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

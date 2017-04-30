@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBodyWithFunction>
+        public void IncorrectSPUrlZoneParamUsage(SPList list)
+        {
+            using (SPSite site = new SPSite(SPContext.Current.Site.ID))
+            {
+                SPUrlZone zone = site.Zone;
+                //Logic that depends on Zone
+                //Oops! Zone is always 'Default'
+            }
+        }</MethodBodyWithFunction>
+  <MethodBody>using (SPSite site = new SPSite(SPContext.Current.Site.ID))
+{
+    SPUrlZone zone = site.Zone;
+    //Logic that depends on Zone
+    //Oops! Zone is always 'Default'
+}
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>ReSharePoint.Docs.Basic.Inspection.Code</Namespace>
+  <ClassName>SpecifySPZoneInSPSite</ClassName>
+  <MethodName>IncorrectSPUrlZoneParamUsage</MethodName>
+  <ClassComment />
+  <MethodFullName>ReSharePoint.Docs.Basic.Inspection.Code.SpecifySPZoneInSPSite.IncorrectSPUrlZoneParamUsage</MethodFullName>
+  <ClassFullName>ReSharePoint.Docs.Basic.Inspection.Code.SpecifySPZoneInSPSite</ClassFullName>
+  <MethodParametersCount>1</MethodParametersCount>
+  <SourceFileName>SpecifySPZoneInSPSite.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>SpecifySPZoneInSPSite</SourceFileNameWithoutExtension>
+</DocSample>

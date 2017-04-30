@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model</string>
+        <string>Web site</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+
+    
+    //[Browsable(false)]
+    public class MasterPageSettingsDefinitionTests : ProvisionTestBase
+    {
+        #region methods
+
+        [TestMethod]
+        [TestCategory("Docs.MasterPageSettingsDefinition")]
+
+        [DisplayName("Add master page setting")]
+        //[Browsable(false)]
+        public void CanDeployWebmasterPageSettings()
+        {
+            // BuiltInMasterPageDefinitions class could be used to refer OOTB master pages
+            // BuiltInMasterPageDefinitions.Seattle 
+            // BuiltInMasterPageDefinitions.Oslo  
+            // BuiltInMasterPageDefinitions.Minimal  
+
+            var masterPageSettings = new MasterPageSettingsDefinition
+            {
+                // both should be site relative URLs
+                SiteMasterPageUrl = "/_catalogs/masterpage/oslo.master",
+                SystemMasterPageUrl = "/_catalogs/masterpage/oslo.master"
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddMasterPageSettings(masterPageSettings);
+            });
+
+            DeployModel(model);
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>//[Browsable(false)]
+public class MasterPageSettingsDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+    [TestMethod]
+    [TestCategory("Docs.MasterPageSettingsDefinition")]
+
+    [DisplayName("Add master page setting")]
+    //[Browsable(false)]
+    public void CanDeployWebmasterPageSettings()
+    {
+        // BuiltInMasterPageDefinitions class could be used to refer OOTB master pages
+        // BuiltInMasterPageDefinitions.Seattle
+        // BuiltInMasterPageDefinitions.Oslo
+        // BuiltInMasterPageDefinitions.Minimal
+
+        var masterPageSettings = new MasterPageSettingsDefinition
+        {
+            // both should be site relative URLs
+            SiteMasterPageUrl = "/_catalogs/masterpage/oslo.master",
+            SystemMasterPageUrl = "/_catalogs/masterpage/oslo.master"
+        };
+
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web.AddMasterPageSettings(masterPageSettings);
+        });
+
+        DeployModel(model);
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>MasterPageSettingsDefinitionTests</ClassName>
+  <MethodName>MasterPageSettingsDefinitionTestsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassMasterPageSettingsDefinitionTestsClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.MasterPageSettingsDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>MasterPageSettingsDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>MasterPageSettingsDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

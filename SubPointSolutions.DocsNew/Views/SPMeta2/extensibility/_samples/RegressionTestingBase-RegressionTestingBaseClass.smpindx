@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags />
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    public class RegressionTestingBase : ProvisionTestBase
+    {
+        protected void TestRandomDefinition&lt;WebDefinition&gt;() { }
+    }</MethodBodyWithFunction>
+  <MethodBody>public class RegressionTestingBase : ProvisionTestBase
+{
+    protected void TestRandomDefinition&lt;WebDefinition&gt;() { }
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SubPointSolutions.Docs.Views.SPMeta2.extensibility</Namespace>
+  <ClassName>RegressionTestingBase</ClassName>
+  <MethodName>RegressionTestingBaseClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassRegressionTestingBaseClass</MethodFullName>
+  <ClassFullName>SubPointSolutions.Docs.Views.SPMeta2.extensibility.RegressionTestingBase</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>regression-testing.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>regression-testing</SourceFileNameWithoutExtension>
+</DocSample>

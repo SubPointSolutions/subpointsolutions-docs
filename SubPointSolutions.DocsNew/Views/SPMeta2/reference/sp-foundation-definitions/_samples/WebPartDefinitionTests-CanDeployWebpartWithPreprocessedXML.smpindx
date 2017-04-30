@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model</string>
+        <string>Web parts</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>Add web part with pre-configured XML</Title>
+  <MethodBodyWithFunction>
+        
+
+        
+        //[Browsable(false)]
+
+        public void CanDeployWebpartWithPreprocessedXML()
+        {
+            // this shows how to use M2 API to pre-process web part XML
+
+            // here is a web part XML template
+            // usually, you export that XML from SharePoint page, but M2 has pre-build class
+            var contentEditorWebPartXml = BuiltInWebPartTemplates.ContentEditorWebPart;
+
+            // let' set new some properties, shall we?
+            // we load XML by WebpartXmlExtensions.LoadWebpartXmlDocument() method
+            // it works well web both V2/V3 web part XML
+            // then change properties and seehow it goes
+            // then call ToString() to get string out of XML
+            var wpXml = WebpartXmlExtensions
+                           .LoadWebpartXmlDocument(contentEditorWebPartXml)
+                           .SetOrUpdateProperty("FrameType", "Standard")
+                           .SetOrUpdateProperty("Width", "500")
+                           .SetOrUpdateProperty("Heigth", "200")
+                           .SetOrUpdateContentEditorWebPartProperty("Content", "This is a new content!", true)
+                           .ToString();
+
+            var contentEditorWebPart = new WebPartDefinition
+            {
+                Title = "New content",
+                Id = "m2AboutSharePointnewContent",
+                WebpartXmlTemplate = wpXml,
+                ZoneIndex = 20,
+                ZoneId = "Main"
+            };
+
+            var webPartPage = new WebPartPageDefinition
+            {
+                Title = "M2 webparts provision",
+                FileName = "web-parts-provision.aspx",
+                PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+                {
+                    list.AddWebPartPage(webPartPage, page =&gt;
+                    {
+                        page.AddWebPart(contentEditorWebPart);
+                    });
+                });
+            });
+
+            DeployCSOMModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>// this shows how to use M2 API to pre-process web part XML
+
+// here is a web part XML template
+// usually, you export that XML from SharePoint page, but M2 has pre-build class
+var contentEditorWebPartXml = BuiltInWebPartTemplates.ContentEditorWebPart;
+
+// let' set new some properties, shall we?
+// we load XML by WebpartXmlExtensions.LoadWebpartXmlDocument() method
+// it works well web both V2/V3 web part XML
+// then change properties and seehow it goes
+// then call ToString() to get string out of XML
+var wpXml = WebpartXmlExtensions
+               .LoadWebpartXmlDocument(contentEditorWebPartXml)
+               .SetOrUpdateProperty("FrameType", "Standard")
+               .SetOrUpdateProperty("Width", "500")
+               .SetOrUpdateProperty("Heigth", "200")
+               .SetOrUpdateContentEditorWebPartProperty("Content", "This is a new content!", true)
+               .ToString();
+
+var contentEditorWebPart = new WebPartDefinition
+{
+    Title = "New content",
+    Id = "m2AboutSharePointnewContent",
+    WebpartXmlTemplate = wpXml,
+    ZoneIndex = 20,
+    ZoneId = "Main"
+};
+
+var webPartPage = new WebPartPageDefinition
+{
+    Title = "M2 webparts provision",
+    FileName = "web-parts-provision.aspx",
+    PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+};
+
+var model = SPMeta2Model.NewWebModel(web =&gt;
+{
+    web.AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+    {
+        list.AddWebPartPage(webPartPage, page =&gt;
+        {
+            page.AddWebPart(contentEditorWebPart);
+        });
+    });
+});
+
+DeployCSOMModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>WebPartDefinitionTests</ClassName>
+  <MethodName>CanDeployWebpartWithPreprocessedXML</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.WebPartDefinitionTests.CanDeployWebpartWithPreprocessedXML</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.WebPartDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>WebPartDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>WebPartDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

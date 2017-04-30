@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model</string>
+        <string>Lists and libraries</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+    
+
+     
+    
+    public class ListDefinitionTests : ProvisionTestBase
+    {
+        #region methods
+
+
+
+
+        [TestMethod]
+        [TestCategory("Docs.ListDefinition")]
+
+        [DisplayName("Add list by template type")]
+        //[Browsable(false)]
+        public void CanDeployListByTemplateId()
+        {
+            var genericList = new ListDefinition
+            {
+                Title = "Generic list",
+                Description = "A generic list.",
+                TemplateType = BuiltInListTemplateTypeId.GenericList,
+                Url = "GenericList"
+            };
+
+            var documentLibrary = new ListDefinition
+            {
+                Title = "Document library",
+                Description = "A document library.",
+                TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
+                Url = "DocumentLibrary"
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddList(genericList);
+                web.AddList(documentLibrary);
+            });
+
+            DeployModel(model);
+        }
+
+
+        [TestMethod]
+        [TestCategory("Docs.ListDefinition")]
+
+        [DisplayName("Add list by template name")]
+        //[Browsable(false)]
+        public void CanDeployListByTemplateName()
+        {
+            var contactsList = new ListDefinition
+            {
+                Title = "Some Assert",
+                Description = "Some Assert.",
+                TemplateName = BuiltInListTemplates.AssetLibrary.InternalName,
+                Url = "SomeAssert"
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddList(contactsList);
+            });
+
+            DeployModel(model);
+        }
+
+
+
+        [TestMethod]
+        [TestCategory("Docs.ListDefinition")]
+
+        [DisplayName("Add host Style Library")]
+        //[Browsable(false)]
+        public void CanDeployStyleLibrary()
+        {
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddHostList(BuiltInListDefinitions.StyleLibrary, list =&gt;
+                {
+                    // do stuff
+                });
+            });
+
+            DeployModel(model);
+        }
+
+
+        [TestMethod]
+        [TestCategory("Docs.ListDefinition")]
+
+        [DisplayName("Add host OOTB lists")]
+        //[Browsable(false)]
+        public void CanDeployOOTBListsLibrary()
+        {
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddHostList(BuiltInListDefinitions.StyleLibrary, list =&gt;
+                {
+                    // do stuff
+                });
+
+                web.AddHostList(BuiltInListDefinitions.Catalogs.MasterPage, list =&gt;
+                {
+                    // do stuff
+                });
+
+                web.AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+                {
+                    // do stuff
+                });
+
+                web.AddHostList(BuiltInListDefinitions.SiteAssets, list =&gt;
+                {
+                    // do stuff
+                });
+            });
+
+            DeployModel(model);
+        }
+
+
+        [TestMethod]
+        [TestCategory("Docs.ListDefinition")]
+
+        [DisplayName("Add multiple lists")]
+        //[Browsable(false)]
+        public void CanDeploySimpleLists()
+        {
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web
+                    .AddWeb(DocWebs.AboutOurCompany, aboutWeb =&gt;
+                    {
+                        aboutWeb
+                            .AddList(DocLists.AboutUsLists.ManagementTeam)
+                            .AddList(DocLists.AboutUsLists.OurClients);
+                    })
+                    .AddWeb(DocWebs.DepartmentWebs.HR, hrWeb =&gt;
+                    {
+                        hrWeb
+                            .AddList(DocLists.HRLists.AnnualReviews)
+                            .AddList(DocLists.HRLists.Poicies)
+                            .AddList(DocLists.HRLists.Procedures);
+                    })
+                    .AddWeb(DocWebs.Departments, departmentWeb =&gt;
+                    {
+                        departmentWeb
+                            .AddList(DocLists.DepartmentsLists.IssueRegister)
+                            .AddList(DocLists.DepartmentsLists.TeamEvents)
+                            .AddList(DocLists.DepartmentsLists.TeamTasks);
+                    });
+            });
+
+            DeployModel(model);
+        }
+
+        [TestMethod]
+        [TestCategory("Docs.ListDefinition")]
+
+        [DisplayName("Add promoted links list")]
+        //[Browsable(false)]
+        public void CanDeployPromotedLinksList()
+        {
+            var listDef = new ListDefinition
+            {
+                Title = "My Links",
+                TemplateName = BuiltInListTemplates.PromotedLinks.InternalName,
+                CustomUrl = "/lists/my-links"
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddList(listDef);
+            });
+
+            DeployModel(model);
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>public class ListDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+
+
+
+    [TestMethod]
+    [TestCategory("Docs.ListDefinition")]
+
+    [DisplayName("Add list by template type")]
+    //[Browsable(false)]
+    public void CanDeployListByTemplateId()
+    {
+        var genericList = new ListDefinition
+        {
+            Title = "Generic list",
+            Description = "A generic list.",
+            TemplateType = BuiltInListTemplateTypeId.GenericList,
+            Url = "GenericList"
+        };
+
+        var documentLibrary = new ListDefinition
+        {
+            Title = "Document library",
+            Description = "A document library.",
+            TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
+            Url = "DocumentLibrary"
+        };
+
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web.AddList(genericList);
+            web.AddList(documentLibrary);
+        });
+
+        DeployModel(model);
+    }
+
+
+    [TestMethod]
+    [TestCategory("Docs.ListDefinition")]
+
+    [DisplayName("Add list by template name")]
+    //[Browsable(false)]
+    public void CanDeployListByTemplateName()
+    {
+        var contactsList = new ListDefinition
+        {
+            Title = "Some Assert",
+            Description = "Some Assert.",
+            TemplateName = BuiltInListTemplates.AssetLibrary.InternalName,
+            Url = "SomeAssert"
+        };
+
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web.AddList(contactsList);
+        });
+
+        DeployModel(model);
+    }
+
+
+
+    [TestMethod]
+    [TestCategory("Docs.ListDefinition")]
+
+    [DisplayName("Add host Style Library")]
+    //[Browsable(false)]
+    public void CanDeployStyleLibrary()
+    {
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web.AddHostList(BuiltInListDefinitions.StyleLibrary, list =&gt;
+            {
+                // do stuff
+            });
+        });
+
+        DeployModel(model);
+    }
+
+
+    [TestMethod]
+    [TestCategory("Docs.ListDefinition")]
+
+    [DisplayName("Add host OOTB lists")]
+    //[Browsable(false)]
+    public void CanDeployOOTBListsLibrary()
+    {
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web.AddHostList(BuiltInListDefinitions.StyleLibrary, list =&gt;
+            {
+                // do stuff
+            });
+
+            web.AddHostList(BuiltInListDefinitions.Catalogs.MasterPage, list =&gt;
+            {
+                // do stuff
+            });
+
+            web.AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+            {
+                // do stuff
+            });
+
+            web.AddHostList(BuiltInListDefinitions.SiteAssets, list =&gt;
+            {
+                // do stuff
+            });
+        });
+
+        DeployModel(model);
+    }
+
+
+    [TestMethod]
+    [TestCategory("Docs.ListDefinition")]
+
+    [DisplayName("Add multiple lists")]
+    //[Browsable(false)]
+    public void CanDeploySimpleLists()
+    {
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web
+                .AddWeb(DocWebs.AboutOurCompany, aboutWeb =&gt;
+                {
+                    aboutWeb
+                        .AddList(DocLists.AboutUsLists.ManagementTeam)
+                        .AddList(DocLists.AboutUsLists.OurClients);
+                })
+                .AddWeb(DocWebs.DepartmentWebs.HR, hrWeb =&gt;
+                {
+                    hrWeb
+                        .AddList(DocLists.HRLists.AnnualReviews)
+                        .AddList(DocLists.HRLists.Poicies)
+                        .AddList(DocLists.HRLists.Procedures);
+                })
+                .AddWeb(DocWebs.Departments, departmentWeb =&gt;
+                {
+                    departmentWeb
+                        .AddList(DocLists.DepartmentsLists.IssueRegister)
+                        .AddList(DocLists.DepartmentsLists.TeamEvents)
+                        .AddList(DocLists.DepartmentsLists.TeamTasks);
+                });
+        });
+
+        DeployModel(model);
+    }
+
+    [TestMethod]
+    [TestCategory("Docs.ListDefinition")]
+
+    [DisplayName("Add promoted links list")]
+    //[Browsable(false)]
+    public void CanDeployPromotedLinksList()
+    {
+        var listDef = new ListDefinition
+        {
+            Title = "My Links",
+            TemplateName = BuiltInListTemplates.PromotedLinks.InternalName,
+            CustomUrl = "/lists/my-links"
+        };
+
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web.AddList(listDef);
+        });
+
+        DeployModel(model);
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>ListDefinitionTests</ClassName>
+  <MethodName>ListDefinitionTestsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassListDefinitionTestsClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.ListDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>ListDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>ListDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

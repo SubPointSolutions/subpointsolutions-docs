@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model</string>
+        <string>Web parts</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+    
+
+    
+    //[Browsable(false)]
+    public class WebPartDefinitionTests : ProvisionTestBase
+    {
+        #region methods
+
+        [TestMethod]
+        [TestCategory("Docs.WebPartDefinition")]
+
+        [DisplayName("Add web part by type")]
+        //[Browsable(false)]
+
+        public void CanDeployWebpartByWebpartType()
+        {
+            // this would deploy a web part using WebpartType prop
+            // you need to provide AssemblyQualifiedName of the target web part type
+            // M2 would use reflection to create an instane of the web part in the runtime
+            // that works only for SSOM, not CSOM support yet
+
+            var contentEditorWebPart = new WebPartDefinition
+            {
+                Title = "About SharePoint SSOM",
+                Id = "m2AboutSharePointSSOM",
+                WebpartType = typeof(ContentEditorWebPart).AssemblyQualifiedName,
+                ZoneIndex = 10,
+                ZoneId = "Main"
+            };
+
+            var webPartPage = new WebPartPageDefinition
+            {
+                Title = "M2 webparts provision",
+                FileName = "web-parts-provision.aspx",
+                PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+                {
+                    list.AddWebPartPage(webPartPage, page =&gt;
+                    {
+                        page.AddWebPart(contentEditorWebPart);
+                    });
+                });
+            });
+
+            DeploySSOMModel(model);
+        }
+
+        [TestMethod]
+        [TestCategory("Docs.WebPartDefinition")]
+
+
+        [DisplayName("Add web part by XML")]
+        //[Browsable(false)]
+        public void CanDeployWebpartByXML()
+        {
+            // this whould deploy the web part using WebpartXmlTemplate prop
+            // you need to provide an XML template which you get from SharePoint
+            // export the wenb part, and put it into WebpartXmlTemplate prop
+
+            // here is a web part XML template
+            // usually, you export that XML from SharePoint page, but M2 has pre-build class
+            var contentEditorWebPartXml = BuiltInWebPartTemplates.ContentEditorWebPart;
+
+            var contentEditorWebPart = new WebPartDefinition
+            {
+                Title = "About SharePoint XML",
+                Id = "m2AboutSharePointXML",
+                WebpartXmlTemplate = contentEditorWebPartXml,
+                ZoneIndex = 20,
+                ZoneId = "Main"
+            };
+
+            var webPartPage = new WebPartPageDefinition
+            {
+                Title = "M2 webparts provision",
+                FileName = "web-parts-provision.aspx",
+                PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+                {
+                    list.AddWebPartPage(webPartPage, page =&gt;
+                    {
+                        page.AddWebPart(contentEditorWebPart);
+                    });
+                });
+            });
+
+            DeployModel(model);
+        }
+
+        [TestMethod]
+        [TestCategory("Docs.WebPartDefinition")]
+
+        [DisplayName("Add web part from Gallery File")]
+        //[Browsable(false)]
+        public void CanDeployWebpartByWebpartGalleryFileName()
+        {
+            // this would deploy the web part using WebpartFileName
+            // you need to provide a file name ofthe web part template in the web part gallery
+            // M2 would load this file, then use an XML as a web part template
+
+            var contentEditorWebPart = new WebPartDefinition
+            {
+                Title = "About SharePoint web part gallery",
+                Id = "m2AboutSharePointWebPartGallery",
+                // shortcut to "MSContentEditor.dwp",
+                WebpartFileName = BuiltInWebpartFileNames.MSContentEditor,
+                ZoneIndex = 20,
+                ZoneId = "Main"
+            };
+
+            var webPartPage = new WebPartPageDefinition
+            {
+                Title = "M2 webparts provision",
+                FileName = "web-parts-provision.aspx",
+                PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+                {
+                    list.AddWebPartPage(webPartPage, page =&gt;
+                    {
+                        page.AddWebPart(contentEditorWebPart);
+                    });
+                });
+            });
+
+            DeployModel(model);
+        }
+
+        [TestMethod]
+        [TestCategory("Docs.WebPartDefinition")]
+
+        [DisplayName("Add web part with pre-configured XML")]
+        //[Browsable(false)]
+
+        public void CanDeployWebpartWithPreprocessedXML()
+        {
+            // this shows how to use M2 API to pre-process web part XML
+
+            // here is a web part XML template
+            // usually, you export that XML from SharePoint page, but M2 has pre-build class
+            var contentEditorWebPartXml = BuiltInWebPartTemplates.ContentEditorWebPart;
+
+            // let' set new some properties, shall we?
+            // we load XML by WebpartXmlExtensions.LoadWebpartXmlDocument() method
+            // it works well web both V2/V3 web part XML
+            // then change properties and seehow it goes
+            // then call ToString() to get string out of XML
+            var wpXml = WebpartXmlExtensions
+                           .LoadWebpartXmlDocument(contentEditorWebPartXml)
+                           .SetOrUpdateProperty("FrameType", "Standard")
+                           .SetOrUpdateProperty("Width", "500")
+                           .SetOrUpdateProperty("Heigth", "200")
+                           .SetOrUpdateContentEditorWebPartProperty("Content", "This is a new content!", true)
+                           .ToString();
+
+            var contentEditorWebPart = new WebPartDefinition
+            {
+                Title = "New content",
+                Id = "m2AboutSharePointnewContent",
+                WebpartXmlTemplate = wpXml,
+                ZoneIndex = 20,
+                ZoneId = "Main"
+            };
+
+            var webPartPage = new WebPartPageDefinition
+            {
+                Title = "M2 webparts provision",
+                FileName = "web-parts-provision.aspx",
+                PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+                {
+                    list.AddWebPartPage(webPartPage, page =&gt;
+                    {
+                        page.AddWebPart(contentEditorWebPart);
+                    });
+                });
+            });
+
+            DeployCSOMModel(model);
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>//[Browsable(false)]
+public class WebPartDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+    [TestMethod]
+    [TestCategory("Docs.WebPartDefinition")]
+
+    [DisplayName("Add web part by type")]
+    //[Browsable(false)]
+
+    public void CanDeployWebpartByWebpartType()
+    {
+        // this would deploy a web part using WebpartType prop
+        // you need to provide AssemblyQualifiedName of the target web part type
+        // M2 would use reflection to create an instane of the web part in the runtime
+        // that works only for SSOM, not CSOM support yet
+
+        var contentEditorWebPart = new WebPartDefinition
+        {
+            Title = "About SharePoint SSOM",
+            Id = "m2AboutSharePointSSOM",
+            WebpartType = typeof(ContentEditorWebPart).AssemblyQualifiedName,
+            ZoneIndex = 10,
+            ZoneId = "Main"
+        };
+
+        var webPartPage = new WebPartPageDefinition
+        {
+            Title = "M2 webparts provision",
+            FileName = "web-parts-provision.aspx",
+            PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+        };
+
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web.AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+            {
+                list.AddWebPartPage(webPartPage, page =&gt;
+                {
+                    page.AddWebPart(contentEditorWebPart);
+                });
+            });
+        });
+
+        DeploySSOMModel(model);
+    }
+
+    [TestMethod]
+    [TestCategory("Docs.WebPartDefinition")]
+
+
+    [DisplayName("Add web part by XML")]
+    //[Browsable(false)]
+    public void CanDeployWebpartByXML()
+    {
+        // this whould deploy the web part using WebpartXmlTemplate prop
+        // you need to provide an XML template which you get from SharePoint
+        // export the wenb part, and put it into WebpartXmlTemplate prop
+
+        // here is a web part XML template
+        // usually, you export that XML from SharePoint page, but M2 has pre-build class
+        var contentEditorWebPartXml = BuiltInWebPartTemplates.ContentEditorWebPart;
+
+        var contentEditorWebPart = new WebPartDefinition
+        {
+            Title = "About SharePoint XML",
+            Id = "m2AboutSharePointXML",
+            WebpartXmlTemplate = contentEditorWebPartXml,
+            ZoneIndex = 20,
+            ZoneId = "Main"
+        };
+
+        var webPartPage = new WebPartPageDefinition
+        {
+            Title = "M2 webparts provision",
+            FileName = "web-parts-provision.aspx",
+            PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+        };
+
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web.AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+            {
+                list.AddWebPartPage(webPartPage, page =&gt;
+                {
+                    page.AddWebPart(contentEditorWebPart);
+                });
+            });
+        });
+
+        DeployModel(model);
+    }
+
+    [TestMethod]
+    [TestCategory("Docs.WebPartDefinition")]
+
+    [DisplayName("Add web part from Gallery File")]
+    //[Browsable(false)]
+    public void CanDeployWebpartByWebpartGalleryFileName()
+    {
+        // this would deploy the web part using WebpartFileName
+        // you need to provide a file name ofthe web part template in the web part gallery
+        // M2 would load this file, then use an XML as a web part template
+
+        var contentEditorWebPart = new WebPartDefinition
+        {
+            Title = "About SharePoint web part gallery",
+            Id = "m2AboutSharePointWebPartGallery",
+            // shortcut to "MSContentEditor.dwp",
+            WebpartFileName = BuiltInWebpartFileNames.MSContentEditor,
+            ZoneIndex = 20,
+            ZoneId = "Main"
+        };
+
+        var webPartPage = new WebPartPageDefinition
+        {
+            Title = "M2 webparts provision",
+            FileName = "web-parts-provision.aspx",
+            PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+        };
+
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web.AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+            {
+                list.AddWebPartPage(webPartPage, page =&gt;
+                {
+                    page.AddWebPart(contentEditorWebPart);
+                });
+            });
+        });
+
+        DeployModel(model);
+    }
+
+    [TestMethod]
+    [TestCategory("Docs.WebPartDefinition")]
+
+    [DisplayName("Add web part with pre-configured XML")]
+    //[Browsable(false)]
+
+    public void CanDeployWebpartWithPreprocessedXML()
+    {
+        // this shows how to use M2 API to pre-process web part XML
+
+        // here is a web part XML template
+        // usually, you export that XML from SharePoint page, but M2 has pre-build class
+        var contentEditorWebPartXml = BuiltInWebPartTemplates.ContentEditorWebPart;
+
+        // let' set new some properties, shall we?
+        // we load XML by WebpartXmlExtensions.LoadWebpartXmlDocument() method
+        // it works well web both V2/V3 web part XML
+        // then change properties and seehow it goes
+        // then call ToString() to get string out of XML
+        var wpXml = WebpartXmlExtensions
+                       .LoadWebpartXmlDocument(contentEditorWebPartXml)
+                       .SetOrUpdateProperty("FrameType", "Standard")
+                       .SetOrUpdateProperty("Width", "500")
+                       .SetOrUpdateProperty("Heigth", "200")
+                       .SetOrUpdateContentEditorWebPartProperty("Content", "This is a new content!", true)
+                       .ToString();
+
+        var contentEditorWebPart = new WebPartDefinition
+        {
+            Title = "New content",
+            Id = "m2AboutSharePointnewContent",
+            WebpartXmlTemplate = wpXml,
+            ZoneIndex = 20,
+            ZoneId = "Main"
+        };
+
+        var webPartPage = new WebPartPageDefinition
+        {
+            Title = "M2 webparts provision",
+            FileName = "web-parts-provision.aspx",
+            PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+        };
+
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web.AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+            {
+                list.AddWebPartPage(webPartPage, page =&gt;
+                {
+                    page.AddWebPart(contentEditorWebPart);
+                });
+            });
+        });
+
+        DeployCSOMModel(model);
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>WebPartDefinitionTests</ClassName>
+  <MethodName>WebPartDefinitionTestsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassWebPartDefinitionTestsClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.WebPartDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>WebPartDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>WebPartDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

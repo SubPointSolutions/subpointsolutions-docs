@@ -1,0 +1,58 @@
+﻿<script doc-sample doc-method-name="AvoidJQueryDocumentReadyInControl_Init">
+    window.myappName$ = window.myappName$ || jQuery.noConflict(true);
+
+    (function ($) {
+        if (!_spBodyOnLoadCalled) {
+            _spBodyOnLoadFunctions.push(pageLoad);
+        } else {
+            pageLoad();
+        }
+
+        function pageLoad() {
+            $('#pageTitle span').text('Hello from jQuery');
+        }
+
+        RegisterModuleInit(_spPageContextInfo.webServerRelativeUrl + 'appname/script.js', pageLoad);
+
+    })(window.myappName$);
+</script>
+
+
+<script doc-sample doc-method-name="AvoidJQueryDocumentReadyInControl_mQuery">
+    m$.ready(function () {
+        // DO STUFF
+    });
+</script>
+
+
+<script doc-sample doc-method-name="AvoidJQueryDocumentReadyInControl_mQuerySODExecute">
+    SP.SOD.execute("mquery.js", "m$.ready", function () {
+
+        // DO STUFF
+
+    });
+</script>
+
+<script doc-sample doc-method-name="AvoidJQueryDocumentReadyInJSFile_mQuerySODExecute">
+    SP.SOD.execute("mquery.js", "m$.ready", function () {
+
+        // DO STUFF
+
+    });
+</script>
+
+<script doc-sample doc-method-name="AvoidJQueryDocumentReadyInMasterPage_mQuerySODExecute">
+    SP.SOD.execute("mquery.js", "m$.ready", function () {
+
+        // DO STUFF
+
+    });
+</script>
+
+<script doc-sample doc-method-name="AvoidJQueryDocumentReadyInPage_mQuerySODExecute">
+    SP.SOD.execute("mquery.js", "m$.ready", function () {
+
+        // DO STUFF
+
+    });
+</script>

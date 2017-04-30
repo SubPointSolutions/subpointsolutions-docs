@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Farm Model</string>
+        <string>Farm</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+
+
+    
+
+
+    //[Browsable(false)]
+    public class FarmDefinitionTests : ProvisionTestBase
+    {
+        #region methods
+
+        [TestMethod]
+        [TestCategory("Docs.FarmDefinition")]
+
+        [DisplayName("Add farm feature")]
+        //[Browsable(false)]
+        public void CanDeploySimpleFarmDefinition()
+        {
+            var farmFeature = BuiltInFarmFeatures.SiteMailboxes.Inherit(f =&gt;
+            {
+                f.Enable = true;
+            });
+
+            var model = SPMeta2Model.NewFarmModel(farm =&gt;
+            {
+                farm.AddFarmFeature(farmFeature);
+            });
+
+            DeployModel(model);
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>//[Browsable(false)]
+public class FarmDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+    [TestMethod]
+    [TestCategory("Docs.FarmDefinition")]
+
+    [DisplayName("Add farm feature")]
+    //[Browsable(false)]
+    public void CanDeploySimpleFarmDefinition()
+    {
+        var farmFeature = BuiltInFarmFeatures.SiteMailboxes.Inherit(f =&gt;
+        {
+            f.Enable = true;
+        });
+
+        var model = SPMeta2Model.NewFarmModel(farm =&gt;
+        {
+            farm.AddFarmFeature(farmFeature);
+        });
+
+        DeployModel(model);
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>FarmDefinitionTests</ClassName>
+  <MethodName>FarmDefinitionTestsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassFarmDefinitionTestsClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.FarmDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>FarmDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>FarmDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags />
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    public static class DAL
+    {
+        public static void Save(string p1)
+        {
+            throw new NotImplementedException();
+        }
+    }</MethodBodyWithFunction>
+  <MethodBody>public static class DAL
+{
+    public static void Save(string p1)
+    {
+        throw new NotImplementedException();
+    }
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SubPointSolutions.Docs.Views.Views.ReSP.Inspections.csharp</Namespace>
+  <ClassName>DAL</ClassName>
+  <MethodName>DALClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassDALClass</MethodFullName>
+  <ClassFullName>SubPointSolutions.Docs.Views.Views.ReSP.Inspections.csharp.DAL</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>DoNotSuppressExceptions.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>DoNotSuppressExceptions</SourceFileNameWithoutExtension>
+</DocSample>

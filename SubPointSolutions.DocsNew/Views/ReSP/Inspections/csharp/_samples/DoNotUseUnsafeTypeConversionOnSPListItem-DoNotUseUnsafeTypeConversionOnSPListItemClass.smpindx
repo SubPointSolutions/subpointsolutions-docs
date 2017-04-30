@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags />
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+    public class DoNotUseUnsafeTypeConversionOnSPListItem
+    {
+        [TestMethod]
+        public void IncorrectSPListItemCast(SPListItem item)
+        {
+            string date1 = item["Date"].ToString();
+            DateTime date2 = (DateTime)item["Date"];
+            int x = ((SPFieldUserValue)item["User"]).LookupId;
+        }
+
+        [TestMethod]
+        public void CorrectSPListItemCast(SPListItem item)
+        {
+            DateTime date1 = Convert.ToDateTime(item["Date"]);
+            DateTime? date2 = item["Date"] as DateTime?;
+        }
+    }</MethodBodyWithFunction>
+  <MethodBody>public class DoNotUseUnsafeTypeConversionOnSPListItem
+{
+    [TestMethod]
+    public void IncorrectSPListItemCast(SPListItem item)
+    {
+        string date1 = item["Date"].ToString();
+        DateTime date2 = (DateTime)item["Date"];
+        int x = ((SPFieldUserValue)item["User"]).LookupId;
+    }
+
+    [TestMethod]
+    public void CorrectSPListItemCast(SPListItem item)
+    {
+        DateTime date1 = Convert.ToDateTime(item["Date"]);
+        DateTime? date2 = item["Date"] as DateTime?;
+    }
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>ReSharePoint.Docs.Basic.Inspection.Code</Namespace>
+  <ClassName>DoNotUseUnsafeTypeConversionOnSPListItem</ClassName>
+  <MethodName>DoNotUseUnsafeTypeConversionOnSPListItemClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassDoNotUseUnsafeTypeConversionOnSPListItemClass</MethodFullName>
+  <ClassFullName>ReSharePoint.Docs.Basic.Inspection.Code.DoNotUseUnsafeTypeConversionOnSPListItem</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>DoNotUseUnsafeTypeConversionOnSPListItem.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>DoNotUseUnsafeTypeConversionOnSPListItem</SourceFileNameWithoutExtension>
+</DocSample>

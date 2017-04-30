@@ -1,0 +1,189 @@
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SPMeta2.BuiltInDefinitions;
+using SPMeta2.CSOM.DefaultSyntax;
+using SPMeta2.Definitions;
+using SPMeta2.Definitions.Webparts;
+
+using SPMeta2.Docs.ProvisionSamples.Base;
+using SPMeta2.Docs.ProvisionSamples.Definitions;
+using SPMeta2.Enumerations;
+using SPMeta2.Syntax.Default;
+
+
+
+namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
+{
+    [TestClass]
+    
+
+    [Category("Category=Web Model/Web parts")]
+    //[Browsable(false)]
+    public class XsltListViewWebPartDefinitionTests : ProvisionTestBase
+    {
+        #region methods
+
+      
+        [TestMethod]
+        [TestCategory("Docs.XsltListViewWebPartDefinition")]
+
+        [DisplayName("Add XLVWP binded to list by Title")]
+        //[Browsable(false)]
+        public void CanBindXsltListViewWebPartByListTitle()
+        {
+            var inventoryLibrary = new ListDefinition
+            {
+                Title = "Inventory library",
+                Description = "A document library.",
+                TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
+                Url = "InventoryLibrary"
+            };
+
+            var xsltListView = new XsltListViewWebPartDefinition
+            {
+                Title = "Inventory Default View by List Title",
+                Id = "m2InventoryView",
+                ZoneIndex = 10,
+                ZoneId = "Main",
+                ListTitle = inventoryLibrary.Title
+            };
+
+            var webPartPage = new WebPartPageDefinition
+            {
+                Title = "M2 Xslt List View provision",
+                FileName = "xslt-listview-webpart-provision.aspx",
+                PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =>
+            {
+                web
+                  .AddList(inventoryLibrary)
+                  .AddHostList(BuiltInListDefinitions.SitePages, list =>
+                  {
+                      list.AddWebPartPage(webPartPage, page =>
+                      {
+                          page.AddXsltListViewWebPart(xsltListView);
+                      });
+                  });
+            });
+
+            DeployModel(model);
+        }
+
+       
+        [TestMethod]
+        [TestCategory("Docs.XsltListViewWebPartDefinition")]
+
+        [DisplayName("Add XLVWP binded to list by URL")]
+        //[Browsable(false)]
+        public void CanBindXsltListViewWebPartByListUrl()
+        {
+            var booksLibrary = new ListDefinition
+            {
+                Title = "Books library",
+                Description = "A document library.",
+                TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
+                Url = "BooksLibrary"
+            };
+
+            var xsltListView = new XsltListViewWebPartDefinition
+            {
+                Title = "Books Default View by List Url",
+                Id = "m2BooksView",
+                ZoneIndex = 10,
+                ZoneId = "Main",
+                ListUrl = booksLibrary.GetListUrl()
+            };
+
+            var webPartPage = new WebPartPageDefinition
+            {
+                Title = "M2 Xslt List View provision",
+                FileName = "xslt-listview-webpart-provision.aspx",
+                PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =>
+            {
+                web
+                  .AddList(booksLibrary)
+                  .AddHostList(BuiltInListDefinitions.SitePages, list =>
+                  {
+                      list.AddWebPartPage(webPartPage, page =>
+                      {
+                          page.AddXsltListViewWebPart(xsltListView);
+                      });
+                  });
+            });
+
+            DeployModel(model);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("Docs.XsltListViewWebPartDefinition")]
+
+        [DisplayName("Add XLVWP binded to list view by Title")]
+        //[Browsable(false)]
+        public void CanBindXsltListViewWebPartByListViewTitle()
+        {
+            var booksLibrary = new ListDefinition
+            {
+                Title = "Books library",
+                Description = "A document library.",
+                TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
+                Url = "BooksLibrary"
+            };
+
+            var booksView = new ListViewDefinition
+            {
+                Title = "Popular Books",
+                Fields = new Collection<string>
+                {
+                    BuiltInInternalFieldNames.Edit,
+                    BuiltInInternalFieldNames.ID,
+                    BuiltInInternalFieldNames.FileLeafRef
+                },
+                RowLimit = 10
+            };
+
+            var xsltListView = new XsltListViewWebPartDefinition
+            {
+                Title = "Popular Books binding by List View Title",
+                Id = "m2PopularBooksView",
+                ZoneIndex = 10,
+                ZoneId = "Main",
+                ListUrl = booksLibrary.GetListUrl(),
+                ViewName = booksView.Title
+            };
+
+            var webPartPage = new WebPartPageDefinition
+            {
+                Title = "M2 Xslt List View provision",
+                FileName = "xslt-listview-webpart-provision.aspx",
+                PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =>
+            {
+                web
+                  .AddList(booksLibrary, list =>
+                  {
+                      list.AddListView(booksView);
+                  })
+                  .AddHostList(BuiltInListDefinitions.SitePages, list =>
+                  {
+                      list.AddWebPartPage(webPartPage, page =>
+                      {
+                          page.AddXsltListViewWebPart(xsltListView);
+                      });
+                  });
+            });
+
+            DeployModel(model);
+        }
+
+        #endregion
+    }
+}

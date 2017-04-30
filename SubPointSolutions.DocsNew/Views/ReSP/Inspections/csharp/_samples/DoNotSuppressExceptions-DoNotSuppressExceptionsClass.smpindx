@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags />
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+    public class DoNotSuppressExceptions
+    {
+        [TestMethod]
+        public void CallerMethod(ControlCollection controlCollection)
+        {
+            try
+            {
+                CalledMethod("Test");
+            }
+            // DO NOT CATCH USAGE EXCEPTION
+            catch (ArgumentNotSpecifiedException ex)
+            {
+                // special handling for ArgumentNotSpecifiedException
+            }
+            catch (Exception ex)
+            {
+                // log it
+                throw new WrappedException("Method XXX call  error occurred", ex); // wrapped &amp; chained exceptions.
+            }
+            finally
+            {
+                // normal clean goes here (like closing open files).
+            }
+        }
+
+        [TestMethod]
+        public void CalledMethod(string p1)
+        {
+            // Validate parameter and throw "usage exception"
+            if (String.IsNullOrEmpty(p1))
+                throw new ArgumentNotSpecifiedException("Parameter p1 must be specified");
+
+            // Here we save data to the storage and the "system exception" could be raised
+            try
+            {
+                DAL.Save(p1);
+            }
+            catch (SqlException e)
+            {
+                if (e.ErrorCode != NO_ROW_ERROR)
+                {
+                    // filter out NoDataFound.
+                    // do special cleanup, like maybe closing the "dirty" database connection.
+                    // throw e; &lt;- DO NOT DO IT. This destroys the strack trace information!
+                    throw; // this preserves the stack trace
+                }
+            }
+        }
+
+        public int NO_ROW_ERROR { get; private set; }
+    }</MethodBodyWithFunction>
+  <MethodBody>public class DoNotSuppressExceptions
+{
+    [TestMethod]
+    public void CallerMethod(ControlCollection controlCollection)
+    {
+        try
+        {
+            CalledMethod("Test");
+        }
+        // DO NOT CATCH USAGE EXCEPTION
+        catch (ArgumentNotSpecifiedException ex)
+        {
+            // special handling for ArgumentNotSpecifiedException
+        }
+        catch (Exception ex)
+        {
+            // log it
+            throw new WrappedException("Method XXX call  error occurred", ex); // wrapped &amp; chained exceptions.
+        }
+        finally
+        {
+            // normal clean goes here (like closing open files).
+        }
+    }
+
+    [TestMethod]
+    public void CalledMethod(string p1)
+    {
+        // Validate parameter and throw "usage exception"
+        if (String.IsNullOrEmpty(p1))
+            throw new ArgumentNotSpecifiedException("Parameter p1 must be specified");
+
+        // Here we save data to the storage and the "system exception" could be raised
+        try
+        {
+            DAL.Save(p1);
+        }
+        catch (SqlException e)
+        {
+            if (e.ErrorCode != NO_ROW_ERROR)
+            {
+                // filter out NoDataFound.
+                // do special cleanup, like maybe closing the "dirty" database connection.
+                // throw e; &lt;- DO NOT DO IT. This destroys the strack trace information!
+                throw; // this preserves the stack trace
+            }
+        }
+    }
+
+    public int NO_ROW_ERROR { get; private set; }
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SubPointSolutions.Docs.Views.Views.ReSP.Inspections.csharp</Namespace>
+  <ClassName>DoNotSuppressExceptions</ClassName>
+  <MethodName>DoNotSuppressExceptionsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassDoNotSuppressExceptionsClass</MethodFullName>
+  <ClassFullName>SubPointSolutions.Docs.Views.Views.ReSP.Inspections.csharp.DoNotSuppressExceptions</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>DoNotSuppressExceptions.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>DoNotSuppressExceptions</SourceFileNameWithoutExtension>
+</DocSample>

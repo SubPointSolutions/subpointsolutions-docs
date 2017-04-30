@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBodyWithFunction>
+        public SPPrincipalInfo GetPeoplePickerUser(ControlCollection controlCollection)
+        {
+            SPPrincipalInfo result = null;
+
+            foreach (Control control in controlCollection)
+            {
+                var peopleEditor = control as PeopleEditor;
+                if (peopleEditor != null &amp;&amp; peopleEditor.Entities.Count == 1)
+                {
+                    PickerEntity pickerEntity = (PickerEntity)peopleEditor.Entities[0];
+                    // get principal info code here ...
+                    return result;
+                }
+                if (control.HasControls())
+                {
+                    result = GetPeoplePickerUser(control.Controls);
+                }
+            }
+
+            return result;
+        }</MethodBodyWithFunction>
+  <MethodBody>SPPrincipalInfo result = null;
+
+foreach (Control control in controlCollection)
+{
+    var peopleEditor = control as PeopleEditor;
+    if (peopleEditor != null &amp;&amp; peopleEditor.Entities.Count == 1)
+    {
+        PickerEntity pickerEntity = (PickerEntity)peopleEditor.Entities[0];
+        // get principal info code here ...
+        return result;
+    }
+    if (control.HasControls())
+    {
+        result = GetPeoplePickerUser(control.Controls);
+    }
+}
+
+return result;
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SubPointSolutions.Docs.Views.Views.ReSP.Inspections.csharp</Namespace>
+  <ClassName>DoNotUseEntityEditorEntities</ClassName>
+  <MethodName>GetPeoplePickerUser</MethodName>
+  <ClassComment />
+  <MethodFullName>SubPointSolutions.Docs.Views.Views.ReSP.Inspections.csharp.DoNotUseEntityEditorEntities.GetPeoplePickerUser</MethodFullName>
+  <ClassFullName>SubPointSolutions.Docs.Views.Views.ReSP.Inspections.csharp.DoNotUseEntityEditorEntities</ClassFullName>
+  <MethodParametersCount>1</MethodParametersCount>
+  <SourceFileName>DoNotUseEntityEditorEntities.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>DoNotUseEntityEditorEntities</SourceFileNameWithoutExtension>
+</DocSample>

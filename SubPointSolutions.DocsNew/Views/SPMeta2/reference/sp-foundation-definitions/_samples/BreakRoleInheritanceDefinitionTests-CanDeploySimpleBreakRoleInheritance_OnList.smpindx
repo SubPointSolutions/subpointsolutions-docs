@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model</string>
+        <string>Security</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>Break role inheritance on list</Title>
+  <MethodBodyWithFunction>
+        
+
+        
+        public void CanDeploySimpleBreakRoleInheritance_OnList()
+        {
+            var privateListDef = new ListDefinition
+            {
+                Title = "Private records",
+                TemplateType = BuiltInListTemplateTypeId.GenericList,
+                CustomUrl = "lists/private-records",
+            };
+
+            var privateProjectWebBreakRoleInheritance = new BreakRoleInheritanceDefinition
+            {
+                CopyRoleAssignments = false
+            };
+
+            var privateSecurityGroupMembers = new SecurityGroupDefinition
+            {
+                Name = "Private Project Group Members"
+            };
+
+            var privateSecurityGroupViewers = new SecurityGroupDefinition
+            {
+                Name = "Private Project Group Viewers"
+            };
+
+            // site model with the groups
+            var siteModel = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                site.AddSecurityGroup(privateSecurityGroupMembers);
+                site.AddSecurityGroup(privateSecurityGroupViewers);
+            });
+
+            // web model 
+            var webModel = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddList(privateListDef, publicProjectWeb =&gt;
+                {
+                    publicProjectWeb.AddBreakRoleInheritance(privateProjectWebBreakRoleInheritance, privateResetList =&gt;
+                    {
+                        // privateResetList is your list but after breaking role inheritance
+
+                        // link group with roles by SecurityRoleType / SecurityRoleName
+                        // use BuiltInSecurityRoleTypes or BuiltInSecurityRoleNames 
+
+                        // add group with contributor permission
+                        privateResetList.AddSecurityGroupLink(privateSecurityGroupMembers, group =&gt;
+                        {
+                            group.AddSecurityRoleLink(new SecurityRoleLinkDefinition
+                            {
+                                SecurityRoleType = BuiltInSecurityRoleTypes.Contributor
+                            });
+                        });
+
+                        // add group with reader permission
+                        privateResetList.AddSecurityGroupLink(privateSecurityGroupViewers, group =&gt;
+                        {
+                            group.AddSecurityRoleLink(new SecurityRoleLinkDefinition
+                            {
+                                SecurityRoleType = BuiltInSecurityRoleTypes.Reader
+                            });
+                        });
+                    });
+                });
+            });
+
+            // deploy site model with groups, and then web model with the rest
+            DeployModel(siteModel);
+            DeployModel(webModel);
+        }</MethodBodyWithFunction>
+  <MethodBody>var privateListDef = new ListDefinition
+{
+    Title = "Private records",
+    TemplateType = BuiltInListTemplateTypeId.GenericList,
+    CustomUrl = "lists/private-records",
+};
+
+var privateProjectWebBreakRoleInheritance = new BreakRoleInheritanceDefinition
+{
+    CopyRoleAssignments = false
+};
+
+var privateSecurityGroupMembers = new SecurityGroupDefinition
+{
+    Name = "Private Project Group Members"
+};
+
+var privateSecurityGroupViewers = new SecurityGroupDefinition
+{
+    Name = "Private Project Group Viewers"
+};
+
+// site model with the groups
+var siteModel = SPMeta2Model.NewSiteModel(site =&gt;
+{
+    site.AddSecurityGroup(privateSecurityGroupMembers);
+    site.AddSecurityGroup(privateSecurityGroupViewers);
+});
+
+// web model
+var webModel = SPMeta2Model.NewWebModel(web =&gt;
+{
+    web.AddList(privateListDef, publicProjectWeb =&gt;
+    {
+        publicProjectWeb.AddBreakRoleInheritance(privateProjectWebBreakRoleInheritance, privateResetList =&gt;
+        {
+            // privateResetList is your list but after breaking role inheritance
+
+            // link group with roles by SecurityRoleType / SecurityRoleName
+            // use BuiltInSecurityRoleTypes or BuiltInSecurityRoleNames
+
+            // add group with contributor permission
+            privateResetList.AddSecurityGroupLink(privateSecurityGroupMembers, group =&gt;
+            {
+                group.AddSecurityRoleLink(new SecurityRoleLinkDefinition
+                {
+                    SecurityRoleType = BuiltInSecurityRoleTypes.Contributor
+                });
+            });
+
+            // add group with reader permission
+            privateResetList.AddSecurityGroupLink(privateSecurityGroupViewers, group =&gt;
+            {
+                group.AddSecurityRoleLink(new SecurityRoleLinkDefinition
+                {
+                    SecurityRoleType = BuiltInSecurityRoleTypes.Reader
+                });
+            });
+        });
+    });
+});
+
+// deploy site model with groups, and then web model with the rest
+DeployModel(siteModel);
+DeployModel(webModel);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>BreakRoleInheritanceDefinitionTests</ClassName>
+  <MethodName>CanDeploySimpleBreakRoleInheritance_OnList</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.BreakRoleInheritanceDefinitionTests.CanDeploySimpleBreakRoleInheritance_OnList</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.BreakRoleInheritanceDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>BreakRoleInheritanceDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>BreakRoleInheritanceDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

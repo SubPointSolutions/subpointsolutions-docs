@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model</string>
+        <string>Lists views</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>Add list view</Title>
+  <MethodBodyWithFunction>
+        
+
+        
+        //[Browsable(false)]
+        public void CanDeploySimpleListViews()
+        {
+            var approvedDocuments = new ListViewDefinition
+            {
+                Title = "Approved Documents",
+                Fields = new Collection&lt;string&gt;
+                {
+                    BuiltInInternalFieldNames.ID,
+                    BuiltInInternalFieldNames.FileLeafRef
+                }
+            };
+
+            var inProgressDocuments = new ListViewDefinition
+            {
+                Title = "In Progress Documents",
+                Fields = new Collection&lt;string&gt;
+                {
+                    BuiltInInternalFieldNames.ID,
+                    BuiltInInternalFieldNames.FileLeafRef
+                }
+            };
+
+            var documentLibrary = new ListDefinition
+            {
+                Title = "CustomerDocuments",
+                Description = "A customr document library.",
+                TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
+                Url = "CustomerDocuments"
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddList(documentLibrary, list =&gt;
+                {
+                    list.AddListView(approvedDocuments);
+                    list.AddListView(inProgressDocuments);
+
+                });
+            });
+
+            DeployModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>var approvedDocuments = new ListViewDefinition
+{
+    Title = "Approved Documents",
+    Fields = new Collection&lt;string&gt;
+    {
+        BuiltInInternalFieldNames.ID,
+        BuiltInInternalFieldNames.FileLeafRef
+    }
+};
+
+var inProgressDocuments = new ListViewDefinition
+{
+    Title = "In Progress Documents",
+    Fields = new Collection&lt;string&gt;
+    {
+        BuiltInInternalFieldNames.ID,
+        BuiltInInternalFieldNames.FileLeafRef
+    }
+};
+
+var documentLibrary = new ListDefinition
+{
+    Title = "CustomerDocuments",
+    Description = "A customr document library.",
+    TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
+    Url = "CustomerDocuments"
+};
+
+var model = SPMeta2Model.NewWebModel(web =&gt;
+{
+    web.AddList(documentLibrary, list =&gt;
+    {
+        list.AddListView(approvedDocuments);
+        list.AddListView(inProgressDocuments);
+
+    });
+});
+
+DeployModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>ListViewDefinitionTests</ClassName>
+  <MethodName>CanDeploySimpleListViews</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.ListViewDefinitionTests.CanDeploySimpleListViews</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.ListViewDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>ListViewDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>ListViewDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

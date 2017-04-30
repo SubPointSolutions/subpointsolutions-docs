@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBodyWithFunction>
+        
+        public void Deploy_FarmModel_SSOM()
+        {
+            // create you model
+            var farmModel = SPMeta2Model.NewFarmModel(farm =&gt;
+            {
+
+            });
+
+            var spFarm = SPFarm.Local;
+
+            // deploy site model with SharePoint Foundation SSOM API
+            var foundationProvisionService = new SSOMProvisionService();
+            foundationProvisionService.DeployFarmModel(spFarm, farmModel);
+
+            // deploy site model with SharePoint Standard SSOM API
+            var standardProvisionService = new StandardSSOMProvisionService();
+            standardProvisionService.DeployFarmModel(spFarm, farmModel);
+        }</MethodBodyWithFunction>
+  <MethodBody>// create you model
+var farmModel = SPMeta2Model.NewFarmModel(farm =&gt;
+{
+
+});
+
+var spFarm = SPFarm.Local;
+
+// deploy site model with SharePoint Foundation SSOM API
+var foundationProvisionService = new SSOMProvisionService();
+foundationProvisionService.DeployFarmModel(spFarm, farmModel);
+
+// deploy site model with SharePoint Standard SSOM API
+var standardProvisionService = new StandardSSOMProvisionService();
+standardProvisionService.DeployFarmModel(spFarm, farmModel);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SubPointSolutions.Docs.Views.Views.SPMeta2.reference</Namespace>
+  <ClassName>ProvisionServices</ClassName>
+  <MethodName>Deploy_FarmModel_SSOM</MethodName>
+  <ClassComment />
+  <MethodFullName>SubPointSolutions.Docs.Views.Views.SPMeta2.reference.ProvisionServices.Deploy_FarmModel_SSOM</MethodFullName>
+  <ClassFullName>SubPointSolutions.Docs.Views.Views.SPMeta2.reference.ProvisionServices</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>ProvisionServices.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>ProvisionServices</SourceFileNameWithoutExtension>
+</DocSample>

@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model</string>
+        <string>Lists and libraries</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+    
+
+     
+
+    //[Browsable(false)]
+    public class ListFieldLinkDefinitionTests : ProvisionTestBase
+    {
+        #region methods
+
+        [TestMethod]
+        [TestCategory("Docs.ListFieldLinkDefinition")]
+        [DisplayName("Add field links to list")]
+        //[Browsable(false)]
+        public void CanDeploySimpleListFieldLinkDefinition()
+        {
+            var fieldDef = new TextFieldDefinition
+            {
+                Title = "Customer number",
+                InternalName = "m2CustomNumber",
+                Id = new Guid("87247c7d-1ecc-4503-bfd5-21f107b442fb")
+            };
+
+            var listDef = new ListDefinition
+            {
+                Title = "Customers",
+                TemplateType = BuiltInListTemplateTypeId.GenericList,
+                CustomUrl = "lists/customers",
+            };
+
+            var siteModel = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                site.AddTextField(fieldDef);
+            });
+
+            var webModel = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddList(listDef, list =&gt;
+                {
+                    // will add a link to the site level field
+                    list.AddListFieldLink(fieldDef);
+                });
+            });
+
+            DeployModel(siteModel);
+            DeployModel(webModel);
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>//[Browsable(false)]
+public class ListFieldLinkDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+    [TestMethod]
+    [TestCategory("Docs.ListFieldLinkDefinition")]
+    [DisplayName("Add field links to list")]
+    //[Browsable(false)]
+    public void CanDeploySimpleListFieldLinkDefinition()
+    {
+        var fieldDef = new TextFieldDefinition
+        {
+            Title = "Customer number",
+            InternalName = "m2CustomNumber",
+            Id = new Guid("87247c7d-1ecc-4503-bfd5-21f107b442fb")
+        };
+
+        var listDef = new ListDefinition
+        {
+            Title = "Customers",
+            TemplateType = BuiltInListTemplateTypeId.GenericList,
+            CustomUrl = "lists/customers",
+        };
+
+        var siteModel = SPMeta2Model.NewSiteModel(site =&gt;
+        {
+            site.AddTextField(fieldDef);
+        });
+
+        var webModel = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web.AddList(listDef, list =&gt;
+            {
+                // will add a link to the site level field
+                list.AddListFieldLink(fieldDef);
+            });
+        });
+
+        DeployModel(siteModel);
+        DeployModel(webModel);
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>ListFieldLinkDefinitionTests</ClassName>
+  <MethodName>ListFieldLinkDefinitionTestsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassListFieldLinkDefinitionTestsClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.ListFieldLinkDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>ListFieldLinkDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>ListFieldLinkDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

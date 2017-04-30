@@ -1,0 +1,390 @@
+﻿Assemblies
+	.LoadFile(@"bin\Debug\SubPointSolutions.DocsBuildTools.Data.dll")
+    .LoadDirectory(@"bin\Debug");
+
+===
+
+public static class SConfig
+{
+    //public static string Theme = "Bootstrap";
+	public static string Theme = "Default";
+
+	public static string GetThemedTemplate(string templateFileName) {
+		return string.Format("~/Shared/{0}/{1}", Theme, templateFileName);
+	}
+
+	private static List<SubPointSolutions.DocsBuildTools.Data.DocSample> _allSamples;
+
+	public static List<SubPointSolutions.DocsBuildTools.Data.DocSample> AllSamples {
+	
+		get {
+			
+			if(_allSamples == null) {
+			
+				var samplesFolder = @"Views";
+				var allSamples = SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.LoadSamples(samplesFolder);
+
+				_allSamples = allSamples.ToList();
+			}
+
+			return _allSamples;
+		}
+	}
+
+	
+}
+
+public static class ContentHelper {
+
+	public static void Information(string message) {
+		Wyam.Common.Tracing.Trace.Information(message);
+	}
+
+	public static void Warning(string message) {
+		Wyam.Common.Tracing.Trace.Warning(message);
+	}
+
+	public static IDocument[] ProcessAdditionalMetadata(IDocument doc,
+			Wyam.Common.Pipelines.IExecutionContext context) {
+	
+		var result = new List<IDocument>();
+		var x = doc;
+	
+		var metadataFilePath = doc.String("SourceFilePath") + ".meta";
+		var hasMetaFile = System.IO.File.Exists(metadataFilePath);
+
+		if(!hasMetaFile) {
+			Warning(string.Format("Skipping metadata file: {0}", metadataFilePath));
+			result.Add(x);
+		} else {
+			
+			Information(string.Format("Loading metadata file: {0}", metadataFilePath));
+
+			var frontMatter = System.IO.File.ReadAllText(metadataFilePath);
+			var frontMatterReader = new System.IO.StringReader(frontMatter);
+
+			var deserializer = new YamlDotNet.Serialization.Deserializer();
+			var currentMetadata = (Dictionary<string,object>)deserializer.Deserialize(frontMatterReader, typeof(Dictionary<string,object>));
+
+			var newDoc = context.GetDocument(x, currentMetadata);
+			result.Add(newDoc);
+		}
+
+		return result.ToArray();	
+	}
+
+	public static IDocument[] ProcessHtmlContent(IDocument doc, 
+				Wyam.Common.Pipelines.IExecutionContext context,
+				IEnumerable<SubPointSolutions.DocsBuildTools.Data.DocSample> allSamples) {
+
+	
+		var result = new List<IDocument>();
+		var x = doc;
+
+		AngleSharp.Parser.Html.HtmlParser parser = new AngleSharp.Parser.Html.HtmlParser();
+		AngleSharp.Dom.Html.IHtmlDocument htmlDocument;
+               
+		try
+        {
+			using (Stream stream = x.GetStream())
+            {
+				htmlDocument = parser.Parse(stream);
+            }
+        }
+        catch (Exception ex)
+        {
+			// context.Trace.Warning("Exception while parsing HTML for {0}: {1}", x.Source, ex.Message);
+			return new [] { x };
+        }
+
+		ProcessHtmlImages(htmlDocument, allSamples);
+		ProcessHtmlPreAndCode(htmlDocument, allSamples);
+		ProcessHtmlBlockquotes(htmlDocument, allSamples);
+		ProcessHtmlLinks(htmlDocument, allSamples);
+
+		var newDoc = context.GetDocument(doc, htmlDocument.DocumentElement.OuterHtml);
+		result.Add(newDoc);
+
+		return result.ToArray();
+	}
+
+	public static void ProcessHtmlPreAndCode(AngleSharp.Dom.Html.IHtmlDocument htmlDocument,
+				IEnumerable<SubPointSolutions.DocsBuildTools.Data.DocSample> allSamples) {
+
+		var codElements = htmlDocument.QuerySelectorAll("code1").ToArray();
+
+		foreach (var codeElement in codElements) {
+			var classValue = codeElement.GetAttribute("class");
+
+			codeElement.ParentElement.SetAttribute("class", classValue + " line-numbers");
+		}
+	}
+
+	public static void ProcessHtmlImages(AngleSharp.Dom.Html.IHtmlDocument htmlDocument,
+				IEnumerable<SubPointSolutions.DocsBuildTools.Data.DocSample> allSamples) {
+
+		var images = htmlDocument.QuerySelectorAll("img").ToArray();
+
+		var targetAttValues = new string[] {
+			"img-thumbnail",
+			"img-responsive",
+		};
+
+		foreach (var image in images) {
+
+			var attValue = image.GetAttribute("class");
+			var srcValue = image.GetAttribute("src");
+			
+			if(attValue == null)	
+				attValue = string.Empty;
+			else
+				attValue = attValue.ToLower();
+
+			foreach(var targetAttrValue in targetAttValues) {
+				
+				if(!attValue.Contains(targetAttrValue.ToLower())) {
+					attValue += " " + targetAttrValue.ToLower();
+				}
+			}
+
+			image.SetAttribute("class", attValue);
+			image.SetAttribute("src", string.IsNullOrEmpty(srcValue) ? "" : srcValue.ToLower() );
+		}
+	}
+
+	public static void ProcessHtmlLinks(AngleSharp.Dom.Html.IHtmlDocument htmlDocument,
+				IEnumerable<SubPointSolutions.DocsBuildTools.Data.DocSample> allSamples) {
+
+			var elements = htmlDocument.QuerySelectorAll("a")
+                                   .ToList();
+
+		elements.AddRange(htmlDocument.QuerySelectorAll("link").ToList());
+
+            foreach (var element in elements)
+            {
+                var href = element.GetAttribute("href");
+
+                if (href == null)
+                    continue;
+                
+				// internal link
+                if (href.StartsWith("/"))
+                {
+					href = href.ToLower();
+
+					// remove .html
+					//if(href.EndsWith(".htm"))
+					//	href = href.Replace(".htm", String.Empty);
+
+					//if(href.EndsWith(".html"))
+					//	href = href.Replace(".html", String.Empty);
+
+					if(href.EndsWith("/index"))
+						href = href.Replace("/index", String.Empty);
+
+					element.SetAttribute("href", href);
+
+				} else if(href.StartsWith("http")) {
+					
+					element.SetAttribute("href", href.ToLower());
+					element.SetAttribute("target", "_blank");
+				}
+            }
+
+			// scipts
+			var scripts = htmlDocument.QuerySelectorAll("script")
+                                   .ToList();
+
+			scripts.AddRange(htmlDocument.QuerySelectorAll("img").ToList());
+
+            foreach (var element in scripts)
+            {
+                var href = element.GetAttribute("src");
+
+                if (href == null)
+                    continue;
+                
+				// internal link
+                if (href.StartsWith("/"))
+                {
+					href = href.ToLower();
+
+					element.SetAttribute("src", href);
+
+				} else if(href.StartsWith("http")) {
+					
+					element.SetAttribute("src", href.ToLower());
+				}
+            }
+	}
+
+	public static void ProcessHtmlBlockquotes(AngleSharp.Dom.Html.IHtmlDocument htmlDocument,
+				IEnumerable<SubPointSolutions.DocsBuildTools.Data.DocSample> allSamples) {
+
+
+			var elements = htmlDocument.QuerySelectorAll("blockquote")
+                                   .ToArray();
+
+            foreach (var element in elements)
+            {
+                var content = element.InnerHtml;
+
+                if (content == null)
+                    content = string.Empty;
+                else
+                    content = content.Trim();
+
+                var contentHasParagraph = content.StartsWith("<p>");
+
+                var callout = htmlDocument.CreateElement("div");
+
+                callout.SetAttribute("class", "s-docs-callout s-docs-callout-info");
+                callout.InnerHtml = contentHasParagraph
+										? content
+										: string.Format("<p>{0}</p>", content);
+
+                element.Replace(callout);
+            }
+	}
+
+	public static IDocument[] ProcessCodeSamples(IDocument doc, 
+				Wyam.Common.Pipelines.IExecutionContext context,
+				IEnumerable<SubPointSolutions.DocsBuildTools.Data.DocSample> allSamples) {
+		
+		var result = new List<IDocument>();
+		var x = doc;
+
+		AngleSharp.Parser.Html.HtmlParser parser = new AngleSharp.Parser.Html.HtmlParser();
+		AngleSharp.Dom.Html.IHtmlDocument htmlDocument;
+               
+		try
+        {
+			using (Stream stream = x.GetStream())
+            {
+				htmlDocument = parser.Parse(stream);
+            }
+        }
+        catch (Exception ex)
+        {
+			// context.Trace.Warning("Exception while parsing HTML for {0}: {1}", x.Source, ex.Message);
+			return new [] { x };
+        }
+
+		var refs = htmlDocument.QuerySelectorAll("a[href^='_samples']").ToArray();
+
+		foreach (var codeRef in refs) {
+
+			// <a href="_samples/SPDataSourceScopeDoesNotDefinedInPage-CorrectSPDataSourceScope.smpindx">Correct sample</a>
+			var refFileName = System.IO.Path.GetFileNameWithoutExtension(codeRef.GetAttribute("href"));
+
+			if(!string.IsNullOrEmpty(refFileName)) {
+				
+				var sampleMethodName = refFileName.Split('-').Last();
+				//codeRef.SetAttribute("sample-method", sampleMethodName);
+
+				var sample = allSamples.FirstOrDefault(s => s.MethodName == sampleMethodName);
+
+				if(sample != null) {
+
+					var innerHtml = Environment.NewLine + @"```" + sample.Language + Environment.NewLine;
+					innerHtml += Environment.NewLine + sample.MethodBody + Environment.NewLine;
+					innerHtml += @"```" + Environment.NewLine;
+										
+					var parent = codeRef.ParentElement ?? htmlDocument.DocumentElement;
+
+					var sampleContent = codeRef.OuterHtml;
+
+					x = context.GetDocument(doc, x.Content.Replace(codeRef.OuterHtml, Environment.NewLine + innerHtml));
+					//x = doc.Clone(x.Content.Replace(codeRef.OuterHtml, Environment.NewLine + innerHtml));
+				}
+				else{
+					var errorMessage = string.Format("cannot find sample with name:[{0}]", sampleMethodName);
+					throw new System.Exception(errorMessage);
+					System.Environment.Exit(-42);
+				}
+
+			} else {
+				//System.Environment.Exit(-42);
+				throw new System.Exception("missed file ref");
+				codeRef.SetAttribute("sample-method", "MISSED - " + refFileName);
+			}			
+		}
+
+		result.Add(x);
+
+		return result.ToArray();
+	}
+}
+
+---
+
+var samplesFolder = @"Views";
+var allSamples = SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.LoadSamples(samplesFolder);
+
+Pipelines.Add("site-md-content",
+
+	ReadFiles("*.md").FromAllDirectories(),
+	//ReadFiles("*.md").FromTopDirectoryOnly(),
+
+	Execute( (doc, context) => {
+		return ContentHelper.ProcessAdditionalMetadata(doc, context);
+	}),
+
+	FrontMatter(Yaml()),
+	FileName("FileName").WithAllowedCharacters(new[] {".", "-"}),
+
+	// process source code refs
+	Execute( (doc, context) => {
+		return ContentHelper.ProcessCodeSamples(doc, context, allSamples);
+	}),
+	
+	Markdown(),
+	Razor(),	
+	Replace("[[ci-date]]", System.String.Format("{0:r}", System.DateTime.Now)),
+	
+
+	// process img tags 
+	Execute( (doc, context) => {
+		return ContentHelper.ProcessHtmlContent(doc, context, allSamples);
+	}),
+
+	WriteFiles(".html").UseWriteMetadata(true)
+);
+
+Pipelines.Add("site-resources-css",
+	CopyFiles(@"resources\content\" + SConfig.Theme + @"\*.*")
+		.To(path => path.Replace(@"Views\resources\content\" + SConfig.Theme, @"Views-Output\content"))
+		.FromAllDirectories()
+);
+
+Pipelines.Add("site-resources-scripts",
+	CopyFiles(@"resources\scripts\" + SConfig.Theme + @"\*.*")
+		.To(path => path.Replace(@"Views\resources\scripts\" + SConfig.Theme, @"Views-Output\scripts"))
+		.FromAllDirectories()
+);
+
+Pipelines.Add("site-resources-fonts",
+	CopyFiles(@"resources\fonts\" + SConfig.Theme + @"\*.*")
+		.To(path => path.Replace(@"Views\resources\fonts\" + SConfig.Theme, @"Views-Output\fonts"))
+		.FromAllDirectories()
+);
+
+Pipelines.Add("site-resources-images-gif",
+	CopyFiles(@"*.gif")
+		.FromAllDirectories()
+);
+
+Pipelines.Add("site-resources-images-png",
+	CopyFiles(@"*.png")
+		.FromAllDirectories()
+);
+
+Pipelines.Add("site-resources-images-jpg",
+	CopyFiles(@"*.jpg")
+		.FromAllDirectories()
+);
+
+Pipelines.Add("site-resources-images-jpeg",
+	CopyFiles(@"*.jpeg")
+		.FromAllDirectories()
+);

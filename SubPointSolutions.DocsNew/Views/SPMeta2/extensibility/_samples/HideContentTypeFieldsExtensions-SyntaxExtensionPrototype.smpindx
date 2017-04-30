@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>UseFullMethodBody</Name>
+      <Values>
+        <string>true</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <MethodBodyWithFunction>
+        public static ModelNode SyntaxExtensionPrototype(this ModelNode modelNode)
+        {
+            // do stuff
+
+
+            // !!! always retun the same model which was passed as 'this' object !!!
+            return modelNode;
+        }</MethodBodyWithFunction>
+  <MethodBody>public static ModelNode SyntaxExtensionPrototype(this ModelNode modelNode)
+{
+    // do stuff
+
+
+    // !!! always retun the same model which was passed as 'this' object !!!
+    return modelNode;
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>HideContentTypeFieldsExtensions</ClassName>
+  <MethodName>SyntaxExtensionPrototype</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.HideContentTypeFieldsExtensions.SyntaxExtensionPrototype</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.HideContentTypeFieldsExtensions</ClassFullName>
+  <MethodParametersCount>1</MethodParametersCount>
+  <SourceFileName>writing-custom-syntax.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>writing-custom-syntax</SourceFileNameWithoutExtension>
+</DocSample>

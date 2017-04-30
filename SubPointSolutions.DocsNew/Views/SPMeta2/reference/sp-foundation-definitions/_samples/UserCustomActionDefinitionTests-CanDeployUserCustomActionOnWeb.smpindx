@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Site Collection Model</string>
+        <string>User custom action</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>Add custom action to web</Title>
+  <MethodBodyWithFunction>
+        
+
+        
+        //[Browsable(false)]
+        public void CanDeployUserCustomActionOnWeb()
+        {
+            var webLogger = new UserCustomActionDefinition
+            {
+                Name = "m2WebLogger",
+                Location = "ScriptLink",
+                ScriptBlock = "console.log('site logger on web:' + _spPageContextInfo.webAbsoluteUrl);",
+                Sequence = 1800
+            };
+
+            var loggerWeb = new WebDefinition
+            {
+                Title = "M2 Logger Web",
+                Url = "m2logging",
+                WebTemplate = BuiltInWebTemplates.Collaboration.TeamSite
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddWeb(loggerWeb, subWeb =&gt;
+                {
+                    subWeb.AddUserCustomAction(webLogger);
+                });
+            });
+
+            DeployModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>var webLogger = new UserCustomActionDefinition
+{
+    Name = "m2WebLogger",
+    Location = "ScriptLink",
+    ScriptBlock = "console.log('site logger on web:' + _spPageContextInfo.webAbsoluteUrl);",
+    Sequence = 1800
+};
+
+var loggerWeb = new WebDefinition
+{
+    Title = "M2 Logger Web",
+    Url = "m2logging",
+    WebTemplate = BuiltInWebTemplates.Collaboration.TeamSite
+};
+
+var model = SPMeta2Model.NewWebModel(web =&gt;
+{
+    web.AddWeb(loggerWeb, subWeb =&gt;
+    {
+        subWeb.AddUserCustomAction(webLogger);
+    });
+});
+
+DeployModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>UserCustomActionDefinitionTests</ClassName>
+  <MethodName>CanDeployUserCustomActionOnWeb</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.UserCustomActionDefinitionTests.CanDeployUserCustomActionOnWeb</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.UserCustomActionDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>UserCustomActionDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>UserCustomActionDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

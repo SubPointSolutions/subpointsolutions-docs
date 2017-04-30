@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Site Collection Model</string>
+        <string>Fields</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+
+    
+
+    //[Browsable(false)]
+    public class ChoiceFieldDefinitionTests : ProvisionTestBase
+    {
+        #region methods
+
+        [TestMethod]
+        [TestCategory("Docs.ChoiceFieldDefinition")]
+
+        [DisplayName("Add choice field")]
+        //[Browsable(false)]
+        public void CanDeploySimpleChoiceFieldDefinition()
+        {
+            var fieldDef = new ChoiceFieldDefinition
+            {
+                Title = "Tasks status",
+                InternalName = "dcs_ProgressStatus",
+                Group = "SPMeta2.Samples",
+                Id = new Guid("759f97a7-c26f-4dc3-b3fa-47250f168ba4"),
+                Choices = new Collection&lt;string&gt;
+                {
+                    "Not stated",
+                    "In progress",
+                    "Done"
+                }
+            };
+
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                site.AddChoiceField(fieldDef);
+            });
+
+            DeployModel(model);
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>//[Browsable(false)]
+public class ChoiceFieldDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+    [TestMethod]
+    [TestCategory("Docs.ChoiceFieldDefinition")]
+
+    [DisplayName("Add choice field")]
+    //[Browsable(false)]
+    public void CanDeploySimpleChoiceFieldDefinition()
+    {
+        var fieldDef = new ChoiceFieldDefinition
+        {
+            Title = "Tasks status",
+            InternalName = "dcs_ProgressStatus",
+            Group = "SPMeta2.Samples",
+            Id = new Guid("759f97a7-c26f-4dc3-b3fa-47250f168ba4"),
+            Choices = new Collection&lt;string&gt;
+            {
+                "Not stated",
+                "In progress",
+                "Done"
+            }
+        };
+
+        var model = SPMeta2Model.NewSiteModel(site =&gt;
+        {
+            site.AddChoiceField(fieldDef);
+        });
+
+        DeployModel(model);
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>ChoiceFieldDefinitionTests</ClassName>
+  <MethodName>ChoiceFieldDefinitionTestsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassChoiceFieldDefinitionTestsClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.ChoiceFieldDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>ChoiceFieldDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>ChoiceFieldDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

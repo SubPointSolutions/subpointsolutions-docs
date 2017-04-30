@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model</string>
+        <string>Module files</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>Add module file to folder</Title>
+  <MethodBodyWithFunction>
+        
+        
+        //[Browsable(false)]
+
+        public void CanDeployModuleFilesToFolders()
+        {
+            var cssFile = new ModuleFileDefinition
+            {
+                FileName = "m2-red.css",
+                Overwrite = true,
+                Content = Encoding.UTF8.GetBytes(".m2-red { color:red; } ")
+            };
+
+            var jsFile = new ModuleFileDefinition
+            {
+                FileName = "m2-logger-module.js",
+                Overwrite = true,
+                Content = Encoding.UTF8.GetBytes(" function(msg) { console.log(msg); } ")
+            };
+
+            var cssFolder = new FolderDefinition
+            {
+                Name = "m2-css"
+            };
+
+            var jsFolder = new FolderDefinition
+            {
+                Name = "m2-js"
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddHostList(BuiltInListDefinitions.StyleLibrary, list =&gt;
+                {
+                    list
+                        .AddFolder(cssFolder, folder =&gt;
+                        {
+                            folder.AddModuleFile(cssFile);
+                        })
+                        .AddFolder(jsFolder, folder =&gt;
+                        {
+                            folder.AddModuleFile(jsFile);
+                        });
+                });
+            });
+
+            DeployModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>var cssFile = new ModuleFileDefinition
+{
+    FileName = "m2-red.css",
+    Overwrite = true,
+    Content = Encoding.UTF8.GetBytes(".m2-red { color:red; } ")
+};
+
+var jsFile = new ModuleFileDefinition
+{
+    FileName = "m2-logger-module.js",
+    Overwrite = true,
+    Content = Encoding.UTF8.GetBytes(" function(msg) { console.log(msg); } ")
+};
+
+var cssFolder = new FolderDefinition
+{
+    Name = "m2-css"
+};
+
+var jsFolder = new FolderDefinition
+{
+    Name = "m2-js"
+};
+
+var model = SPMeta2Model.NewWebModel(web =&gt;
+{
+    web.AddHostList(BuiltInListDefinitions.StyleLibrary, list =&gt;
+    {
+        list
+            .AddFolder(cssFolder, folder =&gt;
+            {
+                folder.AddModuleFile(cssFile);
+            })
+            .AddFolder(jsFolder, folder =&gt;
+            {
+                folder.AddModuleFile(jsFile);
+            });
+    });
+});
+
+DeployModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>ModuleFileDefinitionTests</ClassName>
+  <MethodName>CanDeployModuleFilesToFolders</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.ModuleFileDefinitionTests.CanDeployModuleFilesToFolders</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.ModuleFileDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>ModuleFileDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>ModuleFileDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

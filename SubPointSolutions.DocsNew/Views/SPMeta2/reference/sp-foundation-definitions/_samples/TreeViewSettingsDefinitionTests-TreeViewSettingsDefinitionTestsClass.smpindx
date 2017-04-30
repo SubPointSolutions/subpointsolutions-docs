@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model</string>
+        <string>Web site</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+
+    
+    //[Browsable(false)]
+    public class TreeViewSettingsDefinitionTests : ProvisionTestBase
+    {
+        #region methods
+
+        [TestMethod]
+        [TestCategory("Docs.TreeViewSettingsDefinition")]
+
+        [DisplayName("Add tree view settings to web")]
+        //[Browsable(false)]
+        public void CanDeploySimpleTreeViewSettingsDefinition()
+        {
+            var treeViewSettings = new TreeViewSettingsDefinition
+            {
+                TreeViewEnabled = true,
+                QuickLaunchEnabled = true
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddTreeViewSettings(treeViewSettings);
+            });
+
+            DeployModel(model);
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>//[Browsable(false)]
+public class TreeViewSettingsDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+    [TestMethod]
+    [TestCategory("Docs.TreeViewSettingsDefinition")]
+
+    [DisplayName("Add tree view settings to web")]
+    //[Browsable(false)]
+    public void CanDeploySimpleTreeViewSettingsDefinition()
+    {
+        var treeViewSettings = new TreeViewSettingsDefinition
+        {
+            TreeViewEnabled = true,
+            QuickLaunchEnabled = true
+        };
+
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web.AddTreeViewSettings(treeViewSettings);
+        });
+
+        DeployModel(model);
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>TreeViewSettingsDefinitionTests</ClassName>
+  <MethodName>TreeViewSettingsDefinitionTestsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassTreeViewSettingsDefinitionTestsClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.TreeViewSettingsDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>TreeViewSettingsDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>TreeViewSettingsDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

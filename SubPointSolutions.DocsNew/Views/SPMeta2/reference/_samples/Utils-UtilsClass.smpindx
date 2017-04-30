@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags />
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+    public class Utils : ProvisionTestBase
+    {
+        #region methods
+
+        [TestMethod]
+        [TestCategory("Docs.Utils")]
+        public void UrlConcatenation()
+        {
+            // fast on two params
+            var smQueryUrl = UrlUtility.CombineUrl("http://goole.com", "?q=spmeta2");
+
+            // a bigger one
+            var bgQueryUrl = UrlUtility.CombineUrl(new string[]{ 
+                "http://goole.com",
+                "?",
+                "q=1",
+                "&amp;p1=3",
+                "&amp;p2=tmp"
+            });
+        }
+
+        [TestMethod]
+        [TestCategory("Docs.Utils")]
+        public void ClientWebPartSetup(ClientWebPartDefinition wpModel, string webId)
+        {
+            var wpXml = WebpartXmlExtensions
+                           .LoadWebpartXmlDocument(BuiltInWebPartTemplates.ClientWebPart)
+                           .SetOrUpdateProperty("FeatureId", wpModel.FeatureId.ToString())
+                           .SetOrUpdateProperty("ProductId", wpModel.ProductId.ToString())
+                           .SetOrUpdateProperty("WebPartName", wpModel.WebPartName)
+                           .SetOrUpdateProperty("ProductWebId", webId)
+                           .ToString();
+        }
+
+        [TestMethod]
+        [TestCategory("Docs.Utils")]
+        public void ContentEditorWebPartSetup(ContentEditorWebPartDefinition typedModel,
+            string content, string contentLink)
+        {
+            var wpXml = WebpartXmlExtensions
+                           .LoadWebpartXmlDocument(BuiltInWebPartTemplates.ContentEditorWebPart)
+                           .SetOrUpdateContentEditorWebPartProperty("Content", content, true)
+                           .SetOrUpdateContentEditorWebPartProperty("ContentLink", contentLink)
+                           .ToString();
+        }
+
+        [TestMethod]
+        [TestCategory("Docs.Utils")]
+        public void XsltListViewWebPartSetup(XsltListViewWebPartDefinition typedModel,
+            string listName, string listId, string titleUrl, string jsLink)
+        {
+            var wpXml = WebpartXmlExtensions
+                            .LoadWebpartXmlDocument(BuiltInWebPartTemplates.XsltListViewWebPart)
+                            .SetListName(listName)
+                            .SetListId(listId)
+                            .SetTitleUrl(titleUrl)
+                            .SetOrUpdateProperty("JSLink", jsLink)
+                            .ToString();
+        }
+
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>public class Utils : ProvisionTestBase
+{
+    #region methods
+
+    [TestMethod]
+    [TestCategory("Docs.Utils")]
+    public void UrlConcatenation()
+    {
+        // fast on two params
+        var smQueryUrl = UrlUtility.CombineUrl("http://goole.com", "?q=spmeta2");
+
+        // a bigger one
+        var bgQueryUrl = UrlUtility.CombineUrl(new string[]{
+            "http://goole.com",
+            "?",
+            "q=1",
+            "&amp;p1=3",
+            "&amp;p2=tmp"
+        });
+    }
+
+    [TestMethod]
+    [TestCategory("Docs.Utils")]
+    public void ClientWebPartSetup(ClientWebPartDefinition wpModel, string webId)
+    {
+        var wpXml = WebpartXmlExtensions
+                       .LoadWebpartXmlDocument(BuiltInWebPartTemplates.ClientWebPart)
+                       .SetOrUpdateProperty("FeatureId", wpModel.FeatureId.ToString())
+                       .SetOrUpdateProperty("ProductId", wpModel.ProductId.ToString())
+                       .SetOrUpdateProperty("WebPartName", wpModel.WebPartName)
+                       .SetOrUpdateProperty("ProductWebId", webId)
+                       .ToString();
+    }
+
+    [TestMethod]
+    [TestCategory("Docs.Utils")]
+    public void ContentEditorWebPartSetup(ContentEditorWebPartDefinition typedModel,
+        string content, string contentLink)
+    {
+        var wpXml = WebpartXmlExtensions
+                       .LoadWebpartXmlDocument(BuiltInWebPartTemplates.ContentEditorWebPart)
+                       .SetOrUpdateContentEditorWebPartProperty("Content", content, true)
+                       .SetOrUpdateContentEditorWebPartProperty("ContentLink", contentLink)
+                       .ToString();
+    }
+
+    [TestMethod]
+    [TestCategory("Docs.Utils")]
+    public void XsltListViewWebPartSetup(XsltListViewWebPartDefinition typedModel,
+        string listName, string listId, string titleUrl, string jsLink)
+    {
+        var wpXml = WebpartXmlExtensions
+                        .LoadWebpartXmlDocument(BuiltInWebPartTemplates.XsltListViewWebPart)
+                        .SetListName(listName)
+                        .SetListId(listId)
+                        .SetTitleUrl(titleUrl)
+                        .SetOrUpdateProperty("JSLink", jsLink)
+                        .ToString();
+    }
+
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SubPointSolutions.Docs.Views.Views.SPMeta2.reference</Namespace>
+  <ClassName>Utils</ClassName>
+  <MethodName>UtilsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassUtilsClass</MethodFullName>
+  <ClassFullName>SubPointSolutions.Docs.Views.Views.SPMeta2.reference.Utils</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>Utils.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>Utils</SourceFileNameWithoutExtension>
+</DocSample>

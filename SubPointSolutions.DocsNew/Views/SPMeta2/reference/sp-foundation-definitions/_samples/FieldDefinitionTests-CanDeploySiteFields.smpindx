@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Site Collection Model</string>
+        <string>Fields</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>Add field to site</Title>
+  <MethodBodyWithFunction>
+        
+
+        
+        public void CanDeploySiteFields()
+        {
+            // use BuiltInFieldTypes class to refer to OOTB SharePoint fields
+
+            var customerRefererence = new FieldDefinition
+            {
+                Title = "Customer Reference",
+                InternalName = "dcs_CustomerReference",
+                Group = "SPMeta2.Samples",
+                Id = new Guid("D3B94B32-3F97-4B5B-99BE-95D17F83618B"),
+                FieldType = BuiltInFieldTypes.Text,
+            };
+
+            var isAciveClient = new FieldDefinition
+            {
+                Title = "Is Active Customer",
+                InternalName = "dcs_IsActiveCustomer",
+                Group = "SPMeta2.Samples",
+                Id = new Guid("C846CA90-5EE0-4FDF-882B-6FB17625C6F9"),
+                FieldType = BuiltInFieldTypes.Boolean,
+            };
+
+            var additionalInformation = new FieldDefinition
+            {
+                Title = "Customer Additional Information",
+                InternalName = "dcs_CustomerAdditionalInfo",
+                Group = "SPMeta2.Samples",
+                Id = new Guid("A5221F56-D4F4-4831-AF51-AA9776FA990D"),
+                FieldType = BuiltInFieldTypes.Note,
+            };
+
+            var customerBalance = new FieldDefinition
+            {
+                Title = "Customer Balance",
+                InternalName = "dcs_CustomerBalance",
+                Group = "SPMeta2.Samples",
+                Id = new Guid("3C0A0358-BF74-4F79-855B-F85F5BF24028"),
+                FieldType = BuiltInFieldTypes.Number,
+            };
+
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                site
+                    .AddField(customerRefererence)
+                    .AddField(isAciveClient)
+                    .AddField(additionalInformation)
+                    .AddField(customerBalance);
+            });
+
+            DeployModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>// use BuiltInFieldTypes class to refer to OOTB SharePoint fields
+
+var customerRefererence = new FieldDefinition
+{
+    Title = "Customer Reference",
+    InternalName = "dcs_CustomerReference",
+    Group = "SPMeta2.Samples",
+    Id = new Guid("D3B94B32-3F97-4B5B-99BE-95D17F83618B"),
+    FieldType = BuiltInFieldTypes.Text,
+};
+
+var isAciveClient = new FieldDefinition
+{
+    Title = "Is Active Customer",
+    InternalName = "dcs_IsActiveCustomer",
+    Group = "SPMeta2.Samples",
+    Id = new Guid("C846CA90-5EE0-4FDF-882B-6FB17625C6F9"),
+    FieldType = BuiltInFieldTypes.Boolean,
+};
+
+var additionalInformation = new FieldDefinition
+{
+    Title = "Customer Additional Information",
+    InternalName = "dcs_CustomerAdditionalInfo",
+    Group = "SPMeta2.Samples",
+    Id = new Guid("A5221F56-D4F4-4831-AF51-AA9776FA990D"),
+    FieldType = BuiltInFieldTypes.Note,
+};
+
+var customerBalance = new FieldDefinition
+{
+    Title = "Customer Balance",
+    InternalName = "dcs_CustomerBalance",
+    Group = "SPMeta2.Samples",
+    Id = new Guid("3C0A0358-BF74-4F79-855B-F85F5BF24028"),
+    FieldType = BuiltInFieldTypes.Number,
+};
+
+var model = SPMeta2Model.NewSiteModel(site =&gt;
+{
+    site
+        .AddField(customerRefererence)
+        .AddField(isAciveClient)
+        .AddField(additionalInformation)
+        .AddField(customerBalance);
+});
+
+DeployModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SubPointSolutions.Docs.Content.SPMeta2.SharePoint_Foundation_Definitions</Namespace>
+  <ClassName>FieldDefinitionTests</ClassName>
+  <MethodName>CanDeploySiteFields</MethodName>
+  <ClassComment />
+  <MethodFullName>SubPointSolutions.Docs.Content.SPMeta2.SharePoint_Foundation_Definitions.FieldDefinitionTests.CanDeploySiteFields</MethodFullName>
+  <ClassFullName>SubPointSolutions.Docs.Content.SPMeta2.SharePoint_Foundation_Definitions.FieldDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>FieldDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>FieldDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

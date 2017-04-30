@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Site Collection Model</string>
+        <string>User custom action</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+
+    
+
+    //[Browsable(false)]
+    public class UserCustomActionDefinitionTests : ProvisionTestBase
+    {
+        #region methods
+
+      
+        [TestMethod]
+        [TestCategory("Docs.UserCustomActionDefinition")]
+
+        [DisplayName("Add custom action to site")]
+        //[Browsable(false)]
+        public void CanDeployUserCustomActionUnderSite()
+        {
+            var siteLogger = new UserCustomActionDefinition
+            {
+                Name = "m2SiteLogger",
+                Location = "ScriptLink",
+                ScriptBlock = "console.log('site logger on site:' + _spPageContextInfo.siteAbsoluteUrl);",
+                Sequence = 1000
+            };
+
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                site.AddUserCustomAction(siteLogger);
+            });
+
+            DeployModel(model);
+        }
+
+
+        [TestMethod]
+        [TestCategory("Docs.UserCustomActionDefinition")]
+
+        [DisplayName("Add custom action with jQuery")]
+        //[Browsable(false)]
+        public void CanDeployUserCustomActionWithJquery()
+        {
+            var jQueryFile = new ModuleFileDefinition
+            {
+                FileName = "jquery-1.11.2.min.js",
+                Content = ModuleFileUtils.FromResource(GetType().Assembly, "SPMeta2.Docs.Modules.jquery-1.11.2.min.js"),
+                Overwrite = true
+            };
+
+            var appScriptsFolder = new FolderDefinition
+            {
+                Name = "M2 App Scripts"
+            };
+
+            var jQueryCustomAction = new UserCustomActionDefinition
+            {
+                Name = "m2jQuery",
+                Location = "ScriptLink",
+                ScriptSrc = UrlUtility.CombineUrl(new string[]
+                {
+                    "~sitecollection",
+                    BuiltInListDefinitions.StyleLibrary.GetListUrl(),
+                    appScriptsFolder.Name,
+                    jQueryFile.FileName
+                }),
+                Sequence = 1500
+            };
+
+            var jQuerySiteLogger = new UserCustomActionDefinition
+            {
+                Name = "m2jQuerySiteLogger",
+                Location = "ScriptLink",
+                ScriptBlock = "jQuery(document).ready( function() { console.log('jQuery site logger on site:' + _spPageContextInfo.siteAbsoluteUrl); } );",
+                Sequence = 1600
+            };
+
+            var siteModel = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                site
+                  .AddUserCustomAction(jQueryCustomAction)
+                  .AddUserCustomAction(jQuerySiteLogger);
+            });
+
+            var webModel = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddHostList(BuiltInListDefinitions.StyleLibrary, list =&gt;
+                {
+                    list.AddFolder(appScriptsFolder, folder =&gt;
+                    {
+                        folder.AddModuleFile(jQueryFile);
+                    });
+                });
+            });
+
+            DeployModel(siteModel);
+            DeployModel(webModel);
+        }
+
+
+     
+        [TestMethod]
+        [TestCategory("Docs.UserCustomActionDefinition")]
+
+        [DisplayName("Add custom action to web")]
+        //[Browsable(false)]
+        public void CanDeployUserCustomActionOnWeb()
+        {
+            var webLogger = new UserCustomActionDefinition
+            {
+                Name = "m2WebLogger",
+                Location = "ScriptLink",
+                ScriptBlock = "console.log('site logger on web:' + _spPageContextInfo.webAbsoluteUrl);",
+                Sequence = 1800
+            };
+
+            var loggerWeb = new WebDefinition
+            {
+                Title = "M2 Logger Web",
+                Url = "m2logging",
+                WebTemplate = BuiltInWebTemplates.Collaboration.TeamSite
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddWeb(loggerWeb, subWeb =&gt;
+                {
+                    subWeb.AddUserCustomAction(webLogger);
+                });
+            });
+
+            DeployModel(model);
+        }
+
+        [DisplayName("Add custom action to list")]
+        [Browsable(false)]
+        public void CanDeployUserCustomActionOnList()
+        {
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                // TODO
+            });
+
+            DeployModel(model);
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>//[Browsable(false)]
+public class UserCustomActionDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+
+    [TestMethod]
+    [TestCategory("Docs.UserCustomActionDefinition")]
+
+    [DisplayName("Add custom action to site")]
+    //[Browsable(false)]
+    public void CanDeployUserCustomActionUnderSite()
+    {
+        var siteLogger = new UserCustomActionDefinition
+        {
+            Name = "m2SiteLogger",
+            Location = "ScriptLink",
+            ScriptBlock = "console.log('site logger on site:' + _spPageContextInfo.siteAbsoluteUrl);",
+            Sequence = 1000
+        };
+
+        var model = SPMeta2Model.NewSiteModel(site =&gt;
+        {
+            site.AddUserCustomAction(siteLogger);
+        });
+
+        DeployModel(model);
+    }
+
+
+    [TestMethod]
+    [TestCategory("Docs.UserCustomActionDefinition")]
+
+    [DisplayName("Add custom action with jQuery")]
+    //[Browsable(false)]
+    public void CanDeployUserCustomActionWithJquery()
+    {
+        var jQueryFile = new ModuleFileDefinition
+        {
+            FileName = "jquery-1.11.2.min.js",
+            Content = ModuleFileUtils.FromResource(GetType().Assembly, "SPMeta2.Docs.Modules.jquery-1.11.2.min.js"),
+            Overwrite = true
+        };
+
+        var appScriptsFolder = new FolderDefinition
+        {
+            Name = "M2 App Scripts"
+        };
+
+        var jQueryCustomAction = new UserCustomActionDefinition
+        {
+            Name = "m2jQuery",
+            Location = "ScriptLink",
+            ScriptSrc = UrlUtility.CombineUrl(new string[]
+            {
+                "~sitecollection",
+                BuiltInListDefinitions.StyleLibrary.GetListUrl(),
+                appScriptsFolder.Name,
+                jQueryFile.FileName
+            }),
+            Sequence = 1500
+        };
+
+        var jQuerySiteLogger = new UserCustomActionDefinition
+        {
+            Name = "m2jQuerySiteLogger",
+            Location = "ScriptLink",
+            ScriptBlock = "jQuery(document).ready( function() { console.log('jQuery site logger on site:' + _spPageContextInfo.siteAbsoluteUrl); } );",
+            Sequence = 1600
+        };
+
+        var siteModel = SPMeta2Model.NewSiteModel(site =&gt;
+        {
+            site
+              .AddUserCustomAction(jQueryCustomAction)
+              .AddUserCustomAction(jQuerySiteLogger);
+        });
+
+        var webModel = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web.AddHostList(BuiltInListDefinitions.StyleLibrary, list =&gt;
+            {
+                list.AddFolder(appScriptsFolder, folder =&gt;
+                {
+                    folder.AddModuleFile(jQueryFile);
+                });
+            });
+        });
+
+        DeployModel(siteModel);
+        DeployModel(webModel);
+    }
+
+
+
+    [TestMethod]
+    [TestCategory("Docs.UserCustomActionDefinition")]
+
+    [DisplayName("Add custom action to web")]
+    //[Browsable(false)]
+    public void CanDeployUserCustomActionOnWeb()
+    {
+        var webLogger = new UserCustomActionDefinition
+        {
+            Name = "m2WebLogger",
+            Location = "ScriptLink",
+            ScriptBlock = "console.log('site logger on web:' + _spPageContextInfo.webAbsoluteUrl);",
+            Sequence = 1800
+        };
+
+        var loggerWeb = new WebDefinition
+        {
+            Title = "M2 Logger Web",
+            Url = "m2logging",
+            WebTemplate = BuiltInWebTemplates.Collaboration.TeamSite
+        };
+
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web.AddWeb(loggerWeb, subWeb =&gt;
+            {
+                subWeb.AddUserCustomAction(webLogger);
+            });
+        });
+
+        DeployModel(model);
+    }
+
+    [DisplayName("Add custom action to list")]
+    [Browsable(false)]
+    public void CanDeployUserCustomActionOnList()
+    {
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            // TODO
+        });
+
+        DeployModel(model);
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>UserCustomActionDefinitionTests</ClassName>
+  <MethodName>UserCustomActionDefinitionTestsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassUserCustomActionDefinitionTestsClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.UserCustomActionDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>UserCustomActionDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>UserCustomActionDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

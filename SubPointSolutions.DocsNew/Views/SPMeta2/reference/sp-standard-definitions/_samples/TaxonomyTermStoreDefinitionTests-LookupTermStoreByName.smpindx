@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Site Collection Model</string>
+        <string>Taxonomy</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>Add taxonomy term store by Name</Title>
+  <MethodBodyWithFunction>
+        
+        
+        //[Browsable(false)]
+        public void LookupTermStoreByName()
+        {
+            var mmsTermStore = new TaxonomyTermStoreDefinition
+            {
+                Name = "Managed Metadata Service"
+            };
+
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                site.AddTaxonomyTermStore(mmsTermStore, termStore =&gt;
+                {
+                    // do stuff, add groups, term sets
+                });
+            });
+
+            DeployModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>var mmsTermStore = new TaxonomyTermStoreDefinition
+{
+    Name = "Managed Metadata Service"
+};
+
+var model = SPMeta2Model.NewSiteModel(site =&gt;
+{
+    site.AddTaxonomyTermStore(mmsTermStore, termStore =&gt;
+    {
+        // do stuff, add groups, term sets
+    });
+});
+
+DeployModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>TaxonomyTermStoreDefinitionTests</ClassName>
+  <MethodName>LookupTermStoreByName</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.TaxonomyTermStoreDefinitionTests.LookupTermStoreByName</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.TaxonomyTermStoreDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>TaxonomyTermStoreDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>TaxonomyTermStoreDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

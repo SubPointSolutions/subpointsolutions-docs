@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBodyWithFunction>
+        
+        public void ContentEditorWebPartSetup(ContentEditorWebPartDefinition typedModel,
+            string content, string contentLink)
+        {
+            var wpXml = WebpartXmlExtensions
+                           .LoadWebpartXmlDocument(BuiltInWebPartTemplates.ContentEditorWebPart)
+                           .SetOrUpdateContentEditorWebPartProperty("Content", content, true)
+                           .SetOrUpdateContentEditorWebPartProperty("ContentLink", contentLink)
+                           .ToString();
+        }</MethodBodyWithFunction>
+  <MethodBody>var wpXml = WebpartXmlExtensions
+               .LoadWebpartXmlDocument(BuiltInWebPartTemplates.ContentEditorWebPart)
+               .SetOrUpdateContentEditorWebPartProperty("Content", content, true)
+               .SetOrUpdateContentEditorWebPartProperty("ContentLink", contentLink)
+               .ToString();
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SubPointSolutions.Docs.Views.Views.SPMeta2.reference</Namespace>
+  <ClassName>Utils</ClassName>
+  <MethodName>ContentEditorWebPartSetup</MethodName>
+  <ClassComment />
+  <MethodFullName>SubPointSolutions.Docs.Views.Views.SPMeta2.reference.Utils.ContentEditorWebPartSetup</MethodFullName>
+  <ClassFullName>SubPointSolutions.Docs.Views.Views.SPMeta2.reference.Utils</ClassFullName>
+  <MethodParametersCount>3</MethodParametersCount>
+  <SourceFileName>Utils.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>Utils</SourceFileNameWithoutExtension>
+</DocSample>

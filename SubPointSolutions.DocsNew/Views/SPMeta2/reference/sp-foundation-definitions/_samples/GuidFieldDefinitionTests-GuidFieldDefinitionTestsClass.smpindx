@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Site Collection Model</string>
+        <string>Fields</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+    
+
+    
+
+    //[Browsable(false)]
+    public class GuidFieldDefinitionTests : ProvisionTestBase
+    {
+        #region methods
+
+        [TestMethod]
+        [TestCategory("Docs.GuidFieldDefinition")]
+
+        [DisplayName("Add guid field")]
+        [Browsable(false)]
+        public void CanDeploySimpleGuidFieldDefinition()
+        {
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+         
+            });
+
+            DeployModel(model);
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>//[Browsable(false)]
+public class GuidFieldDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+    [TestMethod]
+    [TestCategory("Docs.GuidFieldDefinition")]
+
+    [DisplayName("Add guid field")]
+    [Browsable(false)]
+    public void CanDeploySimpleGuidFieldDefinition()
+    {
+        var model = SPMeta2Model.NewSiteModel(site =&gt;
+        {
+
+        });
+
+        DeployModel(model);
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>GuidFieldDefinitionTests</ClassName>
+  <MethodName>GuidFieldDefinitionTestsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassGuidFieldDefinitionTestsClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.GuidFieldDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>GuidFieldDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>GuidFieldDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

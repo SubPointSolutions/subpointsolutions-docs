@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model</string>
+        <string>Master page gallery</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+    
+    
+
+    //[Browsable(false)]
+
+    public class MasterPageDefinitionTests : ProvisionTestBase
+    {
+        #region methods
+
+
+        [TestMethod]
+        [TestCategory("Docs.MasterPageDefinition")]
+
+        [DisplayName("Add master page")]
+        //[Browsable(false)]
+        public void CanDeploySimpleMasterPageDefinition()
+        {
+            var masterPage = new MasterPageDefinition
+            {
+                Title = "M2 Oslo",
+                FileName = "m2-oslo.master",
+                // replace with your master page content
+                Content = Encoding.UTF8.GetBytes(DefaultMasterPageTemplates.Oslo),
+                NeedOverride = true
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddHostList(BuiltInListDefinitions.Catalogs.MasterPage, list =&gt;
+                {
+                    list.AddMasterPage(masterPage);
+                });
+            });
+
+            DeployModel(model);
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>//[Browsable(false)]
+
+public class MasterPageDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+
+    [TestMethod]
+    [TestCategory("Docs.MasterPageDefinition")]
+
+    [DisplayName("Add master page")]
+    //[Browsable(false)]
+    public void CanDeploySimpleMasterPageDefinition()
+    {
+        var masterPage = new MasterPageDefinition
+        {
+            Title = "M2 Oslo",
+            FileName = "m2-oslo.master",
+            // replace with your master page content
+            Content = Encoding.UTF8.GetBytes(DefaultMasterPageTemplates.Oslo),
+            NeedOverride = true
+        };
+
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web.AddHostList(BuiltInListDefinitions.Catalogs.MasterPage, list =&gt;
+            {
+                list.AddMasterPage(masterPage);
+            });
+        });
+
+        DeployModel(model);
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>MasterPageDefinitionTests</ClassName>
+  <MethodName>MasterPageDefinitionTestsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassMasterPageDefinitionTestsClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.MasterPageDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>MasterPageDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>MasterPageDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

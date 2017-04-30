@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBodyWithFunction>
+        
+        public void Deploy_WebApplicationModel_SSOM()
+        {
+            // setup url
+            var webAppUrl = "";
+
+            // create you model
+            var webAppModel = SPMeta2Model.NewWebApplicationModel(webApp =&gt;
+            {
+
+            });
+
+            var spWebApp = SPWebApplication.Lookup(new Uri(webAppUrl));
+
+            // deploy site model with SharePoint Foundation SSOM API
+            var foundationProvisionService = new SSOMProvisionService();
+            foundationProvisionService.DeployWebApplicationModel(spWebApp, webAppModel);
+
+            // deploy site model with SharePoint Standard SSOM API
+            var standardProvisionService = new StandardSSOMProvisionService();
+            standardProvisionService.DeployWebApplicationModel(spWebApp, webAppModel);
+        }</MethodBodyWithFunction>
+  <MethodBody>// setup url
+var webAppUrl = "";
+
+// create you model
+var webAppModel = SPMeta2Model.NewWebApplicationModel(webApp =&gt;
+{
+
+});
+
+var spWebApp = SPWebApplication.Lookup(new Uri(webAppUrl));
+
+// deploy site model with SharePoint Foundation SSOM API
+var foundationProvisionService = new SSOMProvisionService();
+foundationProvisionService.DeployWebApplicationModel(spWebApp, webAppModel);
+
+// deploy site model with SharePoint Standard SSOM API
+var standardProvisionService = new StandardSSOMProvisionService();
+standardProvisionService.DeployWebApplicationModel(spWebApp, webAppModel);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SubPointSolutions.Docs.Views.Views.SPMeta2.reference</Namespace>
+  <ClassName>ProvisionServices</ClassName>
+  <MethodName>Deploy_WebApplicationModel_SSOM</MethodName>
+  <ClassComment />
+  <MethodFullName>SubPointSolutions.Docs.Views.Views.SPMeta2.reference.ProvisionServices.Deploy_WebApplicationModel_SSOM</MethodFullName>
+  <ClassFullName>SubPointSolutions.Docs.Views.Views.SPMeta2.reference.ProvisionServices</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>ProvisionServices.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>ProvisionServices</SourceFileNameWithoutExtension>
+</DocSample>

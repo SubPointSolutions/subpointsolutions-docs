@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Application Model</string>
+        <string>Web application</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>CategoryOrder</Name>
+      <Values>
+        <string>100</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>Add content database</Title>
+  <MethodBodyWithFunction>
+        
+
+        
+        //[Browsable(false)]
+        public void CanDeploySimpleContentDatabaseDefinition()
+        {
+            var contentDb1 = new ContentDatabaseDefinition
+            {
+                ServerName = "localhost",
+                DbName = "intranet_content_db1"
+            };
+
+            var contentDb2 = new ContentDatabaseDefinition
+            {
+                ServerName = "localhost",
+                DbName = "intranet_content_db2"
+            };
+
+            var model = SPMeta2Model.NewWebApplicationModel(webApp =&gt;
+            {
+                webApp
+                    .AddContentDatabase(contentDb1)
+                    .AddContentDatabase(contentDb2);
+            });
+
+            DeployModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>var contentDb1 = new ContentDatabaseDefinition
+{
+    ServerName = "localhost",
+    DbName = "intranet_content_db1"
+};
+
+var contentDb2 = new ContentDatabaseDefinition
+{
+    ServerName = "localhost",
+    DbName = "intranet_content_db2"
+};
+
+var model = SPMeta2Model.NewWebApplicationModel(webApp =&gt;
+{
+    webApp
+        .AddContentDatabase(contentDb1)
+        .AddContentDatabase(contentDb2);
+});
+
+DeployModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>ContentDatabaseDefinitionTests</ClassName>
+  <MethodName>CanDeploySimpleContentDatabaseDefinition</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.ContentDatabaseDefinitionTests.CanDeploySimpleContentDatabaseDefinition</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.ContentDatabaseDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>ContentDatabaseDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>ContentDatabaseDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Site Collection Model</string>
+        <string>Site collection</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+    
+
+    
+
+    //[Browsable(false)]
+    public class ContentTypeDefinitionTests : ProvisionTestBase
+    {
+        #region methods
+
+     
+        [TestMethod]
+        [TestCategory("Docs.ContentTypeDefinition")]
+
+        [DisplayName("Add item content type")]
+        //[Browsable(false)]
+        public void CanDeploySimpleListContentType()
+        {
+            var listContentType = new ContentTypeDefinition
+            {
+                Name = "Custom list item",
+                Id = new Guid("79658c1e-3096-4c44-bd55-4228d01a5b97"),
+                ParentContentTypeId = BuiltInContentTypeId.Item,
+                Group = "SPMeta2.Samples"
+            };
+
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                site
+                   .AddContentType(listContentType);
+            });
+
+            DeployModel(model);
+        }
+
+
+        [TestMethod]
+        [TestCategory("Docs.ContentTypeDefinition")]
+
+        [DisplayName("Add document content type")]
+        //[Browsable(false)]
+        public void CanDeploySimpleDocumentContentType()
+        {
+            var documentContentType = new ContentTypeDefinition
+            {
+                Name = "Custom document",
+                Id = new Guid("008e7c50-a271-4fcd-9f01-f18daad5bd7e"),
+                ParentContentTypeId = BuiltInContentTypeId.Document,
+                Group = "SPMeta2.Samples"
+            };
+
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                site
+                   .AddContentType(documentContentType);
+            });
+
+            DeployModel(model);
+        }
+
+        [TestMethod]
+        [TestCategory("Docs.ContentTypeDefinition")]
+
+        [DisplayName("Add document set content type")]
+        //[Browsable(false)]
+        public void CanDeploySimpleDocumentSetContentType()
+        {
+            var documentContentType = new ContentTypeDefinition
+            {
+                Name = "Custom document set",
+                Id = new Guid("AAC93B98-F776-4D5C-9E6E-66F2DC45A467"),
+                ParentContentTypeId = BuiltInContentTypeId.DocumentSet_Correct,
+                Group = "SPMeta2.Samples"
+            };
+
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                site
+                   .AddContentType(documentContentType);
+            });
+
+            DeployModel(model);
+        }
+
+        [TestMethod]
+        [TestCategory("Docs.ContentTypeDefinition")]
+
+        [DisplayName("Add several content types")]
+        //[Browsable(false)]
+        public void CanDeploySimpleContentTypes()
+        {
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                site
+                   .AddContentType(DocContentTypes.CustomerAccount)
+                   .AddContentType(DocContentTypes.CustomerDocument);
+            });
+
+            DeployModel(model);
+        }
+
+    
+        [TestMethod]
+        [TestCategory("Docs.ContentTypeDefinition")]
+
+        [DisplayName("Add content type with fields")]
+        //[Browsable(false)]
+        public void CanDeploySimpleContentTypesWithFields()
+        {
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                site
+                    .AddField(DocFields.Clients.ClientCredit)
+                    .AddField(DocFields.Clients.ClientDebit)
+                    .AddField(DocFields.Clients.ClientDescription)
+                    .AddField(DocFields.Clients.ClientNumber)
+                    .AddField(DocFields.Clients.ClientWebSite)
+
+                   .AddContentType(DocContentTypes.CustomerAccount, contentType =&gt;
+                   {
+                       contentType
+                         .AddContentTypeFieldLink(DocFields.Clients.ClientCredit)
+                         .AddContentTypeFieldLink(DocFields.Clients.ClientDebit)
+                         .AddContentTypeFieldLink(DocFields.Clients.ClientWebSite);
+                   })
+                   .AddContentType(DocContentTypes.CustomerDocument, contentType =&gt;
+                   {
+                       contentType
+                          .AddContentTypeFieldLink(DocFields.Clients.ClientDescription)
+                          .AddContentTypeFieldLink(DocFields.Clients.ClientNumber);
+                   });
+            });
+
+            DeployModel(model);
+        }
+
+        [TestMethod]
+        [TestCategory("Docs.ContentTypeDefinition")]
+
+        [DisplayName("Add parent-child content types")]
+        //[Browsable(false)]
+        public void CanDeployHierarhicalContentTypes()
+        {
+            var rootDocumentContentType = new ContentTypeDefinition
+            {
+                Name = "A root document",
+                Id = new Guid("b0ec3794-8bf3-49ed-b8d1-24a4df5ac75b"),
+                ParentContentTypeId = BuiltInContentTypeId.Document,
+                Group = "SPMeta2.Samples"
+            };
+
+            var childDocumentContentType = new ContentTypeDefinition
+            {
+                Name = "A child document",
+                Id = new Guid("84ab43ee-1f9d-4436-a9de-868bd7a36400"),
+                // use GetContentTypeId() to get the content type ID and refer as a parent ID
+                ParentContentTypeId = rootDocumentContentType.GetContentTypeId(),
+                Group = "SPMeta2.Samples"
+            };
+
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                site
+                   .AddContentType(rootDocumentContentType)
+                   .AddContentType(childDocumentContentType);
+            });
+
+            DeployModel(model);
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>//[Browsable(false)]
+public class ContentTypeDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+
+    [TestMethod]
+    [TestCategory("Docs.ContentTypeDefinition")]
+
+    [DisplayName("Add item content type")]
+    //[Browsable(false)]
+    public void CanDeploySimpleListContentType()
+    {
+        var listContentType = new ContentTypeDefinition
+        {
+            Name = "Custom list item",
+            Id = new Guid("79658c1e-3096-4c44-bd55-4228d01a5b97"),
+            ParentContentTypeId = BuiltInContentTypeId.Item,
+            Group = "SPMeta2.Samples"
+        };
+
+        var model = SPMeta2Model.NewSiteModel(site =&gt;
+        {
+            site
+               .AddContentType(listContentType);
+        });
+
+        DeployModel(model);
+    }
+
+
+    [TestMethod]
+    [TestCategory("Docs.ContentTypeDefinition")]
+
+    [DisplayName("Add document content type")]
+    //[Browsable(false)]
+    public void CanDeploySimpleDocumentContentType()
+    {
+        var documentContentType = new ContentTypeDefinition
+        {
+            Name = "Custom document",
+            Id = new Guid("008e7c50-a271-4fcd-9f01-f18daad5bd7e"),
+            ParentContentTypeId = BuiltInContentTypeId.Document,
+            Group = "SPMeta2.Samples"
+        };
+
+        var model = SPMeta2Model.NewSiteModel(site =&gt;
+        {
+            site
+               .AddContentType(documentContentType);
+        });
+
+        DeployModel(model);
+    }
+
+    [TestMethod]
+    [TestCategory("Docs.ContentTypeDefinition")]
+
+    [DisplayName("Add document set content type")]
+    //[Browsable(false)]
+    public void CanDeploySimpleDocumentSetContentType()
+    {
+        var documentContentType = new ContentTypeDefinition
+        {
+            Name = "Custom document set",
+            Id = new Guid("AAC93B98-F776-4D5C-9E6E-66F2DC45A467"),
+            ParentContentTypeId = BuiltInContentTypeId.DocumentSet_Correct,
+            Group = "SPMeta2.Samples"
+        };
+
+        var model = SPMeta2Model.NewSiteModel(site =&gt;
+        {
+            site
+               .AddContentType(documentContentType);
+        });
+
+        DeployModel(model);
+    }
+
+    [TestMethod]
+    [TestCategory("Docs.ContentTypeDefinition")]
+
+    [DisplayName("Add several content types")]
+    //[Browsable(false)]
+    public void CanDeploySimpleContentTypes()
+    {
+        var model = SPMeta2Model.NewSiteModel(site =&gt;
+        {
+            site
+               .AddContentType(DocContentTypes.CustomerAccount)
+               .AddContentType(DocContentTypes.CustomerDocument);
+        });
+
+        DeployModel(model);
+    }
+
+
+    [TestMethod]
+    [TestCategory("Docs.ContentTypeDefinition")]
+
+    [DisplayName("Add content type with fields")]
+    //[Browsable(false)]
+    public void CanDeploySimpleContentTypesWithFields()
+    {
+        var model = SPMeta2Model.NewSiteModel(site =&gt;
+        {
+            site
+                .AddField(DocFields.Clients.ClientCredit)
+                .AddField(DocFields.Clients.ClientDebit)
+                .AddField(DocFields.Clients.ClientDescription)
+                .AddField(DocFields.Clients.ClientNumber)
+                .AddField(DocFields.Clients.ClientWebSite)
+
+               .AddContentType(DocContentTypes.CustomerAccount, contentType =&gt;
+               {
+                   contentType
+                     .AddContentTypeFieldLink(DocFields.Clients.ClientCredit)
+                     .AddContentTypeFieldLink(DocFields.Clients.ClientDebit)
+                     .AddContentTypeFieldLink(DocFields.Clients.ClientWebSite);
+               })
+               .AddContentType(DocContentTypes.CustomerDocument, contentType =&gt;
+               {
+                   contentType
+                      .AddContentTypeFieldLink(DocFields.Clients.ClientDescription)
+                      .AddContentTypeFieldLink(DocFields.Clients.ClientNumber);
+               });
+        });
+
+        DeployModel(model);
+    }
+
+    [TestMethod]
+    [TestCategory("Docs.ContentTypeDefinition")]
+
+    [DisplayName("Add parent-child content types")]
+    //[Browsable(false)]
+    public void CanDeployHierarhicalContentTypes()
+    {
+        var rootDocumentContentType = new ContentTypeDefinition
+        {
+            Name = "A root document",
+            Id = new Guid("b0ec3794-8bf3-49ed-b8d1-24a4df5ac75b"),
+            ParentContentTypeId = BuiltInContentTypeId.Document,
+            Group = "SPMeta2.Samples"
+        };
+
+        var childDocumentContentType = new ContentTypeDefinition
+        {
+            Name = "A child document",
+            Id = new Guid("84ab43ee-1f9d-4436-a9de-868bd7a36400"),
+            // use GetContentTypeId() to get the content type ID and refer as a parent ID
+            ParentContentTypeId = rootDocumentContentType.GetContentTypeId(),
+            Group = "SPMeta2.Samples"
+        };
+
+        var model = SPMeta2Model.NewSiteModel(site =&gt;
+        {
+            site
+               .AddContentType(rootDocumentContentType)
+               .AddContentType(childDocumentContentType);
+        });
+
+        DeployModel(model);
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>ContentTypeDefinitionTests</ClassName>
+  <MethodName>ContentTypeDefinitionTestsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassContentTypeDefinitionTestsClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.ContentTypeDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>ContentTypeDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>ContentTypeDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Farm Model</string>
+        <string>Farm</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>Add farm feature</Title>
+  <MethodBodyWithFunction>
+        
+
+        
+        //[Browsable(false)]
+        public void CanDeploySimpleFarmDefinition()
+        {
+            var farmFeature = BuiltInFarmFeatures.SiteMailboxes.Inherit(f =&gt;
+            {
+                f.Enable = true;
+            });
+
+            var model = SPMeta2Model.NewFarmModel(farm =&gt;
+            {
+                farm.AddFarmFeature(farmFeature);
+            });
+
+            DeployModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>var farmFeature = BuiltInFarmFeatures.SiteMailboxes.Inherit(f =&gt;
+{
+    f.Enable = true;
+});
+
+var model = SPMeta2Model.NewFarmModel(farm =&gt;
+{
+    farm.AddFarmFeature(farmFeature);
+});
+
+DeployModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>FarmDefinitionTests</ClassName>
+  <MethodName>CanDeploySimpleFarmDefinition</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.FarmDefinitionTests.CanDeploySimpleFarmDefinition</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.FarmDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>FarmDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>FarmDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

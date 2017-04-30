@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBody>SP.SOD.execute("mquery.js", "m$.ready", function () {
+
+    // DO STUFF
+
+});
+
+</MethodBody>
+  <Language>js</Language>
+  <ClassName>AvoidJQueryDocumentReadyInCode</ClassName>
+  <MethodName>AvoidJQueryDocumentReadyInCode_mQuerySODExecute</MethodName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>AvoidJQueryDocumentReadyInCode.html</SourceFileName>
+  <SourceFileNameWithoutExtension>AvoidJQueryDocumentReadyInCode</SourceFileNameWithoutExtension>
+</DocSample>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags />
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    public class ArgumentNotSpecifiedException : Exception
+    {
+        public ArgumentNotSpecifiedException(string message)
+        {
+
+        }
+    }</MethodBodyWithFunction>
+  <MethodBody>public class ArgumentNotSpecifiedException : Exception
+{
+    public ArgumentNotSpecifiedException(string message)
+    {
+
+    }
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SubPointSolutions.Docs.Views.Views.ReSP.Inspections.csharp</Namespace>
+  <ClassName>ArgumentNotSpecifiedException</ClassName>
+  <MethodName>ArgumentNotSpecifiedExceptionClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassArgumentNotSpecifiedExceptionClass</MethodFullName>
+  <ClassFullName>SubPointSolutions.Docs.Views.Views.ReSP.Inspections.csharp.ArgumentNotSpecifiedException</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>DoNotSuppressExceptions.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>DoNotSuppressExceptions</SourceFileNameWithoutExtension>
+</DocSample>

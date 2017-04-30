@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Site Collection Model</string>
+        <string>Fields</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+    
+
+    
+
+    //[Browsable(false)]
+    public class LookupFieldDefinitionTests : ProvisionTestBase
+    {
+        #region methods
+
+        [TestCategory("Docs.FieldDefinition")]
+       
+
+        [TestMethod]
+        [TestCategory("Docs.LookupFieldDefinition")]
+
+        [DisplayName("Add lookup field")]
+        //[Browsable(false)]
+        public void CanDeployEmptyLookupField()
+        {
+            var emptyLookupField = new LookupFieldDefinition
+            {
+                Title = "Empty Lookup Field",
+                InternalName = "m2EmptyLookupField",
+                Group = "SPMeta2.Samples",
+                Id = new Guid("B6387953-3967-4023-9D38-431F2C6A5E54")
+            };
+
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                site
+                    .AddField(emptyLookupField);
+            });
+
+            DeployModel(model);
+        }
+
+        [TestCategory("Docs.FieldDefinition")]
+       
+
+        [TestMethod]
+        [TestCategory("Docs.LookupFieldDefinition")]
+
+        [DisplayName("Add lookup field binded to list")]
+        //[Browsable(false)]
+        public void CanDeployLookupFieldBindedToList()
+        {
+            var leadTypeLookup = new LookupFieldDefinition
+            {
+                Title = "Lead Type",
+                InternalName = "m2LeadType",
+                Group = "SPMeta2.Samples",
+                Id = new Guid("FEFC30A7-3B38-4034-BB2A-FFD538D46A63")
+            };
+
+            var lookupFieldModel = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                site
+                    .AddField(leadTypeLookup);
+            });
+
+            var leadRecords = new ListDefinition
+            {
+                Title = "Lead Records",
+                Description = "A generic list.",
+                TemplateType = BuiltInListTemplateTypeId.GenericList,
+                Url = "m2LeadRecordsList"
+            };
+
+            var leadRecordTypes = new ListDefinition
+            {
+                Title = "Lead Record Types",
+                Description = "A generic list.",
+                TemplateType = BuiltInListTemplateTypeId.GenericList,
+                Url = "m2LeadRecordTypesList"
+            };
+
+            var webModel = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web
+                  .AddList(leadRecords, list =&gt;
+                  {
+                      list.AddListFieldLink(leadTypeLookup);
+                  })
+                  .AddList(leadRecordTypes);
+            });
+
+            // 1. deploy lookup field without bindings
+            DeployModel(lookupFieldModel);
+
+            // 2. deploy lists
+            DeployModel(webModel);
+
+            // 3. update binding for the lookup field
+            // LookupList/LookupListId could also be used
+            leadTypeLookup.LookupListTitle = leadRecordTypes.Title;
+
+            // 4. deploy lookup field again, so that it will be binded
+            DeployModel(lookupFieldModel);
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>//[Browsable(false)]
+public class LookupFieldDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+    [TestCategory("Docs.FieldDefinition")]
+
+
+    [TestMethod]
+    [TestCategory("Docs.LookupFieldDefinition")]
+
+    [DisplayName("Add lookup field")]
+    //[Browsable(false)]
+    public void CanDeployEmptyLookupField()
+    {
+        var emptyLookupField = new LookupFieldDefinition
+        {
+            Title = "Empty Lookup Field",
+            InternalName = "m2EmptyLookupField",
+            Group = "SPMeta2.Samples",
+            Id = new Guid("B6387953-3967-4023-9D38-431F2C6A5E54")
+        };
+
+        var model = SPMeta2Model.NewSiteModel(site =&gt;
+        {
+            site
+                .AddField(emptyLookupField);
+        });
+
+        DeployModel(model);
+    }
+
+    [TestCategory("Docs.FieldDefinition")]
+
+
+    [TestMethod]
+    [TestCategory("Docs.LookupFieldDefinition")]
+
+    [DisplayName("Add lookup field binded to list")]
+    //[Browsable(false)]
+    public void CanDeployLookupFieldBindedToList()
+    {
+        var leadTypeLookup = new LookupFieldDefinition
+        {
+            Title = "Lead Type",
+            InternalName = "m2LeadType",
+            Group = "SPMeta2.Samples",
+            Id = new Guid("FEFC30A7-3B38-4034-BB2A-FFD538D46A63")
+        };
+
+        var lookupFieldModel = SPMeta2Model.NewSiteModel(site =&gt;
+        {
+            site
+                .AddField(leadTypeLookup);
+        });
+
+        var leadRecords = new ListDefinition
+        {
+            Title = "Lead Records",
+            Description = "A generic list.",
+            TemplateType = BuiltInListTemplateTypeId.GenericList,
+            Url = "m2LeadRecordsList"
+        };
+
+        var leadRecordTypes = new ListDefinition
+        {
+            Title = "Lead Record Types",
+            Description = "A generic list.",
+            TemplateType = BuiltInListTemplateTypeId.GenericList,
+            Url = "m2LeadRecordTypesList"
+        };
+
+        var webModel = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web
+              .AddList(leadRecords, list =&gt;
+              {
+                  list.AddListFieldLink(leadTypeLookup);
+              })
+              .AddList(leadRecordTypes);
+        });
+
+        // 1. deploy lookup field without bindings
+        DeployModel(lookupFieldModel);
+
+        // 2. deploy lists
+        DeployModel(webModel);
+
+        // 3. update binding for the lookup field
+        // LookupList/LookupListId could also be used
+        leadTypeLookup.LookupListTitle = leadRecordTypes.Title;
+
+        // 4. deploy lookup field again, so that it will be binded
+        DeployModel(lookupFieldModel);
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SubPointSolutions.Docs.Views.Views.SPMeta2.reference</Namespace>
+  <ClassName>LookupFieldDefinitionTests</ClassName>
+  <MethodName>LookupFieldDefinitionTestsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassLookupFieldDefinitionTestsClass</MethodFullName>
+  <ClassFullName>SubPointSolutions.Docs.Views.Views.SPMeta2.reference.LookupFieldDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>LookupFieldDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>LookupFieldDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

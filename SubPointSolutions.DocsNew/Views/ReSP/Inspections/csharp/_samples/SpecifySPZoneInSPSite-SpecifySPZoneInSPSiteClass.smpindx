@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags />
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+    public class SpecifySPZoneInSPSite
+    {
+        [TestMethod]
+        public void IncorrectSPUrlZoneParamUsage(SPList list)
+        {
+            using (SPSite site = new SPSite(SPContext.Current.Site.ID))
+            {
+                SPUrlZone zone = site.Zone;
+                //Logic that depends on Zone
+                //Oops! Zone is always 'Default'
+            }
+        }
+
+        [TestMethod]
+        public void CorrectSPUrlZoneParamUsage(SPList list)
+        {
+            using (SPSite site = new SPSite(SPContext.Current.Site.ID, SPContext.Current.Site.Zone))
+            {
+                SPUrlZone zone = site.Zone;
+                //Logic that depends on Zone
+                //Zone will contain the correct Zone depending upon the Context
+            }
+        }
+    }</MethodBodyWithFunction>
+  <MethodBody>public class SpecifySPZoneInSPSite
+{
+    [TestMethod]
+    public void IncorrectSPUrlZoneParamUsage(SPList list)
+    {
+        using (SPSite site = new SPSite(SPContext.Current.Site.ID))
+        {
+            SPUrlZone zone = site.Zone;
+            //Logic that depends on Zone
+            //Oops! Zone is always 'Default'
+        }
+    }
+
+    [TestMethod]
+    public void CorrectSPUrlZoneParamUsage(SPList list)
+    {
+        using (SPSite site = new SPSite(SPContext.Current.Site.ID, SPContext.Current.Site.Zone))
+        {
+            SPUrlZone zone = site.Zone;
+            //Logic that depends on Zone
+            //Zone will contain the correct Zone depending upon the Context
+        }
+    }
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>ReSharePoint.Docs.Basic.Inspection.Code</Namespace>
+  <ClassName>SpecifySPZoneInSPSite</ClassName>
+  <MethodName>SpecifySPZoneInSPSiteClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassSpecifySPZoneInSPSiteClass</MethodFullName>
+  <ClassFullName>ReSharePoint.Docs.Basic.Inspection.Code.SpecifySPZoneInSPSite</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>SpecifySPZoneInSPSite.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>SpecifySPZoneInSPSite</SourceFileNameWithoutExtension>
+</DocSample>

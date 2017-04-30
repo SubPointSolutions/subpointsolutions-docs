@@ -1,0 +1,475 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model</string>
+        <string>Web parts</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+
+    
+
+    //[Browsable(false)]
+    public class ListViewWebPartDefinitionTests : ProvisionTestBase
+    {
+        #region methods
+
+       
+        [TestMethod]
+        [TestCategory("Docs.ListViewWebPartDefinition")]
+
+        [DisplayName("Add LVWP binded to list by Title")]
+        //[Browsable(false)]
+        public void CanBindListViewWebPartByListTitle()
+        {
+            var travelRequests = new ListDefinition
+            {
+                Title = "Travel Requests",
+                Description = "A document library.",
+                TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
+                Url = "m2TravelRequests"
+            };
+
+            var listView = new ListViewWebPartDefinition
+            {
+                Title = "Travel Request Default View by List Title",
+                Id = "m2TravelRequestsView",
+                ZoneIndex = 10,
+                ZoneId = "Main",
+                ListTitle = travelRequests.Title
+            };
+
+            var webPartPage = new WebPartPageDefinition
+            {
+                Title = "M2 List View provision",
+                FileName = "listview-webpart-provision.aspx",
+                PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web
+                  .AddList(travelRequests)
+                  .AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+                  {
+                      list.AddWebPartPage(webPartPage, page =&gt;
+                      {
+                          page.AddListViewWebPart(listView);
+                      });
+                  });
+            });
+
+            DeployModel(model);
+        }
+
+       
+        [TestMethod]
+        [TestCategory("Docs.ListViewWebPartDefinition")]
+
+        [DisplayName("Add LVWP binded to list by URL")]
+        //[Browsable(false)]
+        public void CanBindListViewWebPartByListUrl()
+        {
+            var annualReviewsLibrary = new ListDefinition
+            {
+                Title = "Annual Reviews",
+                Description = "A document library.",
+                TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
+                Url = "m2AnnualReviews"
+            };
+
+            var listView = new ListViewWebPartDefinition
+            {
+                Title = "Annual Reviews Default View by List Url",
+                Id = "m2AnnualReviewsView",
+                ZoneIndex = 10,
+                ZoneId = "Main",
+                ListUrl = annualReviewsLibrary.GetListUrl()
+            };
+
+            var webPartPage = new WebPartPageDefinition
+            {
+                Title = "M2 List View provision",
+                FileName = "listview-webpart-provision.aspx",
+                PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web
+                  .AddList(annualReviewsLibrary)
+                  .AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+                  {
+                      list.AddWebPartPage(webPartPage, page =&gt;
+                      {
+                          page.AddListViewWebPart(listView);
+                      });
+                  });
+            });
+
+            DeployModel(model);
+        }
+
+     
+        [TestMethod]
+        [TestCategory("Docs.ListViewWebPartDefinition")]
+
+        [DisplayName("Add LVWP binded to list view by Title")]
+        //[Browsable(false)]
+        public void CanBindListViewWebPartByListViewTitle()
+        {
+            var incidentsLibrary = new ListDefinition
+            {
+                Title = "Incidents library",
+                Description = "A document library.",
+                TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
+                Url = "m2Incidents"
+            };
+
+            var incidentsView = new ListViewDefinition
+            {
+                Title = "Last Incidents",
+                Fields = new Collection&lt;string&gt;
+                {
+                    BuiltInInternalFieldNames.Edit,
+                    BuiltInInternalFieldNames.ID,
+                    BuiltInInternalFieldNames.FileLeafRef
+                },
+                RowLimit = 10
+            };
+
+            var listView = new ListViewWebPartDefinition
+            {
+                Title = "Last Incidents binding by List View Title",
+                Id = "m2LastIncidentsView",
+                ZoneIndex = 10,
+                ZoneId = "Main",
+                ListUrl = incidentsLibrary.GetListUrl(),
+                ViewName = incidentsView.Title
+            };
+
+            var webPartPage = new WebPartPageDefinition
+            {
+                Title = "M2 List View provision",
+                FileName = "listview-webpart-provision.aspx",
+                PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web
+                  .AddList(incidentsLibrary, list =&gt;
+                  {
+                      list.AddListView(incidentsView);
+                  })
+                  .AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+                  {
+                      list.AddWebPartPage(webPartPage, page =&gt;
+                      {
+                          page.AddListViewWebPart(listView);
+                      });
+                  });
+            });
+
+            DeployModel(model);
+        }
+
+       
+        [TestMethod]
+        [TestCategory("Docs.ListViewWebPartDefinition")]
+
+        [DisplayName("Add LVWP binded to calendar view")]
+        //[Browsable(false)]
+        public void CanBindListViewWebPartToCalendarView()
+        {
+            var companyEvents = new ListDefinition
+            {
+                Title = "Company Events",
+                Description = "A document library.",
+                TemplateType = BuiltInListTemplateTypeId.Events,
+                Url = "m2CompanyEvents"
+            };
+
+            var webPartPage = new WebPartPageDefinition
+            {
+                Title = "M2 List View provision",
+                FileName = "listview-webpart-provision.aspx",
+                PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+            };
+
+            var listView = new ListViewWebPartDefinition
+            {
+                Title = "Company Events by List View Title",
+                Id = "m2CompanyEvents",
+                ZoneIndex = 10,
+                ZoneId = "Main",
+                ListUrl = companyEvents.GetListUrl(),
+                ViewName = "Calendar"
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web
+                  .AddList(companyEvents)
+                  .AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+                  {
+                      list.AddWebPartPage(webPartPage, page =&gt;
+                      {
+                          page.AddListViewWebPart(listView);
+                      });
+                  });
+            });
+
+            DeployModel(model);
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>//[Browsable(false)]
+public class ListViewWebPartDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+
+    [TestMethod]
+    [TestCategory("Docs.ListViewWebPartDefinition")]
+
+    [DisplayName("Add LVWP binded to list by Title")]
+    //[Browsable(false)]
+    public void CanBindListViewWebPartByListTitle()
+    {
+        var travelRequests = new ListDefinition
+        {
+            Title = "Travel Requests",
+            Description = "A document library.",
+            TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
+            Url = "m2TravelRequests"
+        };
+
+        var listView = new ListViewWebPartDefinition
+        {
+            Title = "Travel Request Default View by List Title",
+            Id = "m2TravelRequestsView",
+            ZoneIndex = 10,
+            ZoneId = "Main",
+            ListTitle = travelRequests.Title
+        };
+
+        var webPartPage = new WebPartPageDefinition
+        {
+            Title = "M2 List View provision",
+            FileName = "listview-webpart-provision.aspx",
+            PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+        };
+
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web
+              .AddList(travelRequests)
+              .AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+              {
+                  list.AddWebPartPage(webPartPage, page =&gt;
+                  {
+                      page.AddListViewWebPart(listView);
+                  });
+              });
+        });
+
+        DeployModel(model);
+    }
+
+
+    [TestMethod]
+    [TestCategory("Docs.ListViewWebPartDefinition")]
+
+    [DisplayName("Add LVWP binded to list by URL")]
+    //[Browsable(false)]
+    public void CanBindListViewWebPartByListUrl()
+    {
+        var annualReviewsLibrary = new ListDefinition
+        {
+            Title = "Annual Reviews",
+            Description = "A document library.",
+            TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
+            Url = "m2AnnualReviews"
+        };
+
+        var listView = new ListViewWebPartDefinition
+        {
+            Title = "Annual Reviews Default View by List Url",
+            Id = "m2AnnualReviewsView",
+            ZoneIndex = 10,
+            ZoneId = "Main",
+            ListUrl = annualReviewsLibrary.GetListUrl()
+        };
+
+        var webPartPage = new WebPartPageDefinition
+        {
+            Title = "M2 List View provision",
+            FileName = "listview-webpart-provision.aspx",
+            PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+        };
+
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web
+              .AddList(annualReviewsLibrary)
+              .AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+              {
+                  list.AddWebPartPage(webPartPage, page =&gt;
+                  {
+                      page.AddListViewWebPart(listView);
+                  });
+              });
+        });
+
+        DeployModel(model);
+    }
+
+
+    [TestMethod]
+    [TestCategory("Docs.ListViewWebPartDefinition")]
+
+    [DisplayName("Add LVWP binded to list view by Title")]
+    //[Browsable(false)]
+    public void CanBindListViewWebPartByListViewTitle()
+    {
+        var incidentsLibrary = new ListDefinition
+        {
+            Title = "Incidents library",
+            Description = "A document library.",
+            TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
+            Url = "m2Incidents"
+        };
+
+        var incidentsView = new ListViewDefinition
+        {
+            Title = "Last Incidents",
+            Fields = new Collection&lt;string&gt;
+            {
+                BuiltInInternalFieldNames.Edit,
+                BuiltInInternalFieldNames.ID,
+                BuiltInInternalFieldNames.FileLeafRef
+            },
+            RowLimit = 10
+        };
+
+        var listView = new ListViewWebPartDefinition
+        {
+            Title = "Last Incidents binding by List View Title",
+            Id = "m2LastIncidentsView",
+            ZoneIndex = 10,
+            ZoneId = "Main",
+            ListUrl = incidentsLibrary.GetListUrl(),
+            ViewName = incidentsView.Title
+        };
+
+        var webPartPage = new WebPartPageDefinition
+        {
+            Title = "M2 List View provision",
+            FileName = "listview-webpart-provision.aspx",
+            PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+        };
+
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web
+              .AddList(incidentsLibrary, list =&gt;
+              {
+                  list.AddListView(incidentsView);
+              })
+              .AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+              {
+                  list.AddWebPartPage(webPartPage, page =&gt;
+                  {
+                      page.AddListViewWebPart(listView);
+                  });
+              });
+        });
+
+        DeployModel(model);
+    }
+
+
+    [TestMethod]
+    [TestCategory("Docs.ListViewWebPartDefinition")]
+
+    [DisplayName("Add LVWP binded to calendar view")]
+    //[Browsable(false)]
+    public void CanBindListViewWebPartToCalendarView()
+    {
+        var companyEvents = new ListDefinition
+        {
+            Title = "Company Events",
+            Description = "A document library.",
+            TemplateType = BuiltInListTemplateTypeId.Events,
+            Url = "m2CompanyEvents"
+        };
+
+        var webPartPage = new WebPartPageDefinition
+        {
+            Title = "M2 List View provision",
+            FileName = "listview-webpart-provision.aspx",
+            PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+        };
+
+        var listView = new ListViewWebPartDefinition
+        {
+            Title = "Company Events by List View Title",
+            Id = "m2CompanyEvents",
+            ZoneIndex = 10,
+            ZoneId = "Main",
+            ListUrl = companyEvents.GetListUrl(),
+            ViewName = "Calendar"
+        };
+
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web
+              .AddList(companyEvents)
+              .AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+              {
+                  list.AddWebPartPage(webPartPage, page =&gt;
+                  {
+                      page.AddListViewWebPart(listView);
+                  });
+              });
+        });
+
+        DeployModel(model);
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>ListViewWebPartDefinitionTests</ClassName>
+  <MethodName>ListViewWebPartDefinitionTestsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassListViewWebPartDefinitionTestsClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.ListViewWebPartDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>ListViewWebPartDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>ListViewWebPartDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

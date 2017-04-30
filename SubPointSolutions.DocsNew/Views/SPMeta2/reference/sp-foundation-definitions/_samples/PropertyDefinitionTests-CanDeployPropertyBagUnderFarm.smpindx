@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Farm Model</string>
+        <string>Property bags</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>Add property to farm</Title>
+  <MethodBodyWithFunction>
+        
+
+        
+        
+        //[Browsable(false)]
+        public void CanDeployPropertyBagUnderFarm()
+        {
+            var farmTag = new PropertyDefinition
+            {
+                Key = "m2_farm_tag",
+                Value = "m2_farm_tag_value",
+            };
+
+            var farmType = new PropertyDefinition
+            {
+                Key = "m2_farm_type",
+                Value = "m2_farm_type_value",
+            };
+
+            var model = SPMeta2Model.NewFarmModel(farm =&gt;
+            {
+                farm
+                    .AddProperty(farmTag)
+                    .AddProperty(farmType);
+            });
+
+            DeploySSOMModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>var farmTag = new PropertyDefinition
+{
+    Key = "m2_farm_tag",
+    Value = "m2_farm_tag_value",
+};
+
+var farmType = new PropertyDefinition
+{
+    Key = "m2_farm_type",
+    Value = "m2_farm_type_value",
+};
+
+var model = SPMeta2Model.NewFarmModel(farm =&gt;
+{
+    farm
+        .AddProperty(farmTag)
+        .AddProperty(farmType);
+});
+
+DeploySSOMModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>PropertyDefinitionTests</ClassName>
+  <MethodName>CanDeployPropertyBagUnderFarm</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.PropertyDefinitionTests.CanDeployPropertyBagUnderFarm</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.PropertyDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>PropertyDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>PropertyDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

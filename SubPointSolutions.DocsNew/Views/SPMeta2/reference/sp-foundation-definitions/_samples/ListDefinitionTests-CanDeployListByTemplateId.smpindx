@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model</string>
+        <string>Lists and libraries</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>Add list by template type</Title>
+  <MethodBodyWithFunction>
+        
+
+        
+        //[Browsable(false)]
+        public void CanDeployListByTemplateId()
+        {
+            var genericList = new ListDefinition
+            {
+                Title = "Generic list",
+                Description = "A generic list.",
+                TemplateType = BuiltInListTemplateTypeId.GenericList,
+                Url = "GenericList"
+            };
+
+            var documentLibrary = new ListDefinition
+            {
+                Title = "Document library",
+                Description = "A document library.",
+                TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
+                Url = "DocumentLibrary"
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddList(genericList);
+                web.AddList(documentLibrary);
+            });
+
+            DeployModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>var genericList = new ListDefinition
+{
+    Title = "Generic list",
+    Description = "A generic list.",
+    TemplateType = BuiltInListTemplateTypeId.GenericList,
+    Url = "GenericList"
+};
+
+var documentLibrary = new ListDefinition
+{
+    Title = "Document library",
+    Description = "A document library.",
+    TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
+    Url = "DocumentLibrary"
+};
+
+var model = SPMeta2Model.NewWebModel(web =&gt;
+{
+    web.AddList(genericList);
+    web.AddList(documentLibrary);
+});
+
+DeployModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>ListDefinitionTests</ClassName>
+  <MethodName>CanDeployListByTemplateId</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.ListDefinitionTests.CanDeployListByTemplateId</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.ListDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>ListDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>ListDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

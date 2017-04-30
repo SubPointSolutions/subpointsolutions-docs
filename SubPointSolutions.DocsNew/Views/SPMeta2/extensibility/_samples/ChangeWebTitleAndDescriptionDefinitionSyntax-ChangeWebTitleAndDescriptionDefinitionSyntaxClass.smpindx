@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags />
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    public static class ChangeWebTitleAndDescriptionDefinitionSyntax
+    {
+        public static ModelNode AddChangeWebTitleAndDescription(this ModelNode model,
+            ChangeWebTitleAndDescriptionDefinition definition)
+        {
+            return AddChangeWebTitleAndDescription(model, definition, null);
+        }
+
+        public static ModelNode AddChangeWebTitleAndDescription(this ModelNode model,
+            ChangeWebTitleAndDescriptionDefinition definition, Action&lt;ModelNode&gt;
+            action)
+        {
+            return model.AddDefinitionNode(definition, action);
+        }
+    }</MethodBodyWithFunction>
+  <MethodBody>public static class ChangeWebTitleAndDescriptionDefinitionSyntax
+{
+    public static ModelNode AddChangeWebTitleAndDescription(this ModelNode model,
+        ChangeWebTitleAndDescriptionDefinition definition)
+    {
+        return AddChangeWebTitleAndDescription(model, definition, null);
+    }
+
+    public static ModelNode AddChangeWebTitleAndDescription(this ModelNode model,
+        ChangeWebTitleAndDescriptionDefinition definition, Action&lt;ModelNode&gt;
+        action)
+    {
+        return model.AddDefinitionNode(definition, action);
+    }
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>ChangeWebTitleAndDescriptionDefinitionSyntax</ClassName>
+  <MethodName>ChangeWebTitleAndDescriptionDefinitionSyntaxClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassChangeWebTitleAndDescriptionDefinitionSyntaxClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.ChangeWebTitleAndDescriptionDefinitionSyntax</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>writing-custom-definition.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>writing-custom-definition</SourceFileNameWithoutExtension>
+</DocSample>

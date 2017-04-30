@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model</string>
+        <string>Welcome page</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>Add folder welcome page</Title>
+  <MethodBodyWithFunction>
+        
+
+        
+        //[Browsable(false)]
+        public void CanDeployWelcomePageToFolder()
+        {
+            var newFolderHomePage = new WikiPageDefinition
+            {
+                FileName = "A new landing page for folder.aspx",
+                Content = "Hello, this is a new folder landing page!"
+            };
+
+            var welcomePage = new WelcomePageDefinition
+            {
+                // should be relating to the folder!
+                Url = newFolderHomePage.FileName
+            };
+
+            var landingPageFolder = new FolderDefinition
+            {
+                Name = "A folder with custom landing page"
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web
+                    .AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+                    {
+                        list
+                            .AddFolder(landingPageFolder, folder =&gt;
+                            {
+                                folder
+                                    .AddWikiPage(newFolderHomePage)
+                                    .AddWelcomePage(welcomePage);
+                            });
+                    });
+            });
+
+            DeployModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>var newFolderHomePage = new WikiPageDefinition
+{
+    FileName = "A new landing page for folder.aspx",
+    Content = "Hello, this is a new folder landing page!"
+};
+
+var welcomePage = new WelcomePageDefinition
+{
+    // should be relating to the folder!
+    Url = newFolderHomePage.FileName
+};
+
+var landingPageFolder = new FolderDefinition
+{
+    Name = "A folder with custom landing page"
+};
+
+var model = SPMeta2Model.NewWebModel(web =&gt;
+{
+    web
+        .AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+        {
+            list
+                .AddFolder(landingPageFolder, folder =&gt;
+                {
+                    folder
+                        .AddWikiPage(newFolderHomePage)
+                        .AddWelcomePage(welcomePage);
+                });
+        });
+});
+
+DeployModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>WelcomePageDefinitionTests</ClassName>
+  <MethodName>CanDeployWelcomePageToFolder</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.WelcomePageDefinitionTests.CanDeployWelcomePageToFolder</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.WelcomePageDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>WelcomePageDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>WelcomePageDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

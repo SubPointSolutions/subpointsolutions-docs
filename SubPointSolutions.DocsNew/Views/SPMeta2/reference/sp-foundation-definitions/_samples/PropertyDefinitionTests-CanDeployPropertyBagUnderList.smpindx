@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model</string>
+        <string>Property bags</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>Add property to list</Title>
+  <MethodBodyWithFunction>
+        
+        
+        
+
+        
+        //[Browsable(false)]
+        public void CanDeployPropertyBagUnderList()
+        {
+            var listTag = new PropertyDefinition
+            {
+                Key = "m2_list_tag",
+                Value = "m2_list_tag_value",
+            };
+
+            var listType = new PropertyDefinition
+            {
+                Key = "m2_web_type",
+                Value = "m2_web_type_value",
+            };
+
+            var listWithProperties = new ListDefinition
+            {
+                Title = "List with properties",
+                Description = "List with some properties.",
+                TemplateType = BuiltInListTemplateTypeId.GenericList,
+                Url = "ListWithProperties"
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddList(listWithProperties, list =&gt;
+                {
+                    list
+                      .AddProperty(listTag)
+                      .AddProperty(listType);
+                });
+            });
+
+            DeployModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>var listTag = new PropertyDefinition
+{
+    Key = "m2_list_tag",
+    Value = "m2_list_tag_value",
+};
+
+var listType = new PropertyDefinition
+{
+    Key = "m2_web_type",
+    Value = "m2_web_type_value",
+};
+
+var listWithProperties = new ListDefinition
+{
+    Title = "List with properties",
+    Description = "List with some properties.",
+    TemplateType = BuiltInListTemplateTypeId.GenericList,
+    Url = "ListWithProperties"
+};
+
+var model = SPMeta2Model.NewWebModel(web =&gt;
+{
+    web.AddList(listWithProperties, list =&gt;
+    {
+        list
+          .AddProperty(listTag)
+          .AddProperty(listType);
+    });
+});
+
+DeployModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>PropertyDefinitionTests</ClassName>
+  <MethodName>CanDeployPropertyBagUnderList</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.PropertyDefinitionTests.CanDeployPropertyBagUnderList</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.PropertyDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>PropertyDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>PropertyDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

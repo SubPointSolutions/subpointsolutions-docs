@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBodyWithFunction>
+        
+        public void DeployIncrementally_Default_SSOM()
+        {
+            // setup url
+            var siteUrl = "";
+
+            // create you models
+            var siteModel = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+
+            });
+
+            var webModel = SPMeta2Model.NewWebModel(web =&gt;
+            {
+
+            });
+
+            using (var spSite = new SPSite(siteUrl))
+            {
+                using (var spWeb = spSite.OpenWeb())
+                {
+                    // deploy site model incrementally
+                    var provisionService = new StandardSSOMProvisionService();
+                    provisionService.DeploySiteModelIncrementally(spSite, siteModel, "MySiteModelId");
+
+                    // deploy web model incrementally
+                    provisionService.DeployWebModelIncrementally(spWeb, webModel, "MyWebModelId");
+                }
+            }
+        }</MethodBodyWithFunction>
+  <MethodBody>// setup url
+var siteUrl = "";
+
+// create you models
+var siteModel = SPMeta2Model.NewSiteModel(site =&gt;
+{
+
+});
+
+var webModel = SPMeta2Model.NewWebModel(web =&gt;
+{
+
+});
+
+using (var spSite = new SPSite(siteUrl))
+{
+    using (var spWeb = spSite.OpenWeb())
+    {
+        // deploy site model incrementally
+        var provisionService = new StandardSSOMProvisionService();
+        provisionService.DeploySiteModelIncrementally(spSite, siteModel, "MySiteModelId");
+
+        // deploy web model incrementally
+        provisionService.DeployWebModelIncrementally(spWeb, webModel, "MyWebModelId");
+    }
+}
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SubPointSolutions.Docs.Views.Views.SPMeta2.reference</Namespace>
+  <ClassName>ProvisionServices</ClassName>
+  <MethodName>DeployIncrementally_Default_SSOM</MethodName>
+  <ClassComment />
+  <MethodFullName>SubPointSolutions.Docs.Views.Views.SPMeta2.reference.ProvisionServices.DeployIncrementally_Default_SSOM</MethodFullName>
+  <ClassFullName>SubPointSolutions.Docs.Views.Views.SPMeta2.reference.ProvisionServices</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>ProvisionServices.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>ProvisionServices</SourceFileNameWithoutExtension>
+</DocSample>

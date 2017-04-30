@@ -37,6 +37,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SubPointSolutions.DocsBuildTools.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SubPointSolutions.DocsBuildTools.Data.0.1.0-alpha171202052\lib\net45\SubPointSolutions.DocsBuildTools.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Web" />
@@ -570,7 +574,6 @@
     <None Include="Views\metapack\Index.md" />
     <None Include="Views\metapack\_ViewStart.cshtml" />
     <None Include="packages.config" />
-    <None Include="Views\index.md" />
     <None Include="Views\reSP\code-completion\CommandUIDefinitionLocation.md" />
     <None Include="Views\reSP\code-completion\ContentPlaceHolderId.md" />
     <None Include="Views\reSP\code-completion\ContentTypeBindingContentTypeId.md" />
@@ -711,34 +714,9 @@
     <None Include="Views\reSP\live-templates\nweb.md" />
     <None Include="Views\reSP\live-templates\rwep.md" />
     <None Include="Views\reSP\_ViewStart.cshtml" />
-    <None Include="Views\Shared\Default\Components\_Footer.cshtml" />
-    <None Include="Views\Shared\Default\Components\_LandingProjectsList.cshtml" />
-    <None Include="Views\Shared\Default\Components\_LastTenBlogPosts.cshtml" />
-    <None Include="Views\Shared\Default\Components\_PrevNextNavigation.cshtml" />
     <None Include="Views\Shared\Default\Components\_SampleList.cshtml" />
     <None Include="Views\Shared\Default\Components\_SampleListCategory.cshtml" />
-    <None Include="Views\Shared\Default\Components\_SecondNavigation.cshtml" />
-    <None Include="Views\Shared\Default\Components\_Sidebar.cshtml" />
-    <None Include="Views\Shared\Default\Components\_SidebarBlog.cshtml" />
-    <None Include="Views\Shared\Default\Components\_TopNavigation.cshtml" />
-    <None Include="Views\Shared\Default\Layouts\_Flued28.cshtml" />
-    <None Include="Views\Shared\Default\Layouts\_Flued28Blog.cshtml" />
-    <None Include="Views\Shared\Default\Layouts\_Flued37.cshtml" />
-    <None Include="Views\Shared\Default\Layouts\_Master.cshtml" />
-    <None Include="Views\Shared\Default\PageLayouts\_ContentPage.cshtml" />
-    <None Include="Views\Shared\Default\PageLayouts\_LandingPage.cshtml" />
-    <None Include="Views\Shared\Default\PageLayouts\_LandingPageBlog.cshtml" />
     <None Include="Views\Shared\Default\PageLayouts\_M2Definition.cshtml" />
-    <None Include="Views\Shared\Default\PageLayouts\_M2Samples.cshtml" />
-    <None Include="Views\Shared\Default\Sections\_Clients.cshtml" />
-    <None Include="Views\Shared\Default\Sections\_ClientsLine.cshtml" />
-    <None Include="Views\Shared\Default\Sections\_ClientsOne.cshtml" />
-    <None Include="Views\Shared\Default\Sections\_ClientsStat.cshtml" />
-    <None Include="Views\Shared\Default\Sections\_FollowUs.cshtml" />
-    <None Include="Views\Shared\Default\Sections\_LandingHero.cshtml" />
-    <None Include="Views\Shared\Default\Sections\_M2Ecosystem.cshtml" />
-    <None Include="Views\Shared\Default\Sections\_Products.cshtml" />
-    <None Include="Views\Shared\Default\Sections\_Testimonials.cshtml" />
     <None Include="Views\SPMeta2-NuGet\Index.md" />
     <None Include="Views\SPMeta2-Reverse\Index.md" />
     <None Include="Views\SPMeta2-Reverse\_ViewStart.cshtml" />
@@ -909,7 +887,6 @@
     <None Include="Views\SPMeta2\scenarios\_Sample Repository.md" />
     <None Include="Views\SPMeta2\scenarios\_ViewStart.cshtml" />
     <None Include="Views\SPMeta2\_ViewStart.cshtml" />
-    <None Include="Views\_ViewStart.cshtml" />
     <None Include="_site.wyam" />
     <None Include="_start-site.ps1" />
   </ItemGroup>

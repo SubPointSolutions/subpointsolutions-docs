@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model</string>
+        <string>Security</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>Reset role inheritance on web</Title>
+  <MethodBodyWithFunction>
+        
+
+
+        
+        public void CanDeployResetRoleInheritanceDefinition_OnWeb()
+        {
+            var publicProjectWebDef = new WebDefinition
+            {
+                Title = "Public project",
+                Url = "public-project",
+                WebTemplate = BuiltInWebTemplates.Collaboration.TeamSite
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddWeb(publicProjectWebDef, publicProjectWeb =&gt;
+                {
+                    publicProjectWeb.AddResetRoleInheritance(new ResetRoleInheritanceDefinition(), publicProjectResetWeb =&gt;
+                    {
+                        // publicProjectResetWeb is your web but after resetting role inheritance
+                        // build your model as usual
+
+                        // publicProjectResetWeb.AddList(...)
+                    });
+                });
+            });
+
+            DeployModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>var publicProjectWebDef = new WebDefinition
+{
+    Title = "Public project",
+    Url = "public-project",
+    WebTemplate = BuiltInWebTemplates.Collaboration.TeamSite
+};
+
+var model = SPMeta2Model.NewWebModel(web =&gt;
+{
+    web.AddWeb(publicProjectWebDef, publicProjectWeb =&gt;
+    {
+        publicProjectWeb.AddResetRoleInheritance(new ResetRoleInheritanceDefinition(), publicProjectResetWeb =&gt;
+        {
+            // publicProjectResetWeb is your web but after resetting role inheritance
+            // build your model as usual
+
+            // publicProjectResetWeb.AddList(...)
+        });
+    });
+});
+
+DeployModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>ResetRoleInheritanceDefinitionTests</ClassName>
+  <MethodName>CanDeployResetRoleInheritanceDefinition_OnWeb</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.ResetRoleInheritanceDefinitionTests.CanDeployResetRoleInheritanceDefinition_OnWeb</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.ResetRoleInheritanceDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>ResetRoleInheritanceDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>ResetRoleInheritanceDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

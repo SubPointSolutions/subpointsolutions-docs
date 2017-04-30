@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBodyWithFunction>
+        
+        public void UrlConcatenation()
+        {
+            // fast on two params
+            var smQueryUrl = UrlUtility.CombineUrl("http://goole.com", "?q=spmeta2");
+
+            // a bigger one
+            var bgQueryUrl = UrlUtility.CombineUrl(new string[]{ 
+                "http://goole.com",
+                "?",
+                "q=1",
+                "&amp;p1=3",
+                "&amp;p2=tmp"
+            });
+        }</MethodBodyWithFunction>
+  <MethodBody>// fast on two params
+var smQueryUrl = UrlUtility.CombineUrl("http://goole.com", "?q=spmeta2");
+
+// a bigger one
+var bgQueryUrl = UrlUtility.CombineUrl(new string[]{
+    "http://goole.com",
+    "?",
+    "q=1",
+    "&amp;p1=3",
+    "&amp;p2=tmp"
+});
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SubPointSolutions.Docs.Views.Views.SPMeta2.reference</Namespace>
+  <ClassName>Utils</ClassName>
+  <MethodName>UrlConcatenation</MethodName>
+  <ClassComment />
+  <MethodFullName>SubPointSolutions.Docs.Views.Views.SPMeta2.reference.Utils.UrlConcatenation</MethodFullName>
+  <ClassFullName>SubPointSolutions.Docs.Views.Views.SPMeta2.reference.Utils</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>Utils.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>Utils</SourceFileNameWithoutExtension>
+</DocSample>

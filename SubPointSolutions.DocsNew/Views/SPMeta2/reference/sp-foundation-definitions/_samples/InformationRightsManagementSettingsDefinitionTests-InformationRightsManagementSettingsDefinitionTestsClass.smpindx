@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model</string>
+        <string>Lists and libraries</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+    
+
+    
+    
+    public class InformationRightsManagementSettingsDefinitionTests : ProvisionTestBase
+    {
+        #region methods
+
+        [TestMethod]
+        [TestCategory("Docs.InformationRightsManagementSettingsDefinition")]
+
+        [DisplayName("Add IRM settings")]
+        [Browsable(false)]
+        public void CanDeploySimpleInformationRightsManagementSettingsDefinition()
+        {
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+         
+            });
+
+            DeployModel(model);
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>public class InformationRightsManagementSettingsDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+    [TestMethod]
+    [TestCategory("Docs.InformationRightsManagementSettingsDefinition")]
+
+    [DisplayName("Add IRM settings")]
+    [Browsable(false)]
+    public void CanDeploySimpleInformationRightsManagementSettingsDefinition()
+    {
+        var model = SPMeta2Model.NewSiteModel(site =&gt;
+        {
+
+        });
+
+        DeployModel(model);
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>InformationRightsManagementSettingsDefinitionTests</ClassName>
+  <MethodName>InformationRightsManagementSettingsDefinitionTestsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassInformationRightsManagementSettingsDefinitionTestsClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.InformationRightsManagementSettingsDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>InformationRightsManagementSettingsDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>InformationRightsManagementSettingsDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

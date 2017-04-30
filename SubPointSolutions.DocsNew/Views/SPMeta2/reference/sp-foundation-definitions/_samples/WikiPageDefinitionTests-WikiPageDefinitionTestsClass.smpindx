@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model</string>
+        <string>Wiki pages</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+    
+
+    
+    //[Browsable(false)]
+    public class WikiPageDefinitionTests : ProvisionTestBase
+    {
+        #region methods
+
+      
+
+        [TestMethod]
+        [TestCategory("Docs.WikiPageDefinition")]
+
+        [DisplayName("Add wiki pages")]
+        //[Browsable(false)]
+        public void CanDeploySimpleWikiPages()
+        {
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+                {
+                    list
+                        .AddWikiPage(DocWikiPages.AboutUs)
+                        .AddWikiPage(DocWikiPages.Contacts);
+                });
+            });
+
+            DeployModel(model);
+        }
+
+      
+
+        [TestMethod]
+        [TestCategory("Docs.WikiPageDefinition")]
+
+        [DisplayName("Add wiki pages to folders")]
+        //[Browsable(false)]
+        public void CanDeployWikiPagesUnderFolder()
+        {
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+                {
+                    list
+                        .AddFolder(DocFolders.WikiPages.News, newsFolder =&gt;
+                        {
+                            newsFolder
+                                .AddWikiPage(DocWikiPages.NewCoffeeMachine)
+                                .AddWikiPage(DocWikiPages.NewSPMeta2Release);
+                        })
+                        .AddFolder(DocFolders.WikiPages.Archive, archiveFolder =&gt;
+                        {
+                            archiveFolder
+                               .AddWikiPage(DocWikiPages.December2012News)
+                               .AddWikiPage(DocWikiPages.October2012News);
+                        });
+                });
+            });
+
+            DeployModel(model);
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>//[Browsable(false)]
+public class WikiPageDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+
+
+    [TestMethod]
+    [TestCategory("Docs.WikiPageDefinition")]
+
+    [DisplayName("Add wiki pages")]
+    //[Browsable(false)]
+    public void CanDeploySimpleWikiPages()
+    {
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web.AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+            {
+                list
+                    .AddWikiPage(DocWikiPages.AboutUs)
+                    .AddWikiPage(DocWikiPages.Contacts);
+            });
+        });
+
+        DeployModel(model);
+    }
+
+
+
+    [TestMethod]
+    [TestCategory("Docs.WikiPageDefinition")]
+
+    [DisplayName("Add wiki pages to folders")]
+    //[Browsable(false)]
+    public void CanDeployWikiPagesUnderFolder()
+    {
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web.AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+            {
+                list
+                    .AddFolder(DocFolders.WikiPages.News, newsFolder =&gt;
+                    {
+                        newsFolder
+                            .AddWikiPage(DocWikiPages.NewCoffeeMachine)
+                            .AddWikiPage(DocWikiPages.NewSPMeta2Release);
+                    })
+                    .AddFolder(DocFolders.WikiPages.Archive, archiveFolder =&gt;
+                    {
+                        archiveFolder
+                           .AddWikiPage(DocWikiPages.December2012News)
+                           .AddWikiPage(DocWikiPages.October2012News);
+                    });
+            });
+        });
+
+        DeployModel(model);
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>WikiPageDefinitionTests</ClassName>
+  <MethodName>WikiPageDefinitionTestsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassWikiPageDefinitionTestsClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.WikiPageDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>WikiPageDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>WikiPageDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

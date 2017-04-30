@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBodyWithFunction>
+        
+        public void XsltListViewWebPartSetup(XsltListViewWebPartDefinition typedModel,
+            string listName, string listId, string titleUrl, string jsLink)
+        {
+            var wpXml = WebpartXmlExtensions
+                            .LoadWebpartXmlDocument(BuiltInWebPartTemplates.XsltListViewWebPart)
+                            .SetListName(listName)
+                            .SetListId(listId)
+                            .SetTitleUrl(titleUrl)
+                            .SetOrUpdateProperty("JSLink", jsLink)
+                            .ToString();
+        }</MethodBodyWithFunction>
+  <MethodBody>var wpXml = WebpartXmlExtensions
+                .LoadWebpartXmlDocument(BuiltInWebPartTemplates.XsltListViewWebPart)
+                .SetListName(listName)
+                .SetListId(listId)
+                .SetTitleUrl(titleUrl)
+                .SetOrUpdateProperty("JSLink", jsLink)
+                .ToString();
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SubPointSolutions.Docs.Views.Views.SPMeta2.reference</Namespace>
+  <ClassName>Utils</ClassName>
+  <MethodName>XsltListViewWebPartSetup</MethodName>
+  <ClassComment />
+  <MethodFullName>SubPointSolutions.Docs.Views.Views.SPMeta2.reference.Utils.XsltListViewWebPartSetup</MethodFullName>
+  <ClassFullName>SubPointSolutions.Docs.Views.Views.SPMeta2.reference.Utils</ClassFullName>
+  <MethodParametersCount>5</MethodParametersCount>
+  <SourceFileName>Utils.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>Utils</SourceFileNameWithoutExtension>
+</DocSample>

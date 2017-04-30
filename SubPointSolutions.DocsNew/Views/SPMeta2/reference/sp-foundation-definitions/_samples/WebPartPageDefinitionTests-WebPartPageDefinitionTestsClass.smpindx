@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model</string>
+        <string>Web part pages</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+    
+
+    
+    //[Browsable(false)]
+    public class WebPartPageDefinitionTests : ProvisionTestBase
+    {
+        #region methods
+
+
+        [DisplayName("Add web part page")]
+        //[Browsable(false)]
+        [TestMethod]
+        [TestCategory("Docs.WebPartPageDefinition")]
+        public void CanDeployWebPartPages()
+        {
+            var customersReportPage = new WebPartPageDefinition
+            {
+                Title = "Customer reports",
+                FileName = "Customers-report.aspx",
+                PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+            };
+
+            var parthesReportPage = new WebPartPageDefinition
+            {
+                Title = "Parthers reports",
+                FileName = "Parthers-report.aspx",
+                PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd2
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+                {
+                    list
+                        .AddWebPartPage(customersReportPage)
+                        .AddWebPartPage(parthesReportPage);
+                });
+            });
+
+            DeployModel(model);
+        }
+
+
+        [TestMethod]
+        [TestCategory("Docs.WebPartPageDefinition")]
+
+        [DisplayName("Add custom web part page")]
+        //[Browsable(false)]
+        public void CanDeployWebPartPageWithCustomTemplate()
+        {
+            var customizedWebPartPage = new WebPartPageDefinition
+            {
+                Title = "Customers report",
+                FileName = "Customers-report.aspx",
+                CustomPageLayout = "___ a custom web part page template here ___ "
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+                {
+                    list
+                        .AddWebPartPage(customizedWebPartPage);
+                });
+            });
+
+            DeployModel(model);
+        }
+
+
+
+        [TestMethod]
+        [TestCategory("Docs.WebPartPageDefinition")]
+
+        [DisplayName("Add web part page to folder")]
+        //[Browsable(false)]
+        public void CanDeployWebPartPagesUnderFolders()
+        {
+            // clients folder and pages
+            var clientsFolder = new FolderDefinition()
+            {
+                Name = "Customers"
+            };
+
+            var clientMay2015Page = new WebPartPageDefinition
+            {
+                Title = "May 2015",
+                FileName = "May-2015-analytics.aspx",
+                PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+            };
+
+            var clientJune2015Page = new WebPartPageDefinition
+            {
+                Title = "June 2015",
+                FileName = "June-2015-analytics.aspx",
+                PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+            };
+
+            // parthers folder and pages
+            var parthersFolder = new FolderDefinition()
+            {
+                Name = "Parthers"
+            };
+
+            var parther2014AnnualReport = new WebPartPageDefinition
+            {
+                Title = "Annual report 2014",
+                FileName = "Annual-report-2014.aspx",
+                PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+            };
+
+            var parther2015AnnualReport = new WebPartPageDefinition
+            {
+                Title = "Annual report 2015",
+                FileName = "Annual-report-2015.aspx",
+                PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1,
+            };
+
+            // linking everything together
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+                {
+                    list
+                        .AddFolder(clientsFolder, folder =&gt;
+                        {
+                            folder
+                                .AddWebPartPage(clientMay2015Page)
+                                .AddWebPartPage(clientJune2015Page);
+                        })
+                        .AddFolder(parthersFolder, folder =&gt;
+                        {
+                            folder
+                              .AddWebPartPage(parther2014AnnualReport)
+                              .AddWebPartPage(parther2015AnnualReport);
+                        });
+                });
+            });
+
+            DeployModel(model);
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>//[Browsable(false)]
+public class WebPartPageDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+
+    [DisplayName("Add web part page")]
+    //[Browsable(false)]
+    [TestMethod]
+    [TestCategory("Docs.WebPartPageDefinition")]
+    public void CanDeployWebPartPages()
+    {
+        var customersReportPage = new WebPartPageDefinition
+        {
+            Title = "Customer reports",
+            FileName = "Customers-report.aspx",
+            PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+        };
+
+        var parthesReportPage = new WebPartPageDefinition
+        {
+            Title = "Parthers reports",
+            FileName = "Parthers-report.aspx",
+            PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd2
+        };
+
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web.AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+            {
+                list
+                    .AddWebPartPage(customersReportPage)
+                    .AddWebPartPage(parthesReportPage);
+            });
+        });
+
+        DeployModel(model);
+    }
+
+
+    [TestMethod]
+    [TestCategory("Docs.WebPartPageDefinition")]
+
+    [DisplayName("Add custom web part page")]
+    //[Browsable(false)]
+    public void CanDeployWebPartPageWithCustomTemplate()
+    {
+        var customizedWebPartPage = new WebPartPageDefinition
+        {
+            Title = "Customers report",
+            FileName = "Customers-report.aspx",
+            CustomPageLayout = "___ a custom web part page template here ___ "
+        };
+
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web.AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+            {
+                list
+                    .AddWebPartPage(customizedWebPartPage);
+            });
+        });
+
+        DeployModel(model);
+    }
+
+
+
+    [TestMethod]
+    [TestCategory("Docs.WebPartPageDefinition")]
+
+    [DisplayName("Add web part page to folder")]
+    //[Browsable(false)]
+    public void CanDeployWebPartPagesUnderFolders()
+    {
+        // clients folder and pages
+        var clientsFolder = new FolderDefinition()
+        {
+            Name = "Customers"
+        };
+
+        var clientMay2015Page = new WebPartPageDefinition
+        {
+            Title = "May 2015",
+            FileName = "May-2015-analytics.aspx",
+            PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+        };
+
+        var clientJune2015Page = new WebPartPageDefinition
+        {
+            Title = "June 2015",
+            FileName = "June-2015-analytics.aspx",
+            PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+        };
+
+        // parthers folder and pages
+        var parthersFolder = new FolderDefinition()
+        {
+            Name = "Parthers"
+        };
+
+        var parther2014AnnualReport = new WebPartPageDefinition
+        {
+            Title = "Annual report 2014",
+            FileName = "Annual-report-2014.aspx",
+            PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+        };
+
+        var parther2015AnnualReport = new WebPartPageDefinition
+        {
+            Title = "Annual report 2015",
+            FileName = "Annual-report-2015.aspx",
+            PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1,
+        };
+
+        // linking everything together
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web.AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+            {
+                list
+                    .AddFolder(clientsFolder, folder =&gt;
+                    {
+                        folder
+                            .AddWebPartPage(clientMay2015Page)
+                            .AddWebPartPage(clientJune2015Page);
+                    })
+                    .AddFolder(parthersFolder, folder =&gt;
+                    {
+                        folder
+                          .AddWebPartPage(parther2014AnnualReport)
+                          .AddWebPartPage(parther2015AnnualReport);
+                    });
+            });
+        });
+
+        DeployModel(model);
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>WebPartPageDefinitionTests</ClassName>
+  <MethodName>WebPartPageDefinitionTestsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassWebPartPageDefinitionTestsClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.WebPartPageDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>WebPartPageDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>WebPartPageDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

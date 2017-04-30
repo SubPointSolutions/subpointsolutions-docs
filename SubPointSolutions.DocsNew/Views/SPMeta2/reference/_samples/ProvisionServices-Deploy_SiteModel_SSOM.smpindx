@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBodyWithFunction>
+        
+        public void Deploy_SiteModel_SSOM()
+        {
+            // setup url
+            var siteUrl = "";
+
+            // create you model
+            var siteModel = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+
+            });
+
+            using (var spSite = new SPSite(siteUrl))
+            {
+                // deploy site model with SharePoint Foundation SSOM API
+                var foundationProvisionService = new SSOMProvisionService();
+                foundationProvisionService.DeploySiteModel(spSite, siteModel);
+
+                // deploy site model with SharePoint Standard SSOM API
+                var standardProvisionService = new StandardSSOMProvisionService();
+                standardProvisionService.DeploySiteModel(spSite, siteModel);
+            }
+        }</MethodBodyWithFunction>
+  <MethodBody>// setup url
+var siteUrl = "";
+
+// create you model
+var siteModel = SPMeta2Model.NewSiteModel(site =&gt;
+{
+
+});
+
+using (var spSite = new SPSite(siteUrl))
+{
+    // deploy site model with SharePoint Foundation SSOM API
+    var foundationProvisionService = new SSOMProvisionService();
+    foundationProvisionService.DeploySiteModel(spSite, siteModel);
+
+    // deploy site model with SharePoint Standard SSOM API
+    var standardProvisionService = new StandardSSOMProvisionService();
+    standardProvisionService.DeploySiteModel(spSite, siteModel);
+}
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SubPointSolutions.Docs.Views.Views.SPMeta2.reference</Namespace>
+  <ClassName>ProvisionServices</ClassName>
+  <MethodName>Deploy_SiteModel_SSOM</MethodName>
+  <ClassComment />
+  <MethodFullName>SubPointSolutions.Docs.Views.Views.SPMeta2.reference.ProvisionServices.Deploy_SiteModel_SSOM</MethodFullName>
+  <ClassFullName>SubPointSolutions.Docs.Views.Views.SPMeta2.reference.ProvisionServices</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>ProvisionServices.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>ProvisionServices</SourceFileNameWithoutExtension>
+</DocSample>

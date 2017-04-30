@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model</string>
+        <string>Web parts</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>Add XLVWP binded to list view by Title</Title>
+  <MethodBodyWithFunction>
+        
+
+        
+        //[Browsable(false)]
+        public void CanBindXsltListViewWebPartByListViewTitle()
+        {
+            var booksLibrary = new ListDefinition
+            {
+                Title = "Books library",
+                Description = "A document library.",
+                TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
+                Url = "BooksLibrary"
+            };
+
+            var booksView = new ListViewDefinition
+            {
+                Title = "Popular Books",
+                Fields = new Collection&lt;string&gt;
+                {
+                    BuiltInInternalFieldNames.Edit,
+                    BuiltInInternalFieldNames.ID,
+                    BuiltInInternalFieldNames.FileLeafRef
+                },
+                RowLimit = 10
+            };
+
+            var xsltListView = new XsltListViewWebPartDefinition
+            {
+                Title = "Popular Books binding by List View Title",
+                Id = "m2PopularBooksView",
+                ZoneIndex = 10,
+                ZoneId = "Main",
+                ListUrl = booksLibrary.GetListUrl(),
+                ViewName = booksView.Title
+            };
+
+            var webPartPage = new WebPartPageDefinition
+            {
+                Title = "M2 Xslt List View provision",
+                FileName = "xslt-listview-webpart-provision.aspx",
+                PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web
+                  .AddList(booksLibrary, list =&gt;
+                  {
+                      list.AddListView(booksView);
+                  })
+                  .AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+                  {
+                      list.AddWebPartPage(webPartPage, page =&gt;
+                      {
+                          page.AddXsltListViewWebPart(xsltListView);
+                      });
+                  });
+            });
+
+            DeployModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>var booksLibrary = new ListDefinition
+{
+    Title = "Books library",
+    Description = "A document library.",
+    TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
+    Url = "BooksLibrary"
+};
+
+var booksView = new ListViewDefinition
+{
+    Title = "Popular Books",
+    Fields = new Collection&lt;string&gt;
+    {
+        BuiltInInternalFieldNames.Edit,
+        BuiltInInternalFieldNames.ID,
+        BuiltInInternalFieldNames.FileLeafRef
+    },
+    RowLimit = 10
+};
+
+var xsltListView = new XsltListViewWebPartDefinition
+{
+    Title = "Popular Books binding by List View Title",
+    Id = "m2PopularBooksView",
+    ZoneIndex = 10,
+    ZoneId = "Main",
+    ListUrl = booksLibrary.GetListUrl(),
+    ViewName = booksView.Title
+};
+
+var webPartPage = new WebPartPageDefinition
+{
+    Title = "M2 Xslt List View provision",
+    FileName = "xslt-listview-webpart-provision.aspx",
+    PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+};
+
+var model = SPMeta2Model.NewWebModel(web =&gt;
+{
+    web
+      .AddList(booksLibrary, list =&gt;
+      {
+          list.AddListView(booksView);
+      })
+      .AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+      {
+          list.AddWebPartPage(webPartPage, page =&gt;
+          {
+              page.AddXsltListViewWebPart(xsltListView);
+          });
+      });
+});
+
+DeployModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>XsltListViewWebPartDefinitionTests</ClassName>
+  <MethodName>CanBindXsltListViewWebPartByListViewTitle</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.XsltListViewWebPartDefinitionTests.CanBindXsltListViewWebPartByListViewTitle</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.XsltListViewWebPartDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>XsltListViewWebPartDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>XsltListViewWebPartDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

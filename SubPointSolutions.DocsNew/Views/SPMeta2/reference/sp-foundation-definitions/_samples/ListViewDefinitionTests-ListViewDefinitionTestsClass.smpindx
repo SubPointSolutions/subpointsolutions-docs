@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model</string>
+        <string>Lists views</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+
+    
+
+    //[Browsable(false)]
+    public class ListViewDefinitionTests : ProvisionTestBase
+    {
+        #region methods
+
+        [TestMethod]
+        [TestCategory("Docs.ListViewDefinition")]
+
+        [DisplayName("Add list view")]
+        //[Browsable(false)]
+        public void CanDeploySimpleListViews()
+        {
+            var approvedDocuments = new ListViewDefinition
+            {
+                Title = "Approved Documents",
+                Fields = new Collection&lt;string&gt;
+                {
+                    BuiltInInternalFieldNames.ID,
+                    BuiltInInternalFieldNames.FileLeafRef
+                }
+            };
+
+            var inProgressDocuments = new ListViewDefinition
+            {
+                Title = "In Progress Documents",
+                Fields = new Collection&lt;string&gt;
+                {
+                    BuiltInInternalFieldNames.ID,
+                    BuiltInInternalFieldNames.FileLeafRef
+                }
+            };
+
+            var documentLibrary = new ListDefinition
+            {
+                Title = "CustomerDocuments",
+                Description = "A customr document library.",
+                TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
+                Url = "CustomerDocuments"
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddList(documentLibrary, list =&gt;
+                {
+                    list.AddListView(approvedDocuments);
+                    list.AddListView(inProgressDocuments);
+
+                });
+            });
+
+            DeployModel(model);
+        }
+
+
+        [TestMethod]
+        [TestCategory("Docs.ListViewDefinition")]
+
+        [DisplayName("Add list view with URL")]
+        //[Browsable(false)]
+        public void CanDeploySimpleListViewsWithCustomUrl()
+        {
+            var returnedDocuments = new ListViewDefinition
+            {
+                Title = "Returned Documents",
+                Url = "Returned.aspx",
+                Fields = new Collection&lt;string&gt;
+                {
+                    BuiltInInternalFieldNames.ID,
+                    BuiltInInternalFieldNames.FileLeafRef
+                }
+            };
+
+            var documentLibrary = new ListDefinition
+            {
+                Title = "CustomerDocuments",
+                Description = "A customr document library.",
+                TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
+                Url = "CustomerDocuments"
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddList(documentLibrary, list =&gt;
+                {
+                    list.AddListView(returnedDocuments);
+                });
+            });
+
+            DeployModel(model);
+        }
+
+      
+
+        [TestMethod]
+        [TestCategory("Docs.ListViewDefinition")]
+        [DisplayName("Add list view with CAML")]
+        //[Browsable(false)]
+        public void CanDeploySimpleListViewsWithCAMLQuery()
+        {
+            var createdQuery = new StringBuilder();
+
+            createdQuery.Append("&lt;Where&gt;");
+            createdQuery.Append("&lt;/Where&gt;");
+            createdQuery.Append("&lt;OrderBy&gt;");
+            createdQuery.Append("  &lt;FieldRef Name='ID' Ascending='FALSE'/&gt;");
+            createdQuery.Append("&lt;/OrderBy&gt;");
+
+            var lastTenCreatedDocuments = new ListViewDefinition
+            {
+                Title = "Last 10 Created Documents",
+                RowLimit = 10,
+                Query = createdQuery.ToString(),
+                Fields = new Collection&lt;string&gt;
+                {
+                    BuiltInInternalFieldNames.ID,
+                    BuiltInInternalFieldNames.FileLeafRef
+                }
+            };
+
+            var editedQuery = new StringBuilder();
+
+            editedQuery.Append("&lt;Where&gt;");
+            editedQuery.Append("&lt;/Where&gt;");
+            editedQuery.Append("&lt;OrderBy&gt;");
+            editedQuery.Append("  &lt;FieldRef Name='Modified' Ascending='FALSE'/&gt;");
+            editedQuery.Append("&lt;/OrderBy&gt;");
+
+            var lastTenEditedDocuments = new ListViewDefinition
+            {
+                Title = "Last 10 Edited Documents",
+                RowLimit = 10,
+                Query = editedQuery.ToString(),
+                Fields = new Collection&lt;string&gt;
+                {
+                    BuiltInInternalFieldNames.ID,
+                    BuiltInInternalFieldNames.FileLeafRef
+                }
+            };
+
+            var documentLibrary = new ListDefinition
+            {
+                Title = "CustomerDocuments",
+                Description = "A customr document library.",
+                TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
+                Url = "CustomerDocuments"
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddList(documentLibrary, list =&gt;
+                {
+                    list.AddListView(lastTenCreatedDocuments);
+                    list.AddListView(lastTenEditedDocuments);
+                });
+            });
+
+            DeployModel(model);
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>//[Browsable(false)]
+public class ListViewDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+    [TestMethod]
+    [TestCategory("Docs.ListViewDefinition")]
+
+    [DisplayName("Add list view")]
+    //[Browsable(false)]
+    public void CanDeploySimpleListViews()
+    {
+        var approvedDocuments = new ListViewDefinition
+        {
+            Title = "Approved Documents",
+            Fields = new Collection&lt;string&gt;
+            {
+                BuiltInInternalFieldNames.ID,
+                BuiltInInternalFieldNames.FileLeafRef
+            }
+        };
+
+        var inProgressDocuments = new ListViewDefinition
+        {
+            Title = "In Progress Documents",
+            Fields = new Collection&lt;string&gt;
+            {
+                BuiltInInternalFieldNames.ID,
+                BuiltInInternalFieldNames.FileLeafRef
+            }
+        };
+
+        var documentLibrary = new ListDefinition
+        {
+            Title = "CustomerDocuments",
+            Description = "A customr document library.",
+            TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
+            Url = "CustomerDocuments"
+        };
+
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web.AddList(documentLibrary, list =&gt;
+            {
+                list.AddListView(approvedDocuments);
+                list.AddListView(inProgressDocuments);
+
+            });
+        });
+
+        DeployModel(model);
+    }
+
+
+    [TestMethod]
+    [TestCategory("Docs.ListViewDefinition")]
+
+    [DisplayName("Add list view with URL")]
+    //[Browsable(false)]
+    public void CanDeploySimpleListViewsWithCustomUrl()
+    {
+        var returnedDocuments = new ListViewDefinition
+        {
+            Title = "Returned Documents",
+            Url = "Returned.aspx",
+            Fields = new Collection&lt;string&gt;
+            {
+                BuiltInInternalFieldNames.ID,
+                BuiltInInternalFieldNames.FileLeafRef
+            }
+        };
+
+        var documentLibrary = new ListDefinition
+        {
+            Title = "CustomerDocuments",
+            Description = "A customr document library.",
+            TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
+            Url = "CustomerDocuments"
+        };
+
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web.AddList(documentLibrary, list =&gt;
+            {
+                list.AddListView(returnedDocuments);
+            });
+        });
+
+        DeployModel(model);
+    }
+
+
+
+    [TestMethod]
+    [TestCategory("Docs.ListViewDefinition")]
+    [DisplayName("Add list view with CAML")]
+    //[Browsable(false)]
+    public void CanDeploySimpleListViewsWithCAMLQuery()
+    {
+        var createdQuery = new StringBuilder();
+
+        createdQuery.Append("&lt;Where&gt;");
+        createdQuery.Append("&lt;/Where&gt;");
+        createdQuery.Append("&lt;OrderBy&gt;");
+        createdQuery.Append("  &lt;FieldRef Name='ID' Ascending='FALSE'/&gt;");
+        createdQuery.Append("&lt;/OrderBy&gt;");
+
+        var lastTenCreatedDocuments = new ListViewDefinition
+        {
+            Title = "Last 10 Created Documents",
+            RowLimit = 10,
+            Query = createdQuery.ToString(),
+            Fields = new Collection&lt;string&gt;
+            {
+                BuiltInInternalFieldNames.ID,
+                BuiltInInternalFieldNames.FileLeafRef
+            }
+        };
+
+        var editedQuery = new StringBuilder();
+
+        editedQuery.Append("&lt;Where&gt;");
+        editedQuery.Append("&lt;/Where&gt;");
+        editedQuery.Append("&lt;OrderBy&gt;");
+        editedQuery.Append("  &lt;FieldRef Name='Modified' Ascending='FALSE'/&gt;");
+        editedQuery.Append("&lt;/OrderBy&gt;");
+
+        var lastTenEditedDocuments = new ListViewDefinition
+        {
+            Title = "Last 10 Edited Documents",
+            RowLimit = 10,
+            Query = editedQuery.ToString(),
+            Fields = new Collection&lt;string&gt;
+            {
+                BuiltInInternalFieldNames.ID,
+                BuiltInInternalFieldNames.FileLeafRef
+            }
+        };
+
+        var documentLibrary = new ListDefinition
+        {
+            Title = "CustomerDocuments",
+            Description = "A customr document library.",
+            TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
+            Url = "CustomerDocuments"
+        };
+
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web.AddList(documentLibrary, list =&gt;
+            {
+                list.AddListView(lastTenCreatedDocuments);
+                list.AddListView(lastTenEditedDocuments);
+            });
+        });
+
+        DeployModel(model);
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>ListViewDefinitionTests</ClassName>
+  <MethodName>ListViewDefinitionTestsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassListViewDefinitionTestsClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.ListViewDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>ListViewDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>ListViewDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

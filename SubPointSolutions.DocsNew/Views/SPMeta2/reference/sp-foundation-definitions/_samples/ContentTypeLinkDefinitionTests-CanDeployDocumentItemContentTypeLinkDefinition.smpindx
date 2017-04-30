@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model</string>
+        <string>Content types</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>Add content type to document library</Title>
+  <MethodBodyWithFunction>
+        
+
+        
+        //[Browsable(false)]
+        public void CanDeployDocumentItemContentTypeLinkDefinition()
+        {
+            var customerReportContentType = new ContentTypeDefinition
+            {
+                Name = "Customer Report",
+                Id = new Guid("1836765c-6264-479b-a95b-a553a3d14ba3"),
+                ParentContentTypeId = BuiltInContentTypeId.Document,
+                Group = "SPMeta2.Samples"
+            };
+
+            var customerInfoList = new ListDefinition
+            {
+                Title = "Customer Reports",
+                Description = "A list to store customer reports.",
+                TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
+                Url = "CustomerReports",
+                ContentTypesEnabled = true
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddList(customerInfoList, list =&gt;
+                {
+                    list.AddContentTypeLink(customerReportContentType);
+                });
+            });
+
+            DeployModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>var customerReportContentType = new ContentTypeDefinition
+{
+    Name = "Customer Report",
+    Id = new Guid("1836765c-6264-479b-a95b-a553a3d14ba3"),
+    ParentContentTypeId = BuiltInContentTypeId.Document,
+    Group = "SPMeta2.Samples"
+};
+
+var customerInfoList = new ListDefinition
+{
+    Title = "Customer Reports",
+    Description = "A list to store customer reports.",
+    TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
+    Url = "CustomerReports",
+    ContentTypesEnabled = true
+};
+
+var model = SPMeta2Model.NewWebModel(web =&gt;
+{
+    web.AddList(customerInfoList, list =&gt;
+    {
+        list.AddContentTypeLink(customerReportContentType);
+    });
+});
+
+DeployModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>ContentTypeLinkDefinitionTests</ClassName>
+  <MethodName>CanDeployDocumentItemContentTypeLinkDefinition</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.ContentTypeLinkDefinitionTests.CanDeployDocumentItemContentTypeLinkDefinition</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.ContentTypeLinkDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>ContentTypeLinkDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>ContentTypeLinkDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

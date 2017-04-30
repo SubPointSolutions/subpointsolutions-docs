@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model</string>
+        <string>Web site</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>Add app</Title>
+  <MethodBodyWithFunction>
+        
+
+        
+        //[Browsable(false)]
+        public void CanDeploySimpleAppDefinition()
+        {
+            var appDef = new AppDefinition
+            {
+                Content = File.ReadAllBytes("path-to-your-app-file"),
+                ProductId = new Guid("your-app-product-id"),
+                // your app version 
+                Version = "1.0.0.0"
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddApp(appDef);
+            });
+
+            DeployModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>var appDef = new AppDefinition
+{
+    Content = File.ReadAllBytes("path-to-your-app-file"),
+    ProductId = new Guid("your-app-product-id"),
+    // your app version
+    Version = "1.0.0.0"
+};
+
+var model = SPMeta2Model.NewWebModel(web =&gt;
+{
+    web.AddApp(appDef);
+});
+
+DeployModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>AppDefinitionTests</ClassName>
+  <MethodName>CanDeploySimpleAppDefinition</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.AppDefinitionTests.CanDeploySimpleAppDefinition</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.AppDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>AppDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>AppDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

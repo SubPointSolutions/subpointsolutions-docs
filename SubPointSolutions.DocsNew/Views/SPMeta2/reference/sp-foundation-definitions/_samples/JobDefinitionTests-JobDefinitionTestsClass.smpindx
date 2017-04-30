@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Farm Model</string>
+        <string>Farm</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+
+    
+    public class JobDefinitionTests : ProvisionTestBase
+    {
+        #region methods
+
+        [TestMethod]
+        [TestCategory("Docs.JobDefinition")]
+
+
+        [DisplayName("Add timer job")]
+        [Browsable(false)]
+        public void CanDeploySimpleJobDefinition()
+        {
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+
+            });
+
+            DeployModel(model);
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>public class JobDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+    [TestMethod]
+    [TestCategory("Docs.JobDefinition")]
+
+
+    [DisplayName("Add timer job")]
+    [Browsable(false)]
+    public void CanDeploySimpleJobDefinition()
+    {
+        var model = SPMeta2Model.NewSiteModel(site =&gt;
+        {
+
+        });
+
+        DeployModel(model);
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>JobDefinitionTests</ClassName>
+  <MethodName>JobDefinitionTestsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassJobDefinitionTestsClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.JobDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>JobDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>JobDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Application Model</string>
+        <string>Web application</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>Hidden</Name>
+      <Values>
+        <string xsi:nil="true" />
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>Add web.config modification</Title>
+  <MethodBodyWithFunction>
+        
+
+        
+        
+        public void CanDeploySimpleWebConfigModificationDefinition()
+        {
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+         
+            });
+
+            DeployModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>var model = SPMeta2Model.NewSiteModel(site =&gt;
+{
+
+});
+
+DeployModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>WebConfigModificationDefinitionTests</ClassName>
+  <MethodName>CanDeploySimpleWebConfigModificationDefinition</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.WebConfigModificationDefinitionTests.CanDeploySimpleWebConfigModificationDefinition</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.WebConfigModificationDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>WebConfigModificationDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>WebConfigModificationDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

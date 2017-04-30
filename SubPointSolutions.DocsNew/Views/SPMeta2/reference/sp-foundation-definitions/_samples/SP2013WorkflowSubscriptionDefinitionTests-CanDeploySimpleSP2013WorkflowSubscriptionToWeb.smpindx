@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model</string>
+        <string>SharePoint 2013 workflow</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>Add SP2013 workflow to web</Title>
+  <MethodBodyWithFunction>
+        //[Browsable(false)]
+        public void CanDeploySimpleSP2013WorkflowSubscriptionToWeb()
+        {
+            var writeToHistoryListWorkflow = new SP2013WorkflowDefinition
+            {
+                DisplayName = "M2 - Write to history list",
+                Override = true,
+                Xaml = WorkflowTemplates.WriteToHistoryListWorkflow
+            };
+
+            var taskList = new ListDefinition
+            {
+                Title = "Write To History List Tasks",
+                TemplateType = BuiltInListTemplateTypeId.Tasks,
+                Url = "m2WriteToHistoryListTasks"
+            };
+
+            var historyList = new ListDefinition
+            {
+                Title = "Write To History List History",
+                TemplateType = BuiltInListTemplateTypeId.WorkflowHistory,
+                Url = "m2WriteToHistoryListHistory"
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web
+                  .AddSP2013Workflow(writeToHistoryListWorkflow)
+                  .AddList(historyList)
+                  .AddList(taskList)
+                  .AddSP2013WorkflowSubscription(new SP2013WorkflowSubscriptionDefinition
+                  {
+                      Name = "Write To History Web Workflow",
+                      WorkflowDisplayName = writeToHistoryListWorkflow.DisplayName,
+                      HistoryListUrl = historyList.GetListUrl(),
+                      TaskListUrl = taskList.GetListUrl()
+                  });
+            });
+
+            DeployModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>var writeToHistoryListWorkflow = new SP2013WorkflowDefinition
+{
+    DisplayName = "M2 - Write to history list",
+    Override = true,
+    Xaml = WorkflowTemplates.WriteToHistoryListWorkflow
+};
+
+var taskList = new ListDefinition
+{
+    Title = "Write To History List Tasks",
+    TemplateType = BuiltInListTemplateTypeId.Tasks,
+    Url = "m2WriteToHistoryListTasks"
+};
+
+var historyList = new ListDefinition
+{
+    Title = "Write To History List History",
+    TemplateType = BuiltInListTemplateTypeId.WorkflowHistory,
+    Url = "m2WriteToHistoryListHistory"
+};
+
+var model = SPMeta2Model.NewWebModel(web =&gt;
+{
+    web
+      .AddSP2013Workflow(writeToHistoryListWorkflow)
+      .AddList(historyList)
+      .AddList(taskList)
+      .AddSP2013WorkflowSubscription(new SP2013WorkflowSubscriptionDefinition
+      {
+          Name = "Write To History Web Workflow",
+          WorkflowDisplayName = writeToHistoryListWorkflow.DisplayName,
+          HistoryListUrl = historyList.GetListUrl(),
+          TaskListUrl = taskList.GetListUrl()
+      });
+});
+
+DeployModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SubPointSolutions.Docs.Views.Views.SPMeta2.reference</Namespace>
+  <ClassName>SP2013WorkflowSubscriptionDefinitionTests</ClassName>
+  <MethodName>CanDeploySimpleSP2013WorkflowSubscriptionToWeb</MethodName>
+  <ClassComment />
+  <MethodFullName>SubPointSolutions.Docs.Views.Views.SPMeta2.reference.SP2013WorkflowSubscriptionDefinitionTests.CanDeploySimpleSP2013WorkflowSubscriptionToWeb</MethodFullName>
+  <ClassFullName>SubPointSolutions.Docs.Views.Views.SPMeta2.reference.SP2013WorkflowSubscriptionDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>SP2013WorkflowSubscriptionDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>SP2013WorkflowSubscriptionDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

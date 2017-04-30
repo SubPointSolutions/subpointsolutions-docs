@@ -1,0 +1,32 @@
+﻿<script doc-sample doc-method-name="AvoidJQueryDocumentReadyInCode_Init">
+    window.myappName$ = window.myappName$ || jQuery.noConflict(true);
+
+    (function($) {
+        if (!_spBodyOnLoadCalled) {
+            _spBodyOnLoadFunctions.push(pageLoad);
+        } else {
+            pageLoad();
+        }
+
+        function pageLoad() {
+            $('#pageTitle span').text('Hello from jQuery');
+        }
+
+        RegisterModuleInit(_spPageContextInfo.webServerRelativeUrl + '/appname/script.js', pageLoad);
+
+    })(window.myappName$);
+</script>
+
+<script doc-sample doc-method-name="AvoidJQueryDocumentReadyInCode_mQuery">
+    m$.ready(function () {
+        // DO STUFF
+    });
+</script>
+
+<script doc-sample doc-method-name="AvoidJQueryDocumentReadyInCode_mQuerySODExecute">
+    SP.SOD.execute("mquery.js", "m$.ready", function () {
+
+        // DO STUFF
+
+    });
+</script>

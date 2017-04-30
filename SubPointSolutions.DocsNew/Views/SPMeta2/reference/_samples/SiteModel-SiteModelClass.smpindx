@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags />
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+    public class SiteModel : ProvisionTestBase
+    {
+        #region site model
+
+        [TestMethod]
+        [TestCategory("Docs.Models")]
+        public void SiteModelProvision()
+        {
+            // tend to separate models into small logical pieces
+            // later you would deploy either all of them or only required bits
+
+            var taxonomyModel = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                // setup taxonomy
+            });
+
+            var sandboxSolutionsModel = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                // setup sandbox solutions
+            });
+
+            var siteFeaturesModel = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                // setup features
+            });
+
+            var siteIAModel = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                // setup IA
+            });
+
+            var userCustomActionsModel = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                // setup user custom actions model
+            });
+
+
+            // deploy needed models - all of them or only required bits
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>public class SiteModel : ProvisionTestBase
+{
+    #region site model
+
+    [TestMethod]
+    [TestCategory("Docs.Models")]
+    public void SiteModelProvision()
+    {
+        // tend to separate models into small logical pieces
+        // later you would deploy either all of them or only required bits
+
+        var taxonomyModel = SPMeta2Model.NewSiteModel(site =&gt;
+        {
+            // setup taxonomy
+        });
+
+        var sandboxSolutionsModel = SPMeta2Model.NewSiteModel(site =&gt;
+        {
+            // setup sandbox solutions
+        });
+
+        var siteFeaturesModel = SPMeta2Model.NewSiteModel(site =&gt;
+        {
+            // setup features
+        });
+
+        var siteIAModel = SPMeta2Model.NewSiteModel(site =&gt;
+        {
+            // setup IA
+        });
+
+        var userCustomActionsModel = SPMeta2Model.NewSiteModel(site =&gt;
+        {
+            // setup user custom actions model
+        });
+
+
+        // deploy needed models - all of them or only required bits
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>SiteModel</ClassName>
+  <MethodName>SiteModelClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassSiteModelClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.SiteModel</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>SiteModel.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>SiteModel</SourceFileNameWithoutExtension>
+</DocSample>

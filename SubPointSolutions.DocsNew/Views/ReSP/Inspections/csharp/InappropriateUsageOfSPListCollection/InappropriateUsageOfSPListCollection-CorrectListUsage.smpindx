@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBodyWithFunction>
+        public void CorrectListUsage(SPWeb web)
+        {
+            var listUrl = "/lists/tasks";
+            var taskList = web.GetList(SPUrlUtility.CombineUrl(web.Url, listUrl));
+        }</MethodBodyWithFunction>
+  <MethodBody>var listUrl = "/lists/tasks";
+var taskList = web.GetList(SPUrlUtility.CombineUrl(web.Url, listUrl));
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>ReSharePoint.Docs.Basic.Inspection.Code</Namespace>
+  <ClassName>InappropriateUsageOfSPListCollection</ClassName>
+  <MethodName>CorrectListUsage</MethodName>
+  <ClassComment />
+  <MethodFullName>ReSharePoint.Docs.Basic.Inspection.Code.InappropriateUsageOfSPListCollection.CorrectListUsage</MethodFullName>
+  <ClassFullName>ReSharePoint.Docs.Basic.Inspection.Code.InappropriateUsageOfSPListCollection</ClassFullName>
+  <MethodParametersCount>1</MethodParametersCount>
+  <SourceFileName>InappropriateUsageOfSPListCollection.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>InappropriateUsageOfSPListCollection</SourceFileNameWithoutExtension>
+</DocSample>

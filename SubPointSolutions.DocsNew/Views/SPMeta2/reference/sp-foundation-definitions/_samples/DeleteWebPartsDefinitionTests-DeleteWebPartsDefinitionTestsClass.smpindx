@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model</string>
+        <string>Web parts</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+    
+
+    //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+    public class DeleteWebPartsDefinitionTests : ProvisionTestBase
+    {
+        #region methods
+
+        [TestMethod]
+        [TestCategory("Docs.DeleteWebPartsDefinition")]
+
+        [DisplayName("Delete web part by Title")]
+        public void CanDeployDeleteWebPartsDefinition_ByTitle()
+        {
+            var webPartPage = new WebPartPageDefinition
+            {
+                Title = "M2 webparts",
+                FileName = "web-parts.aspx",
+                PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+            };
+
+            // aiming to delete two web part with the following titles:
+            // 'My Tasks'
+            // 'My Projects'
+            var myWebPartDeletionDef = new DeleteWebPartsDefinition
+            {
+                WebParts = new List&lt;WebPartMatch&gt;(new WebPartMatch[] { 
+                    new WebPartMatch {
+                        Title = "My Tasks"
+                    },
+                    new WebPartMatch {
+                        Title = "My Projects"
+                    }
+                })
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web.AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+                {
+                    list.AddWebPartPage(webPartPage, page =&gt;
+                    {
+                        page.AddDeleteWebParts(myWebPartDeletionDef);
+                    });
+                });
+            });
+
+            DeployModel(model);
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>//[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
+public class DeleteWebPartsDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+    [TestMethod]
+    [TestCategory("Docs.DeleteWebPartsDefinition")]
+
+    [DisplayName("Delete web part by Title")]
+    public void CanDeployDeleteWebPartsDefinition_ByTitle()
+    {
+        var webPartPage = new WebPartPageDefinition
+        {
+            Title = "M2 webparts",
+            FileName = "web-parts.aspx",
+            PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+        };
+
+        // aiming to delete two web part with the following titles:
+        // 'My Tasks'
+        // 'My Projects'
+        var myWebPartDeletionDef = new DeleteWebPartsDefinition
+        {
+            WebParts = new List&lt;WebPartMatch&gt;(new WebPartMatch[] {
+                new WebPartMatch {
+                    Title = "My Tasks"
+                },
+                new WebPartMatch {
+                    Title = "My Projects"
+                }
+            })
+        };
+
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web.AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+            {
+                list.AddWebPartPage(webPartPage, page =&gt;
+                {
+                    page.AddDeleteWebParts(myWebPartDeletionDef);
+                });
+            });
+        });
+
+        DeployModel(model);
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>DeleteWebPartsDefinitionTests</ClassName>
+  <MethodName>DeleteWebPartsDefinitionTestsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassDeleteWebPartsDefinitionTestsClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.DeleteWebPartsDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>DeleteWebPartsDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>DeleteWebPartsDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

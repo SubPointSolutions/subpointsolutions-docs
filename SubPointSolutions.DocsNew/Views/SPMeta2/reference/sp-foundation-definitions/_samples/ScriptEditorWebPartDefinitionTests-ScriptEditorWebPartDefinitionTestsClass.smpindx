@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model</string>
+        <string>eb parts</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+
+    
+    //[Browsable(false)]
+    public class ScriptEditorWebPartDefinitionTests : ProvisionTestBase
+    {
+        #region methods
+
+        
+
+        [TestMethod]
+        [TestCategory("Docs.ScriptEditorWebPartDefinition")]
+
+        [DisplayName("Add Script Editor web part")]
+        //[Browsable(false)]
+        public void CanDeploySimpleScriptEditorWebPartDefinition()
+        {
+            var scriptEditor = new ScriptEditorWebPartDefinition
+            {
+                Title = "Empty Script Editor",
+                Id = "m2EmptyScriptEditorrWhichMustBeMoreThan32Chars",
+                ZoneIndex = 10,
+                ZoneId = "Main"
+            };
+
+            var webPartPage = new WebPartPageDefinition
+            {
+                Title = "M2 Script Editor provision",
+                FileName = "script-editor-webpart-provision.aspx",
+                PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web
+                  .AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+                  {
+                      list.AddWebPartPage(webPartPage, page =&gt;
+                      {
+                          page.AddScriptEditorWebPart(scriptEditor);
+                      });
+                  });
+            });
+
+            DeployModel(model);
+        }
+
+       
+
+        [TestMethod]
+        [TestCategory("Docs.ScriptEditorWebPartDefinition")]
+
+        [DisplayName("Add Script Editor web part with content")]
+        //[Browsable(false)]
+        public void CanDeployScriptEditorWebPartwithContent()
+        {
+            var scriptEditor = new ScriptEditorWebPartDefinition
+            {
+                Title = "Pre-provisioned Script Editor",
+                Id = "m2ScriptEditorWithLoggerWhichMustBeMoreThan32Chars",
+                ZoneIndex = 20,
+                ZoneId = "Main",
+                Content = " &lt;script&gt; console.log('script editor log');  &lt;/script&gt; Pre-provisioned Script Editor Content"
+            };
+
+            var webPartPage = new WebPartPageDefinition
+            {
+                Title = "M2 Script Editor provision",
+                FileName = "script-editor-webpart-provision.aspx",
+                PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web
+                  .AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+                  {
+                      list.AddWebPartPage(webPartPage, page =&gt;
+                      {
+                          page.AddScriptEditorWebPart(scriptEditor);
+                      });
+                  });
+            });
+
+            DeployModel(model);
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>//[Browsable(false)]
+public class ScriptEditorWebPartDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+
+
+    [TestMethod]
+    [TestCategory("Docs.ScriptEditorWebPartDefinition")]
+
+    [DisplayName("Add Script Editor web part")]
+    //[Browsable(false)]
+    public void CanDeploySimpleScriptEditorWebPartDefinition()
+    {
+        var scriptEditor = new ScriptEditorWebPartDefinition
+        {
+            Title = "Empty Script Editor",
+            Id = "m2EmptyScriptEditorrWhichMustBeMoreThan32Chars",
+            ZoneIndex = 10,
+            ZoneId = "Main"
+        };
+
+        var webPartPage = new WebPartPageDefinition
+        {
+            Title = "M2 Script Editor provision",
+            FileName = "script-editor-webpart-provision.aspx",
+            PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+        };
+
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web
+              .AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+              {
+                  list.AddWebPartPage(webPartPage, page =&gt;
+                  {
+                      page.AddScriptEditorWebPart(scriptEditor);
+                  });
+              });
+        });
+
+        DeployModel(model);
+    }
+
+
+
+    [TestMethod]
+    [TestCategory("Docs.ScriptEditorWebPartDefinition")]
+
+    [DisplayName("Add Script Editor web part with content")]
+    //[Browsable(false)]
+    public void CanDeployScriptEditorWebPartwithContent()
+    {
+        var scriptEditor = new ScriptEditorWebPartDefinition
+        {
+            Title = "Pre-provisioned Script Editor",
+            Id = "m2ScriptEditorWithLoggerWhichMustBeMoreThan32Chars",
+            ZoneIndex = 20,
+            ZoneId = "Main",
+            Content = " &lt;script&gt; console.log('script editor log');  &lt;/script&gt; Pre-provisioned Script Editor Content"
+        };
+
+        var webPartPage = new WebPartPageDefinition
+        {
+            Title = "M2 Script Editor provision",
+            FileName = "script-editor-webpart-provision.aspx",
+            PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
+        };
+
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web
+              .AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+              {
+                  list.AddWebPartPage(webPartPage, page =&gt;
+                  {
+                      page.AddScriptEditorWebPart(scriptEditor);
+                  });
+              });
+        });
+
+        DeployModel(model);
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>ScriptEditorWebPartDefinitionTests</ClassName>
+  <MethodName>ScriptEditorWebPartDefinitionTestsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassScriptEditorWebPartDefinitionTestsClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.ScriptEditorWebPartDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>ScriptEditorWebPartDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>ScriptEditorWebPartDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

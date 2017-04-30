@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Site Collection Model</string>
+        <string>Security</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+
+    
+    //[Browsable(false)]
+    public class SecurityGroupDefinitionTests : ProvisionTestBase
+    {
+        #region methods
+
+       
+        [TestMethod]
+        [TestCategory("Docs.SecurityGroupDefinition")]
+
+        [DisplayName("Add security group")]
+        //[Browsable(false)]
+        public void CanDeploySimpleSecurityGroup()
+        {
+            var auditors = new SecurityGroupDefinition
+            {
+                Name = "External Auditors",
+                Description = "External auditors group."
+            };
+
+            var reviewers = new SecurityGroupDefinition
+            {
+                Name = "External Reviewers",
+                Description = "External reviewers group."
+            };
+
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                site
+                    .AddSecurityGroup(auditors)
+                    .AddSecurityGroup(reviewers);
+            });
+
+            DeployModel(model);
+        }
+
+      
+
+        [TestMethod]
+        [TestCategory("Docs.SecurityGroupDefinition")]
+        [DisplayName("Add multiple security groups")]
+        //[Browsable(false)]
+        public void CanDeploySimpleSecurityGroups()
+        {
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                site
+                    .AddSecurityGroup(DocSecurityGroups.ClientManagers)
+                    .AddSecurityGroup(DocSecurityGroups.ClientSupport)
+                    .AddSecurityGroup(DocSecurityGroups.Interns)
+                    .AddSecurityGroup(DocSecurityGroups.OrderApprovers);
+            });
+
+            DeployModel(model);
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>//[Browsable(false)]
+public class SecurityGroupDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+
+    [TestMethod]
+    [TestCategory("Docs.SecurityGroupDefinition")]
+
+    [DisplayName("Add security group")]
+    //[Browsable(false)]
+    public void CanDeploySimpleSecurityGroup()
+    {
+        var auditors = new SecurityGroupDefinition
+        {
+            Name = "External Auditors",
+            Description = "External auditors group."
+        };
+
+        var reviewers = new SecurityGroupDefinition
+        {
+            Name = "External Reviewers",
+            Description = "External reviewers group."
+        };
+
+        var model = SPMeta2Model.NewSiteModel(site =&gt;
+        {
+            site
+                .AddSecurityGroup(auditors)
+                .AddSecurityGroup(reviewers);
+        });
+
+        DeployModel(model);
+    }
+
+
+
+    [TestMethod]
+    [TestCategory("Docs.SecurityGroupDefinition")]
+    [DisplayName("Add multiple security groups")]
+    //[Browsable(false)]
+    public void CanDeploySimpleSecurityGroups()
+    {
+        var model = SPMeta2Model.NewSiteModel(site =&gt;
+        {
+            site
+                .AddSecurityGroup(DocSecurityGroups.ClientManagers)
+                .AddSecurityGroup(DocSecurityGroups.ClientSupport)
+                .AddSecurityGroup(DocSecurityGroups.Interns)
+                .AddSecurityGroup(DocSecurityGroups.OrderApprovers);
+        });
+
+        DeployModel(model);
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>SecurityGroupDefinitionTests</ClassName>
+  <MethodName>SecurityGroupDefinitionTestsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassSecurityGroupDefinitionTestsClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.SecurityGroupDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>SecurityGroupDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>SecurityGroupDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

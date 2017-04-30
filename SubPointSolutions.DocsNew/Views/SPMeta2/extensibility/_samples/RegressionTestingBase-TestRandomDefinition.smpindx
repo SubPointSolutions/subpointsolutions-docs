@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBodyWithFunction>protected void TestRandomDefinition&lt;WebDefinition&gt;() { }</MethodBodyWithFunction>
+  <MethodBody />
+  <Language>cs</Language>
+  <Namespace>SubPointSolutions.Docs.Views.SPMeta2.extensibility</Namespace>
+  <ClassName>RegressionTestingBase</ClassName>
+  <MethodName>TestRandomDefinition</MethodName>
+  <ClassComment />
+  <MethodFullName>SubPointSolutions.Docs.Views.SPMeta2.extensibility.RegressionTestingBase.TestRandomDefinition</MethodFullName>
+  <ClassFullName>SubPointSolutions.Docs.Views.SPMeta2.extensibility.RegressionTestingBase</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>regression-testing.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>regression-testing</SourceFileNameWithoutExtension>
+</DocSample>

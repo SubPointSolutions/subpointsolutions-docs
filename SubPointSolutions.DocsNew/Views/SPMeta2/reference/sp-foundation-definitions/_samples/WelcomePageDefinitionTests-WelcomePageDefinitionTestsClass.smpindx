@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model</string>
+        <string>Welcome page</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+    
+
+    
+    //[Browsable(false)]
+    public class WelcomePageDefinitionTests : ProvisionTestBase
+    {
+        #region methods
+
+      
+        [TestMethod]
+        [TestCategory("Docs.WelcomePageDefinition")]
+
+        [DisplayName("Add web welcome page")]
+        //[Browsable(false)]
+        public void CanDeployWelcomePageToWeb()
+        {
+            var newWebHomePage = new WikiPageDefinition
+            {
+                FileName = "A new landing page for web.aspx",
+                Content = "Hello, this is a new web landing page!"
+            };
+
+            var welcomePage = new WelcomePageDefinition
+            {
+                // should be relating to the web!
+                Url = UrlUtility.CombineUrl(BuiltInListDefinitions.SitePages.GetListUrl(), newWebHomePage.FileName)
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web
+                    .AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+                    {
+                        list.AddWikiPage(newWebHomePage);
+                    })
+                    .AddWelcomePage(welcomePage);
+            });
+
+            DeployModel(model);
+        }
+
+     
+        [TestMethod]
+        [TestCategory("Docs.WelcomePageDefinition")]
+        [DisplayName("Add list welcome page")]
+        //[Browsable(false)]
+        public void CanDeployWelcomePageToList()
+        {
+            var newListHomePage = new WikiPageDefinition
+            {
+                FileName = "A new landing page for list.aspx",
+                Content = "Hello, this is a new list landing page!"
+            };
+
+            var welcomePage = new WelcomePageDefinition
+            {
+                // should be relating to the list!
+                Url = newListHomePage.FileName
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web
+                    .AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+                    {
+                        list
+                            .AddWikiPage(newListHomePage)
+                            .AddWelcomePage(welcomePage);
+                    });
+            });
+
+            DeployModel(model);
+        }
+
+       
+        [TestMethod]
+        [TestCategory("Docs.WelcomePageDefinition")]
+
+        [DisplayName("Add folder welcome page")]
+        //[Browsable(false)]
+        public void CanDeployWelcomePageToFolder()
+        {
+            var newFolderHomePage = new WikiPageDefinition
+            {
+                FileName = "A new landing page for folder.aspx",
+                Content = "Hello, this is a new folder landing page!"
+            };
+
+            var welcomePage = new WelcomePageDefinition
+            {
+                // should be relating to the folder!
+                Url = newFolderHomePage.FileName
+            };
+
+            var landingPageFolder = new FolderDefinition
+            {
+                Name = "A folder with custom landing page"
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web
+                    .AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+                    {
+                        list
+                            .AddFolder(landingPageFolder, folder =&gt;
+                            {
+                                folder
+                                    .AddWikiPage(newFolderHomePage)
+                                    .AddWelcomePage(welcomePage);
+                            });
+                    });
+            });
+
+            DeployModel(model);
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>//[Browsable(false)]
+public class WelcomePageDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+
+    [TestMethod]
+    [TestCategory("Docs.WelcomePageDefinition")]
+
+    [DisplayName("Add web welcome page")]
+    //[Browsable(false)]
+    public void CanDeployWelcomePageToWeb()
+    {
+        var newWebHomePage = new WikiPageDefinition
+        {
+            FileName = "A new landing page for web.aspx",
+            Content = "Hello, this is a new web landing page!"
+        };
+
+        var welcomePage = new WelcomePageDefinition
+        {
+            // should be relating to the web!
+            Url = UrlUtility.CombineUrl(BuiltInListDefinitions.SitePages.GetListUrl(), newWebHomePage.FileName)
+        };
+
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web
+                .AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+                {
+                    list.AddWikiPage(newWebHomePage);
+                })
+                .AddWelcomePage(welcomePage);
+        });
+
+        DeployModel(model);
+    }
+
+
+    [TestMethod]
+    [TestCategory("Docs.WelcomePageDefinition")]
+    [DisplayName("Add list welcome page")]
+    //[Browsable(false)]
+    public void CanDeployWelcomePageToList()
+    {
+        var newListHomePage = new WikiPageDefinition
+        {
+            FileName = "A new landing page for list.aspx",
+            Content = "Hello, this is a new list landing page!"
+        };
+
+        var welcomePage = new WelcomePageDefinition
+        {
+            // should be relating to the list!
+            Url = newListHomePage.FileName
+        };
+
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web
+                .AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+                {
+                    list
+                        .AddWikiPage(newListHomePage)
+                        .AddWelcomePage(welcomePage);
+                });
+        });
+
+        DeployModel(model);
+    }
+
+
+    [TestMethod]
+    [TestCategory("Docs.WelcomePageDefinition")]
+
+    [DisplayName("Add folder welcome page")]
+    //[Browsable(false)]
+    public void CanDeployWelcomePageToFolder()
+    {
+        var newFolderHomePage = new WikiPageDefinition
+        {
+            FileName = "A new landing page for folder.aspx",
+            Content = "Hello, this is a new folder landing page!"
+        };
+
+        var welcomePage = new WelcomePageDefinition
+        {
+            // should be relating to the folder!
+            Url = newFolderHomePage.FileName
+        };
+
+        var landingPageFolder = new FolderDefinition
+        {
+            Name = "A folder with custom landing page"
+        };
+
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web
+                .AddHostList(BuiltInListDefinitions.SitePages, list =&gt;
+                {
+                    list
+                        .AddFolder(landingPageFolder, folder =&gt;
+                        {
+                            folder
+                                .AddWikiPage(newFolderHomePage)
+                                .AddWelcomePage(welcomePage);
+                        });
+                });
+        });
+
+        DeployModel(model);
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>WelcomePageDefinitionTests</ClassName>
+  <MethodName>WelcomePageDefinitionTestsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassWelcomePageDefinitionTestsClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.WelcomePageDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>WelcomePageDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>WelcomePageDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

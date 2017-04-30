@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBodyWithFunction>
+        
+        public void ClientWebPartSetup(ClientWebPartDefinition wpModel, string webId)
+        {
+            var wpXml = WebpartXmlExtensions
+                           .LoadWebpartXmlDocument(BuiltInWebPartTemplates.ClientWebPart)
+                           .SetOrUpdateProperty("FeatureId", wpModel.FeatureId.ToString())
+                           .SetOrUpdateProperty("ProductId", wpModel.ProductId.ToString())
+                           .SetOrUpdateProperty("WebPartName", wpModel.WebPartName)
+                           .SetOrUpdateProperty("ProductWebId", webId)
+                           .ToString();
+        }</MethodBodyWithFunction>
+  <MethodBody>var wpXml = WebpartXmlExtensions
+               .LoadWebpartXmlDocument(BuiltInWebPartTemplates.ClientWebPart)
+               .SetOrUpdateProperty("FeatureId", wpModel.FeatureId.ToString())
+               .SetOrUpdateProperty("ProductId", wpModel.ProductId.ToString())
+               .SetOrUpdateProperty("WebPartName", wpModel.WebPartName)
+               .SetOrUpdateProperty("ProductWebId", webId)
+               .ToString();
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SubPointSolutions.Docs.Views.Views.SPMeta2.reference</Namespace>
+  <ClassName>Utils</ClassName>
+  <MethodName>ClientWebPartSetup</MethodName>
+  <ClassComment />
+  <MethodFullName>SubPointSolutions.Docs.Views.Views.SPMeta2.reference.Utils.ClientWebPartSetup</MethodFullName>
+  <ClassFullName>SubPointSolutions.Docs.Views.Views.SPMeta2.reference.Utils</ClassFullName>
+  <MethodParametersCount>2</MethodParametersCount>
+  <SourceFileName>Utils.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>Utils</SourceFileNameWithoutExtension>
+</DocSample>

@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+    //[Browsable(false)]
+    public class FeatureDefinitionTests : ProvisionTestBase
+    {
+        #region methods
+
+       
+
+
+        [TestMethod]
+        [TestCategory("Docs.FeatureDefinition")]
+
+        [Category("Category=Site Collection Model/Features")]
+
+        [DisplayName("Activate OOTB site features")]
+        //[Browsable(false)]
+
+        public void CanActivateOOTBSiteFeatures()
+        {
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                site
+                    .AddSiteFeature(DocSiteFeatures.SitePublisingInfrastructure)
+                    .AddSiteFeature(DocSiteFeatures.DocumentSets);
+
+            });
+
+            DeployModel(model);
+        }
+
+
+
+        [TestMethod]
+        [TestCategory("Docs.FeatureDefinition")]
+
+        [Category("Category=Web Model/Features")]
+
+        [DisplayName("Activate OOTB web features")]
+        //[Browsable(false)]
+        public void CanActivateOOTBWebFeatures()
+        {
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web
+                    .AddWebFeature(DocWebFeatures.WebPublishingInfrastructure)
+                    .AddWebFeature(DocWebFeatures.MetadataNavigationAndFiltering)
+                    .AddWebFeature(DocWebFeatures.MDS);
+
+            });
+
+            DeployModel(model);
+        }
+
+
+   
+
+
+        [TestMethod]
+        [TestCategory("Docs.FeatureDefinition")]
+
+        [Category("Category=Web Model/Features")]
+        [DisplayName("Disable OOTB web features")]
+        //[Browsable(false)]
+        public void CanDeactivateOOTBWebFeatures()
+        {
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web
+                    .AddWebFeature(DocWebFeatures.Disable.MDS);
+            });
+
+            DeployModel(model);
+        }
+
+
+        [TestMethod]
+        [TestCategory("Docs.FeatureDefinition")]
+
+        [Category("Category=Web Model/ Features")]
+        [DisplayName("Activate custom web features")]
+        //[Browsable(false)]
+        public void CanActivateCustomWebFeature()
+        {
+            var myCustomerFeature = new FeatureDefinition
+            {
+                Enable = true,
+                Id = new Guid("87294C72-F260-42f3-A41B-981A2FFCE37A"),
+                Scope = FeatureDefinitionScope.Web
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web
+                    .AddWebFeature(myCustomerFeature);
+            });
+
+            DeployModel(model);
+        }
+
+
+        [TestMethod]
+        [TestCategory("Docs.FeatureDefinition")]
+
+        [Category("Category=Web Model/Features")]
+        [DisplayName("Disable custom web features")]
+        //[Browsable(false)]
+        public void CanDeactivateCustomWebFeature()
+        {
+            var myCustomerFeature = new FeatureDefinition
+            {
+                Enable = false,
+                Id = new Guid("87294C72-F260-42f3-A41B-981A2FFCE37A"),
+                Scope = FeatureDefinitionScope.Web
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web
+                    .AddWebFeature(myCustomerFeature);
+            });
+
+            DeployModel(model);
+        }
+
+
+        [TestMethod]
+        [TestCategory("Docs.FeatureDefinition")]
+
+        [Category("Category=Web Model/Features")]
+        [DisplayName("Inherit OOTB features")]
+        //[Browsable(false)]
+        public void OOTBFeatureInheritance()
+        {
+            var enableMinimalDownloadStrategy = BuiltInWebFeatures.MinimalDownloadStrategy.Inherit(def =&gt;
+            {
+                def.Enable = true;
+            });
+
+            var disableMinimalDownloadStrategy = BuiltInWebFeatures.MinimalDownloadStrategy.Inherit(def =&gt;
+            {
+                def.Enable = false;
+            });
+
+            // enable MDS
+            var enableMdsModel = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web
+                    .AddWebFeature(enableMinimalDownloadStrategy);
+            });
+
+            DeployModel(enableMdsModel);
+
+            // disable MDS
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web
+                    .AddWebFeature(disableMinimalDownloadStrategy);
+            });
+
+            DeployModel(model);
+        }
+
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>//[Browsable(false)]
+public class FeatureDefinitionTests : ProvisionTestBase
+{
+    #region methods
+
+
+
+
+    [TestMethod]
+    [TestCategory("Docs.FeatureDefinition")]
+
+    [Category("Category=Site Collection Model/Features")]
+
+    [DisplayName("Activate OOTB site features")]
+    //[Browsable(false)]
+
+    public void CanActivateOOTBSiteFeatures()
+    {
+        var model = SPMeta2Model.NewSiteModel(site =&gt;
+        {
+            site
+                .AddSiteFeature(DocSiteFeatures.SitePublisingInfrastructure)
+                .AddSiteFeature(DocSiteFeatures.DocumentSets);
+
+        });
+
+        DeployModel(model);
+    }
+
+
+
+    [TestMethod]
+    [TestCategory("Docs.FeatureDefinition")]
+
+    [Category("Category=Web Model/Features")]
+
+    [DisplayName("Activate OOTB web features")]
+    //[Browsable(false)]
+    public void CanActivateOOTBWebFeatures()
+    {
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web
+                .AddWebFeature(DocWebFeatures.WebPublishingInfrastructure)
+                .AddWebFeature(DocWebFeatures.MetadataNavigationAndFiltering)
+                .AddWebFeature(DocWebFeatures.MDS);
+
+        });
+
+        DeployModel(model);
+    }
+
+
+
+
+
+    [TestMethod]
+    [TestCategory("Docs.FeatureDefinition")]
+
+    [Category("Category=Web Model/Features")]
+    [DisplayName("Disable OOTB web features")]
+    //[Browsable(false)]
+    public void CanDeactivateOOTBWebFeatures()
+    {
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web
+                .AddWebFeature(DocWebFeatures.Disable.MDS);
+        });
+
+        DeployModel(model);
+    }
+
+
+    [TestMethod]
+    [TestCategory("Docs.FeatureDefinition")]
+
+    [Category("Category=Web Model/ Features")]
+    [DisplayName("Activate custom web features")]
+    //[Browsable(false)]
+    public void CanActivateCustomWebFeature()
+    {
+        var myCustomerFeature = new FeatureDefinition
+        {
+            Enable = true,
+            Id = new Guid("87294C72-F260-42f3-A41B-981A2FFCE37A"),
+            Scope = FeatureDefinitionScope.Web
+        };
+
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web
+                .AddWebFeature(myCustomerFeature);
+        });
+
+        DeployModel(model);
+    }
+
+
+    [TestMethod]
+    [TestCategory("Docs.FeatureDefinition")]
+
+    [Category("Category=Web Model/Features")]
+    [DisplayName("Disable custom web features")]
+    //[Browsable(false)]
+    public void CanDeactivateCustomWebFeature()
+    {
+        var myCustomerFeature = new FeatureDefinition
+        {
+            Enable = false,
+            Id = new Guid("87294C72-F260-42f3-A41B-981A2FFCE37A"),
+            Scope = FeatureDefinitionScope.Web
+        };
+
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web
+                .AddWebFeature(myCustomerFeature);
+        });
+
+        DeployModel(model);
+    }
+
+
+    [TestMethod]
+    [TestCategory("Docs.FeatureDefinition")]
+
+    [Category("Category=Web Model/Features")]
+    [DisplayName("Inherit OOTB features")]
+    //[Browsable(false)]
+    public void OOTBFeatureInheritance()
+    {
+        var enableMinimalDownloadStrategy = BuiltInWebFeatures.MinimalDownloadStrategy.Inherit(def =&gt;
+        {
+            def.Enable = true;
+        });
+
+        var disableMinimalDownloadStrategy = BuiltInWebFeatures.MinimalDownloadStrategy.Inherit(def =&gt;
+        {
+            def.Enable = false;
+        });
+
+        // enable MDS
+        var enableMdsModel = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web
+                .AddWebFeature(enableMinimalDownloadStrategy);
+        });
+
+        DeployModel(enableMdsModel);
+
+        // disable MDS
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web
+                .AddWebFeature(disableMinimalDownloadStrategy);
+        });
+
+        DeployModel(model);
+    }
+
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>FeatureDefinitionTests</ClassName>
+  <MethodName>FeatureDefinitionTestsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassFeatureDefinitionTestsClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.FeatureDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>FeatureDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>FeatureDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

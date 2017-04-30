@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model</string>
+        <string>Navigation</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+    
+
+    
+    //[Browsable(false)]
+    public class TopNavigationNodeDefinitionTests : ProvisionTestBase
+    {
+        [TestMethod]
+        [TestCategory("Docs.TopNavigationNodeDefinition")]
+
+        [DisplayName("Add top nav items")]
+        //[Browsable(false)]
+        public void CaDeployFlatTopNavigation()
+        {
+            var ourCompany = new TopNavigationNodeDefinition
+            {
+                Title = "Our Company",
+                Url = "our-company.aspx",
+                IsExternal = true
+            };
+
+            var ourServices = new TopNavigationNodeDefinition
+            {
+                Title = "Our Services",
+                Url = "our-services.aspx",
+                IsExternal = true
+            };
+
+            var ourTeam = new TopNavigationNodeDefinition
+            {
+                Title = "Our Team",
+                Url = "our-team.aspx",
+                IsExternal = true
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web
+                    .AddTopNavigationNode(ourCompany)
+                    .AddTopNavigationNode(ourServices)
+                    .AddTopNavigationNode(ourTeam);
+            });
+
+            DeployModel(model);
+        }
+
+
+        [TestMethod]
+        [TestCategory("Docs.TopNavigationNodeDefinition")]
+
+        [DisplayName("Add hierarchical top nav items")]
+        //[Browsable(false)]
+        public void CaDeployHierarchicalTopNavigation()
+        {
+            // top level departments node
+            var departments = new TopNavigationNodeDefinition
+            {
+                Title = "Our Departments",
+                Url = "our-departments.aspx",
+                IsExternal = true
+            };
+
+            var hr = new TopNavigationNodeDefinition
+            {
+                Title = "HR Team",
+                Url = "hr-team.aspx",
+                IsExternal = true
+            };
+
+            var it = new TopNavigationNodeDefinition
+            {
+                Title = "IT Team",
+                Url = "it-team.aspx",
+                IsExternal = true
+            };
+
+            // top level clients node
+            var partners = new TopNavigationNodeDefinition
+            {
+                Title = "Our Partners",
+                Url = "our-partners.aspx",
+                IsExternal = true
+            };
+
+            var microsoft = new TopNavigationNodeDefinition
+            {
+                Title = "Microsoft",
+                Url = "microsfot.aspx",
+                IsExternal = true
+            };
+
+            var apple = new TopNavigationNodeDefinition
+            {
+                Title = "Apple",
+                Url = "apple.aspx",
+                IsExternal = true
+            };
+
+            var model = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                web
+                    .AddTopNavigationNode(departments, node =&gt;
+                    {
+                        node
+                            .AddTopNavigationNode(hr)
+                            .AddTopNavigationNode(it);
+                    })
+                    .AddTopNavigationNode(partners, node =&gt;
+                    {
+                        node
+                          .AddTopNavigationNode(microsoft)
+                          .AddTopNavigationNode(apple);
+                    });
+            });
+
+            DeployModel(model);
+        }
+    }</MethodBodyWithFunction>
+  <MethodBody>//[Browsable(false)]
+public class TopNavigationNodeDefinitionTests : ProvisionTestBase
+{
+    [TestMethod]
+    [TestCategory("Docs.TopNavigationNodeDefinition")]
+
+    [DisplayName("Add top nav items")]
+    //[Browsable(false)]
+    public void CaDeployFlatTopNavigation()
+    {
+        var ourCompany = new TopNavigationNodeDefinition
+        {
+            Title = "Our Company",
+            Url = "our-company.aspx",
+            IsExternal = true
+        };
+
+        var ourServices = new TopNavigationNodeDefinition
+        {
+            Title = "Our Services",
+            Url = "our-services.aspx",
+            IsExternal = true
+        };
+
+        var ourTeam = new TopNavigationNodeDefinition
+        {
+            Title = "Our Team",
+            Url = "our-team.aspx",
+            IsExternal = true
+        };
+
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web
+                .AddTopNavigationNode(ourCompany)
+                .AddTopNavigationNode(ourServices)
+                .AddTopNavigationNode(ourTeam);
+        });
+
+        DeployModel(model);
+    }
+
+
+    [TestMethod]
+    [TestCategory("Docs.TopNavigationNodeDefinition")]
+
+    [DisplayName("Add hierarchical top nav items")]
+    //[Browsable(false)]
+    public void CaDeployHierarchicalTopNavigation()
+    {
+        // top level departments node
+        var departments = new TopNavigationNodeDefinition
+        {
+            Title = "Our Departments",
+            Url = "our-departments.aspx",
+            IsExternal = true
+        };
+
+        var hr = new TopNavigationNodeDefinition
+        {
+            Title = "HR Team",
+            Url = "hr-team.aspx",
+            IsExternal = true
+        };
+
+        var it = new TopNavigationNodeDefinition
+        {
+            Title = "IT Team",
+            Url = "it-team.aspx",
+            IsExternal = true
+        };
+
+        // top level clients node
+        var partners = new TopNavigationNodeDefinition
+        {
+            Title = "Our Partners",
+            Url = "our-partners.aspx",
+            IsExternal = true
+        };
+
+        var microsoft = new TopNavigationNodeDefinition
+        {
+            Title = "Microsoft",
+            Url = "microsfot.aspx",
+            IsExternal = true
+        };
+
+        var apple = new TopNavigationNodeDefinition
+        {
+            Title = "Apple",
+            Url = "apple.aspx",
+            IsExternal = true
+        };
+
+        var model = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            web
+                .AddTopNavigationNode(departments, node =&gt;
+                {
+                    node
+                        .AddTopNavigationNode(hr)
+                        .AddTopNavigationNode(it);
+                })
+                .AddTopNavigationNode(partners, node =&gt;
+                {
+                    node
+                      .AddTopNavigationNode(microsoft)
+                      .AddTopNavigationNode(apple);
+                });
+        });
+
+        DeployModel(model);
+    }
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>TopNavigationNodeDefinitionTests</ClassName>
+  <MethodName>TopNavigationNodeDefinitionTestsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassTopNavigationNodeDefinitionTestsClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.TopNavigationNodeDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>TopNavigationNodeDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>TopNavigationNodeDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

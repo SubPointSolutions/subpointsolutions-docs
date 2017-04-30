@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags />
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+    public class SPDataSourceScopeDoesNotDefined
+    {
+        [TestMethod]
+        public void SPDataSourceScopeUsageSamples(SPList list)
+        {
+            var ds = new SPDataSource();
+
+            ds.List = list;
+            ds.DataSourceMode = SPDataSourceMode.List;
+            ds.IncludeHidden = false;
+
+            ds.Scope = SPViewScope.Recursive; // &lt;-  recommended
+        }
+    }</MethodBodyWithFunction>
+  <MethodBody>public class SPDataSourceScopeDoesNotDefined
+{
+    [TestMethod]
+    public void SPDataSourceScopeUsageSamples(SPList list)
+    {
+        var ds = new SPDataSource();
+
+        ds.List = list;
+        ds.DataSourceMode = SPDataSourceMode.List;
+        ds.IncludeHidden = false;
+
+        ds.Scope = SPViewScope.Recursive; // &lt;-  recommended
+    }
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>ReSharePoint.Docs.Basic.Inspection.Code</Namespace>
+  <ClassName>SPDataSourceScopeDoesNotDefined</ClassName>
+  <MethodName>SPDataSourceScopeDoesNotDefinedClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassSPDataSourceScopeDoesNotDefinedClass</MethodFullName>
+  <ClassFullName>ReSharePoint.Docs.Basic.Inspection.Code.SPDataSourceScopeDoesNotDefined</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>SPDataSourceScopeDoesNotDefined.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>SPDataSourceScopeDoesNotDefined</SourceFileNameWithoutExtension>
+</DocSample>

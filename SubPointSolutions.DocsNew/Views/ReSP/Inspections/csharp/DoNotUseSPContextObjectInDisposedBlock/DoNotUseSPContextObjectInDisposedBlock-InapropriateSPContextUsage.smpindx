@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBodyWithFunction>
+        
+        public void InapropriateSPContextUsage()
+        {
+            using (var site = SPContext.Current.Site)
+            {
+            }
+        }</MethodBodyWithFunction>
+  <MethodBody>using (var site = SPContext.Current.Site)
+{
+}
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SubPointSolutions.Docs.Views.ReSP.Inspections.csharp</Namespace>
+  <ClassName>DoNotUseSPContextObjectInDisposedBlock</ClassName>
+  <MethodName>InapropriateSPContextUsage</MethodName>
+  <ClassComment />
+  <MethodFullName>SubPointSolutions.Docs.Views.ReSP.Inspections.csharp.DoNotUseSPContextObjectInDisposedBlock.InapropriateSPContextUsage</MethodFullName>
+  <ClassFullName>SubPointSolutions.Docs.Views.ReSP.Inspections.csharp.DoNotUseSPContextObjectInDisposedBlock</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>DoNotUseSPContextObjectInDisposedBlock.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>DoNotUseSPContextObjectInDisposedBlock</SourceFileNameWithoutExtension>
+</DocSample>

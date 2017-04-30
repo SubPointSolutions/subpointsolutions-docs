@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model</string>
+        <string>Root web</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
+  <Title>Add lists to root web</Title>
+  <MethodBodyWithFunction>
+        
+        
+        //[Browsable(false)]
+        public void CanProvisionRootWebLists()
+        {
+            var rootWeb = new RootWebDefinition
+            {
+
+            };
+
+            var model = SPMeta2Model.NewSiteModel(site =&gt;
+            {
+                site.AddRootWeb(rootWeb, web =&gt;
+                {
+                    web
+                      .AddHostList(BuiltInListDefinitions.StyleLibrary, list =&gt;
+                      {
+                          // do stuff with 'Style Library'
+                      })
+                      .AddHostList(BuiltInListDefinitions.Catalogs.MasterPage, list =&gt;
+                      {
+                          // do stuff with 'Master Page Library'
+                      });
+                });
+            });
+
+            DeployModel(model);
+        }</MethodBodyWithFunction>
+  <MethodBody>var rootWeb = new RootWebDefinition
+{
+
+};
+
+var model = SPMeta2Model.NewSiteModel(site =&gt;
+{
+    site.AddRootWeb(rootWeb, web =&gt;
+    {
+        web
+          .AddHostList(BuiltInListDefinitions.StyleLibrary, list =&gt;
+          {
+              // do stuff with 'Style Library'
+          })
+          .AddHostList(BuiltInListDefinitions.Catalogs.MasterPage, list =&gt;
+          {
+              // do stuff with 'Master Page Library'
+          });
+    });
+});
+
+DeployModel(model);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>RootWebDefinitionTests</ClassName>
+  <MethodName>CanProvisionRootWebLists</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.RootWebDefinitionTests.CanProvisionRootWebLists</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.RootWebDefinitionTests</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>RootWebDefinitionTests.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>RootWebDefinitionTests</SourceFileNameWithoutExtension>
+</DocSample>

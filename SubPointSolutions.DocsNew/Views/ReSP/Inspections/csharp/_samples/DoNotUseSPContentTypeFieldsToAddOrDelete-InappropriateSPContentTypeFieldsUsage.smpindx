@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBodyWithFunction>
+        public void InappropriateSPContentTypeFieldsUsage(SPWeb web, string contentTypeName)
+        {
+            var ct = web.ContentTypes[contentTypeName];
+            ct.Fields.Add("NewField", SPFieldType.Boolean, true);
+        }</MethodBodyWithFunction>
+  <MethodBody>var ct = web.ContentTypes[contentTypeName];
+ct.Fields.Add("NewField", SPFieldType.Boolean, true);
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>ReSharePoint.Docs.Basic.Inspection.Code</Namespace>
+  <ClassName>DoNotUseSPContentTypeFieldsToAddOrDelete</ClassName>
+  <MethodName>InappropriateSPContentTypeFieldsUsage</MethodName>
+  <ClassComment />
+  <MethodFullName>ReSharePoint.Docs.Basic.Inspection.Code.DoNotUseSPContentTypeFieldsToAddOrDelete.InappropriateSPContentTypeFieldsUsage</MethodFullName>
+  <ClassFullName>ReSharePoint.Docs.Basic.Inspection.Code.DoNotUseSPContentTypeFieldsToAddOrDelete</ClassFullName>
+  <MethodParametersCount>2</MethodParametersCount>
+  <SourceFileName>DoNotUseSPContentTypeFieldsToAddOrDelete.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>DoNotUseSPContentTypeFieldsToAddOrDelete</SourceFileNameWithoutExtension>
+</DocSample>

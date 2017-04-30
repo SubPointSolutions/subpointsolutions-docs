@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags />
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    public class WebDefinitionGenerator : TypedDefinitionGeneratorServiceBase&lt;WebDefinition&gt;
+    {
+        public override DefinitionBase GenerateRandomDefinition(Action&lt;DefinitionBase&gt; action)
+        {
+            return WithEmptyDefinition(def =&gt;
+            {
+                def.Title = Rnd.String();
+                def.Description = Rnd.String();
+
+
+                def.Url = Rnd.String(16);
+
+                def.WebTemplate = BuiltInWebTemplates.Collaboration.TeamSite;
+            });
+        }
+    }</MethodBodyWithFunction>
+  <MethodBody>public class WebDefinitionGenerator : TypedDefinitionGeneratorServiceBase&lt;WebDefinition&gt;
+{
+    public override DefinitionBase GenerateRandomDefinition(Action&lt;DefinitionBase&gt; action)
+    {
+        return WithEmptyDefinition(def =&gt;
+        {
+            def.Title = Rnd.String();
+            def.Description = Rnd.String();
+
+
+            def.Url = Rnd.String(16);
+
+            def.WebTemplate = BuiltInWebTemplates.Collaboration.TeamSite;
+        });
+    }
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SubPointSolutions.Docs.Views.SPMeta2.extensibility</Namespace>
+  <ClassName>WebDefinitionGenerator</ClassName>
+  <MethodName>WebDefinitionGeneratorClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassWebDefinitionGeneratorClass</MethodFullName>
+  <ClassFullName>SubPointSolutions.Docs.Views.SPMeta2.extensibility.WebDefinitionGenerator</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>regression-testing.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>regression-testing</SourceFileNameWithoutExtension>
+</DocSample>

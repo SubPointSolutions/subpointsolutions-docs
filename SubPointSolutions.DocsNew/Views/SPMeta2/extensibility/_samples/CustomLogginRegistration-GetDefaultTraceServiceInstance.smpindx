@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBodyWithFunction>
+        
+        public void GetDefaultTraceServiceInstance()
+        {
+            // get an instance of ServiceContainer
+            // then get an instance of required service such as TraceServiceBase
+
+            var traceService = ServiceContainer.Instance.GetService&lt;TraceServiceBase&gt;();
+
+            // use trace methods as usual
+            traceService.Verbose(0, "my verbose message");
+        }</MethodBodyWithFunction>
+  <MethodBody>// get an instance of ServiceContainer
+// then get an instance of required service such as TraceServiceBase
+
+var traceService = ServiceContainer.Instance.GetService&lt;TraceServiceBase&gt;();
+
+// use trace methods as usual
+traceService.Verbose(0, "my verbose message");
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>CustomLogginRegistration</ClassName>
+  <MethodName>GetDefaultTraceServiceInstance</MethodName>
+  <ClassComment />
+  <MethodFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.CustomLogginRegistration.GetDefaultTraceServiceInstance</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.CustomLogginRegistration</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>writing-custom-logging.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>writing-custom-logging</SourceFileNameWithoutExtension>
+</DocSample>

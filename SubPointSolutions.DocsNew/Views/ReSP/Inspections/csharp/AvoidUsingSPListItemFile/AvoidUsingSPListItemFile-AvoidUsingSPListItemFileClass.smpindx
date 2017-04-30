@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags />
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+    public class AvoidUsingSPListItemFile
+    {
+        [TestMethod]
+        public void AppropriateSPListItemSPFileUsage(SPListItem item)
+        {
+            var file = item.Web.GetFile(item.UniqueId);
+        }
+    }</MethodBodyWithFunction>
+  <MethodBody>public class AvoidUsingSPListItemFile
+{
+    [TestMethod]
+    public void AppropriateSPListItemSPFileUsage(SPListItem item)
+    {
+        var file = item.Web.GetFile(item.UniqueId);
+    }
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>ReSharePoint.Docs.Basic.Inspection.Code</Namespace>
+  <ClassName>AvoidUsingSPListItemFile</ClassName>
+  <MethodName>AvoidUsingSPListItemFileClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassAvoidUsingSPListItemFileClass</MethodFullName>
+  <ClassFullName>ReSharePoint.Docs.Basic.Inspection.Code.AvoidUsingSPListItemFile</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>AvoidUsingSPListItemFile.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>AvoidUsingSPListItemFile</SourceFileNameWithoutExtension>
+</DocSample>
