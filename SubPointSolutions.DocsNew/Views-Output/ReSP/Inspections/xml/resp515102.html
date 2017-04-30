@@ -1,0 +1,993 @@
+<html lang="en"><head>    
+    <meta charset="utf-8">
+    <!-- TITLE OF SITE -->
+    <title>SubPoint Solutions</title>
+    <meta name="description" content="We enhance your SharePoint experience with excellent APIs, products, and services">
+    <meta name="keywords" content="SharePoint, SharePoint Online, SPMeta2, MetaPack, MetaStudio, provision, sp2013, sp2016, o365">
+    <meta name="author" content="SubPoint Solutions">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- FAVICON -->
+    <link rel="icon" href="/content/img/favicon/favicon.ico">
+
+    <link rel="stylesheet" href="/content/bootstrap.min.css">
+    <link rel="stylesheet" href="/content/icons/icons.min.css">
+    <link href="http://fonts.googleapis.com/css?family=raleway:300,400,600,700%7copen+sans:300,400,600,700%7chandlee" rel="stylesheet" target="_blank">
+
+    <link rel="stylesheet" href="/content/style.css">
+    <link rel="stylesheet" href="/content/responsive.css">
+    <link rel="stylesheet" href="/content/colors/red.css" title="red">
+    <link rel="stylesheet" href="/content/sps.web.css">
+
+    <link href="/content/syntaxhighlighter/shcore.css" rel="stylesheet">
+    <link href="/content/syntaxhighlighter/shcoredefault.css" rel="stylesheet">
+
+    <link href="/content/sps.docs.css" rel="stylesheet">
+    <link href="/content/sps.docs.new.css" rel="stylesheet">
+    
+    <!--[if lt IE 9]>
+        <script src="assets/js/plugins/html5shiv.min.js"></script>
+        <script src="assets/js/plugins/respond.min.js"></script>
+    <![endif]-->
+<style>
+    .header .overlay {
+        height: 500px;
+    }
+
+    .company-stat {
+        text-align: center;
+    }
+
+        .company-stat h4 {
+            font-weight: bold;
+            color: white;
+        }
+
+        .company-stat div.number {
+            color: white;
+            font-weight: bold;
+            font-style: normal;
+            font-size: 60px;
+        }
+
+        .company-stat div.fact {
+            margin-top: 10px;
+            color: white;
+            font-weight: bold;
+            font-style: normal;
+            font-size: 23px;
+        }
+
+    .wrapper-sm-x {
+        padding-top: 25px;
+        padding-bottom: 10px;
+    }
+
+    .header-landing .vmiddle {
+        top: 55%;
+    }
+
+    .client-logo img {
+        max-height: 60px;
+        max-width: 140px;
+        opacity: 1;
+    }
+
+    .client-logo p {
+        margin-bottom: 0px;
+    }
+
+    .feature-box .description {
+        height: 100px;
+    }
+
+    p.tweet a {
+        color: #c0392b !important;
+    }
+
+    .tweet li span {
+        font-style: normal !important;
+        font-size: 15px;
+    }
+
+    p.interact {
+        display: none !important;
+    }
+
+    pre  {
+        background-color:#ffffff;
+    }
+
+    .footer-nav {
+        margin-top: 0px !important;
+    }
+
+</style></head>
+
+
+
+<body>
+    <div class="main-wrapper">
+
+        
+
+
+
+<nav class="navbar navbar-fixed-top is-scrolling" role="navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="navbar-header">
+                    <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                        <i class="icon icon_menu"></i>
+                    </button>
+
+                            <a href="/" class="navbar-brand " title="SmartMvp">
+                                <img src="/content/img/subpoint-logo-25.png" alt="Logo" class=" img-thumbnail img-responsive">
+                                <span class="text-logo">SubPoint Solutions - Docs</span>
+                            </a>
+
+                </div>
+
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li><a href="http://subpointsolutions.com" title="" target="_blank">Home</a></li>
+
+                        
+                        <li><a href="http://docs.subpointsolutions.com" title="" target="_blank">Docs</a></li>
+                        
+                        
+                        <li><a href="https://www.yammer.com/spmeta2feedback/" title="" target="_blank">Community</a></li>
+                        <li><a href="http://subpointsolutions.com/company" title="" target="_blank">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container body-content sd-body-content">
+
+    <div class="row sps-secondnav">
+        
+
+
+
+<div class="sub-nav" m-current-subfolder="Inspections">
+
+
+
+    <h2>
+            <a href="/resp/inspections/index.html">
+                Inspections
+            </a> <span>-</span> <span style="font-size: 18px;">Multiple field groups in element file</span>
+        
+    </h2>
+
+    <ul>
+            <li>
+                <a m-subgroup="" class="" href="/resp/index.html">
+                    reSP Home
+                </a>
+            </li>
+            <li>
+                <a m-subgroup="getting-started" class="" href="/resp/getting-started/index.html">
+                    Getting started
+                </a>
+            </li>
+            <li>
+                <a m-subgroup="Inspections" class="active" href="/resp/inspections/index.html">
+                    Inspections
+                </a>
+            </li>
+            <li>
+                <a m-subgroup="code-completion" class="" href="/resp/code-completion/index.html">
+                    Code Completion
+                </a>
+            </li>
+            <li>
+                <a m-subgroup="live-templates" class="" href="/resp/live-templates/index.html">
+                    Live Templates
+                </a>
+            </li>
+
+    </ul>
+</div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-3 col-md-3 col-sm-3 sps-sidebar">
+            
+
+<div class="sd-sidebar panel panel-default hidden-print hidden-xs hidden-sm affix1">
+    <ul class="nav ">
+                        <li class="root">
+
+                            <a href="/resp/inspections/index.html">
+                                Inspections
+                            </a>
+                        </li>
+                    <li>
+
+
+
+
+
+                        <a class="root-group collapse group-link" data-toggle="collapse" href="#aspnet">
+                            ASP.NET (3)
+                        </a>
+
+                        <ul class="nav collapse in" id="aspnet">
+
+                                <li>
+
+                                    <a href="/resp/inspections/aspnet/resp516902.html">
+                                        SPDataSource.Scope is missed in page
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/aspnet/resp516905.html">
+                                        SPGridView.AutoGenerateColumns in page
+                                    </a>
+                                </li>
+                        </ul>
+                    </li>
+                    <li>
+
+
+
+
+
+                        <a class="root-group collapse group-link" data-toggle="collapse" href="#csharp">
+                            C# (45)
+                        </a>
+
+                        <ul class="nav collapse in" id="csharp">
+
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510242.html">
+                                        Avoid $ as jQuery reference
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510239.html">
+                                        Avoid custom logging
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510240.html">
+                                        Avoid SPWeb.Properties usage
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510202.html">
+                                        ConfigurationManager is used
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510206.html">
+                                        Consider Secure Store Service usage
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510212.html">
+                                        DirectorySearcher is used
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510251.html">
+                                        EntityEditor.Entities is used
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510236.html">
+                                        General exception is suppressed
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510257.html">
+                                        gProcessingId parameter is missed for SPSite.AddWorkItem()
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510232.html">
+                                        Inappropriate PublishingWeb.GetPublishingPages() usage
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510209.html">
+                                        Inappropriate SPList collection usage
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510227.html">
+                                        Inappropriate taxonomy collection usage
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510258.html">
+                                        Inappropriate usage of SPContentType.Fields
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510247.html">
+                                        Incorrect SPView usage
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510223.html">
+                                        jQuery(document).ready in CSharp code
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510225.html">
+                                        Magic string is used
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510238.html">
+                                        Missing SPUrlZone param in SPSite constructor
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510241.html">
+                                        Not logged exception found
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510245.html">
+                                        PortalLog is used
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510244.html">
+                                        RunWithElevatedPrivileges is used while HTTPContext is null
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510261.html">
+                                        SPContext objects are disposed
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510222.html">
+                                        SPContext.Current is used outside web context
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510218.html">
+                                        SPDataSource.Scope is missed
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp512101.html">
+                                        SPFeature activated via code
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510226.html">
+                                        SPListItem.File is used
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510208.html">
+                                        SPMonitoredScope should be used
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510243.html">
+                                        SPPersistedObject is updated
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510210.html">
+                                        SPQuery.Scope is missed
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510252.html">
+                                        SPUtility.SendEmail usage while SPContext is null
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510205.html">
+                                        SPView.Scope is missed
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510249.html">
+                                        SPWebPartManager is used while HTTPContext is null
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510234.html">
+                                        Static SP-object used as field
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510201.html">
+                                        Thread.Sleep() usage
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510259.html">
+                                        Unsafe cast on SPItemEventDataCollection.Item
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510213.html">
+                                        Unsafe cast on SPListItem
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510235.html">
+                                        Unsafe SPObject.Name == &lt;string&gt; comparison
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510228.html">
+                                        Unsafe url concatenation
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510254.html">
+                                        Use FeatureIds class
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510255.html">
+                                        Use FieldId class
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510203.html">
+                                        Use PropertyConstants class
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510256.html">
+                                        Use SPBuiltInFieldId class
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510250.html">
+                                        Use try-catch for SPFile.Exists
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510204.html">
+                                        UserProfileManager.GetEnumerator() is used
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/csharp/resp510253.html">
+                                        UTC time is used
+                                    </a>
+                                </li>
+                        </ul>
+                    </li>
+                    <li>
+
+
+
+
+
+                        <a class="root-group collapse group-link" data-toggle="collapse" href="#javascript">
+                            Java Script (9)
+                        </a>
+
+                        <ul class="nav collapse in" id="javascript">
+
+                                <li>
+
+                                    <a href="/resp/inspections/javascript/resp516804.html">
+                                        Avoid jQuery(document).ready in ASCX control
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/javascript/resp518902.html">
+                                        Avoid jQuery(document).ready in js file
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/javascript/resp517303.html">
+                                        Avoid jQuery(document).ready in master page
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/javascript/resp516903.html">
+                                        Avoid jQuery(document).ready in page
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/javascript/resp518901.html">
+                                        Avoid using $ in js file
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/javascript/resp517301.html">
+                                        Avoid using $ in master page
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/javascript/resp516901.html">
+                                        Avoid using $ in pages
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/javascript/resp516801.html">
+                                        Avoid using $ in web contol
+                                    </a>
+                                </li>
+                        </ul>
+                    </li>
+                    <li>
+
+
+
+
+
+                        <a class="root-group collapse group-link" data-toggle="collapse" href="#xml">
+                            XML (35)
+                        </a>
+
+                        <ul class="nav collapse in" id="xml">
+
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp515205.html">
+                                        Avoid comments for content types
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp515201.html">
+                                        Avoid list content types
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp515115.html">
+                                        Avoid mixed 'ID' and 'Id' names
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp515403.html">
+                                        Avoid system list names for list instance
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp515108.html">
+                                        Avoid underscore in field name
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp515501.html">
+                                        Consider hidden list templates
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp515204.html">
+                                        Consider Overwrite='TRUE' for content types
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp515104.html">
+                                        Consider Overwrite='TRUE' for field
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp515502.html">
+                                        Declare empty Fields element
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp515203.html">
+                                        Deploy content types correctly
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp515103.html">
+                                        Deploy lookup field correctly
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp515101.html">
+                                        Deploy Taxonomy field correctly
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp515109.html">
+                                        Duplicate field Name
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp515110.html">
+                                        Duplicate field StaticName
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp515404.html">
+                                        Duplicate list instance Title
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp515402.html">
+                                        Duplicate list instance Url
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp515504.html">
+                                        Ensure Folder ContentTypeRef in list definition
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp510004.html">
+                                        Entity is not provisioned
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp516401.html">
+                                        Improve web part definition
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp516402.html">
+                                        Improve web part module
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp515105.html">
+                                        Incorrect 'ID' attr name
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp515114.html">
+                                        Incorrect lookup field provision
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp515112.html">
+                                        Incorrect 'Note' field index
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp515106.html">
+                                        Incorrect 'ShowField' attr value
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp515111.html">
+                                        Incorrect 'StaticName' length
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp515113.html">
+                                        Internal and static field names are different
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp515202.html">
+                                        Multiple content type groups in element file
+                                    </a>
+                                </li>
+                                <li class="active">
+
+                                    <a href="/resp/inspections/xml/resp515102.html">
+                                        Multiple field groups in element file
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp515107.html">
+                                        Prevent field from deletion
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp515505.html">
+                                        Prevent list from deletion
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp515506.html">
+                                        Repeat calculated fields in list definition
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp515507.html">
+                                        Repeat lookup fields in list definition
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp515503.html">
+                                        Taxonomy field in list definition
+                                    </a>
+                                </li>
+                                <li>
+
+                                    <a href="/resp/inspections/xml/resp515405.html">
+                                        Wrong FeatureId for list instance
+                                    </a>
+                                </li>
+                        </ul>
+                    </li>
+
+    </ul>
+
+
+
+</div>
+        </div>
+
+        <div class="col-lg-9 col-md-9 col-sm-9 sps-document">
+            
+
+<style>
+    /*h3 {
+        text-align: center;
+    }*/
+</style><h3>Description</h3>
+<p>Avoid multiple field groups in one element file.</p>
+<h3>Resolution</h3>
+<p>Split up field definitions into different element.xml per every field group</p>
+<h3>Links</h3>
+<ul>
+<li><a href="http://msdn.microsoft.com/en-us/library/office/aa979575.aspx" target="_blank">Field Element</a></li>
+</ul>
+
+
+
+            
+
+    <div class="m-prevNextNav-cnt">
+            <a class="btn-lg btn-default m-btn-prev" href="/resp/inspections/xml/resp515202.html">
+                <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Previous
+            </a>
+                    <a class="btn-lg btn-default pull-right m-btn-next" href="/resp/inspections/xml/resp515107.html">
+                Next <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+            </a>
+    </div>
+
+        </div>
+
+        
+
+    </div>
+</div>
+
+
+        <footer class="footer dark-bg" id="footer">
+    <div class="container">
+        <div class="wrapper-lg">
+            <div class="row">
+                <!-- Footer Left Col -->
+                <div class="col-md-4">
+                    <!-- Logo -->
+
+
+                    <h5 class="text-white">
+                        <img src="/content/img/subpoint-logo-25.png" alt="Logo" class=" img-thumbnail img-responsive">
+                        SubPoint Solutions
+                    </h5>
+
+                    <p class="footer-hero">
+                        Enhancing your SharePoint experience with excellent APIs, products, and services so that you can focus on business-critical tasks.
+                        Recognized and trusted since 2013.
+                    </p>
+                </div>
+                <!-- Footer Contact Col -->
+                <div class="col-md-4">
+                    <h5 class="text-white">Our Contacts</h5>
+                    <div class="contact-item">
+                        <div class="contact-content">
+                            Email:<br>
+                            <a style="font-size: 14px;" href="mailto:support@subpointsolutions.com">support@subpointsolutions.com</a>
+                        </div>
+
+                        <div class="contact-content">
+                            Yammer Network:<br>
+                            <a style="font-size: 14px;" href="https://www.yammer.com/spmeta2feedback" target="_blank">https://www.yammer.com/spmeta2feedback</a>
+                        </div>
+
+
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="icon icon_pin"></i>
+                        </div>
+                        <div class="contact-content">
+                            Sydney, NSW 2000 Australia
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer Right Col: Twitter Feed -->
+                <div class="col-md-4">
+                    <h5 class="text-white">Recent Tweets</h5>
+
+                    <div class="tweet" id="twitter-cnt">
+
+                    </div>
+                </div>
+
+                <!-- Footer Menu and Copy -->
+               
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="footer-nav">
+                        <li>
+                            <a href="/company">Company</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/terms">Terms Of Use</a>
+                        </li>
+                        <li>
+                            <a href="/privacy">Privacy Policy</a>
+                        </li>
+                    </ul>
+                    <p class="footer-copy">
+
+                        Copyright © <a hre="http://subpointsolutions.com" target="_blank">SubPoint Solutions</a> 2017. 
+                        Built with care, <a href="http://wyam.io" target="_blank">Wyam</a> and <a href="https://www.netlify.com/" target="_blank">Netlify</a>. Last updated Sun, 30 Apr 2017 21:59:18 GMT.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+
+    <script src="/scripts/jquery-1.9.1.min.js"></script>
+    <script src="/scripts/bootstrap.js"></script>
+
+    <script src="/scripts/syntaxhighlighter/shcore.js"></script>
+    <script src="/scripts/syntaxhighlighter/shbrushcsharp.js"></script>
+    <script src="/scripts/syntaxhighlighter/shbrushxml.js"></script>
+    <script src="/scripts/syntaxhighlighter/shbrushjscript.js"></script>
+    <script src="/scripts/syntaxhighlighter/shbrushpowershell.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
+
+
+    
+
+    
+
+
+    <script>
+
+        (function ($) {
+
+            $(document).ready(function () {
+
+                $('code.language-cs')
+                    .addClass('brush: csharp;');
+
+                $('code.language-xml')
+                    .addClass('brush: xml;');
+
+                $('code.language-js')
+                    .addClass('brush: js;');
+                    
+                $('code.language-ps')
+                       .addClass('brush: ps;');
+
+                SyntaxHighlighter.defaults['quick-code'] = false;
+                SyntaxHighlighter.config.tagName = 'code';
+                SyntaxHighlighter.all();
+            });
+
+            $(document).ready(function () {
+                $("body").bind("keydown", function (event) {
+
+                    console.log(event);
+
+                    if (event.ctrlKey && event.keyCode == 37) {
+
+                        if ($('a.m-btn-prev').size() > 0) {
+                            var href = $('a.m-btn-prev').attr('href');
+
+                            window.location.href = href;
+                        }
+                    }
+
+                    if (event.ctrlKey && event.keyCode == 39) {
+                        if ($('a.m-btn-next').size() > 0) {
+                            var href = $('a.m-btn-next').attr('href');
+
+                            window.location.href = href;
+                        }
+                    }
+                });
+            });
+
+        }(jQuery));
+
+    </script>
+
+
+</body></html>

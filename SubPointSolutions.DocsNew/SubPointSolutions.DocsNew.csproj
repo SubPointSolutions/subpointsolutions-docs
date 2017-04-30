@@ -38,7 +38,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="SubPointSolutions.DocsBuildTools.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SubPointSolutions.DocsBuildTools.Data.0.1.0-alpha171202132\lib\net45\SubPointSolutions.DocsBuildTools.Data.dll</HintPath>
+      <HintPath>..\packages\SubPointSolutions.DocsBuildTools.Data.0.1.0-alpha171202149\lib\net45\SubPointSolutions.DocsBuildTools.Data.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -670,18 +670,11 @@
     <None Include="Views\Shared\Default\Layouts\_Docs.Flued28.cshtml" />
     <None Include="Views\Shared\Default\Layouts\_Docs.Flued28Blog.cshtml" />
     <None Include="Views\Shared\Default\Layouts\_Docs.Flued37.cshtml" />
-    <None Include="Views\Shared\Default\Layouts\_Flued28.cshtml" />
-    <None Include="Views\Shared\Default\Layouts\_Flued28Blog.cshtml" />
-    <None Include="Views\Shared\Default\Layouts\_Flued37.cshtml" />
     <None Include="Views\Shared\Default\Layouts\_Main.Master.cshtml" />
     <None Include="Views\Shared\Default\Layouts\_Master.cshtml" />
-    <None Include="Views\Shared\Default\PageLayouts\_ContentPage.cshtml" />
     <None Include="Views\Shared\Default\PageLayouts\_Docs.LandingPage.cshtml" />
     <None Include="Views\Shared\Default\PageLayouts\_Docs.SampleIndex.cshtml" />
     <None Include="Views\Shared\Default\PageLayouts\_Docs.SPMeta2Definition.cshtml" />
-    <None Include="Views\Shared\Default\PageLayouts\_LandingPage.cshtml" />
-    <None Include="Views\Shared\Default\PageLayouts\_M2Definition.cshtml" />
-    <None Include="Views\Shared\Default\PageLayouts\_M2Samples.cshtml" />
     <None Include="Views\Shared\Default\PageLayouts\_Main.ContentPage.cshtml" />
     <None Include="Views\SPMeta2-NuGet\Index.md" />
     <None Include="Views\SPMeta2-Reverse\Index.md" />
