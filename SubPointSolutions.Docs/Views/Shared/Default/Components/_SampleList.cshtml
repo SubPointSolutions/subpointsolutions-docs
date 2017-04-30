@@ -1,7 +1,6 @@
-﻿
-@{
-
+﻿@{
     var categoryTagName = "Category";
+
     var allSamples = SConfig.AllSamples.Where(s => s.IsMethod).ToList();
 
     var allCategories = new List<string>();
@@ -15,6 +14,22 @@
 
 
     var sampleCategories = allCategories
+                             // initial sorting by name
+                             //.OrderBy(m => m)
+                             // sorting by any category attr
+                             //.OrderBy(m => allSamples.FirstOrDefault(
+                             //    // has both category and order
+                             //                                   s => samplesAPI.HasTag(s, categoryOrderTagName)
+                             //                                        && samplesAPI.HasTagValue(s, categoryTagName, m)
+                             //                                       ) != null ?
+                             //    // get the category order
+                             //               int.Parse(samplesAPI.GetSampleTagValue( allSamples.FirstOrDefault(
+                             //                                   s => samplesAPI.HasTag(s, categoryOrderTagName)
+                             //                                        &&  samplesAPI.HasTagValue(s, categoryTagName, m)
+                             //                                       ), categoryOrderTagName, int.MaxValue.ToString()))
+                             //                                           : int.MaxValue)
+
+                             //.OrderBy(m => allCategories.Any(c => c.Name == m) ? )
                              .ToList();
 
     var categoryHeight = 80;
@@ -45,7 +60,9 @@
         {
             dynamic categoryModel = new System.Dynamic.ExpandoObject();
 
-            categoryModel.Samples = SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.GetSamplesWithTag(allSamples, categoryTagName, sampleGroupName);
+            categoryModel.Samples = SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.GetSamplesWithTag(allSamples, categoryTagName, sampleGroupName)
+                                                                                       .Where(s => s.IsMethod == true)
+                                                                                       .ToList();
             categoryModel.CategoryName = sampleGroupName;
 
             ViewBag.SamplesModel = categoryModel;

@@ -10,6 +10,18 @@
         <string>SharePoint 2013 workflow</string>
       </Values>
     </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
   </Tags>
   <Title>Add SP2013 workflow</Title>
   <MethodBodyWithFunction>

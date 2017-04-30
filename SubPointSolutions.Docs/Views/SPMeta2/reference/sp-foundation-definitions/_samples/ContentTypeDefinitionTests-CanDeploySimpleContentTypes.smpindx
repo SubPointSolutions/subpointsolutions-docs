@@ -10,6 +10,18 @@
         <string>Site collection</string>
       </Values>
     </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
   </Tags>
   <Title>Add several content types</Title>
   <MethodBodyWithFunction>

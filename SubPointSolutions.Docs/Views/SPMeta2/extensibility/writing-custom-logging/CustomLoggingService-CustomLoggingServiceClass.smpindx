@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags />
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    public class CustomLoggingService : TraceServiceBase
+    {
+
+        public override void Critical(int id, object message, Exception exception)
+        {
+            // handle critical event the way you like
+        }
+
+        public override void Error(int id, object message, Exception exception)
+        {
+            // handle error the way you like
+        }
+
+        public override void Warning(int id, object message, Exception exception)
+        {
+            // handle warning the way you like
+        }
+
+        public override void Information(int id, object message, Exception exception)
+        {
+            // handle info the way you like
+        }
+
+        public override void Verbose(int id, object message, Exception exception)
+        {
+            // handle verbose the way you like
+        }
+
+        public override void TraceActivityStart(int id, object message)
+        {
+            // no implementation is required
+        }
+
+        public override void TraceActivityStop(int id, object message)
+        {
+            // no implementation is required
+        }
+
+        public override void TraceActivityTransfer(int id, object message, Guid relatedActivityId)
+        {
+            // no implementation is required
+        }
+
+        public override Guid CurrentActivityId
+        {
+            get { return Guid.Empty; }
+            set
+            {
+
+            }
+        }
+    }</MethodBodyWithFunction>
+  <MethodBody>public class CustomLoggingService : TraceServiceBase
+{
+
+    public override void Critical(int id, object message, Exception exception)
+    {
+        // handle critical event the way you like
+    }
+
+    public override void Error(int id, object message, Exception exception)
+    {
+        // handle error the way you like
+    }
+
+    public override void Warning(int id, object message, Exception exception)
+    {
+        // handle warning the way you like
+    }
+
+    public override void Information(int id, object message, Exception exception)
+    {
+        // handle info the way you like
+    }
+
+    public override void Verbose(int id, object message, Exception exception)
+    {
+        // handle verbose the way you like
+    }
+
+    public override void TraceActivityStart(int id, object message)
+    {
+        // no implementation is required
+    }
+
+    public override void TraceActivityStop(int id, object message)
+    {
+        // no implementation is required
+    }
+
+    public override void TraceActivityTransfer(int id, object message, Guid relatedActivityId)
+    {
+        // no implementation is required
+    }
+
+    public override Guid CurrentActivityId
+    {
+        get { return Guid.Empty; }
+        set
+        {
+
+        }
+    }
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>CustomLoggingService</ClassName>
+  <MethodName>CustomLoggingServiceClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassCustomLoggingServiceClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.CustomLoggingService</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>writing-custom-logging.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>writing-custom-logging</SourceFileNameWithoutExtension>
+</DocSample>

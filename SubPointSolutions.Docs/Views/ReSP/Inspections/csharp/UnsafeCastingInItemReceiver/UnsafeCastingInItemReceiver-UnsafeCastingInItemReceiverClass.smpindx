@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags />
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+    public class UnsafeCastingInItemReceiver
+    {
+        [TestMethod]
+        public void UnsafeCastOnSPItemEventDataCollectionItem(SPItemEventProperties properties)
+        {
+            properties.AfterProperties["Contracts"].ToString();
+            properties.BeforeProperties["Contracts"].ToString();
+        }
+    }</MethodBodyWithFunction>
+  <MethodBody>public class UnsafeCastingInItemReceiver
+{
+    [TestMethod]
+    public void UnsafeCastOnSPItemEventDataCollectionItem(SPItemEventProperties properties)
+    {
+        properties.AfterProperties["Contracts"].ToString();
+        properties.BeforeProperties["Contracts"].ToString();
+    }
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>ReSharePoint.Docs.Basic.Inspection.Code</Namespace>
+  <ClassName>UnsafeCastingInItemReceiver</ClassName>
+  <MethodName>UnsafeCastingInItemReceiverClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassUnsafeCastingInItemReceiverClass</MethodFullName>
+  <ClassFullName>ReSharePoint.Docs.Basic.Inspection.Code.UnsafeCastingInItemReceiver</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>UnsafeCastingInItemReceiver.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>UnsafeCastingInItemReceiver</SourceFileNameWithoutExtension>
+</DocSample>

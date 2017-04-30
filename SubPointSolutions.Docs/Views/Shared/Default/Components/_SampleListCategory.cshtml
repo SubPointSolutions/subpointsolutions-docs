@@ -1,22 +1,12 @@
-﻿
-@{
+﻿@{
     var categoryTagName = "Category";
-    var categoryOrderTagName = "CategoryOrder";
 
-    var hiddenTagName = "Hidden";
-
-    var spRuntimeTagName = "SPRuntime";
-
-    var spStandardRuntimeValue = "Standard";
-    var spEnterpriseRuntimeValue = "Enterprise";
 
     var allSamples = ViewBag.SamplesModel.Samples as List<SubPointSolutions.DocsBuildTools.Data.DocSample>;
-    var samplesWithCategories = allSamples;
+    var samplesWithCategories = SConfig.AllSamples;
 
     var sampleCategories = SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.GetSampleCategories(allSamples);
 
-    sampleCategories.Remove((string) ViewBag.SamplesModel.CategoryName);
-    
     var categoryHeight = 80;
     var categoryItemHeight = 18;
 
@@ -40,8 +30,6 @@
 
 <h3>@ViewBag.SamplesModel.CategoryName</h3>
 
-
-
 <div class="panel-body">
 
     @Html.Raw("<div class='col-sm-3 col-md-3'>")
@@ -58,7 +46,12 @@
             @Html.Raw("<div class='col-sm-3 col-md-3'>")
         }
 
-        var samples = samplesWithCategories.Where(s => s.Tags.First(t => t.Name == categoryTagName).Values.Contains(sampleGroupName));
+        var samples = samplesWithCategories.Where(s => {
+
+            return s.IsMethod == true 
+                        && s.Tags.Any(t => t.Name == categoryTagName)
+                        && s.Tags.First(t => t.Name == categoryTagName).Values.Contains(sampleGroupName);
+        });
 
         if (!samples.Any())
         {
@@ -80,8 +73,14 @@
                                                         .Replace("Tests", string.Empty)
                                                         .Replace("Test", string.Empty);
 
-                        var isStandardSample = sample.Tags.Any(t => t.Name == spRuntimeTagName && t.Values.Contains(spStandardRuntimeValue));
-                        var isEntepriseSample = sample.Tags.Any(t => t.Name == spRuntimeTagName && t.Values.Contains(spEnterpriseRuntimeValue));
+                        var isStandardTag = sample.Tags.FirstOrDefault(t => t.Name == "isStandard");
+
+                        if (isStandardTag == null)
+                        {
+                            throw new Exception(string.Format("Cannot find [isStandard] tag for sample:[{1}] in file:[{0}", sample.SourceFileName, sample.MethodName));
+                        }
+
+                        var isStandardSample = isStandardTag.Values.Contains(true.ToString());
 
                         var definitionUrl = "/spmeta2/reference/sp-foundation-definitions/{0}";
 
@@ -90,13 +89,8 @@
                             definitionUrl = "/spmeta2/reference/sp-standard-definitions/{0}";
                         }
 
-                        if (isEntepriseSample)
-                        {
-                            definitionUrl = "/spmeta2/reference/sp-enterprise-definitions/{0}";
-                        }
-
                         var definitionPageUrl = string.Format(definitionUrl, definitionClassName).ToLower();
-                        var isHidden = SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.HasTag(sample, hiddenTagName);
+                        var isHidden = SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.HasTag(sample, "Hidden");
                         <li>
                             @if (isHidden)
                             {
@@ -104,16 +98,18 @@
                             }
                             else
                             {
-                                <a href="@(definitionPageUrl + "?#" + SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.GetSafeAnchor(sample.Title ?? ""))">
+                                <a href="@(definitionPageUrl + "?#" +  SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.GetSafeAnchor(sample.Title))">
                                     @(sample.Title)
                                 </a>
                             }
                         </li>
                     }
                 </ul>
+                
             </div>
         </div>
     }
+    
 
     @Html.Raw("</div>")
 </div>

@@ -1,20 +1,7 @@
 ﻿@using System;
-@using System.Linq
+@using System.Linq;
 @using System.Collections;
 @using System.Collections.Generic;
-@using SPMeta2;
-@using SPMeta2.Utils;
-@using SPMeta2.Definitions;
-@using SPMeta2.Standard.Definitions;
-@using SPMeta2.ModelHandlers;
-@using SPMeta2.CSOM.Services;
-@using SPMeta2.CSOM.Standard.Services;
-@using SPMeta2.SSOM.Services;
-@using SPMeta2.SSOM.Standard.Services;
-@using SPMeta2.Attributes;
-@using SPMeta2.Attributes.Capabilities;
-@using SPMeta2.Attributes.Identity;
-@using SPMeta2.Attributes.Regression;
 
 @{
     Layout = SConfig.GetThemedTemplate("Layouts/_Master.cshtml");
@@ -52,60 +39,46 @@
         <div class="col-lg-9 col-md-9 col-sm-9 sps-document">
 
             @{
-                var m2Samples = SConfig.AllSamples;
+                var isHidden = Model.Get<bool>("Hidden");
 
-                var definitionName = Model.String("SourceFileBase").Replace("Tests", string.Empty);
-                //var samples = m2Samples.SysAllSamples.Where(s => s.IsMethod).ToList().Where(s => s.ClassName.StartsWith(definitionName));
-                var samples = m2Samples.Where(s => s.IsMethod).ToList().Where(s => s.ClassName.ToLower().StartsWith(definitionName.ToLower()));
-
-                var allHandlers = new List<Type>();
-
-                // built in
-                allHandlers.AddRange(ReflectionUtils.GetTypesFromAssembly<ModelHandlerBase>(typeof(FieldDefinition).Assembly));
-                allHandlers.AddRange(ReflectionUtils.GetTypesFromAssembly<ModelHandlerBase>(typeof(AudienceDefinition).Assembly));
-
-                // csom
-                allHandlers.AddRange(ReflectionUtils.GetTypesFromAssembly<ModelHandlerBase>(typeof(CSOMProvisionService).Assembly));
-                allHandlers.AddRange(ReflectionUtils.GetTypesFromAssembly<ModelHandlerBase>(typeof(StandardCSOMProvisionService).Assembly));
-
-                // ssom
-                allHandlers.AddRange(ReflectionUtils.GetTypesFromAssembly<ModelHandlerBase>(typeof(SSOMProvisionService).Assembly));
-                allHandlers.AddRange(ReflectionUtils.GetTypesFromAssembly<ModelHandlerBase>(typeof(StandardSSOMProvisionService).Assembly));
-
-
-                var modelHandlerName = definitionName.Replace("Definition", "ModelHandler").ToLower();
-
-                var supportsCSOM = allHandlers.Any(h => h.Name.ToLower().StartsWith(modelHandlerName)
-                                                         && h.FullName.ToLower().Contains("csom"));
-                var supportsSSOM = allHandlers.Any(h => h.Name.ToLower().StartsWith(modelHandlerName)
-                                                         && h.FullName.ToLower().Contains("ssom"));
-
-                var csomLabel = supportsCSOM ? "label-success" : "label-default";
-                var ssomLabel = supportsSSOM ? "label-success" : "label-default";
-
-                var allDefinitions = new List<Type>();
-
-                // built in
-                allDefinitions.AddRange(ReflectionUtils.GetTypesFromAssembly<DefinitionBase>(typeof(FieldDefinition).Assembly));
-                allDefinitions.AddRange(ReflectionUtils.GetTypesFromAssembly<DefinitionBase>(typeof(AudienceDefinition).Assembly));
-
+                var csomLabel = "label-default";
+                var ssomLabel = "label-default";
 
                 var scopes = new List<string>();
+                var samples = new List<SubPointSolutions.DocsBuildTools.Data.DocSample>();
 
-                var definitionClassType = allDefinitions.FirstOrDefault(c => c.Name.ToLower().StartsWith(definitionName.ToLower()));
-
-                if (definitionClassType != null)
+                if (isHidden == false)
                 {
-                    var parentHosts = definitionClassType
-                                              .GetCustomAttributes(true)
-                                              .OfType<ParentHostCapabilityAttribute>()
-                                              .ToList();
+                    var fileName = Model.String("SourceFileBase");
+                    var definitionName = Model.String("SourceFileBase").Replace("Tests", string.Empty);
 
-                    foreach (var parent in parentHosts)
+                    samples = SConfig.AllSamples
+                                     .Where(s => s.IsMethod && s.ClassName == (definitionName + "Tests"))
+                                     .ToList();
+
+                    var supportsCSOMValue = Model.Get("spmeta2.isCSOMCompatible");
+                    var supportsSSOMValue = Model.Get("spmeta2.isSSOMCompatible");
+                    var scopesValue = Model.Get("spmeta2.parentHostTypes");
+
+                    if(supportsCSOMValue == null)
                     {
-                        var scopeName = parent.HostType.Name.Replace("Definition", String.Empty);
-                        scopes.Add(scopeName);
+                        throw new Exception(String.Format("Cannot find metadata value [{0}] for file:[{1}]", "spmeta2.isCSOMCompatible", fileName));
                     }
+
+                    if (supportsSSOMValue == null)
+                    {
+                        throw new Exception(String.Format("Cannot find metadata value [{0}] for file:[{1}]", "spmeta2.isSSOMCompatible", fileName));
+                    }
+
+                    if (scopesValue == null)
+                    {
+                        throw new Exception(String.Format("Cannot find metadata value [{0}] for file:[{1}]", "spmeta2.parentHostTypes", fileName));
+                    }
+
+                    csomLabel = Boolean.Parse((string)supportsCSOMValue) ? "label-success" : "label-default";
+                    ssomLabel = Boolean.Parse((string)supportsSSOMValue) ? "label-success" : "label-default";
+
+                    scopes = ((string)scopesValue).Split(',').Select(s => s.Trim().Replace("Definition", String.Empty)).ToList();
                 }
             }
 
@@ -149,13 +122,18 @@
                 <ul>
                     @foreach (var sample in samples)
                     {
-                        <li><a href="@("#" + SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.GetSafeAnchor(sample.Title ?? ""))">@sample.Title</a></li>
+                        if (String.IsNullOrEmpty(sample.Title))
+                        {
+                            throw new Exception(String.Format("Sample with method name [{0}] does not have title. FileName:[{1}]", sample.MethodName, sample.SourceFileName));
+                        }
+
+                        <li><a href="@("#" + SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.GetSafeAnchor(sample.Title))">@sample.Title</a></li>
                     }
                 </ul>
 
                 foreach (var sample in samples)
                 {
-                    <section name="@(SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.GetSafeAnchor(sample.Title ?? ""))" id="@(SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.GetSafeAnchor(sample.Title ?? ""))"></section>
+                    <section name="@(SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.GetSafeAnchor(sample.Title))" id="@(SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.GetSafeAnchor(sample.Title))"></section>
 
                     <div class="panel panel-default">
 

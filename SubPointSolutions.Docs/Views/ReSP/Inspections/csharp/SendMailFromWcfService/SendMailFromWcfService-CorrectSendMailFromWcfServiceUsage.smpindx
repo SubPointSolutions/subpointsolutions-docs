@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBodyWithFunction>
+        public void CorrectSendMailFromWcfServiceUsage(SPWeb web, string to, string subject, string body)
+        {
+            // save current context
+            HttpContext curCtx = HttpContext.Current;
+            HttpContext.Current = null; // &lt;-- recommended approach for wcf services
+
+            bool success = SPUtility.SendEmail(web, true, true, to, subject, body);
+
+            // restore the context
+            HttpContext.Current = curCtx;
+        }</MethodBodyWithFunction>
+  <MethodBody>// save current context
+HttpContext curCtx = HttpContext.Current;
+HttpContext.Current = null; // &lt;-- recommended approach for wcf services
+
+bool success = SPUtility.SendEmail(web, true, true, to, subject, body);
+
+// restore the context
+HttpContext.Current = curCtx;
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>ReSharePoint.Docs.Basic.Inspection.Code</Namespace>
+  <ClassName>SendMailFromWcfService</ClassName>
+  <MethodName>CorrectSendMailFromWcfServiceUsage</MethodName>
+  <ClassComment />
+  <MethodFullName>ReSharePoint.Docs.Basic.Inspection.Code.SendMailFromWcfService.CorrectSendMailFromWcfServiceUsage</MethodFullName>
+  <ClassFullName>ReSharePoint.Docs.Basic.Inspection.Code.SendMailFromWcfService</ClassFullName>
+  <MethodParametersCount>4</MethodParametersCount>
+  <SourceFileName>SendMailFromWcfService.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>SendMailFromWcfService</SourceFileNameWithoutExtension>
+</DocSample>

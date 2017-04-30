@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags />
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    
+    public class WebModel : ProvisionTestBase
+    {
+        #region web model
+
+        [TestMethod]
+        [TestCategory("Docs.Models")]
+        public void WebModelProvision()
+        {
+            // tend to separate models into small logical pieces
+            // later you would deploy either all of them or only required bits
+
+            var featuresModel = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                // setup features
+            });
+
+            var listsModel = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                // setup lists and list views
+            });
+
+            var pagesModel = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                // setup pages
+            });
+
+            var webPartsModel = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                // setup web parts
+            });
+
+            var navigationModel = SPMeta2Model.NewWebModel(web =&gt;
+            {
+                // setup navigation 
+            });
+
+            // deploy needed models - all of them or only required bits
+        }
+
+        #endregion
+    }</MethodBodyWithFunction>
+  <MethodBody>public class WebModel : ProvisionTestBase
+{
+    #region web model
+
+    [TestMethod]
+    [TestCategory("Docs.Models")]
+    public void WebModelProvision()
+    {
+        // tend to separate models into small logical pieces
+        // later you would deploy either all of them or only required bits
+
+        var featuresModel = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            // setup features
+        });
+
+        var listsModel = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            // setup lists and list views
+        });
+
+        var pagesModel = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            // setup pages
+        });
+
+        var webPartsModel = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            // setup web parts
+        });
+
+        var navigationModel = SPMeta2Model.NewWebModel(web =&gt;
+        {
+            // setup navigation
+        });
+
+        // deploy needed models - all of them or only required bits
+    }
+
+    #endregion
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SubPointSolutions.Docs.Views.Views.SPMeta2.reference</Namespace>
+  <ClassName>WebModel</ClassName>
+  <MethodName>WebModelClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassWebModelClass</MethodFullName>
+  <ClassFullName>SubPointSolutions.Docs.Views.Views.SPMeta2.reference.WebModel</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>WebModel.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>WebModel</SourceFileNameWithoutExtension>
+</DocSample>

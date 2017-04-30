@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>false</IsMethod>
+  <IsClass>true</IsClass>
+  <Tags />
+  <Title />
+  <Description />
+  <MethodBodyWithFunction>    public static class HideContentTypeFieldsExtensions
+    {
+        [Category("UseFullMethodBody=true")]
+
+        public static ContentTypeModelNode HideContentTypeFieldsByIds(
+            this ContentTypeModelNode modelNode,
+            IEnumerable&lt;Guid&gt; ids)
+        {
+            modelNode.AddHideContentTypeFieldLinks(new HideContentTypeFieldLinksDefinition
+            {
+                Fields = new List&lt;FieldLinkValue&gt;(ids.Select(s =&gt;
+                    new FieldLinkValue
+                    {
+                        Id = s
+                    }))
+            });
+
+            return modelNode;
+        }
+
+        [Category("UseFullMethodBody=true")]
+        public static ModelNode SyntaxExtensionPrototype(this ModelNode modelNode)
+        {
+            // do stuff
+
+
+            // !!! always retun the same model which was passed as 'this' object !!!
+            return modelNode;
+        }
+    }</MethodBodyWithFunction>
+  <MethodBody>public static class HideContentTypeFieldsExtensions
+{
+    [Category("UseFullMethodBody=true")]
+
+    public static ContentTypeModelNode HideContentTypeFieldsByIds(
+        this ContentTypeModelNode modelNode,
+        IEnumerable&lt;Guid&gt; ids)
+    {
+        modelNode.AddHideContentTypeFieldLinks(new HideContentTypeFieldLinksDefinition
+        {
+            Fields = new List&lt;FieldLinkValue&gt;(ids.Select(s =&gt;
+                new FieldLinkValue
+                {
+                    Id = s
+                }))
+        });
+
+        return modelNode;
+    }
+
+    [Category("UseFullMethodBody=true")]
+    public static ModelNode SyntaxExtensionPrototype(this ModelNode modelNode)
+    {
+        // do stuff
+
+
+        // !!! always retun the same model which was passed as 'this' object !!!
+        return modelNode;
+    }
+}
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SPMeta2.Docs.ProvisionSamples.Provision.Definitions</Namespace>
+  <ClassName>HideContentTypeFieldsExtensions</ClassName>
+  <MethodName>HideContentTypeFieldsExtensionsClass</MethodName>
+  <ClassComment />
+  <MethodFullName>ClassHideContentTypeFieldsExtensionsClass</MethodFullName>
+  <ClassFullName>SPMeta2.Docs.ProvisionSamples.Provision.Definitions.HideContentTypeFieldsExtensions</ClassFullName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>writing-custom-syntax.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>writing-custom-syntax</SourceFileNameWithoutExtension>
+</DocSample>

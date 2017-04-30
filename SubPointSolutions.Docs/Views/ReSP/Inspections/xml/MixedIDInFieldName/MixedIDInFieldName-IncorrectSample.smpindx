@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBody>&lt;field id="{FE2C05A9-1861-48C3-8DB4-3C08E9830E2C}" type="Text" name="customerID" staticname="customerID" overwrite="TRUE"&gt;
+&lt;/field&gt;
+
+&lt;field id="{FE2C05A9-1861-48C3-8DB4-3C08E9830E2C}" type="Text" name="clientId" staticname="clientId" overwrite="TRUE"&gt;
+&lt;/field&gt;
+
+&lt;field id="{FE2C05A9-1861-48C3-8DB4-3C08E9830E2C}" type="Text" name="documentID" staticname="documentID" overwrite="TRUE"&gt;
+&lt;/field&gt;
+
+</MethodBody>
+  <Language>xml</Language>
+  <ClassName>MixedIDInFieldName</ClassName>
+  <MethodName>IncorrectSample</MethodName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>MixedIDInFieldName.xml</SourceFileName>
+  <SourceFileNameWithoutExtension>MixedIDInFieldName</SourceFileNameWithoutExtension>
+</DocSample>

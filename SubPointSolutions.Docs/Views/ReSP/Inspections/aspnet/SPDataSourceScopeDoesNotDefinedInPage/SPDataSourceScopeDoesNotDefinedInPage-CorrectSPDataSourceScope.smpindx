@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBody>&lt;sharepoint:spdatasource runat="server" id="dsPeople" datasourcemode="ListItem" useinternalname="true"&gt;
+  &lt;selectparameters&gt;
+    &lt;asp:parameter name="WebUrl" defaultvalue="/configuration/"&gt;&lt;/asp:parameter&gt;
+    &lt;asp:parameter name="ListID" defaultvalue="34F91B0C-FCF2-455A-ABBA-67724FB4024A"&gt;&lt;/asp:parameter&gt;
+    &lt;asp:parameter name="ListItemID" defaultvalue="1"&gt;&lt;/asp:parameter&gt;
+  &lt;/selectparameters&gt;
+&lt;/sharepoint:spdatasource&gt;
+
+&lt;asp:gridview id="grdPeople" runat="server" datasourceid="dsPeople" autogeneratecolumns="False"&gt;
+  &lt;columns&gt;
+    &lt;asp:boundfield datafield="FullName" headertext="Blogger name"&gt;&lt;/asp:boundfield&gt;
+    &lt;asp:boundfield datafield="WorkCity" headertext="City"&gt;&lt;/asp:boundfield&gt;
+    &lt;asp:boundfield datafield="Blog_x0020_URL" headertext="Blog URL"&gt;&lt;/asp:boundfield&gt;
+  &lt;/columns&gt;
+&lt;/asp:gridview&gt;
+
+</MethodBody>
+  <Language>xml</Language>
+  <ClassName>SPDataSourceScopeDoesNotDefinedInPage</ClassName>
+  <MethodName>CorrectSPDataSourceScope</MethodName>
+  <MethodParametersCount>0</MethodParametersCount>
+  <SourceFileName>SPDataSourceScopeDoesNotDefinedInPage.xml</SourceFileName>
+  <SourceFileNameWithoutExtension>SPDataSourceScopeDoesNotDefinedInPage</SourceFileNameWithoutExtension>
+</DocSample>

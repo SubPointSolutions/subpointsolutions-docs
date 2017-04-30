@@ -2,13 +2,30 @@
 <DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <IsMethod>false</IsMethod>
   <IsClass>true</IsClass>
-  <Tags />
+  <Tags>
+    <DocSampleTag>
+      <Name>Category</Name>
+      <Values>
+        <string>Web Model</string>
+        <string>Web parts</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>True</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+  </Tags>
   <Title />
   <Description />
   <MethodBodyWithFunction>    
-    
-
-    
     
 
     //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
@@ -19,9 +36,7 @@
         [TestMethod]
         [TestCategory("Docs.DeleteWebPartsDefinition")]
 
-        [SampleMetadata(Title = "Delete web part by Title",
-                        Description = ""
-                        )]
+        [DisplayName("Delete web part by Title")]
         public void CanDeployDeleteWebPartsDefinition_ByTitle()
         {
             var webPartPage = new WebPartPageDefinition
@@ -70,9 +85,7 @@ public class DeleteWebPartsDefinitionTests : ProvisionTestBase
     [TestMethod]
     [TestCategory("Docs.DeleteWebPartsDefinition")]
 
-    [SampleMetadata(Title = "Delete web part by Title",
-                    Description = ""
-                    )]
+    [DisplayName("Delete web part by Title")]
     public void CanDeployDeleteWebPartsDefinition_ByTitle()
     {
         var webPartPage = new WebPartPageDefinition

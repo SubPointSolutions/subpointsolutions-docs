@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBodyWithFunction>
+        public void CorrectSPFileExistsUsage(SPWeb web)
+        {
+            var defaultMasterUrl = "/_catalogs/masterpage/default.master";
+
+            if (web.AllProperties.ContainsKey("OldMasterUrl"))
+            {
+                string oldMasterUrl = web.AllProperties["OldMasterUrl"].ToString();
+                try
+                {
+                    var fileExists = web.GetFile(oldMasterUrl).Exists;
+                    web.MasterUrl = oldMasterUrl;
+                }
+                catch (ArgumentException)
+                {
+                    web.MasterUrl = defaultMasterUrl;
+                }
+
+
+                var oldCustomUrl = web.AllProperties["OldCustomMasterUrl"].ToString();
+                try
+                {
+                    var fileExists = web.GetFile(oldCustomUrl).Exists;
+                    web.CustomMasterUrl = web.AllProperties["OldCustomMasterUrl"].ToString();
+                }
+                catch (ArgumentException)
+                {
+                    web.CustomMasterUrl = defaultMasterUrl;
+                }
+
+                web.AllProperties.Remove("OldMasterUrl");
+                web.AllProperties.Remove("OldCustomMasterUrl");
+            }
+            else
+            {
+                web.MasterUrl = defaultMasterUrl;
+                web.CustomMasterUrl = defaultMasterUrl;
+            }
+        }</MethodBodyWithFunction>
+  <MethodBody>var defaultMasterUrl = "/_catalogs/masterpage/default.master";
+
+if (web.AllProperties.ContainsKey("OldMasterUrl"))
+{
+    string oldMasterUrl = web.AllProperties["OldMasterUrl"].ToString();
+    try
+    {
+        var fileExists = web.GetFile(oldMasterUrl).Exists;
+        web.MasterUrl = oldMasterUrl;
+    }
+    catch (ArgumentException)
+    {
+        web.MasterUrl = defaultMasterUrl;
+    }
+
+
+    var oldCustomUrl = web.AllProperties["OldCustomMasterUrl"].ToString();
+    try
+    {
+        var fileExists = web.GetFile(oldCustomUrl).Exists;
+        web.CustomMasterUrl = web.AllProperties["OldCustomMasterUrl"].ToString();
+    }
+    catch (ArgumentException)
+    {
+        web.CustomMasterUrl = defaultMasterUrl;
+    }
+
+    web.AllProperties.Remove("OldMasterUrl");
+    web.AllProperties.Remove("OldCustomMasterUrl");
+}
+else
+{
+    web.MasterUrl = defaultMasterUrl;
+    web.CustomMasterUrl = defaultMasterUrl;
+}
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>ReSharePoint.Docs.Basic.Inspection.Code</Namespace>
+  <ClassName>PutSPFileExistsIntoTryCatchBlock</ClassName>
+  <MethodName>CorrectSPFileExistsUsage</MethodName>
+  <ClassComment />
+  <MethodFullName>ReSharePoint.Docs.Basic.Inspection.Code.PutSPFileExistsIntoTryCatchBlock.CorrectSPFileExistsUsage</MethodFullName>
+  <ClassFullName>ReSharePoint.Docs.Basic.Inspection.Code.PutSPFileExistsIntoTryCatchBlock</ClassFullName>
+  <MethodParametersCount>1</MethodParametersCount>
+  <SourceFileName>PutSPFileExistsIntoTryCatchBlock.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>PutSPFileExistsIntoTryCatchBlock</SourceFileNameWithoutExtension>
+</DocSample>

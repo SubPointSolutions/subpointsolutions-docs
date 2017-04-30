@@ -5,17 +5,13 @@ using SPMeta2.Docs.ProvisionSamples.Base;
 using SPMeta2.Docs.ProvisionSamples.Definitions;
 using SPMeta2.Enumerations;
 using SPMeta2.Syntax.Default;
-using SubPointSolutions.Docs.Code.Enumerations;
-using SubPointSolutions.Docs.Code.Metadata;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
 {
     [TestClass]
-    [SampleMetadataTag(Name = BuiltInTagNames.SPRuntime, Value = BuiltInSPRuntimeTagValues.Foundation)]
-
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleCategory, Value = BuiltInSampleCategoryTagValues.WebPartPages)]
-    [SampleMetadataTag(Name = BuiltInTagNames.SampleM2Model, Value = BuiltInM2ModelTagValues.WebModel)]
+    [Category("Category=Web Model/Web parts")]
 
     //[SampleMetadataTag(Name = BuiltInTagNames.SampleHidden)]
     public class DeleteWebPartsDefinitionTests : ProvisionTestBase
@@ -25,9 +21,7 @@ namespace SPMeta2.Docs.ProvisionSamples.Provision.Definitions
         [TestMethod]
         [TestCategory("Docs.DeleteWebPartsDefinition")]
 
-        [SampleMetadata(Title = "Delete web part by Title",
-                        Description = ""
-                        )]
+        [DisplayName("Delete web part by Title")]
         public void CanDeployDeleteWebPartsDefinition_ByTitle()
         {
             var webPartPage = new WebPartPageDefinition

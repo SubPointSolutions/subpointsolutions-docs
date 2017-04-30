@@ -36,6 +36,43 @@ public static class SConfig
 
 public static class ContentHelper {
 
+	public static void Information(string message) {
+		Wyam.Common.Tracing.Trace.Information(message);
+	}
+
+	public static void Warning(string message) {
+		Wyam.Common.Tracing.Trace.Warning(message);
+	}
+
+	public static IDocument[] ProcessAdditionalMetadata(IDocument doc,
+			Wyam.Common.Pipelines.IExecutionContext context) {
+	
+		var result = new List<IDocument>();
+		var x = doc;
+	
+		var metadataFilePath = doc.String("SourceFilePath") + ".meta";
+		var hasMetaFile = System.IO.File.Exists(metadataFilePath);
+
+		if(!hasMetaFile) {
+			Warning(string.Format("Skipping metadata file: {0}", metadataFilePath));
+			result.Add(x);
+		} else {
+			
+			Information(string.Format("Loading metadata file: {0}", metadataFilePath));
+
+			var frontMatter = System.IO.File.ReadAllText(metadataFilePath);
+			var frontMatterReader = new System.IO.StringReader(frontMatter);
+
+			var deserializer = new YamlDotNet.Serialization.Deserializer();
+			var currentMetadata = (Dictionary<string,object>)deserializer.Deserialize(frontMatterReader, typeof(Dictionary<string,object>));
+
+			var newDoc = context.GetDocument(x, currentMetadata);
+			result.Add(newDoc);
+		}
+
+		return result.ToArray();	
+	}
+
 	public static IDocument[] ProcessHtmlContent(IDocument doc, 
 				Wyam.Common.Pipelines.IExecutionContext context,
 				IEnumerable<SubPointSolutions.DocsBuildTools.Data.DocSample> allSamples) {
@@ -287,8 +324,11 @@ var allSamples = SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.LoadSamples
 Pipelines.Add("site-md-content",
 
 	ReadFiles("*.md").FromAllDirectories(),
-	
 	//ReadFiles("*.md").FromTopDirectoryOnly(),
+
+	Execute( (doc, context) => {
+		return ContentHelper.ProcessAdditionalMetadata(doc, context);
+	}),
 
 	FrontMatter(Yaml()),
 	FileName("FileName").WithAllowedCharacters(new[] {".", "-"}),
@@ -297,7 +337,7 @@ Pipelines.Add("site-md-content",
 	Execute( (doc, context) => {
 		return ContentHelper.ProcessCodeSamples(doc, context, allSamples);
 	}),
-
+	
 	Markdown(),
 	Razor(),	
 	Replace("[[ci-date]]", System.String.Format("{0:r}", System.DateTime.Now)),
@@ -312,29 +352,39 @@ Pipelines.Add("site-md-content",
 );
 
 Pipelines.Add("site-resources-css",
-	CopyFiles(@"..\content\" + SConfig.Theme + @"\*.*").To(path => path.Replace(@"\content\" + SConfig.Theme, @"\Views-Output\content"))
+	CopyFiles(@"resources\content\" + SConfig.Theme + @"\*.*")
+		.To(path => path.Replace(@"Views\resources\content\" + SConfig.Theme, @"Views-Output\content"))
+		.FromAllDirectories()
 );
 
 Pipelines.Add("site-resources-scripts",
-	CopyFiles(@"..\scripts\" + SConfig.Theme + @"\*.*").To(path => path.Replace(@"\scripts\" + SConfig.Theme, @"\Views-Output\scripts"))
+	CopyFiles(@"resources\scripts\" + SConfig.Theme + @"\*.*")
+		.To(path => path.Replace(@"Views\resources\scripts\" + SConfig.Theme, @"Views-Output\scripts"))
+		.FromAllDirectories()
 );
 
 Pipelines.Add("site-resources-fonts",
-	CopyFiles(@"..\fonts\" + SConfig.Theme + @"\*.*").To(path => path.Replace(@"\fonts\" + SConfig.Theme, @"\Views-Output\fonts"))
+	CopyFiles(@"resources\fonts\" + SConfig.Theme + @"\*.*")
+		.To(path => path.Replace(@"Views\resources\fonts\" + SConfig.Theme, @"Views-Output\fonts"))
+		.FromAllDirectories()
 );
 
 Pipelines.Add("site-resources-images-gif",
 	CopyFiles(@"*.gif")
+		.FromAllDirectories()
 );
 
 Pipelines.Add("site-resources-images-png",
 	CopyFiles(@"*.png")
+		.FromAllDirectories()
 );
 
 Pipelines.Add("site-resources-images-jpg",
 	CopyFiles(@"*.jpg")
+		.FromAllDirectories()
 );
 
 Pipelines.Add("site-resources-images-jpeg",
 	CopyFiles(@"*.jpeg")
+		.FromAllDirectories()
 );

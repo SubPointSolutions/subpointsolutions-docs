@@ -37,174 +37,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.BusinessData, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\SSOM\Microsoft.BusinessData.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\SSOM\Microsoft.IdentityModel.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.IdentityModel.WindowsTokenService, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\SSOM\Microsoft.IdentityModel.WindowsTokenService.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Office.DocumentManagement, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\SSOM\Microsoft.Office.DocumentManagement.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Office.SecureStoreService, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\SSOM\Microsoft.Office.SecureStoreService.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Office.Server, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\SSOM\Microsoft.Office.Server.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Office.Server.Search, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\SSOM\Microsoft.Office.Server.Search.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Office.Server.Search.Applications, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\SSOM\Microsoft.Office.Server.Search.Applications.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Office.Server.Search.Connector, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\SSOM\Microsoft.Office.Server.Search.Connector.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Office.Server.Search.ExchangeAdapter, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\SSOM\Microsoft.Office.Server.Search.ExchangeAdapter.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Office.Server.UserProfiles, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\SSOM\Microsoft.Office.Server.UserProfiles.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\SSOM\Microsoft.SharePoint.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SharePoint.Client, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\CSOM\Microsoft.SharePoint.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SharePoint.Client.DocumentManagement, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\CSOM\Microsoft.SharePoint.Client.DocumentManagement.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SharePoint.Client.Publishing, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\CSOM\Microsoft.SharePoint.Client.Publishing.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\CSOM\Microsoft.SharePoint.Client.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SharePoint.Client.Search, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\CSOM\Microsoft.SharePoint.Client.Search.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SharePoint.Client.Search.Applications, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\CSOM\Microsoft.SharePoint.Client.Search.Applications.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\CSOM\Microsoft.SharePoint.Client.ServerRuntime.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SharePoint.Client.Taxonomy, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\CSOM\Microsoft.SharePoint.Client.Taxonomy.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SharePoint.Client.UserProfiles, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\CSOM\Microsoft.SharePoint.Client.UserProfiles.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SharePoint.Client.WorkflowServices, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\CSOM\Microsoft.SharePoint.Client.WorkflowServices.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SharePoint.Linq, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\SSOM\Microsoft.SharePoint.Linq.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SharePoint.Portal, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\SSOM\Microsoft.SharePoint.Portal.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SharePoint.Publishing, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\SSOM\Microsoft.SharePoint.Publishing.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SharePoint.Search, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\SSOM\Microsoft.SharePoint.Search.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SharePoint.Search.Extended.Administration, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\SSOM\Microsoft.SharePoint.Search.Extended.Administration.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SharePoint.Search.Extended.Administration.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\SSOM\Microsoft.SharePoint.Search.Extended.Administration.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SharePoint.Search.Extended.Administration.ResourceStorage, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\SSOM\Microsoft.SharePoint.Search.Extended.Administration.ResourceStorage.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SharePoint.Security, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\SSOM\Microsoft.SharePoint.Security.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SharePoint.Taxonomy, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\SSOM\Microsoft.SharePoint.Taxonomy.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SharePoint.Taxonomy.Intl, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\SSOM\Microsoft.SharePoint.Taxonomy.Intl.dll</HintPath>
-    </Reference>
-    <Reference Include="microsoft.sharepoint.WorkflowActions, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\SSOM\microsoft.sharepoint.WorkflowActions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SharePoint.WorkflowServices, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\SSOM\Microsoft.SharePoint.WorkflowServices.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SharePoint.WorkflowServicesBase, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\SSOM\Microsoft.SharePoint.WorkflowServicesBase.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SharePoint.WorkManagement.Client, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>_Dependencies\SP2013 - 15.0.4569.1000\SSOM\Microsoft.SharePoint.WorkManagement.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="SPMeta2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d71faae3bf28531a, processorArchitecture=MSIL">
-      <HintPath>..\packages\SPMeta2.Core.1.2.60\lib\net45\SPMeta2.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="SPMeta2.CSOM, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d71faae3bf28531a, processorArchitecture=MSIL">
-      <HintPath>..\packages\SPMeta2.CSOM.Foundation.1.2.60\lib\net45\SPMeta2.CSOM.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="SPMeta2.CSOM.Standard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d71faae3bf28531a, processorArchitecture=MSIL">
-      <HintPath>..\packages\SPMeta2.CSOM.Standard.1.2.60\lib\net45\SPMeta2.CSOM.Standard.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="SPMeta2.SSOM, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d71faae3bf28531a, processorArchitecture=MSIL">
-      <HintPath>..\packages\SPMeta2.SSOM.Foundation.1.2.60\lib\net45\SPMeta2.SSOM.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="SPMeta2.SSOM.Standard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d71faae3bf28531a, processorArchitecture=MSIL">
-      <HintPath>..\packages\SPMeta2.SSOM.Standard.1.2.60\lib\net45\SPMeta2.SSOM.Standard.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="SPMeta2.Standard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d71faae3bf28531a, processorArchitecture=MSIL">
-      <HintPath>..\packages\SPMeta2.Core.Standard.1.2.60\lib\net45\SPMeta2.Standard.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Web" />
@@ -256,11 +88,14 @@
     <Compile Include="Views\reSP\Inspections\csharp\SPViewScopeDoesNotDefined.cs" />
     <Compile Include="Views\reSP\Inspections\csharp\UnsafeCastingInItemReceiver.cs" />
     <Compile Include="Views\reSP\Inspections\csharp\WrongSPViewUpdate.cs" />
+    <Compile Include="Views\SPMeta2\extensibility\regression-testing.cs" />
     <Compile Include="Views\SPMeta2\extensibility\writing-custom-definition.cs" />
+    <Compile Include="Views\SPMeta2\extensibility\writing-custom-logging.cs" />
     <Compile Include="Views\SPMeta2\extensibility\writing-custom-syntax.cs" />
     <Compile Include="Views\SPMeta2\getting-started\ConsoleAppSamples.cs" />
     <Compile Include="Views\SPMeta2\getting-started\Basics.cs" />
     <Compile Include="Views\SPMeta2\reference\Models.cs" />
+    <Compile Include="Views\SPMeta2\reference\ProvisionServices.cs" />
     <Compile Include="Views\SPMeta2\reference\SiteModel.cs" />
     <Compile Include="Views\SPMeta2\reference\sp-foundation-definitions\AlternateUrlDefinitionTests.cs" />
     <Compile Include="Views\SPMeta2\reference\sp-foundation-definitions\AppDefinitionTests.cs" />
@@ -280,6 +115,7 @@
     <Compile Include="Views\SPMeta2\reference\sp-foundation-definitions\ContentTypeLinkDefinitionTests.cs" />
     <Compile Include="Views\SPMeta2\reference\sp-foundation-definitions\CurrencyFieldDefinitionTests.cs" />
     <Compile Include="Views\SPMeta2\reference\sp-foundation-definitions\DateTimeFieldDefinitionTests.cs" />
+    <Compile Include="Views\SPMeta2\reference\sp-foundation-definitions\DeleteWebPartsDefinitionTests.cs" />
     <Compile Include="Views\SPMeta2\reference\sp-foundation-definitions\DiagnosticsServiceBaseDefinitionTests.cs" />
     <Compile Include="Views\SPMeta2\reference\sp-foundation-definitions\DocumentParserDefinitionTests.cs" />
     <Compile Include="Views\SPMeta2\reference\sp-foundation-definitions\EventReceiverDefinitionTests.cs" />
@@ -375,135 +211,135 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Code\Modules\jquery-1.11.2.min.js" />
-    <Content Include="content\Default\bootstrap.min.css" />
-    <Content Include="content\Default\colors\blue.css" />
-    <Content Include="content\Default\colors\green.css" />
-    <Content Include="content\Default\colors\grey.css" />
-    <Content Include="content\Default\colors\midnight-blue.css" />
-    <Content Include="content\Default\colors\orange.css" />
-    <Content Include="content\Default\colors\purple.css" />
-    <Content Include="content\Default\colors\red.css" />
-    <Content Include="content\Default\colors\yellow.css" />
-    <Content Include="content\Default\icons\icons.min.css" />
-    <Content Include="content\Default\img\favicon\favicon.ico" />
-    <Content Include="content\Default\img\landing-background.jpg" />
-    <Content Include="content\Default\img\logo\alberta.ca - logo.svg" />
-    <Content Include="content\Default\img\logo\antaressolutions.com.au - logo.gif" />
-    <Content Include="content\Default\img\logo\arvosys.ru - logo.png" />
-    <Content Include="content\Default\img\logo\atos.net - logo.png" />
-    <Content Include="content\Default\img\logo\avanade.com - logo.png" />
-    <Content Include="content\Default\img\logo\bool.se - logo.png" />
-    <Content Include="content\Default\img\logo\cibpoint.ru - logo.png" />
-    <Content Include="content\Default\img\logo\dclboston.com - logo.png" />
-    <Content Include="content\Default\img\logo\delegate.dk - logo.svg" />
-    <Content Include="content\Default\img\logo\gob.de - logo.jpg" />
-    <Content Include="content\Default\img\logo\greenatom.ru - logo.png" />
-    <Content Include="content\Default\img\logo\health.nsw.gov.au - logo.png" />
-    <Content Include="content\Default\img\logo\heluxsystems.com - logo.png" />
-    <Content Include="content\Default\img\logo\humanservices.gov.au - logo-2.png" />
-    <Content Include="content\Default\img\logo\humanservices.gov.au - logo.png" />
-    <Content Include="content\Default\img\logo\ignia.com.au - logo.png" />
-    <Content Include="content\Default\img\logo\isolutions.ch - logo.png" />
-    <Content Include="content\Default\img\logo\itransition.com - logo.svg" />
-    <Content Include="content\Default\img\logo\kaspersky.com - logo.png" />
-    <Content Include="content\Default\img\logo\kloud.com.au - logo.png" />
-    <Content Include="content\Default\img\logo\loqutus.be - logo.png" />
-    <Content Include="content\Default\img\logo\mwhglobal.com - logo.png" />
-    <Content Include="content\Default\img\logo\nbnco.com.au - logo.png" />
-    <Content Include="content\Default\img\logo\ndsas.de - logo.png" />
-    <Content Include="content\Default\img\logo\netflower.de - logo.png" />
-    <Content Include="content\Default\img\logo\nexplore.ch - logo.png" />
-    <Content Include="content\Default\img\logo\ot.ru - logo.png" />
-    <Content Include="content\Default\img\logo\philips.com - logo.svg" />
-    <Content Include="content\Default\img\logo\plumsail.com - logo.png" />
-    <Content Include="content\Default\img\logo\provokesolutions.com - logo.gif" />
-    <Content Include="content\Default\img\logo\raona.com - icon.png" />
-    <Content Include="content\Default\img\logo\rusal.com - logo.png" />
-    <Content Include="content\Default\img\logo\smsmt.com - logo.png" />
-    <Content Include="content\Default\img\logo\soprasteria.com - logo.png" />
-    <Content Include="content\Default\img\logo\sparked.nl - logo.png" />
-    <Content Include="content\Default\img\logo\storm.ie - logo.png" />
-    <Content Include="content\Default\img\logo\towerswatson.com - logo.jpg" />
-    <Content Include="content\Default\img\logo\tretton37.com - logo.png" />
-    <Content Include="content\Default\img\logo\winvision.nl - logo.png" />
-    <Content Include="content\Default\img\map\sydney-map.png" />
-    <Content Include="content\Default\img\people\Anton-Khritonenkov.jpeg" />
-    <Content Include="content\Default\img\people\Jasper-Siegmund.jpg" />
-    <Content Include="content\Default\img\people\Marat-Bakirov.jpeg" />
-    <Content Include="content\Default\img\people\patpen.jpg" />
-    <Content Include="content\Default\img\people\Rene-Hezser.jpg" />
-    <Content Include="content\Default\img\people\rolold.jpg" />
-    <Content Include="content\Default\img\people\Ronny-Lewandowski.jpg" />
-    <Content Include="content\Default\img\people\Serjic-Shkredov.jpg" />
-    <Content Include="content\Default\img\products\metapack\metapack-gui-beta.png" />
-    <Content Include="content\Default\img\products\metapack\metapack-vision.png" />
-    <Content Include="content\Default\img\products\metastudio\MetaStudio-Beta1.png" />
-    <Content Include="content\Default\img\products\metastudio\MetaStudio-Beta2.png" />
-    <Content Include="content\Default\img\products\resp\resp.general-api.png" />
-    <Content Include="content\Default\img\products\resp\resp.install.png" />
-    <Content Include="content\Default\img\products\resp\resp.sharepoint-api.png" />
-    <Content Include="content\Default\img\products\resp\resp.solution-check.png" />
-    <Content Include="content\Default\img\products\resp\resp.suggestions.png" />
-    <Content Include="content\Default\img\products\resp\resp.xml-api.png" />
-    <Content Include="content\Default\img\subpoint-logo-25.png" />
-    <Content Include="content\Default\responsive.css" />
-    <Content Include="content\Default\sps.blog.css" />
-    <Content Include="content\Default\sps.docs.css" />
-    <Content Include="content\Default\sps.docs.new.css" />
-    <Content Include="content\Default\sps.web.css" />
-    <Content Include="content\Default\style.css" />
-    <Content Include="content\Default\SyntaxHighlighter\shCore.css" />
-    <Content Include="content\Default\SyntaxHighlighter\shCoreDefault.css" />
-    <Content Include="content\Default\SyntaxHighlighter\shCoreDjango.css" />
-    <Content Include="content\Default\SyntaxHighlighter\shCoreEclipse.css" />
-    <Content Include="content\Default\SyntaxHighlighter\shCoreEmacs.css" />
-    <Content Include="content\Default\SyntaxHighlighter\shCoreFadeToGrey.css" />
-    <Content Include="content\Default\SyntaxHighlighter\shCoreMDUltra.css" />
-    <Content Include="content\Default\SyntaxHighlighter\shCoreMidnight.css" />
-    <Content Include="content\Default\SyntaxHighlighter\shCoreRDark.css" />
-    <Content Include="content\Default\SyntaxHighlighter\shThemeDefault.css" />
-    <Content Include="content\Default\SyntaxHighlighter\shThemeDjango.css" />
-    <Content Include="content\Default\SyntaxHighlighter\shThemeEclipse.css" />
-    <Content Include="content\Default\SyntaxHighlighter\shThemeEmacs.css" />
-    <Content Include="content\Default\SyntaxHighlighter\shThemeFadeToGrey.css" />
-    <Content Include="content\Default\SyntaxHighlighter\shThemeMDUltra.css" />
-    <Content Include="content\Default\SyntaxHighlighter\shThemeMidnight.css" />
-    <Content Include="content\Default\SyntaxHighlighter\shThemeRDark.css" />
-    <Content Include="fonts\Default\fontawesome-webfont.svg" />
-    <Content Include="fonts\Default\glyphicons-halflings-regular.svg" />
-    <Content Include="Scripts\Default\bootstrap.js" />
-    <Content Include="Scripts\Default\bootstrap.min.js" />
-    <Content Include="Scripts\Default\jquery-1.9.1.intellisense.js" />
-    <Content Include="Scripts\Default\jquery-1.9.1.js" />
-    <Content Include="Scripts\Default\jquery-1.9.1.min.js" />
-    <Content Include="Scripts\Default\SyntaxHighlighter\shAutoloader.js" />
-    <Content Include="Scripts\Default\SyntaxHighlighter\shBrushAppleScript.js" />
-    <Content Include="Scripts\Default\SyntaxHighlighter\shBrushAS3.js" />
-    <Content Include="Scripts\Default\SyntaxHighlighter\shBrushBash.js" />
-    <Content Include="Scripts\Default\SyntaxHighlighter\shBrushColdFusion.js" />
-    <Content Include="Scripts\Default\SyntaxHighlighter\shBrushCpp.js" />
-    <Content Include="Scripts\Default\SyntaxHighlighter\shBrushCSharp.js" />
-    <Content Include="Scripts\Default\SyntaxHighlighter\shBrushCss.js" />
-    <Content Include="Scripts\Default\SyntaxHighlighter\shBrushDelphi.js" />
-    <Content Include="Scripts\Default\SyntaxHighlighter\shBrushDiff.js" />
-    <Content Include="Scripts\Default\SyntaxHighlighter\shBrushErlang.js" />
-    <Content Include="Scripts\Default\SyntaxHighlighter\shBrushGroovy.js" />
-    <Content Include="Scripts\Default\SyntaxHighlighter\shBrushJava.js" />
-    <Content Include="Scripts\Default\SyntaxHighlighter\shBrushJavaFX.js" />
-    <Content Include="Scripts\Default\SyntaxHighlighter\shBrushJScript.js" />
-    <Content Include="Scripts\Default\SyntaxHighlighter\shBrushPerl.js" />
-    <Content Include="Scripts\Default\SyntaxHighlighter\shBrushPhp.js" />
-    <Content Include="Scripts\Default\SyntaxHighlighter\shBrushPlain.js" />
-    <Content Include="Scripts\Default\SyntaxHighlighter\shBrushPowerShell.js" />
-    <Content Include="Scripts\Default\SyntaxHighlighter\shBrushPython.js" />
-    <Content Include="Scripts\Default\SyntaxHighlighter\shBrushRuby.js" />
-    <Content Include="Scripts\Default\SyntaxHighlighter\shBrushSass.js" />
-    <Content Include="Scripts\Default\SyntaxHighlighter\shBrushScala.js" />
-    <Content Include="Scripts\Default\SyntaxHighlighter\shBrushSql.js" />
-    <Content Include="Scripts\Default\SyntaxHighlighter\shBrushVb.js" />
-    <Content Include="Scripts\Default\SyntaxHighlighter\shBrushXml.js" />
-    <Content Include="Scripts\Default\SyntaxHighlighter\shCore.js" />
-    <Content Include="Scripts\Default\SyntaxHighlighter\shLegacy.js" />
+    <Content Include="Views\resources\content\Default\bootstrap.min.css" />
+    <Content Include="Views\resources\content\Default\colors\blue.css" />
+    <Content Include="Views\resources\content\Default\colors\green.css" />
+    <Content Include="Views\resources\content\Default\colors\grey.css" />
+    <Content Include="Views\resources\content\Default\colors\midnight-blue.css" />
+    <Content Include="Views\resources\content\Default\colors\orange.css" />
+    <Content Include="Views\resources\content\Default\colors\purple.css" />
+    <Content Include="Views\resources\content\Default\colors\red.css" />
+    <Content Include="Views\resources\content\Default\colors\yellow.css" />
+    <Content Include="Views\resources\content\Default\icons\icons.min.css" />
+    <Content Include="Views\resources\content\Default\img\favicon\favicon.ico" />
+    <Content Include="Views\resources\content\Default\img\landing-background.jpg" />
+    <Content Include="Views\resources\content\Default\img\logo\alberta.ca - logo.svg" />
+    <Content Include="Views\resources\content\Default\img\logo\antaressolutions.com.au - logo.gif" />
+    <Content Include="Views\resources\content\Default\img\logo\arvosys.ru - logo.png" />
+    <Content Include="Views\resources\content\Default\img\logo\atos.net - logo.png" />
+    <Content Include="Views\resources\content\Default\img\logo\avanade.com - logo.png" />
+    <Content Include="Views\resources\content\Default\img\logo\bool.se - logo.png" />
+    <Content Include="Views\resources\content\Default\img\logo\cibpoint.ru - logo.png" />
+    <Content Include="Views\resources\content\Default\img\logo\dclboston.com - logo.png" />
+    <Content Include="Views\resources\content\Default\img\logo\delegate.dk - logo.svg" />
+    <Content Include="Views\resources\content\Default\img\logo\gob.de - logo.jpg" />
+    <Content Include="Views\resources\content\Default\img\logo\greenatom.ru - logo.png" />
+    <Content Include="Views\resources\content\Default\img\logo\health.nsw.gov.au - logo.png" />
+    <Content Include="Views\resources\content\Default\img\logo\heluxsystems.com - logo.png" />
+    <Content Include="Views\resources\content\Default\img\logo\humanservices.gov.au - logo-2.png" />
+    <Content Include="Views\resources\content\Default\img\logo\humanservices.gov.au - logo.png" />
+    <Content Include="Views\resources\content\Default\img\logo\ignia.com.au - logo.png" />
+    <Content Include="Views\resources\content\Default\img\logo\isolutions.ch - logo.png" />
+    <Content Include="Views\resources\content\Default\img\logo\itransition.com - logo.svg" />
+    <Content Include="Views\resources\content\Default\img\logo\kaspersky.com - logo.png" />
+    <Content Include="Views\resources\content\Default\img\logo\kloud.com.au - logo.png" />
+    <Content Include="Views\resources\content\Default\img\logo\loqutus.be - logo.png" />
+    <Content Include="Views\resources\content\Default\img\logo\mwhglobal.com - logo.png" />
+    <Content Include="Views\resources\content\Default\img\logo\nbnco.com.au - logo.png" />
+    <Content Include="Views\resources\content\Default\img\logo\ndsas.de - logo.png" />
+    <Content Include="Views\resources\content\Default\img\logo\netflower.de - logo.png" />
+    <Content Include="Views\resources\content\Default\img\logo\nexplore.ch - logo.png" />
+    <Content Include="Views\resources\content\Default\img\logo\ot.ru - logo.png" />
+    <Content Include="Views\resources\content\Default\img\logo\philips.com - logo.svg" />
+    <Content Include="Views\resources\content\Default\img\logo\plumsail.com - logo.png" />
+    <Content Include="Views\resources\content\Default\img\logo\provokesolutions.com - logo.gif" />
+    <Content Include="Views\resources\content\Default\img\logo\raona.com - icon.png" />
+    <Content Include="Views\resources\content\Default\img\logo\rusal.com - logo.png" />
+    <Content Include="Views\resources\content\Default\img\logo\smsmt.com - logo.png" />
+    <Content Include="Views\resources\content\Default\img\logo\soprasteria.com - logo.png" />
+    <Content Include="Views\resources\content\Default\img\logo\sparked.nl - logo.png" />
+    <Content Include="Views\resources\content\Default\img\logo\storm.ie - logo.png" />
+    <Content Include="Views\resources\content\Default\img\logo\towerswatson.com - logo.jpg" />
+    <Content Include="Views\resources\content\Default\img\logo\tretton37.com - logo.png" />
+    <Content Include="Views\resources\content\Default\img\logo\winvision.nl - logo.png" />
+    <Content Include="Views\resources\content\Default\img\map\sydney-map.png" />
+    <Content Include="Views\resources\content\Default\img\people\Anton-Khritonenkov.jpeg" />
+    <Content Include="Views\resources\content\Default\img\people\Jasper-Siegmund.jpg" />
+    <Content Include="Views\resources\content\Default\img\people\Marat-Bakirov.jpeg" />
+    <Content Include="Views\resources\content\Default\img\people\patpen.jpg" />
+    <Content Include="Views\resources\content\Default\img\people\Rene-Hezser.jpg" />
+    <Content Include="Views\resources\content\Default\img\people\rolold.jpg" />
+    <Content Include="Views\resources\content\Default\img\people\Ronny-Lewandowski.jpg" />
+    <Content Include="Views\resources\content\Default\img\people\Serjic-Shkredov.jpg" />
+    <Content Include="Views\resources\content\Default\img\products\metapack\metapack-gui-beta.png" />
+    <Content Include="Views\resources\content\Default\img\products\metapack\metapack-vision.png" />
+    <Content Include="Views\resources\content\Default\img\products\metastudio\MetaStudio-Beta1.png" />
+    <Content Include="Views\resources\content\Default\img\products\metastudio\MetaStudio-Beta2.png" />
+    <Content Include="Views\resources\content\Default\img\products\resp\resp.general-api.png" />
+    <Content Include="Views\resources\content\Default\img\products\resp\resp.install.png" />
+    <Content Include="Views\resources\content\Default\img\products\resp\resp.sharepoint-api.png" />
+    <Content Include="Views\resources\content\Default\img\products\resp\resp.solution-check.png" />
+    <Content Include="Views\resources\content\Default\img\products\resp\resp.suggestions.png" />
+    <Content Include="Views\resources\content\Default\img\products\resp\resp.xml-api.png" />
+    <Content Include="Views\resources\content\Default\img\subpoint-logo-25.png" />
+    <Content Include="Views\resources\content\Default\responsive.css" />
+    <Content Include="Views\resources\content\Default\sps.blog.css" />
+    <Content Include="Views\resources\content\Default\sps.docs.css" />
+    <Content Include="Views\resources\content\Default\sps.docs.new.css" />
+    <Content Include="Views\resources\content\Default\sps.web.css" />
+    <Content Include="Views\resources\content\Default\style.css" />
+    <Content Include="Views\resources\content\Default\SyntaxHighlighter\shCore.css" />
+    <Content Include="Views\resources\content\Default\SyntaxHighlighter\shCoreDefault.css" />
+    <Content Include="Views\resources\content\Default\SyntaxHighlighter\shCoreDjango.css" />
+    <Content Include="Views\resources\content\Default\SyntaxHighlighter\shCoreEclipse.css" />
+    <Content Include="Views\resources\content\Default\SyntaxHighlighter\shCoreEmacs.css" />
+    <Content Include="Views\resources\content\Default\SyntaxHighlighter\shCoreFadeToGrey.css" />
+    <Content Include="Views\resources\content\Default\SyntaxHighlighter\shCoreMDUltra.css" />
+    <Content Include="Views\resources\content\Default\SyntaxHighlighter\shCoreMidnight.css" />
+    <Content Include="Views\resources\content\Default\SyntaxHighlighter\shCoreRDark.css" />
+    <Content Include="Views\resources\content\Default\SyntaxHighlighter\shThemeDefault.css" />
+    <Content Include="Views\resources\content\Default\SyntaxHighlighter\shThemeDjango.css" />
+    <Content Include="Views\resources\content\Default\SyntaxHighlighter\shThemeEclipse.css" />
+    <Content Include="Views\resources\content\Default\SyntaxHighlighter\shThemeEmacs.css" />
+    <Content Include="Views\resources\content\Default\SyntaxHighlighter\shThemeFadeToGrey.css" />
+    <Content Include="Views\resources\content\Default\SyntaxHighlighter\shThemeMDUltra.css" />
+    <Content Include="Views\resources\content\Default\SyntaxHighlighter\shThemeMidnight.css" />
+    <Content Include="Views\resources\content\Default\SyntaxHighlighter\shThemeRDark.css" />
+    <Content Include="Views\resources\fonts\Default\fontawesome-webfont.svg" />
+    <Content Include="Views\resources\fonts\Default\glyphicons-halflings-regular.svg" />
+    <Content Include="Views\resources\Scripts\Default\bootstrap.js" />
+    <Content Include="Views\resources\Scripts\Default\bootstrap.min.js" />
+    <Content Include="Views\resources\Scripts\Default\jquery-1.9.1.intellisense.js" />
+    <Content Include="Views\resources\Scripts\Default\jquery-1.9.1.js" />
+    <Content Include="Views\resources\Scripts\Default\jquery-1.9.1.min.js" />
+    <Content Include="Views\resources\Scripts\Default\SyntaxHighlighter\shAutoloader.js" />
+    <Content Include="Views\resources\Scripts\Default\SyntaxHighlighter\shBrushAppleScript.js" />
+    <Content Include="Views\resources\Scripts\Default\SyntaxHighlighter\shBrushAS3.js" />
+    <Content Include="Views\resources\Scripts\Default\SyntaxHighlighter\shBrushBash.js" />
+    <Content Include="Views\resources\Scripts\Default\SyntaxHighlighter\shBrushColdFusion.js" />
+    <Content Include="Views\resources\Scripts\Default\SyntaxHighlighter\shBrushCpp.js" />
+    <Content Include="Views\resources\Scripts\Default\SyntaxHighlighter\shBrushCSharp.js" />
+    <Content Include="Views\resources\Scripts\Default\SyntaxHighlighter\shBrushCss.js" />
+    <Content Include="Views\resources\Scripts\Default\SyntaxHighlighter\shBrushDelphi.js" />
+    <Content Include="Views\resources\Scripts\Default\SyntaxHighlighter\shBrushDiff.js" />
+    <Content Include="Views\resources\Scripts\Default\SyntaxHighlighter\shBrushErlang.js" />
+    <Content Include="Views\resources\Scripts\Default\SyntaxHighlighter\shBrushGroovy.js" />
+    <Content Include="Views\resources\Scripts\Default\SyntaxHighlighter\shBrushJava.js" />
+    <Content Include="Views\resources\Scripts\Default\SyntaxHighlighter\shBrushJavaFX.js" />
+    <Content Include="Views\resources\Scripts\Default\SyntaxHighlighter\shBrushJScript.js" />
+    <Content Include="Views\resources\Scripts\Default\SyntaxHighlighter\shBrushPerl.js" />
+    <Content Include="Views\resources\Scripts\Default\SyntaxHighlighter\shBrushPhp.js" />
+    <Content Include="Views\resources\Scripts\Default\SyntaxHighlighter\shBrushPlain.js" />
+    <Content Include="Views\resources\Scripts\Default\SyntaxHighlighter\shBrushPowerShell.js" />
+    <Content Include="Views\resources\Scripts\Default\SyntaxHighlighter\shBrushPython.js" />
+    <Content Include="Views\resources\Scripts\Default\SyntaxHighlighter\shBrushRuby.js" />
+    <Content Include="Views\resources\Scripts\Default\SyntaxHighlighter\shBrushSass.js" />
+    <Content Include="Views\resources\Scripts\Default\SyntaxHighlighter\shBrushScala.js" />
+    <Content Include="Views\resources\Scripts\Default\SyntaxHighlighter\shBrushSql.js" />
+    <Content Include="Views\resources\Scripts\Default\SyntaxHighlighter\shBrushVb.js" />
+    <Content Include="Views\resources\Scripts\Default\SyntaxHighlighter\shBrushXml.js" />
+    <Content Include="Views\resources\Scripts\Default\SyntaxHighlighter\shCore.js" />
+    <Content Include="Views\resources\Scripts\Default\SyntaxHighlighter\shLegacy.js" />
     <Content Include="Views\reSP\code-completion\_img\bulk-150x150.gif" />
     <Content Include="Views\reSP\code-completion\_img\bulk-300x69.gif" />
     <Content Include="Views\reSP\code-completion\_img\bulk.gif" />
@@ -718,49 +554,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="fonts\Default\fontawesome-webfont.eot" />
-    <None Include="fonts\Default\fontawesome-webfont.ttf" />
-    <None Include="fonts\Default\fontawesome-webfont.woff" />
-    <None Include="fonts\Default\fontawesome-webfont.woff2" />
-    <None Include="fonts\Default\FontAwesome.otf" />
-    <None Include="fonts\Default\glyphicons-halflings-regular.eot" />
-    <None Include="fonts\Default\glyphicons-halflings-regular.ttf" />
-    <None Include="fonts\Default\glyphicons-halflings-regular.woff" />
-    <None Include="fonts\Default\glyphicons-halflings-regular.woff2" />
-    <None Include="Scripts\Default\jquery-1.9.1.min.map" />
+    <None Include="Views\resources\fonts\Default\fontawesome-webfont.eot" />
+    <None Include="Views\resources\fonts\Default\fontawesome-webfont.ttf" />
+    <None Include="Views\resources\fonts\Default\fontawesome-webfont.woff" />
+    <None Include="Views\resources\fonts\Default\fontawesome-webfont.woff2" />
+    <None Include="Views\resources\fonts\Default\FontAwesome.otf" />
+    <None Include="Views\resources\fonts\Default\glyphicons-halflings-regular.eot" />
+    <None Include="Views\resources\fonts\Default\glyphicons-halflings-regular.ttf" />
+    <None Include="Views\resources\fonts\Default\glyphicons-halflings-regular.woff" />
+    <None Include="Views\resources\fonts\Default\glyphicons-halflings-regular.woff2" />
+    <None Include="Views\resources\Scripts\Default\jquery-1.9.1.min.map" />
     <None Include="Views\metapack\cli\index.md" />
     <None Include="Views\metapack\extensibility\index.md" />
     <None Include="Views\metapack\extensibility\_index.md" />
     <None Include="Views\metapack\Index.md" />
     <None Include="Views\metapack\_ViewStart.cshtml" />
-    <None Include="Views\Shared\Default\Components\_Footer.cshtml" />
-    <None Include="Views\Shared\Default\Components\_LandingProjectsList.cshtml" />
-    <None Include="Views\Shared\Default\Components\_LastTenBlogPosts.cshtml" />
-    <None Include="Views\Shared\Default\Components\_PrevNextNavigation.cshtml" />
-    <None Include="Views\Shared\Default\Components\_SampleList.cshtml" />
-    <None Include="Views\Shared\Default\Components\_SampleListCategory.cshtml" />
-    <None Include="Views\Shared\Default\Components\_SecondNavigation.cshtml" />
-    <None Include="Views\Shared\Default\Components\_Sidebar.cshtml" />
-    <None Include="Views\Shared\Default\Components\_SidebarBlog.cshtml" />
-    <None Include="Views\Shared\Default\Components\_TopNavigation.cshtml" />
-    <None Include="Views\Shared\Default\Layouts\_Flued28.cshtml" />
-    <None Include="Views\Shared\Default\Layouts\_Flued28Blog.cshtml" />
-    <None Include="Views\Shared\Default\Layouts\_Flued37.cshtml" />
-    <None Include="Views\Shared\Default\Layouts\_Master.cshtml" />
-    <None Include="Views\Shared\Default\PageLayouts\_ContentPage.cshtml" />
-    <None Include="Views\Shared\Default\PageLayouts\_LandingPage.cshtml" />
-    <None Include="Views\Shared\Default\PageLayouts\_LandingPageBlog.cshtml" />
-    <None Include="Views\Shared\Default\PageLayouts\_M2Definition.cshtml" />
-    <None Include="Views\Shared\Default\PageLayouts\_M2Samples.cshtml" />
-    <None Include="Views\Shared\Default\Sections\_Clients.cshtml" />
-    <None Include="Views\Shared\Default\Sections\_ClientsLine.cshtml" />
-    <None Include="Views\Shared\Default\Sections\_ClientsOne.cshtml" />
-    <None Include="Views\Shared\Default\Sections\_ClientsStat.cshtml" />
-    <None Include="Views\Shared\Default\Sections\_FollowUs.cshtml" />
-    <None Include="Views\Shared\Default\Sections\_LandingHero.cshtml" />
-    <None Include="Views\Shared\Default\Sections\_M2Ecosystem.cshtml" />
-    <None Include="Views\Shared\Default\Sections\_Products.cshtml" />
-    <None Include="Views\Shared\Default\Sections\_Testimonials.cshtml" />
     <None Include="packages.config" />
     <None Include="Views\index.md" />
     <None Include="Views\reSP\code-completion\CommandUIDefinitionLocation.md" />
@@ -903,6 +711,34 @@
     <None Include="Views\reSP\live-templates\nweb.md" />
     <None Include="Views\reSP\live-templates\rwep.md" />
     <None Include="Views\reSP\_ViewStart.cshtml" />
+    <None Include="Views\Shared\Default\Components\_Footer.cshtml" />
+    <None Include="Views\Shared\Default\Components\_LandingProjectsList.cshtml" />
+    <None Include="Views\Shared\Default\Components\_LastTenBlogPosts.cshtml" />
+    <None Include="Views\Shared\Default\Components\_PrevNextNavigation.cshtml" />
+    <None Include="Views\Shared\Default\Components\_SampleList.cshtml" />
+    <None Include="Views\Shared\Default\Components\_SampleListCategory.cshtml" />
+    <None Include="Views\Shared\Default\Components\_SecondNavigation.cshtml" />
+    <None Include="Views\Shared\Default\Components\_Sidebar.cshtml" />
+    <None Include="Views\Shared\Default\Components\_SidebarBlog.cshtml" />
+    <None Include="Views\Shared\Default\Components\_TopNavigation.cshtml" />
+    <None Include="Views\Shared\Default\Layouts\_Flued28.cshtml" />
+    <None Include="Views\Shared\Default\Layouts\_Flued28Blog.cshtml" />
+    <None Include="Views\Shared\Default\Layouts\_Flued37.cshtml" />
+    <None Include="Views\Shared\Default\Layouts\_Master.cshtml" />
+    <None Include="Views\Shared\Default\PageLayouts\_ContentPage.cshtml" />
+    <None Include="Views\Shared\Default\PageLayouts\_LandingPage.cshtml" />
+    <None Include="Views\Shared\Default\PageLayouts\_LandingPageBlog.cshtml" />
+    <None Include="Views\Shared\Default\PageLayouts\_M2Definition.cshtml" />
+    <None Include="Views\Shared\Default\PageLayouts\_M2Samples.cshtml" />
+    <None Include="Views\Shared\Default\Sections\_Clients.cshtml" />
+    <None Include="Views\Shared\Default\Sections\_ClientsLine.cshtml" />
+    <None Include="Views\Shared\Default\Sections\_ClientsOne.cshtml" />
+    <None Include="Views\Shared\Default\Sections\_ClientsStat.cshtml" />
+    <None Include="Views\Shared\Default\Sections\_FollowUs.cshtml" />
+    <None Include="Views\Shared\Default\Sections\_LandingHero.cshtml" />
+    <None Include="Views\Shared\Default\Sections\_M2Ecosystem.cshtml" />
+    <None Include="Views\Shared\Default\Sections\_Products.cshtml" />
+    <None Include="Views\Shared\Default\Sections\_Testimonials.cshtml" />
     <None Include="Views\SPMeta2-NuGet\Index.md" />
     <None Include="Views\SPMeta2-Reverse\Index.md" />
     <None Include="Views\SPMeta2-Reverse\_ViewStart.cshtml" />
@@ -915,7 +751,9 @@
     <None Include="Views\SPMeta2-VS\Index.md" />
     <None Include="Views\SPMeta2-VS\_ViewStart.cshtml" />
     <None Include="Views\SPMeta2\extensibility\Index.md" />
+    <None Include="Views\SPMeta2\extensibility\regression-testing.md" />
     <None Include="Views\SPMeta2\extensibility\writing-custom-definition.md" />
+    <None Include="Views\SPMeta2\extensibility\writing-custom-logging.md" />
     <None Include="Views\SPMeta2\extensibility\_writing-custom-logging.md" />
     <None Include="Views\SPMeta2\extensibility\writing-custom-syntax.md" />
     <None Include="Views\SPMeta2\getting-started\_csom-provision.md" />
@@ -960,6 +798,8 @@
     <None Include="Views\SPMeta2\reference\sp-foundation-definitions\ContentTypeLinkDefinition.md" />
     <None Include="Views\SPMeta2\reference\sp-foundation-definitions\CurrencyFieldDefinition.md" />
     <None Include="Views\SPMeta2\reference\sp-foundation-definitions\DateTimeFieldDefinition.md" />
+    <None Include="Views\SPMeta2\reference\sp-foundation-definitions\DeleteWebPartsDefinition.md" />
+    <None Include="Views\SPMeta2\reference\sp-foundation-definitions\DeleteWebPartsDefinition.md.meta" />
     <None Include="Views\SPMeta2\reference\sp-foundation-definitions\DiagnosticsServiceBaseDefinition.md" />
     <None Include="Views\SPMeta2\reference\sp-foundation-definitions\DocumentParserDefinition.md" />
     <None Include="Views\SPMeta2\reference\sp-foundation-definitions\EventReceiverDefinition.md" />
@@ -1076,7 +916,6 @@
   <ItemGroup>
     <Folder Include="Code\Data\" />
     <Folder Include="Code\Tests\" />
-    <Folder Include="content\Shared\" />
     <Folder Include="Views\metapack\getting-started\" />
     <Folder Include="Views\reSP\Inspections\aspnet\_samples\" />
     <Folder Include="Views\reSP\Inspections\csharp\_samples\" />

@@ -12,7 +12,21 @@
     </DocSampleTag>
     <DocSampleTag>
       <Name>Hidden</Name>
-      <Values />
+      <Values>
+        <string xsi:nil="true" />
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isFoundation</Name>
+      <Values>
+        <string>False</string>
+      </Values>
+    </DocSampleTag>
+    <DocSampleTag>
+      <Name>isStandard</Name>
+      <Values>
+        <string>True</string>
+      </Values>
     </DocSampleTag>
   </Tags>
   <Title>Add search settings</Title>

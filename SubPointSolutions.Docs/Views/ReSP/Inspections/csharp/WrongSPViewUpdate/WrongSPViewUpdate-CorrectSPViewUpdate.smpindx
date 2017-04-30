@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBodyWithFunction>
+        public void CorrectSPViewUpdate(SPList list)
+        {
+            // save SPView instance into a local varible, always!
+            var view = list.Views["TestView1"];
+
+            view.DefaultView = true;
+            view.Paged = true;
+
+            view.Update();
+        }</MethodBodyWithFunction>
+  <MethodBody>// save SPView instance into a local varible, always!
+var view = list.Views["TestView1"];
+
+view.DefaultView = true;
+view.Paged = true;
+
+view.Update();
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>ReSharePoint.Docs.Basic.Inspection.Code</Namespace>
+  <ClassName>WrongSPViewUpdate</ClassName>
+  <MethodName>CorrectSPViewUpdate</MethodName>
+  <ClassComment />
+  <MethodFullName>ReSharePoint.Docs.Basic.Inspection.Code.WrongSPViewUpdate.CorrectSPViewUpdate</MethodFullName>
+  <ClassFullName>ReSharePoint.Docs.Basic.Inspection.Code.WrongSPViewUpdate</ClassFullName>
+  <MethodParametersCount>1</MethodParametersCount>
+  <SourceFileName>WrongSPViewUpdate.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>WrongSPViewUpdate</SourceFileNameWithoutExtension>
+</DocSample>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<DocSample xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IsMethod>true</IsMethod>
+  <IsClass>false</IsClass>
+  <Tags />
+  <MethodBodyWithFunction>
+        public void CalledMethod(string p1)
+        {
+            // Validate parameter and throw "usage exception"
+            if (String.IsNullOrEmpty(p1))
+                throw new ArgumentNotSpecifiedException("Parameter p1 must be specified");
+
+            // Here we save data to the storage and the "system exception" could be raised
+            try
+            {
+                DAL.Save(p1);
+            }
+            catch (SqlException e)
+            {
+                if (e.ErrorCode != NO_ROW_ERROR)
+                {
+                    // filter out NoDataFound.
+                    // do special cleanup, like maybe closing the "dirty" database connection.
+                    // throw e; &lt;- DO NOT DO IT. This destroys the strack trace information!
+                    throw; // this preserves the stack trace
+                }
+            }
+        }</MethodBodyWithFunction>
+  <MethodBody>// Validate parameter and throw "usage exception"
+if (String.IsNullOrEmpty(p1))
+    throw new ArgumentNotSpecifiedException("Parameter p1 must be specified");
+
+// Here we save data to the storage and the "system exception" could be raised
+try
+{
+    DAL.Save(p1);
+}
+catch (SqlException e)
+{
+    if (e.ErrorCode != NO_ROW_ERROR)
+    {
+        // filter out NoDataFound.
+        // do special cleanup, like maybe closing the "dirty" database connection.
+        // throw e; &lt;- DO NOT DO IT. This destroys the strack trace information!
+        throw; // this preserves the stack trace
+    }
+}
+
+</MethodBody>
+  <Language>cs</Language>
+  <Namespace>SubPointSolutions.Docs.Views.Views.ReSP.Inspections.csharp</Namespace>
+  <ClassName>DoNotSuppressExceptions</ClassName>
+  <MethodName>CalledMethod</MethodName>
+  <ClassComment />
+  <MethodFullName>SubPointSolutions.Docs.Views.Views.ReSP.Inspections.csharp.DoNotSuppressExceptions.CalledMethod</MethodFullName>
+  <ClassFullName>SubPointSolutions.Docs.Views.Views.ReSP.Inspections.csharp.DoNotSuppressExceptions</ClassFullName>
+  <MethodParametersCount>1</MethodParametersCount>
+  <SourceFileName>DoNotSuppressExceptions.cs</SourceFileName>
+  <SourceFileNameWithoutExtension>DoNotSuppressExceptions</SourceFileNameWithoutExtension>
+</DocSample>
