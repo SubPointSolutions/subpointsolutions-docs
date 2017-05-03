@@ -1,6 +1,12 @@
 ﻿---
+LeftNavigationNode: true
+TopNavigationNode: true
+Subfolders: 
+    - getting-started
+    - community
 Title: 'reSP Home'
 Tile: true
+Order: 10
 TileTitle: 'reSP'
 TileOrder: 100
 TileLink: true

@@ -1,4 +1,6 @@
 ﻿---
+LeftNavigationNode: true
+TopNavigationNode: true
 Title: Code Completion
 Order: 300
 TileLink: true

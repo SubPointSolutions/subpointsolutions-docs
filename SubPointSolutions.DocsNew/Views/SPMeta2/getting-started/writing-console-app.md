@@ -1,6 +1,7 @@
 ﻿---
 Title: Writing a console app
 Order: 1120
+Category: Apps
 ---
 
 ### Writing a simple console app

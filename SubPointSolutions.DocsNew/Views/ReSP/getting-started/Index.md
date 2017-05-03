@@ -1,6 +1,7 @@
 ﻿---
 Title: Getting started
 Order: 100
+Category: Getting Started
 TileLink: true
 TileLinkOrder: 10
 ---

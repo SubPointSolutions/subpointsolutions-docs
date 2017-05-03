@@ -30,22 +30,11 @@
 
 <h3>@ViewBag.SamplesModel.CategoryName</h3>
 
-<div class="panel-body">
 
-    @Html.Raw("<div class='col-sm-3 col-md-3'>")
+    @Html.Raw("<table class='table table-bordered'>")
 
     @foreach (var sampleGroupName in sampleCategories)
     {
-        currentRowHeight += categoryHeight;
-
-        if (currentRowHeight > rowHeight && !(sampleCategories.IndexOf(sampleGroupName) == 0))
-        {
-            currentRowHeight = 0;
-
-            @Html.Raw("</div>")
-            @Html.Raw("<div class='col-sm-3 col-md-3'>")
-        }
-
         var samples = samplesWithCategories.Where(s => {
 
             return s.IsMethod == true 
@@ -58,60 +47,58 @@
             continue;
         }
 
-        <div class="panel panel-default ">
-            <div class="panel-heading">
+        <tr>
+            <th colspan="2">
                 @sampleGroupName
-            </div>
-            <div class="panel-body">
+            </th>
+        </tr>
+                    @foreach (var sample in samples) {
+                        <tr>
+                            @{
+                                currentRowHeight += categoryItemHeight;
 
-                <ul>
-                    @foreach (var sample in samples)
-                    {
-                        currentRowHeight += categoryItemHeight;
+                                var definitionClassName = sample.ClassName
+                                    .Replace("Tests", string.Empty)
+                                    .Replace("Test", string.Empty);
 
-                        var definitionClassName = sample.ClassName
-                                                        .Replace("Tests", string.Empty)
-                                                        .Replace("Test", string.Empty);
+                                var isStandardTag = sample.Tags.FirstOrDefault(t => t.Name == "isStandard");
 
-                        var isStandardTag = sample.Tags.FirstOrDefault(t => t.Name == "isStandard");
+                                if (isStandardTag == null)
+                                {
+                                    throw new Exception(string.Format("Cannot find [isStandard] tag for sample:[{1}] in file:[{0}", sample.SourceFileName, sample.MethodName));
+                                }
 
-                        if (isStandardTag == null)
-                        {
-                            throw new Exception(string.Format("Cannot find [isStandard] tag for sample:[{1}] in file:[{0}", sample.SourceFileName, sample.MethodName));
-                        }
+                                var isStandardSample = isStandardTag.Values.Contains(true.ToString());
 
-                        var isStandardSample = isStandardTag.Values.Contains(true.ToString());
+                                var definitionUrl = "/spmeta2/reference/sp-foundation-definitions/{0}";
 
-                        var definitionUrl = "/spmeta2/reference/sp-foundation-definitions/{0}";
+                                if (isStandardSample)
+                                {
+                                    definitionUrl = "/spmeta2/reference/sp-standard-definitions/{0}";
+                                }
 
-                        if (isStandardSample)
-                        {
-                            definitionUrl = "/spmeta2/reference/sp-standard-definitions/{0}";
-                        }
+                                var definitionPageUrl = string.Format(definitionUrl, definitionClassName).ToLower();
+                                var isHidden = SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.HasTag(sample, "Hidden");
+                                <td>
+                                    @if (isHidden)
+                                    {
+                                        @(sample.Title)
+                                    }
+                                    else
+                                    {
+                                        <a href="@(definitionPageUrl + "?#" + SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.GetSafeAnchor(sample.Title))">
+                                            @(sample.Title)
+                                        </a>
+                                    }
+                                </td>
+                                <td>
+                                    @(sample.Description)
+                                </td>
 
-                        var definitionPageUrl = string.Format(definitionUrl, definitionClassName).ToLower();
-                        var isHidden = SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.HasTag(sample, "Hidden");
-                        <li>
-                            @if (isHidden)
-                            {
-                                @(sample.Title)
                             }
-                            else
-                            {
-                                <a href="@(definitionPageUrl + "?#" +  SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.GetSafeAnchor(sample.Title))">
-                                    @(sample.Title)
-                                </a>
-                            }
-                        </li>
+                                </tr>
                     }
-                </ul>
-                
-            </div>
-        </div>
     }
-    
-
-    @Html.Raw("</div>")
-</div>
 
 
+    @Html.Raw("</table>")

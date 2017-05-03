@@ -1,4 +1,8 @@
 ﻿---
+LeftNavigationNode: true
+TopNavigationNode: true
+Subfolders: 
+    - getting-started
 Title: 'M2 VS Extensions Home'
 Tile: true
 TileTitle: 'M2 VS Extensions'

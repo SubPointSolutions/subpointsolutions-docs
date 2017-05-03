@@ -17,12 +17,26 @@
         </div>
 
         <div class="col-lg-9 col-md-9 col-sm-9 sps-document">
+
+            <div class="sps-document-header-cnt">
+
+                <nav class="pull-right sps-document-header-editor">
+                    <a href="#">
+                        <div class="fa fa-pencil fa-right"></div>Suggest Edits
+                    </a>
+                </nav>
+
+                <h3 class="">
+                    <span>@Model.Get("Title")</span>
+                </h3>
+            </div>
+
             @RenderBody()
 
             @Html.Partial(SConfig.GetThemedTemplate("Components/_Main.PrevNextNavigation.cshtml"))
         </div>
 
-        
+
 
     </div>
 </div>

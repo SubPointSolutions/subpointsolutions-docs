@@ -1,4 +1,11 @@
 ﻿---
+LeftNavigationNode: true
+TopNavigationNode: true
+Subfolders: 
+    - aspnet
+    - csharp
+    - javascript
+    - xml
 Title: Inspections
 Order: 200
 TileLink: true

@@ -1,8 +1,15 @@
 ﻿---
-Title: 'SPMeta2 Home'
+LeftNavigationNode: true
+TopNavigationNode: true
+Subfolders: 
+    - getting-started
+    - extensibility
+Title: 'Overview'
+SecondNavTitle: 'Guides'
 Tile: true
-TileTitle: 'M2 (SPMeta2)'
+TileTitle: 'Guides'
 TileOrder: 10
+Order: 10
 Hidden : false
 TileLink: true
 TileLinkOrder: 5

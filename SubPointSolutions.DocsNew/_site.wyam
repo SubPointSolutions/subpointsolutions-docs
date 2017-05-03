@@ -77,25 +77,10 @@ public static class ContentHelper {
 				Wyam.Common.Pipelines.IExecutionContext context,
 				IEnumerable<SubPointSolutions.DocsBuildTools.Data.DocSample> allSamples) {
 
-	
 		var result = new List<IDocument>();
 		var x = doc;
 
-		AngleSharp.Parser.Html.HtmlParser parser = new AngleSharp.Parser.Html.HtmlParser();
-		AngleSharp.Dom.Html.IHtmlDocument htmlDocument;
-               
-		try
-        {
-			using (Stream stream = x.GetStream())
-            {
-				htmlDocument = parser.Parse(stream);
-            }
-        }
-        catch (Exception ex)
-        {
-			// context.Trace.Warning("Exception while parsing HTML for {0}: {1}", x.Source, ex.Message);
-			return new [] { x };
-        }
+		var htmlDocument = ContentHelper.GetHtmlDocument(doc, context);
 
 		ProcessHtmlImages(htmlDocument, allSamples);
 		ProcessHtmlPreAndCode(htmlDocument, allSamples);
@@ -106,6 +91,22 @@ public static class ContentHelper {
 		result.Add(newDoc);
 
 		return result.ToArray();
+	}
+
+	public static AngleSharp.Dom.Html.IHtmlDocument GetHtmlDocument(IDocument doc,
+				Wyam.Common.Pipelines.IExecutionContext context) {
+	
+		var x = doc;
+
+		AngleSharp.Parser.Html.HtmlParser parser = new AngleSharp.Parser.Html.HtmlParser();
+		AngleSharp.Dom.Html.IHtmlDocument htmlDocument;
+               
+		using (Stream stream = x.GetStream())
+        {
+			htmlDocument = parser.Parse(stream);
+        }
+	
+		return htmlDocument;
 	}
 
 	public static void ProcessHtmlPreAndCode(AngleSharp.Dom.Html.IHtmlDocument htmlDocument,
@@ -324,6 +325,7 @@ var allSamples = SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.LoadSamples
 Pipelines.Add("site-md-content",
 
 	ReadFiles("*.md").FromAllDirectories(),
+	//ReadFiles("doco/*.md").FromAllDirectories(),
 	//ReadFiles("*.md").FromTopDirectoryOnly(),
 
 	Execute( (doc, context) => {

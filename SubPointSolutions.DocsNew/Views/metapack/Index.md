@@ -1,4 +1,14 @@
 ﻿---
+LeftNavigationNode: true
+TopNavigationNode: true
+Subfolders: 
+    - guides
+    - advanced-guides
+    - extensibility
+    - api-reference
+    - cli
+    - desktop-client
+    - community
 Title: 'MetaPack Home'
 Tile: true
 TileTitle: 'MetaPack'

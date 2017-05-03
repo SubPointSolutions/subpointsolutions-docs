@@ -38,7 +38,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="SubPointSolutions.DocsBuildTools.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SubPointSolutions.DocsBuildTools.Data.0.1.0-alpha171202149\lib\net45\SubPointSolutions.DocsBuildTools.Data.dll</HintPath>
+      <HintPath>..\packages\SubPointSolutions.DocsBuildTools.Data.0.1.0-alpha171212121\lib\net45\SubPointSolutions.DocsBuildTools.Data.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -61,6 +61,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\doco\reference\sp-standard-definitions\TaxonomyTermGroupDefinitionTests.cs" />
+    <Compile Include="Views\doco\reference\sp-standard-definitions\TaxonomyTermLabelDefinitionTests.cs" />
     <Compile Include="Views\reSP\Inspections\csharp\AvoidSPObjectNameStringComparison.cs" />
     <Compile Include="Views\reSP\Inspections\csharp\AvoidUsingSPListItemFile.cs" />
     <Compile Include="Views\reSP\Inspections\csharp\DoNotSuppressExceptions.cs" />
@@ -212,64 +214,10 @@
     <Content Include="Views\resources\content\Default\icons\icons.min.css" />
     <Content Include="Views\resources\content\Default\img\favicon\favicon.ico" />
     <Content Include="Views\resources\content\Default\img\landing-background.jpg" />
-    <Content Include="Views\resources\content\Default\img\logo\alberta.ca - logo.svg" />
-    <Content Include="Views\resources\content\Default\img\logo\antaressolutions.com.au - logo.gif" />
-    <Content Include="Views\resources\content\Default\img\logo\arvosys.ru - logo.png" />
-    <Content Include="Views\resources\content\Default\img\logo\atos.net - logo.png" />
-    <Content Include="Views\resources\content\Default\img\logo\avanade.com - logo.png" />
-    <Content Include="Views\resources\content\Default\img\logo\bool.se - logo.png" />
-    <Content Include="Views\resources\content\Default\img\logo\cibpoint.ru - logo.png" />
-    <Content Include="Views\resources\content\Default\img\logo\dclboston.com - logo.png" />
-    <Content Include="Views\resources\content\Default\img\logo\delegate.dk - logo.svg" />
-    <Content Include="Views\resources\content\Default\img\logo\gob.de - logo.jpg" />
-    <Content Include="Views\resources\content\Default\img\logo\greenatom.ru - logo.png" />
-    <Content Include="Views\resources\content\Default\img\logo\health.nsw.gov.au - logo.png" />
-    <Content Include="Views\resources\content\Default\img\logo\heluxsystems.com - logo.png" />
-    <Content Include="Views\resources\content\Default\img\logo\humanservices.gov.au - logo-2.png" />
-    <Content Include="Views\resources\content\Default\img\logo\humanservices.gov.au - logo.png" />
-    <Content Include="Views\resources\content\Default\img\logo\ignia.com.au - logo.png" />
-    <Content Include="Views\resources\content\Default\img\logo\isolutions.ch - logo.png" />
-    <Content Include="Views\resources\content\Default\img\logo\itransition.com - logo.svg" />
-    <Content Include="Views\resources\content\Default\img\logo\kaspersky.com - logo.png" />
-    <Content Include="Views\resources\content\Default\img\logo\kloud.com.au - logo.png" />
-    <Content Include="Views\resources\content\Default\img\logo\loqutus.be - logo.png" />
-    <Content Include="Views\resources\content\Default\img\logo\mwhglobal.com - logo.png" />
-    <Content Include="Views\resources\content\Default\img\logo\nbnco.com.au - logo.png" />
-    <Content Include="Views\resources\content\Default\img\logo\ndsas.de - logo.png" />
-    <Content Include="Views\resources\content\Default\img\logo\netflower.de - logo.png" />
-    <Content Include="Views\resources\content\Default\img\logo\nexplore.ch - logo.png" />
-    <Content Include="Views\resources\content\Default\img\logo\ot.ru - logo.png" />
-    <Content Include="Views\resources\content\Default\img\logo\philips.com - logo.svg" />
-    <Content Include="Views\resources\content\Default\img\logo\plumsail.com - logo.png" />
-    <Content Include="Views\resources\content\Default\img\logo\provokesolutions.com - logo.gif" />
-    <Content Include="Views\resources\content\Default\img\logo\raona.com - icon.png" />
-    <Content Include="Views\resources\content\Default\img\logo\rusal.com - logo.png" />
-    <Content Include="Views\resources\content\Default\img\logo\smsmt.com - logo.png" />
-    <Content Include="Views\resources\content\Default\img\logo\soprasteria.com - logo.png" />
-    <Content Include="Views\resources\content\Default\img\logo\sparked.nl - logo.png" />
-    <Content Include="Views\resources\content\Default\img\logo\storm.ie - logo.png" />
-    <Content Include="Views\resources\content\Default\img\logo\towerswatson.com - logo.jpg" />
-    <Content Include="Views\resources\content\Default\img\logo\tretton37.com - logo.png" />
-    <Content Include="Views\resources\content\Default\img\logo\winvision.nl - logo.png" />
-    <Content Include="Views\resources\content\Default\img\map\sydney-map.png" />
-    <Content Include="Views\resources\content\Default\img\people\Anton-Khritonenkov.jpeg" />
-    <Content Include="Views\resources\content\Default\img\people\Jasper-Siegmund.jpg" />
-    <Content Include="Views\resources\content\Default\img\people\Marat-Bakirov.jpeg" />
-    <Content Include="Views\resources\content\Default\img\people\patpen.jpg" />
-    <Content Include="Views\resources\content\Default\img\people\Rene-Hezser.jpg" />
-    <Content Include="Views\resources\content\Default\img\people\rolold.jpg" />
-    <Content Include="Views\resources\content\Default\img\people\Ronny-Lewandowski.jpg" />
-    <Content Include="Views\resources\content\Default\img\people\Serjic-Shkredov.jpg" />
-    <Content Include="Views\resources\content\Default\img\products\resp\resp.general-api.png" />
-    <Content Include="Views\resources\content\Default\img\products\resp\resp.install.png" />
-    <Content Include="Views\resources\content\Default\img\products\resp\resp.sharepoint-api.png" />
-    <Content Include="Views\resources\content\Default\img\products\resp\resp.solution-check.png" />
-    <Content Include="Views\resources\content\Default\img\products\resp\resp.suggestions.png" />
-    <Content Include="Views\resources\content\Default\img\products\resp\resp.xml-api.png" />
     <Content Include="Views\resources\content\Default\img\subpoint-logo-25.png" />
     <Content Include="Views\resources\content\Default\responsive.css" />
-    <Content Include="Views\resources\content\Default\sps.blog.css" />
     <Content Include="Views\resources\content\Default\sps.docs.css" />
+    <Content Include="Views\resources\content\Default\sps.docs.latest.css" />
     <Content Include="Views\resources\content\Default\sps.docs.new.css" />
     <Content Include="Views\resources\content\Default\sps.web.css" />
     <Content Include="Views\resources\content\Default\style.css" />
@@ -290,6 +238,8 @@
     <Content Include="Views\resources\content\Default\SyntaxHighlighter\shThemeMDUltra.css" />
     <Content Include="Views\resources\content\Default\SyntaxHighlighter\shThemeMidnight.css" />
     <Content Include="Views\resources\content\Default\SyntaxHighlighter\shThemeRDark.css" />
+    <Content Include="Views\resources\fonts\Default\ElegantIcons.svg" />
+    <Content Include="Views\resources\fonts\Default\et-line.svg" />
     <Content Include="Views\resources\fonts\Default\fontawesome-webfont.svg" />
     <Content Include="Views\resources\fonts\Default\glyphicons-halflings-regular.svg" />
     <Content Include="Views\resources\scripts\Default\bootstrap.js" />
@@ -503,12 +453,61 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Views\doco\advanced-guides\Index.md" />
+    <None Include="Views\doco\advanced-guides\Model serialization.md" />
+    <None Include="Views\doco\advanced-guides\Incremental Provision.md" />
+    <None Include="Views\doco\advanced-guides\model validation.md" />
+    <None Include="Views\doco\advanced-guides\regression-testing.md" />
+    <None Include="Views\doco\community\Index.md" />
+    <None Include="Views\doco\examples\Index.md" />
+    <None Include="Views\doco\extensibility\Index.md" />
+    <None Include="Views\doco\extensibility\writing-custom-logging.md" />
+    <None Include="Views\doco\extensibility\writing-custom-definition.md" />
+    <None Include="Views\doco\extensibility\Custom ClientRuntimeContextService.md" />
+    <None Include="Views\doco\extensibility\writing-custom-validation.md" />
+    <None Include="Views\doco\extensibility\writing-custom-syntax.md" />
+    <None Include="Views\doco\guides\Thinking in SPMeta2.md" />
+    <None Include="Views\doco\guides\Syntax notes.md" />
+    <None Include="Views\doco\guides\Troubleshooting.md" />
+    <None Include="Views\doco\guides\Index.md" />
+    <None Include="Views\doco\guides\Core-concepts.md" />
+    <None Include="Views\doco\guides\CSOM vs SSOM notes.md" />
+    <None Include="Views\doco\guides\logging.md" />
+    <None Include="Views\doco\guides\Tracking provision progress.md" />
+    <None Include="Views\doco\guides\writing-custom-syntax.md" />
+    <None Include="Views\doco\Index.md" />
+    <None Include="Views\doco\reference\sp-foundation-definitions\AlternateUrlDefinition.md" />
+    <None Include="Views\doco\reference\sp-foundation-definitions\AppDefinition.md" />
+    <None Include="Views\doco\reference\sp-foundation-definitions\_ViewStart.cshtml" />
+    <None Include="Views\doco\reference\sp-standard-definitions\TaxonomyTermLabelDefinition.md" />
+    <None Include="Views\doco\reference\sp-standard-definitions\TaxonomyTermSetDefinition.md" />
+    <None Include="Views\doco\reference\sp-standard-definitions\_ViewStart.cshtml" />
+    <None Include="Views\doco\reference\Utilities.md" />
+    <None Include="Views\doco\reference\SerializationAPI.md" />
+    <None Include="Views\doco\reference\ProvisionServicesAPI.md" />
+    <None Include="Views\doco\reference\ModelAPI.md" />
+    <None Include="Views\doco\reference\Index.md" />
+    <None Include="Views\doco\reference\sp-foundation-definitions\Index.md" />
+    <None Include="Views\doco\reference\sp-standard-definitions\Index.md" />
+    <None Include="Views\doco\_ViewStart.cshtml" />
+    <None Include="Views\metapack\desktop-client\index.md" />
+    <None Include="Views\metapack\api-reference\index.md" />
+    <None Include="Views\metapack\advanced-guides\index.md" />
     <None Include="Views\metapack\cli\index.md" />
     <None Include="Views\metapack\extensibility\index.md" />
     <None Include="Views\metapack\extensibility\_index.md" />
+    <None Include="Views\metapack\guides\index.md" />
     <None Include="Views\metapack\Index.md" />
+    <None Include="Views\metapack\reference\index.md" />
+    <None Include="Views\metapack\reference\_index.md" />
     <None Include="Views\metapack\_ViewStart.cshtml" />
-    <None Include="packages.config" />
+    <None Include="Views\resources\fonts\Default\ElegantIcons.eot" />
+    <None Include="Views\resources\fonts\Default\ElegantIcons.ttf" />
+    <None Include="Views\resources\fonts\Default\ElegantIcons.woff" />
+    <None Include="Views\resources\fonts\Default\et-line.eot" />
+    <None Include="Views\resources\fonts\Default\et-line.ttf" />
+    <None Include="Views\resources\fonts\Default\et-line.woff" />
     <None Include="Views\resources\fonts\Default\fontawesome-webfont.eot" />
     <None Include="Views\resources\fonts\Default\fontawesome-webfont.ttf" />
     <None Include="Views\resources\fonts\Default\fontawesome-webfont.woff" />
@@ -559,6 +558,7 @@
     <None Include="Views\reSP\getting-started\_Known issues.md" />
     <None Include="Views\reSP\getting-started\_Pro.md" />
     <None Include="Views\reSP\Index.md" />
+    <None Include="Views\reSP\Inspections\aspnet\index.md" />
     <None Include="Views\reSP\Inspections\aspnet\FolderIndex.md" />
     <None Include="Views\reSP\Inspections\aspnet\SetAutoGenerateColumnsForSPGridViewInPage.md" />
     <None Include="Views\reSP\Inspections\aspnet\SPDataSourceScopeDoesNotDefinedInPage.md" />
@@ -585,6 +585,7 @@
     <None Include="Views\reSP\Inspections\csharp\GetPublishingPagesNoParams.md" />
     <None Include="Views\reSP\Inspections\csharp\InappropriateUsageOfSPListCollection.md" />
     <None Include="Views\reSP\Inspections\csharp\InappropriateUsageOfTaxonomyGroupCollection.md" />
+    <None Include="Views\reSP\Inspections\csharp\index.md" />
     <None Include="Views\reSP\Inspections\csharp\MagicStringShouldNotBeUsed.md" />
     <None Include="Views\reSP\Inspections\csharp\NoCustomLogging.md" />
     <None Include="Views\reSP\Inspections\csharp\OutOfContextRWEP.md" />
@@ -617,6 +618,7 @@
     <None Include="Views\reSP\Inspections\javascript\AvoidJQueryDocumentReadyInMasterPage.md" />
     <None Include="Views\reSP\Inspections\javascript\AvoidJQueryDocumentReadyInPage.md" />
     <None Include="Views\reSP\Inspections\javascript\FolderIndex.md" />
+    <None Include="Views\reSP\Inspections\javascript\index.md" />
     <None Include="Views\reSP\Inspections\xml\AvoidCommentsForContentType.md" />
     <None Include="Views\reSP\Inspections\xml\AvoidListContentTypes.md" />
     <None Include="Views\reSP\Inspections\xml\ConsiderHiddenListTemplates.md" />
@@ -640,6 +642,7 @@
     <None Include="Views\reSP\Inspections\xml\FieldIdShouldBeUppercase.md" />
     <None Include="Views\reSP\Inspections\xml\FieldNameLengthLimitExceed.md" />
     <None Include="Views\reSP\Inspections\xml\FolderIndex.md" />
+    <None Include="Views\reSP\Inspections\xml\index.md" />
     <None Include="Views\reSP\Inspections\xml\MixedIDInFieldName.md" />
     <None Include="Views\reSP\Inspections\xml\NameWithPictureForUserField.md" />
     <None Include="Views\reSP\Inspections\xml\NotProvisionedEntity.md" />
@@ -660,13 +663,22 @@
     <None Include="Views\reSP\live-templates\rwep.md" />
     <None Include="Views\reSP\_ViewStart.cshtml" />
     <None Include="Views\Shared\Default\Components\_Docs.LandingProjectsList.cshtml" />
+    <None Include="Views\Shared\Default\Components\_Docs.SampleList.Old.cshtml" />
     <None Include="Views\Shared\Default\Components\_Docs.SampleList.cshtml" />
+    <None Include="Views\Shared\Default\Components\_Docs.SampleListCategory.Old.cshtml" />
     <None Include="Views\Shared\Default\Components\_Docs.SampleListCategory.cshtml" />
+    <None Include="Views\Shared\Default\Components\_Docs.SecondNavigation.Old.cshtml" />
     <None Include="Views\Shared\Default\Components\_Docs.SecondNavigation.cshtml" />
+    <None Include="Views\Shared\Default\Components\_Docs.SidebarOld.cshtml" />
     <None Include="Views\Shared\Default\Components\_Docs.Sidebar.cshtml" />
     <None Include="Views\Shared\Default\Components\_Main.Footer.cshtml" />
+    <None Include="Views\Shared\Default\Components\_Custom.Head.cshtml" />
+    <None Include="Views\Shared\Default\Components\_Main.Head.cshtml" />
     <None Include="Views\Shared\Default\Components\_Main.PrevNextNavigation.cshtml" />
+    <None Include="Views\Shared\Default\Components\_Custom.Scripts.cshtml" />
+    <None Include="Views\Shared\Default\Components\_Main.Scripts.cshtml" />
     <None Include="Views\Shared\Default\Components\_Main.TopNavigation.cshtml" />
+    <None Include="Views\Shared\Default\Components\_Override.TopNavigation.cshtml" />
     <None Include="Views\Shared\Default\Layouts\_Docs.Flued28.cshtml" />
     <None Include="Views\Shared\Default\Layouts\_Docs.Flued28Blog.cshtml" />
     <None Include="Views\Shared\Default\Layouts\_Docs.Flued37.cshtml" />
@@ -715,7 +727,7 @@
     <None Include="Views\SPMeta2\kb\kb-m2-000001.md" />
     <None Include="Views\SPMeta2\kb\Index.md" />
     <None Include="Views\SPMeta2\reference\Definitions.md" />
-    <None Include="Views\SPMeta2\reference\Index.md" />
+    <None Include="Views\SPMeta2\reference\index.md" />
     <None Include="Views\SPMeta2\reference\Models.md" />
     <None Include="Views\SPMeta2\reference\ProvisionServices.md" />
     <None Include="Views\SPMeta2\reference\sp-foundation-definitions\AlternateUrlDefinition.md" />
@@ -802,6 +814,7 @@
     <None Include="Views\SPMeta2\reference\sp-foundation-definitions\XsltListViewWebPartDefinition.md" />
     <None Include="Views\SPMeta2\reference\sp-foundation-definitions\_ContentTypeDefinition.md" />
     <None Include="Views\SPMeta2\reference\sp-foundation-definitions\_ContentTypes.md" />
+    <None Include="Views\SPMeta2\reference\sp-foundation-definitions\Index.md" />
     <None Include="Views\SPMeta2\reference\sp-foundation-definitions\_Fields.md" />
     <None Include="Views\SPMeta2\reference\sp-foundation-definitions\_ViewStart.cshtml" />
     <None Include="Views\SPMeta2\reference\sp-foundation-definitions\_WebParts.md" />
@@ -814,6 +827,7 @@
     <None Include="Views\SPMeta2\reference\sp-standard-definitions\HTMLFieldDefinition.md" />
     <None Include="Views\SPMeta2\reference\sp-standard-definitions\ImageFieldDefinition.md" />
     <None Include="Views\SPMeta2\reference\sp-standard-definitions\ImageRenditionDefinition.md" />
+    <None Include="Views\SPMeta2\reference\sp-standard-definitions\Index.md" />
     <None Include="Views\SPMeta2\reference\sp-standard-definitions\ItemDisplayTemplateDefinition.md" />
     <None Include="Views\SPMeta2\reference\sp-standard-definitions\JavaScriptDisplayTemplateDefinition.md" />
     <None Include="Views\SPMeta2\reference\sp-standard-definitions\LinkFieldDefinition.md" />
@@ -842,6 +856,20 @@
     <None Include="Views\SPMeta2\reference\Utils.md" />
     <None Include="Views\SPMeta2\reference\_SiteModel.md" />
     <None Include="Views\SPMeta2\reference\_WebModel.md" />
+    <None Include="Views\SPMeta2\scenarios\farm-and-webapplication-model\FarmModel.md" />
+    <None Include="Views\SPMeta2\scenarios\farm-and-webapplication-model\Field-and-contenttypes.md" />
+    <None Include="Views\SPMeta2\scenarios\farm-and-webapplication-model\Index.md" />
+    <None Include="Views\SPMeta2\scenarios\farm-and-webapplication-model\Security.md" />
+    <None Include="Views\SPMeta2\scenarios\general-api\Index.md" />
+    <None Include="Views\SPMeta2\scenarios\sitecollection-model\Security.md" />
+    <None Include="Views\SPMeta2\scenarios\sitecollection-model\Field-and-contenttypes.md" />
+    <None Include="Views\SPMeta2\scenarios\sitecollection-model\Index.md" />
+    <None Include="Views\SPMeta2\scenarios\web-model\Lists.md" />
+    <None Include="Views\SPMeta2\scenarios\web-model\Field-and-contenttypes.md" />
+    <None Include="Views\SPMeta2\scenarios\web-model\Index.md" />
+    <None Include="Views\SPMeta2\scenarios\farm-and-webapplication-model\WebApplicationModel.md" />
+    <None Include="Views\SPMeta2\scenarios\general-api\Provisioning-API.md" />
+    <None Include="Views\SPMeta2\scenarios\general-api\SPMeta2-Model-API.md" />
     <None Include="Views\SPMeta2\scenarios\Index.md" />
     <None Include="Views\SPMeta2\scenarios\_Sample Repository.md" />
     <None Include="Views\SPMeta2\scenarios\_ViewStart.cshtml" />

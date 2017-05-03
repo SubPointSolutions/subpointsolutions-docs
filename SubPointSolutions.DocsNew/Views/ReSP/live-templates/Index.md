@@ -1,4 +1,6 @@
 ﻿---
+LeftNavigationNode: true
+TopNavigationNode: true
 Title: Live Templates
 Order: 400
 TileLink: true

@@ -1,5 +1,13 @@
 ﻿----
-Title: Scenarios
+LeftNavigationNode: true
+TopNavigationNode: true
+Subfolders: 
+    - general-api
+    - farm-and-webapplication-model
+    - sitecollection-model
+    - web-model
+Title: Overview of API
+Category: Examples
 Order: 400
 TileLink: true
 TileLinkOrder: 40

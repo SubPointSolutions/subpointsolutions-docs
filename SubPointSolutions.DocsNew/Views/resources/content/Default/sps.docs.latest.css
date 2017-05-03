@@ -1,0 +1,89 @@
+﻿.container {
+    max-width: 1070px;
+}
+
+.sd-sidebar {
+    margin-top: 10px;
+}
+
+.sd-sidebar-group-cnt span, .sd-sidebar-group-cnt span a {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.sd-sidebar-group-cnt span a {
+    padding-left: 0;
+    color: rgb(51, 51, 51);
+}
+
+
+.sd-sidebar ul a {
+    color: #666;
+    font-size: 13px;
+}
+
+.sd-sidebar > ul > li > a {
+    padding: 0 0 0 10px;
+}
+
+.sd-sidebar  li.active > a {
+    font-weight: bold;
+}
+
+
+
+.sd-sidebar  ul {
+    border-bottom: 1px #dedede solid;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.sps-document-header-cnt h3 {
+    margin-top: 0 !important;
+ 
+}
+
+.sps-document-header-cnt {
+    border-bottom: 1px #dedede solid;
+}
+
+.sps-document-header-editor a {
+    color: rgb(66, 139, 202);
+    font-size: 13px;
+}
+
+.sps-sidebar {
+    
+}
+
+.sps-document {
+    
+}
+
+.sps-secondnav, .sps-secondnav .sub-nav {
+    height: 60px;
+}
+
+.sps-secondnav .sub-nav ul {
+    text-align: center;
+    padding-left: 0;
+}
+
+
+.sd-sidebar ul a, .sd-sidebar-group-cnt a  {
+    color: #666;
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: none;
+    padding: 0 0 0 10px;
+}
+
+
+.sd-body-content {
+    margin-top: 20px;
+}
+
+.sub-nav li .active {
+    font-weight: bold;
+}

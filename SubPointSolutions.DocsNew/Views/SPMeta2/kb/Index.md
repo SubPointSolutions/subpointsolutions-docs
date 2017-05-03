@@ -1,6 +1,7 @@
 ﻿----
 Title: KB
 Order: 500
+Category: Knowledge Base
 Hidden: false
 TileLink: false
 TileLinkOrder: 50

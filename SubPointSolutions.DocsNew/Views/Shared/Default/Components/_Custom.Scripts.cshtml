@@ -1,0 +1,16 @@
+﻿
+<script>
+
+    $(document).ready(function () {
+
+        var h1 = $(".sps-sidebar").height();
+        var h2 = $(".sps-document").height();
+
+        if (h1 < h2) {
+            $(".sps-document").css("border-left", "1px #dedede solid");
+        } else {
+            $(".sps-sidebar").css("border-right", "1px #dedede solid");
+        }
+    });
+
+</script>

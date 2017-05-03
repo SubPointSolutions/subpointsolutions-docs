@@ -1,4 +1,5 @@
 ﻿----
+TopNavigationNode: true
 Title: CLI
 Order: 600
 TileLink: true

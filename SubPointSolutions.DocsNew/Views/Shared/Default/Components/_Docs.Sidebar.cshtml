@@ -1,62 +1,281 @@
 ﻿@using System
+@using System.Diagnostics.SymbolStore
+@using System.Linq
+
+@functions
+{
+    public string GetCurrentNavFolder()
+    {
+        var navFolderPath = System.IO.Path.GetDirectoryName(Model.String("RelativeFilePath", string.Empty));
+        var navSplit = navFolderPath.Split(new[] { '\\' });
+
+        var navFolder = string.Empty;
+
+        if (navSplit.Count() > 1)
+        {
+            var tmp = navSplit.ToList();
+            //tmp.RemoveAt(navSplit.Count() - 1);
+            navSplit = tmp.ToArray();
+
+            navSplit = navSplit.ToList().Take(1).ToArray();
+        }
+
+        navFolder = String.Join(@"\", navSplit);
+
+        //navFolder = @"SPMeta2\reference";
+        //navFolder = @"doco\reference";
+
+        return navFolder;
+    }
+
+    public List<IDocument> LookupDocumentsInFolder(string folderPath)
+    {
+        var navFolder = folderPath;
+
+        var allSubnavDocuments = Documents
+         .Where(x => x.ContainsKey("RelativeFilePath")
+             //&& x.String("RelativeFilePath").StartsWith(navFolder + @"\")
+                     && !x.String("SourceFileBase").StartsWith("_")
+                     && System.IO.Path.GetDirectoryName(x.String("RelativeFilePath")).ToLower() == folderPath.ToLower()
+            //&& x.String("RelativeFilePath").ToLower().EndsWith(@"\index.md")
+
+                     //&& x.Get<bool>("LeftNavigationNode", false) == true
 
 
-<div class="sd-sidebar panel panel-default hidden-print hidden-xs hidden-sm affix1">
-    <ul class="nav ">
+                     //&& x.String("RelativeFilePath", string.Empty)
+            //          .Split(new[] { '\\' })
+            //          .Count() == 3
+            //&& x.String("RelativeFilePath").ToLower().EndsWith(@"\index.md")
+                )
+          .OrderBy(x => x.String("Order", "0"));
+
+        return allSubnavDocuments.ToList();
+    }
+
+    public List<IDocument> GetIndexDocuments()
+    {
+        var navFolder = GetCurrentNavFolder();
+
+        var allSubnavDocuments = Documents
+          .Where(x => x.ContainsKey("RelativeFilePath")
+                      && x.String("RelativeFilePath").StartsWith(navFolder + @"\")
+                      && !x.String("SourceFileBase").StartsWith("_")
+                      && x.String("RelativeFilePath").StartsWith(navFolder)
+                      && x.String("RelativeFilePath").ToLower().EndsWith(@"\index.md")
+
+                      && x.Get<bool>("LeftNavigationNode", false) == true
+
+
+                      //&& x.String("RelativeFilePath", string.Empty)
+            //          .Split(new[] { '\\' })
+            //          .Count() == 3
+            //&& x.String("RelativeFilePath").ToLower().EndsWith(@"\index.md")
+                 )
+           .OrderBy(x => x.String("Order", "0"));
+
+        return allSubnavDocuments.ToList();
+    }
+
+    public bool IsLeftNavigationNode(IDocument doc)
+    {
+        return doc.Get<bool>("LeftNavigationNode", false) == true;
+    }
+
+    public IDocument LookupParentIndexDocumentInFolder(string folder)
+    {
+        var indexDocPath = System.IO.Path.Combine(folder, "index.md").ToLower();
+
+        var indexDodc = Documents.FirstOrDefault(x => x.ContainsKey("RelativeFilePath")
+                                             && x.String("RelativeFilePath").ToLower() == indexDocPath);
+
+        if (IsLeftNavigationNode(indexDodc))
+            return indexDodc;
+
+        return null;
+    }
+
+    public string LookupCategoryForDocument(IDocument doc, string defaultValue)
+    {
+        var indexFile = LookupIndexFile(doc);
+
+        var result = indexFile.Get<string>("Category", String.Empty);
+
+        if (String.IsNullOrEmpty(result))
+            result = defaultValue;
+
+        return result;
+    }
+
+    public IDocument LookupIndexFile(IDocument doc)
+    {
+        var folder = System.IO.Path.GetDirectoryName(doc.String("RelativeFilePath", string.Empty));
+        var indexDocPath = System.IO.Path.Combine(folder, "index.md").ToLower();
+
+        var indexDodc = Documents.FirstOrDefault(x => x.ContainsKey("RelativeFilePath")
+                                             && x.String("RelativeFilePath").ToLower() == indexDocPath);
+
+        return indexDodc;
+    }
+
+    public IDocument LookupParentIndexDocument(IDocument doc)
+    {
+        if (IsLeftNavigationNode(doc))
+            return doc;
+
+        IDocument result = null;
+
+        var currentFolderPath = System.IO.Path.GetDirectoryName(Model.String("RelativeFilePath", string.Empty));
+        var currentFolderPathParts = currentFolderPath.Split(new[] { '\\' });
+
+        var folderPathsCount = currentFolderPathParts.Count();
+
+        for (var i = 0; i < folderPathsCount; i++)
+        {
+            var probingDirPath = string.Join(@"\", currentFolderPathParts.Take(folderPathsCount - i));
+            result = LookupParentIndexDocumentInFolder(probingDirPath);
+
+            if (result != null)
+                break;
+        }
+
+        return result;
+    }
+}
+
+@{
+    // pre-init
+    var currentDocument = Model;
+
+    var currentDocumentPath = currentDocument.String("RelativeFilePath", string.Empty);
+    var currentFolderPath = System.IO.Path.GetDirectoryName(currentDocumentPath);
+
+    // lookup parent index document
+    var parentIndexDocument = LookupParentIndexDocument(currentDocument);
+
+    var parentIndexDocumentPath = String.Empty;
+    var parentIndexDocumentFolderPath = String.Empty;
+
+    if (parentIndexDocument != null)
+    {
+        parentIndexDocumentPath = parentIndexDocument.String("RelativeFilePath");
+        parentIndexDocumentFolderPath = System.IO.Path.GetDirectoryName(parentIndexDocumentPath);
+    }
+
+    System.Console.WriteLine(String.Format("Current doc:[{0}] with root doc:[{1}]", currentDocumentPath, parentIndexDocumentPath));
+
+    // get subfolders if any, sort them
+
+    // render each sub folder with document, sort them
+
+    var navFolder = GetCurrentNavFolder();
+    var activeDocument = Documents.FirstOrDefault(d => d.String("RelativeFilePath") == Model.String("RelativeFilePath"));
+
+    //var allSubnavDocuments = GetIndexDocuments();
+    var allSubnavDocuments = new List<IDocument>();
+
+    //allSubnavDocuments.AddRange()
+
+    // all docs or particular folders?
+    var subfolders = parentIndexDocument.Get<string[]>("Subfolders", new string[] { });
+
+    // adding docs from subfolders or all within the curent doc
+
+    foreach (var subfolder in subfolders)
+    {
+        var subFolderPath = System.IO.Path.Combine(parentIndexDocumentFolderPath, subfolder);
+
+        System.Console.WriteLine(String.Format("    Loading docs from:[{0}]", subFolderPath));
+        allSubnavDocuments.AddRange(LookupDocumentsInFolder(subFolderPath));
+    }
+
+    // current docs
+    if (!allSubnavDocuments.Contains(currentDocument))
+    {
+        allSubnavDocuments.Add(currentDocument);
+    }
+
+    if (!allSubnavDocuments.Contains(parentIndexDocument))
+    {
+        allSubnavDocuments.Add(parentIndexDocument);
+    }
+    
+    // current level docs
+    var currentLevelDocs = LookupDocumentsInFolder(parentIndexDocumentFolderPath);
+    foreach (var d in currentLevelDocs)
+    {
+        if (!allSubnavDocuments.Contains(d))
+        {
+            allSubnavDocuments.Add(d);
+        }
+    }
+
+
+    //var categoryGroups = allSubnavDocuments
+    //                    .GroupBy(x => !string.IsNullOrEmpty(x.String("Category"))
+    //                        ? x.String("Category")
+    //                        : x.String("RelativeFileDir").Replace(navFolder, string.Empty))
+    //                      .ToList();
+
+    var categoryGroups = allSubnavDocuments
+                            .GroupBy(x => LookupCategoryForDocument(x, x.String("RelativeFileDir")))
+                            .ToList();
+
+    if (!categoryGroups.Any())
+    {
+        <style>
+            .sd-sidebar {
+                display: none !important;
+            }
+        </style>
+    }
+}
+
+<div style="display:none">
+    @parentIndexDocumentPath <br />
+    @(String.Join(",", subfolders))
+</div>
+
+<div class="sd-sidebar panel-default hidden-print hidden-xs hidden-sm affix1">
+
+    <div style="display: none" navfolder="@navFolder">
+
+    </div>
+
+    <div class="sd-sidebar-group-cnt">
         @{
-            var navSplit = Model.String("RelativeFilePath", string.Empty).Split(new[] { '\\' });
-
-            var navFolder = navSplit[0];
-
-            if (navSplit.Count() > 1)
-            {
-                navFolder = navSplit[0] + @"\" + navSplit[1];
-            }
-
-            var activeDocument = Documents.FirstOrDefault(d => d.String("RelativeFilePath") == Model.String("RelativeFilePath"));
-
-            var documents = Documents
-                    .Where(x => x.ContainsKey("RelativeFilePath")
-                        //&& !x.String("RelativeFilePath").EndsWith("index.md")
-                        && !x.String("RelativeFilePath").EndsWith("index.cshtml")
-                        && x.String("RelativeFilePath").StartsWith(navFolder + @"\")
-                        && !x.String("SourceFileBase").StartsWith("_")
-                        && x.String("RelativeFilePath").StartsWith(navFolder))
-
-                    .GroupBy(x => !string.IsNullOrEmpty(x.String("Category"))
-                                      ? x.String("Category")
-                                      : x.String("RelativeFileDir").Replace(navFolder, string.Empty))
-                    .OrderBy(x => x.Key)
-                    .ToList();
-
-            if (!documents.Any())
-            {
-                <style>
-                    .sd-sidebar {
-                        display: none !important;
-                    }
-                </style>
-            }
-
-            IList<IGrouping<string, IDocument>> categoryGroups = string.IsNullOrWhiteSpace(navFolder)
-                ? new List<IGrouping<string, IDocument>>() : documents;
-
             foreach (IGrouping<string, IDocument> categoryGroup in categoryGroups)
             {
                 var p = categoryGroup.Key;
                 //p = navFolder.Replace(navFolder, string.Empty);
 
-                var key = System.IO.Path.GetFileName(System.IO.Path.GetDirectoryName(p + @"\1.tmp"));
+                //var key = System.IO.Path.GetFileName(System.IO.Path.GetDirectoryName(p + @"\1.tmp"));
+                var key = p;
+                
+                var docsCount = categoryGroup.Count();
 
-                if (!string.IsNullOrWhiteSpace(key) && categoryGroup.Count() > 0)
+                var groupDocs = categoryGroup.ToList();
+                var currentDocFolder = System.IO.Path.GetDirectoryName(categoryGroup.First().String("RelativeFilePath"));
+
+                if (docsCount == 0)
                 {
-                    <li>
+                    continue;
+                }
+
+
+                if (String.IsNullOrEmpty(key) && docsCount > 0)
+                {
+                    key = navFolder;
+                }
+
+                if (!string.IsNullOrWhiteSpace(key) && docsCount > 0)
+                {
+                    <div>
 
                         @{
-                    var categoryItemsCount = categoryGroup.Count();
+                    var categoryItemsCount = groupDocs.Count();
                     var isCollapsed = categoryItemsCount > 8;
 
-                    var hasSelectedDoc = categoryGroup.Any(d => d == activeDocument);
+                    var hasSelectedDoc = groupDocs.Any(d => d == activeDocument);
 
                     if (hasSelectedDoc && categoryItemsCount > 8)
                     {
@@ -64,37 +283,43 @@
                     }
 
                     isCollapsed = false;
-                    
+
                     var collapsedClass = isCollapsed ? "collapse" : "collapse in";
                     var linkGroupClass = categoryItemsCount > 0 ? "group-link" : String.Empty;
 
                     var categoryName = key;
 
                     // custom category name?
-                            var groupIndexDoc = categoryGroup.FirstOrDefault(d => d.String("SourceFileBase").ToLower() == "folderindex");
+                    var groupIndexDoc = groupDocs.FirstOrDefault(d => d.String("SourceFileBase").ToLower() == "folderindex");
 
-                            if (groupIndexDoc != null && !string.IsNullOrEmpty(groupIndexDoc.String("GroupName")))
-                            {
-                                categoryName = groupIndexDoc.String("GroupName");
-                            }
+                    if (groupIndexDoc != null && !string.IsNullOrEmpty(groupIndexDoc.String("GroupName")))
+                    {
+                        categoryName = groupIndexDoc.String("GroupName");
+                    }
 
                     //var collapsActionClass = isCollapsed ? "expand" : "collapse";
                         }
 
-
-
-                        <a class='root-group collapse @linkGroupClass'
-                           data-toggle="collapse" href="#@key.Replace(" ", String.Empty)">
-                            @categoryName (@categoryItemsCount)
-                        </a>
+                        @if (!isCollapsed)
+                        {
+                            <span>@categoryName</span>
+                        }
+                        else
+                        {
+                            <span>
+                                <a class='root-group @linkGroupClass' data-toggle="collapse" href="#@key.Replace(" ", String.Empty)">
+                                    @categoryName (@categoryItemsCount)
+                                </a>
+                            </span>
+                        }
 
                         <ul class="nav @collapsedClass" id="@key.Replace(" ", String.Empty)">
 
-                            @foreach (IDocument childDoc in categoryGroup
-                                .Where(x => !x.Get<bool>("Hidden", false))
-                                .OrderBy(x => x.Get<int>("Order", 1000))
-                                .ThenBy(x => x.String("Title"))
-                                .ThenBy(x => x.String("SourceFileBase")))
+                            @foreach (IDocument childDoc in groupDocs
+                                    .Where(x => !x.Get<bool>("Hidden", false))
+                                    .OrderBy(x => x.Get<int>("Order", 1000))
+                                    .ThenBy(x => x.String("Title"))
+                                    .ThenBy(x => x.String("SourceFileBase")))
                             {
                                 string subActive = activeDocument == childDoc ? "active" : null;
                                 var fileName = childDoc.String("RelativeFilePath");
@@ -112,14 +337,15 @@
                                 </li>
                             }
                         </ul>
-                    </li>
+
+                    </div>
                 }
                 else
                 {
                     foreach (IDocument childDoc in categoryGroup
-                                .OrderBy(x => x.Get<int>("Order", 1000))
-                                .ThenBy(x => x.String("Title"))
-                                .ThenBy(x => x.String("SourceFileBase")))
+                        .OrderBy(x => x.Get<int>("Order", 1000))
+                        .ThenBy(x => x.String("Title"))
+                        .ThenBy(x => x.String("SourceFileBase")))
                     {
                         //string subActive = Model.String("RelativeFilePath") == childDoc.String("RelativeFilePath") ? "active" : null;
 
@@ -132,7 +358,7 @@
                         {
                             fileName = childDoc.String("WritePath");
                         }
-                        
+
                         <li class="root @subActive">
 
                             <a href="@(PathHelper.ToRootLink(PathHelper.RemoveExtension(fileName)) + ".html")">
@@ -144,7 +370,7 @@
 
             }
         }
-    </ul>
+    </div>
 
 
 

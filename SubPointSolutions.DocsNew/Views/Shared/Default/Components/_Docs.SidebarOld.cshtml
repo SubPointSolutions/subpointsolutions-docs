@@ -1,0 +1,176 @@
+﻿@using System
+@using System.Linq
+
+@{
+    
+    var navFolderPath = System.IO.Path.GetDirectoryName(Model.String("RelativeFilePath", string.Empty));
+    var navSplit = navFolderPath.Split(new[] { '\\' });
+
+    var navFolder = string.Empty;
+
+    if (navSplit.Count() > 1)
+    {
+        //navSplit. = ToList().RemoveAt(navSplit.Count() - 1);
+        navSplit = navSplit.ToList().Take(2).ToArray();
+    }
+    
+    navFolder = String.Join(@"\", navSplit);
+
+    var activeDocument = Documents.FirstOrDefault(d => d.String("RelativeFilePath") == Model.String("RelativeFilePath"));
+
+    var documents = Documents
+        .Where(x => x.ContainsKey("RelativeFilePath")
+            //&& !x.String("RelativeFilePath").EndsWith("index.md")
+                    && !x.String("RelativeFilePath").EndsWith("index.cshtml")
+                    //&& System.IO.Path.GetDirectoryName(x.String("RelativeFilePath")) == navFolder
+                    && System.IO.Path.GetDirectoryName(x.String("RelativeFilePath")).StartsWith(navFolder + @"\")
+                    && !x.String("SourceFileBase").StartsWith("_")
+                    && x.String("RelativeFilePath").StartsWith(navFolder))
+        .GroupBy(x => !string.IsNullOrEmpty(x.String("Category"))
+            ? x.String("Category")
+            : x.String("RelativeFileDir").Replace(navFolder, string.Empty))
+        .OrderBy(x => x.First().Get<int>("CategoryOrder", 0))
+        .ToList();
+
+    IList<IGrouping<string, IDocument>> categoryGroups = string.IsNullOrWhiteSpace(navFolder)
+                ? new List<IGrouping<string, IDocument>>() : documents;        
+        
+    if (!documents.Any())
+    {
+        <style>
+            .sd-sidebar {
+                display: none !important;
+            }
+        </style>
+    }
+}
+
+
+<div class="sd-sidebar panel-default hidden-print hidden-xs hidden-sm affix1">
+    
+    <div style="display: none" navfolder="@navFolder">
+
+    </div>
+
+    <div class="sd-sidebar-group-cnt">
+        @{
+            foreach (IGrouping<string, IDocument> categoryGroup in categoryGroups)
+            {
+                var p = categoryGroup.Key;
+                //p = navFolder.Replace(navFolder, string.Empty);
+
+                var key = System.IO.Path.GetFileName(System.IO.Path.GetDirectoryName(p + @"\1.tmp"));
+                var docsCount = categoryGroup.Count();
+
+
+                if (String.IsNullOrEmpty(key) && docsCount > 0)
+                {
+                    key = navFolder;
+                }
+
+                if (!string.IsNullOrWhiteSpace(key) && docsCount > 0)
+                {
+                    <div>
+
+                        @{
+                            var categoryItemsCount = categoryGroup.Count();
+                            var isCollapsed = categoryItemsCount > 8;
+
+                            var hasSelectedDoc = categoryGroup.Any(d => d == activeDocument);
+
+                            if (hasSelectedDoc && categoryItemsCount > 8)
+                            {
+                                isCollapsed = false;
+                            }
+
+                            var collapsedClass = isCollapsed ? "collapse" : "collapse in";
+                            var linkGroupClass = categoryItemsCount > 0 ? "group-link" : String.Empty;
+
+                            var categoryName = key;
+
+                            // custom category name?
+                            var groupIndexDoc = categoryGroup.FirstOrDefault(d => d.String("SourceFileBase").ToLower() == "folderindex");
+
+                            if (groupIndexDoc != null && !string.IsNullOrEmpty(groupIndexDoc.String("GroupName")))
+                            {
+                                categoryName = groupIndexDoc.String("GroupName");
+                            }
+
+                            //var collapsActionClass = isCollapsed ? "expand" : "collapse";
+                        }
+
+                        @if (!isCollapsed)
+                        {
+                            <span>@categoryName</span>
+                        }
+                        else
+                        {
+                            <span>@categoryName (@docsCount)</span>
+                        }
+
+
+                        @if (!isCollapsed)
+                        {
+                            <ul class="nav @collapsedClass" id="@key.Replace(" ", String.Empty)">
+
+                                @foreach (IDocument childDoc in categoryGroup
+                                    .Where(x => !x.Get<bool>("Hidden", false))
+                                    .OrderBy(x => x.Get<int>("Order", 1000))
+                                    .ThenBy(x => x.String("Title"))
+                                    .ThenBy(x => x.String("SourceFileBase")))
+                                {
+                                    string subActive = activeDocument == childDoc ? "active" : null;
+                                    var fileName = childDoc.String("RelativeFilePath");
+
+                                    if (!string.IsNullOrEmpty(childDoc.String("WritePath")))
+                                    {
+                                        fileName = childDoc.String("WritePath");
+                                    }
+
+                                    <li class="@subActive">
+
+                                        <a href="@(PathHelper.ToRootLink(PathHelper.RemoveExtension(fileName)) + ".html")">
+                                            @(childDoc.String("Title", childDoc.String("SourceFileBase")).Replace("Tests", String.Empty))
+                                        </a>
+                                    </li>
+                                }
+                            </ul>
+                        }
+                        
+                    </div>
+                }
+                else
+                {
+                    foreach (IDocument childDoc in categoryGroup
+                        .OrderBy(x => x.Get<int>("Order", 1000))
+                        .ThenBy(x => x.String("Title"))
+                        .ThenBy(x => x.String("SourceFileBase")))
+                    {
+                        //string subActive = Model.String("RelativeFilePath") == childDoc.String("RelativeFilePath") ? "active" : null;
+
+
+                        string subActive = activeDocument == childDoc ? "active" : null;
+
+                        var fileName = childDoc.String("RelativeFilePath");
+
+                        if (!string.IsNullOrEmpty(childDoc.String("WritePath")))
+                        {
+                            fileName = childDoc.String("WritePath");
+                        }
+
+                        <li class="root @subActive">
+
+                            <a href="@(PathHelper.ToRootLink(PathHelper.RemoveExtension(fileName)) + ".html")">
+                                @(childDoc.String("Title", childDoc.String("SourceFileBase")).Replace("Tests", String.Empty))
+                            </a>
+                        </li>
+                    }
+                }
+
+            }
+        }
+    </div>
+
+
+
+</div>

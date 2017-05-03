@@ -94,14 +94,22 @@
         @if (prevDocument != null)
         {
             <a class="btn-lg btn-default m-btn-prev" href="@prevDocumentUrl">
-                <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Previous
+                <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Previous<br/>
+                @*<span>
+                    @prevDocument.Get("Title")
+                </span>*@
             </a>
+            
         }
         @if (nextDocument != null)
         {
             <a class="btn-lg btn-default pull-right m-btn-next" href="@nextDocumentUrl">
-                Next <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                Next <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span><br/>
+                @*<span class="">
+                    @nextDocument.Get("Title")
+                </span>*@
             </a>
+            
         }
     </div>
 }
