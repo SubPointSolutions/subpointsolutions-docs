@@ -18,7 +18,7 @@
 
     foreach (var sampleGroupName in sampleCategories)
     {
-        var samples = allSamples.Where(s => s.Tags.First(t => t.Name == categoryTagName).Values.Contains(sampleGroupName));
+        var samples = allSamples.Where(s => s.Tags.First(t => t.Name == categoryTagName).Values.Any(v => v.ToLower() == sampleGroupName.ToLower()));
 
         totalLinksHeight += samples.Count() * categoryItemHeight;
     }
@@ -34,7 +34,7 @@
 
 @foreach (var sampleGroupName in sampleCategories)
 {
-    if (sampleGroupName != ViewBag.SamplesModel.CategoryName)
+    if (sampleGroupName.ToLower() != ViewBag.SamplesModel.CategoryName.ToLower())
     {
         continue;
     }
@@ -46,7 +46,7 @@
 
         return s.IsMethod == true
                     && s.Tags.Any(t => t.Name == categoryTagName)
-                    && s.Tags.First(t => t.Name == categoryTagName).Values.Contains(sampleGroupName);
+                    && s.Tags.First(t => t.Name == categoryTagName).Values.Any(v => v.ToLower() == sampleGroupName.ToLower());
     });
 
     if (!samples.Any())

@@ -1,6 +1,7 @@
 ﻿----
-Title: Lists
-Order: 600
+Title: Navigation
+SampleCategory: Navigation
+Order: 11000
 TileLink: true
 TileLinkOrder: 40
 ----

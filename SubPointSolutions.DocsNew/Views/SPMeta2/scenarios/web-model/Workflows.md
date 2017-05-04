@@ -1,7 +1,6 @@
 ﻿----
-Title: Features
-SampleCategory: Features
-Order: 1000
+Title: Workflows
+Order: 10000
 TileLink: true
 TileLinkOrder: 40
 ----

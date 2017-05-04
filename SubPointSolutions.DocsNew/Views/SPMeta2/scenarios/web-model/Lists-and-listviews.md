@@ -1,7 +1,7 @@
 ﻿----
-Title: Features
-SampleCategory: Features
-Order: 1000
+Title: Lists / List Views
+SampleCategory: Lists and libraries
+Order: 12000
 TileLink: true
 TileLinkOrder: 40
 ----

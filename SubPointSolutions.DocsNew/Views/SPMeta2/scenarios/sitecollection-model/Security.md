@@ -1,5 +1,6 @@
 ﻿----
 Title: Security
+SampleCategory: Security
 Order: 2000
 TileLink: true
 TileLinkOrder: 40

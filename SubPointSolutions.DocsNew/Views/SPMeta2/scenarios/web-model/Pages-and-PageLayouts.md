@@ -1,6 +1,7 @@
 ﻿----
-Title: Provisioning API
-Order: 600
+Title: Pages / Page Layouts
+SampleCategory: Pages and Layouts
+Order: 14000
 TileLink: true
 TileLinkOrder: 40
 ----

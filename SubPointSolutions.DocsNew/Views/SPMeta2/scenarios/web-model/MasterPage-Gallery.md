@@ -1,7 +1,7 @@
 ﻿----
-Title: Features
-SampleCategory: Features
-Order: 1000
+Title: MasterPage Gallery
+SampleCategory: MasterPage Gallery
+Order: 15000
 TileLink: true
 TileLinkOrder: 40
 ----

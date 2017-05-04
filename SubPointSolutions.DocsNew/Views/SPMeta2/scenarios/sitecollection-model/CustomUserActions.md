@@ -1,5 +1,5 @@
 ﻿----
-SampleCategory: Content Types
+SampleCategory: User custom action
 Title: Custom User Actions
 Order: 6000
 TileLink: true

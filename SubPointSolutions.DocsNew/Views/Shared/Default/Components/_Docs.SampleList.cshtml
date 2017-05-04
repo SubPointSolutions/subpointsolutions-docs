@@ -39,26 +39,6 @@
 
                              //.OrderBy(m => allCategories.Any(c => c.Name == m) ? )
                              .ToList();
-
-    var categoryHeight = 80;
-    var categoryItemHeight = 18;
-
-    var categoryRowsCount = 3;
-
-    var totalCategoriesHeight = sampleCategories.Count() * categoryHeight;
-    var totalLinksHeight = 0;
-
-    foreach (var sampleGroupName in sampleCategories)
-    {
-        var samples = samplesWithCategories.Where(s => s.Tags.First(t => t.Name == categoryTagName).Values.Contains(sampleGroupName));
-
-        totalLinksHeight += samples.Count() * categoryItemHeight;
-    }
-
-    var totalHeight = totalCategoriesHeight + totalLinksHeight;
-    var rowHeight = totalHeight / categoryRowsCount;
-
-    var currentRowHeight = 0;
 }
 
 <div class="m-sample-list-cnt">
@@ -68,9 +48,10 @@
         {
             dynamic categoryModel = new System.Dynamic.ExpandoObject();
 
-            categoryModel.Samples = SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.GetSamplesWithTag(allSamples, categoryTagName, sampleGroupName)
-                                                                                       .Where(s => s.IsMethod == true)
-                                                                                       .ToList();
+            categoryModel.Samples = allSamples.Where(s => s.Tags.Any(t => t.Name == categoryTagName) && s.Tags.First(t => t.Name == categoryTagName).Values.Any(v => v.ToLower() == sampleGroupName.ToLower()))
+                                              .Where(s => s.IsMethod == true)
+                                              .ToList();
+            
             categoryModel.CategoryName = sampleGroupName;
 
             ViewBag.SamplesModel = categoryModel;

@@ -1,5 +1,5 @@
 ﻿----
-SampleCategory: Content Types
+SampleCategory: Event Receivers
 Title: Event Receivers
 Order: 7000
 TileLink: true

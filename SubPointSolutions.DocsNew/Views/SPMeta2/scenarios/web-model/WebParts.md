@@ -1,7 +1,7 @@
 ﻿----
-Title: Features
-SampleCategory: Features
-Order: 1000
+Title: WebParts
+SampleCategory: Web parts
+Order: 16000
 TileLink: true
 TileLinkOrder: 40
 ----

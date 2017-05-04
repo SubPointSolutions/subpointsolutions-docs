@@ -1,5 +1,5 @@
 ﻿----
-SampleCategory: Web
+SampleCategory: Web site
 Title: Webs
 Order: 4000
 TileLink: true

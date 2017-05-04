@@ -1,5 +1,5 @@
 ﻿----
-SampleCategory: Content Types
+SampleCategory: Property Bags
 Title: Property Bags
 Order: 8000
 TileLink: true

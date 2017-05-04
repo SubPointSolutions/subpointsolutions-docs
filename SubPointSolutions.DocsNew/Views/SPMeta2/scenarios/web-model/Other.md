@@ -1,7 +1,7 @@
 ﻿----
-Title: Features
-SampleCategory: Features
-Order: 1000
+Title: Other
+SampleCategory: Other
+Order: 17000
 TileLink: true
 TileLinkOrder: 40
 ----

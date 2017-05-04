@@ -1,7 +1,7 @@
 ﻿----
-Title: Features
-SampleCategory: Features
-Order: 1000
+SampleCategory: Content Types
+Title: Content types
+Order: 3100
 TileLink: true
 TileLinkOrder: 40
 ----

@@ -1,7 +1,7 @@
 ﻿----
-SampleCategory: Content Types
-Title: Fields and Content Types
-Order: 3000
+Title: Folders / Files
+SampleCategory: Folders and Files
+Order: 13000
 TileLink: true
 TileLinkOrder: 40
 ----
