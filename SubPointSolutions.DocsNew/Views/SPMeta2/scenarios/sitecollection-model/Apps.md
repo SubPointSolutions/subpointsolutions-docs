@@ -1,6 +1,7 @@
 ﻿----
-Title: Web Application Model
-Order: 800
+SampleCategory: Content Types
+Title: Apps
+Order: 5000
 TileLink: true
 TileLinkOrder: 40
 ----

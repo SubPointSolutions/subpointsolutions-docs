@@ -5,6 +5,7 @@ Subfolders:
     - getting-started
     - community
 Title: 'reSP Home'
+Category: Guides
 Tile: true
 Order: 10
 TileTitle: 'reSP'

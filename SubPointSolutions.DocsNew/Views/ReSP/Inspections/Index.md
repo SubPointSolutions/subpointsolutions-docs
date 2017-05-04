@@ -7,6 +7,7 @@ Subfolders:
     - javascript
     - xml
 Title: Inspections
+Category:  Code Completion
 Order: 200
 TileLink: true
 TileLinkOrder: 20

@@ -2,6 +2,7 @@
 Title: Knowledge Base
 Order: 300
 TileLink: true
+Category: Extensibility
 TileLinkOrder: 30
 ----
 ### Overview

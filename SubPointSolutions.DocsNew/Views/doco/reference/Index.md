@@ -1,6 +1,7 @@
 ﻿----
 Title: Reference
 Order: 200
+Category: Reference
 TileLink: true
 TileLinkOrder: 20
 StartsNavigation: true

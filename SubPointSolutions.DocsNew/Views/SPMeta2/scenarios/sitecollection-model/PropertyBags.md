@@ -1,6 +1,7 @@
 ﻿----
-Title: Security
-Order: 2000
+SampleCategory: Content Types
+Title: Property Bags
+Order: 8000
 TileLink: true
 TileLinkOrder: 40
 ----

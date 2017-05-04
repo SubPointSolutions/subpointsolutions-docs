@@ -4,6 +4,7 @@ Order: 600
 TileLink: true
 TileLinkOrder: 600
 Hidden: false
+Category: Guides
 ----
 
 Welcome to MetaPack CLI guide. MetaPack comes in different flavors: a set of C# API targets SharePoint developers, and the command-line interface takes away all the coding routines enabling IT professionals to deliver and deploy SharePoint solutions in a single line.

@@ -4,6 +4,7 @@ TopNavigationNode: true
 Subfolders: 
     - getting-started
 Title: 'M2 VS Extensions Home'
+Category: Guides
 Tile: true
 TileTitle: 'M2 VS Extensions'
 TileOrder: 20

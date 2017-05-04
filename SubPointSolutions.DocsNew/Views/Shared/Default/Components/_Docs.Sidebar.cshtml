@@ -4,6 +4,11 @@
 
 @functions
 {
+    public void Log(string message)
+    {
+        //Console.WriteLine(message);
+    }
+
     public string GetCurrentNavFolder()
     {
         var navFolderPath = System.IO.Path.GetDirectoryName(Model.String("RelativeFilePath", string.Empty));
@@ -101,7 +106,11 @@
         var result = indexFile.Get<string>("Category", String.Empty);
 
         if (String.IsNullOrEmpty(result))
-            result = defaultValue;
+        {
+              throw new Exception(
+                        String.Format("Cannot find [Category] value for file:[{0}]", 
+                        indexFile.String("RelativeFilePath")));
+        }
 
         return result;
     }
@@ -114,31 +123,71 @@
         var indexDodc = Documents.FirstOrDefault(x => x.ContainsKey("RelativeFilePath")
                                              && x.String("RelativeFilePath").ToLower() == indexDocPath);
 
+        if (indexDodc == null)
+        {
+            throw new Exception(
+                        String.Format("Cannot find index doc for doc file:[{0}]",
+                        indexDodc.String("RelativeFilePath")));
+        }
+        
         return indexDodc;
     }
 
     public IDocument LookupParentIndexDocument(IDocument doc)
     {
+        Log(String.Format("    - Looking for index doc for:[{0}]", doc.String("RelativeFilePath")));
+
         if (IsLeftNavigationNode(doc))
+        {
+            Log(String.Format("    - Current doc IS an index doc"));
             return doc;
+        }
 
         IDocument result = null;
 
-        var currentFolderPath = System.IO.Path.GetDirectoryName(Model.String("RelativeFilePath", string.Empty));
+        var currentFolderPath = System.IO.Path.GetDirectoryName(doc.String("RelativeFilePath", string.Empty));
         var currentFolderPathParts = currentFolderPath.Split(new[] { '\\' });
 
         var folderPathsCount = currentFolderPathParts.Count();
 
         for (var i = 0; i < folderPathsCount; i++)
         {
+            
             var probingDirPath = string.Join(@"\", currentFolderPathParts.Take(folderPathsCount - i));
+
+            Log(String.Format("    - Trying path:[{0}]", probingDirPath));
             result = LookupParentIndexDocumentInFolder(probingDirPath);
 
             if (result != null)
+            {
+                Log(String.Format("    - Foun undex doc:[]", result.String("RelativeFilePath", string.Empty)));
                 break;
+            }
         }
 
         return result;
+    }
+
+    public int LookupCategoryOrderForDocument(string category, IEnumerable<IDocument> docs)
+    {
+        Log(string.Format("Checking category order for category:[{0}] with docs:[{1}]", category, docs.Count()));
+
+        var tmpDocs = docs.OrderByDescending(x => x.String("RelativeFilePath"));
+        var indexFileName = "index.md";
+
+        var indexDoc = tmpDocs.FirstOrDefault(x => x.ContainsKey("RelativeFilePath")
+                                              && x.String("RelativeFilePath").ToLower().EndsWith(indexFileName));
+
+        if (indexDoc == null)
+        {
+            var allDocsString = string.Join(Environment.NewLine, docs.Select(d => d.String("RelativeFilePath")));
+
+            throw new Exception(
+                        String.Format("Cannot find index doc for docs:[{0}]. Docs were:[{1}]",
+                                docs.Count(), Environment.NewLine + allDocsString));
+        }
+
+        return indexDoc.Get<int>("CategoryOrder", int.MaxValue);
     }
 }
 
@@ -161,7 +210,7 @@
         parentIndexDocumentFolderPath = System.IO.Path.GetDirectoryName(parentIndexDocumentPath);
     }
 
-    System.Console.WriteLine(String.Format("Current doc:[{0}] with root doc:[{1}]", currentDocumentPath, parentIndexDocumentPath));
+    Log(String.Format("Current doc:[{0}] with root doc:[{1}]", currentDocumentPath, parentIndexDocumentPath));
 
     // get subfolders if any, sort them
 
@@ -184,7 +233,7 @@
     {
         var subFolderPath = System.IO.Path.Combine(parentIndexDocumentFolderPath, subfolder);
 
-        System.Console.WriteLine(String.Format("    Loading docs from:[{0}]", subFolderPath));
+        Log(String.Format("    Loading docs from:[{0}]", subFolderPath));
         allSubnavDocuments.AddRange(LookupDocumentsInFolder(subFolderPath));
     }
 
@@ -198,7 +247,7 @@
     {
         allSubnavDocuments.Add(parentIndexDocument);
     }
-    
+
     // current level docs
     var currentLevelDocs = LookupDocumentsInFolder(parentIndexDocumentFolderPath);
     foreach (var d in currentLevelDocs)
@@ -219,6 +268,14 @@
     var categoryGroups = allSubnavDocuments
                             .GroupBy(x => LookupCategoryForDocument(x, x.String("RelativeFileDir")))
                             .ToList();
+
+    foreach (var cat in categoryGroups)
+    {
+        Log(String.Format("    -category:[{0}]", cat.Key));
+    }
+
+    categoryGroups = categoryGroups.OrderBy(x => LookupCategoryOrderForDocument(x.Key, x.ToList()))
+                                   .ToList();
 
     if (!categoryGroups.Any())
     {
@@ -250,7 +307,7 @@
 
                 //var key = System.IO.Path.GetFileName(System.IO.Path.GetDirectoryName(p + @"\1.tmp"));
                 var key = p;
-                
+
                 var docsCount = categoryGroup.Count();
 
                 var groupDocs = categoryGroup.ToList();

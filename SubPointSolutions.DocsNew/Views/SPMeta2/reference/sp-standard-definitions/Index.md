@@ -1,6 +1,7 @@
 ----
 Title: SharePoint Standard Definitions
 Order: 400
+Category:  SharePoint Standard Definitions
 TileLink: true
 TileLinkOrder: 20
 StartsNavigation: false

@@ -5,6 +5,7 @@ TileLink: true
 TileLinkOrder: 20
 StartsNavigation: false
 CategoryOrder: 2000
+Category: C#
 ----
 
 Essentially, definitions are c# POCO objects provided by SPMeta2 library.

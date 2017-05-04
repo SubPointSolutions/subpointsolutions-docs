@@ -1,7 +1,7 @@
 ﻿----
 Title: Examples
 Order: 100
-Category: Getting Started
+Category: Guides
 TileLink: true
 TileLinkOrder: 10
 ----

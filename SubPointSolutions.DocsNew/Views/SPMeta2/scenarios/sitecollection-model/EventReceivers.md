@@ -1,6 +1,7 @@
 ﻿----
-Title: Security
-Order: 600
+SampleCategory: Content Types
+Title: Event Receivers
+Order: 7000
 TileLink: true
 TileLinkOrder: 40
 ----

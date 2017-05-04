@@ -1,6 +1,7 @@
 ﻿----
-Title: Field And Content Types
-Order: 600
+SampleCategory: Content Types
+Title: Custom User Actions
+Order: 6000
 TileLink: true
 TileLinkOrder: 40
 ----

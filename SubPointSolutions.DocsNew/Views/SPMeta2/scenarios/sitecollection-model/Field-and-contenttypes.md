@@ -1,6 +1,7 @@
 ﻿----
-Title: Field And Content Types
-Order: 600
+SampleCategory: Content Types
+Title: Fields and Content Types
+Order: 3000
 TileLink: true
 TileLinkOrder: 40
 ----

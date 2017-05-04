@@ -324,8 +324,9 @@ var allSamples = SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.LoadSamples
 
 Pipelines.Add("site-md-content",
 
-	ReadFiles("*.md").FromAllDirectories(),
+	//ReadFiles("*.md").FromAllDirectories(),
 	//ReadFiles("doco/*.md").FromAllDirectories(),
+	ReadFiles("spmeta2/scenarios/*.md").FromAllDirectories(),
 	//ReadFiles("*.md").FromTopDirectoryOnly(),
 
 	Execute( (doc, context) => {

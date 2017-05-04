@@ -1,7 +1,7 @@
 ﻿----
 Title: Overview
-Order: 600
-Category: Farm and WebApp model
+Order: 10
+Category: Farm and Web Application model
 TileLink: true
 TileLinkOrder: 40
 ----

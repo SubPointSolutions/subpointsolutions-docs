@@ -3,6 +3,7 @@ LeftNavigationNode: true
 TopNavigationNode: true
 Title: Code Completion
 Order: 300
+Category:  Code Completion
 TileLink: true
 TileLinkOrder: 30
 ---

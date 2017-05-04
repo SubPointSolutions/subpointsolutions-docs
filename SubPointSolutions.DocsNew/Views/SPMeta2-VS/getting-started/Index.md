@@ -3,6 +3,7 @@ Title: Getting started
 Order: 200
 TileLink: true
 TileLinkOrder: 20
+Category: Getting started
 ---
 
 ## Getting started with M2 VS Extensions

@@ -4,8 +4,11 @@ TopNavigationNode: true
 Subfolders: 
     - getting-started
     - extensibility
+LeftNavigationNodeOrder: 10
 Title: 'Overview'
 SecondNavTitle: 'Guides'
+Category: Guides
+CategoryOrder: 10
 Tile: true
 TileTitle: 'Guides'
 TileOrder: 10

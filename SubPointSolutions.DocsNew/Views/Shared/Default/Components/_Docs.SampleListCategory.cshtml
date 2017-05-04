@@ -1,4 +1,5 @@
-﻿@{
+﻿@using System
+@{
     var categoryTagName = "Category";
 
 
@@ -31,74 +32,126 @@
 <h3>@ViewBag.SamplesModel.CategoryName</h3>
 
 
-    @Html.Raw("<table class='table table-bordered'>")
-
-    @foreach (var sampleGroupName in sampleCategories)
+@foreach (var sampleGroupName in sampleCategories)
+{
+    if (sampleGroupName != ViewBag.SamplesModel.CategoryName)
     {
-        var samples = samplesWithCategories.Where(s => {
-
-            return s.IsMethod == true 
-                        && s.Tags.Any(t => t.Name == categoryTagName)
-                        && s.Tags.First(t => t.Name == categoryTagName).Values.Contains(sampleGroupName);
-        });
-
-        if (!samples.Any())
-        {
-            continue;
-        }
-
-        <tr>
-            <th colspan="2">
-                @sampleGroupName
-            </th>
-        </tr>
-                    @foreach (var sample in samples) {
-                        <tr>
-                            @{
-                                currentRowHeight += categoryItemHeight;
-
-                                var definitionClassName = sample.ClassName
-                                    .Replace("Tests", string.Empty)
-                                    .Replace("Test", string.Empty);
-
-                                var isStandardTag = sample.Tags.FirstOrDefault(t => t.Name == "isStandard");
-
-                                if (isStandardTag == null)
-                                {
-                                    throw new Exception(string.Format("Cannot find [isStandard] tag for sample:[{1}] in file:[{0}", sample.SourceFileName, sample.MethodName));
-                                }
-
-                                var isStandardSample = isStandardTag.Values.Contains(true.ToString());
-
-                                var definitionUrl = "/spmeta2/reference/sp-foundation-definitions/{0}";
-
-                                if (isStandardSample)
-                                {
-                                    definitionUrl = "/spmeta2/reference/sp-standard-definitions/{0}";
-                                }
-
-                                var definitionPageUrl = string.Format(definitionUrl, definitionClassName).ToLower();
-                                var isHidden = SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.HasTag(sample, "Hidden");
-                                <td>
-                                    @if (isHidden)
-                                    {
-                                        @(sample.Title)
-                                    }
-                                    else
-                                    {
-                                        <a href="@(definitionPageUrl + "?#" + SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.GetSafeAnchor(sample.Title))">
-                                            @(sample.Title)
-                                        </a>
-                                    }
-                                </td>
-                                <td>
-                                    @(sample.Description)
-                                </td>
-
-                            }
-                                </tr>
-                    }
+        continue;
     }
 
+    @Html.Raw("<table class='table table-bordered'>")
+
+    var samples = samplesWithCategories.Where(s =>
+    {
+
+        return s.IsMethod == true
+                    && s.Tags.Any(t => t.Name == categoryTagName)
+                    && s.Tags.First(t => t.Name == categoryTagName).Values.Contains(sampleGroupName);
+    });
+
+    if (!samples.Any())
+    {
+        continue;
+    }
+
+    <tr>
+        <th colspan="3">
+            @sampleGroupName
+        </th>
+    </tr>
+    @foreach (var sample in samples)
+    {
+        var sampleId = Guid.NewGuid().ToString();
+
+        <tr class="accordion-toggle collapsed" data-toggle="collapse" data-target="#g_@sampleId">
+            @{
+        currentRowHeight += categoryItemHeight;
+
+        var definitionClassName = sample.ClassName
+            .Replace("Tests", string.Empty)
+            .Replace("Test", string.Empty);
+
+        var isStandardTag = sample.Tags.FirstOrDefault(t => t.Name == "isStandard");
+
+        if (isStandardTag == null)
+        {
+            throw new Exception(string.Format("Cannot find [isStandard] tag for sample:[{1}] in file:[{0}", sample.SourceFileName, sample.MethodName));
+        }
+
+        var isStandardSample = isStandardTag.Values.Contains(true.ToString());
+
+        var definitionUrl = "/spmeta2/reference/sp-foundation-definitions/{0}";
+
+        if (isStandardSample)
+        {
+            definitionUrl = "/spmeta2/reference/sp-standard-definitions/{0}";
+        }
+
+        var definitionPageUrl = string.Format(definitionUrl, definitionClassName).ToLower();
+        var isHidden = SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.HasTag(sample, "Hidden");
+
+        <td style="padding-top:12px">
+            @if (isHidden)
+            {
+                <span class="label label-default">view</span>
+            }
+            else
+            {
+                <span class="label label-info" style="cursor: pointer;">view</span>
+            }
+        </td>
+
+                <td>
+                    @if (isHidden)
+                    {
+                        @(sample.Title)
+                    }
+                    else
+                    {
+                        @*<a href="@(definitionPageUrl + "?#" + SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.GetSafeAnchor(sample.Title))">
+                            @(sample.Title)
+                        </a>*@
+                        
+                            <a href="javascript:void();">
+                                @(sample.Title)
+                            </a>
+                    }
+                </td>
+                <td>
+                    This is a description for super example: @(sample.Title) @(sample.Description)
+                </td>
+
+            }
+        </tr>
+
+        @if (!isHidden)
+        {
+            <tr>
+                <td colspan="3" class="hiddenRow">
+
+                    <div class="docs-source-cnt">
+
+                        <div class="accordian-body collapse" id="g_@sampleId">
+
+                            <div class="docs-source-tool-panel-cnt">
+                                <div class="pull-right docs-source-tool-subpanel-cnt">
+                                    <a target="_blank" href="@definitionPageUrl" >@definitionClassName help</a> |
+                                    <a target="_blank"  href="https://www.yammer.com/spmeta2feedback/">Ask on Yammer</a>
+                                </div>
+                            </div>
+
+                            <pre><code class="language-cs brush: csharp">@sample.MethodBody</code></pre>
+                        </div>
+                    </div>
+
+                </td>
+
+            </tr>
+        }
+    }
 
     @Html.Raw("</table>")
+}
+
+
+

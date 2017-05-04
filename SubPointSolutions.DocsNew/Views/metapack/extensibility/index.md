@@ -4,6 +4,7 @@ Order: 550
 TileLink: true
 TileLinkOrder: 550
 Hidden: true
+Category: Extensibility
 ----
 
 ## TODO

@@ -1,6 +1,7 @@
 ----
 Title: SharePoint Foundation Definitions
 Order: 300
+Category:  SharePoint Foundation Definitions
 TileLink: true
 TileLinkOrder: 20
 StartsNavigation: false

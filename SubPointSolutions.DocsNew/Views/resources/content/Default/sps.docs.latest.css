@@ -12,10 +12,10 @@
     font-size: 11px;
 }
 
-.sd-sidebar-group-cnt span a {
-    padding-left: 0;
-    color: rgb(51, 51, 51);
-}
+    .sd-sidebar-group-cnt span a {
+        padding-left: 0;
+        color: rgb(51, 51, 51);
+    }
 
 
 .sd-sidebar ul a {
@@ -27,13 +27,13 @@
     padding: 0 0 0 10px;
 }
 
-.sd-sidebar  li.active > a {
+.sd-sidebar li.active > a {
     font-weight: bold;
 }
 
 
 
-.sd-sidebar  ul {
+.sd-sidebar ul {
     border-bottom: 1px #dedede solid;
     padding-bottom: 10px;
     margin-bottom: 10px;
@@ -41,7 +41,6 @@
 
 .sps-document-header-cnt h3 {
     margin-top: 0 !important;
- 
 }
 
 .sps-document-header-cnt {
@@ -54,24 +53,22 @@
 }
 
 .sps-sidebar {
-    
 }
 
 .sps-document {
-    
 }
 
 .sps-secondnav, .sps-secondnav .sub-nav {
     height: 60px;
 }
 
-.sps-secondnav .sub-nav ul {
-    text-align: center;
-    padding-left: 0;
-}
+    .sps-secondnav .sub-nav ul {
+        text-align: center;
+        padding-left: 0;
+    }
 
 
-.sd-sidebar ul a, .sd-sidebar-group-cnt a  {
+.sd-sidebar ul a, .sd-sidebar-group-cnt a {
     color: #666;
     font-size: 12px;
     font-weight: normal;
@@ -87,3 +84,55 @@
 .sub-nav li .active {
     font-weight: bold;
 }
+
+.m-sample-list-cnt .table {
+    font-size: 12px;
+}
+
+    .m-sample-list-cnt .table th {
+        background-color: #f7f4f4;
+    }
+
+.m-sample-list-cnt .btn {
+    padding: 6px 6px 8px 6px;
+}
+
+.m-sample-list-cnt .hiddenRow,
+.m-sample-list-cnt .hiddenRow > .docs-source-cnt {
+    padding: 0 !important;
+    border: 0 !important;
+    margin: 0;
+}
+
+.m-sample-list-cnt .docs-source-cnt {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border: 0;
+}
+
+    .m-sample-list-cnt .docs-source-cnt pre {
+        border: 0;
+    }
+
+.m-sample-list-cnt .docs-source-tool-panel-cnt {
+    background-color: #f7f4f4;
+    width: 100%;
+    height: 38px;
+    border-bottom: 1px #dedede solid;
+}
+
+.m-sample-list-cnt a {
+    color: #0072c6;
+    font-weight: bold;
+}
+
+
+.m-sample-list-cnt .docs-source-tool-subpanel-cnt {
+    padding: 10px;
+    background-color: #f7f4f4;
+}
+
+    .m-sample-list-cnt .docs-source-tool-subpanel-cnt a {
+        color: #0072c6;
+        font-weight: bold;
+    }

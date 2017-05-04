@@ -4,6 +4,7 @@ TopNavigationNode: true
 Subfolders: 
     - getting-started
 Title: 'M2 Reverse Home'
+Category: Guides
 Tile: true
 TileTitle: 'M2 Reverse'
 TileOrder: 40

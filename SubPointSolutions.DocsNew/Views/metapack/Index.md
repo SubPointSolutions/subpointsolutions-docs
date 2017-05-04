@@ -10,6 +10,7 @@ Subfolders:
     - desktop-client
     - community
 Title: 'MetaPack Home'
+Category: Guides
 Tile: true
 TileTitle: 'MetaPack'
 TileOrder: 50

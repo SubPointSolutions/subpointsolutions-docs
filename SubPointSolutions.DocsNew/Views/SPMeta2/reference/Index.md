@@ -1,9 +1,14 @@
 ﻿----
 Title: Reference
 Order: 200
+Category: Reference
 TileLink: true
 TileLinkOrder: 20
 StartsNavigation: true
+LeftNavigationNode: true
+Subfolders:
+    - sp-foundation-definitions
+    - sp-standard-definitions
 ----
 ### SPMeta2 API reference
 

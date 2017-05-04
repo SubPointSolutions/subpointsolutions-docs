@@ -4,6 +4,7 @@ TopNavigationNode: true
 Subfolders: 
     - getting-started
 Title: 'M2 Spec Home'
+Category: Guides
 Tile: true
 TileTitle: 'M2 Spec'
 TileOrder: 60

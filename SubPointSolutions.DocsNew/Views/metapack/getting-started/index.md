@@ -3,6 +3,7 @@ Title: Getting started
 Order: 400
 TileLink: true
 TileLinkOrder: 400
+Category: Getting Started
 ----
 
 Welcome to MetaPack getting started guide. 

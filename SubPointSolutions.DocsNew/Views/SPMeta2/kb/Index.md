@@ -1,4 +1,6 @@
 ﻿----
+TopNavigationNode: true
+LeftNavigationNode: true
 Title: KB
 Order: 500
 Category: Knowledge Base

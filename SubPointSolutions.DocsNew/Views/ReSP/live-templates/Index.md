@@ -1,6 +1,7 @@
 ﻿---
 LeftNavigationNode: true
 TopNavigationNode: true
+Category: Live Templates
 Title: Live Templates
 Order: 400
 TileLink: true
