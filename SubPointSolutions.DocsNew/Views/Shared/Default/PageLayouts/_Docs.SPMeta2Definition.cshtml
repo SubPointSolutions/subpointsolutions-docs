@@ -58,11 +58,11 @@
                 var scopes = new List<string>();
                 var samples = new List<SubPointSolutions.DocsBuildTools.Data.DocSample>();
 
+                var fileName = Model.String("SourceFileBase");
+                var definitionName = Model.String("SourceFileBase").Replace("Tests", string.Empty);
+
                 if (isHidden == false)
                 {
-                    var fileName = Model.String("SourceFileBase");
-                    var definitionName = Model.String("SourceFileBase").Replace("Tests", string.Empty);
-
                     samples = SConfig.AllSamples
                                      .Where(s => s.IsMethod && s.ClassName == (definitionName + "Tests"))
                                      .ToList();
@@ -93,17 +93,22 @@
                 }
             }
 
-            <h4>API support</h4>
-            <span class="label @csomLabel">CSOM</span>
-            <span class="label @ssomLabel">SSOM</span>
+            <div class="api-page-header-cnt">
+                <div class="pull-right tool-api-cnt">
 
-            <h4>Can be deployed under</h4>
-            @foreach (var scope in scopes)
-            {
-                <span class="label label-success">@scope</span>
-            }
+                    <span class="tool-api-label">Scope:</span>
 
-            <h4>Notes @*- <span><a href='#' target="_blank">edit</a></span>*@</h4>
+                    @foreach (var scope in scopes)
+                    {
+                        <span class="label label-success">@scope</span>
+                    }
+
+                    <span class="tool-api-label">API:</span>
+                    <span class="label @csomLabel">CSOM</span>
+                    <span class="label @ssomLabel">SSOM</span>
+                </div>
+                <h4>@definitionName</h4>
+            </div>
 
             @{
                 var body = RenderBody();
@@ -115,51 +120,89 @@
             }
             else
             {
-                // TODO
                 <div class="well well-lg">
                     <h2>Ouch...</h2>
-                    <p>Seems there are't much notes yet.</p>
+                    <p>Nothing much to note</p>
                     <p>
-                        Drop us a line at <a href='#'>Yammer</a> or put a few words together at <span><a href='#' target="_blank">github</a></span>.
+                        Let us know if more documentation is needed ay <a href='https://www.yammer.com/spmeta2feedback/'>Yammer Community</a>
+                        or put a few words together at <span><a href='https://github.com/SubPointSolutions' target="_blank">github</a></span>.
                         We'll help you out.
                     </p>
                 </div>
             }
 
-            <h4>Examples</h4>
+            <h4>Example Usage</h4>
+
+
 
             @if (samples.Any())
             {
-                <ul>
+                <div class="example-toc-links-cnt">
+                    <ul>
+                        @foreach (var sample in samples)
+                        {
+                            if (String.IsNullOrEmpty(sample.Title))
+                            {
+                                throw new Exception(String.Format("Sample with method name [{0}] does not have title. FileName:[{1}]", sample.MethodName, sample.SourceFileName));
+                            }
+
+                            <li><a href="@("#" + SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.GetSafeAnchor(sample.Title))">@sample.Title</a></li>
+                        }
+                    </ul>
+                </div>
+
+                <div class="m-sample-list-cnt">
+
                     @foreach (var sample in samples)
                     {
-                        if (String.IsNullOrEmpty(sample.Title))
-                        {
-                            throw new Exception(String.Format("Sample with method name [{0}] does not have title. FileName:[{1}]", sample.MethodName, sample.SourceFileName));
-                        }
+                        <section name="@(SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.GetSafeAnchor(sample.Title))" id="@(SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.GetSafeAnchor(sample.Title))"></section>
 
-                        <li><a href="@("#" + SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.GetSafeAnchor(sample.Title))">@sample.Title</a></li>
+                        <table class='table table-bordered'>
+
+
+                            <tr>
+                                <td>
+                                    @if (isHidden)
+                                    {
+                                        @(sample.Title)
+                                    }
+                                    else
+                                    {
+                                        @*<a href="@(definitionPageUrl + "?#" + SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.GetSafeAnchor(sample.Title))">
+                                                @(sample.Title)
+                                            </a>*@
+
+                                        <a href="javascript:void();">
+                                            @(sample.Title)
+                                        </a>
+                                    }
+                                </td>
+                                <td>
+                                    This is a description for super example: @(sample.Title) @(sample.Description)
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="padding:0">
+                                    <div class="docs-source-cnt" style="margin-top:0">
+
+                                        <div class="">
+
+                                            <div class="docs-source-tool-panel-cnt">
+                                                <div class="pull-right docs-source-tool-subpanel-cnt">
+                                                    <a target="_blank" href="https://www.yammer.com/spmeta2feedback/">Ask on Yammer</a>
+                                                </div>
+                                            </div>
+
+                                            <pre><code class="language-cs brush: csharp">@sample.MethodBody</code></pre>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
                     }
-                </ul>
 
-                foreach (var sample in samples)
-                {
-                    <section name="@(SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.GetSafeAnchor(sample.Title))" id="@(SubPointSolutions.DocsBuildTools.Data.SampleReadAPI.GetSafeAnchor(sample.Title))"></section>
-
-                    <div class="panel panel-default">
-
-                        <div class="panel-heading">
-                            @sample.Title
-                        </div>
-
-                        <div class="panel-body">
-                            <pre><code class="language-cs brush: csharp">
-                                @sample.MethodBody
-                            </code></pre>
-                        </div>
-                    </div>
-
-                }
+                </div>
             }
             else
             {
@@ -177,4 +220,3 @@
 
     </div>
 </div>
-
