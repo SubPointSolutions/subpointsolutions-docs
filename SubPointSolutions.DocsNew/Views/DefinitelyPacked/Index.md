@@ -6,14 +6,14 @@ Subfolders:
 Title: 'M2 VS Extensions Home'
 Category: Guides
 Tile: true
-TileTitle: 'SPMeta2 VS Extensions'
-TileOrder: 20
+TileTitle: 'DefinitelyPacked'
+TileOrder: 40
+TileCategory: Package and Distribute
 TileLink: true
-TileLinkOrder: 10
-TileCategory: Build and Deploy
-TileDescription: 'Useful Visual Studio snippets, project and item templates to bootstrap SPMeta2 based projects.'
+TileLinkOrder: 7
+TileDescription: 'The repository for common MetaPack packages'
 GitHubShowPanel: true
-GitHubProjectName: spmeta2-vsixextensions
+GitHubProjectName: DefinitelyPacked
 ---
 ## SPMeta2 Extensions for Visual Studio
 [SPMeta2 Extensions for Visual Studio]("https://github.com/SubPointSolutions/spmeta2-vsixextensions") adds a bunch of useful snippets, project and item templates to Visual Studio. The purpose is to make your daily M2/SharePoint related work in Visual Studio much easier and more productive, while also bringing consistency across your projects, people and teams.

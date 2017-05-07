@@ -14,7 +14,7 @@ TileTitle: 'Guides'
 TileOrder: 10
 Order: 10
 Hidden : false
-TileLink: true
+TileLink: false
 TileLinkOrder: 5
 TileDescription: 'Hassle-free SharePoint artifact provisioning framework for SP2010, SP2013 and O365.'
 ---

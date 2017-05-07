@@ -6,11 +6,14 @@ Subfolders:
 Title: 'M2 Spec Home'
 Category: Guides
 Tile: true
-TileTitle: 'M2 Spec'
-TileOrder: 60
+TileTitle: 'SPMeta2 Spec'
+TileOrder: 50
 TileLink: true
+TileCategory: Build and Deploy
 TileLinkOrder: 10
 TileDescription: 'Technical documentation made easy - build beautiful one-page specifications for SPMeta2 models.'
+GitHubShowPanel: true
+GitHubProjectName: spmeta2-spec
 ---
 
 ## SPMeta2.Specs in details

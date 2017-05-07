@@ -8,11 +8,14 @@ Title: 'reSP Home'
 Category: Guides
 Tile: true
 Order: 10
-TileTitle: 'reSP'
-TileOrder: 100
+TileTitle: 'reSharePoint for ReSharper'
+TileOrder: 30
 TileLink: true
-TileLinkOrder: 10
+TileLinkOrder: 15
+TileCategory: Build and Deploy
 TileDescription: 'ReSharper plugin that helps to write SharePoint related code faster and better.'
+GitHubShowPanel: false
+GitHubProjectName: resharepoint
 ---
 
 ### Welcome to reSP

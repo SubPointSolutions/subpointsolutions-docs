@@ -6,11 +6,14 @@ Subfolders:
 Title: 'M2 Reverse Home'
 Category: Guides
 Tile: true
-TileTitle: 'M2 Reverse'
+TileTitle: 'SPMeta2 Reverse'
 TileOrder: 40
 TileLink: true
 TileLinkOrder: 8
+TileCategory: Build and Deploy
 TileDescription: 'A library to provide reverse engineering of the existing SharePoint sites into SPMeta2 models.'
+GitHubShowPanel: true
+GitHubProjectName: spmeta2-reverse
 ---
 
 ## SPMeta2 Reverse

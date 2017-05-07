@@ -454,6 +454,7 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="Views\DefinitelyPacked\Index.md" />
     <None Include="Views\doco\advanced-guides\Index.md" />
     <None Include="Views\doco\advanced-guides\Model serialization.md" />
     <None Include="Views\doco\advanced-guides\Incremental Provision.md" />
@@ -491,6 +492,7 @@
     <None Include="Views\doco\reference\sp-foundation-definitions\Index.md" />
     <None Include="Views\doco\reference\sp-standard-definitions\Index.md" />
     <None Include="Views\doco\_ViewStart.cshtml" />
+    <None Include="Views\metapack-gallery\Index.md" />
     <None Include="Views\metapack\desktop-client\index.md" />
     <None Include="Views\metapack\api-reference\index.md" />
     <None Include="Views\metapack\advanced-guides\index.md" />

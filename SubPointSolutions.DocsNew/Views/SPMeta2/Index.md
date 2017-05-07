@@ -10,13 +10,16 @@ SecondNavTitle: 'Guides'
 Category: Guides
 CategoryOrder: 10
 Tile: true
-TileTitle: 'Guides'
+TileTitle: 'SPMeta2'
 TileOrder: 10
 Order: 10
 Hidden : false
 TileLink: true
 TileLinkOrder: 5
+TileCategory: Build and Deploy
 TileDescription: 'Hassle-free SharePoint artifact provisioning framework for SP2010, SP2013 and O365.'
+GitHubShowPanel: true
+GitHubProjectName: spmeta2
 ---
 ## Welcome to SPMeta2
 

@@ -1,25 +1,15 @@
 ﻿---
 LeftNavigationNode: true
 TopNavigationNode: true
-Subfolders: 
-    - guides
-    - advanced-guides
-    - extensibility
-    - api-reference
-    - cli
-    - desktop-client
-    - community
-Title: 'MetaPack Home'
+Title: 'MetaPack Galery'
 Category: Guides
 Tile: true
-TileTitle: 'MetaPack'
-TileOrder: 10
-TileLink: true
+TileTitle: 'MetaPack Gallery'
+TileOrder: 50
 TileCategory: Package and Distribute
+TileLink: true
 TileLinkOrder: 9
 TileDescription: 'The package manager for SharePoint customizations.'
-GitHubShowPanel: true
-GitHubProjectName: metapack
 ---
 
 Welcome to the introduction guide to MetaPack! It is the best place to start with basics of the MetaPack project. We explain what MetaPack is, what kind of problems it solves, how to get started with MetaPack.

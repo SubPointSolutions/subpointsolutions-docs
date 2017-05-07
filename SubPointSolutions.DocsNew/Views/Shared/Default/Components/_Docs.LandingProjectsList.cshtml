@@ -4,57 +4,139 @@
                 .Where(x => x.ContainsKey("Tile")
                     && x.ContainsKey("TileTitle")
                     && !x.Get<bool>("Hidden", false)
+                    && x.Get<bool>("TileLink", false)
                     && x.ContainsKey("TileDescription")
                     && x.ContainsKey("TileOrder")
                     )
          .OrderBy(x => x.Get<int>("TileOrder", 0))
          .ToList();
 
+
+    var tileGroups = tiles.GroupBy(tile => tile.Get<String>("TileCategory", String.Empty))
+                          .OrderBy(g => g.Key);         
 }
 
 @if (tiles.Any())
 {
-    <hr />
+
 }
 
-@foreach (var tile in tiles)
+@foreach (var tileGroup in tileGroups)
 {
-    var tilePath = System.IO.Path.GetDirectoryName(tile.String("RelativeFilePath"));
-    var tileLinks = Documents
+    var links = tileGroup.ToList();
+    
+    <div class="row tool-box">
+
+        <div class="tool-family-cnt">
+            <span>@tileGroup.Key</span>
+        </div>
+
+
+        @foreach (var tile in links)
+        {
+            var showGitHubPanel = tile.Get<bool>("GitHubShowPanel", false);
+            var gitHubProjectName = tile.Get<string>("GitHubProjectName");
+            
+            var isFirst = tile == links.First();
+            var isLast = tile == links.Last();
+
+            var newRow = links.IndexOf(tile) > 0 && (links.IndexOf(tile)) % 3 == 0;
+
+            var tilePath = System.IO.Path.GetDirectoryName(tile.String("RelativeFilePath"));
+            var tileLinks = Documents
                 .Where(x => x.ContainsKey("TileLink")
-                      && x.ContainsKey("RelativeFilePath")
-                      && !x.Get<bool>("Hidden", false)
-                      && x.String("RelativeFilePath").StartsWith(tilePath + @"\"))
+                            && x.ContainsKey("RelativeFilePath")
+                            && !x.Get<bool>("Hidden", false)
+                            && x.String("RelativeFilePath").StartsWith(tilePath + @"\"))
                 .OrderBy(x => x.Get<int>("TileLinkOrder", 0))
                 .ToList();
 
+            if (newRow && !isLast && !isLast)
+            {
+                @Html.Raw("</div>")
+            }
 
-    <div class="col-md-4 m-landing-project-cnt" m2-order='@(tile.Get<int>("TileLinkOrder", 0))'>
-        <div class="panel panel-default ">
-            <div class="panel-heading">
-                <a href="@(PathHelper.ToRootLink(PathHelper.RemoveExtension(tile.String("RelativeFilePath"))))">
-                    @(tile.String("TileTitle"))
-                </a>
+            if (newRow || isFirst)
+            {
+                @Html.Raw("<div class='row tool-box-row'>")
+            }
+
+            <div class="col-md-4" m2-order='@(tile.Get<int>("TileLinkOrder", 0))'>
+
+                <div class="tile-cnt">
+
+                    <div class="tile-title-cnt">
+                        <a href="@(PathHelper.ToRootLink(PathHelper.RemoveExtension(tile.String("RelativeFilePath"))))">
+                            <span>
+                            @(tile.String("TileTitle"))
+                        </span>
+                        </a>
+                    </div>
+
+                    <div class="tile-description-cnt">
+                        <p>
+                            @tile.String("TileDescription")
+                        </p>
+                    </div>
+
+                    <div class="tile-links-cnt">
+                        <p>
+                            <table>
+                                <tr>
+                                    <td>
+                                        @if (tileLinks.Take(3).Any())
+                                        {
+                                            <ul>
+                                                @foreach (var tileLink in tileLinks.Take(3))
+                                                {
+                                                    <li>
+                                                        <a href="@(PathHelper.ToRootLink(PathHelper.RemoveExtension(tileLink.String("RelativeFilePath"))))">
+                                                            @(tileLink.String("Title"))
+                                                        </a>
+                                                    </li>
+                                                }
+                                            </ul>
+                                        }
+                                    </td>
+                                    <td>
+
+                                        @if (tileLinks.Skip(3).Take(3).Any())
+                                        {
+                                            <ul>
+                                                @foreach (var tileLink in tileLinks.Skip(3).Take(3))
+                                                {
+                                                    <li>
+                                                        <a href="@(PathHelper.ToRootLink(PathHelper.RemoveExtension(tileLink.String("RelativeFilePath"))))">
+                                                            @(tileLink.String("Title"))
+                                                        </a>
+                                                    </li>
+                                                }
+                                            </ul>
+                                        }
+
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </p>
+                    </div>
+                    
+                    @if (showGitHubPanel)
+                    { 
+                        <div class="tile-tools-cnt">
+                            <iframe src="https://ghbtns.com/github-btn.html?user=subpointsolutions&repo=@gitHubProjectName&type=star&count=true&size=small" frameborder="0" scrolling="0" width="90px" height="20px"></iframe>
+                            <iframe src="https://ghbtns.com/github-btn.html?user=subpointsolutions&repo=@gitHubProjectName&type=fork&count=true&size=small" frameborder="0" scrolling="0" width="90px" height="20px"></iframe>
+                        </div>
+                    }
+
+                </div>
             </div>
-            <div class="panel-body m-landing-project-links-cnt" tile-path="@tilePath">
-                @tile.String("TileDescription")
 
-                @if (tileLinks.Any())
-                {
-                    <ul>
-                        @foreach (var tileLink in tileLinks)
-                        {
-                            <li>
-                                <a href="@(PathHelper.ToRootLink(PathHelper.RemoveExtension(tileLink.String("RelativeFilePath"))))">
-                                    @(tileLink.String("Title"))
-                                </a>
-                            </li>
-                        }
-                    </ul>
-                }
+            if (isLast)
+            {
+                @Html.Raw("</div>")
+            }
+        }
 
-            </div>
-
-        </div>
     </div>
 }
