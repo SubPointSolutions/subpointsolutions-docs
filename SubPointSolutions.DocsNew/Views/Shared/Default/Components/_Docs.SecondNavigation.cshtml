@@ -18,15 +18,15 @@
 @{
     // pre-init
     var currentDocument = Model;
-    
+
     var currentDocumentPath = currentDocument.String("RelativeFilePath", string.Empty);
     var currentFolderPath = System.IO.Path.GetDirectoryName(currentDocumentPath);
-    
+
     var navSplit = Model.String("RelativeFilePath", string.Empty).Split(new[] { '\\' });
 
     var navFolder = navSplit[0];
     var navSubFolder = navSplit.Count() > 1 ? navSplit[1] : string.Empty;
-    
+
     // root link, home
     if (navSubFolder.EndsWith(".md"))
     {
@@ -39,9 +39,9 @@
                     && !x.String("SourceFileBase").StartsWith("_")
                     && x.String("RelativeFilePath").StartsWith(navFolder)
                     && x.String("RelativeFilePath").EndsWith("ndex.md")
-                    //&& x.String("RelativeFilePath", string.Empty)
-                    //            .Split(new[] { '\\' })
-                    //            .Count() == 3
+            //&& x.String("RelativeFilePath", string.Empty)
+            //            .Split(new[] { '\\' })
+            //            .Count() == 3
 
                     && x.Get<bool>("TopNavigationNode", false) == true
               )
@@ -54,34 +54,48 @@
              LinkPath = PathHelper.ToRootLink(PathHelper.RemoveExtension(x.String("RelativeFilePath"))) + ".html"
          }).ToList();
 
-    
+
     //var selectedGrouselectedGroupp = allSubgroups.FirstOrDefault(g => g.SubgroupName == navSubFolder);
 }
 
 <div class="sub-nav" m-current-subfolder="@navSubFolder" nav-folder="@navFolder">
 
+    @*<nav class="pull-right sps-document-header-editor" style="
+    margin-top: 15px;
+">
+
+        <a href="#" style="
+    font-weight: normal;
+">
+            <div class="fa fa-pencil fa-right glyphicon-class glyphicon glyphicon-edit" style="
+    margin-right: 3;
+    font-weight: normal;
+"></div>Edit
+        </a>
+    </nav>*@
+
     @*<h2>
-        @navFolder
-    </h2>*@
+            @navFolder
+        </h2>*@
 
     <ul>
         @foreach (var doc in allSubnavDocuments)
         {
             var title = doc.Title;
             var linkPath = doc.LinkPath;
-            
+
             var isActive = doc.IsActive;
 
             // issue with the first item pointing to the very root of the docs
             // selecting the first one if only others weren't selected
-            if (allSubnavDocuments.IndexOf(doc) == 0 )
+            if (allSubnavDocuments.IndexOf(doc) == 0)
             {
                 if (isActive && allSubnavDocuments.Count(t => t.IsActive) > 1)
                 {
                     isActive = false;
                 }
             }
-            
+
             var cssClass = isActive ? "active" : string.Empty;
 
             <li>
