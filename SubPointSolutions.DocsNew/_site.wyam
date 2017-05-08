@@ -187,7 +187,7 @@ public static class ContentHelper {
 
 				} else if(href.StartsWith("http")) {
 					
-					element.SetAttribute("href", href.ToLower());
+					element.SetAttribute("href", href);
 					element.SetAttribute("target", "_blank");
 				}
             }

@@ -14,6 +14,7 @@ TileCategory: Build and Deploy
 TileDescription: 'Useful Visual Studio snippets, project and item templates to bootstrap SPMeta2 based projects.'
 GitHubShowPanel: true
 GitHubProjectName: spmeta2-vsixextensions
+GitHubEditPageRelativeRepositoryUrl: https://github.com/SubPointSolutions/subpointsolutions-docs/edit/docs-build-tools-dev/SubPointSolutions.DocsNew/Views
 ---
 ## SPMeta2 Extensions for Visual Studio
 [SPMeta2 Extensions for Visual Studio]("https://github.com/SubPointSolutions/spmeta2-vsixextensions") adds a bunch of useful snippets, project and item templates to Visual Studio. The purpose is to make your daily M2/SharePoint related work in Visual Studio much easier and more productive, while also bringing consistency across your projects, people and teams.

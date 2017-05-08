@@ -55,27 +55,32 @@
          }).ToList();
 
 
+    var indexDocPath = System.IO.Path.Combine(navFolder, "index.md");
+    var indexDoc = Documents.FirstOrDefault(x => x.ContainsKey("RelativeFilePath")
+                                                 && x.String("RelativeFilePath").ToLower() == indexDocPath.ToLower());
+
+    var gitHubRepoUrl = String.Empty;
+    var hasIndexDoc = false;
+
+    if (indexDoc != null)
+    {
+        gitHubRepoUrl = indexDoc.Get<String>("GitHubEditPageRelativeRepositoryUrl", String.Empty);
+        hasIndexDoc = true;
+    }
+
     //var selectedGrouselectedGroupp = allSubgroups.FirstOrDefault(g => g.SubgroupName == navSubFolder);
 }
 
-<div class="sub-nav" m-current-subfolder="@navSubFolder" nav-folder="@navFolder">
+<div class="sub-nav" m-current-subfolder="@navSubFolder"
+     nav-folder="@navFolder"
+     index-doc-path="@indexDocPath"
+     docs-count="@Documents.Count()"
+     hasindexdoc="@hasIndexDoc.ToString()">
 
-    @*<nav class="pull-right sps-document-header-editor" style="
-    margin-top: 15px;
-">
 
-        <a href="#" style="
-    font-weight: normal;
-">
-            <div class="fa fa-pencil fa-right glyphicon-class glyphicon glyphicon-edit" style="
-    margin-right: 3;
-    font-weight: normal;
-"></div>Edit
-        </a>
-    </nav>*@
 
     @*<h2>
-            @navFolder
+        @navFolder
         </h2>*@
 
     <ul>
@@ -103,6 +108,16 @@
                     @title
                 </a>
             </li>
+        }
+
+        @if (!String.IsNullOrEmpty(gitHubRepoUrl))
+        {
+            <nav class="pull-right sps-document-header-editor">
+                <a href="@(string.Format("{0}/{1}", gitHubRepoUrl, currentDocument.String("RelativeFilePath", string.Empty)))">
+                    <div class="fa fa-pencil fa-right glyphicon-class glyphicon glyphicon-edit" style="margin-right: 3px;"></div>
+                    Edit
+                </a>
+            </nav>
         }
 
     </ul>

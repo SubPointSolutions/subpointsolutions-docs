@@ -1,4 +1,4 @@
-﻿---
+﻿----
 LeftNavigationNode: true
 TopNavigationNode: true
 Subfolders: 
@@ -20,7 +20,8 @@ TileCategory: Build and Deploy
 TileDescription: 'Hassle-free SharePoint artifact provisioning framework for SP2010, SP2013 and O365.'
 GitHubShowPanel: true
 GitHubProjectName: spmeta2
----
+GitHubEditPageRelativeRepositoryUrl: https://github.com/SubPointSolutions/subpointsolutions-docs/edit/docs-build-tools-dev/SubPointSolutions.DocsNew/Views
+----
 ## Welcome to SPMeta2
 
 SPMeta2 is a hassle-free fluent API for code-based SharePoint artefact provisioning.
