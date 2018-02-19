@@ -1,0 +1,26 @@
+﻿{
+  "defaultSolutionDirectory": "./../",
+  "defaultSolutionFilePath": "./../SubPointSolutions.Docs.sln",
+  "defaultNuGetPackagesDirectory": "./build-artifact-nuget-packages",
+  "defaultChocolateyPackagesDirectory": "./build-artifact-cli-packages",
+
+  "defaultWebDeployPackageDir": "./build-artifact-webdeploy",
+  "defaultWebDeployTmpPackageDir": "./build-artifact-webdeploy-tmp",
+
+  "defaultNuspecVersion": "0.1.0-beta1",
+     
+  "defaultTestCategories": [
+    "CI.Core"
+  ],
+  "customNuspecs": [
+
+  ],
+  "customChocolateySpecs": [
+       
+  ],
+  "defaultTestAssemblyPaths": [
+       
+  ],
+  "defaultBuildDirs": [ ],
+  "defaultEnvironmentVariables": [ ]
+}
