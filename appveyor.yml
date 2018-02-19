@@ -2,6 +2,6 @@ test: off
 
 clone_folder: c:\prj\
 
-build_script: 
-    - ps: c:\prj\Build\build.ps1 -Verbosity Minimal -Target "Action-Wyam"
-	- ps: c:\prj\Build\build.ps1 -Verbosity Minimal -Target "Action-NetlifyPublish"
+build_script:
+  - ps: c:\prj\Build\build.ps1 -Verbosity Minimal -Target "Action-Wyam"
+  - ps: c:\prj\Build\build.ps1 -Verbosity Minimal -Target "Action-NetlifyPublish"
