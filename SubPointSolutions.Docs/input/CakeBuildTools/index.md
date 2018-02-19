@@ -5,7 +5,7 @@ Description	: ""
 Project.Title			: "CakeBuildTools"
 Project.Description		: "Common CakeBuild tools for simplified CI/CD workflows"
 Project.Category		: "Build and Deploy"
-Project.CategoryOrder	: 900
+Project.CategoryOrder	: 901
 
 Nav.LeftNodeTitle:  "Home" 
 
