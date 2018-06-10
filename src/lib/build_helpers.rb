@@ -88,8 +88,7 @@ def checkout_repo(folder:, repo_url:, repo_branch:, options:)
 
     cmd = [
         "cd #{repo_subfolder_path}",
-        "git checkout #{repo_branch}",
-        "git status"
+        "git checkout #{repo_branch}"
     ].join(" && ")
 
     $logger.info "   - git checkout #{repo_branch}"
@@ -151,7 +150,7 @@ def build_site(repo_folder_path:, git_metadata:, dst_root_path:, options: )
                         
                         "echo 'Generating docs in /target-tmp'",
                         "cd /app && vuepress build -d /target-tmp",
-
+                      
                         "echo 'Copying docs from /target-tmp to /target'",                        
                         "cp -a /target-tmp/. /target",
 
