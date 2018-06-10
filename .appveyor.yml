@@ -1,0 +1,10 @@
+image: ubuntu
+
+services:
+- docker
+
+build: off
+
+test:
+- pwd && ls -la
+- ruby src/docs-docker.rb -c dev
