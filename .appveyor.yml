@@ -5,6 +5,6 @@ services:
 
 build: off
 
-test:
+build_script:
   - pwd && ls -la
   - ruby src/docs-docker.rb -c dev
