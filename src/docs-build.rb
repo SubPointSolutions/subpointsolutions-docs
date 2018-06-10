@@ -7,6 +7,8 @@ $logger = Logger.new(STDOUT)
 configure_logger(logger: $logger) 
 
 current_folder = File.expand_path(File.dirname(__FILE__))
+config_file    = current_folder + "/build.yaml"
+
 $logger.debug "Running in folder: #{current_folder}"
 
 $logger.debug "Parsing command line params"
@@ -51,7 +53,7 @@ $logger.debug "Running with options:"
 $logger.debug options.to_yaml
 
 $logger.debug("Reading docs metadata configuration")
-git_metadata = load_git_metadata(config_name: options[:config])
+git_metadata = load_git_metadata(config_name: options[:config], file_path: config_file)
 
 $logger.info("Building documentation...")
 

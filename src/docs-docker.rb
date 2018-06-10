@@ -7,13 +7,15 @@ $logger = Logger.new(STDOUT)
 configure_logger(logger: $logger) 
 
 current_folder = File.expand_path(File.dirname(__FILE__))
+config_file    = current_folder + "/build.yaml"
 $logger.debug "Running in folder: #{current_folder}"
 
 $logger.debug "Parsing command line params"
 
 options = {
     :config => "dev",
-    :current_folder => current_folder
+    :current_folder => current_folder,
+    :enable_parallel_build => false
 }
 
 parser = OptionParser.new do|opts|
@@ -22,6 +24,10 @@ parser = OptionParser.new do|opts|
    
     opts.on('-c', '--config=VALUE', 'Config to use') do |value|
       options[:config] = value;
+    end
+
+    opts.on('-p', '--parallel', 'Enable parallel build') do |name|
+		  options[:enable_parallel_build] = true;
     end
 end
 
@@ -33,7 +39,7 @@ $logger.debug "Running with options:"
 $logger.debug options.to_yaml
 
 $logger.debug("Reading docs metadata configuration")
-git_metadata = load_git_metadata(config_name: options[:config], file_path:  current_folder + "/build.yaml")
+git_metadata = load_git_metadata(config_name: options[:config], file_path: config_file)
 
 $logger.info("Building docker containers...")
 

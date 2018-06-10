@@ -351,14 +351,41 @@ def exec_build_docker_containers(git_metadata:, options: )
     if !docker_builds.nil?
         $logger.debug "Building docker containers for profile: #{config}"
 
-        docker_builds.each do | docker_build_cmd |
-            cmd = [
-                "cd #{current_folder}",
-                docker_build_cmd,
-            ].join(" && ")
+        enable_parallel_build = options[:enable_parallel_build]
+    
+        if enable_parallel_build
+            $logger.debug "Parallel build!"
+            threads = []
+    
+            docker_builds.each do | docker_build_cmd |
+                
+                threads << Thread.new {
+                    cmd = [
+                        "cd #{current_folder}",
+                        docker_build_cmd,
+                    ].join(" && ")
 
-            cmd(cmd)
+                    cmd(cmd)
+                }
+    
+            end
+    
+            $logger.debug "Waiting all thread to complete..."
+            threads.each { |t| t.join }
+        else
+            $logger.debug "Sync build!"
+            docker_builds.each do | docker_build_cmd |
+                
+                cmd = [
+                    "cd #{current_folder}",
+                    docker_build_cmd,
+                ].join(" && ")
+
+                cmd(cmd)
+            end
         end
+    
+        $logger.info "Completed building web sites!"
     else 
         err_message = "Cannot find docker containers build for profile:  #{config}"
 
