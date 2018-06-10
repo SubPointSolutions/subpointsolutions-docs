@@ -160,4 +160,5 @@ $RECYCLE.BIN/
 src/.site-**/**
 src/.docs-**/**
 .vagrant
-*netlify*
+*.netlify*
+*netlify.log*
