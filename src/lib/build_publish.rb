@@ -30,6 +30,7 @@ def exec_publish_website(options:)
 
     if is_local_build == true
         cmd = [
+            "ls -Rl #{doco_site_cache}",
             [
                 "netlify deploy",
                 "-t #{netlify_api_key}",
@@ -46,7 +47,7 @@ def exec_publish_website(options:)
                 "#{docker_netlify_container}",
                 [
                     "sh << COMMANDS",
-                        "ls -la /app",
+                        "ls -Rl /app",
                         "which netlify && netlify --version",
 
                         "echo 'Publishing netlify site from /app folder'",
