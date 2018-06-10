@@ -16,8 +16,6 @@ end
 
 def cmd(cmd, silent: false) 
 
-    silent = false
-
     if silent != true
         $logger.debug "Running cmd: #{cmd}"
     end
