@@ -8,4 +8,4 @@ build: off
 build_script:
   - pwd && ls -la
   - which ruby && ruby --version
-  - ruby src/docs-docker.rb -c dev
+  - sh -c 'ruby src/docs-docker.rb -c dev'
