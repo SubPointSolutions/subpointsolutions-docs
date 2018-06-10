@@ -88,7 +88,8 @@ def checkout_repo(folder:, repo_url:, repo_branch:, options:)
 
     cmd = [
         "cd #{repo_subfolder_path}",
-        "git checkout #{repo_branch}"
+        "git checkout #{repo_branch}",
+        "git status"
     ].join(" && ")
 
     $logger.info "   - git checkout #{repo_branch}"
@@ -391,5 +392,33 @@ def exec_build_docker_containers(git_metadata:, options: )
         raise err_message
 
     end
+
+end
+
+def dev_documentation(git_metadata:, options: )
+
+    tmp_folders = get_tmp_folders(options: options)
+
+    doco_git_cache  = tmp_folders[:doco_git_cache] 
+
+    config = options[:config]
+    current_folder = options[:current_folder]
+    
+    site_title = options[:site_title]
+    target_config = git_metadata.first { |e| e["title"] == site_title }
+
+    require_value current_folder, "current_folder"
+    require_value target_config, "target_config"
+
+    repo_subfolder = File.basename(target_config["url"], ".*")
+    repo_subfolder_path =  File.join(doco_git_cache, repo_subfolder)
+    docs_src_folder =  File.join(repo_subfolder_path, target_config["src_folder"])
+
+    cmd = [
+        "cd #{docs_src_folder}",
+        "vuepress dev"
+    ].join(" && ")
+
+    cmd(cmd)
 
 end
