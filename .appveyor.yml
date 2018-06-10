@@ -6,4 +6,4 @@ services:
 build: off
 
 build_script:
-  - ./.appveyor.sh
+  - chmod +x ./.appveyor.sh && sh ./.appveyor.sh
