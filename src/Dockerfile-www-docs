@@ -1,0 +1,6 @@
+FROM kyma/docker-nginx
+
+ARG DOCS_SRC=.
+COPY $DOCS_SRC/ /var/www
+
+CMD 'nginx'

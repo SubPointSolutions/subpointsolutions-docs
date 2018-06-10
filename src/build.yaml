@@ -1,0 +1,162 @@
+config:
+    test:
+        docker-build:
+          - "cd tools/docker/web-vuepress    && docker build --tag subpoint/vuepress    --build-arg VUEPRESS_VERSION=0.10.0 ."
+          - "cd tools/docker/web-netlify-cli && docker build --tag subpoint/netlify-cli --build-arg NETLIFYCLI_VERSION=1.2.2 ."
+
+        repos:
+            - 
+                title:      "metabox"
+                url:        "https://github.com/SubPointSolutions/metabox.git"
+                branch:     "origin/0.2.3-dev"
+                src_folder: "docs/content"
+                dst_folder: "metabox"
+
+    dev:
+        docker-build:
+          - "cd tools/docker/web-vuepress    && docker build --tag subpoint/vuepress    --build-arg VUEPRESS_VERSION=0.10.0 ."
+          - "cd tools/docker/web-netlify-cli && docker build --tag subpoint/netlify-cli --build-arg NETLIFYCLI_VERSION=1.2.2 ."
+
+        repos:
+            - 
+                title:      "spmeta2"
+                url:        "https://github.com/SubPointSolutions/spmeta2.git"
+                branch:     "dev"  
+                src_folder: "SPMeta2/SubPointSolutions.Docs/Views/SPMeta2"
+                dst_folder: "spmeta2"
+            - 
+                title:      "spmeta2-vs"
+                url:        "https://github.com/SubPointSolutions/spmeta2-vsixextensions.git"
+                branch:     "dev"  
+                src_folder: "SubPointSolutions.Docs/Views/SPMeta2-VS"
+                dst_folder: "spmeta2-vs"
+            - 
+                title:      "spmeta2-reverse"
+                url:        "https://github.com/SubPointSolutions/spmeta2-reverse.git"
+                branch:     "dev"  
+                src_folder: "SPMeta2.Reverse/SubPointSolutions.Docs/Views"
+                dst_folder: "spmeta2-reverse"
+            - 
+                title:      "metapack"
+                url:        "https://github.com/SubPointSolutions/MetaPack.git"
+                branch:     "dev"  
+                src_folder: "SubPointSolutions.Docs/Views/MetaPack"
+                dst_folder: "metapack"
+            - 
+                title:      "spmeta2-spec"
+                url:        "https://github.com/SubPointSolutions/MetaPack.git"
+                branch:     "dev"  
+                src_folder: "SubPointSolutions.Docs/Views/MetaPack"
+                dst_folder: "spmeta2-spec"
+            - 
+                title:      "resp"
+                url:        "https://github.com/SubPointSolutions/reSharePoint.git"
+                branch:     "dev"  
+                src_folder: "reSharePoint/SubPointSolutions.Docs/Views/ReSP"
+                dst_folder: "resp"
+            - 
+                title:      "metabox"
+                url:        "https://github.com/SubPointSolutions/metabox.git"
+                branch:     "origin/0.2.3-dev"
+                src_folder: "docs/content"
+                dst_folder: "metabox"
+
+    beta:
+        docker-build:
+          - "cd tools/docker/web-vuepress    && docker build --tag subpoint/vuepress    --build-arg VUEPRESS_VERSION=0.10.0 ."
+          - "cd tools/docker/web-netlify-cli && docker build --tag subpoint/netlify-cli --build-arg NETLIFYCLI_VERSION=1.2.2 ."
+
+        repos:
+            - 
+                title:      "spmeta2"
+                url:        "https://github.com/SubPointSolutions/spmeta2.git"
+                branch:     "dev"  
+                src_folder: "SPMeta2/SubPointSolutions.Docs/Views/SPMeta2"
+                dst_folder: "spmeta2"
+            - 
+                title:      "spmeta2-vs"
+                url:        "https://github.com/SubPointSolutions/spmeta2-vsixextensions.git"
+                branch:     "dev"  
+                src_folder: "SubPointSolutions.Docs/Views/SPMeta2-VS"
+                dst_folder: "spmeta2-vs"
+            - 
+                title:      "spmeta2-reverse"
+                url:        "https://github.com/SubPointSolutions/spmeta2-reverse.git"
+                branch:     "dev"  
+                src_folder: "SPMeta2.Reverse/SubPointSolutions.Docs/Views"
+                dst_folder: "spmeta2-reverse"
+            - 
+                title:      "metapack"
+                url:        "https://github.com/SubPointSolutions/MetaPack.git"
+                branch:     "master"  
+                src_folder: "SubPointSolutions.Docs/Views/MetaPack"
+                dst_folder: "metapack"
+            - 
+                title:      "spmeta2-spec"
+                url:        "https://github.com/SubPointSolutions/MetaPack.git"
+                branch:     "master"  
+                src_folder: "SubPointSolutions.Docs/Views/MetaPack"
+                dst_folder: "spmeta2-spec"
+            - 
+                title:      "resp"
+                url:        "https://github.com/SubPointSolutions/reSharePoint.git"
+                branch:     "dev"  
+                src_folder: "reSharePoint/SubPointSolutions.Docs/Views/ReSP"
+                dst_folder: "resp"
+            - 
+                title:      "metabox"
+                url:        "https://github.com/SubPointSolutions/metabox.git"
+                branch:     "origin/0.2.3-dev"
+                src_folder: "docs/content"
+                dst_folder: "metabox"
+            
+    master:
+        docker-build:
+          - "cd tools/docker/web-vuepress    && docker build --tag subpoint/vuepress    --build-arg VUEPRESS_VERSION=0.10.0 ."
+          - "cd tools/docker/web-netlify-cli && docker build --tag subpoint/netlify-cli --build-arg NETLIFYCLI_VERSION=1.2.2 ."
+
+        repos:
+            - 
+                title:      "spmeta2"
+                url:        "https://github.com/SubPointSolutions/spmeta2.git"
+                branch:     "dev"  
+                src_folder: "SPMeta2/SubPointSolutions.Docs/Views/SPMeta2"
+                dst_folder: "spmeta2"
+            - 
+                title:      "spmeta2-vs"
+                url:        "https://github.com/SubPointSolutions/spmeta2-vsixextensions.git"
+                branch:     "dev"  
+                src_folder: "SubPointSolutions.Docs/Views/SPMeta2-VS"
+                dst_folder: "spmeta2-vs"
+            - 
+                title:      "spmeta2-reverse"
+                url:        "https://github.com/SubPointSolutions/spmeta2-reverse.git"
+                branch:     "dev"  
+                src_folder: "SPMeta2.Reverse/SubPointSolutions.Docs/Views"
+                dst_folder: "spmeta2-reverse"
+            - 
+                title:      "metapack"
+                url:        "https://github.com/SubPointSolutions/MetaPack.git"
+                branch:     "master"  
+                src_folder: "SubPointSolutions.Docs/Views/MetaPack"
+                dst_folder: "metapack"
+            - 
+                title:      "spmeta2-spec"
+                url:        "https://github.com/SubPointSolutions/MetaPack.git"
+                branch:     "master"  
+                src_folder: "SubPointSolutions.Docs/Views/MetaPack"
+                dst_folder: "spmeta2-spec"
+            - 
+                title:      "resp"
+                url:        "https://github.com/SubPointSolutions/reSharePoint.git"
+                branch:     "dev"  
+                src_folder: "reSharePoint/SubPointSolutions.Docs/Views/ReSP"
+                dst_folder: "resp"
+            - 
+                title:      "metabox"
+                url:        "https://github.com/SubPointSolutions/metabox.git"
+                branch:     "origin/0.2.3-dev"
+                src_folder: "docs/content"
+                dst_folder: "metabox"
+            
+    
