@@ -78,7 +78,7 @@ def checkout_repo(folder:, repo_url:, repo_branch:, options:)
         FileUtils.mkdir_p repo_subfolder_path
 
         cmd = [
-            "git config --global http.sslVerify false",
+            "test -f ~/.gitconfig || git config --global http.sslVerify false",
             "cd #{folder}",
             "git clone #{repo_url}"
         ].join(" && ")
