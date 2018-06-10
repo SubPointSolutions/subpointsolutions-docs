@@ -30,7 +30,7 @@ parser = OptionParser.new do|opts|
 		  options[:git_cache_path] = value;
     end
 
-    opts.on('-p', '--parallel=VALUE', 'Enable parallel build') do |name|
+    opts.on('-p', '--parallel', 'Enable parallel build') do |name|
 		  options[:enable_parallel_build] = true;
     end
     
