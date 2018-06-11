@@ -1,7 +1,7 @@
 ---
 layout: DocsLandingLayout
 
-heroText: Welcome to SubPoint Solution Docs!
+heroText: Welcome to SubPoint Solutions Docs!
 tagline:  If you’re new here, read below for the high-level view of what we do.
 
 features:
@@ -19,7 +19,7 @@ features:
   details: A library to provide reverse engineering of the existing SharePoint sites into SPMeta2 models.
   url: /spmeta2-reverse
 - title: SPMeta2 Specs (beta)
-  details: Technical documentation made easy - build beautiful one-page specifications for SPMeta2 models.kp
+  details: Technical documentation made easy - build beautiful one-page specifications for SPMeta2 models.
   url: /spmeta2-spec
 
 - title: Metapack (beta)

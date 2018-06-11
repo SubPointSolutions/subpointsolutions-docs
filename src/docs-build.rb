@@ -8,6 +8,7 @@ configure_logger(logger: $logger)
 
 current_folder = File.expand_path(File.dirname(__FILE__))
 config_file    = current_folder + "/build.yaml"
+landing_src_folder = File.expand_path(current_folder + '/../docs')
 
 $logger.debug "Running in folder: #{current_folder}"
 
@@ -57,8 +58,10 @@ git_metadata = load_git_metadata(config_name: options[:config], file_path: confi
 
 $logger.info("Building documentation...")
 
+options[:landing_src_folder] = landing_src_folder
+
 build_landing(
-  docs_src_folder: current_folder + '/../docs',
+  docs_src_folder: landing_src_folder,
   options: options)
 
 build_documentation(git_metadata: git_metadata["repos"], options: options)

@@ -152,6 +152,27 @@ def execute_vuepress(docs_src_folder: , docs_dst_folder:, docker_vuepress_contai
     cmd(cmd)
 end
 
+def copy_landing_override(src_folder:, dst_folder:)
+    $logger.debug "Copying landing page override..."
+
+    src_file_path = File.expand_path(src_folder + "/.vuepress/override.styl")
+    dst_file_path = File.expand_path(dst_folder + "/.vuepress/override.styl")
+
+
+    if File.exist? src_file_path
+        $logger.debug " - src: #{src_file_path}"
+        $logger.debug " - dst: #{dst_file_path}"
+
+        FileUtils.cp_r( 
+            src_file_path,
+            dst_file_path,
+            remove_destination: true) 
+    else
+        $logger.debug "Skipping, file does not exist: #{override_styl_file}"
+    end
+
+end
+
 def build_site(repo_folder_path:, git_metadata:, dst_root_path:, options: )
 
     is_local_build = options[:is_local_build]
@@ -170,6 +191,11 @@ def build_site(repo_folder_path:, git_metadata:, dst_root_path:, options: )
     FileUtils.rm_rf(docs_dst_folder)
 
     $logger.debug "   running vuepress build -d #{docs_dst_folder}"
+
+    copy_landing_override(
+        src_folder: options[:landing_src_folder],
+        dst_folder: docs_src_folder
+    )
 
     execute_vuepress(
         docs_src_folder: docs_src_folder,
