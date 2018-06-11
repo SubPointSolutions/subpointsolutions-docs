@@ -15,7 +15,7 @@ $logger.debug "Parsing command line params"
 
 options = {
     :config                    => "dev",
-    :git_cache_path            => "./.docs-source",
+    :git_cache_path            => current_folder + "/.docs-source",
     :enable_parallel_build     => false
 }
 

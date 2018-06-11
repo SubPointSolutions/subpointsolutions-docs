@@ -14,7 +14,7 @@ $logger.debug "Running in folder: #{current_folder}"
 $logger.debug "Parsing command line params"
 
 options = {
-    :site_cache_path           => "./.docs-build",
+    :site_cache_path           => current_folder + "/.docs-build",
     :is_local_build            => false,
     :netlify_docker_container  => "subpoint/netlify-cli"
 }
