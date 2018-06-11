@@ -17,7 +17,10 @@ def exec_publish_website(git_metadata:, options:)
 
     docker_netlify_container = options[:netlify_docker_container];
 
-    netlify_site_id_id = "SPS_NETLIFY_SITE_ID_#{config.upcase}"
+    # bash vars should always be "MY_VAR"
+    site_id_subkey  = config.gsub! '-', '-'
+
+    netlify_site_id_id = "SPS_NETLIFY_SITE_ID_#{site_id_subkey.upcase}"
     netlify_api_key_id = "SPS_NETLIFY_API_KEY"
 
     netlify_site_id = ENV[netlify_site_id_id]
