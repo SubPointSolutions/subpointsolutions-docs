@@ -18,7 +18,7 @@ config:
             #     src_folder: "docs/content"
             #     dst_folder: "docs"
 
-    dev:
+    dev-1116:
         docker-build:
           - "cd tools/docker/web-vuepress    && docker build --tag subpoint/vuepress    --build-arg VUEPRESS_VERSION=0.10.0 ."
           - "cd tools/docker/web-netlify-cli && docker build --tag subpoint/netlify-cli --build-arg NETLIFYCLI_VERSION=1.2.2 ."
@@ -74,7 +74,7 @@ config:
             #     src_folder: "docs/content"
             #     dst_folder: "docs"
 
-    beta:
+    dev-1116-beta:
         docker-build:
           - "cd tools/docker/web-vuepress    && docker build --tag subpoint/vuepress    --build-arg VUEPRESS_VERSION=0.10.0 ."
           - "cd tools/docker/web-netlify-cli && docker build --tag subpoint/netlify-cli --build-arg NETLIFYCLI_VERSION=1.2.2 ."
@@ -101,13 +101,13 @@ config:
             - 
                 title:      "metapack"
                 url:        "https://github.com/SubPointSolutions/MetaPack.git"
-                branch:     "master"  
+                branch:     "dev"  
                 src_folder: "SubPointSolutions.Docs/Views/MetaPack"
                 dst_folder: "metapack"
             - 
                 title:      "spmeta2-spec"
                 url:        "https://github.com/SubPointSolutions/MetaPack.git"
-                branch:     "master"  
+                branch:     "dev"  
                 src_folder: "SubPointSolutions.Docs/Views/MetaPack"
                 dst_folder: "spmeta2-spec"
             - 
