@@ -162,3 +162,5 @@ src/.docs-**/**
 .vagrant
 *.netlify*
 *netlify.log*
+*node_modules*
+*package-lock.json*

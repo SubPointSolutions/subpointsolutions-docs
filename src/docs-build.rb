@@ -8,7 +8,7 @@ configure_logger(logger: $logger)
 
 current_folder = File.expand_path(File.dirname(__FILE__))
 config_file    = current_folder + "/build.yaml"
-landing_src_folder = File.expand_path(current_folder + '/../docs')
+landing_src_folder = current_folder + '/../docs'
 
 $logger.debug "Running in folder: #{current_folder}"
 

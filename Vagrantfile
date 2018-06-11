@@ -15,6 +15,7 @@ Vagrant.configure("2") do |config|
     config.vm.box = "ailispaw/barge"
   
     config.vm.synced_folder "./src", "/src", fsnotify: true
+    config.vm.synced_folder "./docs", "/docs", fsnotify: true
    
     # web bases content serve
     config.vm.network "forwarded_port", guest: 80, host: 80

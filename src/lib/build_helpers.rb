@@ -119,13 +119,11 @@ def execute_vuepress(docs_src_folder: , docs_dst_folder:, docker_vuepress_contai
         cmd = [
             "cd #{docs_src_folder}",
             "node --version",
-            "npm install markdown-it-mermaid",
+            "npm install markdown-it-mermaid@0.2.5",
             "vuepress build -d #{docs_dst_folder}"
         ].join(" && ")
     else 
         cmd = [
-            "cd #{docs_src_folder}",
-            "npm install markdown-it-mermaid",
             [
                 "docker run --rm -i",
                 "-v #{docs_src_folder}:/app",
@@ -138,11 +136,15 @@ def execute_vuepress(docs_src_folder: , docs_dst_folder:, docker_vuepress_contai
                         
                         "echo 'Generating docs in /target-tmp'",
                         "cd /app",
+
+                        "npm install markdown-it-mermaid@0.2.5",
+
                         "vuepress build -d /target-tmp",
                         'echo "Exit code: $?"',
                       
                         "echo 'Copying docs from /target-tmp to /target'",                        
                         "cp -a /target-tmp/. /target",
+                        'echo "Exit code: $?"',
 
                         "echo 'Completed generating docs!'",
                     "COMMANDS"
@@ -488,7 +490,7 @@ def dev_documentation(git_metadata:, options: )
 
     cmd = [
         "cd #{docs_src_folder}",
-        "npm install markdown-it-mermaid",
+        "npm install markdown-it-mermaid@0.2.5", 
         "vuepress dev"
     ].join(" && ")
 
