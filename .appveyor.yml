@@ -6,10 +6,12 @@ services:
 build: off
 
 build_script:
+  - DOCS_PROFILE=$APPVEYOR_REPO_BRANCH 
+  - echo "Building docs profile: $DOCS_PROFILE"
   - pwd && ls -la
   - which ruby && ruby --version
   - rvm use 2.4.1 && which ruby && ruby --version
-  - rvm use 2.4.1 && ruby src/docs-docker.rb -c dev 
-  - rvm use 2.4.1 && ruby src/docs-checkout.rb -c dev 
-  - rvm use 2.4.1 && ruby src/docs-build.rb -c dev 
-  - rvm use 2.4.1 && ruby src/docs-publish.rb -c dev 
+  - rvm use 2.4.1 && ruby src/docs-docker.rb   -c $DOCS_PROFILE
+  - rvm use 2.4.1 && ruby src/docs-checkout.rb -c $DOCS_PROFILE
+  - rvm use 2.4.1 && ruby src/docs-build.rb    -c $DOCS_PROFILE
+  - rvm use 2.4.1 && ruby src/docs-publish.rb  -c $DOCS_PROFILE
