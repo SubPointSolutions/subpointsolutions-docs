@@ -404,7 +404,9 @@ def dev_documentation(git_metadata:, options: )
     current_folder = options[:current_folder]
     
     site_title = options[:site_title]
-    target_config = git_metadata.first { |e| e["title"] == site_title }
+    $logger.debug "Looking for site spec: #{site_title}"
+
+    target_config = git_metadata.select { |e| e["title"] == site_title }.first
 
     require_value current_folder, "current_folder"
     require_value target_config, "target_config"

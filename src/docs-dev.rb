@@ -35,7 +35,7 @@ parser = OptionParser.new do|opts|
     options[:enable_parallel_build] = true;
   end
 
-  opts.on('-s', '--site', 'Which site to build') do |name|
+  opts.on('-s', '--site=VALUE', 'Which site to build') do |name|
     options[:site_title] = name;
   end
 
