@@ -136,6 +136,7 @@ def build_site(repo_folder_path:, git_metadata:, dst_root_path:, options: )
     if is_local_build == true
         cmd = [
             "cd #{docs_src_folder}",
+            "node --version",
             "vuepress build -d #{docs_dst_folder}"
         ].join(" && ")
     else 
@@ -147,10 +148,13 @@ def build_site(repo_folder_path:, git_metadata:, dst_root_path:, options: )
                 "#{docker_vuepress_container}",
                 [
                     "sh << COMMANDS",
+                        "node --version",
                         "mkdir /target-tmp",
                         
                         "echo 'Generating docs in /target-tmp'",
-                        "cd /app && vuepress build -d /target-tmp",
+                        "cd /app",
+                        "vuepress build -d /target-tmp",
+                        'echo "Exit code: $?"',
                       
                         "echo 'Copying docs from /target-tmp to /target'",                        
                         "cp -a /target-tmp/. /target",
