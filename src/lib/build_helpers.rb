@@ -163,6 +163,10 @@ def copy_landing_override(src_folder:, dst_folder:)
         $logger.debug " - src: #{src_file_path}"
         $logger.debug " - dst: #{dst_file_path}"
 
+        dst_folder_path = File.dirname(dst_file_path)
+        $logger.debug " - dst folder: #{dst_folder_path}"
+        FileUtils.mkdir_p dst_folder_path 
+
         FileUtils.cp_r( 
             src_file_path,
             dst_file_path,
