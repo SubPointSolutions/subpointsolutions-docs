@@ -55,7 +55,7 @@ git_metadata = load_git_metadata(config_name: options[:config], file_path: confi
 
 $logger.info("Publishing web site...")
 
-exec_publish_website(options: options)
+exec_publish_website(git_metadata: git_metadata["repos"], options: options)
 $logger.info("Completed!")
 
 exit(0)

@@ -67,12 +67,12 @@ config:
                 src_folder: "docs/content"
                 dst_folder: "metabox"
 
-            - 
-                title:      "docs"
-                url:        "https://github.com/SubPointSolutions/subpointsolutions-docs.git"
-                branch:     "dev-1116"
-                src_folder: "docs/content"
-                dst_folder: "docs"
+            # - 
+            #     title:      "docs"
+            #     url:        "https://github.com/SubPointSolutions/subpointsolutions-docs.git"
+            #     branch:     "dev-1116"
+            #     src_folder: "docs/content"
+            #     dst_folder: "docs"
 
     beta:
         docker-build:
