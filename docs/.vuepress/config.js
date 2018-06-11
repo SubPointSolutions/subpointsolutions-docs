@@ -1,5 +1,6 @@
 module.exports = {
     themeConfig: {
-      search: false
+      search: false,
+      navbar: false
     }
   }
