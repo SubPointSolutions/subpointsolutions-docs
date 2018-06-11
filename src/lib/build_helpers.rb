@@ -105,7 +105,8 @@ def checkout_repo(folder:, repo_url:, repo_branch:, options:)
 
     cmd = [
         "cd #{repo_subfolder_path}",
-        "git status"
+        "git status",
+        "git show-branch --current --list",
     ].join(" && ")
 
     $logger.info "   - git status..."
