@@ -124,9 +124,9 @@ def execute_vuepress(docs_src_folder: , docs_dst_folder:, docker_vuepress_contai
         ].join(" && ")
     else 
         cmd = [
+            "cd #{docs_src_folder}",
+            "npm install markdown-it-mermaid",
             [
-                "cd #{docs_src_folder}",
-                "npm install markdown-it-mermaid",
                 "docker run --rm -i",
                 "-v #{docs_src_folder}:/app",
                 "-v #{docs_dst_folder}:/target",
