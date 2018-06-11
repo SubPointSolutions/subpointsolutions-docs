@@ -114,25 +114,7 @@ def checkout_repo(folder:, repo_url:, repo_branch:, options:)
 
 end
 
-def build_site(repo_folder_path:, git_metadata:, dst_root_path:, options: )
-
-    is_local_build = options[:is_local_build]
-    docker_vuepress_container = options[:vuepress_docker_container]
-
-    site_title = git_metadata["title"]
-
-    docs_src_folder =  File.join(repo_folder_path, git_metadata["src_folder"])
-    docs_dst_folder =  File.join(dst_root_path, git_metadata["dst_folder"])
-
-    $logger.info "building site: #{repo_folder_path}"
-    $logger.debug "   src: #{docs_src_folder}"
-    $logger.debug "   dst: #{docs_dst_folder}"
-
-    $logger.debug "   deleting old folder: #{docs_dst_folder}"
-    FileUtils.rm_rf(docs_dst_folder)
-
-    $logger.debug "   running vuepress build -d #{docs_dst_folder}"
-
+def execute_vuepress(docs_src_folder: , docs_dst_folder:, docker_vuepress_container:, is_local_build: true  )
     if is_local_build == true
         cmd = [
             "cd #{docs_src_folder}",
@@ -168,6 +150,33 @@ def build_site(repo_folder_path:, git_metadata:, dst_root_path:, options: )
 
     $logger.debug "   - running build: #{docs_dst_folder}"
     cmd(cmd)
+end
+
+def build_site(repo_folder_path:, git_metadata:, dst_root_path:, options: )
+
+    is_local_build = options[:is_local_build]
+    docker_vuepress_container = options[:vuepress_docker_container]
+
+    site_title = git_metadata["title"]
+
+    docs_src_folder =  File.join(repo_folder_path, git_metadata["src_folder"])
+    docs_dst_folder =  File.join(dst_root_path, git_metadata["dst_folder"])
+
+    $logger.info "building site: #{repo_folder_path}"
+    $logger.debug "   src: #{docs_src_folder}"
+    $logger.debug "   dst: #{docs_dst_folder}"
+
+    $logger.debug "   deleting old folder: #{docs_dst_folder}"
+    FileUtils.rm_rf(docs_dst_folder)
+
+    $logger.debug "   running vuepress build -d #{docs_dst_folder}"
+
+    execute_vuepress(
+        docs_src_folder: docs_src_folder,
+        docs_dst_folder: docs_dst_folder,
+        is_local_build: is_local_build,
+        docker_vuepress_container: docker_vuepress_container
+    )
 
     $logger.info "   -completed build site [#{site_title}] at: #{docs_dst_folder}"
 
@@ -307,6 +316,30 @@ def get_tmp_folders(options:)
         :doco_git_cache => doco_git_cache,
         :doco_site_cache => doco_site_cache
     }
+end
+
+def build_landing(docs_src_folder:, options:)
+
+    docs_src_folder = File.expand_path(docs_src_folder)
+
+    $logger.info "building landing page from path: #{docs_src_folder}"
+
+    tmp_folders = get_tmp_folders(options: options)
+
+    tmp_folders = get_tmp_folders(options: options)
+    docs_dst_folder = tmp_folders[:doco_site_cache]
+
+    is_local_build = options[:is_local_build]
+    docker_vuepress_container = options[:vuepress_docker_container]
+
+    execute_vuepress(
+        docs_src_folder: docs_src_folder,
+        docs_dst_folder: docs_dst_folder,
+        is_local_build: is_local_build,
+        docker_vuepress_container: docker_vuepress_container
+    )
+
+    $logger.info "   -completed landing site build at: #{docs_dst_folder}"
 end
 
 def build_documentation(git_metadata:, options: )

@@ -15,8 +15,8 @@ $logger.debug "Parsing command line params"
 
 options = {
     :config                    => "dev",
-    :git_cache_path            => "./.docs-source",
-    :site_cache_path           => "./.docs-build",
+    :git_cache_path            => current_folder + "/.docs-source",
+    :site_cache_path           => current_folder + "/.docs-build",
     :is_local_build            => false,
     :vuepress_docker_container => "subpoint/vuepress"
 }
@@ -56,6 +56,10 @@ $logger.debug("Reading docs metadata configuration")
 git_metadata = load_git_metadata(config_name: options[:config], file_path: config_file)
 
 $logger.info("Building documentation...")
+
+build_landing(
+  docs_src_folder: current_folder + '/../docs',
+  options: options)
 
 build_documentation(git_metadata: git_metadata["repos"], options: options)
 $logger.info("Completed!")
