@@ -7,7 +7,7 @@ build: off
 
 build_script:
   - DOCS_PROFILE=$APPVEYOR_REPO_BRANCH 
-  - echo "Building docs profile: $DOCS_PROFILE"
+  - 'echo "Building docs profile: $DOCS_PROFILE"'
   - pwd && ls -la
   - which ruby && ruby --version
   - rvm use 2.4.1 && which ruby && ruby --version
