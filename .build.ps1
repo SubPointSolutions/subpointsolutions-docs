@@ -230,7 +230,6 @@ task NetlifyRepublish DefaultBuild, NetlifyPublish
 task Appveyor AppveyorPrepare, 
     NpmInstall, 
     NetlifyInstall,
-    ShowTools,
     DefaultBuild, 
     CreateZipArchive, 
     NetlifyPrePublish, 
