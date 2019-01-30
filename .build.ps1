@@ -37,7 +37,9 @@ task NetlifyInstall {
     } else {
         Write-Build Green "[+] netlify-cli"
     }
-       
+}
+
+task ShowTools {
     Write-Build Green "Using netlify cli:"
     netlify --version
 }
@@ -228,6 +230,7 @@ task NetlifyRepublish DefaultBuild, NetlifyPublish
 task Appveyor AppveyorPrepare, 
     NpmInstall, 
     NetlifyInstall,
+    ShowTools,
     DefaultBuild, 
     CreateZipArchive, 
     NetlifyPrePublish, 
