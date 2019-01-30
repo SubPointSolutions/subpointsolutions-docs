@@ -16,7 +16,7 @@ We tend to be agile and deliver new features and fixes as soon as possible:
 
 * On weekly basis new features and minor fixes are published as -beta to NuGet
 * On monthly basis a major release is published to [NuGet](https://www.nuget.org/profiles/SubPointSupport)
-* Every commit to github [gets build with Appveyor](https://ci.appveyor.com/project/SubPointSupport/spmeta2) and the gets published to the [staging MyGet feed](https://www.myget.org/gallery/subpointsolutions-staging)
+* Every commit to github [gets build with Appveyor](https://www.appveyor.com) and the gets published to the [staging MyGet feed](https://www.myget.org/gallery/subpointsolutions-staging)
 
 ###  Planning and feature requiests
 We tend to use scrum and weekly iterations, aligning our roadmap with the comnunity using the following channels:
@@ -143,10 +143,9 @@ AssemblyFileVersion: 1.2.15334.1243
 
 ####  Support & Issue Resolution
 
-In case you have unexpected issues please contact support on SPMeta2 Yammer or YouTrack:
+In case you have unexpected issues please contact support on SPMeta2 Yammer:
 
 * https://www.yammer.com/spmeta2feedback
-* https://subpointsolutions.myjetbrains.com/youtrack/issues
 
 <hr />
 
@@ -230,10 +229,9 @@ AssemblyFileVersion: 1.2.15321.0933
 
 ####  Support & Issue Resolution
 
-In case you have unexpected issues please contact support on SPMeta2 Yammer or YouTrack:
+In case you have unexpected issues please contact support on SPMeta2 Yammer:
 
 * https://www.yammer.com/spmeta2feedback
-* https://subpointsolutions.myjetbrains.com/youtrack/issues
 
 <hr />
 
@@ -270,10 +268,9 @@ AssemblyFileVersion: 1.2.15306.0935
 
 ####  Support & Issue Resolution
 
-In case you have unexpected issues please contact support on SPMeta2 Yammer or YouTrack:
+In case you have unexpected issues please contact support on SPMeta2 Yammer:
 
 * https://www.yammer.com/spmeta2feedback
-* https://subpointsolutions.myjetbrains.com/youtrack/issues
 
 <hr />
 
@@ -334,10 +331,9 @@ AssemblyFileVersion: 1.2.15301.0536
 
 ####  Support & Issue Resolution
 
-In case you have unexpected issues please contact support on SPMeta2 Yammer or YouTrack:
+In case you have unexpected issues please contact support on SPMeta2 Yammer:
 
 * https://www.yammer.com/spmeta2feedback
-* https://subpointsolutions.myjetbrains.com/youtrack/issues
 
 <hr />
 
@@ -492,9 +488,8 @@ The following information aims to provide an overview on assembly related change
 
 Please review it carefully, consider that depending on your solution and API usage additional effort might be required to get updated to v1.2.XXX. Once updated, make sure your solution can be compiled without errors, then give a few rounds of provision.
 
-In case you have unexpected issues please contact support on SPMeta2 Yammer or YouTrack:
+In case you have unexpected issues please contact support on SPMeta2 Yammer:
 * https://www.yammer.com/spmeta2feedback
-* https://subpointsolutions.myjetbrains.com/youtrack/issues
 
 AssemblyFileVersion - 1.2.15265.2146
 
@@ -527,9 +522,8 @@ Current test coverage is split into three major categories:
 * Scenario based definition provision - manually written provision to cover various real word provision scenarios. Validation process is the same - deploy several times, check, changes, deploy and check again.
 
 ####  Support & Issue Resolution
-In case you have unexpected issues please contact support on SPMeta2 Yammer or YouTrack:
+In case you have unexpected issues please contact support on SPMeta2 Yammer:
 * https://www.yammer.com/spmeta2feedback
-* https://subpointsolutions.myjetbrains.com/youtrack/issues
 
 <hr />
 
