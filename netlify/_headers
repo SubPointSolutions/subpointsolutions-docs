@@ -1,0 +1,24 @@
+/js/*
+  Cache-Control: max-age=3600
+/js/*
+  Cache-Control: max-age=3600
+/css/*
+  Cache-Control: max-age=3600  
+/img/*
+  Cache-Control: max-age=3600    
+/assets/*
+  Cache-Control: max-age=3600  
+/spmeta2/**
+  Cache-Control: max-age=600 
+/metapack/**
+  Cache-Control: max-age=600  
+/resp/**
+  Cache-Control: max-age=600            
+/spmeta2-reverse/**
+  Cache-Control: max-age=600              
+/spmeta2-spec/**
+  Cache-Control: max-age=600                
+/spmeta2-vs/**
+  Cache-Control: max-age=600   
+/uplift/**
+  Cache-Control: max-age=600
