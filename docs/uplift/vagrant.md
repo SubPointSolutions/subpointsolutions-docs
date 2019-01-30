@@ -1,0 +1,6 @@
+---
+id: vagrant
+title: vagrant
+---
+
+
