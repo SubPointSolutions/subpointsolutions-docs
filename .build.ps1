@@ -37,7 +37,9 @@ task NetlifyInstall {
     } else {
         Write-Build Green "[+] netlify-cli"
     }
-       
+}
+
+task ShowTools {
     Write-Build Green "Using netlify cli:"
     netlify --version
 }
