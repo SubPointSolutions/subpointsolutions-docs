@@ -1,3 +1,0 @@
-DateTime date1 = Convert.ToDateTime(item["Date"]);
-DateTime? date2 = item["Date"] as DateTime?;
-

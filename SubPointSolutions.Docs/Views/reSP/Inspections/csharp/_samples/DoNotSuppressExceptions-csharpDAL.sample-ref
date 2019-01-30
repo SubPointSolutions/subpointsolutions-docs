@@ -1,7 +1,0 @@
-public static class DAL
-{
-    public static void Save(string p1)
-    {
-        throw new NotImplementedException();
-    }
-}
