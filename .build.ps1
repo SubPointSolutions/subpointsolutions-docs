@@ -33,7 +33,10 @@ task NpmInstall {
 
 task NetlifyInstall {
     if($null -eq (Get-Command netlify -ErrorAction SilentlyContinue) ) {
-        Confirm-NpmModule 'netlify-cli' $true
+        npm config set error
+
+        npm install netlify-cli -g --silent
+        npm install typescript  -g --silent
     } else {
         Write-Build Green "[+] netlify-cli"
     }
@@ -230,6 +233,7 @@ task NetlifyRepublish DefaultBuild, NetlifyPublish
 task Appveyor AppveyorPrepare, 
     NpmInstall, 
     NetlifyInstall,
+    ShowTools,
     DefaultBuild, 
     CreateZipArchive, 
     NetlifyPrePublish, 

@@ -27,42 +27,12 @@ function Require-Variable($value, $description) {
     if($value -eq $null) {
         throw "Variable is null: $description"
     }
-
 }
 
 function Edit-ValueInFile($path, $old, $new) {
     (Get-Content $path).replace( $old, $new ) `
         | Set-Content $path
 }
-
-function Confirm-NpmModule($name, $global = $False) {
-    
-    $needInstall = $False
-
-    try {
-        npm config set error
-            
-        if( $global -eq $True) {
-            npm list $name -g | out-null
-        } else {
-            npm list $name | out-null
-        }
-    } catch {
-        $needInstall = $True
-    }
-
-    if ($LASTEXITCODE -ne 0 -or $needInstall -eq $True) {
-        Write-Build Yellow "[~] installing npm module: $name"
-        if( $global -eq $True) {
-            npm install $name -g --silent
-        } else {
-            npm install $name --silent
-        }
-    }
-    else {
-        Write-Build Green "[+] npm module installed: $name"
-    }
-} 
 
 function Copy-NetlifyConfig {
     Copy-Item "$dirPath/netlify/*" "$buildFolder/" -Recurse -Force
