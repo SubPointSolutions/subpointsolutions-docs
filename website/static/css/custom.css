@@ -1,0 +1,234 @@
+/* your custom css */
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {}
+
+@media only screen and (min-width: 1024px) {}
+
+@media only screen and (max-width: 1023px) {}
+
+@media only screen and (min-width: 1400px) {}
+
+@media only screen and (min-width: 1500px) {}
+
+.separateOnPageNav .docsNavContainer {
+    border-right: 1px #dedede solid;
+}
+
+.fixedHeaderContainer {
+    box-sizing: border-box;
+    background: #4285f4;
+}
+
+.navigationSlider .slidingNav ul li a {
+    font-weight: 600;
+} 
+
+.docMainWrapper a {
+    color: #039be5;
+    font-weight: 400;
+}
+
+.mainContainer  a {
+    color: #039be5;
+    font-weight: 400;
+}
+
+.mainContainer  a:hover {
+    color: #039be5;
+    text-decoration: underline;
+}
+
+.docMainWrapper a:hover {
+    color: #039be5;
+    text-decoration: underline;
+}
+
+.toc .toggleNav ul li.navListItemActive a {
+    color: #039be5;
+    font-weight: 400;
+}
+
+/* .hljs.language-javascript:before,
+.hljs.language-js:before {
+    content: "JavaScript";
+}
+
+.hljs.language-json:before {
+    content: "JSON";
+}
+
+.hljs.language-cs:before {
+    content: "C#";
+}
+
+.hljs:before {
+    content: "";
+    background: #adc0e3;
+    color: #223351;
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    height: 34px;
+    line-height: 34px;
+    padding: 0 10px;
+    position: absolute;
+    right: 0;
+    bottom: 100%;
+    left: 0;
+    z-index: 1;
+} */
+
+pre .btnIcon {
+    position: absolute;
+    top: -34px;
+    z-index: 2;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: 0;
+    color: #223351;
+    background-color: transparent;
+    height: 34px;
+    transition: all .25s ease-out;
+}
+
+pre {
+    margin-top: 50px;
+}
+
+img.logo {
+    height: 20px !important;
+}
+
+a.nav-home img {
+    height: 20px !important;
+    width: 20px !important;
+}
+
+.fixedHeaderContainer header {
+    height: 50px !important;
+    align-items: center;
+}
+
+
+/* "Copy" code block button */
+pre {
+    position: relative;
+}
+
+pre .btnIcon {
+    position: absolute;
+    top: 4px;
+    z-index: 2;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: 0;
+    color: #fff;
+    background-color: transparent;
+    height: 30px;
+    transition: all .25s ease-out;
+}
+
+pre .btnIcon:hover {
+    text-decoration: none;
+}
+
+.btnIcon__body {
+    align-items: center;
+    display: flex;
+}
+
+.btnIcon svg {
+    fill: currentColor;
+    margin-right: .4em;
+}
+
+.btnIcon__label {
+    font-size: 11px;
+}
+
+.btnClipboard {
+    right: 10px;
+}
+
+.mainContainer img {
+    padding: 10px !important;
+    background-color: whitesmoke !important;
+    border: 1px #dedede solid !important;
+}
+
+.mainContainer .mermaid {
+    padding-top: 1em;
+    border: 10px whitesmoke solid;
+    margin-bottom: 1em;
+}
+
+.copyright {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.gridBlock .blockElement {
+    border-radius: 2px;
+    border: 1px #dedede solid;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+}
+
+.gridBlock .blockElement h2 {
+    text-align: left;
+}
+
+.productShowcaseSection h1 {
+    margin-top: 0.5em;
+}
+
+.productShowcaseSection.paddingBottom {
+    padding-bottom: 60px;
+}
+
+.opensource-callout  {
+    margin:0px;
+    padding:0px;
+}
+
+.opensource-callout h2 {
+    margin-bottom: 0;
+    padding-bottom: 16px;
+    border-bottom: 1px #dedede solid;
+    text-transform: uppercase;
+}
+
+.container.paddingTop {
+    padding-top: 24px;
+}
+
+.blockElement{
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.blockContent{
+
+}
+
+.gridBlock .blockElement h2 {
+    margin-top:0.5em;
+}
+
+.blockContent a {
+    font-weight: 500 !important;
+}
+
+.blockContent a:hover {
+    
+}
+
+code {
+    border-radius: 0px !important;
+}
+
+.copyright a {
+    color:white;
+}
+
+.copyright .update-meta { 
+    font-size: 12px;
+}

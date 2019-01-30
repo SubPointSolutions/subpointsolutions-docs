@@ -1,0 +1,155 @@
+/* your custom css */
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+}
+
+@media only screen and (min-width: 1024px) {
+}
+
+@media only screen and (max-width: 1023px) {
+}
+
+@media only screen and (min-width: 1400px) {
+}
+
+@media only screen and (min-width: 1500px) {
+}
+
+.hljs.language-javascript:before, .hljs.language-js:before {
+    content: "JavaScript";
+}
+
+.hljs.language-json:before {
+    content: "JSON";
+}
+
+.hljs.language-sh:before {
+    content: "Shell";
+}
+
+.hljs.language-cs:before,
+.hljs.language-csharp:before {
+    content: "C#";
+}
+
+.hljs.language-xml:before {
+    content: "XML";
+}
+
+.hljs:before {
+    content: "";
+    /* background: #adc0e3; */
+    background: whitesmoke;
+    /* color: #223351; */
+    color:#223351;
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    height: 34px;
+    line-height: 34px;
+    padding: 0 10px;
+    position: absolute;
+    right: 0;
+    bottom: 100%;
+    left: 0;
+    z-index: 1;
+    border-top:1px #dedede solid;
+    border-left:1px #dedede solid;
+    border-right:1px #dedede solid;
+}
+
+pre .btnIcon {
+    position: absolute;
+    top: -34px;
+    z-index: 2;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: 0;
+    color: #223351;
+    background-color: transparent;
+    height: 34px;
+    transition: all .25s ease-out;
+}
+
+pre {
+    margin-top:50px;
+}
+
+img.logo {
+    height: 20px !important;
+}
+
+a.nav-home img {
+    height: 20px !important;
+    width: 20px !important;
+}
+
+.fixedHeaderContainer header {
+    height: 50px;
+    align-items: center;
+}
+
+.blockElement{
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-bottom: 16px;
+}
+
+.blockContent{
+
+}
+
+.gridBlock .blockElement h2 {
+    margin-top:0.5em;
+}
+
+p {
+    color: #212121;
+}
+
+.docs-prevnext {
+    margin: 10px 0;
+    border-top: 1px #dedede solid;
+    padding-top: 25px;
+}
+
+.one-column {
+    padding-top:10px !important;
+    padding-bottom:25px !important;
+}
+
+.one-column h2 {
+    margin-top:0.5em;
+    font-size:20px;
+    text-transform: none;
+}
+
+.one-column .blockElement  {
+    width: 20em;
+}
+
+.two-column .blockElement  {
+    width: 20em;
+}
+
+.three-column .blockElement  {
+    width: 20em;
+}
+
+.four-column .blockElement  {
+    width: 20em;
+}
+
+.gridBlock .fourByGridBlock { 
+    flex: none;
+}
+
+.blockElement {
+    background-color:white;
+}
+
+.white-smoke{
+    background: whitesmoke;
+    border-top:1px #dedede solid;
+    border-bottom:1px #dedede solid;
+}
